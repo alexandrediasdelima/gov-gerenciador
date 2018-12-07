@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- Standard Output Appender -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd' 'HH:mm:ss.SSS} [%thread] %-5level: %logger - %msg# -%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE_PRD" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logback.path}</fileNamePattern>
+			<maxHistory>30</maxHistory>
+
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>%d{yyyy-MM-dd' 'HH:mm:ss} [%thread] %-5level: %logger - %msg# -%n</Pattern>
+		</encoder>
+	</appender>
+
+
+	<logger name="org.springframework" level="error" />
+	<logger name="org.springframework.core" level="error" />
+	<logger name="org.springframework.aop" level="error" />
+	<logger name="org.springframework.beans" level="error" />
+	<logger name="org.springframework.context" level="error" />
+	<logger name="org.springframework.web" level="debug" />
+	<logger name="org.springframework.jdbc" level="error" />
+	<logger name="org.springframework.transaction" level="error" />
+	<logger name="org.springframework.ui" level="error" />
+	<logger name="org.springframework.test" level="error" />
+	<logger name="org.springframework.jndi" level="error" />
+	<logger name="org.gov.pe" level="info" />
+	<logger name="javax.faces" level="error" />
+	<logger name="org.hibernate" level="error" />
+	<logger name="org.hibernate" level="error" />
+	<logger name="javax.persistence" level="error" />
+	<logger name="org.gov.gerenciador" level="info" />
+
+	<!-- Root Logger -->
+	<root level="info">
+		<appender-ref ref="FILE_PRD" />
+		<!-- <appender-ref ref="STDOUT" />  -->
+		<!-- -->
+	</root>
+
+</configuration>

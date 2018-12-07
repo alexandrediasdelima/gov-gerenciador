@@ -1,0 +1,37 @@
+ <ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form>
+	<p:menubar>
+		<p:menuitem value="Home" url="/index.xhtml" icon="ui-icon-home" />
+
+		<p:submenu label="teste1" icon="ui-icon-gear" >
+           	<p:menuitem value="testee" url="/administracao/produto/" icon="ui-icon-wrench" />
+       	</p:submenu>
+
+		<p:submenu label="Acões Estrategica" icon="ui-icon-star" >
+           	<p:menuitem value="teste5" url="/acoesEstrategicas/" icon="ui-icon-tag" />
+           	<p:menuitem value="teste6" url="/acoesEstrategicas/" icon="ui-icon-bullet" />
+           	<p:menuitem value="teste6" url="/acoesEstrategicas/" icon="ui-icon-tag" />
+           	<p:menuitem value="teste6" url="/acoesEstrategicas/" icon="ui-icon-alert" />
+
+       	</p:submenu>
+
+       	<p:menuitem value="Sair" action="#" ajax="false" icon="ui-icon-close" />
+
+       	<f:facet name="options">
+          	<h:outputText style="margin-right:10px" value="Login" styleClass="negrito" />
+       	</f:facet>
+	</p:menubar>
+
+	<p:commandButton value="Salvar" icon="ui-icon-pencil" action="#{livroController.actionSalvarAdicionar}" ajax="false" />
+
+
+	</h:form>
+
+</ui:composition>

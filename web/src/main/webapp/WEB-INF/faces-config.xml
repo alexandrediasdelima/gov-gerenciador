@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+	version="2.0"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+						http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+	<!-- Managed Beans -->
+
+
+	<managed-bean>
+		<managed-bean-name>livroController</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.LivroController</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+
+
+
+	<!-- Configurações -->
+
+	<application>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>application-message</base-name>
+			<var>msg</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>application-error-message</base-name>
+			<var>msg_error</var>
+		</resource-bundle>
+		<resource-bundle>
+			<base-name>application-tooltip-message</base-name>
+			<var>msg_tip</var>
+		</resource-bundle>
+	</application>
+
+</faces-config>
