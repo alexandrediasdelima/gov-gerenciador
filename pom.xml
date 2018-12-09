@@ -189,6 +189,19 @@
 				<scope>provided</scope>
 			</dependency>
 
+
+			<dependency>
+				<groupId>org.gov.pe</groupId>
+				<artifactId>gov-gerenciador-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.gov.pe</groupId>
+				<artifactId>gov-gerenciador-web</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 

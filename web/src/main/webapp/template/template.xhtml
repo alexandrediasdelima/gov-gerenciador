@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
-<html
-	xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:cc="http://java.sun.com/jsf/composite/components">
-	<h:head>
-	    <f:facet name="first">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <title>Gerenciador gov</title>
-        </f:facet>
-		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<h:head>
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Gerenciador gov</title>
+	</f:facet>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-	</h:head>
-	<h:body>
+</h:head>
+<h:body>
 
-		<ui:include src="/template/menu.xhtml" />
+	<ui:include src="/template/menu.xhtml" />
+
+	<h:panelGrid styleClass="cemPorCento"
+		columnClasses="menuPrincipal,conteudoPrincipal">
+		<h:panelGroup>
+			<ui:insert name="body" />
+		</h:panelGroup>
+	</h:panelGrid>
 
 
-	</h:body>
+</h:body>
 </html>

@@ -10,8 +10,8 @@
 
 
 	<managed-bean>
-		<managed-bean-name>livroController</managed-bean-name>
-		<managed-bean-class>org.gov.web.controller.LivroController</managed-bean-class>
+		<managed-bean-name>livroBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.LivroBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 
