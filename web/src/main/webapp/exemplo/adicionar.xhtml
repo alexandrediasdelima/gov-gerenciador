@@ -16,13 +16,13 @@
 			<legend> Dados do Livro</legend>
 			<h:panelGrid columns="2">
 				<p:outputLabel value="Titulo:" for="titulo"/>
-				<p:inputText id="titulo" value="#{livroBean.livro.titulo}"/>
+				<p:inputText id="titulo" value="#{livroBean.livroForm.titulo}"/>
 
 				<p:outputLabel value="Preço:" for="preco"/>
-				<p:inputText id="preco" value="#{livroBean.livro.preco}"/>
+				<p:inputText id="preco" value="#{livroBean.livroForm.preco}"/>
 
 				<p:outputLabel value="Data de Lancamento:" for="data"/>
-				<p:inputText id="data" value="#{livroBean.livro.dataLancamento}"/>
+				<p:inputText id="data" value="#{livroBean.livroForm.dataLancamento}"/>
 
 				<p:commandButton value="Salvar" action="#{livroBean.gravar}" ajax="false" />
 			</h:panelGrid>

@@ -17,7 +17,7 @@ public class LivroBean implements Serializable {
 	 */
 	private static final long serialVersionUID = -8848447789491900839L;
 
-	private Livro livro = new Livro();
+	private Livro livroForm = new Livro();
 	private Autor autor = new Autor();
 
 	private LivroService livroService;
@@ -26,7 +26,18 @@ public class LivroBean implements Serializable {
 
 	public String gravar() {
 
+
+		org.gov.model.Livro livro = new org.gov.model.Livro();
+
+		livro.setTitulo(getLivroForm().getTitulo());
+		livro.setData(getLivroForm().getDataLancamento());
+		livro.setPreco(getLivroForm().getPreco());
+
 		livroService = new LivroServiceImpl();
+
+		livroService.gravar(livro);
+
+
 
 		return"index.xhtml";
 	}
@@ -37,16 +48,6 @@ public class LivroBean implements Serializable {
 	}
 
 
-	public Livro getLivro() {
-		return livro;
-	}
-
-
-	public void setLivro(Livro livro) {
-		this.livro = livro;
-	}
-
-
 	public Autor getAutor() {
 		return autor;
 	}
@@ -54,6 +55,14 @@ public class LivroBean implements Serializable {
 
 	public void setAutor(Autor autor) {
 		this.autor = autor;
+	}
+
+	public Livro getLivroForm() {
+		return livroForm;
+	}
+
+	public void setLivroForm(Livro livroForm) {
+		this.livroForm = livroForm;
 	}
 
 }
