@@ -12,7 +12,7 @@ public class Livro implements Serializable {
 	private String titulo;
 	private double preco;
 	private String data;
-	private Autor autor;
+	private String autor;
 
 	public String getTitulo() {
 		return titulo;
@@ -38,12 +38,13 @@ public class Livro implements Serializable {
 		this.data = data;
 	}
 
-	public Autor getAutor() {
+	public String getAutor() {
 		return autor;
 	}
 
-	public void setAutor(Autor autor) {
+	public void setAutor(String autor) {
 		this.autor = autor;
 	}
+
 
 }

@@ -1,68 +1,79 @@
 package org.gov.web.controller;
 
-import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.gov.service.AutorService;
 import org.gov.service.LivroService;
 import org.gov.service.LivroServiceImpl;
-import org.gov.web.model.Autor;
 import org.gov.web.model.Livro;
 
-public class LivroBean implements Serializable {
-
+public class LivroBean extends Controller  {
 
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = -8848447789491900839L;
+	private static final long serialVersionUID = -7849970183863861263L;
 
-	private Livro livroForm = new Livro();
-	private Autor autor = new Autor();
-
+	private Livro livro = new Livro();
 	private LivroService livroService;
-	private AutorService autorService;
+	private List<org.gov.model.Livro> livros;
+
+	private String view;
 
 
 	public String gravar() {
 
-
 		org.gov.model.Livro livro = new org.gov.model.Livro();
 
-		livro.setTitulo(getLivroForm().getTitulo());
-		livro.setData(getLivroForm().getDataLancamento());
-		livro.setPreco(getLivroForm().getPreco());
+		livro.setTitulo(this.livro.getTitulo());
+		livro.setData(this.livro.getDataLancamento());
+		livro.setPreco(this.livro.getPreco());
 
 		livroService = new LivroServiceImpl();
 
 		livroService.gravar(livro);
+		livros();
 
-
-
-		return"index.xhtml";
+		return eval(index());
 	}
 
-	public List<Autor> getAutores() {
+	public String livros() {
 
-		return null;
+		this.livros = new ArrayList<org.gov.model.Livro>();
+
+		setLivros(livroService.livros());
+
+		return eval(index());
+
+	}
+
+	public String getView() {
+		return view;
+	}
+
+	public void setView(String view) {
+		this.view = view;
+	}
+
+	public List<org.gov.model.Livro> getLivros() {
+		return livros;
+	}
+
+	public void setLivros(List<org.gov.model.Livro> livros) {
+		this.livros = livros;
+	}
+
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
 
 
-	public Autor getAutor() {
-		return autor;
-	}
-
-
-	public void setAutor(Autor autor) {
-		this.autor = autor;
-	}
-
-	public Livro getLivroForm() {
-		return livroForm;
-	}
-
-	public void setLivroForm(Livro livroForm) {
-		this.livroForm = livroForm;
+	public String index() {
+		return "/exemplo/index";
 	}
 
 }
