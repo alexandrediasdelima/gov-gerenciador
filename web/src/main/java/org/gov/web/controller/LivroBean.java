@@ -14,11 +14,18 @@ public class LivroBean extends Controller  {
 	 */
 	private static final long serialVersionUID = -7849970183863861263L;
 
-	private Livro livro = new Livro();
+	public LivroBean() {
+
+		livro = new Livro();
+		this.livros = new ArrayList<org.gov.model.Livro>();
+		this.livroService = new LivroServiceImpl();
+
+		livros();
+	}
+
+	private Livro livro;
 	private LivroService livroService;
 	private List<org.gov.model.Livro> livros;
-
-	private String view;
 
 
 	public String gravar() {
@@ -29,8 +36,6 @@ public class LivroBean extends Controller  {
 		livro.setData(this.livro.getDataLancamento());
 		livro.setPreco(this.livro.getPreco());
 
-		livroService = new LivroServiceImpl();
-
 		livroService.gravar(livro);
 		livros();
 
@@ -39,20 +44,15 @@ public class LivroBean extends Controller  {
 
 	public String livros() {
 
-		this.livros = new ArrayList<org.gov.model.Livro>();
-
 		setLivros(livroService.livros());
-
+		setView(LIST);
 		return eval(index());
 
 	}
 
-	public String getView() {
-		return view;
-	}
-
-	public void setView(String view) {
-		this.view = view;
+	public String adicionarBtnNovoLivro() {
+		setView(ADD);
+		return eval(index());
 	}
 
 	public List<org.gov.model.Livro> getLivros() {
