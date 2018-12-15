@@ -1,6 +1,7 @@
 package org.gov.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.gov.model.Livro;
@@ -23,7 +24,7 @@ public class LivroDaoImpl implements LivroDao {
 		Livro livro = new Livro();
 
 		livro.setAutor("Alexandre");
-		livro.setData("27/01/1991");
+		livro.setData(new Date());
 		livro.setPreco(100);
 		livro.setTitulo("Aventura do Dom");
 
@@ -31,7 +32,7 @@ public class LivroDaoImpl implements LivroDao {
 		Livro livroDois = new Livro();
 
 		livroDois.setAutor("Teste");
-		livroDois.setData("29/10/1991");
+		livroDois.setData(new Date());
 		livroDois.setPreco(50);
 		livroDois.setTitulo("Mundial");
 

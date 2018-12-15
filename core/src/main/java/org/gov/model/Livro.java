@@ -1,6 +1,7 @@
 package org.gov.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Livro implements Serializable {
 
@@ -11,7 +12,7 @@ public class Livro implements Serializable {
 
 	private String titulo;
 	private double preco;
-	private String data;
+	private Date data;
 	private String autor;
 
 	public String getTitulo() {
@@ -30,20 +31,20 @@ public class Livro implements Serializable {
 		this.preco = preco;
 	}
 
-	public String getData() {
-		return data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getAutor() {
 		return autor;
 	}
 
 	public void setAutor(String autor) {
 		this.autor = autor;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
 	}
 
 
