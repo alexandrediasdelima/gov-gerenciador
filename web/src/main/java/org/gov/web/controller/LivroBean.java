@@ -80,7 +80,6 @@ public class LivroBean extends Controller  {
 		livro.setPreco(this.livro.getPreco());
 
 		livroService.gravar(livro);
-		livros();
 		limparForm();
 		livros();
 
@@ -89,7 +88,6 @@ public class LivroBean extends Controller  {
 
 	public String deletar(org.gov.model.Livro livro) {
 
-		System.out.println(livro);
 
 		livros();
 
