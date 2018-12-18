@@ -16,11 +16,18 @@
 </h:head>
 <h:body>
 
-	<ui:include src="/template/menu.xhtml" />
+
+	<h:panelGroup rendered="#{sessionScope.usuarioLogado}">
+		<ui:include src="/template/menu.xhtml" />
+	</h:panelGroup>
+	<p:messages />
+	<h:panelGroup rendered="#{!sessionScope.usuarioLogado}">
+		<ui:include src="/login.xhtml" />
+	</h:panelGroup>
 
 	<h:panelGrid styleClass="cemPorCento"
 		columnClasses="menuPrincipal,conteudoPrincipal">
-		<p:messages />
+
 		<h:panelGroup>
 			<ui:insert name="body" />
 		</h:panelGroup>

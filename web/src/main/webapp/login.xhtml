@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+ <ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:p="http://primefaces.org/ui">
+
+
+		<h:form id="login" prependId="false">
+
+		<fieldset>
+			<legend>Login</legend>
+			<h:panelGrid columns="2">
+				<p:outputLabel value="Usuario:" for="usuario" />
+				<p:inputText id="usuario" value="#{loginBean.usuario.usuario}"  required="true" requiredMessage="Usuário Obrigatório"/>
+
+				<p:outputLabel value="Senha:" for="senha" />
+				<p:password id="senha" value="#{loginBean.usuario.senha}" required="true" requiredMessage="Senha Obrigatório" />
+
+				<p:commandButton value="Entrar" action="#{loginBean.verificarAcesso}" ajax="false" />
+
+			</h:panelGrid>
+		</fieldset>
+
+	</h:form>
+
+		<br />
+
+</ui:composition>

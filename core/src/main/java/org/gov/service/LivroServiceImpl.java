@@ -5,6 +5,7 @@ import java.util.List;
 import org.gov.dao.LivroDao;
 import org.gov.dao.LivroDaoImpl;
 import org.gov.model.Livro;
+import org.gov.model.Usuario;
 
 
 public class LivroServiceImpl implements LivroService{
@@ -28,9 +29,5 @@ public class LivroServiceImpl implements LivroService{
 
 		return livroDao.livros();
 	}
-
-
-
-
 
 }
