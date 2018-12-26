@@ -21,7 +21,7 @@
 				<p:inputText id="preco" value="#{livroBean.livro.preco}" />
 
 				<p:outputLabel value="Data de Lancamento:" for="data" />
-				<p:calendar id="data" value="#{livroBean.livro.dataLancamento}" showOn="button" />
+				<p:calendar id="data" value="#{livroBean.livro.data}" showOn="button" />
 
 
 				<p:commandButton value="Salvar" action="#{livroBean.gravar}" ajax="false" rendered="#{livroBean.view == 'add'}"/>

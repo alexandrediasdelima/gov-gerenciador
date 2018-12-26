@@ -7,9 +7,9 @@ import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
+import org.gov.model.Livro;
 import org.gov.service.LivroService;
 import org.gov.service.LivroServiceImpl;
-import org.gov.web.model.Livro;
 import org.primefaces.event.SelectEvent;
 
 public class LivroBean extends Controller  {
@@ -18,6 +18,11 @@ public class LivroBean extends Controller  {
 	 *
 	 */
 	private static final long serialVersionUID = -7849970183863861263L;
+
+	private Livro livro;
+	private LivroService livroService;
+	private List<org.gov.model.Livro> livros;
+
 
 	public LivroBean() {
 
@@ -28,18 +33,8 @@ public class LivroBean extends Controller  {
 		livros();
 	}
 
-	private Livro livro;
-	private LivroService livroService;
-	private List<org.gov.model.Livro> livros;
-
 
 	public String gravar() {
-
-		org.gov.model.Livro livro = new org.gov.model.Livro();
-
-		livro.setTitulo(this.livro.getTitulo());
-		livro.setData(this.livro.getDataLancamento());
-		livro.setPreco(this.livro.getPreco());
 
 		livroService.gravar(livro);
 		livros();
@@ -57,30 +52,20 @@ public class LivroBean extends Controller  {
 
 	public String adicionarBtnNovoLivro() {
 		setView(ADD);
+		limparForm();
 		return eval(index());
 	}
 
-	public String telaEditar(org.gov.model.Livro livro) {
+	public String telaEditar(Livro livro) {
 
-		this.livro.setTitulo(livro.getTitulo());
-		this.livro.setDataLancamento(livro.getData());
-		this.livro.setPreco(livro.getPreco());
-
+		this.livro = livro;
 		setView(EDIT);
-
 		return eval(index());
 	}
 
 	public String editar() {
 
-		org.gov.model.Livro livro = new org.gov.model.Livro();
-
-		livro.setTitulo(this.livro.getTitulo());
-		livro.setData(this.livro.getDataLancamento());
-		livro.setPreco(this.livro.getPreco());
-
-		livroService.gravar(livro);
-		limparForm();
+		livroService.editar(livro);
 		livros();
 
 		return eval(index());
@@ -88,16 +73,16 @@ public class LivroBean extends Controller  {
 
 	public String deletar(org.gov.model.Livro livro) {
 
-
+		livroService.remover(livro.getId());
 		livros();
-
 		return eval(index());
 	}
 
 	 private void limparForm() {
+		this.livro.setId(0);
 		this.livro.setTitulo(null);
 		this.livro.setPreco(0);
-		this.livro.setDataLancamento(null);
+		this.livro.setData(null);
 	}
 
 	public void onDateSelect(SelectEvent event) {

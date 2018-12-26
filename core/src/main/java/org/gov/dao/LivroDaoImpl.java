@@ -1,10 +1,12 @@
 package org.gov.dao;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
 import org.gov.model.Livro;
+import org.gov.util.JPAUtil;
 
 public class LivroDaoImpl implements LivroDao {
 
@@ -13,36 +15,60 @@ public class LivroDaoImpl implements LivroDao {
 	 */
 	private static final long serialVersionUID = -5779326521469749102L;
 
+
+
 	public String gravar(Livro livro) {
 
-		return null;
+			EntityManager entityManager = new JPAUtil().getEntityManager();
+
+			entityManager.getTransaction().begin();
+			entityManager.persist(livro);
+			entityManager.getTransaction().commit();
+
+			entityManager.close();
+
+		return "ok";
 	}
 
 	public List<Livro> livros() {
 
+		EntityManager entityManager = new JPAUtil().getEntityManager();
 
-		Livro livro = new Livro();
+		entityManager.getTransaction().begin();
 
-		livro.setAutor("Alexandre");
-		livro.setData(new Date());
-		livro.setPreco(100);
-		livro.setTitulo("Aventura do Dom");
+		Query query = entityManager.createQuery("FROM Livro");
 
+		List<Livro> livros = query.getResultList();
 
-		Livro livroDois = new Livro();
-
-		livroDois.setAutor("Teste");
-		livroDois.setData(new Date());
-		livroDois.setPreco(50);
-		livroDois.setTitulo("Mundial");
-
-		List<Livro> livros = new ArrayList<Livro>();
-
-		livros.add(livro);
-		livros.add(livroDois);
-
+		entityManager.getTransaction().commit();
 
 		return livros;
+	}
+
+	public String remover(int id) {
+
+		EntityManager entityManager = new JPAUtil().getEntityManager();
+
+		entityManager.getTransaction().begin();
+
+		Livro livro = entityManager.find(Livro.class, id);
+
+		entityManager.remove(livro);
+		entityManager.getTransaction().commit();
+
+		return "ok";
+	}
+
+	public String editar(Livro livro) {
+
+		EntityManager entityManager = new JPAUtil().getEntityManager();
+
+		entityManager.getTransaction().begin();
+		entityManager.merge(livro);
+		entityManager.getTransaction().commit();
+
+		return "ok";
+
 	}
 
 }

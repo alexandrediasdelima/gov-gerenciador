@@ -9,5 +9,7 @@ public interface LivroService extends Serializable {
 
 	public String gravar(Livro livro);
 	public List<Livro> livros();
+	public String remover(int id);
+	public String editar(Livro livro);
 
 }

@@ -5,6 +5,7 @@ import javax.faces.context.FacesContext;
 
 import org.gov.service.UsuarioService;
 import org.gov.service.UsuarioServiceImpl;
+import org.gov.util.JPAUtil;
 import org.gov.web.model.Usuario;
 
 public class LoginBean extends Controller {
@@ -37,7 +38,6 @@ public class LoginBean extends Controller {
 	public String deslogar() {
 		FacesContext context = FacesContext.getCurrentInstance();
 	    context.getExternalContext().getSessionMap().remove("usuarioLogado");
-
 	    return "/index.xhtml?faces-redirect=true";
 
 	}
