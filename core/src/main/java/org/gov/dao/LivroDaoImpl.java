@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import org.gov.model.Apac;
 import org.gov.model.Livro;
 import org.gov.util.JPAUtil;
 
@@ -20,8 +21,12 @@ public class LivroDaoImpl implements LivroDao {
 
 	public String gravar(Livro livro) {
 
+			Apac apac = new Apac();
+
+			apac.setAnalistaResponsavel("Alexandre");
+
 			entityManager.getTransaction().begin();
-			entityManager.persist(livro);
+			entityManager.persist(apac);
 			entityManager.getTransaction().commit();
 			entityManager.close();
 

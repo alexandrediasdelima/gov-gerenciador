@@ -1,0 +1,258 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+
+	<style type="text/css">
+.ui-datatable-header {
+	height: 50px
+}
+</style>
+
+	<h:form id="listarApacs" prependId="false">
+
+		<p:spacer height="1" />
+		<p:panelGrid styleClass="cemPorCento" id="uploadFileRow">
+
+			<p:row>
+				<p:column colspan="3" styleClass="ui-state-default">
+					<p:commandButton icon="ui-icon-plus" value="Adicionar"
+						action="#{apacBean.adicionarBtnNovoApac}" ajax="false" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+
+		<p:spacer height="1" />
+
+
+		<h:panelGrid>
+			<p:dataTable id="tabelaApacs" value="#{apacBean.apacs}"
+				paginator="true" paginatorPosition="bottom" rows="15" var="apac">
+
+				<p:column>
+					<f:facet name="header">Analista Responsável</f:facet>
+					<h:outputText value="#{apac.analistaResponsavel}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Ato Administrativo</f:facet>
+					<h:outputText
+						value="#{apac.atoAdministrativoPublicacaoInstrumento}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Data da Vistoria Apac</f:facet>
+					<h:outputText value="#{apac.dataVistoria}">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Data de Vencimento do Contrato</f:facet>
+					<h:outputText value="#{apac.dataVencimentoContrato}">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Data de Entrada do Processo na Apac</f:facet>
+					<h:outputText value="#{apac.dataEntradaProcessoApac}">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Data de Entrada do Processo na Cprh</f:facet>
+					<h:outputText value="#{apac.dataEntradaProcessoCprh}">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Data de inicio do Prazo de Outorga</f:facet>
+					<h:outputText value="#{apac.dataInicioPrazoOutorga}">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Data de Término do Prazo de Outorga</f:facet>
+					<h:outputText value="#{apac.dataTerminoPrazoOutorga}">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
+
+
+				<p:column>
+					<f:facet name="header">Garantia</f:facet>
+					<h:outputText value="#{apac.garantia}" />
+				</p:column>
+
+
+				<p:column>
+					<f:facet name="header">Nome da Obra</f:facet>
+					<h:outputText value="#{apac.nomeObra}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Número do Ato</f:facet>
+					<h:outputText value="#{apac.numeroAto}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Número da Notificação de Irregularidades</f:facet>
+					<h:outputText value="#{apac.numeroNotificacaoIrregularidadeApac}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Número da Notificação de Isenção</f:facet>
+					<h:outputText value="#{apac.numeroNotificacaoIsencaoApac}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Número de Horas para a Captação por Dia</f:facet>
+					<h:outputText value="#{apac.horasRequeridaParaCaptacaoPorDia}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Número do Termo</f:facet>
+						<h:outputText value="#{apac.numeroTermo}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Janeiro</f:facet>
+						<h:outputText value="#{apac.outorgaValidaJaneiro}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Fevereiro</f:facet>
+						<h:outputText value="#{apac.outorgaValidaFevereiro}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Março</f:facet>
+						<h:outputText value="#{apac.outorgaValidaMarco}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Abril</f:facet>
+						<h:outputText value="#{apac.outorgaValidaAbril}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Maio</f:facet>
+						<h:outputText value="#{apac.outorgaValidaMaio}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Junho</f:facet>
+						<h:outputText value="#{apac.outorgaValidaJunho}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Julho</f:facet>
+						<h:outputText value="#{apac.outorgaValidaJulho}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Agosto</f:facet>
+						<h:outputText value="#{apac.outorgaValidaAgosto}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Setembro</f:facet>
+						<h:outputText value="#{apac.outorgaValidaSetembro}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Outubro</f:facet>
+						<h:outputText value="#{apac.outorgaValidaOutubro}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Novembro</f:facet>
+						<h:outputText value="#{apac.outorgaValidaNovembro}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Outorga Válida Dezembro</f:facet>
+						<h:outputText value="#{apac.outorgaValidaDezembro}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Prazo da Notificação</f:facet>
+						<h:outputText value="#{apac.prazoNotificacao}">
+							<f:convertDateTime pattern="dd/MM/yyyy"
+								timeZone="America/Sao_Paulo" />
+						</h:outputText>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Número do Processo na Cprh</f:facet>
+						<h:outputText value="#{apac.numeroProcessoNaCprh}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Tipo de Obra</f:facet>
+						<h:outputText value="#{apac.tipoObra}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Número Vazão Outorgada em l/s</f:facet>
+						<h:outputText value="#{apac.vazaoOutorgada}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Número Vazão Outorgada em Média</f:facet>
+						<h:outputText value="#{apac.vazaoOutorgadaMedia}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Número Vazão Requerida l/s</f:facet>
+						<h:outputText value="#{apac.vazaoRequiridaLs}" />
+				</p:column>
+
+
+				<p:column>
+					<f:facet name="header">Número Vazão Requerida Média por Dia</f:facet>
+						<h:outputText value="#{apac.vazaoRequiridaMediaDia}" />
+				</p:column>
+
+
+				<p:column>
+					<f:facet name="header">Número do Processo</f:facet>
+						<h:outputText value="#{apac.numeroProcesso}" />
+				</p:column>
+
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Editar" />
+					</f:facet>
+					<p:commandButton action="#{apacBean.telaEditar(apac)}" value="Editar" ajax="false"
+						style="text-decoration: underline;">
+					</p:commandButton>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Deletar" />
+					</f:facet>
+					<p:commandButton action="#{apacBean.deletar(apac)}" value="Deletar" ajax="false" />
+				</p:column>
+			</p:dataTable>
+		</h:panelGrid>
+	</h:form>
+
+</ui:composition>

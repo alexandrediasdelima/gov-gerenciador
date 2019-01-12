@@ -11,6 +11,7 @@
 		<!-- Aqui são listadas todas as entidades -->
 
 		<class>org.gov.model.Livro</class>
+		<class>org.gov.model.Apac</class>
 
 		<properties>
 			<!-- Propriedades JDBC -->

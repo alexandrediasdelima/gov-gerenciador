@@ -3,10 +3,12 @@ package org.gov.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 @Entity
@@ -18,10 +20,14 @@ public class Livro implements Serializable {
 	private static final long serialVersionUID = 4761707641349322701L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue
 	private int id;
 	private String titulo;
+
+	@Column(name = "preco", columnDefinition = "numeric")
 	private double preco;
+
+	@Temporal(TemporalType.DATE)
 	private Date data;
 
 	public String getTitulo() {
