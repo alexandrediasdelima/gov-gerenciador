@@ -1,0 +1,8 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Sat Jan 12 19:21:15 BRST 2019
+http\://spobrnxs01-pi\:8081/nexus/content/repositories/thirdparty/.lastUpdated=1547328074795
+http\://spobrnxs01-pi\:8081/nexus/content/groups/public/.error=Could not transfer artifact org.jboss\:jboss-parent\:pom\:12 from/to corporate (http\://spobrnxs01-pi\:8081/nexus/content/groups/public/)\: C\:\\Users\\smj2081\\.m2\\repository\\org\\jboss\\jboss-parent\\12\\jboss-parent-12.pom.ahc2b71e7af1c1e44ff (O sistema n\u00E3o pode encontrar o arquivo especificado)
+http\://spobrnxs01-pi\:8081/nexus/content/repositories/releases/.lastUpdated=1547328071685
+default-http\://spobrnxs01-pi\:8081/nexus/content/groups/public/.lastUpdated=1547328075326
+http\://spobrnxs01-pi\:8081/nexus/content/repositories/releases/.error=
+http\://spobrnxs01-pi\:8081/nexus/content/repositories/thirdparty/.error=
