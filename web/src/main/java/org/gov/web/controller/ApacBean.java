@@ -8,11 +8,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 import org.gov.model.Apac;
-import org.gov.model.Livro;
 import org.gov.service.ApacService;
 import org.gov.service.ApacServiceImpl;
-import org.gov.service.LivroService;
-import org.gov.service.LivroServiceImpl;
 import org.primefaces.event.SelectEvent;
 
 public class ApacBean extends Controller  {
@@ -43,6 +40,7 @@ public class ApacBean extends Controller  {
 	public String gravar() {
 
 		apacService.gravar(apac);
+		apacs();
 
 		return eval(index());
 	}
@@ -76,18 +74,18 @@ public class ApacBean extends Controller  {
 		return eval(index());
 	}
 
-	public String deletar(org.gov.model.Livro livro) {
+	public String deletar(Apac apac) {
 
-		//livroService.remover(livro.getId());
-		//livros();
+		apacService.remover(apac.getNumeroProcesso());
+		apacs();
 		return eval(index());
 	}
 
 	 private void limparForm() {
-//		this.livro.setId(0);
-//		this.livro.setTitulo(null);
-//		this.livro.setPreco(0);
-//		this.livro.setData(null);
+
+		 this.apac.setAnalistaResponsavel(null);
+		 this.apac.setAtoAdministrativoPublicacaoInstrumento("null");
+
 	}
 
 	public void onDateSelect(SelectEvent event) {

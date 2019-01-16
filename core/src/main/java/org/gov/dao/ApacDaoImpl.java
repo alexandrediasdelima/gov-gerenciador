@@ -45,17 +45,17 @@ public class ApacDaoImpl implements ApacDao {
 		return apacs;
 	}
 
-//	public String remover(int id) {
-//
-//		entityManager.getTransaction().begin();
-//		Livro livro = entityManager.find(Livro.class, id);
-//
-//		entityManager.remove(livro);
-//		entityManager.getTransaction().commit();
-//		entityManager.close();
-//
-//		return "ok";
-//	}
+	public String remover(String id) {
+
+		entityManager.getTransaction().begin();
+		Apac apac = entityManager.find(Apac.class, id);
+
+		entityManager.remove(apac);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return "ok";
+	}
 
 	public String editar(Apac apac) {
 

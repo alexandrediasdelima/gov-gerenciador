@@ -9,7 +9,7 @@ public interface ApacService extends Serializable {
 
 	public String gravar(Apac apac);
 	public List<Apac> apacs();
-//	public String remover(int id);
+	public String remover(String id);
 	public String editar(Apac apac);
 
 }

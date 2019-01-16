@@ -30,12 +30,12 @@ public class ApacServiceImpl implements ApacService{
 		apacDao = new ApacDaoImpl();
 		return apacDao.apacs();
 	}
-//
-//	public String remover(int id) {
-//		livroDao = new LivroDaoImpl();
-//		return livroDao.remover(id);
-//	}
-//
+
+	public String remover(String id) {
+		apacDao = new ApacDaoImpl();
+		return apacDao.remover(id);
+	}
+
 	public String editar(Apac apac) {
 
 		apacDao = new ApacDaoImpl();

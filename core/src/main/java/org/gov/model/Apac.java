@@ -6,12 +6,15 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name= "tb_apac")
@@ -135,16 +138,14 @@ public class Apac implements Serializable {
 	@Column(name = "apa_vz_requerida_m3dia", columnDefinition="numeric")
 	private BigDecimal vazaoRequiridaMediaDia;
 
-	@Column(name = "out_tpo_cd", columnDefinition="out_tpo_enum")
-	@Enumerated
+	@Column(name = "out_tpo_cd")
 	@Transient
-	private CodigoIdentificador codigoIdentificador = CodigoIdentificador.CINCO;
+	private String out_tpo_cd = "DRDH";
 
 	@Column(name = "out_tsp_cd", columnDefinition="out_tsp_enum")
 	@Enumerated
 	@Transient
-	private CodigoIdentificador codigoIdentificadorAtoAdministrativo = CodigoIdentificador.SEIS;
-
+	private String out_tsp_cd;
 
 
 	public String getAnalistaResponsavel() {
@@ -407,23 +408,6 @@ public class Apac implements Serializable {
 		this.vazaoRequiridaMediaDia = vazaoRequiridaMediaDia;
 	}
 
-	public CodigoIdentificador getCodigoIdentificador() {
-		return codigoIdentificador;
-	}
-
-	public void setCodigoIdentificador(CodigoIdentificador codigoIdentificador) {
-		this.codigoIdentificador = codigoIdentificador;
-	}
-
-	public CodigoIdentificador getCodigoIdentificadorAtoAdministrativo() {
-		return codigoIdentificadorAtoAdministrativo;
-	}
-
-	public void setCodigoIdentificadorAtoAdministrativo(
-			CodigoIdentificador codigoIdentificadorAtoAdministrativo) {
-		this.codigoIdentificadorAtoAdministrativo = codigoIdentificadorAtoAdministrativo;
-	}
-
 	public String getNumeroProcesso() {
 		return numeroProcesso;
 	}
@@ -446,6 +430,14 @@ public class Apac implements Serializable {
 
 	public void setVazaoOutorgadaMedia(BigDecimal vazaoOutorgadaMedia) {
 		this.vazaoOutorgadaMedia = vazaoOutorgadaMedia;
+	}
+
+	public String getOut_tpo_cd() {
+		return out_tpo_cd;
+	}
+
+	public void setOut_tpo_cd(String out_tpo_cd) {
+		this.out_tpo_cd = out_tpo_cd;
 	}
 
 }
