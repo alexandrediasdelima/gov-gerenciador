@@ -84,7 +84,40 @@ public class ApacBean extends Controller  {
 	 private void limparForm() {
 
 		 this.apac.setAnalistaResponsavel(null);
-		 this.apac.setAtoAdministrativoPublicacaoInstrumento("null");
+		 this.apac.setAtoAdministrativoPublicacaoInstrumento(null);
+		 this.apac.setDataEntradaProcessoApac(null);
+		 this.apac.setDataEntradaProcessoCprh(null);
+		 this.apac.setDataInicioPrazoOutorga(null);
+		 this.apac.setDataTerminoPrazoOutorga(null);
+		 this.apac.setDataVencimentoContrato(null);
+		 this.apac.setDataVistoria(null);
+		 this.apac.setGarantia(null);
+		 this.apac.setHorasRequeridaParaCaptacaoPorDia(null);
+		 this.apac.setNomeObra(null);
+		 this.apac.setNumeroAto(null);
+		 this.apac.setNumeroNotificacaoIrregularidadeApac(null);
+		 this.apac.setNumeroNotificacaoIsencaoApac(null);
+		 this.apac.setNumeroProcesso(null);
+		 this.apac.setNumeroProcessoNaCprh(null);
+		 this.apac.setNumeroTermo(null);
+		 this.apac.setOutorgaValidaAbril(null);
+		 this.apac.setOutorgaValidaAgosto(null);
+		 this.apac.setOutorgaValidaDezembro(null);
+		 this.apac.setOutorgaValidaFevereiro(null);
+		 this.apac.setOutorgaValidaJaneiro(null);
+		 this.apac.setOutorgaValidaJulho(null);
+		 this.apac.setOutorgaValidaJunho(null);
+		 this.apac.setOutorgaValidaMaio(null);
+		 this.apac.setOutorgaValidaMarco(null);
+		 this.apac.setOutorgaValidaNovembro(null);
+		 this.apac.setOutorgaValidaOutubro(null);
+		 this.apac.setOutorgaValidaSetembro(null);
+		 this.apac.setPrazoNotificacao(null);
+		 this.apac.setTipoObra(null);
+		 this.apac.setVazaoOutorgada(null);
+		 this.apac.setVazaoOutorgadaMedia(null);
+		 this.apac.setVazaoRequiridaLs(null);
+		 this.apac.setVazaoRequiridaMediaDia(null);
 
 	}
 

@@ -6,15 +6,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-
-import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name= "tb_apac")
@@ -81,40 +78,40 @@ public class Apac implements Serializable {
 	private String numeroTermo;
 
 	@Column(name = "apa_outorga_jan")
-	private boolean outorgaValidaJaneiro;
+	private Boolean outorgaValidaJaneiro;
 
 	@Column(name = "apa_outorga_fev")
-	private boolean outorgaValidaFevereiro;
+	private Boolean outorgaValidaFevereiro;
 
 	@Column(name = "apa_outorga_mar")
-	private boolean outorgaValidaMarco;
+	private Boolean outorgaValidaMarco;
 
 	@Column(name = "apa_outorga_abr")
-	private boolean outorgaValidaAbril;
+	private Boolean outorgaValidaAbril;
 
 	@Column(name = "apa_outorga_mai")
-	private boolean outorgaValidaMaio;
+	private Boolean outorgaValidaMaio;
 
 	@Column(name = "apa_outorga_jun")
-	private boolean outorgaValidaJunho;
+	private Boolean outorgaValidaJunho;
 
 	@Column(name = "apa_outorga_jul")
-	private boolean outorgaValidaJulho;
+	private Boolean outorgaValidaJulho;
 
 	@Column(name = "apa_outorga_ago")
-	private boolean outorgaValidaAgosto;
+	private Boolean outorgaValidaAgosto;
 
 	@Column(name = "apa_outorga_set")
-	private boolean outorgaValidaSetembro;
+	private Boolean outorgaValidaSetembro;
 
 	@Column(name = "apa_outorga_out")
-	private boolean outorgaValidaOutubro;
+	private Boolean outorgaValidaOutubro;
 
 	@Column(name = "apa_outorga_nov")
-	private boolean outorgaValidaNovembro;
+	private Boolean outorgaValidaNovembro;
 
 	@Column(name = "apa_outorga_dez")
-	private boolean outorgaValidaDezembro;
+	private Boolean outorgaValidaDezembro;
 
 	@Column(name = "apa_prazo_notificacao")
 	@Temporal(TemporalType.DATE)
@@ -264,102 +261,6 @@ public class Apac implements Serializable {
 		this.horasRequeridaParaCaptacaoPorDia = horasRequeridaParaCaptacaoPorDia;
 	}
 
-	public boolean isOutorgaValidaJaneiro() {
-		return outorgaValidaJaneiro;
-	}
-
-	public void setOutorgaValidaJaneiro(boolean outorgaValidaJaneiro) {
-		this.outorgaValidaJaneiro = outorgaValidaJaneiro;
-	}
-
-	public boolean isOutorgaValidaFevereiro() {
-		return outorgaValidaFevereiro;
-	}
-
-	public void setOutorgaValidaFevereiro(boolean outorgaValidaFevereiro) {
-		this.outorgaValidaFevereiro = outorgaValidaFevereiro;
-	}
-
-	public boolean isOutorgaValidaMarco() {
-		return outorgaValidaMarco;
-	}
-
-	public void setOutorgaValidaMarco(boolean outorgaValidaMarco) {
-		this.outorgaValidaMarco = outorgaValidaMarco;
-	}
-
-	public boolean isOutorgaValidaAbril() {
-		return outorgaValidaAbril;
-	}
-
-	public void setOutorgaValidaAbril(boolean outorgaValidaAbril) {
-		this.outorgaValidaAbril = outorgaValidaAbril;
-	}
-
-	public boolean isOutorgaValidaMaio() {
-		return outorgaValidaMaio;
-	}
-
-	public void setOutorgaValidaMaio(boolean outorgaValidaMaio) {
-		this.outorgaValidaMaio = outorgaValidaMaio;
-	}
-
-	public boolean isOutorgaValidaJunho() {
-		return outorgaValidaJunho;
-	}
-
-	public void setOutorgaValidaJunho(boolean outorgaValidaJunho) {
-		this.outorgaValidaJunho = outorgaValidaJunho;
-	}
-
-	public boolean isOutorgaValidaJulho() {
-		return outorgaValidaJulho;
-	}
-
-	public void setOutorgaValidaJulho(boolean outorgaValidaJulho) {
-		this.outorgaValidaJulho = outorgaValidaJulho;
-	}
-
-	public boolean isOutorgaValidaAgosto() {
-		return outorgaValidaAgosto;
-	}
-
-	public void setOutorgaValidaAgosto(boolean outorgaValidaAgosto) {
-		this.outorgaValidaAgosto = outorgaValidaAgosto;
-	}
-
-	public boolean isOutorgaValidaSetembro() {
-		return outorgaValidaSetembro;
-	}
-
-	public void setOutorgaValidaSetembro(boolean outorgaValidaSetembro) {
-		this.outorgaValidaSetembro = outorgaValidaSetembro;
-	}
-
-	public boolean isOutorgaValidaOutubro() {
-		return outorgaValidaOutubro;
-	}
-
-	public void setOutorgaValidaOutubro(boolean outorgaValidaOutubro) {
-		this.outorgaValidaOutubro = outorgaValidaOutubro;
-	}
-
-	public boolean isOutorgaValidaNovembro() {
-		return outorgaValidaNovembro;
-	}
-
-	public void setOutorgaValidaNovembro(boolean outorgaValidaNovembro) {
-		this.outorgaValidaNovembro = outorgaValidaNovembro;
-	}
-
-	public boolean isOutorgaValidaDezembro() {
-		return outorgaValidaDezembro;
-	}
-
-	public void setOutorgaValidaDezembro(boolean outorgaValidaDezembro) {
-		this.outorgaValidaDezembro = outorgaValidaDezembro;
-	}
-
 	public Date getPrazoNotificacao() {
 		return prazoNotificacao;
 	}
@@ -438,6 +339,102 @@ public class Apac implements Serializable {
 
 	public void setOut_tpo_cd(String out_tpo_cd) {
 		this.out_tpo_cd = out_tpo_cd;
+	}
+
+	public Boolean getOutorgaValidaJaneiro() {
+		return outorgaValidaJaneiro;
+	}
+
+	public void setOutorgaValidaJaneiro(Boolean outorgaValidaJaneiro) {
+		this.outorgaValidaJaneiro = outorgaValidaJaneiro;
+	}
+
+	public Boolean getOutorgaValidaFevereiro() {
+		return outorgaValidaFevereiro;
+	}
+
+	public void setOutorgaValidaFevereiro(Boolean outorgaValidaFevereiro) {
+		this.outorgaValidaFevereiro = outorgaValidaFevereiro;
+	}
+
+	public Boolean getOutorgaValidaMarco() {
+		return outorgaValidaMarco;
+	}
+
+	public void setOutorgaValidaMarco(Boolean outorgaValidaMarco) {
+		this.outorgaValidaMarco = outorgaValidaMarco;
+	}
+
+	public Boolean getOutorgaValidaAbril() {
+		return outorgaValidaAbril;
+	}
+
+	public void setOutorgaValidaAbril(Boolean outorgaValidaAbril) {
+		this.outorgaValidaAbril = outorgaValidaAbril;
+	}
+
+	public Boolean getOutorgaValidaMaio() {
+		return outorgaValidaMaio;
+	}
+
+	public void setOutorgaValidaMaio(Boolean outorgaValidaMaio) {
+		this.outorgaValidaMaio = outorgaValidaMaio;
+	}
+
+	public Boolean getOutorgaValidaJunho() {
+		return outorgaValidaJunho;
+	}
+
+	public void setOutorgaValidaJunho(Boolean outorgaValidaJunho) {
+		this.outorgaValidaJunho = outorgaValidaJunho;
+	}
+
+	public Boolean getOutorgaValidaJulho() {
+		return outorgaValidaJulho;
+	}
+
+	public void setOutorgaValidaJulho(Boolean outorgaValidaJulho) {
+		this.outorgaValidaJulho = outorgaValidaJulho;
+	}
+
+	public Boolean getOutorgaValidaAgosto() {
+		return outorgaValidaAgosto;
+	}
+
+	public void setOutorgaValidaAgosto(Boolean outorgaValidaAgosto) {
+		this.outorgaValidaAgosto = outorgaValidaAgosto;
+	}
+
+	public Boolean getOutorgaValidaSetembro() {
+		return outorgaValidaSetembro;
+	}
+
+	public void setOutorgaValidaSetembro(Boolean outorgaValidaSetembro) {
+		this.outorgaValidaSetembro = outorgaValidaSetembro;
+	}
+
+	public Boolean getOutorgaValidaOutubro() {
+		return outorgaValidaOutubro;
+	}
+
+	public void setOutorgaValidaOutubro(Boolean outorgaValidaOutubro) {
+		this.outorgaValidaOutubro = outorgaValidaOutubro;
+	}
+
+	public Boolean getOutorgaValidaNovembro() {
+		return outorgaValidaNovembro;
+	}
+
+	public void setOutorgaValidaNovembro(Boolean outorgaValidaNovembro) {
+		this.outorgaValidaNovembro = outorgaValidaNovembro;
+	}
+
+	public Boolean getOutorgaValidaDezembro() {
+		return outorgaValidaDezembro;
+	}
+
+	public void setOutorgaValidaDezembro(Boolean outorgaValidaDezembro) {
+		this.outorgaValidaDezembro = outorgaValidaDezembro;
 	}
 
 }
