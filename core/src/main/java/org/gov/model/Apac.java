@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,8 +14,15 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import org.gov.util.PostgreSQLEnumType;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+
 @Entity
 @Table(name= "tb_apac")
+@TypeDef(
+	    name = "pgsql_enum",
+	    typeClass = PostgreSQLEnumType.class)
 public class Apac implements Serializable {
 
 	/**
@@ -135,9 +143,11 @@ public class Apac implements Serializable {
 	@Column(name = "apa_vz_requerida_m3dia", columnDefinition="numeric")
 	private BigDecimal vazaoRequiridaMediaDia;
 
+	@Enumerated(EnumType.STRING)
 	@Column(name = "out_tpo_cd")
+	@Type( type = "pgsql_enum" )
 	@Transient
-	private String out_tpo_cd = "DRDH";
+	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.CADASTRO;
 
 	@Column(name = "out_tsp_cd", columnDefinition="out_tsp_enum")
 	@Enumerated
@@ -333,14 +343,6 @@ public class Apac implements Serializable {
 		this.vazaoOutorgadaMedia = vazaoOutorgadaMedia;
 	}
 
-	public String getOut_tpo_cd() {
-		return out_tpo_cd;
-	}
-
-	public void setOut_tpo_cd(String out_tpo_cd) {
-		this.out_tpo_cd = out_tpo_cd;
-	}
-
 	public Boolean getOutorgaValidaJaneiro() {
 		return outorgaValidaJaneiro;
 	}
@@ -435,6 +437,14 @@ public class Apac implements Serializable {
 
 	public void setOutorgaValidaDezembro(Boolean outorgaValidaDezembro) {
 		this.outorgaValidaDezembro = outorgaValidaDezembro;
+	}
+
+	public Out_tpo_cd getOut_tpo_cd() {
+		return out_tpo_cd;
+	}
+
+	public void setOut_tpo_cd(Out_tpo_cd out_tpo_cd) {
+		this.out_tpo_cd = out_tpo_cd;
 	}
 
 }
