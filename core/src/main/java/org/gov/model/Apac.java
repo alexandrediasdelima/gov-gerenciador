@@ -146,11 +146,10 @@ public class Apac implements Serializable {
 
 	//Problema
 	@Enumerated(EnumType.STRING)
-	@Column(name = "out_tpo_cd")
-	@Type( type = "pgsql_enum")
-	@Transient
+	@Column(name = "out_tpo_cd", columnDefinition = "varchar(50)")
+	@Type(type = "org.gov.util.PostgreSQLEnumType")
+//	@Transient
 	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.CADASTRO;
-
 
 	//Ignorar
 	@Column(name = "out_tsp_cd", columnDefinition="out_tsp_enum")
