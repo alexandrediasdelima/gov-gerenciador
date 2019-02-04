@@ -1,0 +1,260 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+
+	<style type="text/css">
+		.ui-datatable-header {
+			height: 50px
+		}
+	</style>
+
+	<h:form id="listarCnarhs" prependId="false">
+
+		<p:spacer height="1" />
+		<p:panelGrid styleClass="cemPorCento" id="uploadFileRow">
+
+			<p:row>
+				<p:column colspan="3" styleClass="ui-state-default">
+					<p:commandButton icon="ui-icon-plus" value="Adicionar"
+						action="#{cnarhBean.adicionarBtnNovoCnarh}" ajax="false" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+
+		<p:spacer height="1" />
+
+
+		<h:panelGrid>
+			<p:dataTable id="tabelaCnarhs" value="#{cnarhBean.cnarhs}"
+				paginator="true" paginatorPosition="bottom" rows="15" var="cnarh">
+				
+				
+				
+				
+				
+
+				<p:column>
+<f:facet name="header">cnarh_id</f:facet>
+<h:outputText value="#{cnarh. cnarh_id}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_nu_cotaterreno</f:facet>
+<h:outputText value="#{cnarh. asb_nu_cotaterreno}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_nu_alturabocatubo</f:facet>
+<h:outputText value="#{cnarh. asb_nu_alturabocatubo}" />
+</p:column>
+<p:column>
+<f:facet name="header">ius_nu_alturares</f:facet>
+<h:outputText value="#{cnarh. ius_nu_alturares}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_calcio</f:facet>
+<h:outputText value="#{cnarh. ama_qt_calcio}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_cloreto</f:facet>
+<h:outputText value="#{cnarh. ama_qt_cloreto}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_carbonato</f:facet>
+<h:outputText value="#{cnarh. ama_qt_carbonato}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_durezatotal</f:facet>
+<h:outputText value="#{cnarh. ama_qt_durezatotal}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_fluoretos</f:facet>
+<h:outputText value="#{cnarh. ama_qt_fluoretos}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_ferrototal</f:facet>
+<h:outputText value="#{cnarh. ama_qt_ferrototal}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_bicarbonato</f:facet>
+<h:outputText value="#{cnarh. ama_qt_bicarbonato}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_potassio</f:facet>
+<h:outputText value="#{cnarh. ama_qt_potassio}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_magnesio</f:facet>
+<h:outputText value="#{cnarh. ama_qt_magnesio}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_sodio</f:facet>
+<h:outputText value="#{cnarh. ama_qt_sodio}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_nitritos</f:facet>
+<h:outputText value="#{cnarh. ama_qt_nitritos}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_nitratos</f:facet>
+<h:outputText value="#{cnarh. ama_qt_nitratos}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_sulfato</f:facet>
+<h:outputText value="#{cnarh. ama_qt_sulfato}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_aqp_cd</f:facet>
+<h:outputText value="#{cnarh. asb_aqp_cd}" />
+</p:column>
+<p:column>
+<f:facet name="header">ius_ar_resmax</f:facet>
+<h:outputText value="#{cnarh. ius_ar_resmax}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_nu_coeficientearmazenamento</f:facet>
+<h:outputText value="#{cnarh. tst_nu_coeficientearmazenamento}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_nu_condutividadeeletrica</f:facet>
+<h:outputText value="#{cnarh. ama_nu_condutividadeeletrica}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_nu_condutividadehidraulica</f:facet>
+<h:outputText value="#{cnarh. tst_nu_condutividadehidraulica}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_dt_analise</f:facet>
+<h:outputText value="#{cnarh. ama_dt_analise}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_dt_coleta</f:facet>
+<h:outputText value="#{cnarh. ama_dt_coleta}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_dt_instalacao</f:facet>
+<h:outputText value="#{cnarh. asb_dt_instalacao}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_dt</f:facet>
+<h:outputText value="#{cnarh. tst_dt}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_nu_diametroperfuracao</f:facet>
+<h:outputText value="#{cnarh. asb_nu_diametroperfuracao}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_nu_diametrofiltro</f:facet>
+<h:outputText value="#{cnarh. asb_nu_diametrofiltro}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_ds_tempoduracao</f:facet>
+<h:outputText value="#{cnarh. tst_ds_tempoduracao}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_nu_nd</f:facet>
+<h:outputText value="#{cnarh. tst_nu_nd}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_nu_ne</f:facet>
+<h:outputText value="#{cnarh. tst_nu_ne}" />
+</p:column>
+<p:column>
+<f:facet name="header">int_nu_siagas</f:facet>
+<h:outputText value="#{cnarh. int_nu_siagas}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_coliformesfecais</f:facet>
+<h:outputText value="#{cnarh. ama_qt_coliformesfecais}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_coliformestotais</f:facet>
+<h:outputText value="#{cnarh. ama_qt_coliformestotais}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_nu_permeabilidade</f:facet>
+<h:outputText value="#{cnarh. tst_nu_permeabilidade}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_ph</f:facet>
+<h:outputText value="#{cnarh. ama_qt_ph}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_nu_base</f:facet>
+<h:outputText value="#{cnarh. asb_nu_base}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_nu_topo</f:facet>
+<h:outputText value="#{cnarh. asb_nu_topo}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_std</f:facet>
+<h:outputText value="#{cnarh. ama_qt_std}" />
+</p:column>
+<p:column>
+<f:facet name="header">ama_qt_temperatura</f:facet>
+<h:outputText value="#{cnarh. ama_qt_temperatura}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_nu_transmissividade</f:facet>
+<h:outputText value="#{cnarh. tst_nu_transmissividade}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_vz_estabilizacao</f:facet>
+<h:outputText value="#{cnarh. tst_vz_estabilizacao}" />
+</p:column>
+<p:column>
+<f:facet name="header">ius_vo_resmax</f:facet>
+<h:outputText value="#{cnarh. ius_vo_resmax}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_tnp_cd</f:facet>
+<h:outputText value="#{cnarh. asb_tnp_cd}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_tpn_cd</f:facet>
+<h:outputText value="#{cnarh. asb_tpn_cd}" />
+</p:column>
+<p:column>
+<f:facet name="header">asb_tca_cd</f:facet>
+<h:outputText value="#{cnarh. asb_tca_cd}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_ttb_cd</f:facet>
+<h:outputText value="#{cnarh. tst_ttb_cd}" />
+</p:column>
+<p:column>
+<f:facet name="header">tst_tmi_cd</f:facet>
+<h:outputText value="#{cnarh. tst_tmi_cd}" />
+</p:column>
+							
+
+
+
+
+
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Editar" />
+					</f:facet>
+					<p:commandButton action="#{cnarhBean.telaEditar(cnarh)}" value="Editar" ajax="false"
+						style="text-decoration: underline;">
+					</p:commandButton>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Deletar" />
+					</f:facet>
+					<p:commandButton action="#{cnarhBean.deletar(cnarh)}" value="Deletar" ajax="false" />
+				</p:column>
+			</p:dataTable>
+		</h:panelGrid>
+	</h:form>
+
+</ui:composition>

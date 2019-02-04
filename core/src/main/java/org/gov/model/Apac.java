@@ -147,7 +147,7 @@ public class Apac implements Serializable {
 	@Column(name = "out_tpo_cd")
 	@Type( type = "pgsql_enum" )
 	@Transient
-	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.CADASTRO;
+	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.LICENCA_AUTORIZACAO_PERFURACAO_POCOS;
 
 	@Column(name = "out_tsp_cd", columnDefinition="out_tsp_enum")
 	@Enumerated

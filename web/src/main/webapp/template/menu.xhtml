@@ -9,25 +9,23 @@
 	<h:form>
 	<p:menubar>
 		<p:menuitem value="Home" url="/index.xhtml" icon="ui-icon-home" />
-
-		<p:submenu label="teste1" icon="ui-icon-gear" >
-           	<p:menuitem value="Livro" url="/exemplo/" icon="ui-icon-wrench" />
-           	<p:menuitem value="Apac" url="/apac/" icon="ui-icon-wrench" />
-       	</p:submenu>
-
-		<p:submenu label="Teste2" icon="ui-icon-star" >
-           	<p:menuitem value="teste5" url="/acoesEstrategicas/" icon="ui-icon-tag" />
-           	<p:menuitem value="teste6" url="/acoesEstrategicas/" icon="ui-icon-bullet" />
-           	<p:menuitem value="teste6" url="/acoesEstrategicas/" icon="ui-icon-tag" />
-           	<p:menuitem value="teste6" url="/acoesEstrategicas/" icon="ui-icon-alert" />
-
+		<p:menuitem value="Apac" url= "/apac/" icon="ui-icon-check"/>
+		<p:menuitem value="Cnarh" url= "/cnarh/" icon="ui-icon-check"/>
+		<p:submenu label="Usuário" icon="ui-icon-circle-arrow-s">
+           	<p:menuitem value="Usuário" url="#" icon="ui-icon-check" />
+           	<p:menuitem value="Fornecedor" url="#" icon="ui-icon-check" />
+           	<p:submenu label="Empreendimento" icon="ui-icon-circle-arrow-s">
+           		<p:menuitem value="Empreendimento" url="#" icon="ui-icon-check" />
+				<p:menuitem value="Outras Informações" url="#" icon="ui-icon-check" />
+				<p:menuitem value="Interferência" url="#" icon="ui-icon-check" />
+           	</p:submenu>
        	</p:submenu>
 
        	<p:menuitem value="Sair" action="#{loginBean.deslogar}" ajax="false" icon="ui-icon-close" />
 
-       	<f:facet name="options">
+       	<!--f:facet name="options">
           	<h:outputText style="margin-right:10px" value="Login" styleClass="negrito" />
-       	</f:facet>
+       	</f:facet-->
 	</p:menubar>
 
 

@@ -20,9 +20,15 @@
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 
-		<managed-bean>
+	<managed-bean>
 		<managed-bean-name>apacBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.ApacBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>cnarhBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.CnarhBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 

@@ -1,0 +1,178 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+
+
+	<h:form id="addCnarh" prependId="false">
+
+		<fieldset>
+			<legend> <b>Dados CNARH</b></legend>
+			<h:panelGrid columns="2">
+			
+				<p:outputLabel value="Id CNARH:" for="idCnarh" />
+				<p:inputText id="idCnarh" value="#{cnarhBean.cnarh.cnarh_id}" required="true" requiredMessage="Id Obrigatório" />
+				
+				<p:outputLabel value="asb_nu_cotaterreno" for="asb_nu_cotaterreno" />
+				<p:inputMask mask="9?99999999.99" id="asb_nu_cotaterreno" value="#{cnarhBean.cnarh.asb_nu_cotaterreno}" />
+				
+				<p:outputLabel value="asb_nu_alturabocatubo" for="asb_nu_alturabocatubo" />
+				<p:inputMask mask="9?999.99" id="asb_nu_alturabocatubo" value="#{cnarhBean.cnarh.asb_nu_alturabocatubo}" />
+				
+				<p:outputLabel value="ius_nu_alturares" for="ius_nu_alturares" />
+				<p:inputMask mask="9?99999999999999.99" id="ius_nu_alturares" value="#{cnarhBean.cnarh.ius_nu_alturares}" />
+				
+				<p:outputLabel value="ama_qt_calcio" for="ama_qt_calcio" />
+				<p:inputMask mask="?999999999" id="ama_qt_calcio" value="#{cnarhBean.cnarh.ama_qt_calcio}" />
+				
+				<p:outputLabel value="ama_qt_cloreto" for="ama_qt_cloreto" />
+				<p:inputMask mask="?999999999" id="ama_qt_cloreto" value="#{cnarhBean.cnarh.ama_qt_cloreto}" />
+				
+				<p:outputLabel value="ama_qt_carbonato" for="ama_qt_carbonato" />
+				<p:inputMask mask="?999999999" id="ama_qt_carbonato" value="#{cnarhBean.cnarh.ama_qt_carbonato}" />
+				
+				<p:outputLabel value="ama_qt_durezatotal" for="ama_qt_durezatotal" />
+				<p:inputMask mask="?999999999" id="ama_qt_durezatotal" value="#{cnarhBean.cnarh.ama_qt_durezatotal}" />
+				
+				<p:outputLabel value="ama_qt_fluoretos" for="ama_qt_fluoretos" />
+				<p:inputMask mask="?999999999" id="ama_qt_fluoretos" value="#{cnarhBean.cnarh.ama_qt_fluoretos}" />
+				
+				<p:outputLabel value="ama_qt_ferrototal" for="ama_qt_ferrototal" />
+				<p:inputMask mask="?999999999" id="ama_qt_ferrototal" value="#{cnarhBean.cnarh.ama_qt_ferrototal}" />
+				
+				<p:outputLabel value="ama_qt_bicarbonato" for="ama_qt_bicarbonato" />
+				<p:inputMask mask="?999999999" id="ama_qt_bicarbonato" value="#{cnarhBean.cnarh.ama_qt_bicarbonato}" />
+				
+				<p:outputLabel value="ama_qt_potassio" for="ama_qt_potassio" />
+				<p:inputMask mask="?999999999" id="ama_qt_potassio" value="#{cnarhBean.cnarh.ama_qt_potassio}" />
+				
+				<p:outputLabel value="ama_qt_magnesio" for="ama_qt_magnesio" />
+				<p:inputMask mask="?999999999" id="ama_qt_magnesio" value="#{cnarhBean.cnarh.ama_qt_magnesio}" />
+				
+				<p:outputLabel value="ama_qt_sodio" for="ama_qt_sodio" />
+				<p:inputMask mask="?999999999" id="ama_qt_sodio" value="#{cnarhBean.cnarh.ama_qt_sodio}" />
+				
+				<p:outputLabel value="ama_qt_nitritos" for="ama_qt_nitritos" />
+				<p:inputMask mask="?999999999" id="ama_qt_nitritos" value="#{cnarhBean.cnarh.ama_qt_nitritos}" />
+				
+				<p:outputLabel value="ama_qt_nitratos" for="ama_qt_nitratos" />
+				<p:inputMask mask="?999999999" id="ama_qt_nitratos" value="#{cnarhBean.cnarh.ama_qt_nitratos}" />
+				
+				<p:outputLabel value="ama_qt_sulfato" for="ama_qt_sulfato" />
+				<p:inputMask mask="?999999999" id="ama_qt_sulfato" value="#{cnarhBean.cnarh.ama_qt_sulfato}" />
+				
+				<p:outputLabel value="asb_aqp_cd" for="asb_aqp_cd" />
+				<p:inputMask mask="?999999999" id="asb_aqp_cd" value="#{cnarhBean.cnarh.asb_aqp_cd}" />
+				
+				<p:outputLabel value="ius_ar_resmax" for="ius_ar_resmax" />
+				<p:inputMask mask="9?99999999999999.99999" id="ius_ar_resmax" value="#{cnarhBean.cnarh.ius_ar_resmax}" />
+				
+				<p:outputLabel value="tst_nu_coeficientearmazenamento" for="tst_nu_coeficientearmazenamento" />
+				<p:inputMask mask="?999999999" id="tst_nu_coeficientearmazenamento" value="#{cnarhBean.cnarh.tst_nu_coeficientearmazenamento}" />
+				
+				<p:outputLabel value="ama_nu_condutividadeeletrica" for="ama_nu_condutividadeeletrica" />
+				<p:inputMask mask="9?99999999999.99" id="ama_nu_condutividadeeletrica" value="#{cnarhBean.cnarh.ama_nu_condutividadeeletrica}" />
+				
+				<p:outputLabel value="tst_nu_condutividadehidraulica" for="tst_nu_condutividadehidraulica" />
+				<p:inputMask mask="?999999999" id="tst_nu_condutividadehidraulica" value="#{cnarhBean.cnarh.tst_nu_condutividadehidraulica}" />
+				
+				<p:outputLabel value="ama_dt_analise" for="ama_dt_analise" />
+				<p:calendar id="ama_dt_analise" value="#{cnarhBean.cnarh.ama_dt_analise}" showOn="button" />
+				
+				<p:outputLabel value="ama_dt_coleta" for="ama_dt_coleta" />
+				<p:calendar id="ama_dt_coleta" value="#{cnarhBean.cnarh.ama_dt_coleta}" showOn="button" />
+				
+				<p:outputLabel value="asb_dt_instalacao" for="asb_dt_instalacao" />
+				<p:calendar id="asb_dt_instalacao" value="#{cnarhBean.cnarh.asb_dt_instalacao}" showOn="button" />
+				
+				<p:outputLabel value="tst_dt" for="tst_dt" />
+				<p:calendar id="tst_dt" value="#{cnarhBean.cnarh.tst_dt}" showOn="button" />
+				
+				<p:outputLabel value="asb_nu_diametroperfuracao" for="asb_nu_diametroperfuracao" />
+				<p:inputMask mask="?999999999" id="asb_nu_diametroperfuracao" value="#{cnarhBean.cnarh.asb_nu_diametroperfuracao}" />
+				
+				<p:outputLabel value="asb_nu_diametrofiltro" for="asb_nu_diametrofiltro" />
+				<p:inputMask mask="?999999999" id="asb_nu_diametrofiltro" value="#{cnarhBean.cnarh.asb_nu_diametrofiltro}" />
+				
+				<p:outputLabel value="tst_ds_tempoduracao" for="tst_ds_tempoduracao" />
+				<p:inputText id="tst_ds_tempoduracao" value="#{cnarhBean.cnarh.tst_ds_tempoduracao}" />
+				
+				<p:outputLabel value="tst_nu_nd" for="tst_nu_nd" />
+				<p:inputMask mask="9?99999999.99" id="tst_nu_nd" value="#{cnarhBean.cnarh.tst_nu_nd}" />
+				
+				<p:outputLabel value="tst_nu_ne" for="tst_nu_ne" />
+				<p:inputMask mask="9?99999999.99" id="tst_nu_ne" value="#{cnarhBean.cnarh.tst_nu_ne}" />
+				
+				<p:outputLabel value="int_nu_siagas" for="int_nu_siagas" />
+				<p:inputText id="int_nu_siagas" value="#{cnarhBean.cnarh.int_nu_siagas}" />
+				
+				<p:outputLabel value="ama_qt_coliformesfecais" for="ama_qt_coliformesfecais" />
+				<p:inputMask mask="?999999999" id="ama_qt_coliformesfecais" value="#{cnarhBean.cnarh.ama_qt_coliformesfecais}" />
+				
+				<p:outputLabel value="ama_qt_coliformestotais" for="ama_qt_coliformestotais" />
+				<p:inputMask mask="?999999999" id="ama_qt_coliformestotais" value="#{cnarhBean.cnarh.ama_qt_coliformestotais}" />
+				
+				<p:outputLabel value="tst_nu_permeabilidade" for="tst_nu_permeabilidade" />
+				<p:inputMask mask="?999999999" id="tst_nu_permeabilidade" value="#{cnarhBean.cnarh.tst_nu_permeabilidade}" />
+				
+				<p:outputLabel value="ama_qt_ph" for="ama_qt_ph" />
+				<p:inputMask mask="9?999.99" id="ama_qt_ph" value="#{cnarhBean.cnarh.ama_qt_ph}" />
+				
+				<p:outputLabel value="asb_nu_base" for="asb_nu_base" />
+				<p:inputMask mask="9?99999.99" id="asb_nu_base" value="#{cnarhBean.cnarh.asb_nu_base}" />
+				
+				<p:outputLabel value="asb_nu_topo" for="asb_nu_topo" />
+				<p:inputMask mask="9?99999.99" id="asb_nu_topo" value="#{cnarhBean.cnarh.asb_nu_topo}" />
+				
+				<p:outputLabel value="ama_qt_std" for="ama_qt_std" />
+				<p:inputMask mask="9?9999999999.99" id="ama_qt_std" value="#{cnarhBean.cnarh.ama_qt_std}" />
+				
+				<p:outputLabel value="ama_qt_temperatura" for="ama_qt_temperatura" />
+				<p:inputMask mask="9?999.9" id="ama_qt_temperatura" value="#{cnarhBean.cnarh.ama_qt_temperatura}" />
+				
+				<p:outputLabel value="tst_nu_transmissividade" for="tst_nu_transmissividade" />
+				<p:inputMask mask="?999999999" id="tst_nu_transmissividade" value="#{cnarhBean.cnarh.tst_nu_transmissividade}" />
+				
+				<p:outputLabel value="tst_vz_estabilizacao" for="tst_vz_estabilizacao" />
+				<p:inputMask mask="?999999999" id="tst_vz_estabilizacao" value="#{cnarhBean.cnarh.tst_vz_estabilizacao}" />
+				
+				<p:outputLabel value="ius_vo_resmax" for="ius_vo_resmax" />
+				<p:inputMask mask="9?99999999999999.99999" id="ius_vo_resmax" value="#{cnarhBean.cnarh.ius_vo_resmax}" />
+				
+				<p:outputLabel value="asb_tnp_cd" for="asb_tnp_cd" />
+				<p:inputText id="asb_tnp_cd" value="#{cnarhBean.cnarh.asb_tnp_cd}" />
+				
+				<p:outputLabel value="asb_tpn_cd" for="asb_tpn_cd" />
+				<p:inputText id="asb_tpn_cd" value="#{cnarhBean.cnarh.asb_tpn_cd}" />
+				
+				<p:outputLabel value="asb_tca_cd" for="asb_tca_cd" />
+				<p:inputText id="asb_tca_cd" value="#{cnarhBean.cnarh.asb_tca_cd}" />
+				
+				<p:outputLabel value="tst_ttb_cd" for="tst_ttb_cd" />
+				<p:inputText id="tst_ttb_cd" value="#{cnarhBean.cnarh.tst_ttb_cd}" />
+				
+				<p:outputLabel value="tst_tmi_cd" for="tst_tmi_cd" />
+				<p:inputText id="tst_tmi_cd" value="#{cnarhBean.cnarh.tst_tmi_cd}" />
+								
+								
+
+				
+				
+				
+				
+				
+				<p:commandButton value="Salvar" action="#{cnarhBean.gravar}" ajax="false" rendered="#{cnarhBean.view == 'add'}"/>
+				<p:commandButton value="Editar" action="#{cnarhBean.editar}" ajax="false" rendered="#{cnarhBean.view == 'edit'}" />
+
+
+			</h:panelGrid>
+		</fieldset>
+
+	</h:form>
+
+</ui:composition>

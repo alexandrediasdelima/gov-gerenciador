@@ -19,7 +19,7 @@ public enum Out_tpo_cd {
 	}
 
 		public String getDescricao() {
-			return descricao;
+			return descricao.toUpperCase();
 		}
 
 		public void setDescricao(String descricao) {
