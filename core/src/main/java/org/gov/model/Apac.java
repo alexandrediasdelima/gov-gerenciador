@@ -143,12 +143,15 @@ public class Apac implements Serializable {
 	@Column(name = "apa_vz_requerida_m3dia", columnDefinition="numeric")
 	private BigDecimal vazaoRequiridaMediaDia;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name = "out_tpo_cd")
-	@Type( type = "pgsql_enum" )
-	@Transient
-	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.LICENCA_AUTORIZACAO_PERFURACAO_POCOS;
 
+	//Problema
+	@Enumerated(EnumType.STRING)
+	@Column(name = "out_tpo_cd", columnDefinition = "out_tpo_enum")
+	@Type(type = "pgsql_enum")
+	@Transient
+	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.CADASTRO;
+
+	//Ignorar
 	@Column(name = "out_tsp_cd", columnDefinition="out_tsp_enum")
 	@Enumerated
 	@Transient

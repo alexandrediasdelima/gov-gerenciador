@@ -25,7 +25,7 @@
 		<managed-bean-class>org.gov.web.controller.ApacBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>cnarhBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.CnarhBean</managed-bean-class>
@@ -35,6 +35,18 @@
 	<managed-bean>
 		<managed-bean-name>loginBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.LoginBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>interferenciaBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.InterferenciaBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>asbcaracBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.AsbcaracBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 

@@ -8,18 +8,19 @@ import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 
 /**
- * Usa o tipo proprietário Enum do PostgreSQL 
+ * Usa o tipo proprietário Enum do PostgreSQL
  */
 public class PostgreSQLEnumType extends org.hibernate.type.EnumType<Enum<?>> {
 
 	private static final long serialVersionUID = 1;
 
-	public void nullSafeSet(PreparedStatement preparedStatement, Enum<?> value, int index, SharedSessionContractImplementor sharedSessionContractImplementor) throws HibernateException, SQLException {
-		
+	public void nullSafeSet(PreparedStatement st, Object value, int index,
+			SharedSessionContractImplementor session)
+			throws HibernateException, SQLException {
 		if (value == null) {
-			preparedStatement.setNull(index, Types.OTHER);
+			st.setNull(index, Types.OTHER);
 		} else {
-			preparedStatement.setObject(index, value.name(), Types.OTHER);
+			st.setObject(index, value.toString(), Types.OTHER);
 		}
 	}
 }
