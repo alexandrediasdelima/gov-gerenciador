@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/template/template.xhtml">
+
+
+	<ui:define name="body">
+
+		<c:choose>
+			<c:when
+				test="#{false}">
+				<ui:include src="/interferencia/adicionar.xhtml" />
+			</c:when>
+			<c:otherwise>
+				<ui:include src="/interferencia/listar.xhtml" />
+			</c:otherwise>
+		</c:choose>
+	</ui:define>
+
+
+
+
+</ui:composition>
