@@ -33,210 +33,199 @@
 		<h:panelGrid>
 			<p:dataTable id="tabelaCnarhs" value="#{cnarhBean.cnarhs}"
 				paginator="true" paginatorPosition="bottom" rows="15" var="cnarh">
-				
-				
-				
-				
-				
 
 				<p:column>
-<f:facet name="header">cnarh_id</f:facet>
-<h:outputText value="#{cnarh. cnarh_id}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_nu_cotaterreno</f:facet>
-<h:outputText value="#{cnarh. asb_nu_cotaterreno}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_nu_alturabocatubo</f:facet>
-<h:outputText value="#{cnarh. asb_nu_alturabocatubo}" />
-</p:column>
-<p:column>
-<f:facet name="header">ius_nu_alturares</f:facet>
-<h:outputText value="#{cnarh. ius_nu_alturares}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_calcio</f:facet>
-<h:outputText value="#{cnarh. ama_qt_calcio}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_cloreto</f:facet>
-<h:outputText value="#{cnarh. ama_qt_cloreto}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_carbonato</f:facet>
-<h:outputText value="#{cnarh. ama_qt_carbonato}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_durezatotal</f:facet>
-<h:outputText value="#{cnarh. ama_qt_durezatotal}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_fluoretos</f:facet>
-<h:outputText value="#{cnarh. ama_qt_fluoretos}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_ferrototal</f:facet>
-<h:outputText value="#{cnarh. ama_qt_ferrototal}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_bicarbonato</f:facet>
-<h:outputText value="#{cnarh. ama_qt_bicarbonato}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_potassio</f:facet>
-<h:outputText value="#{cnarh. ama_qt_potassio}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_magnesio</f:facet>
-<h:outputText value="#{cnarh. ama_qt_magnesio}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_sodio</f:facet>
-<h:outputText value="#{cnarh. ama_qt_sodio}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_nitritos</f:facet>
-<h:outputText value="#{cnarh. ama_qt_nitritos}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_nitratos</f:facet>
-<h:outputText value="#{cnarh. ama_qt_nitratos}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_sulfato</f:facet>
-<h:outputText value="#{cnarh. ama_qt_sulfato}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_aqp_cd</f:facet>
-<h:outputText value="#{cnarh. asb_aqp_cd}" />
-</p:column>
-<p:column>
-<f:facet name="header">ius_ar_resmax</f:facet>
-<h:outputText value="#{cnarh. ius_ar_resmax}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_nu_coeficientearmazenamento</f:facet>
-<h:outputText value="#{cnarh. tst_nu_coeficientearmazenamento}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_nu_condutividadeeletrica</f:facet>
-<h:outputText value="#{cnarh. ama_nu_condutividadeeletrica}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_nu_condutividadehidraulica</f:facet>
-<h:outputText value="#{cnarh. tst_nu_condutividadehidraulica}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_dt_analise</f:facet>
-<h:outputText value="#{cnarh. ama_dt_analise}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_dt_coleta</f:facet>
-<h:outputText value="#{cnarh. ama_dt_coleta}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_dt_instalacao</f:facet>
-<h:outputText value="#{cnarh. asb_dt_instalacao}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_dt</f:facet>
-<h:outputText value="#{cnarh. tst_dt}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_nu_diametroperfuracao</f:facet>
-<h:outputText value="#{cnarh. asb_nu_diametroperfuracao}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_nu_diametrofiltro</f:facet>
-<h:outputText value="#{cnarh. asb_nu_diametrofiltro}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_ds_tempoduracao</f:facet>
-<h:outputText value="#{cnarh. tst_ds_tempoduracao}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_nu_nd</f:facet>
-<h:outputText value="#{cnarh. tst_nu_nd}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_nu_ne</f:facet>
-<h:outputText value="#{cnarh. tst_nu_ne}" />
-</p:column>
-<p:column>
-<f:facet name="header">int_nu_siagas</f:facet>
-<h:outputText value="#{cnarh. int_nu_siagas}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_coliformesfecais</f:facet>
-<h:outputText value="#{cnarh. ama_qt_coliformesfecais}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_coliformestotais</f:facet>
-<h:outputText value="#{cnarh. ama_qt_coliformestotais}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_nu_permeabilidade</f:facet>
-<h:outputText value="#{cnarh. tst_nu_permeabilidade}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_ph</f:facet>
-<h:outputText value="#{cnarh. ama_qt_ph}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_nu_base</f:facet>
-<h:outputText value="#{cnarh. asb_nu_base}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_nu_topo</f:facet>
-<h:outputText value="#{cnarh. asb_nu_topo}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_std</f:facet>
-<h:outputText value="#{cnarh. ama_qt_std}" />
-</p:column>
-<p:column>
-<f:facet name="header">ama_qt_temperatura</f:facet>
-<h:outputText value="#{cnarh. ama_qt_temperatura}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_nu_transmissividade</f:facet>
-<h:outputText value="#{cnarh. tst_nu_transmissividade}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_vz_estabilizacao</f:facet>
-<h:outputText value="#{cnarh. tst_vz_estabilizacao}" />
-</p:column>
-<p:column>
-<f:facet name="header">ius_vo_resmax</f:facet>
-<h:outputText value="#{cnarh. ius_vo_resmax}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_tnp_cd</f:facet>
-<h:outputText value="#{cnarh. asb_tnp_cd}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_tpn_cd</f:facet>
-<h:outputText value="#{cnarh. asb_tpn_cd}" />
-</p:column>
-<p:column>
-<f:facet name="header">asb_tca_cd</f:facet>
-<h:outputText value="#{cnarh. asb_tca_cd}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_ttb_cd</f:facet>
-<h:outputText value="#{cnarh. tst_ttb_cd}" />
-</p:column>
-<p:column>
-<f:facet name="header">tst_tmi_cd</f:facet>
-<h:outputText value="#{cnarh. tst_tmi_cd}" />
-</p:column>
-							
-
-
-
-
-
+				<f:facet name="header">ID Cnarh</f:facet>
+				<h:outputText value="#{cnarh. cnarh_id}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Altitude Terreno</f:facet>
+				<h:outputText value="#{cnarh. asb_nu_cotaterreno}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Boca Tubulação</f:facet>
+				<h:outputText value="#{cnarh. asb_nu_alturabocatubo}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Altura Total Reservatório</f:facet>
+				<h:outputText value="#{cnarh. ius_nu_alturares}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Calcio</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_calcio}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Cloreto</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_cloreto}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Carbonato</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_carbonato}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Dureza Total</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_durezatotal}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Fluoretos</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_fluoretos}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Ferro Total</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_ferrototal}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Bicarbonato</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_bicarbonato}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Potássio</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_potassio}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Magnésio</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_magnesio}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Sódio</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_sodio}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Nitritos</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_nitritos}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Nitratos</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_nitratos}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Sulfato</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_sulfato}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Código Aquifero Ponto</f:facet>
+				<h:outputText value="#{cnarh. asb_aqp_cd}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Área Total Reservatório</f:facet>
+				<h:outputText value="#{cnarh. ius_ar_resmax}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Coeficiente Armazenamento</f:facet>
+				<h:outputText value="#{cnarh. tst_nu_coeficientearmazenamento}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Condutividade Elétrica</f:facet>
+				<h:outputText value="#{cnarh. ama_nu_condutividadeeletrica}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Condutividade Hidraulica</f:facet>
+				<h:outputText value="#{cnarh. tst_nu_condutividadehidraulica}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Data Análise</f:facet>
+				<h:outputText value="#{cnarh. ama_dt_analise}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Data Coleta</f:facet>
+				<h:outputText value="#{cnarh. ama_dt_coleta}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Data Instalação</f:facet>
+				<h:outputText value="#{cnarh. asb_dt_instalacao}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Data Teste Bombeamento</f:facet>
+				<h:outputText value="#{cnarh. tst_dt}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Diametro Perfuração</f:facet>
+				<h:outputText value="#{cnarh. asb_nu_diametroperfuracao}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Diametro Filtro</f:facet>
+				<h:outputText value="#{cnarh. asb_nu_diametrofiltro}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Tempo Duração</f:facet>
+				<h:outputText value="#{cnarh. tst_ds_tempoduracao}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Nivel Dinamico</f:facet>
+				<h:outputText value="#{cnarh. tst_nu_nd}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Nivel Estatico</f:facet>
+				<h:outputText value="#{cnarh. tst_nu_ne}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Numero Siagas</f:facet>
+				<h:outputText value="#{cnarh. int_nu_siagas}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Coliformes Fecais</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_coliformesfecais}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Quantidade Coliformes Totais</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_coliformestotais}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Permeabilidade</f:facet>
+				<h:outputText value="#{cnarh. tst_nu_permeabilidade}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">PH</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_ph}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Profundidade Base do Aquifero</f:facet>
+				<h:outputText value="#{cnarh. asb_nu_base}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Profundidade Topo do Aquifero</f:facet>
+				<h:outputText value="#{cnarh. asb_nu_topo}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Solidos Totais Dissolvidos</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_std}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Temperatura</f:facet>
+				<h:outputText value="#{cnarh. ama_qt_temperatura}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Transmissividade</f:facet>
+				<h:outputText value="#{cnarh. tst_nu_transmissividade}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Vazão Estabilização</f:facet>
+				<h:outputText value="#{cnarh. tst_vz_estabilizacao}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Volume Máximo Reservatório</f:facet>
+				<h:outputText value="#{cnarh. ius_vo_resmax}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Natureza do Ponto</f:facet>
+				<h:outputText value="#{cnarh. asb_tnp_cd}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Tipo Penetração Aquifero</f:facet>
+				<h:outputText value="#{cnarh. asb_tpn_cd}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Condição Aquifero</f:facet>
+				<h:outputText value="#{cnarh. asb_tca_cd}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Tipo Teste Bombeamento</f:facet>
+				<h:outputText value="#{cnarh. tst_ttb_cd}" />
+				</p:column>
+				<p:column>
+				<f:facet name="header">Tipo Método Interpretação</f:facet>
+				<h:outputText value="#{cnarh. tst_tmi_cd}" />
+				</p:column>
 
 				<p:column>
 					<f:facet name="header">
