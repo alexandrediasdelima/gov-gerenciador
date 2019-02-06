@@ -150,11 +150,10 @@ public class Apac implements Serializable {
 	@Type(type = "pgsql_enum")
 	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.OUTRA;
 
-	//Ignorar
-	@Column(name = "out_tsp_cd", columnDefinition="out_tsp_enum")
-	@Enumerated
-	@Transient
-	private String out_tsp_cd;
+	@Enumerated(EnumType.STRING)
+	@Column(name = "out_tsp_cd", columnDefinition = "out_tsp_enum")
+	@Type(type = "pgsql_enum")
+	private Out_tsp_cd out_tsp_cd = Out_tsp_cd.USO_INSIGNIFICANTE;
 
 
 	public String getAnalistaResponsavel() {
@@ -447,6 +446,14 @@ public class Apac implements Serializable {
 
 	public void setOut_tpo_cd(Out_tpo_cd out_tpo_cd) {
 		this.out_tpo_cd = out_tpo_cd;
+	}
+
+	public Out_tsp_cd getOut_tsp_cd() {
+		return out_tsp_cd;
+	}
+
+	public void setOut_tsp_cd(Out_tsp_cd out_tsp_cd) {
+		this.out_tsp_cd = out_tsp_cd;
 	}
 
 }
