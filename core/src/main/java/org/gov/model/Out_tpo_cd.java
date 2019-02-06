@@ -2,7 +2,7 @@ package org.gov.model;
 
 public enum Out_tpo_cd {
 
-	DEREITO_DE_USO ("Direito de Uso"),
+	DIREITO_DE_USO("Direito de Uso"),
 	PREVENTIVA("Preventiva"),
 	DRDH("DRDH"),
 	CERTOH("CERTOH"),
@@ -24,11 +24,6 @@ public enum Out_tpo_cd {
 
 		public void setDescricao(String descricao) {
 			this.descricao = descricao;
-		}
-
-		@Override
-		public String toString() {
-			return this.descricao;
 		}
 
 }

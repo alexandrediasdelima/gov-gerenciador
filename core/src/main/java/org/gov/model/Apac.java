@@ -144,12 +144,11 @@ public class Apac implements Serializable {
 	private BigDecimal vazaoRequiridaMediaDia;
 
 
-	//Problema
+
 	@Enumerated(EnumType.STRING)
 	@Column(name = "out_tpo_cd", columnDefinition = "out_tpo_enum")
 	@Type(type = "pgsql_enum")
-	@Transient
-	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.CADASTRO;
+	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.OUTRA;
 
 	//Ignorar
 	@Column(name = "out_tsp_cd", columnDefinition="out_tsp_enum")
