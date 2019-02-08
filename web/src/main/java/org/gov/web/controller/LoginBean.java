@@ -3,10 +3,10 @@ package org.gov.web.controller;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
-import org.gov.service.UsuarioService;
-import org.gov.service.UsuarioServiceImpl;
+import org.gov.service.AcessoService;
+import org.gov.service.AcessoServiceImpl;
 import org.gov.util.JPAUtil;
-import org.gov.web.model.Usuario;
+import org.gov.web.model.Acesso;
 
 public class LoginBean extends Controller {
 
@@ -15,16 +15,16 @@ public class LoginBean extends Controller {
 	 */
 	private static final long serialVersionUID = -7849970183863861263L;
 
-	private UsuarioService usuarioService = new UsuarioServiceImpl();
-	private Usuario usuario = new Usuario();
+	private AcessoService usuarioService = new AcessoServiceImpl();
+	private Acesso acesso = new Acesso();
 
 
 	public String verificarAcesso() {
 
-		org.gov.model.Usuario user = new org.gov.model.Usuario();
+		org.gov.model.Acesso user = new org.gov.model.Acesso();
 
-		user.setLogin(usuario.getUsuario());
-		user.setSenha(usuario.getSenha());
+		user.setLogin(acesso.getUsuario());
+		user.setSenha(acesso.getSenha());
 
 		if(usuarioService.verificarAcesso(user)) {
 			FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -42,19 +42,19 @@ public class LoginBean extends Controller {
 
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public Acesso getUsuario() {
+		return acesso;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(Acesso usuario) {
+		this.acesso = usuario;
 	}
 
-	public UsuarioService getUsuarioService() {
+	public AcessoService getUsuarioService() {
 		return usuarioService;
 	}
 
-	public void setUsuarioService(UsuarioService usuarioService) {
+	public void setUsuarioService(AcessoService usuarioService) {
 		this.usuarioService = usuarioService;
 	}
 

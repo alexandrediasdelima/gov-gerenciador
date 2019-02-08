@@ -1,0 +1,82 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+
+
+	<h:form id="addUsuario" prependId="false">
+
+		<fieldset>
+			<legend><b>Dados Usuário</b></legend>
+			<h:panelGrid columns="2">			
+				<p:outputLabel value="Nome" for="emp_nm_usuario" />
+				<p:inputText id="emp_nm_usuario" value="#{usuarioBean.usuario.emp_nm_usuario}" />
+				
+				<p:outputLabel value="Apelido" for="emp_nm_apelido" />
+				<p:inputText id="emp_nm_apelido" value="#{usuarioBean.usuario.emp_nm_apelido}" />
+				
+				<p:outputLabel value="Documento" for="emp_nu_cpfcnpj" />
+				<p:inputText id="emp_nu_cpfcnpj" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
+				
+				<p:outputLabel value="Observação do Documento" for="emp_nu_obscpfcnpj" />
+				<p:inputText id="emp_nu_obscpfcnpj" value="#{usuarioBean.usuario.emp_nu_obscpfcnpj}" />
+				
+				<p:outputLabel value="DDD" for="emp_nu_ddd" />
+				<p:inputText id="emp_nu_ddd" value="#{usuarioBean.usuario.emp_nu_ddd}" />
+				
+				<p:outputLabel value="Telefone" for="emp_nu_telefone" />
+				<p:inputText id="emp_nu_telefone" value="#{usuarioBean.usuario.emp_nu_telefone}" />
+				
+				<p:outputLabel value="E-mail" for="emp_ds_emailresponsavel" />
+				<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" />
+				
+				<p:outputLabel value="Tipo Logradouro" for="emp_ds_tp_logradouro" />
+				<p:inputText id="emp_ds_tp_logradouro" value="#{usuarioBean.usuario.emp_ds_tp_logradouro}" required="true" requiredMessage="Tipo Logradouro é obrigatório" />
+				
+				<p:outputLabel value="Endereço" for="emp_ds_nm_logradouro" />
+				<p:inputText id="emp_ds_nm_logradouro" value="#{usuarioBean.usuario.emp_ds_nm_logradouro}" required="true" requiredMessage="Endereço é obrigatório"/>
+				
+				<p:outputLabel value="Endereço para Correspondência" for="emp_ds_logradouro" />
+				<p:inputText id="emp_ds_logradouro" value="#{usuarioBean.usuario.emp_ds_logradouro}" />
+				
+				<p:outputLabel value="Número" for="emp_nu_logradouro" />
+				<p:inputMask mask="?9999999999" id="emp_nu_logradouro" value="#{usuarioBean.usuario.emp_nu_logradouro}" />
+				
+				<p:outputLabel value="Complemento" for="emp_ds_complementoendereco" />
+				<p:inputText id="emp_ds_complementoendereco" value="#{usuarioBean.usuario.emp_ds_complementoendereco}" />
+				
+				<p:outputLabel value="Bairro" for="emp_ds_bairrodistrito" />
+				<p:inputText id="emp_ds_bairrodistrito" value="#{usuarioBean.usuario.emp_ds_bairrodistrito}" required="true" requiredMessage="Bairro é obrigatório"/>
+				
+				<p:outputLabel value="Caixa Postal" for="emp_nu_caixapostal" />
+				<p:inputMask mask="?9999999999" id="emp_nu_caixapostal" value="#{usuarioBean.usuario.emp_nu_caixapostal}" />
+				
+				<p:outputLabel value="CEP" for="emp_nu_cependereco" />
+				<p:inputText id="emp_nu_cependereco" value="#{usuarioBean.usuario.emp_nu_cependereco}" />
+				
+				<p:outputLabel value="Cidade" for="apa_muni_correspondencia" />
+				<p:inputText id="apa_muni_correspondencia" value="#{usuarioBean.usuario.apa_muni_correspondencia}" required="true" requiredMessage="Cidade é obrigatório"/>
+				
+				<p:outputLabel value="Código IBGE" for="emp_cd_codigoibgecorrespondencia" />
+				<p:inputMask mask="?9999999999" id="emp_cd_codigoibgecorrespondencia" value="#{usuarioBean.usuario.emp_cd_codigoibgecorrespondencia}" />
+				
+				<p:outputLabel value="UF" for="emp_ds_uf" />
+				<p:inputText id="emp_ds_uf" value="#{usuarioBean.usuario.emp_ds_uf}" required="true" requiredMessage="UF é obrigatório"/>
+				
+				<p:outputLabel value="Relação com a Propriedade" for="emp_ds_relacaopropriedade" />
+				<p:inputText id="emp_ds_relacaopropriedade" value="#{usuarioBean.usuario.emp_ds_relacaopropriedade}" required="true" requiredMessage="Relação com a Propriedade é obrigatório"/>
+
+				<p:commandButton value="Salvar" action="#{usuarioBean.gravar}" ajax="false" rendered="#{usuarioBean.view == 'add'}"/>
+				<p:commandButton value="Editar" action="#{usuarioBean.editar}" ajax="false" rendered="#{usuarioBean.view == 'edit'}" />
+
+			</h:panelGrid>
+		</fieldset>
+
+	</h:form>
+
+</ui:composition>

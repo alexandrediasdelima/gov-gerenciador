@@ -1,0 +1,137 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+
+	<style type="text/css">
+.ui-datatable-header {
+	height: 50px
+}
+</style>
+
+	<h:form id="listarUsuarios" prependId="false">
+
+		<p:spacer height="1" />
+		<p:panelGrid styleClass="cemPorCento">
+
+			<p:row>
+				<p:column colspan="3" styleClass="ui-state-default">
+					<p:commandButton icon="ui-icon-plus" value="Adicionar"
+						action="#{usuarioBean.adicionarBtnNovoUsuario}" ajax="false" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+
+		<p:spacer height="1" />
+
+
+		<h:panelGrid>
+			<p:dataTable id="tabelaUsuarios" value="#{usuarioBean.usuarios}"
+				paginator="true" paginatorPosition="bottom" rows="15" var="usuario">
+
+				<p:column>
+					<f:facet name="header">ID</f:facet>
+					<h:outputText value="#{usuario.usuario_id}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{usuario.emp_nm_usuario}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Apelido</f:facet>
+					<h:outputText value="#{usuario.emp_nm_apelido}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Documento</f:facet>
+					<h:outputText value="#{usuario.emp_nu_cpfcnpj}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Observação do Documento</f:facet>
+					<h:outputText value="#{usuario.emp_nu_obscpfcnpj}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">DDD</f:facet>
+					<h:outputText value="#{usuario.emp_nu_ddd}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Telefone</f:facet>
+					<h:outputText value="#{usuario.emp_nu_telefone}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">E-mail</f:facet>
+					<h:outputText value="#{usuario.emp_ds_emailresponsavel}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Tipo Logradouro</f:facet>
+					<h:outputText value="#{usuario.emp_ds_tp_logradouro}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Endereço</f:facet>
+					<h:outputText value="#{usuario.emp_ds_nm_logradouro}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Endereço para Correspondência</f:facet>
+					<h:outputText value="#{usuario.emp_ds_logradouro}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Número</f:facet>
+					<h:outputText value="#{usuario.emp_nu_logradouro}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Complemento</f:facet>
+					<h:outputText value="#{usuario.emp_ds_complementoendereco}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Bairro</f:facet>
+					<h:outputText value="#{usuario.emp_ds_bairrodistrito}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Caixa Postal</f:facet>
+					<h:outputText value="#{usuario.emp_nu_caixapostal}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">CEP</f:facet>
+					<h:outputText value="#{usuario.emp_nu_cependereco}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Cidade</f:facet>
+					<h:outputText value="#{usuario.apa_muni_correspondencia}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Código IBGE</f:facet>
+					<h:outputText value="#{usuario.emp_cd_codigoibgecorrespondencia}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">UF</f:facet>
+					<h:outputText value="#{usuario.emp_ds_uf}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Relação com a Propriedade</f:facet>
+					<h:outputText value="#{usuario.emp_ds_relacaopropriedade}" />
+				</p:column>
+	
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Editar" />
+					</f:facet>
+					<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false"
+						style="text-decoration: underline;">
+					</p:commandButton>
+				</p:column>
+	
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Deletar" />
+					</f:facet>
+					<p:commandButton action="#{usuarioBean.deletar(usuario)}" value="Deletar" ajax="false" />
+				</p:column>
+			</p:dataTable>
+		</h:panelGrid>
+	</h:form>
+
+</ui:composition>

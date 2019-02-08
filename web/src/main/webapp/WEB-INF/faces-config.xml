@@ -50,7 +50,11 @@
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 
-
+	<managed-bean>
+		<managed-bean-name>usuarioBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.UsuarioBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
 
 	<!-- Configurações -->
 
