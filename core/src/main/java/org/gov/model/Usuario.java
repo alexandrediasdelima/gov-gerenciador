@@ -8,6 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -32,7 +34,8 @@ public class Usuario implements Serializable {
 
 	@Column(name="usuario_id")
 	@Id
-	private String usuario_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer usuario_id;
 
 	@Column(name="emp_nm_usuario")
 	private String emp_nm_usuario;
@@ -84,25 +87,20 @@ public class Usuario implements Serializable {
 
 	@Column(name="emp_cd_codigoibgecorrespondencia", columnDefinition="numeric")
 	private BigDecimal emp_cd_codigoibgecorrespondencia;
-
-	@Column(name="emp_ds_uf")
-	private String emp_ds_uf;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "emp_ds_uf", columnDefinition = "emp_ds_uf_enum")
+	@Type(type = "pgsql_enum")
+	private Emp_ds_uf emp_ds_uf;
 
 	@Column(name="emp_ds_relacaopropriedade")
 	private String emp_ds_relacaopropriedade;
-
 	
-//	@Enumerated(EnumType.STRING)
-//	@Column(name = "out_tpo_cd", columnDefinition = "out_tpo_enum")
-//	@Type(type = "pgsql_enum")
-//	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.OUTRA;
-	
-	
-	public String getUsuario_id() {
+	public Integer getUsuario_id() {
 		return usuario_id;
 	}
 
-	public void setUsuario_id(String usuario_id) {
+	public void setUsuario_id(Integer usuario_id) {
 		this.usuario_id = usuario_id;
 	}
 
@@ -242,11 +240,11 @@ public class Usuario implements Serializable {
 		this.emp_cd_codigoibgecorrespondencia = emp_cd_codigoibgecorrespondencia;
 	}
 
-	public String getEmp_ds_uf() {
+	public Emp_ds_uf getEmp_ds_uf() {
 		return emp_ds_uf;
 	}
 
-	public void setEmp_ds_uf(String emp_ds_uf) {
+	public void setEmp_ds_uf(Emp_ds_uf emp_ds_uf) {
 		this.emp_ds_uf = emp_ds_uf;
 	}
 

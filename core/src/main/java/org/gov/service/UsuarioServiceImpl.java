@@ -31,7 +31,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 		return usuarioDao.usuarios();
 	}
 
-	public String remover(String id) {
+	public String remover(Integer id) {
 		usuarioDao = new UsuarioDaoImpl();
 		return usuarioDao.remover(id);
 	}

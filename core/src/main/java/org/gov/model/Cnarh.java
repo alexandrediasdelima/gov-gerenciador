@@ -8,16 +8,24 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import org.gov.util.PostgreSQLEnumType;
 import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
 @Entity
-@Table(name= "tb_cnarh_fake")
+@Table(name="tb_cnarh")
+@TypeDef(
+	    name = "pgsql_enum",
+	    typeClass = PostgreSQLEnumType.class)
+
 public class Cnarh implements Serializable {
 
 	/**
@@ -25,155 +33,165 @@ public class Cnarh implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Column (name="cnarh_id")
-	@Id    
-	private String cnarh_id;  
-	
-	@Column (name="asb_nu_cotaterreno", columnDefinition ="numeric")
-	private BigDecimal asb_nu_cotaterreno;  
-	
-	@Column (name="asb_nu_alturabocatubo", columnDefinition ="numeric")
-	private BigDecimal asb_nu_alturabocatubo; 
-	
-	@Column (name="ius_nu_alturares", columnDefinition ="numeric")
+	@Column(name="cnarh_id")
+	@Id
+	private String cnarh_id;
+
+	@Column(name="asb_nu_cotaterreno", columnDefinition="numeric")
+	private BigDecimal asb_nu_cotaterreno;
+
+	@Column(name="asb_nu_alturabocatubo", columnDefinition="numeric")
+	private BigDecimal asb_nu_alturabocatubo;
+
+	@Column(name="ius_nu_alturares", columnDefinition="numeric")
 	private BigDecimal ius_nu_alturares;
-	
-	@Column (name="ama_qt_calcio", columnDefinition ="numeric")
+
+	@Column(name="ama_qt_calcio", columnDefinition="numeric")
 	private BigDecimal ama_qt_calcio;
-	
-	@Column (name="ama_qt_cloreto", columnDefinition ="numeric")
-	private BigDecimal ama_qt_cloreto;  
-	
-	@Column (name="ama_qt_carbonato", columnDefinition ="numeric")
-	private BigDecimal ama_qt_carbonato;  
-	
-	@Column (name="ama_qt_durezatotal", columnDefinition ="numeric")
-	private BigDecimal ama_qt_durezatotal;  
-	
-	@Column (name="ama_qt_fluoretos", columnDefinition ="numeric")
-	private BigDecimal ama_qt_fluoretos;  
-	
-	@Column (name="ama_qt_ferrototal", columnDefinition ="numeric")
-	private BigDecimal ama_qt_ferrototal;  
-	
-	@Column (name="ama_qt_bicarbonato", columnDefinition ="numeric")
-	private BigDecimal ama_qt_bicarbonato;  
-	
-	@Column (name="ama_qt_potassio", columnDefinition ="numeric")
-	private BigDecimal ama_qt_potassio;  
-	
-	@Column (name="ama_qt_magnesio", columnDefinition ="numeric")
-	private BigDecimal ama_qt_magnesio;  
-	
-	@Column (name="ama_qt_sodio", columnDefinition ="numeric")
-	private BigDecimal ama_qt_sodio; 
-	
-	@Column (name="ama_qt_nitritos", columnDefinition ="numeric")
-	private BigDecimal ama_qt_nitritos;  
-	
-	@Column (name="ama_qt_nitratos", columnDefinition ="numeric")
-	private BigDecimal ama_qt_nitratos;  
-	
-	@Column (name="ama_qt_sulfato", columnDefinition ="numeric")
-	private BigDecimal ama_qt_sulfato;  
-	
-	@Column (name="asb_aqp_cd", columnDefinition ="numeric")
-	private BigDecimal asb_aqp_cd;  
-	
-	@Column (name="ius_ar_resmax", columnDefinition ="numeric")
-	private BigDecimal ius_ar_resmax;  
-	
-	@Column (name="tst_nu_coeficientearmazenamento", columnDefinition ="numeric")
-	private BigDecimal tst_nu_coeficientearmazenamento;  
-	
-	@Column (name="ama_nu_condutividadeeletrica", columnDefinition ="numeric")
-	private BigDecimal ama_nu_condutividadeeletrica;  
-	
-	@Column (name="tst_nu_condutividadehidraulica", columnDefinition ="numeric")
-	private BigDecimal tst_nu_condutividadehidraulica;  
-	
-	@Column (name="ama_dt_analise", columnDefinition ="date")
-	private Date ama_dt_analise;  
-	
-	@Column (name="ama_dt_coleta", columnDefinition ="date")
-	private Date ama_dt_coleta;  
-	
-	@Column (name="asb_dt_instalacao", columnDefinition ="date")
-	private Date asb_dt_instalacao;  
-	
-	@Column (name="tst_dt", columnDefinition ="date")
-	private Date tst_dt;  
-	
-	@Column (name="asb_nu_diametroperfuracao", columnDefinition ="numeric")
-	private BigDecimal asb_nu_diametroperfuracao;  
-	
-	@Column (name="asb_nu_diametrofiltro", columnDefinition ="numeric")
-	private BigDecimal asb_nu_diametrofiltro;  
-	
-	@Column (name="tst_ds_tempoduracao")
-	private String tst_ds_tempoduracao;  
-	
-	@Column (name="tst_nu_nd", columnDefinition ="numeric")
-	private BigDecimal tst_nu_nd;  
-	
-	@Column (name="tst_nu_ne", columnDefinition ="numeric")
-	private BigDecimal tst_nu_ne;  
-	
-	@Column (name="int_nu_siagas")
-	private String int_nu_siagas; 
-	
-	@Column (name="ama_qt_coliformesfecais", columnDefinition ="numeric")
-	private BigDecimal ama_qt_coliformesfecais;  
-	
-	@Column (name="ama_qt_coliformestotais", columnDefinition ="numeric")
-	private BigDecimal ama_qt_coliformestotais; 
-	
-	@Column (name="tst_nu_permeabilidade", columnDefinition ="numeric")
-	private BigDecimal tst_nu_permeabilidade;  
-	
-	@Column (name="ama_qt_ph", columnDefinition ="numeric")
-	private BigDecimal ama_qt_ph; 
-	
-	@Column (name="asb_nu_base", columnDefinition ="numeric")
-	private BigDecimal asb_nu_base; 
-	
-	@Column (name="asb_nu_topo", columnDefinition ="numeric")
-	private BigDecimal asb_nu_topo;  
-	
-	@Column (name="ama_qt_std", columnDefinition ="numeric")
-	private BigDecimal ama_qt_std;  
-	
-	@Column (name="ama_qt_temperatura", columnDefinition ="numeric")
-	private BigDecimal ama_qt_temperatura;  
-	
-	@Column (name="tst_nu_transmissividade", columnDefinition ="numeric")
-	private BigDecimal tst_nu_transmissividade;  
-	
-	@Column (name="tst_vz_estabilizacao", columnDefinition ="numeric")
-	private BigDecimal tst_vz_estabilizacao;  
-	
-	@Column (name="ius_vo_resmax", columnDefinition ="numeric")
-	private BigDecimal ius_vo_resmax;  
-	
-	@Column (name="asb_tnp_cd", columnDefinition ="numeric")
+
+	@Column(name="ama_qt_cloreto", columnDefinition="numeric")
+	private BigDecimal ama_qt_cloreto;
+
+	@Column(name="ama_qt_carbonato", columnDefinition="numeric")
+	private BigDecimal ama_qt_carbonato;
+
+	@Column(name="ama_qt_durezatotal", columnDefinition="numeric")
+	private BigDecimal ama_qt_durezatotal;
+
+	@Column(name="ama_qt_fluoretos", columnDefinition="numeric")
+	private BigDecimal ama_qt_fluoretos;
+
+	@Column(name="ama_qt_ferrototal", columnDefinition="numeric")
+	private BigDecimal ama_qt_ferrototal;
+
+	@Column(name="ama_qt_bicarbonato", columnDefinition="numeric")
+	private BigDecimal ama_qt_bicarbonato;
+
+	@Column(name="ama_qt_potassio", columnDefinition="numeric")
+	private BigDecimal ama_qt_potassio;
+
+	@Column(name="ama_qt_magnesio", columnDefinition="numeric")
+	private BigDecimal ama_qt_magnesio;
+
+	@Column(name="ama_qt_sodio", columnDefinition="numeric")
+	private BigDecimal ama_qt_sodio;
+
+	@Column(name="ama_qt_nitritos", columnDefinition="numeric")
+	private BigDecimal ama_qt_nitritos;
+
+	@Column(name="ama_qt_nitratos", columnDefinition="numeric")
+	private BigDecimal ama_qt_nitratos;
+
+	@Column(name="ama_qt_sulfato", columnDefinition="numeric")
+	private BigDecimal ama_qt_sulfato;
+
+	@Column(name="asb_aqp_cd", columnDefinition="numeric")
+	private BigDecimal asb_aqp_cd;
+
+	@Column(name="ius_ar_resmax", columnDefinition="numeric")
+	private BigDecimal ius_ar_resmax;
+
+	@Column(name="tst_nu_coeficientearmazenamento", columnDefinition="numeric")
+	private BigDecimal tst_nu_coeficientearmazenamento;
+
+	@Column(name="ama_nu_condutividadeeletrica", columnDefinition="numeric")
+	private BigDecimal ama_nu_condutividadeeletrica;
+
+	@Column(name="tst_nu_condutividadehidraulica", columnDefinition="numeric")
+	private BigDecimal tst_nu_condutividadehidraulica;
+
+	@Column(name="ama_dt_analise", columnDefinition="date")
+	private Date ama_dt_analise;
+
+	@Column(name="ama_dt_coleta", columnDefinition="date")
+	private Date ama_dt_coleta;
+
+	@Column(name="asb_dt_instalacao", columnDefinition="date")
+	private Date asb_dt_instalacao;
+
+	@Column(name="tst_dt", columnDefinition="date")
+	private Date tst_dt;
+
+	@Column(name="asb_nu_diametroperfuracao", columnDefinition="numeric")
+	private BigDecimal asb_nu_diametroperfuracao;
+
+	@Column(name="asb_nu_diametrofiltro", columnDefinition="numeric")
+	private BigDecimal asb_nu_diametrofiltro;
+
+	@Column(name="tst_ds_tempoduracao")
+	private String tst_ds_tempoduracao;
+
+	@Column(name="tst_nu_nd", columnDefinition="numeric")
+	private BigDecimal tst_nu_nd;
+
+	@Column(name="tst_nu_ne", columnDefinition="numeric")
+	private BigDecimal tst_nu_ne;
+
+	@Column(name="int_nu_siagas")
+	private String int_nu_siagas;
+
+	@Column(name="ama_qt_coliformesfecais", columnDefinition="numeric")
+	private BigDecimal ama_qt_coliformesfecais;
+
+	@Column(name="ama_qt_coliformestotais", columnDefinition="numeric")
+	private BigDecimal ama_qt_coliformestotais;
+
+	@Column(name="tst_nu_permeabilidade", columnDefinition="numeric")
+	private BigDecimal tst_nu_permeabilidade;
+
+	@Column(name="ama_qt_ph", columnDefinition="numeric")
+	private BigDecimal ama_qt_ph;
+
+	@Column(name="asb_nu_base", columnDefinition="numeric")
+	private BigDecimal asb_nu_base;
+
+	@Column(name="asb_nu_topo", columnDefinition="numeric")
+	private BigDecimal asb_nu_topo;
+
+	@Column(name="ama_qt_std", columnDefinition="numeric")
+	private BigDecimal ama_qt_std;
+
+	@Column(name="ama_qt_temperatura", columnDefinition="numeric")
+	private BigDecimal ama_qt_temperatura;
+
+	@Column(name="tst_nu_transmissividade", columnDefinition="numeric")
+	private BigDecimal tst_nu_transmissividade;
+
+	@Column(name="tst_vz_estabilizacao", columnDefinition="numeric")
+	private BigDecimal tst_vz_estabilizacao;
+
+	@Column(name="ius_vo_resmax", columnDefinition="numeric")
+	private BigDecimal ius_vo_resmax;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name="asb_tnp_cd", columnDefinition="asb_tnp_enum")
+	@Type(type="pgsql_enum")
 	@Transient
-	private BigDecimal asb_tnp_cd;  
-	
-	@Column (name="asb_tpn_cd", columnDefinition ="numeric")
+	private Asb_tnp_cd asb_tnp_cd;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name="asb_tpn_cd", columnDefinition="asb_tpn_enum")
+	@Type(type="pgsql_enum")
 	@Transient
-	private BigDecimal asb_tpn_cd;  
-	
-	@Column (name="asb_tca_cd", columnDefinition ="numeric")
+	private Asb_tpn_cd asb_tpn_cd;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name="asb_tca_cd", columnDefinition="asb_tca_enum")
+	@Type(type="pgsql_enum")
 	@Transient
-	private BigDecimal asb_tca_cd;  
-	
-	@Column (name="tst_ttb_cd", columnDefinition ="numeric")
+	private Asb_tca_cd asb_tca_cd;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name="tst_ttb_cd", columnDefinition="tst_ttb_enum")
+	@Type(type="pgsql_enum")
 	@Transient
-	private BigDecimal tst_ttb_cd;  
-	
-	@Column (name="tst_tmi_cd", columnDefinition ="numeric")
+	private Tst_ttb_cd tst_ttb_cd;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name="tst_tmi_cd", columnDefinition="tst_tmi_enum")
+	@Type(type="pgsql_enum")
 	@Transient
-	private BigDecimal tst_tmi_cd;
+	private Tst_tmi_cd tst_tmi_cd;
 
 	public String getCnarh_id() {
 		return cnarh_id;
@@ -519,49 +537,44 @@ public class Cnarh implements Serializable {
 		this.ius_vo_resmax = ius_vo_resmax;
 	}
 
-	public BigDecimal getAsb_tnp_cd() {
+	public Asb_tnp_cd getAsb_tnp_cd() {
 		return asb_tnp_cd;
 	}
 
-	public void setAsb_tnp_cd(BigDecimal asb_tnp_cd) {
+	public void setAsb_tnp_cd(Asb_tnp_cd asb_tnp_cd) {
 		this.asb_tnp_cd = asb_tnp_cd;
 	}
 
-	public BigDecimal getAsb_tpn_cd() {
+	public Asb_tpn_cd getAsb_tpn_cd() {
 		return asb_tpn_cd;
 	}
 
-	public void setAsb_tpn_cd(BigDecimal asb_tpn_cd) {
+	public void setAsb_tpn_cd(Asb_tpn_cd asb_tpn_cd) {
 		this.asb_tpn_cd = asb_tpn_cd;
 	}
 
-	public BigDecimal getAsb_tca_cd() {
+	public Asb_tca_cd getAsb_tca_cd() {
 		return asb_tca_cd;
 	}
 
-	public void setAsb_tca_cd(BigDecimal asb_tca_cd) {
+	public void setAsb_tca_cd(Asb_tca_cd asb_tca_cd) {
 		this.asb_tca_cd = asb_tca_cd;
 	}
 
-	public BigDecimal getTst_ttb_cd() {
+	public Tst_ttb_cd getTst_ttb_cd() {
 		return tst_ttb_cd;
 	}
 
-	public void setTst_ttb_cd(BigDecimal tst_ttb_cd) {
+	public void setTst_ttb_cd(Tst_ttb_cd tst_ttb_cd) {
 		this.tst_ttb_cd = tst_ttb_cd;
 	}
 
-	public BigDecimal getTst_tmi_cd() {
+	public Tst_tmi_cd getTst_tmi_cd() {
 		return tst_tmi_cd;
 	}
 
-	public void setTst_tmi_cd(BigDecimal tst_tmi_cd) {
+	public void setTst_tmi_cd(Tst_tmi_cd tst_tmi_cd) {
 		this.tst_tmi_cd = tst_tmi_cd;
-	}  
-	
-	
-	    
-	    
-
+	}
 
 }

@@ -13,17 +13,16 @@ public enum Out_tsp_cd {
 
 	private String descricao;
 
-		Out_tsp_cd(String desc) {
-			this.descricao = desc;
-
+	Out_tsp_cd(String desc) {
+		this.descricao = desc;
 	}
 
-		public String getDescricao() {
-			return descricao.toUpperCase();
-		}
+	public String getDescricao() {
+		return descricao.toUpperCase();
+	}
 
-		public void setDescricao(String descricao) {
-			this.descricao = descricao;
-		}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
 }

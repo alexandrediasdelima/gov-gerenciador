@@ -9,7 +9,7 @@ public interface UsuarioDao extends Serializable {
 
 	public String gravar(Usuario usuario);
 	public List<Usuario> usuarios();
-	public String remover(String id);
+	public String remover(Integer id);
 	public String editar(Usuario usuario);
 
 }

@@ -14,9 +14,15 @@
 		<fieldset>
 			<legend> <b>Dados CNARH</b></legend>
 			<h:panelGrid columns="2">
-			
-				<p:outputLabel value="ID Cnarh:" for="idCnarh" />
-				<p:inputText id="idCnarh" value="#{cnarhBean.cnarh.cnarh_id}" required="true" requiredMessage="Id Obrigatório" />
+				<p:outputLabel value="ID: " for="cnarh_id" />
+				<c:choose>
+					<c:when test="#{cnarhBean.view == 'edit'}">
+						<p:inputText id="cnarh_id" value="#{cnarhBean.cnarh.cnarh_id}" required="true" requiredMessage="Id Obrigatório" disabled="true" />
+					</c:when>
+					<c:otherwise>
+						<p:inputText id="cnarh_id" value="#{cnarhBean.cnarh.cnarh_id}" required="true" requiredMessage="Id Obrigatório" disabled="false" />
+					</c:otherwise>
+				</c:choose>			
 				
 				<p:outputLabel value="Altitude Terreno" for="asb_nu_cotaterreno" />
 				<p:inputMask mask="9?99999999.99" id="asb_nu_cotaterreno" value="#{cnarhBean.cnarh.asb_nu_cotaterreno}" />
@@ -145,20 +151,78 @@
 				<p:inputMask mask="9?99999999999999.99999" id="ius_vo_resmax" value="#{cnarhBean.cnarh.ius_vo_resmax}" />
 				
 				<p:outputLabel value="Natureza do Ponto" for="asb_tnp_cd" />
-				<p:inputText id="asb_tnp_cd" value="#{cnarhBean.cnarh.asb_tnp_cd}" />
+				<p:selectOneMenu id="asb_tnp_cd" value="#{cnarhBean.cnarh.asb_tnp_cd}" style="width:200px">
+					<f:selectItem itemLabel="Selecione" itemValue="" />
+					<f:selectItem itemValue="POCO_ESCAVADO" itemLabel="Poço escavado(cacimba/cisterna)" />
+					<f:selectItem itemValue="FONTE_NATURAL" itemLabel="Fonte natural" />
+					<f:selectItem itemValue="LAGO" itemLabel="Lago" />
+					<f:selectItem itemValue="LAGOA" itemLabel="Lagoa" />
+					<f:selectItem itemValue="NASCENTE" itemLabel="Nascente" />
+					<f:selectItem itemValue="PIEZOMETRO" itemLabel="Piezômetro" />
+					<f:selectItem itemValue="POCO_AMAZONAS" itemLabel="Poço amazonas" />
+					<f:selectItem itemValue="POCO_COLETOR" itemLabel="Poço coletor" />
+					<f:selectItem itemValue="POCO_PONTEIRA" itemLabel="Poço ponteira" />
+					<f:selectItem itemValue="POCO_TUBULAR" itemLabel="Poço tubular" />
+					<f:selectItem itemValue="POCO_DE_MONITORAMENTO" itemLabel="Poço de monitoramento" />
+				</p:selectOneMenu>
 				
-				<p:outputLabel value="Tipo Penetração Aquifero" for="asb_tpn_cd" />
-				<p:inputText id="asb_tpn_cd" value="#{cnarhBean.cnarh.asb_tpn_cd}" />
+				<p:outputLabel value="Tipo Penetração Aquifero" for="asb_tnp_cd" />
+				<p:selectOneMenu id="asb_tpn_cd" value="#{cnarhBean.cnarh.asb_tpn_cd}" style="width:200px">
+					<f:selectItem itemLabel="Selecione" itemValue="" />
+					<f:selectItem itemValue="PARCIAL" itemLabel="Parcial" />
+					<f:selectItem itemValue="TOTAL" itemLabel="Total" />
+				</p:selectOneMenu>
 				
 				<p:outputLabel value="Condição Aquifero" for="asb_tca_cd" />
-				<p:inputText id="asb_tca_cd" value="#{cnarhBean.cnarh.asb_tca_cd}" />
+				<p:selectOneMenu id="asb_tca_cd" value="#{cnarhBean.cnarh.asb_tca_cd}" style="width:200px">
+					<f:selectItem itemLabel="Selecione" itemValue="" />
+					<f:selectItem itemValue="LIVRE" itemLabel="Livre" />
+					<f:selectItem itemValue="CONFINADO" itemLabel="Confinado" />
+					<f:selectItem itemValue="SEMI_LIVRE" itemLabel="Semi-livre" />
+					<f:selectItem itemValue="SEMI_CONFINADO" itemLabel="Semi-confinado" />
+				</p:selectOneMenu>
 				
 				<p:outputLabel value="Tipo Teste Bombeamento" for="tst_ttb_cd" />
-				<p:inputText id="tst_ttb_cd" value="#{cnarhBean.cnarh.tst_ttb_cd}" />
+				<p:selectOneMenu id="tst_ttb_cd" value="#{cnarhBean.cnarh.tst_ttb_cd}" style="width:200px">
+					<f:selectItem itemValue="REBAIXAMENTO" itemLabel="Rebaixamento " />
+					<f:selectItem itemValue="RECARGA" itemLabel="Recarga " />
+					<f:selectItem itemValue="ESCALONADO" itemLabel="Escalonado " />
+					<f:selectItem itemValue="RECUPERACAO_RESIDUAL" itemLabel="Recuperação residual" />
+					<f:selectItem itemValue="RECUPERACAO" itemLabel="Recuperação" />
+					<f:selectItem itemValue="CONTINUO" itemLabel="Continuo " />
+				</p:selectOneMenu>
 				
 				<p:outputLabel value="Tipo Método Interpretação" for="tst_tmi_cd" />
-				<p:inputText id="tst_tmi_cd" value="#{cnarhBean.cnarh.tst_tmi_cd}" />
-								
+				<p:selectOneMenu id="tst_tmi_cd" value="#{cnarhBean.cnarh.tst_tmi_cd}" style="width:200px">
+					<f:selectItem itemValue="ARON_SCOTT" itemLabel="Aron-scott" />
+					<f:selectItem itemValue="BOULTON" itemLabel="Boulton" />
+					<f:selectItem itemValue="BRUGGEMAN" itemLabel="Bruggeman" />
+					<f:selectItem itemValue="CHOW" itemLabel="Chow" />
+					<f:selectItem itemValue="COOPER_JACOB" itemLabel="Cooper-jacob" />
+					<f:selectItem itemValue="DE_GLEE" itemLabel="De glee" />
+					<f:selectItem itemValue="DIETZ" itemLabel="Dietz" />
+					<f:selectItem itemValue="ERNST_THIEM_WALTON" itemLabel="Ernst-thiem walton" />
+					<f:selectItem itemValue="GOSSELIN" itemLabel="Gosselin" />
+					<f:selectItem itemValue="HANTUSH" itemLabel="Hantush" />
+					<f:selectItem itemValue="HANTUSH_JACOB" itemLabel="Hantush-jacob" />
+					<f:selectItem itemValue="HANTUSH_THEIS" itemLabel="Hantush-theis" />
+					<f:selectItem itemValue="HANTUSH_THOMAS" itemLabel="Hantush-thomas" />
+					<f:selectItem itemValue="HUISMAN" itemLabel="Huisman" />
+					<f:selectItem itemValue="HUISMAN_KEMPERMAN" itemLabel="Huisman-kemperman" />
+					<f:selectItem itemValue="HURR" itemLabel="Hurr" />
+					<f:selectItem itemValue="JACOB" itemLabel="Jacob" />
+					<f:selectItem itemValue="JACOB_LOHMAN" itemLabel="Jacob-lohman" />
+					<f:selectItem itemValue="LOGAN" itemLabel="Logan" />
+					<f:selectItem itemValue="PAPADOPULOS_COOPER" itemLabel="Papadopulos-cooper" />
+					<f:selectItem itemValue="PONTO_DE_CULMINACAO" itemLabel="Ponto de culminacao" />
+					<f:selectItem itemValue="RECUPERACAO_DE_THEIS" itemLabel="Recuperacao de theis" />
+					<f:selectItem itemValue="STALLMAN" itemLabel="Stallman" />
+					<f:selectItem itemValue="STENBERG" itemLabel="Stenberg" />
+					<f:selectItem itemValue="THEIS" itemLabel="Theis" />
+					<f:selectItem itemValue="THIEM_DUPUIT" itemLabel="Thiem-dupuit" />
+					<f:selectItem itemValue="THIEN" itemLabel="Thien" />
+					<f:selectItem itemValue="ZANGAR" itemLabel="Zangar" />					
+				</p:selectOneMenu>
 								
 				<p:commandButton value="Salvar" action="#{cnarhBean.gravar}" ajax="false" rendered="#{cnarhBean.view == 'add'}"/>
 				<p:commandButton value="Editar" action="#{cnarhBean.editar}" ajax="false" rendered="#{cnarhBean.view == 'edit'}" />

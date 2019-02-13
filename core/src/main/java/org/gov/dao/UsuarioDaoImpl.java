@@ -45,7 +45,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		return usuarios;
 	}
 
-	public String remover(String id) {
+	public String remover(Integer id) {
 
 		entityManager.getTransaction().begin();
 		Usuario usuario = entityManager.find(Usuario.class, id);

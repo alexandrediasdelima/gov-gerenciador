@@ -87,11 +87,11 @@ public class CnarhBean extends Controller  {
 //		 this.cnarh.setVolumeMaxReserv(null);
 	}
 
-//	public void onDateSelect(SelectEvent event) {
-//	        FacesContext facesContext = FacesContext.getCurrentInstance();
-//	        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-//	        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
-//	    }
+	public void onDateSelect(SelectEvent event) {
+	        FacesContext facesContext = FacesContext.getCurrentInstance();
+	        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+	        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
+	    }
 
 
 	public String index() {

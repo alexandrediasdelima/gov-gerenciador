@@ -1,7 +1,6 @@
 package org.gov.model;
 
 public enum Out_tpo_cd {
-
 	DIREITO_DE_USO("Direito de Uso"),
 	PREVENTIVA("Preventiva"),
 	DRDH("DRDH"),
@@ -13,17 +12,16 @@ public enum Out_tpo_cd {
 
 	private String descricao;
 
-		Out_tpo_cd(String desc) {
-			this.descricao = desc;
-
+	Out_tpo_cd(String desc) {
+		this.descricao = desc;
 	}
 
-		public String getDescricao() {
-			return descricao.toUpperCase();
-		}
+	public String getDescricao() {
+		return descricao.toUpperCase();
+	}
 
-		public void setDescricao(String descricao) {
-			this.descricao = descricao;
-		}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
 }

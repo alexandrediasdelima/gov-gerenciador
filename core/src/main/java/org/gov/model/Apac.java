@@ -143,17 +143,17 @@ public class Apac implements Serializable {
 	@Column(name = "apa_vz_requerida_m3dia", columnDefinition="numeric")
 	private BigDecimal vazaoRequiridaMediaDia;
 
-
-
 	@Enumerated(EnumType.STRING)
 	@Column(name = "out_tpo_cd", columnDefinition = "out_tpo_enum")
 	@Type(type = "pgsql_enum")
-	private Out_tpo_cd out_tpo_cd = Out_tpo_cd.OUTRA;
+	@Transient
+	private Out_tpo_cd out_tpo_cd;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "out_tsp_cd", columnDefinition = "out_tsp_enum")
 	@Type(type = "pgsql_enum")
-	private Out_tsp_cd out_tsp_cd = Out_tsp_cd.USO_INSIGNIFICANTE;
+	@Transient
+	private Out_tsp_cd out_tsp_cd;
 
 
 	public String getAnalistaResponsavel() {
