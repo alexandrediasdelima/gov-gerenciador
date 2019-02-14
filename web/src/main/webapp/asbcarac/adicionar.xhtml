@@ -15,17 +15,36 @@
 			<legend> <b>Dados Asbcarac </b></legend>
 			<h:panelGrid columns="2">
 				<p:outputLabel value="ID: " for="id" />
-				<p:inputText id="id" value="#{idInterferencia}" />
+				<p:inputText id="id" value="#{asbcaracBean.asbcarac.id}" disabled="true" />
 
 				<p:outputLabel value="Altitude do Terreno: " for="altitudeTerreno" />
-				<p:inputText id="altitudeTerreno" />
+				<p:inputMask mask="?9999999999999999999" id="altitudeTerreno" value="#{asbcaracBean.asbcarac.altitudeTerreno}" />
 
+				<p:outputLabel value="Altura da boca da tubulação: " for="alturaBocaTubulacao" />
+				<p:inputMask mask="?9999999999999999999" id="alturaBocaTubulacao" value="#{asbcaracBean.asbcarac.altitudeBocaTubulacao}" />
 
-				<p:commandButton value="Salvar" action="#" ajax="false" rendered="#"/>
-				<p:commandButton value="Editar" action="#" ajax="false" rendered="#" />
+				<p:outputLabel value="Código identificador do aquifero ponto: " for="cdIdentificadorAquiferoPonto" />
+				<p:inputMask mask="?9999999999999999999" id="cdIdentificadorAquiferoPonto" value="#{asbcaracBean.asbcarac.identificadorAquiferoPonto}" />
 
+				<p:outputLabel value="Data de instalação do poço : " for="dataInstalacao" />
+				<p:calendar id="dataInstalacao" showOn="button" value="#{asbcaracBean.asbcarac.dataInstalacaoPoco}" />
+
+				<p:outputLabel value="Diametro da perfuração: " for="diametroPerfuracao" />
+				<p:inputMask mask="?9999999999999999999" id="diametroPerfuracao" value="#{asbcaracBean.asbcarac.diametroPerfuracao}" />
+
+				<p:outputLabel value="Diametro do filtro: " for="diametroFiltro" />
+				<p:inputMask mask="?9999999999999999999" id="diametroFiltro" value="#{asbcaracBean.asbcarac.diametroFiltro}" />
+
+				<p:outputLabel value="Profundidade da base do aquífero captado: " for="pbac" />
+				<p:inputMask mask="?9999999999999999999" id="pbac" value="#{asbcaracBean.asbcarac.profundidadeBaseMedidaApartirSuperficie}" />
+
+				<p:outputLabel value="Profundidade do topo do aquífero captado: " for="pbacTopo" />
+				<p:inputMask mask="?9999999999999999999" id="pbacTopo" value="#{asbcaracBean.asbcarac.profundidadeTopoMedidaApartirSuperficie}" />
 
 			</h:panelGrid>
+			<p:commandButton value="Salvar" action="#{asbcaracBean.gravar}" ajax="false" rendered="#{asbcaracBean.view == 'add'}"/>
+				<p:commandButton value="Alterar" action="#{asbcaracBean.alterar}" ajax="false"  rendered="#{asbcaracBean.view == 'edit'}" />
+				<p:commandButton value="Deletar" action="#{asbcaracBean.deletar}" ajax="false"  />
 		</fieldset>
 
 	</h:form>
