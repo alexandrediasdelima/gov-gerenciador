@@ -8,10 +8,21 @@
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
 
+	
+	
+	
+	
+	
 
-	<h:form id="addUsuario" prependId="false">
-
-		<fieldset>
+	<h:form id="addUsuario" prependId="false"  style="width:99%;">
+		<br/>
+		<p:column colspan="3" styleClass="ui-state-default">
+			<p:commandButton icon="ui-icon-plus" value="Salvar" action="#{usuarioBean.gravar}" ajax="false" rendered="#{usuarioBean.view == 'add'}"/>
+			<p:commandButton icon="ui-icon-plus" value="Editar" action="#{usuarioBean.editar}" ajax="false" rendered="#{usuarioBean.view == 'edit'}" />
+		</p:column>
+		<br/><br/>
+		
+		<p:scrollPanel mode="native" style="width:100%;height:80%">
 			<legend><b>Dados Usuário</b></legend>
 			<h:panelGrid columns="2">
 				<p:outputLabel value="Nome" for="emp_nm_usuario" />
@@ -100,11 +111,8 @@
 				<p:outputLabel value="Relação com a Propriedade" for="emp_ds_relacaopropriedade" />
 				<p:inputText id="emp_ds_relacaopropriedade" value="#{usuarioBean.usuario.emp_ds_relacaopropriedade}" required="true" requiredMessage="Relação com a Propriedade é obrigatório"/>
 
-				<p:commandButton value="Salvar" action="#{usuarioBean.gravar}" ajax="false" rendered="#{usuarioBean.view == 'add'}"/>
-				<p:commandButton value="Editar" action="#{usuarioBean.editar}" ajax="false" rendered="#{usuarioBean.view == 'edit'}" />
-
 			</h:panelGrid>
-		</fieldset>
+		</p:scrollPanel>
 
 	</h:form>
 
