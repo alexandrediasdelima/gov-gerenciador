@@ -13,6 +13,9 @@
 		<class>org.gov.model.Livro</class>
 		<class>org.gov.model.Apac</class>
 		<class>org.gov.model.Asbcarac</class>
+		<class>org.gov.model.Cnarh</class>
+		<class>org.gov.model.Usuario</class>
+		
 
 		<properties>
 			<!-- Propriedades JDBC -->

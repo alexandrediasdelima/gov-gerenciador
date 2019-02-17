@@ -7,8 +7,7 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-
-
+	
 	<h:form id="addApac" prependId="false">
 
 		<fieldset>
@@ -87,7 +86,7 @@
 				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaDezembro}"  id="dez" label="Basic" itemLabel="Dez"/>
 
 				<p:outputLabel value="Prazo da Notificação: " for="prazoNotificacao" />
-				<p:calendar id="prazoNotificacao" showOn="button" value="#{apacBean.apac.prazoNotificacao}" />
+				<p:calendar id="prazoNotificacao" showOn="button" value="#{apacBean.apac.prazoNotificacao}" locale="pt_BR" />
 
 				<p:outputLabel value="Número do Processo na Cprh: " for="numeroProcessoCprh" />
 				<p:inputText id="numeroProcessoCprh" value="#{apacBean.apac.numeroProcessoNaCprh}" />
