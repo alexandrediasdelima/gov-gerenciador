@@ -151,10 +151,10 @@
 
 			<dependency>
 				<groupId>org.primefaces.themes</groupId>
-				<artifactId>cupertino</artifactId>
+				<artifactId>smoothness</artifactId>
 				<version>1.0.10</version>
 				<scope>system</scope>
-				<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/cupertino-1.0.10.jar</systemPath>
+				<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/smoothness-1.0.10.jar</systemPath>
 			</dependency>
 
 			<!-- Auxiliares de teste -->

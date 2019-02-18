@@ -9,129 +9,90 @@
 	xmlns:components="http://java.sun.com/jsf/composite/components">
 
 	<style type="text/css">
-.ui-datatable-header {
-	height: 50px
-}
-</style>
+		.ui-datatable-tablewrapper {
+  			overflow-x: auto;
+		}
+	</style>
 
-	<h:form id="listarUsuarios" prependId="false">
-
-		<p:spacer height="1" />
-		<p:panelGrid styleClass="cemPorCento">
-
-			<p:row>
-				<p:column colspan="3" styleClass="ui-state-default">
-					<p:commandButton icon="ui-icon-plus" value="Adicionar"
-						action="#{usuarioBean.adicionarBtnNovoUsuario}" ajax="false" />
-				</p:column>
-			</p:row>
-		</p:panelGrid>
-
-		<p:spacer height="1" />
-
-
-		<h:panelGrid>
-			<p:dataTable id="tabelaUsuarios" value="#{usuarioBean.usuarios}"
-				paginator="true" paginatorPosition="bottom" rows="15" var="usuario">
-
-				<p:column>
-					<f:facet name="header">ID</f:facet>
+	<h:form id="listarUsuarios" prependId="false" style="width:99%;">
+		<br/>
+		<p:column colspan="3" styleClass="ui-state-default">
+			<p:commandButton icon="ui-icon-plus" value="Adicionar" action="#{usuarioBean.adicionarBtnNovoUsuario}" ajax="false" />
+		</p:column>
+		<br/><br/>
+		<p:scrollPanel mode="native" style="width:100%">
+			<p:dataTable id="tabelaUsuarios" value="#{usuarioBean.usuarios}" paginator="true" rows="10" var="usuario" paginatorPosition="top" resizableColumns="false" >
+				<f:facet name="header">
+					Usuários
+				</f:facet>
+				<p:column headerText="ID">
 					<h:outputText value="#{usuario.usuario_id}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Nome</f:facet>
+				<p:column headerText="Nome">
 					<h:outputText value="#{usuario.emp_nm_usuario}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Apelido</f:facet>
+				<p:column headerText="Apelido">
 					<h:outputText value="#{usuario.emp_nm_apelido}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Documento</f:facet>
+				<p:column headerText="Documento">
 					<h:outputText value="#{usuario.emp_nu_cpfcnpj}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Observação do Documento</f:facet>
+				<p:column headerText="Observação do Documento">
 					<h:outputText value="#{usuario.emp_nu_obscpfcnpj}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">DDD</f:facet>
+				<p:column headerText="DDD">
 					<h:outputText value="#{usuario.emp_nu_ddd}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Telefone</f:facet>
+				<p:column headerText="Telefone">
 					<h:outputText value="#{usuario.emp_nu_telefone}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">E-mail</f:facet>
+				<p:column headerText="E-mail">
 					<h:outputText value="#{usuario.emp_ds_emailresponsavel}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Tipo Logradouro</f:facet>
+				<p:column headerText="Tipo Logradouro">
 					<h:outputText value="#{usuario.emp_ds_tp_logradouro}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Endereço</f:facet>
+				<p:column headerText="Endereço">
 					<h:outputText value="#{usuario.emp_ds_nm_logradouro}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Referência do Endereço</f:facet>
+				<p:column headerText="Referência do Endereço">
 					<h:outputText value="#{usuario.emp_ds_logradouro}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Número</f:facet>
+				<p:column headerText="Número">
 					<h:outputText value="#{usuario.emp_nu_logradouro}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Complemento</f:facet>
+				<p:column headerText="Complemento">
 					<h:outputText value="#{usuario.emp_ds_complementoendereco}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Bairro</f:facet>
+				<p:column headerText="Bairro">
 					<h:outputText value="#{usuario.emp_ds_bairrodistrito}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Caixa Postal</f:facet>
+				<p:column headerText="Caixa Postal">
 					<h:outputText value="#{usuario.emp_nu_caixapostal}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">CEP</f:facet>
+				<p:column headerText="CEP">
 					<h:outputText value="#{usuario.emp_nu_cependereco}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Cidade</f:facet>
+				<p:column headerText="Cidade">
 					<h:outputText value="#{usuario.apa_muni_correspondencia}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Código IBGE</f:facet>
+				<p:column headerText="Código IBGE">
 					<h:outputText value="#{usuario.emp_cd_codigoibgecorrespondencia}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">UF</f:facet>
+				<p:column headerText="UF">
 					<h:outputText value="#{usuario.emp_ds_uf}" />
 				</p:column>
-				<p:column>
-					<f:facet name="header">Relação com a Propriedade</f:facet>
+				<p:column headerText="Relação com a Propriedade">
 					<h:outputText value="#{usuario.emp_ds_relacaopropriedade}" />
 				</p:column>
-	
-				<p:column>
-					<f:facet name="header">
-						<h:outputText value="Editar" />
-					</f:facet>
-					<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false"
-						style="text-decoration: underline;">
-					</p:commandButton>
-				</p:column>
-	
-				<p:column>
-					<f:facet name="header">
-						<h:outputText value="Deletar" />
-					</f:facet>
+				<p:column headerText="Ações">
+					<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" />
 					<p:commandButton action="#{usuarioBean.deletar(usuario)}" value="Deletar" ajax="false" />
 				</p:column>
 			</p:dataTable>
-		</h:panelGrid>
+		</p:scrollPanel>
+		<p:blockUI block="tabelaUsuarios" trigger="tabelaUsuarios">
+			<p:graphicImage name="images/loadingbar.gif"/>
+		</p:blockUI>
 	</h:form>
-
 </ui:composition>

@@ -49,7 +49,7 @@
 
 		<dependency>
 			<groupId>org.primefaces.themes</groupId>
-			<artifactId>cupertino</artifactId>
+			<artifactId>smoothness</artifactId>
 		</dependency>
 
 		<dependency>
