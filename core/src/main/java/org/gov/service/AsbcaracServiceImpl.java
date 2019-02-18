@@ -8,9 +8,6 @@ import org.gov.model.Asbcarac;
 public class AsbcaracServiceImpl implements AsbcaracService{
 
 
-
-	//private LivroDao livroDao;
-
 	/**
 	 *
 	 */
@@ -33,28 +30,18 @@ public class AsbcaracServiceImpl implements AsbcaracService{
 		return asbcaracDao.pesquisar(id);
 	}
 
-//	public List<Apac> apacs() {
-//		apacDao = new ApacDaoImpl();
-//		return apacDao.apacs();
-//	}
-//
-//	public String remover(String id) {
-//		apacDao = new ApacDaoImpl();
-//		return apacDao.remover(id);
-//	}
-//
-//	public String editar(Apac apac) {
-//
-//		apacDao = new ApacDaoImpl();
-//		return apacDao.editar(apac);
-//	}
-//
-//	public AsbcaracDao getAsbcaracDao() {
-//		return asbcaracDao;
-//	}
-//
-//	public void setAsbcaracDao(AsbcaracDao asbcaracDao) {
-//		this.asbcaracDao = asbcaracDao;
-//	}
+
+	public String editar(Asbcarac asbcarac) {
+
+		asbcaracDao.editar(asbcarac);
+
+		return null;
+	}
+
+	public String remover(Integer id) {
+		asbcaracDao = new AsbcaracDaoImpl();
+		return asbcaracDao.remover(id);
+	}
+
 
 }

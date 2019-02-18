@@ -49,13 +49,15 @@ public class AsbcaracBean extends Controller {
 
 	public String alterar() {
 
-		System.out.println("passou alterar");
+		asbcaracService.editar(asbcarac);
+
 		return null;
 	}
 
 	public String deletar() {
 
-		System.out.println("passou deletar");
+		asbcaracService.remover(asbcarac.getId());
+
 		return null;
 	}
 

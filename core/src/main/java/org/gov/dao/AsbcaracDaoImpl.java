@@ -1,11 +1,7 @@
 package org.gov.dao;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
-import org.gov.model.Apac;
 import org.gov.model.Asbcarac;
 import org.gov.util.JPAUtil;
 
@@ -13,15 +9,18 @@ public class AsbcaracDaoImpl implements AsbcaracDao {
 
 
 
+
+
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 2417578921915142472L;
+	private static final long serialVersionUID = 1L;
 
-	EntityManager entityManager = new JPAUtil().getEntityManager();
+	EntityManager entityManager;
 
 
 	public String gravar(Asbcarac asbcarac) {
+			entityManager = new JPAUtil().getEntityManager();
 
 			entityManager.getTransaction().begin();
 			entityManager.persist(asbcarac);
@@ -31,37 +30,26 @@ public class AsbcaracDaoImpl implements AsbcaracDao {
 		return "ok";
 	}
 
+	public String remover(Integer id) {
 
-
-	public List<Apac> apacs() {
-
-		entityManager.getTransaction().begin();
-		Query query = entityManager.createQuery("FROM Apac");
-
-		List<Apac> apacs = query.getResultList();
-
-		entityManager.getTransaction().commit();
-		entityManager.close();
-
-		return apacs;
-	}
-
-	public String remover(String id) {
+		entityManager = new JPAUtil().getEntityManager();
 
 		entityManager.getTransaction().begin();
-		Apac apac = entityManager.find(Apac.class, id);
+		Asbcarac asbcarac = entityManager.find(Asbcarac.class, id);
 
-		entityManager.remove(apac);
+		entityManager.remove(asbcarac);
 		entityManager.getTransaction().commit();
 		entityManager.close();
 
 		return "ok";
 	}
 
-	public String editar(Apac apac) {
+	public String editar(Asbcarac asbcarac) {
+
+		entityManager = new JPAUtil().getEntityManager();
 
 		entityManager.getTransaction().begin();
-		entityManager.merge(apac);
+		entityManager.merge(asbcarac);
 		entityManager.getTransaction().commit();
 		entityManager.close();
 
@@ -72,6 +60,8 @@ public class AsbcaracDaoImpl implements AsbcaracDao {
 
 
 	public Asbcarac pesquisar(int id) {
+
+		entityManager = new JPAUtil().getEntityManager();
 
 		entityManager.getTransaction().begin();
 		Asbcarac abAsbcarac = entityManager.find(Asbcarac.class, id);
