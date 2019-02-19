@@ -9,11 +9,11 @@
 	xmlns:components="http://java.sun.com/jsf/composite/components">
 
 	<style type="text/css">
-.ui-datatable-header {
-	height: 50px
-}
-</style>
-
+		.ui-datatable-tablewrapper {
+  			overflow-x: auto;
+		}
+	</style>
+	<div style="padding-top: 50px">
 	<h:form id="listarApacs" prependId="false">
 
 		<p:spacer height="1" />
@@ -165,5 +165,5 @@
 			</p:dataTable>
 		</h:panelGrid>
 	</h:form>
-
+	</div>
 </ui:composition>

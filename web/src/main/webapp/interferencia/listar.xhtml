@@ -9,12 +9,12 @@
 	xmlns:components="http://java.sun.com/jsf/composite/components">
 
 	<style type="text/css">
-.ui-datatable-header {
-	height: 50px
-}
-</style>
-
-	<h:form id="listarApacs" prependId="false">
+		.ui-datatable-tablewrapper {
+  			overflow-x: auto;
+		}
+	</style>
+	<div style="padding-top: 50px">
+	<h:form id="listarInterferencias" prependId="false">
 
 		<p:spacer height="1" />
 		<p:panelGrid styleClass="cemPorCento" id="uploadFileRow">
@@ -31,7 +31,7 @@
 
 
 		<h:panelGrid>
-			<p:dataTable id="tabelaApacs" value="#"
+			<p:dataTable id="tabelaInterferencias" value="#"
 				paginator="true" paginatorPosition="bottom" rows="15">
 
 				<p:column>
@@ -167,5 +167,5 @@
 			</p:dataTable>
 		</h:panelGrid>
 	</h:form>
-
+	</div>
 </ui:composition>
