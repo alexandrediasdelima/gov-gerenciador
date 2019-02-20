@@ -17,7 +17,7 @@
 	<div style="padding-top: 50px;">
 		<h:form id="listarUsuarios" prependId="false" style="width:99%;">
 			<br/>
-			<p:commandButton icon="ui-icon-plus" value="Adicionar" action="#{usuarioBean.adicionarBtnNovoUsuario}" ajax="false" />
+			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{usuarioBean.adicionarBtnNovoUsuario}" ajax="false" />
 			<br/><br/>
 			<p:scrollPanel mode="native" style="width:100%">
 				<p:dataTable id="tabelaUsuarios" value="#{usuarioBean.usuarios}" paginator="true" rows="10" var="usuario" paginatorPosition="top" resizableColumns="false" >
@@ -83,8 +83,8 @@
 						<h:outputText value="#{usuario.emp_ds_relacaopropriedade}" />
 					</p:column>
 					<p:column headerText="Ações">
-						<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" />
-						<p:commandButton action="#{usuarioBean.deletar(usuario)}" value="Deletar" ajax="false" />
+						<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document"/>
+						<p:commandButton action="#{usuarioBean.deletar(usuario)}" value="Deletar" ajax="false" icon="ui-icon-cancel" />
 					</p:column>
 				</p:dataTable>
 			</p:scrollPanel>

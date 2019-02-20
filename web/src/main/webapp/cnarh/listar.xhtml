@@ -17,7 +17,7 @@
 	<div style="padding-top: 50px;">
 		<h:form id="listarCnarhs" prependId="false" style="width:99%;">
 			<br/>
-            <p:commandButton icon="ui-icon-plus" value="Adicionar" action="#{cnarhBean.adicionarBtnNovoCnarh}" ajax="false" />
+            <p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{cnarhBean.adicionarBtnNovoCnarh}" ajax="false" />
 			<br/><br/>
             <p:scrollPanel mode="native" style="width:100%">
 				<p:dataTable id="tabelaCnarhs" value="#{cnarhBean.cnarhs}" paginator="true" rows="10" var="cnarh" paginatorPosition="top" resizableColumns="false" >
@@ -174,11 +174,9 @@
 						<p:column headerText="Tipo Método Interpretação">
 						<h:outputText value="#{cnarh.tst_tmi_cd}" />
 					</p:column>	
-						<p:column headerText="Editar">
-						<p:commandButton action="#{cnarhBean.telaEditar(cnarh)}" value="Editar" ajax="false" />
-					</p:column>
-					<p:column headerText="Deletar">
-						<p:commandButton action="#{cnarhBean.deletar(cnarh)}" value="Deletar" ajax="false" />
+						<p:column headerText="Ações">
+						<p:commandButton action="#{cnarhBean.telaEditar(cnarh)}" value="Editar" ajax="false" icon="ui-icon-document" />
+						<p:commandButton action="#{cnarhBean.deletar(cnarh)}" value="Deletar" ajax="false" icon="ui-icon-cancel" />
 					</p:column>
 				</p:dataTable>
 			</p:scrollPanel>

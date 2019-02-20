@@ -7,181 +7,103 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-
+	
 	<style type="text/css">
 		.ui-datatable-tablewrapper {
   			overflow-x: auto;
 		}
 	</style>
-	<div style="padding-top: 50px">
-	<h:form id="listarInterferencias" prependId="false">
-
-		<p:spacer height="1" />
-		<p:panelGrid styleClass="cemPorCento" id="uploadFileRow">
-
-			<p:row>
-				<p:column colspan="3" styleClass="ui-state-default">
-					<p:commandButton icon="ui-icon-plus" value="Adicionar"
-						action="#" ajax="false" />
-				</p:column>
-			</p:row>
-		</p:panelGrid>
-
-		<p:spacer height="1" />
-
-
-
-		<h:panelGrid>
-			<p:dataTable id="tabelaInterferencias" value="#" paginator="true" paginatorPosition="bottom" rows="15">
-
-				<p:column>
-					<f:facet name="header">ID</f:facet>
-					<p:commandLink id="dynaButton" value="Show" />
-					    <p:tieredMenu overlay="true" trigger="dynaButton" my="left top" at="left bottom" triggerEvent="mouseover" style="width:200px">
-				            <p:menuitem value="Asbcarac" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac}" icon="pi pi-save" />
-				            <p:menuitem value="Asbama" action="#" icon="pi pi-refresh" />
-				            <p:menuitem value="Consumo Humano" action="#" icon="pi pi-refresh" />
-				            <p:menuitem value="Asbtst" action="#" icon="pi pi-refresh" />
-				            <p:menuitem value="Captação" action="#" icon="pi pi-refresh" />
+	
+	<div style="padding-top: 50px;">
+		<h:form id="listarInterferencias" prependId="false" style="width:99%;">
+			<br/>
+			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#" ajax="false" />
+			<br/><br/>
+			<p:scrollPanel mode="native" style="width:100%">
+			
+				<p:dataTable id="tabelaApacs" value="#" paginator="true" rows="10" var="interferencia" paginatorPosition="top" resizableColumns="false" >
+					<f:facet name="header">Interferência</f:facet>
+					<p:column headerText="ID">
+						<!-- Garça dá uma olhada aqui por favor -->
+						<p:commandLink id="menuInterferencia" value="[172961]" />
+					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="mouseover" style="width:200px">
+				            <p:menuitem value="Asbcarac" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac}" icon="ui-icon-bullet" />
+				            <p:menuitem value="Asbama" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Consumo Humano" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Asbtst" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Captação" action="#" icon="ui-icon-bullet" />
 					    </p:tieredMenu>
-					    
-					    
-					    
-					<h:commandLink action="#{interferenciaBean.redirecionaMenuInterferencia(172961)}" >
-						<h:outputText value="172961" />
-					</h:commandLink>
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Estudo Hidrológico</f:facet>
-					<h:outputText
-						value="Ciencia" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Captura Lançamento Geral</f:facet>
-					<h:outputText value="#" />
-
-
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Latitude</f:facet>
-					<h:outputText value="#" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Longitude</f:facet>
-					<h:outputText value="#" />
-
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Captura Lançamento Detalhe</f:facet>
-					<h:outputText value="#" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Croqui Localização</f:facet>
-					<h:outputText value="#" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Local Interferência</f:facet>
-					<h:outputText value="Teste" />
-				</p:column>
-
-
-				<p:column>
-					<f:facet name="header">Curso</f:facet>
-					<h:outputText value="Teste" />
-				</p:column>
-
-
-				<p:column>
-					<f:facet name="header">Presença Barramento</f:facet>
-					<h:outputText value="Teste" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Barragem</f:facet>
-					<h:outputText value="Teste" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Capacidade Máxima de Acumulação</f:facet>
-					<h:outputText value="100" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Bacia Hidrográfica</f:facet>
-					<h:outputText value="Teste" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">ID Cnarh</f:facet>
-					<h:outputText value="#" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Número do Processo</f:facet>
-						<h:outputText value="1234" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">ID Empreedimento</f:facet>
-						<h:outputText value="1111" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Código da Situação Interferência</f:facet>
+						
+						<h:commandLink action="#{interferenciaBean.redirecionaMenuInterferencia(172961)}" >
+							<h:outputText value="172961" />
+						</h:commandLink>
+					</p:column>
+					<p:column headerText="Estudo Hidrológico">
+						<h:outputText value="Ciência" />
+					</p:column>
+					<p:column headerText="Captura Lançamento Geral">
+						<h:outputText value="#" />
+					</p:column>
+					<p:column headerText="Latitude">
+						<h:outputText value="#" />
+					</p:column>
+					<p:column headerText="Longitude">
+						<h:outputText value="#" />
+					</p:column>
+					<p:column headerText="Captura Lançamento Detalhe">
+						<h:outputText value="#" />
+					</p:column>
+					<p:column headerText="Croqui Localização">
+						<h:outputText value="#" />
+					</p:column>
+					<p:column headerText="Local Interferência">
 						<h:outputText value="Teste" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Código da Finalidade</f:facet>
+					</p:column>
+					<p:column headerText="Curso">
+						<h:outputText value="Teste" />
+					</p:column>
+					<p:column headerText="Presença Barramento">
+						<h:outputText value="Teste" />
+					</p:column>
+					<p:column headerText="Barragem">
+						<h:outputText value="Teste" />
+					</p:column>
+					<p:column headerText="Capacidade Máxima de Acumulação">
+						<h:outputText value="100" />
+					</p:column>
+					<p:column headerText="Bacia Hidrográfica">
+						<h:outputText value="Teste" />
+					</p:column>
+					<p:column headerText="ID Cnarh">
+						<h:outputText value="#" />
+					</p:column>
+					<p:column headerText="Número do Processo">
 						<h:outputText value="1234" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Código de Outro Uso</f:facet>
-						<h:outputText value="11111" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Código do Tipo de Interferência</f:facet>
+					</p:column>
+					<p:column headerText="ID Empreedimento">
 						<h:outputText value="1111" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Tipo de Finalidade</f:facet>
+					</p:column>
+					<p:column headerText="Código da Situação Interferência">
+						<h:outputText value="Teste" />
+					</p:column>
+					<p:column headerText="Código da Finalidade">
+						<h:outputText value="1234" />
+					</p:column>
+					<p:column headerText="Código de Outro Uso">
+						<h:outputText value="11111" />
+					</p:column>
+					<p:column headerText="Código do Tipo de Interferência">
+						<h:outputText value="1111" />
+					</p:column>
+					<p:column headerText="Tipo de Finalidade">
 						<h:outputText value="teste" />
-				</p:column>
-
-
-
-				<p:column>
-					<f:facet name="header">
-						<h:outputText value="Editar" />
-					</f:facet>
-					<p:commandButton action="#" value="Editar" ajax="false"
-						style="text-decoration: underline;">
-					</p:commandButton>
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">
-						<h:outputText value="Deletar" />
-					</f:facet>
-					<p:commandButton action="#" value="Deletar" ajax="false" />
-				</p:column>
-			</p:dataTable>
-		</h:panelGrid>
-
-
-
-
-		
-	</h:form>
+					</p:column>
+					<p:column headerText="Ações">
+						<p:commandButton action="#" value="Editar" ajax="false" icon="ui-icon-document" />
+						<p:commandButton action="#" value="Deletar" ajax="false" icon="ui-icon-cancel" />
+					</p:column>
+				</p:dataTable>
+			</p:scrollPanel>
+		</h:form>
 	</div>
 </ui:composition>
