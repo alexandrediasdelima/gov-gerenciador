@@ -30,12 +30,23 @@
 		<p:spacer height="1" />
 
 
+
 		<h:panelGrid>
-			<p:dataTable id="tabelaInterferencias" value="#"
-				paginator="true" paginatorPosition="bottom" rows="15">
+			<p:dataTable id="tabelaInterferencias" value="#" paginator="true" paginatorPosition="bottom" rows="15">
 
 				<p:column>
 					<f:facet name="header">ID</f:facet>
+					<p:commandLink id="dynaButton" value="Show" />
+					    <p:tieredMenu overlay="true" trigger="dynaButton" my="left top" at="left bottom" triggerEvent="mouseover" style="width:200px">
+				            <p:menuitem value="Asbcarac" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac}" icon="pi pi-save" />
+				            <p:menuitem value="Asbama" action="#" icon="pi pi-refresh" />
+				            <p:menuitem value="Consumo Humano" action="#" icon="pi pi-refresh" />
+				            <p:menuitem value="Asbtst" action="#" icon="pi pi-refresh" />
+				            <p:menuitem value="Captação" action="#" icon="pi pi-refresh" />
+					    </p:tieredMenu>
+					    
+					    
+					    
 					<h:commandLink action="#{interferenciaBean.redirecionaMenuInterferencia(172961)}" >
 						<h:outputText value="172961" />
 					</h:commandLink>
@@ -166,6 +177,11 @@
 				</p:column>
 			</p:dataTable>
 		</h:panelGrid>
+
+
+
+
+		
 	</h:form>
 	</div>
 </ui:composition>

@@ -13,87 +13,84 @@
   			overflow-x: auto;
 		}
 	</style>
+	
 	<div style="padding-top: 50px;">
-	<h:form id="listarUsuarios" prependId="false" style="width:99%;">
-		<br/>
-		<p:column colspan="3" styleClass="ui-state-default">
+		<h:form id="listarUsuarios" prependId="false" style="width:99%;">
+			<br/>
 			<p:commandButton icon="ui-icon-plus" value="Adicionar" action="#{usuarioBean.adicionarBtnNovoUsuario}" ajax="false" />
-		</p:column>
-		<br/><br/>
-		<p:scrollPanel mode="native" style="width:100%">
-			<p:dataTable id="tabelaUsuarios" value="#{usuarioBean.usuarios}" paginator="true" rows="10" var="usuario" paginatorPosition="top" resizableColumns="false" >
-				<f:facet name="header">
-					Usuários
-				</f:facet>
-				<p:column headerText="ID">
-					<h:outputText value="#{usuario.usuario_id}" />
-				</p:column>
-				<p:column headerText="Nome">
-					<h:outputText value="#{usuario.emp_nm_usuario}" />
-				</p:column>
-				<p:column headerText="Apelido">
-					<h:outputText value="#{usuario.emp_nm_apelido}" />
-				</p:column>
-				<p:column headerText="Documento">
-					<h:outputText value="#{usuario.emp_nu_cpfcnpj}" />
-				</p:column>
-				<p:column headerText="Observação do Documento">
-					<h:outputText value="#{usuario.emp_nu_obscpfcnpj}" />
-				</p:column>
-				<p:column headerText="DDD">
-					<h:outputText value="#{usuario.emp_nu_ddd}" />
-				</p:column>
-				<p:column headerText="Telefone">
-					<h:outputText value="#{usuario.emp_nu_telefone}" />
-				</p:column>
-				<p:column headerText="E-mail">
-					<h:outputText value="#{usuario.emp_ds_emailresponsavel}" />
-				</p:column>
-				<p:column headerText="Tipo Logradouro">
-					<h:outputText value="#{usuario.emp_ds_tp_logradouro}" />
-				</p:column>
-				<p:column headerText="Endereço">
-					<h:outputText value="#{usuario.emp_ds_nm_logradouro}" />
-				</p:column>
-				<p:column headerText="Referência do Endereço">
-					<h:outputText value="#{usuario.emp_ds_logradouro}" />
-				</p:column>
-				<p:column headerText="Número">
-					<h:outputText value="#{usuario.emp_nu_logradouro}" />
-				</p:column>
-				<p:column headerText="Complemento">
-					<h:outputText value="#{usuario.emp_ds_complementoendereco}" />
-				</p:column>
-				<p:column headerText="Bairro">
-					<h:outputText value="#{usuario.emp_ds_bairrodistrito}" />
-				</p:column>
-				<p:column headerText="Caixa Postal">
-					<h:outputText value="#{usuario.emp_nu_caixapostal}" />
-				</p:column>
-				<p:column headerText="CEP">
-					<h:outputText value="#{usuario.emp_nu_cependereco}" />
-				</p:column>
-				<p:column headerText="Cidade">
-					<h:outputText value="#{usuario.apa_muni_correspondencia}" />
-				</p:column>
-				<p:column headerText="Código IBGE">
-					<h:outputText value="#{usuario.emp_cd_codigoibgecorrespondencia}" />
-				</p:column>
-				<p:column headerText="UF">
-					<h:outputText value="#{usuario.emp_ds_uf}" />
-				</p:column>
-				<p:column headerText="Relação com a Propriedade">
-					<h:outputText value="#{usuario.emp_ds_relacaopropriedade}" />
-				</p:column>
-				<p:column headerText="Ações">
-					<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" />
-					<p:commandButton action="#{usuarioBean.deletar(usuario)}" value="Deletar" ajax="false" />
-				</p:column>
-			</p:dataTable>
-		</p:scrollPanel>
-		<p:blockUI block="tabelaUsuarios" trigger="tabelaUsuarios">
-			<p:graphicImage name="images/loadingbar.gif"/>
-		</p:blockUI>
-	</h:form>
+			<br/><br/>
+			<p:scrollPanel mode="native" style="width:100%">
+				<p:dataTable id="tabelaUsuarios" value="#{usuarioBean.usuarios}" paginator="true" rows="10" var="usuario" paginatorPosition="top" resizableColumns="false" >
+					<f:facet name="header">Usuários</f:facet>
+					<p:column headerText="ID">
+						<h:outputText value="#{usuario.usuario_id}" />
+					</p:column>
+					<p:column headerText="Nome">
+						<h:outputText value="#{usuario.emp_nm_usuario}" />
+					</p:column>
+					<p:column headerText="Apelido">
+						<h:outputText value="#{usuario.emp_nm_apelido}" />
+					</p:column>
+					<p:column headerText="Documento">
+						<h:outputText value="#{usuario.emp_nu_cpfcnpj}" />
+					</p:column>
+					<p:column headerText="Observação do Documento">
+						<h:outputText value="#{usuario.emp_nu_obscpfcnpj}" />
+					</p:column>
+					<p:column headerText="DDD">
+						<h:outputText value="#{usuario.emp_nu_ddd}" />
+					</p:column>
+					<p:column headerText="Telefone">
+						<h:outputText value="#{usuario.emp_nu_telefone}" />
+					</p:column>
+					<p:column headerText="E-mail">
+						<h:outputText value="#{usuario.emp_ds_emailresponsavel}" />
+					</p:column>
+					<p:column headerText="Tipo Logradouro">
+						<h:outputText value="#{usuario.emp_ds_tp_logradouro}" />
+					</p:column>
+					<p:column headerText="Endereço">
+						<h:outputText value="#{usuario.emp_ds_nm_logradouro}" />
+					</p:column>
+					<p:column headerText="Referência do Endereço">
+						<h:outputText value="#{usuario.emp_ds_logradouro}" />
+					</p:column>
+					<p:column headerText="Número">
+						<h:outputText value="#{usuario.emp_nu_logradouro}" />
+					</p:column>
+					<p:column headerText="Complemento">
+						<h:outputText value="#{usuario.emp_ds_complementoendereco}" />
+					</p:column>
+					<p:column headerText="Bairro">
+						<h:outputText value="#{usuario.emp_ds_bairrodistrito}" />
+					</p:column>
+					<p:column headerText="Caixa Postal">
+						<h:outputText value="#{usuario.emp_nu_caixapostal}" />
+					</p:column>
+					<p:column headerText="CEP">
+						<h:outputText value="#{usuario.emp_nu_cependereco}" />
+					</p:column>
+					<p:column headerText="Cidade">
+						<h:outputText value="#{usuario.apa_muni_correspondencia}" />
+					</p:column>
+					<p:column headerText="Código IBGE">
+						<h:outputText value="#{usuario.emp_cd_codigoibgecorrespondencia}" />
+					</p:column>
+					<p:column headerText="UF">
+						<h:outputText value="#{usuario.emp_ds_uf}" />
+					</p:column>
+					<p:column headerText="Relação com a Propriedade">
+						<h:outputText value="#{usuario.emp_ds_relacaopropriedade}" />
+					</p:column>
+					<p:column headerText="Ações">
+						<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" />
+						<p:commandButton action="#{usuarioBean.deletar(usuario)}" value="Deletar" ajax="false" />
+					</p:column>
+				</p:dataTable>
+			</p:scrollPanel>
+			<p:blockUI block="tabelaUsuarios" trigger="tabelaUsuarios">
+				<p:graphicImage name="images/loadingbar.gif"/>
+			</p:blockUI>
+		</h:form>
 	</div>
 </ui:composition>

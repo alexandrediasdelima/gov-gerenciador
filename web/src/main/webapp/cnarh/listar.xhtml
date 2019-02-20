@@ -13,291 +13,175 @@
   			overflow-x: auto;
 		}
 	</style>
-	<div style="padding-top: 50px">
-	<h:form id="listarCnarhs" prependId="false">
-
-		<p:spacer height="1" />
-		<p:panelGrid styleClass="cemPorCento" id="uploadFileRow">
-
-			<p:row>
-				<p:column colspan="3" styleClass="ui-state-default">
-					<p:commandButton icon="ui-icon-plus" value="Adicionar"
-						action="#{cnarhBean.adicionarBtnNovoCnarh}" ajax="false" />
-				</p:column>
-			</p:row>
-		</p:panelGrid>
-
-		<p:spacer height="1" />
-
-		<h:panelGrid>
-			<p:dataTable id="tabelaCnarhs" value="#{cnarhBean.cnarhs}"
-				paginator="true" paginatorPosition="bottom" rows="15" var="cnarh">
-
-				<p:column>
-					<f:facet name="header">ID</f:facet>
-					<h:outputText value="#{cnarh.cnarh_id}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Altitude Terreno</f:facet>
-					<h:outputText value="#{cnarh.asb_nu_cotaterreno}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Boca Tubulação</f:facet>
-					<h:outputText value="#{cnarh.asb_nu_alturabocatubo}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Altura Total Reservatório</f:facet>
-					<h:outputText value="#{cnarh.ius_nu_alturares}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Calcio</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_calcio}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Cloreto</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_cloreto}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Carbonato</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_carbonato}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Dureza Total</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_durezatotal}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Fluoretos</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_fluoretos}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Ferro Total</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_ferrototal}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Bicarbonato</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_bicarbonato}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Potássio</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_potassio}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Magnésio</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_magnesio}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Sódio</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_sodio}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Nitritos</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_nitritos}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Nitratos</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_nitratos}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Sulfato</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_sulfato}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Código Aquifero Ponto</f:facet>
-					<h:outputText value="#{cnarh.asb_aqp_cd}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Área Total Reservatório</f:facet>
-					<h:outputText value="#{cnarh.ius_ar_resmax}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Coeficiente Armazenamento</f:facet>
-					<h:outputText value="#{cnarh.tst_nu_coeficientearmazenamento}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Condutividade Elétrica</f:facet>
-					<h:outputText value="#{cnarh.ama_nu_condutividadeeletrica}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Condutividade Hidraulica</f:facet>
-					<h:outputText value="#{cnarh.tst_nu_condutividadehidraulica}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Data Análise</f:facet>
-					<h:outputText value="#{cnarh.ama_dt_analise}">
-						<f:convertDateTime pattern="dd/MM/yyyy" />
-					</h:outputText>
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Data Coleta</f:facet>
-					<h:outputText value="#{cnarh.ama_dt_coleta}">
-						<f:convertDateTime pattern="dd/MM/yyyy" />
-					</h:outputText>
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Data Instalação</f:facet>
-					<h:outputText value="#{cnarh.asb_dt_instalacao}">
-						<f:convertDateTime pattern="dd/MM/yyyy" />
-					</h:outputText>
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Data Teste Bombeamento</f:facet>
-					<h:outputText value="#{cnarh.tst_dt}">
-						<f:convertDateTime pattern="dd/MM/yyyy" />
-					</h:outputText>
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Diametro Perfuração</f:facet>
-					<h:outputText value="#{cnarh.asb_nu_diametroperfuracao}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Diametro Filtro</f:facet>
-					<h:outputText value="#{cnarh.asb_nu_diametrofiltro}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Tempo Duração</f:facet>
-					<h:outputText value="#{cnarh.tst_ds_tempoduracao}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Nivel Dinamico</f:facet>
-					<h:outputText value="#{cnarh.tst_nu_nd}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Nivel Estatico</f:facet>
-					<h:outputText value="#{cnarh.tst_nu_ne}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Numero Siagas</f:facet>
-					<h:outputText value="#{cnarh.int_nu_siagas}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Coliformes Fecais</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_coliformesfecais}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Quantidade Coliformes Totais</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_coliformestotais}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Permeabilidade</f:facet>
-					<h:outputText value="#{cnarh.tst_nu_permeabilidade}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">PH</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_ph}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Profundidade Base do Aquifero</f:facet>
-					<h:outputText value="#{cnarh.asb_nu_base}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Profundidade Topo do Aquifero</f:facet>
-					<h:outputText value="#{cnarh.asb_nu_topo}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Solidos Totais Dissolvidos</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_std}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Temperatura</f:facet>
-					<h:outputText value="#{cnarh.ama_qt_temperatura}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Transmissividade</f:facet>
-					<h:outputText value="#{cnarh.tst_nu_transmissividade}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Vazão Estabilização</f:facet>
-					<h:outputText value="#{cnarh.tst_vz_estabilizacao}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Volume Máximo Reservatório</f:facet>
-					<h:outputText value="#{cnarh.ius_vo_resmax}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Natureza do Ponto</f:facet>
-					<h:outputText value="#{cnarh.asb_tnp_cd}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Tipo Penetração Aquifero</f:facet>
-					<h:outputText value="#{cnarh.asb_tpn_cd}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Condição Aquifero</f:facet>
-					<h:outputText value="#{cnarh.asb_tca_cd}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Tipo Teste Bombeamento</f:facet>
-					<h:outputText value="#{cnarh.tst_ttb_cd}" />
-				</p:column>
-				
-				<p:column>
-					<f:facet name="header">Tipo Método Interpretação</f:facet>
-					<h:outputText value="#{cnarh.tst_tmi_cd}" />
-				</p:column>	
-
-				<p:column>
-					<f:facet name="header">
-						<h:outputText value="Editar" />
-					</f:facet>
-					<p:commandButton action="#{cnarhBean.telaEditar(cnarh)}" value="Editar" ajax="false"
-						style="text-decoration: underline;">
-					</p:commandButton>
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">
-						<h:outputText value="Deletar" />
-					</f:facet>
-					<p:commandButton action="#{cnarhBean.deletar(cnarh)}" value="Deletar" ajax="false" />
-				</p:column>
-			</p:dataTable>
-		</h:panelGrid>
-	</h:form>
+	
+	<div style="padding-top: 50px;">
+		<h:form id="listarCnarhs" prependId="false" style="width:99%;">
+			<br/>
+            <p:commandButton icon="ui-icon-plus" value="Adicionar" action="#{cnarhBean.adicionarBtnNovoCnarh}" ajax="false" />
+			<br/><br/>
+            <p:scrollPanel mode="native" style="width:100%">
+				<p:dataTable id="tabelaCnarhs" value="#{cnarhBean.cnarhs}" paginator="true" rows="10" var="cnarh" paginatorPosition="top" resizableColumns="false" >
+					<f:facet name="header">CNARH</f:facet>
+					<p:column headerText="ID">
+						<h:outputText value="#{cnarh.cnarh_id}" />
+					</p:column>
+					<p:column headerText="Altitude Terreno">
+						<h:outputText value="#{cnarh.asb_nu_cotaterreno}" />
+					</p:column>
+					<p:column headerText="Boca Tubulação">
+						<h:outputText value="#{cnarh.asb_nu_alturabocatubo}" />
+					</p:column>
+					<p:column headerText="Altura Total Reservatório">
+						<h:outputText value="#{cnarh.ius_nu_alturares}" />
+					</p:column>
+					<p:column headerText="Quantidade Calcio">
+						<h:outputText value="#{cnarh.ama_qt_calcio}" />
+					</p:column>
+					<p:column headerText="Quantidade Cloreto">
+						<h:outputText value="#{cnarh.ama_qt_cloreto}" />
+					</p:column>
+					<p:column headerText="Quantidade Carbonato">
+						<h:outputText value="#{cnarh.ama_qt_carbonato}" />
+					</p:column>
+						<p:column headerText="Quantidade Dureza Total">
+						<h:outputText value="#{cnarh.ama_qt_durezatotal}" />
+					</p:column>
+						<p:column headerText="Quantidade Fluoretos">
+						<h:outputText value="#{cnarh.ama_qt_fluoretos}" />
+					</p:column>
+						<p:column headerText="Quantidade Ferro Total">
+						<h:outputText value="#{cnarh.ama_qt_ferrototal}" />
+					</p:column>
+						<p:column headerText="Quantidade Bicarbonato">
+						<h:outputText value="#{cnarh.ama_qt_bicarbonato}" />
+					</p:column>
+						<p:column headerText="Quantidade Potássio">
+						<h:outputText value="#{cnarh.ama_qt_potassio}" />
+					</p:column>
+						<p:column headerText="Quantidade Magnésio">
+						<h:outputText value="#{cnarh.ama_qt_magnesio}" />
+					</p:column>
+						<p:column headerText="Quantidade Sódio">
+						<h:outputText value="#{cnarh.ama_qt_sodio}" />
+					</p:column>
+						<p:column headerText="Quantidade Nitritos">
+						<h:outputText value="#{cnarh.ama_qt_nitritos}" />
+					</p:column>
+						<p:column headerText="Quantidade Nitratos">
+						<h:outputText value="#{cnarh.ama_qt_nitratos}" />
+					</p:column>
+						<p:column headerText="Quantidade Sulfato">
+						<h:outputText value="#{cnarh.ama_qt_sulfato}" />
+					</p:column>
+						<p:column headerText="Código Aquifero Ponto">
+						<h:outputText value="#{cnarh.asb_aqp_cd}" />
+					</p:column>
+						<p:column headerText="Área Total Reservatório">
+						<h:outputText value="#{cnarh.ius_ar_resmax}" />
+					</p:column>
+						<p:column headerText="Coeficiente Armazenamento">
+						<h:outputText value="#{cnarh.tst_nu_coeficientearmazenamento}" />
+					</p:column>
+						<p:column headerText="Condutividade Elétrica">
+						<h:outputText value="#{cnarh.ama_nu_condutividadeeletrica}" />
+					</p:column>
+						<p:column headerText="Condutividade Hidraulica">
+						<h:outputText value="#{cnarh.tst_nu_condutividadehidraulica}" />
+					</p:column>
+						<p:column headerText="Data Análise">
+						<h:outputText value="#{cnarh.ama_dt_analise}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+						<p:column headerText="Data Coleta">
+						<h:outputText value="#{cnarh.ama_dt_coleta}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+						<p:column headerText="Data Instalação">
+						<h:outputText value="#{cnarh.asb_dt_instalacao}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+						<p:column headerText="Data Teste Bombeamento">
+						<h:outputText value="#{cnarh.tst_dt}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+						<p:column headerText="Diametro Perfuração">
+						<h:outputText value="#{cnarh.asb_nu_diametroperfuracao}" />
+					</p:column>
+						<p:column headerText="Diametro Filtro">
+						<h:outputText value="#{cnarh.asb_nu_diametrofiltro}" />
+					</p:column>
+						<p:column headerText="Tempo Duração">
+						<h:outputText value="#{cnarh.tst_ds_tempoduracao}" />
+					</p:column>
+						<p:column headerText="Nivel Dinamico">
+						<h:outputText value="#{cnarh.tst_nu_nd}" />
+					</p:column>
+						<p:column headerText="Nivel Estatico">
+						<h:outputText value="#{cnarh.tst_nu_ne}" />
+					</p:column>
+						<p:column headerText="Numero Siagas">
+						<h:outputText value="#{cnarh.int_nu_siagas}" />
+					</p:column>
+						<p:column headerText="Quantidade Coliformes Fecais">
+						<h:outputText value="#{cnarh.ama_qt_coliformesfecais}" />
+					</p:column>
+						<p:column headerText="Quantidade Coliformes Totais">
+						<h:outputText value="#{cnarh.ama_qt_coliformestotais}" />
+					</p:column>
+						<p:column headerText="Permeabilidade">
+						<h:outputText value="#{cnarh.tst_nu_permeabilidade}" />
+					</p:column>
+						<p:column headerText="PH">
+						<h:outputText value="#{cnarh.ama_qt_ph}" />
+					</p:column>
+						<p:column headerText="Profundidade Base do Aquifero">
+						<h:outputText value="#{cnarh.asb_nu_base}" />
+					</p:column>
+						<p:column headerText="Profundidade Topo do Aquifero">
+						<h:outputText value="#{cnarh.asb_nu_topo}" />
+					</p:column>
+						<p:column headerText="Solidos Totais Dissolvidos">
+						<h:outputText value="#{cnarh.ama_qt_std}" />
+					</p:column>
+						<p:column headerText="Temperatura">
+						<h:outputText value="#{cnarh.ama_qt_temperatura}" />
+					</p:column>
+						<p:column headerText="Transmissividade">
+						<h:outputText value="#{cnarh.tst_nu_transmissividade}" />
+					</p:column>
+						<p:column headerText="Vazão Estabilização">
+						<h:outputText value="#{cnarh.tst_vz_estabilizacao}" />
+					</p:column>
+						<p:column headerText="Volume Máximo Reservatório">
+						<h:outputText value="#{cnarh.ius_vo_resmax}" />
+					</p:column>
+						<p:column headerText="Natureza do Ponto">
+						<h:outputText value="#{cnarh.asb_tnp_cd}" />
+					</p:column>
+						<p:column headerText="Tipo Penetração Aquifero">
+						<h:outputText value="#{cnarh.asb_tpn_cd}" />
+					</p:column>
+						<p:column headerText="Condição Aquifero">
+						<h:outputText value="#{cnarh.asb_tca_cd}" />
+					</p:column>
+						<p:column headerText="Tipo Teste Bombeamento">
+						<h:outputText value="#{cnarh.tst_ttb_cd}" />
+					</p:column>
+						<p:column headerText="Tipo Método Interpretação">
+						<h:outputText value="#{cnarh.tst_tmi_cd}" />
+					</p:column>	
+						<p:column headerText="Editar">
+						<p:commandButton action="#{cnarhBean.telaEditar(cnarh)}" value="Editar" ajax="false" />
+					</p:column>
+					<p:column headerText="Deletar">
+						<p:commandButton action="#{cnarhBean.deletar(cnarh)}" value="Deletar" ajax="false" />
+					</p:column>
+				</p:dataTable>
+			</p:scrollPanel>
+		</h:form>
 	</div>
 </ui:composition>
