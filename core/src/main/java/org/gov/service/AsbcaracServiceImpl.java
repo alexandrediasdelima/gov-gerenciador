@@ -18,9 +18,7 @@ public class AsbcaracServiceImpl implements AsbcaracService{
 	public String gravar(Asbcarac asbcarac) {
 
 		asbcaracDao = new AsbcaracDaoImpl();
-		asbcaracDao.gravar(asbcarac);
-		//
-		return null;
+		return asbcaracDao.gravar(asbcarac);
 	}
 
 
@@ -32,10 +30,7 @@ public class AsbcaracServiceImpl implements AsbcaracService{
 
 
 	public String editar(Asbcarac asbcarac) {
-
-		asbcaracDao.editar(asbcarac);
-
-		return null;
+		return asbcaracDao.editar(asbcarac);
 	}
 
 	public String remover(Integer id) {

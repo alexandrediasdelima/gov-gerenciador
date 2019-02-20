@@ -32,16 +32,22 @@ public class AsbcaracDaoImpl implements AsbcaracDao {
 
 	public String remover(Integer id) {
 
+		String retorno = null;
+
 		entityManager = new JPAUtil().getEntityManager();
 
 		entityManager.getTransaction().begin();
 		Asbcarac asbcarac = entityManager.find(Asbcarac.class, id);
 
-		entityManager.remove(asbcarac);
-		entityManager.getTransaction().commit();
+		if(asbcarac != null) {
+
+			entityManager.remove(asbcarac);
+			entityManager.getTransaction().commit();
+			retorno = "ok";
+		}
 		entityManager.close();
 
-		return "ok";
+		return retorno;
 	}
 
 	public String editar(Asbcarac asbcarac) {

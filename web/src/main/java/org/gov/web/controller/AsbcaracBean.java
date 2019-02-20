@@ -1,5 +1,6 @@
 package org.gov.web.controller;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 import org.gov.model.Asbcarac;
@@ -18,6 +19,7 @@ public class AsbcaracBean extends Controller {
 	private int id;
 	private Asbcarac asbcarac;
 	private AsbcaracService asbcaracService;
+	private FacesContext facesContext;
 
 
 	public AsbcaracBean () {
@@ -42,23 +44,38 @@ public class AsbcaracBean extends Controller {
 
 	public String gravar() {
 
-		asbcaracService.gravar(asbcarac);
+		facesContext = FacesContext.getCurrentInstance();
 
-		return null;
+		if("ok".equals(asbcaracService.gravar(asbcarac))){
+			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Gravado com sucesso", null));
+			setView(EDIT);
+		}
+		return eval(index());
 	}
 
 	public String alterar() {
 
-		asbcaracService.editar(asbcarac);
+		facesContext = FacesContext.getCurrentInstance();
 
-		return null;
+		if("ok".equals(asbcaracService.editar(asbcarac))){
+			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Alterado com sucesso", null));
+			setView(EDIT);
+		}
+		return eval(index());
 	}
 
 	public String deletar() {
 
-		asbcaracService.remover(asbcarac.getId());
+		facesContext = FacesContext.getCurrentInstance();
 
-		return null;
+		if("ok".equals(asbcaracService.remover(asbcarac.getId()))){
+			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Deletado com sucesso", null));
+			setView(ADD);
+		} else {
+			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Dado não encontrado para excluir", null));
+			setView(ADD);
+		}
+		return eval(index());
 	}
 
 	public String index() {

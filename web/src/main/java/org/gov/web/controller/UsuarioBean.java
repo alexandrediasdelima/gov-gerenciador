@@ -1,16 +1,11 @@
 package org.gov.web.controller;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 
 import org.gov.model.Usuario;
 import org.gov.service.UsuarioService;
 import org.gov.service.UsuarioServiceImpl;
-import org.primefaces.event.SelectEvent;
 
 public class UsuarioBean extends Controller  {
 
