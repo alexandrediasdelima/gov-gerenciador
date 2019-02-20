@@ -26,12 +26,20 @@
 					<p:column headerText="ID">
 						<!-- Garça dá uma olhada aqui por favor -->
 						<p:commandLink id="menuInterferencia" value="[172961]" />
-					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="mouseover" style="width:200px">
-				            <p:menuitem value="Asbcarac" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac}" icon="ui-icon-bullet" />
-				            <p:menuitem value="Asbama" action="#" icon="ui-icon-bullet" />
-				            <p:menuitem value="Consumo Humano" action="#" icon="ui-icon-bullet" />
-				            <p:menuitem value="Asbtst" action="#" icon="ui-icon-bullet" />
+					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="mouseover" >
+				            <p:submenu label="Águas Subterrâneas">
+					            <p:menuitem value="Características" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac}" icon="ui-icon-bullet" />
+					            <p:menuitem value="Amostras" action="#" icon="ui-icon-bullet" />
+					            <p:menuitem value="Testes" action="#" icon="ui-icon-bullet" />
+				            </p:submenu>
 				            <p:menuitem value="Captação" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Consumo Humano" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Indústria" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Irrigação" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Lançamento" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Pecuária" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Teste Bombeamento" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Vazão" action="#" icon="ui-icon-bullet" />
 					    </p:tieredMenu>
 						
 						<h:commandLink action="#{interferenciaBean.redirecionaMenuInterferencia(172961)}" >
