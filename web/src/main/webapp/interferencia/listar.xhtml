@@ -7,28 +7,31 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	
+
 	<style type="text/css">
 		.ui-datatable-tablewrapper {
   			overflow-x: auto;
 		}
 	</style>
-	
+
 	<div style="padding-top: 50px;">
 		<h:form id="listarInterferencias" prependId="false" style="width:99%;">
 			<br/>
 			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#" ajax="false" />
 			<br/><br/>
 			<p:scrollPanel mode="native" style="width:100%">
-			
+
 				<p:dataTable id="tabelaApacs" value="#" paginator="true" rows="10" var="interferencia" paginatorPosition="top" resizableColumns="false" >
 					<f:facet name="header">Interferência</f:facet>
 					<p:column headerText="ID">
-						<!-- Garça dá uma olhada aqui por favor -->
-						<p:commandLink id="menuInterferencia" value="[172961]" />
-					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="mouseover" >
+
+
+						<h:commandLink id="menuInterferencia">
+							<h:outputText value="172961" />
+						</h:commandLink>
+					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="mouseover">
 				            <p:submenu label="Águas Subterrâneas">
-					            <p:menuitem value="Características" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac}" icon="ui-icon-bullet" />
+					            <p:menuitem value="Características" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac(172961)}" icon="ui-icon-bullet" />
 					            <p:menuitem value="Amostras" action="#" icon="ui-icon-bullet" />
 					            <p:menuitem value="Testes" action="#" icon="ui-icon-bullet" />
 				            </p:submenu>
@@ -41,10 +44,8 @@
 				            <p:menuitem value="Teste Bombeamento" action="#" icon="ui-icon-bullet" />
 				            <p:menuitem value="Vazão" action="#" icon="ui-icon-bullet" />
 					    </p:tieredMenu>
-						
-						<h:commandLink action="#{interferenciaBean.redirecionaMenuInterferencia(172961)}" >
-							<h:outputText value="172961" />
-						</h:commandLink>
+
+
 					</p:column>
 					<p:column headerText="Estudo Hidrológico">
 						<h:outputText value="Ciência" />

@@ -24,12 +24,12 @@ public class AsbcaracBean extends Controller {
 		asbcaracService = new AsbcaracServiceImpl();
 	}
 
-	public String redirecionarTelaCadastroAsbcarac() {
+	public String redirecionarTelaCadastroAsbcarac(int id) {
 
 		asbcarac = new Asbcarac();
-		this.asbcarac.setId((Integer)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("idInterferencia"));
+		this.asbcarac.setId(id);
 
-		Asbcarac asb = asbcaracService.pesquisar(asbcarac.getId());
+		Asbcarac asb = asbcaracService.pesquisar(id);
 		setView(ADD);
 
 		if(asb != null) {

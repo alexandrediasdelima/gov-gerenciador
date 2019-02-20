@@ -1,6 +1,5 @@
 package org.gov.web.controller;
 
-import javax.faces.context.FacesContext;
 
 
 
@@ -15,14 +14,6 @@ public class InterferenciaBean extends Controller  {
 
 	public InterferenciaBean() {
 
-	}
-
-	public String redirecionaMenuInterferencia(int id) {
-
-		FacesContext facesContext = FacesContext.getCurrentInstance();
-		facesContext.getExternalContext().getSessionMap().put("idInterferencia", id);
-
-		return "/interferencia/menuInterferencia";
 	}
 
 
