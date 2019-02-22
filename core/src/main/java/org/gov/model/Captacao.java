@@ -19,9 +19,9 @@ import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
 @Entity
-@Table(name= "tb_captacao")
+@Table(name="tb_captacao")
 @TypeDef(
-	    name = "pgsql_enum",
+	    name="pgsql_enum",
 	    typeClass = PostgreSQLEnumType.class)
 public class Captacao implements Serializable {
 
@@ -32,7 +32,7 @@ public class Captacao implements Serializable {
 
 	@Column(name="cap_int_pfk", nullable=false)
 	@Id
-	private Integer cap_int_pfk;
+	private int cap_int_pfk;
 	
 	@Column(name="cam_info_adici_consumo")
 	private String cam_info_adici_consumo;
@@ -44,11 +44,11 @@ public class Captacao implements Serializable {
 
 	
 	
-	public Integer getCap_int_pfk() {
+	public int getCap_int_pfk() {
 		return cap_int_pfk;
 	}
 
-	public void setCap_int_pfk(Integer cap_int_pfk) {
+	public void setCap_int_pfk(int cap_int_pfk) {
 		this.cap_int_pfk = cap_int_pfk;
 	}
 

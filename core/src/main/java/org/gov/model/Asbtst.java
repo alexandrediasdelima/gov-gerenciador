@@ -32,7 +32,7 @@ public class Asbtst implements Serializable {
 
 	@Column(name="tst_int_pfk", nullable=false)
 	@Id
-	private Integer tst_int_pfk;
+	private int tst_int_pfk;
 	
 	@Column(name="asb_aqp_cd", columnDefinition="numeric")
 	private BigDecimal asb_aqp_cd;
@@ -100,11 +100,11 @@ public class Asbtst implements Serializable {
 	@Column(name="tst_vz_estabilizacao", columnDefinition="numeric")
 	private BigDecimal tst_vz_estabilizacao;
 
-	public Integer getTst_int_pfk() {
+	public int getTst_int_pfk() {
 		return tst_int_pfk;
 	}
 
-	public void setTst_int_pfk(Integer tst_int_pfk) {
+	public void setTst_int_pfk(int tst_int_pfk) {
 		this.tst_int_pfk = tst_int_pfk;
 	}
 

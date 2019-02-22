@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_consumo_humano")
+@Table(name="tb_consumo_humano")
 public class ConsumoHumano implements Serializable {
 
 	/**
@@ -17,41 +17,38 @@ public class ConsumoHumano implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="ch_int_pfk", nullable=false)
 	@Id
-	@Column(name = "ch_int_pfk")
-	private int id = 172954;
+	private int ch_int_pfk;
 
-	@Column(name = "cam_pop_urb_estimada")
-	private Integer estimativaPopulacionalUrbana;
+	@Column(name="cam_pop_urb_estimada")
+	private int cam_pop_urb_estimada;
 
-	@Column(name = "cam_pop_rural_estimada")
-	private Integer estimativaPopulacionalRural;
+	@Column(name="cam_pop_rural_estimada")
+	private int cam_pop_rural_estimada;
 
-	public int getId() {
-		return id;
+	public int getCh_int_pfk() {
+		return ch_int_pfk;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setCh_int_pfk(int ch_int_pfk) {
+		this.ch_int_pfk = ch_int_pfk;
 	}
 
-	public Integer getEstimativaPopulacionalUrbana() {
-		return estimativaPopulacionalUrbana;
+	public int getCam_pop_urb_estimada() {
+		return cam_pop_urb_estimada;
 	}
 
-	public void setEstimativaPopulacionalUrbana(
-			Integer estimativaPopulacionalUrbana) {
-		this.estimativaPopulacionalUrbana = estimativaPopulacionalUrbana;
+	public void setCam_pop_urb_estimada(int cam_pop_urb_estimada) {
+		this.cam_pop_urb_estimada = cam_pop_urb_estimada;
 	}
 
-	public Integer getEstimativaPopulacionalRural() {
-		return estimativaPopulacionalRural;
+	public int getCam_pop_rural_estimada() {
+		return cam_pop_rural_estimada;
 	}
 
-	public void setEstimativaPopulacionalRural(
-			Integer estimativaPopulacionalRural) {
-		this.estimativaPopulacionalRural = estimativaPopulacionalRural;
+	public void setCam_pop_rural_estimada(int cam_pop_rural_estimada) {
+		this.cam_pop_rural_estimada = cam_pop_rural_estimada;
 	}
-
 
 }
