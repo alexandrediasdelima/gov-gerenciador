@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 import org.gov.util.PostgreSQLEnumType;
 import org.hibernate.annotations.Type;
@@ -146,13 +145,11 @@ public class Apac implements Serializable {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "out_tpo_cd", columnDefinition = "out_tpo_enum")
 	@Type(type = "pgsql_enum")
-	@Transient
 	private Out_tpo_cd out_tpo_cd;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "out_tsp_cd", columnDefinition = "out_tsp_enum")
 	@Type(type = "pgsql_enum")
-	@Transient
 	private Out_tsp_cd out_tsp_cd;
 
 
