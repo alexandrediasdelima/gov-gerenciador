@@ -10,9 +10,6 @@ import org.gov.model.Apac;
 public class ApacServiceImpl implements ApacService{
 
 
-
-	//private LivroDao livroDao;
-
 	private ApacDao apacDao;
 
 	/**
