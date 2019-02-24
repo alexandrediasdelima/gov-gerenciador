@@ -7,7 +7,7 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	
+
 	<div style="padding-top: 50px; position: absolute;">
 	<h:form id="addApac" prependId="false">
 		<fieldset>
@@ -108,6 +108,31 @@
 
 				<p:outputLabel value="Número do Processo: " for="numeroProcesso" />
 				<p:inputText id="numeroProcesso" value="#{apacBean.apac.numeroProcesso}" required="true" requiredMessage="Número do Processo Obrigatório" />
+
+				<p:outputLabel value="Código Identificador do Tipo de Ato Administrativo" for="out_tpo_cd" />
+				<p:selectOneMenu id="out_tpo_cd" value="#{apacBean.apac.out_tpo_cd}" style="width:200px">
+					<f:selectItem itemLabel="Selecione" itemValue="" />
+					<f:selectItem itemValue="DIREITO_DE_USO" itemLabel="Direito de Uso" />
+					<f:selectItem itemValue="PREVENTIVA" itemLabel="Preventiva" />
+					<f:selectItem itemValue="DRDH" itemLabel="DRDH" />
+					<f:selectItem itemValue="CERTOH" itemLabel="CERTOH" />
+					<f:selectItem itemValue="LICENCA_AUTORIZACAO_PERFURACAO_POCOS" itemLabel="Licença ou autorização para perfuração de poços" />
+					<f:selectItem itemValue="ANUENCIA_PREVIA" itemLabel="Anuência prévia" />
+					<f:selectItem itemValue="CADASTRO" itemLabel="Cadastro" />
+					<f:selectItem itemValue="OUTRA" itemLabel="Outra" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Código Identificador do Tipo de Situação do Ato Administrativo" for="out_tsp_cd" />
+				<p:selectOneMenu id="out_tsp_cd" value="#{apacBean.apac.out_tsp_cd}" style="width:200px">
+					<f:selectItem itemLabel="Selecione" itemValue="" />
+					<f:selectItem itemValue="OUTORGADO" itemLabel="Outorgado" />
+					<f:selectItem itemValue="EM_ANALISE" itemLabel="Em Análise" />
+					<f:selectItem itemValue="USO_INSIGNIFICANTE" itemLabel="Uso Insignificante" />
+					<f:selectItem itemValue="INDEFERIDO" itemLabel="Indeferido" />
+					<f:selectItem itemValue="INVALIDO" itemLabel="Inválido" />
+					<f:selectItem itemValue="AUTORIZADO" itemLabel="Autorizado (água subterrânea)" />
+					<f:selectItem itemValue="OUTRA" itemLabel="Outra" />
+				</p:selectOneMenu>
 
 				<p:commandButton value="Salvar" action="#{apacBean.gravar}" ajax="false" rendered="#{apacBean.view == 'add'}"/>
 				<p:commandButton value="Editar" action="#{apacBean.editar}" ajax="false" rendered="#{apacBean.view == 'edit'}" />

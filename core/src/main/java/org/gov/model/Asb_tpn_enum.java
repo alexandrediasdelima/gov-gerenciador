@@ -3,7 +3,7 @@ package org.gov.model;
 public enum Asb_tpn_enum {
 
 
-	PACIAL("Parcial"),
+	PARCIAL("Parcial"),
 	TOTAL("Total");
 
 	private String descricao;

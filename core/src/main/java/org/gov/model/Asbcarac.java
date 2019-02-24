@@ -10,9 +10,6 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 import org.gov.util.PostgreSQLEnumType;
 import org.hibernate.annotations.Type;
@@ -58,17 +55,17 @@ public class Asbcarac implements Serializable {
 	@Column(name ="asb_nu_topo")
 	private BigDecimal profundidadeTopoMedidaApartirSuperficie;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	@Column(name ="asb_tnp_cd", columnDefinition="asb_tnp_enum")
 	@Type(type = "pgsql_enum")
 	private Asb_tnp_enum codigoIdentificador;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	@Column(name ="asb_tpn_cd", columnDefinition="asb_tpn_enum")
 	@Type(type = "pgsql_enum")
 	private Asb_tpn_enum tipoPenetracaoAquifero;
 
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	@Column(name ="asb_tca_cd", columnDefinition="asb_tca_enum")
 	@Type(type = "pgsql_enum")
 	private Asb_tca_enum condicaoAquifero;

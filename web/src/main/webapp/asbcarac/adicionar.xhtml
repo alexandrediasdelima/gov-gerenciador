@@ -41,6 +41,38 @@
 				<p:outputLabel value="Profundidade do topo do aquífero captado: " for="pbacTopo" />
 				<p:inputMask mask="?9999999999999999999" id="pbacTopo" value="#{asbcaracBean.asbcarac.profundidadeTopoMedidaApartirSuperficie}" />
 
+				<p:outputLabel value="Natureza do Ponto" for="Asb_tnp_enum" />
+				<p:selectOneMenu id="Asb_tnp_enum" value="#{asbcaracBean.asbcarac.codigoIdentificador}" style="width:200px">
+					<f:selectItem itemLabel="Selecione" itemValue="" />
+					<f:selectItem itemValue="POCO_ESCAVADO" itemLabel="Poço escavado(cacimba/cisterna)" />
+					<f:selectItem itemValue="FONTE_NATURAL" itemLabel="Fonte natural" />
+					<f:selectItem itemValue="LAGO" itemLabel="Lago" />
+					<f:selectItem itemValue="LAGOA" itemLabel="Lagoa" />
+					<f:selectItem itemValue="NASCENTE" itemLabel="Nascente" />
+					<f:selectItem itemValue="PIEZOMETRO" itemLabel="Piezômetro" />
+					<f:selectItem itemValue="POCO_AMAZONAS" itemLabel="Poço amazonas" />
+					<f:selectItem itemValue="POCO_COLETOR" itemLabel="Poço coletor" />
+					<f:selectItem itemValue="POCO_PONTEIRA" itemLabel="Poço ponteira" />
+					<f:selectItem itemValue="POCO_TUBULAR" itemLabel="Poço tubular" />
+					<f:selectItem itemValue="POCO_DE_MONITORAMENTO" itemLabel="Poço de monitoramento" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Tipo Penetração Aquifero" for="asb_tpn_enum" />
+				<p:selectOneMenu id="asb_tpn_enum" value="#{asbcaracBean.asbcarac.tipoPenetracaoAquifero}" style="width:200px">
+					<f:selectItem itemLabel="Selecione" itemValue="" />
+					<f:selectItem itemValue="PARCIAL" itemLabel="Parcial" />
+					<f:selectItem itemValue="TOTAL" itemLabel="Total" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Condição Aquifero" for="asb_tca_enum" />
+				<p:selectOneMenu id="asb_tca_enum" value="#{asbcaracBean.asbcarac.condicaoAquifero}" style="width:200px">
+					<f:selectItem itemLabel="Selecione" itemValue="" />
+					<f:selectItem itemValue="LIVRE" itemLabel="Livre" />
+					<f:selectItem itemValue="CONFINADO" itemLabel="Confinado" />
+					<f:selectItem itemValue="SEMI_LIVRE" itemLabel="Semi-livre" />
+					<f:selectItem itemValue="SEMI_CONFINADO" itemLabel="Semi-confinado" />
+				</p:selectOneMenu>
+
 			</h:panelGrid>
 			<p:commandButton value="Salvar" action="#{asbcaracBean.gravar}" ajax="false" rendered="#{asbcaracBean.view == 'add'}"/>
 				<p:commandButton value="Alterar" action="#{asbcaracBean.alterar}" ajax="false"  rendered="#{asbcaracBean.view == 'edit'}" />

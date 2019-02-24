@@ -72,9 +72,11 @@ public class AsbcaracBean extends Controller {
 			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Deletado com sucesso", null));
 			setView(ADD);
 		} else {
-			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Dado não encontrado para excluir", null));
+			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Dados não encontrado para excluir", null));
 			setView(ADD);
 		}
+
+		limpaForm();
 		return eval(index());
 	}
 
@@ -104,6 +106,22 @@ public class AsbcaracBean extends Controller {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	private void limpaForm() {
+
+		this.asbcarac.setAltitudeBocaTubulacao(null);
+		this.asbcarac.setAltitudeTerreno(null);
+		this.asbcarac.setCodigoIdentificador(null);
+		this.asbcarac.setCondicaoAquifero(null);
+		this.asbcarac.setDataInstalacaoPoco(null);
+		this.asbcarac.setDiametroFiltro(null);
+		this.asbcarac.setDiametroPerfuracao(null);
+		this.asbcarac.setIdentificadorAquiferoPonto(null);
+		this.asbcarac.setProfundidadeBaseMedidaApartirSuperficie(null);
+		this.asbcarac.setProfundidadeTopoMedidaApartirSuperficie(null);
+		this.asbcarac.setTipoPenetracaoAquifero(null);
+
 	}
 
 

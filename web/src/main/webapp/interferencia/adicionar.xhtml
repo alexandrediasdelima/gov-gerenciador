@@ -12,107 +12,120 @@
 	<h:form id="addInterferencia" prependId="false">
 
 		<fieldset>
-			<legend> <b>Dados APAC</b></legend>
+			<legend> <b>Dados Interferência</b></legend>
 			<h:panelGrid columns="2">
-				<p:outputLabel value="Analista Responsável: " for="analista" />
-				<p:inputText id="analista" value="#{apacBean.apac.analistaResponsavel}" />
+				<p:outputLabel value="Há um estudo hidrológico da área: " for="estudoHidrologico" />
+				<p:selectBooleanCheckbox value="#{interferenciaBean.interferencia.haEstudoHidrologicoDaArea}" label="Basic" id="estudoHidrologico" />
 
-				<p:outputLabel value="Ato Administrativo: " for="preco" />
-				<p:inputText id="preco" value="#{apacBean.apac.atoAdministrativoPublicacaoInstrumento}" />
+				<p:outputLabel value="Link para a foto do ponto de captura/lançamento numa visão geral: " for="fotoVisaoGeral" />
+				<p:inputText id="fotoVisaoGeral" value="#{interferenciaBean.interferencia.linkFotoPontoCapturaVisaoGeral}" />
 
-				<p:outputLabel value="Data de Vistoria da Apac: " for="dataVistoria" />
-				<p:calendar id="dataVistoria" showOn="button" value="#{apacBean.apac.dataVistoria}" />
+				<p:outputLabel value="Link para a foto do ponto de captura/lançamento numa visão detalhada: " for="fotoVisaoDetalhada" />
+				<p:inputText id="fotoVisaoDetalhada" value="#{interferenciaBean.interferencia.linkFotoPontoCapturaVisaoDetalhada}" />
 
-				<p:outputLabel value="Data de Vencimento do Contrato: " for="dataVencimentoContrato" />
-				<p:calendar id="dataVencimentoContrato" showOn="button" value="#{apacBean.apac.dataVencimentoContrato}" />
+				<p:outputLabel value="link para a imagem do croqui de localização do ponto de localização da captação/lançamento: " for="linkCroqui" />
+				<p:inputText id="linkCroqui" value="#{interferenciaBean.interferencia.linkImagemCroquiLocalizacao}" />
 
-				<p:outputLabel value="Data de Entrada do Processo na Apac: " for="dataEntradaProcessoApac" />
-				<p:calendar id="dataEntradaProcessoApac" showOn="button" value="#{apacBean.apac.dataEntradaProcessoApac}"  />
+				<p:outputLabel value="Latitude do ponto de interferência: " for="latitude" />
+				<p:inputMask mask="?9999999999999999999999999" id="latitude" value="#{interferenciaBean.interferencia.latitudeLocalizacaoPontoInterferencia}"/>
 
-				<p:outputLabel value="Data de Entrada do Processo na Cprh: " for="dataEntradaProcessoCprh" />
-				<p:calendar id="dataEntradaProcessoCprh" showOn="button" value="#{apacBean.apac.dataEntradaProcessoCprh}"  />
+				<p:outputLabel value="Longitude do ponto de interferência: " for="longitude" />
+				<p:inputMask mask="?9999999999999999999999999" id="longitude" value="#{interferenciaBean.interferencia.longitudeLocalizacaoPontoInterferencia}"/>
 
-				<p:outputLabel value="Data de inicio do Prazo de Outorga: " for="dataInicioPrazoOutorga" />
-				<p:calendar id="dataInicioPrazoOutorga" showOn="button" value="#{apacBean.apac.dataInicioPrazoOutorga}"  />
+				<p:outputLabel value="Local da Interferência: " for="localInterferencia" />
+				<p:inputText id="localInterferencia" value="#{interferenciaBean.interferencia.localInterferencia}" />
 
-				<p:outputLabel value="Data de Término do Prazo de Outorga: " for="dataTerminoPrazoOutorga" />
-				<p:calendar id="dataTerminoPrazoOutorga" showOn="button" value="#{apacBean.apac.dataTerminoPrazoOutorga}"  />
+				<p:outputLabel value="Nome do curso da agua: " for="nomeCurso" />
+				<p:inputText id="nomeCurso" value="#{interferenciaBean.interferencia.nomeCursoAgua}" />
 
-				<p:outputLabel value="Garantia: " for="garantia" />
-				<p:inputText id="garantia" value="#{apacBean.apac.garantia}" />
+				<p:outputLabel value="Presença ou Ausência de barramento para a captação: " for="presenca" />
+				<p:inputText id="presenca" value="#{interferenciaBean.interferencia.presencaAusenciaBarramentoParaCaptacao}" />
 
-				<p:outputLabel value="Nome da Obra: " for="nomeObra" />
-				<p:inputText id="nomeObra" value="#{apacBean.apac.nomeObra}"/>
+				<p:outputLabel value="Barragem onde é feita a captação: " for="barragemCaptacao" />
+				<p:inputText id="barragemCaptacao" value="#{interferenciaBean.interferencia.barragemOndeFeitaCaptacao}" />
 
-				<p:outputLabel value="Número do Ato: " for="numeroAto" />
-				<p:inputText id="numeroAto" value="#{apacBean.apac.numeroAto}" />
+				<p:outputLabel value="Capacidade máxima de acumulação (m³): " for="capacidade" />
+				<p:inputMask mask="?9999999999999999999999999" id="capacidade" value="#{interferenciaBean.interferencia.capacidadeMaximaAcumulacao}" />
 
-				<p:outputLabel value="Número da Notificação de Irregularidades: " for="numeroNotificacaoIrregularidade" />
-				<p:inputText id="numeroNotificacaoIrregularidade" value="#{apacBean.apac.numeroNotificacaoIrregularidadeApac}"/>
+				<p:outputLabel value="Bacia hidrográfica onde esta inserida a captação/lançamento: " for="bacia" />
+				<p:inputText id="bacia" value="#{interferenciaBean.interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" />
 
-				<p:outputLabel value="Número da Notificação de Isenção: " for="numeroNotificacaoIsencao" />
-				<p:inputText id="numeroNotificacaoIsencao" value="#{apacBean.apac.numeroNotificacaoIsencaoApac}" />
+				<p:outputLabel value="Codigo identificador da situação da interferência: " for="int_tsi_cd" />
+					<p:selectOneMenu id="int_tsi_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorSituacaoInterferencia}" style="width:200px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemValue="PROJETO" itemLabel="Projeto" />
+						<f:selectItem itemValue="CONSTRUCAO" itemLabel="Construção" />
+						<f:selectItem itemValue="OPERACAO" itemLabel="Operação" />
+						<f:selectItem itemValue="DESATIVADA" itemLabel="Desativada" />
+				</p:selectOneMenu>
 
-				<p:outputLabel value="Número de Horas para a Captação por Dia: " for="horasrequeridaPorDia" />
-				<p:inputMask mask="?9999999999" id="horasrequeridaPorDia" value="#{apacBean.apac.horasRequeridaParaCaptacaoPorDia}" />
+				<p:outputLabel value="Codigo identificador do tipo da finalidade: " for="fin_tfn_cd" />
+					<p:selectOneMenu id="fin_tfn_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoFinalidade}" style="width:200px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemValue="SEM_FINALIDADE" itemLabel="Sem Finalidade" />
+						<f:selectItem itemValue="ABASTECIMENTO_PUBLICO" itemLabel="Abastecimento Público" />
+						<f:selectItem itemValue="ESGOTAMENTO_SANITARIO" itemLabel="Esgotamento Sanitário" />
+						<f:selectItem itemValue="INDUTRIA" itemLabel="Indústria" />
+						<f:selectItem itemValue="MINERACAO_EXTRACAO_AREIA_CASCALHO" itemLabel="Mineração – Extração de Areia/Cascalho em Leito de Rio" />
+						<f:selectItem itemValue="IRRIGACAO" itemLabel="Irrigação" />
+						<f:selectItem itemValue="CRIACAO_ANIMAL" itemLabel="Criação Animal" />
+						<f:selectItem itemValue="AGRICULTURA_TANQUE_ESCAVADO" itemLabel="Aguicultura em Tanque Escavado" />
+						<f:selectItem itemValue="TERMOELETRICA" itemLabel="Termoelétrica" />
+						<f:selectItem itemValue="TRANSPOSICAO" itemLabel="Transposição" />
+						<f:selectItem itemValue="APROVEITAMENTO_HIDROELETRICO" itemLabel="Aproveitamento Hidroelétrico" />
+						<f:selectItem itemValue="RESERVATORIO_BARRAMENTO_REGULARIZACAO" itemLabel="Reservatório/Barramento/Regularização Vazoes Usos Múltiplos" />
+						<f:selectItem itemValue="CONSUMO_HUMANO" itemLabel="Consumo Humano" />
+						<f:selectItem itemValue="MINERACAO_OUTROS" itemLabel="Mineração – Outros Processos Extrativos" />
+						<f:selectItem itemValue="OBRAS_HIDRAULICAS" itemLabel="Obras Hidráulicas" />
+						<f:selectItem itemValue="SERVICOS" itemLabel="Serviços" />
+						<f:selectItem itemValue="AGRICULTURA_TANQUE_REDE" itemLabel="Aguicultura em Tanque Rede" />
+						<f:selectItem itemValue="OUTRAS" itemLabel="Desativada" />
+					</p:selectOneMenu>
 
-				<p:outputLabel value="Número do Termo: " for="numeroTermo" />
-				<p:inputText id="numeroTermo" value="#{apacBean.apac.numeroTermo}" />
+					<p:outputLabel value="Código identificador do tipo de outro uso: " for="fou_tou_cd" />
+					<p:selectOneMenu id="fou_tou_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoOutroUso}" style="width:200px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemValue="ECLUSA" itemLabel="Eclusa" />
+						<f:selectItem itemValue="RECREACAO" itemLabel="Recreação" />
+						<f:selectItem itemValue="POCO_BOMBEAMENTO" itemLabel="Poço de bombeamento de recuperação ambiental" />
+						<f:selectItem itemValue="POCO_MONITORACAO" itemLabel="Poço de monitoramento/Piezometro" />
+						<f:selectItem itemValue="POCO_INJECAO" itemLabel="Poço de injeção para recuperação ambiental" />
+						<f:selectItem itemValue="UMECTACAO_VIAS" itemLabel="Umectação de vias" />
+						<f:selectItem itemValue="SISTEMA_RESFRIAMENTO" itemLabel="Sistema de Resfriamento" />
+						<f:selectItem itemValue="LAVAGEM_VEICULOS" itemLabel="Lavagem de veículos" />
+						<f:selectItem itemValue="CLARIFICACAO_AGUA" itemLabel="Clarificação da água" />
+						<f:selectItem itemValue="DEPURACAO_EFLUENTES" itemLabel="Depuração de efluentes" />
+						<f:selectItem itemValue="DISPOSICAO_REJEITOS" itemLabel="Disposição de rejeitos" />
+						<f:selectItem itemValue="PESQUISA_MINERAL" itemLabel="Pesquisa mineral" />
+						<f:selectItem itemValue="PESQUISA_HIDROGEOLOGICA" itemLabel="Pesquisa hidrogeológica de teste de bombeamento" />
+						<f:selectItem itemValue="RECIRCULACAO_AGUA" itemLabel="Recirculação de água" />
+						<f:selectItem itemValue="URBANIZACAO" itemLabel="Urbanização" />
+						<f:selectItem itemValue="REBAIXAMENTO_AQUIFERO" itemLabel="Rebaixamento de aquífero" />
+						<f:selectItem itemValue="BALNEARIO" itemLabel="Balneário - lazer e clube" />
+						<f:selectItem itemValue="LAVANDERIA" itemLabel="Lavanderia" />
+						<f:selectItem itemValue="COMBATE_INCENDIO" itemLabel="Combate a incêndio" />
+						<f:selectItem itemValue="HORTAS_ETC" itemLabel="Hortas, pomares, jardins, paisagismo (area menor 1 ha)" />
+						<f:selectItem itemValue="TESTE_HIDROSTATICO" itemLabel="Teste hidrostático" />
+						<f:selectItem itemValue="ABASTECIMENTO_PULVERIZADORES" itemLabel="Abastecimento de pulverizadores" />
+						<f:selectItem itemValue="OUTRO" itemLabel="Outro" />
+						<f:selectItem itemValue="CONSTRUCAO_CIVIL" itemLabel="Construção Civil" />
+					</p:selectOneMenu>
 
-				<p:outputLabel value="Selecione os Mêses que as Outorgas são Válidas: "/>
-				<p:spacer height="1" />
+					<p:outputLabel value="Codigo identificador da situação da interferência: " for="int_tin_cd" />
+					<p:selectOneMenu id="int_tin_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoInterferencia}" style="width:200px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemValue="CAPTACAO" itemLabel="Captação" />
+						<f:selectItem itemValue="LANCAMENTO" itemLabel="Lançamento" />
+						<f:selectItem itemValue="BARRAGEM" itemLabel="Barragem" />
+						<f:selectItem itemValue="PONTO_REFERENCIA" itemLabel="Ponto de Referência" />
+				</p:selectOneMenu>
 
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaJaneiro}" id="jan" label="Basic" itemLabel="Jan" />
+					<p:outputLabel value="Tipo finalidade tipo do uso ausente: " for="linkFotoVisaoGeral" />
+					<p:inputText id="linkFotoVisaoGeral" value="#{interferenciaBean.interferencia.tipoFinalidadeTipoDoUsoAusente}" />
 
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaFevereiro}" id="fev" label="Basic" itemLabel="Fev" />
 
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaMarco}" id="mar" label="Basic" itemLabel="Mar" />
 
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaAbril}" id="abril" label="Basic" itemLabel="Abr" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaMaio}" id="maio" label="Basic" itemLabel="Mai" />
-
-				<p:selectBooleanCheckbox   value="#{apacBean.apac.outorgaValidaJunho}" id="junho" label="Basic" itemLabel="Jun"/>
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaJulho}" id="jul" label="Basic" itemLabel="Jul"/>
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaAgosto}"  id="ago" label="Basic" itemLabel="Ago"/>
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaSetembro}"  id="set" label="Basic" itemLabel="Set" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaOutubro}"  id="out" label="Basic" itemLabel="Out" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaNovembro}"  id="nov" label="Basic" itemLabel="Nov" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaDezembro}"  id="dez" label="Basic" itemLabel="Dez"/>
-
-				<p:outputLabel value="Prazo da Notificação: " for="prazoNotificacao" />
-				<p:calendar id="prazoNotificacao" showOn="button" value="#{apacBean.apac.prazoNotificacao}" />
-
-				<p:outputLabel value="Número do Processo na Cprh: " for="numeroProcessoCprh" />
-				<p:inputText id="numeroProcessoCprh" value="#{apacBean.apac.numeroProcessoNaCprh}" />
-
-				<p:outputLabel value="Tipo de Obra: " for="tipoObra" />
-				<p:inputText id="tipoObra" value="#{apacBean.apac.tipoObra}" />
-
-				<p:outputLabel value="Número Vazão Outorgada em l/s: " for="numeroVazaoOutorgadaLs" />
-				<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoOutorgadaLs" value="#{apacBean.apac.vazaoOutorgada}" />
-
-				<p:outputLabel value="Número Vazão Outorgada em Média: " for="numeroVazaoOutorgadaMedia" />
-				<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoOutorgadaMedia" value="#{apacBean.apac.vazaoOutorgadaMedia}"/>
-
-				<p:outputLabel value="Número Vazão Requerida l/s: " for="numeroVazaoRequeridals" />
-				<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoRequeridals" value="#{apacBean.apac.vazaoRequiridaLs}"/>
-
-					<p:outputLabel value="Número Vazão Requerida Média por Dia: " for="numeroVazaoRequeridaMedia" />
-				<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoRequeridaMedia" value="#{apacBean.apac.vazaoRequiridaMediaDia}"/>
-
-				<p:outputLabel value="Número do Processo: " for="numeroProcesso" />
-				<p:inputText id="numeroProcesso" value="#{apacBean.apac.numeroProcesso}" required="true" requiredMessage="Número do Processo Obrigatório" />
-
-				<p:commandButton value="Salvar" action="#{apacBean.gravar}" ajax="false" rendered="#{apacBean.view == 'add'}"/>
-				<p:commandButton value="Editar" action="#{apacBean.editar}" ajax="false" rendered="#{apacBean.view == 'edit'}" />
-
+				<p:commandButton value="Salvar" action="#{interferenciaBean.gravar}" ajax="false" />
 
 			</h:panelGrid>
 		</fieldset>

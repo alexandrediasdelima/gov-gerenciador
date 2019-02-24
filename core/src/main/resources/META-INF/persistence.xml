@@ -15,7 +15,7 @@
 		<class>org.gov.model.Asbcarac</class>
 		<class>org.gov.model.Cnarh</class>
 		<class>org.gov.model.Usuario</class>
-		
+		<class>org.gov.model.Interferencia</class>
 
 		<properties>
 			<!-- Propriedades JDBC -->
