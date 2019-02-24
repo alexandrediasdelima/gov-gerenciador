@@ -17,7 +17,7 @@
 	<div style="padding-top: 50px;">
 		<h:form id="listarUsuarios" prependId="false" style="width:99%;">
 			<br/>
-			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{usuarioBean.adicionarBtnNovoUsuario}" ajax="false" />
+			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{usuarioBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
 			<p:scrollPanel mode="native" style="width:100%">
 				<p:dataTable id="tabelaUsuarios" value="#{usuarioBean.usuarios}" paginator="true" rows="10" var="usuario" paginatorPosition="top" resizableColumns="false" >

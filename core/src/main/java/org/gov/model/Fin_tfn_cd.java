@@ -1,6 +1,6 @@
 package org.gov.model;
 
-public enum Fin_tfn_enum {
+public enum Fin_tfn_cd {
 
 	SEM_FINALIDADE("Sem Finalidade"),
 	ABASTECIMENTO_PUBLICO("Abastecimento Público"),
@@ -24,7 +24,7 @@ public enum Fin_tfn_enum {
 
 	private String descricao;
 
-	Fin_tfn_enum(String desc) {
+	Fin_tfn_cd(String desc) {
 		this.descricao = desc;
 	}
 

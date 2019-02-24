@@ -2,16 +2,12 @@ package org.gov.service;
 
 import java.util.List;
 
-import org.gov.dao.ApacDao;
-import org.gov.dao.ApacDaoImpl;
 import org.gov.dao.InterferenciaDao;
 import org.gov.dao.InterferenciaDaoImpl;
-import org.gov.model.Apac;
 import org.gov.model.Interferencia;
 
 
 public class InterferenciaServiceImpl implements InterferenciaService{
-
 
 	private InterferenciaDao interferenciaDao;
 
@@ -25,6 +21,30 @@ public class InterferenciaServiceImpl implements InterferenciaService{
 		interferenciaDao = new InterferenciaDaoImpl();
 		return interferenciaDao.gravar(interferencia);
 	}
+
+	public List<Interferencia> interferencias() {
+		interferenciaDao = new InterferenciaDaoImpl();
+		return interferenciaDao.interferencias();
+	}
+
+	public String remover(Integer id) {
+		interferenciaDao = new InterferenciaDaoImpl();
+		return interferenciaDao.remover(id);
+	}
+
+	public String editar(Interferencia interferencia) {
+
+		interferenciaDao = new InterferenciaDaoImpl();
+		return interferenciaDao.editar(interferencia);
+	}
+	
+	
+	
+//	public String gravar(Interferencia interferencia) {
+//
+//		interferenciaDao = new InterferenciaDaoImpl();
+//		return interferenciaDao.gravar(interferencia);
+//	}
 
 //	public List<Apac> apacs() {
 //		apacDao = new ApacDaoImpl();

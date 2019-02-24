@@ -1,9 +1,10 @@
 package org.gov.dao;
 
 import javax.persistence.EntityManager;
-
 import org.gov.model.Interferencia;
 import org.gov.util.JPAUtil;
+import java.util.List;
+import javax.persistence.Query;
 
 public class InterferenciaDaoImpl implements InterferenciaDao {
 
@@ -26,42 +27,40 @@ public class InterferenciaDaoImpl implements InterferenciaDao {
 		return "ok";
 	}
 
+	public List<Interferencia> interferencias() {
 
+		entityManager.getTransaction().begin();
+		Query query = entityManager.createQuery("FROM Interferencia");
 
-//	public List<Apac> apacs() {
-//
-//		entityManager.getTransaction().begin();
-//		Query query = entityManager.createQuery("FROM Apac");
-//
-//		List<Apac> apacs = query.getResultList();
-//
-//		entityManager.getTransaction().commit();
-//		entityManager.close();
-//
-//		return apacs;
-//	}
-//
-//	public String remover(String id) {
-//
-//		entityManager.getTransaction().begin();
-//		Apac apac = entityManager.find(Apac.class, id);
-//
-//		entityManager.remove(apac);
-//		entityManager.getTransaction().commit();
-//		entityManager.close();
-//
-//		return "ok";
-//	}
-//
-//	public String editar(Apac apac) {
-//
-//		entityManager.getTransaction().begin();
-//		entityManager.merge(apac);
-//		entityManager.getTransaction().commit();
-//		entityManager.close();
-//
-//		return "ok";
-//
-//	}
+		List<Interferencia> interferencias = query.getResultList();
+
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return interferencias;
+	}
+
+	public String remover(Integer id) {
+
+		entityManager.getTransaction().begin();
+		Interferencia interferencia = entityManager.find(Interferencia.class, id);
+
+		entityManager.remove(interferencia);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return "ok";
+	}
+
+	public String editar(Interferencia interferencia) {
+
+		entityManager.getTransaction().begin();
+		entityManager.merge(interferencia);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return "ok";
+
+	}
 
 }

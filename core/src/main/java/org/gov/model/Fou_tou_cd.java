@@ -1,6 +1,6 @@
 package org.gov.model;
 
-public enum Fou_tou_enum {
+public enum Fou_tou_cd {
 
 	ECLUSA("Eclusa"),
 	RECREACAO("Recreação"),
@@ -30,7 +30,7 @@ public enum Fou_tou_enum {
 
 	private String descricao;
 
-	Fou_tou_enum(String desc) {
+	Fou_tou_cd(String desc) {
 		this.descricao = desc;
 	}
 

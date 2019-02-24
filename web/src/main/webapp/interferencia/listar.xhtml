@@ -20,18 +20,13 @@
 			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#" ajax="false" />
 			<br/><br/>
 			<p:scrollPanel mode="native" style="width:100%">
-
-				<p:dataTable id="tabelaApacs" value="#" paginator="true" rows="10" var="interferencia" paginatorPosition="top" resizableColumns="false" >
+				<p:dataTable id="tabelaInterferencias" value="#{interferenciaBean.interferencias}" var="interferencia" paginator="true" rows="10" paginatorPosition="top" resizableColumns="false" >
 					<f:facet name="header">Interferência</f:facet>
 					<p:column headerText="ID">
-
-
-						<h:commandLink id="menuInterferencia">
-							<h:outputText value="172961" />
-						</h:commandLink>
-					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="mouseover">
+						<h:outputText id="menuInterferencia" value="#{interferencia.id}" style="text-decoration: underline; cursor: pointer" />
+					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="click" autoDisplay="true">
 				            <p:submenu label="Águas Subterrâneas">
-					            <p:menuitem value="Características" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac(172961)}" icon="ui-icon-bullet" />
+					            <p:menuitem value="Características" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac(interferencia.id)}" icon="ui-icon-bullet" />
 					            <p:menuitem value="Amostras" action="#" icon="ui-icon-bullet" />
 					            <p:menuitem value="Testes" action="#" icon="ui-icon-bullet" />
 				            </p:submenu>
@@ -44,68 +39,66 @@
 				            <p:menuitem value="Teste Bombeamento" action="#" icon="ui-icon-bullet" />
 				            <p:menuitem value="Vazão" action="#" icon="ui-icon-bullet" />
 					    </p:tieredMenu>
-
-
 					</p:column>
 					<p:column headerText="Estudo Hidrológico">
-						<h:outputText value="Ciência" />
+						<h:outputText value="#{interferencia.haEstudoHidrologicoDaArea}" />
 					</p:column>
 					<p:column headerText="Captura Lançamento Geral">
-						<h:outputText value="#" />
+						<h:outputText value="#{interferencia.linkFotoPontoCapturaVisaoGeral}" />
 					</p:column>
 					<p:column headerText="Latitude">
-						<h:outputText value="#" />
+						<h:outputText value="#{interferencia.latitudeLocalizacaoPontoInterferencia}" />
 					</p:column>
 					<p:column headerText="Longitude">
-						<h:outputText value="#" />
+						<h:outputText value="#{interferencia.longitudeLocalizacaoPontoInterferencia}" />
 					</p:column>
 					<p:column headerText="Captura Lançamento Detalhe">
-						<h:outputText value="#" />
+						<h:outputText value="#{interferencia.linkFotoPontoCapturaVisaoDetalhada}" />
 					</p:column>
 					<p:column headerText="Croqui Localização">
-						<h:outputText value="#" />
+						<h:outputText value="#{interferencia.linkImagemCroquiLocalizacao}" />
 					</p:column>
 					<p:column headerText="Local Interferência">
-						<h:outputText value="Teste" />
+						<h:outputText value="#{interferencia.localInterferencia}" />
 					</p:column>
 					<p:column headerText="Curso">
-						<h:outputText value="Teste" />
+						<h:outputText value="#{interferencia.nomeCursoAgua}" />
 					</p:column>
 					<p:column headerText="Presença Barramento">
-						<h:outputText value="Teste" />
+						<h:outputText value="#{interferencia.presencaAusenciaBarramentoParaCaptacao}" />
 					</p:column>
 					<p:column headerText="Barragem">
-						<h:outputText value="Teste" />
+						<h:outputText value="#{interferencia.barragemOndeFeitaCaptacao}" />
 					</p:column>
 					<p:column headerText="Capacidade Máxima de Acumulação">
-						<h:outputText value="100" />
+						<h:outputText value="#{interferencia.capacidadeMaximaAcumulacao}" />
 					</p:column>
 					<p:column headerText="Bacia Hidrográfica">
-						<h:outputText value="Teste" />
+						<h:outputText value="#{interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" />
 					</p:column>
 					<p:column headerText="ID Cnarh">
-						<h:outputText value="#" />
+						<h:outputText value="#{interferencia.cnarh_id}" />
 					</p:column>
 					<p:column headerText="Número do Processo">
-						<h:outputText value="1234" />
+						<h:outputText value="#{interferencia.numeroProcesso}" />
 					</p:column>
 					<p:column headerText="ID Empreedimento">
-						<h:outputText value="1111" />
+						<h:outputText value="#{interferencia.idEmpreendimento}" />
 					</p:column>
 					<p:column headerText="Código da Situação Interferência">
-						<h:outputText value="Teste" />
+						<h:outputText value="#{interferencia.codigoIdentificadorSituacaoInterferencia}" />
 					</p:column>
 					<p:column headerText="Código da Finalidade">
-						<h:outputText value="1234" />
+						<h:outputText value="#{interferencia.codigoIdentificadorTipoFinalidade}" />
 					</p:column>
 					<p:column headerText="Código de Outro Uso">
-						<h:outputText value="11111" />
+						<h:outputText value="#{interferencia.codigoIdentificadorTipoOutroUso}" />
 					</p:column>
 					<p:column headerText="Código do Tipo de Interferência">
-						<h:outputText value="1111" />
+						<h:outputText value="#{interferencia.codigoIdentificadorTipoInterferencia}" />
 					</p:column>
 					<p:column headerText="Tipo de Finalidade">
-						<h:outputText value="teste" />
+						<h:outputText value="#{interferencia.tipoFinalidadeTipoDoUsoAusente}" />
 					</p:column>
 					<p:column headerText="Ações">
 						<p:commandButton action="#" value="Editar" ajax="false" icon="ui-icon-document" />

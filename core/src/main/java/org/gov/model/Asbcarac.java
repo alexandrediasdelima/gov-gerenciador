@@ -58,17 +58,17 @@ public class Asbcarac implements Serializable {
 	@Enumerated(EnumType.STRING)
 	@Column(name ="asb_tnp_cd", columnDefinition="asb_tnp_enum")
 	@Type(type = "pgsql_enum")
-	private Asb_tnp_enum codigoIdentificador;
+	private Asb_tnp_cd codigoIdentificador;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name ="asb_tpn_cd", columnDefinition="asb_tpn_enum")
 	@Type(type = "pgsql_enum")
-	private Asb_tpn_enum tipoPenetracaoAquifero;
+	private Asb_tpn_cd tipoPenetracaoAquifero;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name ="asb_tca_cd", columnDefinition="asb_tca_enum")
 	@Type(type = "pgsql_enum")
-	private Asb_tca_enum condicaoAquifero;
+	private Asb_tca_cd condicaoAquifero;
 
 	public int getId() {
 		return id;
@@ -145,27 +145,27 @@ public class Asbcarac implements Serializable {
 		this.profundidadeTopoMedidaApartirSuperficie = profundidadeTopoMedidaApartirSuperficie;
 	}
 
-	public Asb_tnp_enum getCodigoIdentificador() {
+	public Asb_tnp_cd getCodigoIdentificador() {
 		return codigoIdentificador;
 	}
 
-	public void setCodigoIdentificador(Asb_tnp_enum codigoIdentificador) {
+	public void setCodigoIdentificador(Asb_tnp_cd codigoIdentificador) {
 		this.codigoIdentificador = codigoIdentificador;
 	}
 
-	public Asb_tpn_enum getTipoPenetracaoAquifero() {
+	public Asb_tpn_cd getTipoPenetracaoAquifero() {
 		return tipoPenetracaoAquifero;
 	}
 
-	public void setTipoPenetracaoAquifero(Asb_tpn_enum tipoPenetracaoAquifero) {
+	public void setTipoPenetracaoAquifero(Asb_tpn_cd tipoPenetracaoAquifero) {
 		this.tipoPenetracaoAquifero = tipoPenetracaoAquifero;
 	}
 
-	public Asb_tca_enum getCondicaoAquifero() {
+	public Asb_tca_cd getCondicaoAquifero() {
 		return condicaoAquifero;
 	}
 
-	public void setCondicaoAquifero(Asb_tca_enum condicaoAquifero) {
+	public void setCondicaoAquifero(Asb_tca_cd condicaoAquifero) {
 		this.condicaoAquifero = condicaoAquifero;
 	}
 

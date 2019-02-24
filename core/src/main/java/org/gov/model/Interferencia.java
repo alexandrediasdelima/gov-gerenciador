@@ -85,27 +85,27 @@ public class Interferencia implements Serializable {
 	@Column(name ="int_tsi_cd", columnDefinition="int_tsi_enum")
 	@Type(type = "pgsql_enum")
 	@Transient
-	private Int_tsi_enum codigoIdentificadorSituacaoInterferencia;
+	private Int_tsi_cd codigoIdentificadorSituacaoInterferencia;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name ="fin_tfn_cd", columnDefinition="fin_tfn_enum")
 	@Type(type = "pgsql_enum")
 	@Transient
-	private Fin_tfn_enum codigoIdentificadorTipoFinalidade;
+	private Fin_tfn_cd codigoIdentificadorTipoFinalidade;
 
 
 	@Enumerated(EnumType.STRING)
 	@Column(name ="fou_tou_cd", columnDefinition="fou_tou_enum")
 	@Type(type = "pgsql_enum")
 	@Transient
-	private Fou_tou_enum codigoIdentificadorTipoOutroUso;
+	private Fou_tou_cd codigoIdentificadorTipoOutroUso;
 
 
 	@Enumerated(EnumType.STRING)
 	@Column(name ="int_tin_cd", columnDefinition="int_tin_enum")
 	@Type(type = "pgsql_enum")
 	@Transient
-	private Int_tin_enum codigoIdentificadorTipoInterferencia;
+	private Int_tin_cd codigoIdentificadorTipoInterferencia;
 
 	@Column(name="fou_tou_tp_outro", columnDefinition="text")
 	private String tipoFinalidadeTipoDoUsoAusente;
@@ -245,39 +245,39 @@ public class Interferencia implements Serializable {
 		this.idEmpreendimento = idEmpreendimento;
 	}
 
-	public Int_tsi_enum getCodigoIdentificadorSituacaoInterferencia() {
+	public Int_tsi_cd getCodigoIdentificadorSituacaoInterferencia() {
 		return codigoIdentificadorSituacaoInterferencia;
 	}
 
 	public void setCodigoIdentificadorSituacaoInterferencia(
-			Int_tsi_enum codigoIdentificadorSituacaoInterferencia) {
+			Int_tsi_cd codigoIdentificadorSituacaoInterferencia) {
 		this.codigoIdentificadorSituacaoInterferencia = codigoIdentificadorSituacaoInterferencia;
 	}
 
-	public Fin_tfn_enum getCodigoIdentificadorTipoFinalidade() {
+	public Fin_tfn_cd getCodigoIdentificadorTipoFinalidade() {
 		return codigoIdentificadorTipoFinalidade;
 	}
 
 	public void setCodigoIdentificadorTipoFinalidade(
-			Fin_tfn_enum codigoIdentificadorTipoFinalidade) {
+			Fin_tfn_cd codigoIdentificadorTipoFinalidade) {
 		this.codigoIdentificadorTipoFinalidade = codigoIdentificadorTipoFinalidade;
 	}
 
-	public Fou_tou_enum getCodigoIdentificadorTipoOutroUso() {
+	public Fou_tou_cd getCodigoIdentificadorTipoOutroUso() {
 		return codigoIdentificadorTipoOutroUso;
 	}
 
 	public void setCodigoIdentificadorTipoOutroUso(
-			Fou_tou_enum codigoIdentificadorTipoOutroUso) {
+			Fou_tou_cd codigoIdentificadorTipoOutroUso) {
 		this.codigoIdentificadorTipoOutroUso = codigoIdentificadorTipoOutroUso;
 	}
 
-	public Int_tin_enum getCodigoIdentificadorTipoInterferencia() {
+	public Int_tin_cd getCodigoIdentificadorTipoInterferencia() {
 		return codigoIdentificadorTipoInterferencia;
 	}
 
 	public void setCodigoIdentificadorTipoInterferencia(
-			Int_tin_enum codigoIdentificadorTipoInterferencia) {
+			Int_tin_cd codigoIdentificadorTipoInterferencia) {
 		this.codigoIdentificadorTipoInterferencia = codigoIdentificadorTipoInterferencia;
 	}
 

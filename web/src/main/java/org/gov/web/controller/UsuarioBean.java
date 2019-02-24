@@ -15,9 +15,7 @@ public class UsuarioBean extends Controller  {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-
-
-
+	
 	private Usuario usuario;
 	private UsuarioService usuarioService;
 	private List<Usuario> usuarios;
@@ -48,7 +46,7 @@ public class UsuarioBean extends Controller  {
 
 	}
 
-	public String adicionarBtnNovoUsuario() {
+	public String adicionarNovo() {
 		setView(ADD);
 		limparForm();
 		return eval(index());

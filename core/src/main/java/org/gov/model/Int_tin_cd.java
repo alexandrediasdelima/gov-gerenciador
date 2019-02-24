@@ -1,6 +1,6 @@
 package org.gov.model;
 
-public enum Int_tin_enum {
+public enum Int_tin_cd {
 
 	CAPTACAO("Captação"),
 	LANCAMENTO("Lançamento"),
@@ -9,7 +9,7 @@ public enum Int_tin_enum {
 
 	private String descricao;
 
-	Int_tin_enum(String desc) {
+	Int_tin_cd(String desc) {
 		this.descricao = desc;
 	}
 
