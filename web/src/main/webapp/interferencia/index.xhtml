@@ -8,7 +8,7 @@
 
 		<c:choose>
 			<c:when
-				test="#{false}">
+				test="#{interferenciaBean.view == 'edit' or interferenciaBean.view == 'add'}">
 				<ui:include src="/interferencia/adicionar.xhtml" />
 			</c:when>
 			<c:otherwise>

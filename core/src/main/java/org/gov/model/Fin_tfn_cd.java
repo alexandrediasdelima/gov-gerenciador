@@ -29,7 +29,7 @@ public enum Fin_tfn_cd {
 	}
 
 	public String getDescricao() {
-		return descricao.toUpperCase();
+		return descricao;
 	}
 
 	public void setDescricao(String descricao) {

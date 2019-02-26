@@ -125,7 +125,9 @@
 
 
 
-				<p:commandButton value="Salvar" action="#{interferenciaBean.gravar}" ajax="false" />
+				
+				<p:commandButton value="Salvar" action="#{interferenciaBean.gravar}" ajax="false" rendered="#{interferenciaBean.view == 'add'}" icon=" ui-icon-disk" />
+				<p:commandButton value="Editar" action="#{interferenciaBean.editar}" ajax="false" rendered="#{interferenciaBean.view == 'edit'}" icon=" ui-icon-pencil" />
 
 			</h:panelGrid>
 		</fieldset>

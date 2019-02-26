@@ -17,7 +17,7 @@
 	<div style="padding-top: 50px;">
 		<h:form id="listarInterferencias" prependId="false" style="width:99%;">
 			<br/>
-			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#" ajax="false" />
+			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{interferenciaBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
 			<p:scrollPanel mode="native" style="width:100%">
 				<p:dataTable id="tabelaInterferencias" value="#{interferenciaBean.interferencias}" var="interferencia" paginator="true" rows="10" paginatorPosition="top" resizableColumns="false" >
@@ -101,8 +101,13 @@
 						<h:outputText value="#{interferencia.tipoFinalidadeTipoDoUsoAusente}" />
 					</p:column>
 					<p:column headerText="Ações">
-						<p:commandButton action="#" value="Editar" ajax="false" icon="ui-icon-document" />
-						<p:commandButton action="#" value="Apagar" ajax="false" icon="ui-icon-cancel" />
+						<p:commandButton action="#{interferenciaBean.telaEditar(interferencia)}" value="Editar" ajax="false" icon="ui-icon-document" />
+						<p:commandButton value="Apagar" onclick="confirmation.show();" icon="ui-icon-cancel">
+							<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="APAC" severity="alert" widgetVar="confirmation">
+	            				<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{interferenciaBean.deletar(interferencia)}" ajax="false" />  
+    	        				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />   
+        					</p:confirmDialog> 
+					    </p:commandButton>
 					</p:column>
 				</p:dataTable>
 			</p:scrollPanel>
