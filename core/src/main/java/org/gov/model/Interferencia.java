@@ -72,6 +72,7 @@ public class Interferencia implements Serializable {
 	@Column(name="apa_bacia")
 	private String baciaHidrograficaOndeEstaInseridaCaptacao;
 
+	@Column(name="cnarh_id")
 	private String cnarh_id;
 
 	@Column(name="out_nu_processo")
@@ -80,32 +81,17 @@ public class Interferencia implements Serializable {
 	@Column(name="emp_id")
 	private Integer idEmpreendimento;
 
+	@Column(name ="int_tsi_cd")
+	private String codigoIdentificadorSituacaoInterferencia;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name ="int_tsi_cd", columnDefinition="int_tsi_enum")
-	@Type(type = "pgsql_enum")
-	@Transient
-	private Int_tsi_cd codigoIdentificadorSituacaoInterferencia;
+	@Column(name ="fin_tfn_cd")
+	private String codigoIdentificadorTipoFinalidade;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name ="fin_tfn_cd", columnDefinition="fin_tfn_enum")
-	@Type(type = "pgsql_enum")
-	@Transient
-	private Fin_tfn_cd codigoIdentificadorTipoFinalidade;
+	@Column(name ="fou_tou_cd")
+	private String codigoIdentificadorTipoOutroUso;
 
-
-	@Enumerated(EnumType.STRING)
-	@Column(name ="fou_tou_cd", columnDefinition="fou_tou_enum")
-	@Type(type = "pgsql_enum")
-	@Transient
-	private Fou_tou_cd codigoIdentificadorTipoOutroUso;
-
-
-	@Enumerated(EnumType.STRING)
-	@Column(name ="int_tin_cd", columnDefinition="int_tin_enum")
-	@Type(type = "pgsql_enum")
-	@Transient
-	private Int_tin_cd codigoIdentificadorTipoInterferencia;
+	@Column(name ="int_tin_cd")
+	private String codigoIdentificadorTipoInterferencia;
 
 	@Column(name="fou_tou_tp_outro", columnDefinition="text")
 	private String tipoFinalidadeTipoDoUsoAusente;
@@ -130,8 +116,7 @@ public class Interferencia implements Serializable {
 		return linkFotoPontoCapturaVisaoGeral;
 	}
 
-	public void setLinkFotoPontoCapturaVisaoGeral(
-			String linkFotoPontoCapturaVisaoGeral) {
+	public void setLinkFotoPontoCapturaVisaoGeral(String linkFotoPontoCapturaVisaoGeral) {
 		this.linkFotoPontoCapturaVisaoGeral = linkFotoPontoCapturaVisaoGeral;
 	}
 
@@ -139,8 +124,7 @@ public class Interferencia implements Serializable {
 		return latitudeLocalizacaoPontoInterferencia;
 	}
 
-	public void setLatitudeLocalizacaoPontoInterferencia(
-			BigDecimal latitudeLocalizacaoPontoInterferencia) {
+	public void setLatitudeLocalizacaoPontoInterferencia(BigDecimal latitudeLocalizacaoPontoInterferencia) {
 		this.latitudeLocalizacaoPontoInterferencia = latitudeLocalizacaoPontoInterferencia;
 	}
 
@@ -148,8 +132,7 @@ public class Interferencia implements Serializable {
 		return longitudeLocalizacaoPontoInterferencia;
 	}
 
-	public void setLongitudeLocalizacaoPontoInterferencia(
-			BigDecimal longitudeLocalizacaoPontoInterferencia) {
+	public void setLongitudeLocalizacaoPontoInterferencia(BigDecimal longitudeLocalizacaoPontoInterferencia) {
 		this.longitudeLocalizacaoPontoInterferencia = longitudeLocalizacaoPontoInterferencia;
 	}
 
@@ -157,8 +140,7 @@ public class Interferencia implements Serializable {
 		return linkFotoPontoCapturaVisaoDetalhada;
 	}
 
-	public void setLinkFotoPontoCapturaVisaoDetalhada(
-			String linkFotoPontoCapturaVisaoDetalhada) {
+	public void setLinkFotoPontoCapturaVisaoDetalhada(String linkFotoPontoCapturaVisaoDetalhada) {
 		this.linkFotoPontoCapturaVisaoDetalhada = linkFotoPontoCapturaVisaoDetalhada;
 	}
 
@@ -166,8 +148,7 @@ public class Interferencia implements Serializable {
 		return linkImagemCroquiLocalizacao;
 	}
 
-	public void setLinkImagemCroquiLocalizacao(
-			String linkImagemCroquiLocalizacao) {
+	public void setLinkImagemCroquiLocalizacao(String linkImagemCroquiLocalizacao) {
 		this.linkImagemCroquiLocalizacao = linkImagemCroquiLocalizacao;
 	}
 
@@ -191,8 +172,7 @@ public class Interferencia implements Serializable {
 		return presencaAusenciaBarramentoParaCaptacao;
 	}
 
-	public void setPresencaAusenciaBarramentoParaCaptacao(
-			Boolean presencaAusenciaBarramentoParaCaptacao) {
+	public void setPresencaAusenciaBarramentoParaCaptacao(Boolean presencaAusenciaBarramentoParaCaptacao) {
 		this.presencaAusenciaBarramentoParaCaptacao = presencaAusenciaBarramentoParaCaptacao;
 	}
 
@@ -216,8 +196,7 @@ public class Interferencia implements Serializable {
 		return baciaHidrograficaOndeEstaInseridaCaptacao;
 	}
 
-	public void setBaciaHidrograficaOndeEstaInseridaCaptacao(
-			String baciaHidrograficaOndeEstaInseridaCaptacao) {
+	public void setBaciaHidrograficaOndeEstaInseridaCaptacao(String baciaHidrograficaOndeEstaInseridaCaptacao) {
 		this.baciaHidrograficaOndeEstaInseridaCaptacao = baciaHidrograficaOndeEstaInseridaCaptacao;
 	}
 
@@ -245,39 +224,35 @@ public class Interferencia implements Serializable {
 		this.idEmpreendimento = idEmpreendimento;
 	}
 
-	public Int_tsi_cd getCodigoIdentificadorSituacaoInterferencia() {
+	public String getCodigoIdentificadorSituacaoInterferencia() {
 		return codigoIdentificadorSituacaoInterferencia;
 	}
 
-	public void setCodigoIdentificadorSituacaoInterferencia(
-			Int_tsi_cd codigoIdentificadorSituacaoInterferencia) {
+	public void setCodigoIdentificadorSituacaoInterferencia(String codigoIdentificadorSituacaoInterferencia) {
 		this.codigoIdentificadorSituacaoInterferencia = codigoIdentificadorSituacaoInterferencia;
 	}
 
-	public Fin_tfn_cd getCodigoIdentificadorTipoFinalidade() {
+	public String getCodigoIdentificadorTipoFinalidade() {
 		return codigoIdentificadorTipoFinalidade;
 	}
 
-	public void setCodigoIdentificadorTipoFinalidade(
-			Fin_tfn_cd codigoIdentificadorTipoFinalidade) {
+	public void setCodigoIdentificadorTipoFinalidade(String codigoIdentificadorTipoFinalidade) {
 		this.codigoIdentificadorTipoFinalidade = codigoIdentificadorTipoFinalidade;
 	}
 
-	public Fou_tou_cd getCodigoIdentificadorTipoOutroUso() {
+	public String getCodigoIdentificadorTipoOutroUso() {
 		return codigoIdentificadorTipoOutroUso;
 	}
 
-	public void setCodigoIdentificadorTipoOutroUso(
-			Fou_tou_cd codigoIdentificadorTipoOutroUso) {
+	public void setCodigoIdentificadorTipoOutroUso(String codigoIdentificadorTipoOutroUso) {
 		this.codigoIdentificadorTipoOutroUso = codigoIdentificadorTipoOutroUso;
 	}
 
-	public Int_tin_cd getCodigoIdentificadorTipoInterferencia() {
+	public String getCodigoIdentificadorTipoInterferencia() {
 		return codigoIdentificadorTipoInterferencia;
 	}
 
-	public void setCodigoIdentificadorTipoInterferencia(
-			Int_tin_cd codigoIdentificadorTipoInterferencia) {
+	public void setCodigoIdentificadorTipoInterferencia(String codigoIdentificadorTipoInterferencia) {
 		this.codigoIdentificadorTipoInterferencia = codigoIdentificadorTipoInterferencia;
 	}
 
@@ -285,12 +260,8 @@ public class Interferencia implements Serializable {
 		return tipoFinalidadeTipoDoUsoAusente;
 	}
 
-	public void setTipoFinalidadeTipoDoUsoAusente(
-			String tipoFinalidadeTipoDoUsoAusente) {
+	public void setTipoFinalidadeTipoDoUsoAusente(String tipoFinalidadeTipoDoUsoAusente) {
 		this.tipoFinalidadeTipoDoUsoAusente = tipoFinalidadeTipoDoUsoAusente;
 	}
-
-
-
 
 }

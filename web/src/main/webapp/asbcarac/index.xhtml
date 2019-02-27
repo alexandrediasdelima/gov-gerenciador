@@ -3,18 +3,7 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	template="/template/template.xhtml">
 
-
 	<ui:define name="body">
-
-		<c:choose>
-			<c:when
-				test="#{true}">
-				<ui:include src="/asbcarac/adicionar.xhtml" />
-			</c:when>
-		</c:choose>
+		<ui:include src="/asbcarac/adicionar.xhtml" />
 	</ui:define>
-
-
-
-
 </ui:composition>
