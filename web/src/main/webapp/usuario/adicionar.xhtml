@@ -7,7 +7,11 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-
+	
+	<style type="text/css">
+		.ui-state-hover { background: none !important; background-image: none !important; }
+	</style>
+	
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addUsuario" prependId="false" style="width:99%;">
 		<br/><br/><br/>
@@ -101,7 +105,6 @@
 					<p:inputText id="emp_ds_relacaopropriedade" value="#{usuarioBean.usuario.emp_ds_relacaopropriedade}" required="true" requiredMessage="Relação com a Propriedade é obrigatório"/>
 				</h:panelGrid>
 				<br/><br/>
-				
 				<p:commandButton value="Salvar" action="#{usuarioBean.gravar}" ajax="false" rendered="#{usuarioBean.view == 'add'}" icon=" ui-icon-disk" />
 				<p:commandButton value="Editar" action="#{usuarioBean.editar}" ajax="false" rendered="#{usuarioBean.view == 'edit'}" icon=" ui-icon-pencil" />
 			</p:scrollPanel>
