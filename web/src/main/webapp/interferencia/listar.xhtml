@@ -26,8 +26,8 @@
 					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="click" autoDisplay="true">
 				            <p:submenu label="Águas Subterrâneas">
 					            <p:menuitem value="Características" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac(interferencia.id)}" icon="ui-icon-bullet" />
-					            <p:menuitem value="Amostras" action="#" icon="ui-icon-bullet" />
-					            <p:menuitem value="Testes" action="#" icon="ui-icon-bullet" />
+					            <p:menuitem value="Amostras" action="#{asbamaBean.redirecionarTelaCadastroAsbama(interferencia.id)}" icon="ui-icon-bullet" />
+					            <p:menuitem value="Testes" action="#{asbtstBean.redirecionarTelaCadastroAsbtst(interferencia.id)}" icon="ui-icon-bullet" />
 				            </p:submenu>
 				            <p:menuitem value="Captação" action="#" icon="ui-icon-bullet" />
 				            <p:menuitem value="Consumo Humano" action="#" icon="ui-icon-bullet" />

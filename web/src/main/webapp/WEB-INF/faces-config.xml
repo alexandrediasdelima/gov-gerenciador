@@ -49,6 +49,18 @@
 		<managed-bean-class>org.gov.web.controller.AsbcaracBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>asbamaBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.AsbamaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>asbtstBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.AsbtstBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 
 	<managed-bean>
 		<managed-bean-name>usuarioBean</managed-bean-name>

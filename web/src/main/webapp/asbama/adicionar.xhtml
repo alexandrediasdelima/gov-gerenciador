@@ -1,0 +1,107 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />	
+
+	<style type="text/css">
+		.ui-state-hover { background: none !important; background-image: none !important; }
+	</style>
+	
+	<script>
+		$(function() {
+			$("#ama_nu_condutividadeeletrica").inputmask({mask: "9[9][9][9][9][9][9][9][9][9].[9][9]", greedy: true})
+    		$("#ama_qt_ph").inputmask({mask: "9[9].[9][9]", greedy: true})
+			$("#ama_qt_std").inputmask({mask: "9[9][9][9][9][9][9][9][9][9].[9][9]", greedy: true})
+			$("#ama_qt_temperatura").inputmask({mask: "9[9][9].[9]", greedy: true})
+		})
+	</script>
+	
+	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
+		<h:form id="addAsbama" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		<br/><br/><br/>
+		<p:fieldset legend="Águas Subterrâneas - Amostras">
+			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
+				<h:panelGrid columns="4" style="border: 0px solid;">
+					<p:outputLabel value="ID: " for="ama_int_pfk" />
+					<p:inputMask mask="?9999999999" id="ama_int_pfk" value="#{asbamaBean.asbama.ama_int_pfk}" disabled="true" />
+					
+					<p:outputLabel value="Amostra para Calcio: " for="ama_qt_calcio" />
+					<p:inputMask mask="?9999999999" id="ama_qt_calcio" value="#{asbamaBean.asbama.ama_qt_calcio}" />
+					
+					<p:outputLabel value="Amostra para Cloreto: " for="ama_qt_cloreto" />
+					<p:inputMask mask="?9999999999" id="ama_qt_cloreto" value="#{asbamaBean.asbama.ama_qt_cloreto}" />
+					
+					<p:outputLabel value="Amostra para Carbonato: " for="ama_qt_carbonato" />
+					<p:inputMask mask="?9999999999" id="ama_qt_carbonato" value="#{asbamaBean.asbama.ama_qt_carbonato}" />
+					
+					<p:outputLabel value="Amostra para Dureza Total: " for="ama_qt_durezatotal" />
+					<p:inputMask mask="?9999999999" id="ama_qt_durezatotal" value="#{asbamaBean.asbama.ama_qt_durezatotal}" />
+					
+					<p:outputLabel value="Amostra para Fluoreto: " for="ama_qt_fluoretos" />
+					<p:inputMask mask="?9999999999" id="ama_qt_fluoretos" value="#{asbamaBean.asbama.ama_qt_fluoretos}" />
+					
+					<p:outputLabel value="Amostra para Ferro Total: " for="ama_qt_ferrototal" />
+					<p:inputMask mask="?9999999999" id="ama_qt_ferrototal" value="#{asbamaBean.asbama.ama_qt_ferrototal}" />
+					
+					<p:outputLabel value="Amostra para Bicarbonato: " for="ama_qt_bicarbonato" />
+					<p:inputMask mask="?9999999999" id="ama_qt_bicarbonato" value="#{asbamaBean.asbama.ama_qt_bicarbonato}" />
+					
+					<p:outputLabel value="Amostra para Potassio: " for="ama_qt_potassio" />
+					<p:inputMask mask="?9999999999" id="ama_qt_potassio" value="#{asbamaBean.asbama.ama_qt_potassio}" />
+					
+					<p:outputLabel value="Amostra para Magnesio: " for="ama_qt_magnesio" />
+					<p:inputMask mask="?9999999999" id="ama_qt_magnesio" value="#{asbamaBean.asbama.ama_qt_magnesio}" />
+					
+					<p:outputLabel value="Amostra para Sodio: " for="ama_qt_sodio" />
+					<p:inputMask mask="?9999999999" id="ama_qt_sodio" value="#{asbamaBean.asbama.ama_qt_sodio}" />
+					
+					<p:outputLabel value="Amostra para Nitrito: " for="ama_qt_nitritos" />
+					<p:inputMask mask="?9999999999" id="ama_qt_nitritos" value="#{asbamaBean.asbama.ama_qt_nitritos}" />
+					
+					<p:outputLabel value="Amostra para Nitrato: " for="ama_qt_nitratos" />
+					<p:inputMask mask="?9999999999" id="ama_qt_nitratos" value="#{asbamaBean.asbama.ama_qt_nitratos}" />
+					
+					<p:outputLabel value="Amostra para Sulfato: " for="ama_qt_sulfato" />
+					<p:inputMask mask="?9999999999" id="ama_qt_sulfato" value="#{asbamaBean.asbama.ama_qt_sulfato}" />
+					
+					<p:outputLabel value="Condutividade Eletrica: " for="ama_nu_condutividadeeletrica" />
+					<p:inputText maxlength="13" id="ama_nu_condutividadeeletrica" value="#{asbamaBean.asbama.ama_nu_condutividadeeletrica}" />
+					
+					<p:outputLabel value="Data da Analise: " for="ama_dt_analise" />
+					<p:calendar showOn="button" id="ama_dt_analise" value="#{asbamaBean.asbama.ama_dt_analise}" />
+					
+					<p:outputLabel value="Data da Coleta: " for="ama_dt_coleta" />
+					<p:calendar showOn="button" id="ama_dt_coleta" value="#{asbamaBean.asbama.ama_dt_coleta}" />
+					
+					<p:outputLabel value="Concentração de Coliformes Fecais: " for="ama_qt_coliformesfecais" />
+					<p:inputMask mask="?9999999999" id="ama_qt_coliformesfecais" value="#{asbamaBean.asbama.ama_qt_coliformesfecais}" />
+					
+					<p:outputLabel value="Concentração de Coliformes Totais: " for="ama_qt_coliformestotais" />
+					<p:inputMask mask="?9999999999" id="ama_qt_coliformestotais" value="#{asbamaBean.asbama.ama_qt_coliformestotais}" />
+					
+					<p:outputLabel value="Potencial Hidrogeniônico(PH):" for="ama_qt_ph" />
+					<p:inputText maxlength="5" id="ama_qt_ph" value="#{asbamaBean.asbama.ama_qt_ph}" />
+					
+					<p:outputLabel value="Solidos Totais Dissolvidos: " for="ama_qt_std" />
+					<p:inputText maxlength="13" id="ama_qt_std" value="#{asbamaBean.asbama.ama_qt_std}" />
+					
+					<p:outputLabel value="Temperatura: " for="ama_qt_temperatura" />
+					<p:inputText maxlength="5" id="ama_qt_temperatura" value="#{asbamaBean.asbama.ama_qt_temperatura}" />
+				</h:panelGrid>
+				<br/><br/>
+				
+				<p:commandButton value="Voltar" action="#{asbamaBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Salvar" action="#{asbamaBean.gravar}"   ajax="false" rendered="#{asbamaBean.view == 'add'}" icon="ui-icon-disk" />
+				<p:commandButton value="Alterar" action="#{asbamaBean.alterar}" ajax="false" rendered="#{asbamaBean.view == 'edit'}" icon="ui-icon-pencil" />
+				<p:commandButton value="Apagar" action="#{asbamaBean.deletar}"  ajax="false" icon="ui-icon-close" />
+			</p:scrollPanel>
+		</p:fieldset>
+		</h:form>
+	</div>
+</ui:composition>
