@@ -80,6 +80,10 @@ public class AsbcaracBean extends Controller {
 		return eval(index());
 	}
 
+	public String voltar() {
+		return eval("/interferencia/index");
+	}
+	
 	public String index() {
 		return "/asbcarac/index";
 	}

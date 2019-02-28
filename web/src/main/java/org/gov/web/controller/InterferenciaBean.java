@@ -92,16 +92,5 @@ public class InterferenciaBean extends Controller  {
 	public void setInterferencias(List<Interferencia> interferencias) {
 		this.interferencias = interferencias;
 	}
-	
-//	public InterferenciaBean() {
-//		this.interferencia = new Interferencia();
-//	}
-
-//	public String gravar() {
-//		System.out.println(interferencia);
-//		return null;
-//	}
-
-
 
 }
