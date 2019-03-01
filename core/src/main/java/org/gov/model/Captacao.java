@@ -34,13 +34,16 @@ public class Captacao implements Serializable {
 	@Id
 	private int cap_int_pfk;
 	
-	@Column(name="cam_info_adici_consumo")
+	@Column(name="cam_info_adici_consumo", nullable=false)
 	private String cam_info_adici_consumo;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name="int_tsu_cd", columnDefinition = "int_tsu_enum", nullable=false)
-	@Type(type = "pgsql_enum")
-	private Int_tsu_cd int_tsu_cd;
+	@Column(name="int_tsu_cd", nullable=false)
+	private String int_tsu_cd;
+
+//	@Enumerated(EnumType.STRING)
+//	@Column(name="int_tsu_cd", columnDefinition = "int_tsu_enum", nullable=false)
+//	@Type(type = "pgsql_enum")
+//	private Int_tsu_cd int_tsu_cd;
 
 	
 	
@@ -60,11 +63,11 @@ public class Captacao implements Serializable {
 		this.cam_info_adici_consumo = cam_info_adici_consumo;
 	}
 
-	public Int_tsu_cd getInt_tsu_cd() {
+	public String getInt_tsu_cd() {
 		return int_tsu_cd;
 	}
 
-	public void setInt_tsu_cd(Int_tsu_cd int_tsu_cd) {
+	public void setInt_tsu_cd(String int_tsu_cd) {
 		this.int_tsu_cd = int_tsu_cd;
 	}
 }

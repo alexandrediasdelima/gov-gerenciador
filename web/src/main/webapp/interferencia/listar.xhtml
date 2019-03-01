@@ -25,14 +25,14 @@
 						<h:outputText id="menuInterferencia" value="#{interferencia.id}" style="text-decoration: underline; cursor: pointer" />
 					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="click" autoDisplay="true">
 				            <p:submenu label="Águas Subterrâneas">
-					            <p:menuitem value="Características" action="#{asbcaracBean.redirecionarTelaCadastroAsbcarac(interferencia.id)}" icon="ui-icon-bullet" />
-					            <p:menuitem value="Amostras" action="#{asbamaBean.redirecionarTelaCadastroAsbama(interferencia.id)}" icon="ui-icon-bullet" />
-					            <p:menuitem value="Testes" action="#{asbtstBean.redirecionarTelaCadastroAsbtst(interferencia.id)}" icon="ui-icon-bullet" />
+					            <p:menuitem value="Características" action="#{asbcaracBean.redirecionarTelaCadastro(interferencia.id)}" icon="ui-icon-bullet" />
+					            <p:menuitem value="Amostras" action="#{asbamaBean.redirecionarTelaCadastro(interferencia.id)}" icon="ui-icon-bullet" />
+					            <p:menuitem value="Testes" action="#{asbtstBean.redirecionarTelaCadastro(interferencia.id)}" icon="ui-icon-bullet" />
 				            </p:submenu>
-				            <p:menuitem value="Captação" action="#" icon="ui-icon-bullet" />
-				            <p:menuitem value="Consumo Humano" action="#" icon="ui-icon-bullet" />
-				            <p:menuitem value="Indústria" action="#" icon="ui-icon-bullet" />
-				            <p:menuitem value="Irrigação" action="#" icon="ui-icon-bullet" />
+				            <p:menuitem value="Captação" action="#{captacaoBean.redirecionarTelaCadastro(interferencia.id)}" icon="ui-icon-bullet" />
+				            <p:menuitem value="Consumo Humano" action="#{consumohumanoBean.redirecionarTelaCadastro(interferencia.id)}" icon="ui-icon-bullet" />
+				            <p:menuitem value="Indústria" action="#{industriaBean.redirecionarTelaCadastro(interferencia.id)}" icon="ui-icon-bullet" />
+				            <p:menuitem value="Irrigação" action="#{irrigacaoBean.redirecionarTelaCadastro(interferencia.id)}" icon="ui-icon-bullet" />
 				            <p:menuitem value="Lançamento" action="#" icon="ui-icon-bullet" />
 				            <p:menuitem value="Pecuária" action="#" icon="ui-icon-bullet" />
 				            <p:menuitem value="Teste Bombeamento" action="#" icon="ui-icon-bullet" />

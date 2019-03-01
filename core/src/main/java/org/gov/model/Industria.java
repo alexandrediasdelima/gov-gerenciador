@@ -44,7 +44,7 @@ public class Industria implements Serializable {
 	private String cam_indus_materia_prima;
 	
 	@Column(name="cam_qt_pdt_an", columnDefinition="real")
-	private float cam_qt_pdt_an;
+	private BigDecimal cam_qt_pdt_an;
 	
 	@Column(name="cam_qt_pdt_an_uni")
 	private String cam_qt_pdt_an_uni;
@@ -83,11 +83,11 @@ public class Industria implements Serializable {
 		this.cam_indus_materia_prima = cam_indus_materia_prima;
 	}
 
-	public float getCam_qt_pdt_an() {
+	public BigDecimal getCam_qt_pdt_an() {
 		return cam_qt_pdt_an;
 	}
 
-	public void setCam_qt_pdt_an(float cam_qt_pdt_an) {
+	public void setCam_qt_pdt_an(BigDecimal cam_qt_pdt_an) {
 		this.cam_qt_pdt_an = cam_qt_pdt_an;
 	}
 

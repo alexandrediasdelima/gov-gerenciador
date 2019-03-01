@@ -26,7 +26,7 @@ public class AsbamaBean extends Controller {
 		asbamaService = new AsbamaServiceImpl();
 	}
 
-	public String redirecionarTelaCadastroAsbama(int id) {
+	public String redirecionarTelaCadastro(int id) {
 
 		asbama = new Asbama();
 		this.asbama.setAma_int_pfk(id);

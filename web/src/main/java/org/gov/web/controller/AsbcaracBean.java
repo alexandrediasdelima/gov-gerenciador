@@ -26,7 +26,7 @@ public class AsbcaracBean extends Controller {
 		asbcaracService = new AsbcaracServiceImpl();
 	}
 
-	public String redirecionarTelaCadastroAsbcarac(int id) {
+	public String redirecionarTelaCadastro(int id) {
 
 		asbcarac = new Asbcarac();
 		this.asbcarac.setId(id);

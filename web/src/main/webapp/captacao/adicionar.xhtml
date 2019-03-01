@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
+
+	<style type="text/css">
+		.ui-state-hover { background: none !important; background-image: none !important; }
+	</style>
+		
+	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
+		<h:form id="addCaptacao" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		<br/><br/><br/>
+		<p:fieldset legend="Captação">
+			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
+				<h:panelGrid columns="2" style="border: 0px solid;">
+					<p:outputLabel value="ID: " for="cap_int_pfk" />
+					<p:inputText id="cap_int_pfk" value="#{captacaoBean.captacao.cap_int_pfk}" disabled="true" />
+	
+					<p:outputLabel value="Informações Adicionais de Consumo: " for="cam_info_adici_consumo" />
+					<p:inputText id="cam_info_adici_consumo" maxlength="50" value="#{captacaoBean.captacao.cam_info_adici_consumo}" />
+	
+					<p:outputLabel value="Subtipo da Captação" for="int_tsu_cd" />
+					<p:selectOneMenu id="int_tsu_cd" value="#{captacaoBean.captacao.int_tsu_cd}" style="width:230px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemValue="Superficial" itemLabel="Superficial" />
+						<f:selectItem itemValue="Subterrânea" itemLabel="Subterrânea" />						
+					</p:selectOneMenu>
+				</h:panelGrid>
+				<br/><br/>
+				
+				<p:commandButton value="Voltar" action="#{captacaoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Salvar" action="#{captacaoBean.gravar}"   ajax="false" rendered="#{captacaoBean.view == 'add'}" icon="ui-icon-disk" />
+				<p:commandButton value="Alterar" action="#{captacaoBean.alterar}" ajax="false" rendered="#{captacaoBean.view == 'edit'}" icon="ui-icon-pencil" />
+				<p:commandButton value="Apagar" action="#{captacaoBean.deletar}"  ajax="false" icon="ui-icon-close" />
+			</p:scrollPanel>
+		</p:fieldset>
+		</h:form>
+	</div>
+</ui:composition>

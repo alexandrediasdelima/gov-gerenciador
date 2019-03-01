@@ -26,7 +26,7 @@ public class AsbtstBean extends Controller {
 		asbtstService = new AsbtstServiceImpl();
 	}
 
-	public String redirecionarTelaCadastroAsbtst(int id) {
+	public String redirecionarTelaCadastro(int id) {
 
 		asbtst = new Asbtst();
 		this.asbtst.setTst_int_pfk(id);
