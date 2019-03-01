@@ -7,12 +7,12 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />	
+	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
 
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
-	
+
 	<script>
 		$(function() {
 			$("#altitudeTerreno").inputmask({mask: "9[9][9][9][9][9][9].[9][9]", greedy: true})
@@ -21,7 +21,7 @@
 			$("#pbacTopo").inputmask({mask: "9[9][9][9].[9][9]", greedy: true})
 		})
 	</script>
-	
+
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addAsbcarac" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
 		<br/><br/><br/>
@@ -30,31 +30,31 @@
 				<h:panelGrid columns="2" style="border: 0px solid;">
 					<p:outputLabel value="ID: " for="id" />
 					<p:inputText id="id" value="#{asbcaracBean.asbcarac.id}" disabled="true" />
-	
+
 					<p:outputLabel value="Altitude do Terreno: " for="altitudeTerreno" />
 					<p:inputText id="altitudeTerreno" maxlength="10" value="#{asbcaracBean.asbcarac.altitudeTerreno}" />
-	
+
 					<p:outputLabel value="Altura da boca da tubulação: " for="alturaBocaTubulacao" />
 					<p:inputText id="alturaBocaTubulacao" maxlength="10" value="#{asbcaracBean.asbcarac.altitudeBocaTubulacao}" />
-	
+
 					<p:outputLabel value="Código identificador do aquifero ponto: " for="cdIdentificadorAquiferoPonto" />
 					<p:inputMask mask="?9999999999999999999" id="cdIdentificadorAquiferoPonto" value="#{asbcaracBean.asbcarac.identificadorAquiferoPonto}" />
-	
+
 					<p:outputLabel value="Data de instalação do poço : " for="dataInstalacao" />
 					<p:calendar id="dataInstalacao" showOn="button" value="#{asbcaracBean.asbcarac.dataInstalacaoPoco}" />
-	
+
 					<p:outputLabel value="Diametro da perfuração: " for="diametroPerfuracao" />
 					<p:inputMask mask="?9999999999999999999" id="diametroPerfuracao" value="#{asbcaracBean.asbcarac.diametroPerfuracao}" />
-	
+
 					<p:outputLabel value="Diametro do filtro: " for="diametroFiltro" />
 					<p:inputMask mask="?9999999999999999999" id="diametroFiltro" value="#{asbcaracBean.asbcarac.diametroFiltro}" />
-	
+
 					<p:outputLabel value="Profundidade da base do aquífero captado: " for="pbac" />
 					<p:inputText maxlength="6" id="pbac" value="#{asbcaracBean.asbcarac.profundidadeBaseMedidaApartirSuperficie}" />
-	
+
 					<p:outputLabel value="Profundidade do topo do aquífero captado: " for="pbacTopo" />
 					<p:inputText maxlength="6" id="pbacTopo" value="#{asbcaracBean.asbcarac.profundidadeTopoMedidaApartirSuperficie}" />
-	
+
 					<p:outputLabel value="Natureza do Ponto" for="Asb_tnp_enum" />
 					<p:selectOneMenu id="Asb_tnp_enum" value="#{asbcaracBean.asbcarac.codigoIdentificador}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -68,16 +68,16 @@
 						<f:selectItem itemValue="Poço coletor" itemLabel="Poço coletor" />
 						<f:selectItem itemValue="Poço ponteira" itemLabel="Poço ponteira" />
 						<f:selectItem itemValue="Poço tubular" itemLabel="Poço tubular" />
-						<f:selectItem itemValue="Poço de monitoramento" itemLabel="Poço de monitoramento" />						
+						<f:selectItem itemValue="Poço de monitoramento" itemLabel="Poço de monitoramento" />
 					</p:selectOneMenu>
-	
+
 					<p:outputLabel value="Tipo Penetração Aquifero" for="asb_tpn_enum" />
 					<p:selectOneMenu id="asb_tpn_enum" value="#{asbcaracBean.asbcarac.tipoPenetracaoAquifero}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemValue="Parcial" itemLabel="Parcial" />
 						<f:selectItem itemValue="Total" itemLabel="Total" />
 					</p:selectOneMenu>
-	
+
 					<p:outputLabel value="Condição Aquifero" for="asb_tca_enum" />
 					<p:selectOneMenu id="asb_tca_enum" value="#{asbcaracBean.asbcarac.condicaoAquifero}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -88,7 +88,7 @@
 					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>
-				
+
 				<p:commandButton value="Voltar" action="#{asbcaracBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:commandButton value="Salvar" action="#{asbcaracBean.gravar}"   ajax="false" rendered="#{asbcaracBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Alterar" action="#{asbcaracBean.alterar}" ajax="false" rendered="#{asbcaracBean.view == 'edit'}" icon="ui-icon-pencil" />

@@ -6,13 +6,13 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
-	xmlns:components="http://java.sun.com/jsf/composite/components">	
-	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />	
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
 
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
-	
+
 	<script>
 		$(function() {
 			$("#latitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
@@ -29,40 +29,40 @@
 				<h:panelGrid columns="2" style="border: 0px solid;">
 					<p:outputLabel value="Há um estudo hidrológico da área: " for="estudoHidrologico" />
 					<p:selectBooleanCheckbox value="#{interferenciaBean.interferencia.haEstudoHidrologicoDaArea}" label="Basic" id="estudoHidrologico" />
-	
+
 					<p:outputLabel value="Link para a foto do ponto de captura/lançamento numa visão geral: " for="fotoVisaoGeral" />
 					<p:inputText id="fotoVisaoGeral" value="#{interferenciaBean.interferencia.linkFotoPontoCapturaVisaoGeral}" />
-	
+
 					<p:outputLabel value="Link para a foto do ponto de captura/lançamento numa visão detalhada: " for="fotoVisaoDetalhada" />
 					<p:inputText id="fotoVisaoDetalhada" value="#{interferenciaBean.interferencia.linkFotoPontoCapturaVisaoDetalhada}" />
-	
+
 					<p:outputLabel value="link para a imagem do croqui de localização do ponto de localização da captação/lançamento: " for="linkCroqui" />
 					<p:inputText id="linkCroqui" value="#{interferenciaBean.interferencia.linkImagemCroquiLocalizacao}" />
-	
+
 					<p:outputLabel value="Latitude do ponto de interferência: " for="latitude" />
 					<p:inputText id="latitude" maxlength="14" value="#{interferenciaBean.interferencia.latitudeLocalizacaoPontoInterferencia}"/>
-					
+
 					<p:outputLabel value="Longitude do ponto de interferência: " for="longitude" />
 					<p:inputText id="longitude" maxlength="14" value="#{interferenciaBean.interferencia.longitudeLocalizacaoPontoInterferencia}"/>
-	
+
 					<p:outputLabel value="Local da Interferência: " for="localInterferencia" />
 					<p:inputText id="localInterferencia" value="#{interferenciaBean.interferencia.localInterferencia}" />
-	
+
 					<p:outputLabel value="Nome do curso da agua: " for="nomeCurso" />
 					<p:inputText id="nomeCurso" value="#{interferenciaBean.interferencia.nomeCursoAgua}" />
-	
+
 					<p:outputLabel value="Presença ou Ausência de barramento para a captação: " for="presenca" />
 					<p:selectBooleanCheckbox value="#{interferenciaBean.interferencia.presencaAusenciaBarramentoParaCaptacao}" label="Basic" id="presenca" />
-	
+
 					<p:outputLabel value="Barragem onde é feita a captação: " for="barragemCaptacao" />
 					<p:inputText id="barragemCaptacao" value="#{interferenciaBean.interferencia.barragemOndeFeitaCaptacao}" />
-	
+
 					<p:outputLabel value="Capacidade máxima de acumulação (m³): " for="capacidade" />
 					<p:inputText maxlength="15" id="capacidade" value="#{interferenciaBean.interferencia.capacidadeMaximaAcumulacao}" />
-	
+
 					<p:outputLabel value="Bacia hidrográfica onde esta inserida a captação/lançamento: " for="bacia" />
 					<p:inputText id="bacia" value="#{interferenciaBean.interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" />
-	
+
 					<p:outputLabel value="Codigo identificador da situação da interferência: " for="int_tsi_cd" />
 					<p:selectOneMenu id="int_tsi_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorSituacaoInterferencia}" style="width:200px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -71,7 +71,7 @@
 						<f:selectItem itemValue="Operação" itemLabel="Operação" />
 						<f:selectItem itemValue="Desativada" itemLabel="Desativada" />
 					</p:selectOneMenu>
-	
+
 					<p:outputLabel value="Codigo identificador do tipo da finalidade: " for="fin_tfn_cd" />
 					<p:selectOneMenu id="fin_tfn_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoFinalidade}" style="width:200px">
 						<f:selectItem itemValue="" itemLabel="Selecione" />
@@ -94,7 +94,7 @@
 						<f:selectItem itemValue="Aquicultura em Tanque Rede" itemLabel="Aquicultura em Tanque Rede" />
 						<f:selectItem itemValue="Outras" itemLabel="Outras" />
 					</p:selectOneMenu>
-	
+
 					<p:outputLabel value="Código identificador do tipo de outro uso: " for="fou_tou_cd" />
 					<p:selectOneMenu id="fou_tou_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoOutroUso}" style="width:200px">
 						<f:selectItem itemValue="" itemLabel="Selecione" />
@@ -124,7 +124,7 @@
 						<f:selectItem itemValue="Outro" itemLabel="Outro" />
 						<f:selectItem itemValue="Construção Civil" itemLabel="Construção Civil" />
 					</p:selectOneMenu>
-	
+
 					<p:outputLabel value="Codigo identificador da situação da interferência: " for="int_tin_cd" />
 					<p:selectOneMenu id="int_tin_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoInterferencia}" style="width:200px">
 						<f:selectItem itemValue="" itemLabel="Selecione" />
@@ -133,11 +133,11 @@
 						<f:selectItem itemValue="Barragem" itemLabel="Barragem" />
 						<f:selectItem itemValue="Ponto de Referência" itemLabel="Ponto de Referência" />
 					</p:selectOneMenu>
-	
+
 					<p:outputLabel value="Tipo finalidade tipo do uso ausente: " for="linkFotoVisaoGeral" />
 					<p:inputText id="linkFotoVisaoGeral" value="#{interferenciaBean.interferencia.tipoFinalidadeTipoDoUsoAusente}" />
 				</h:panelGrid>
-				
+
 				<p:commandButton value="Salvar" action="#{interferenciaBean.gravar}" ajax="false" rendered="#{interferenciaBean.view == 'add'}"  icon="ui-icon-disk" />
 				<p:commandButton value="Editar" action="#{interferenciaBean.editar}" ajax="false" rendered="#{interferenciaBean.view == 'edit'}" icon="ui-icon-pencil" />
 			</p:scrollPanel>
