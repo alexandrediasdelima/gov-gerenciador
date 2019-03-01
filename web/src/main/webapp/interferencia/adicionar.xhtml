@@ -7,21 +7,26 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	<h:outputScript library="js" name="jquery-3.3.1.min.js" />
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
 
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
 
+	<script>
+		$(function() {
+			$("#latitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
+    		$("#longitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
+			$("#capacidade").inputmask({mask: "9[9][9][9][9][9][9][9][9].9[9][9][9][9]", greedy: true})
+		})
+	</script>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
-		<h:form id="addInterferencia" prependId="false" style="width:99%;">
+		<h:form id="addInterferencia" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
 		<br/><br/><br/>
 		<p:fieldset legend="Interferência">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
 				<h:panelGrid columns="2" style="border: 0px solid;">
-
 					<p:outputLabel value="Há um estudo hidrológico da área: " for="estudoHidrologico" />
 					<p:selectBooleanCheckbox value="#{interferenciaBean.interferencia.haEstudoHidrologicoDaArea}" label="Basic" id="estudoHidrologico" />
 
@@ -58,28 +63,79 @@
 					<p:outputLabel value="Bacia hidrográfica onde esta inserida a captação/lançamento: " for="bacia" />
 					<p:inputText id="bacia" value="#{interferenciaBean.interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" />
 
+					<p:outputLabel value="Codigo identificador da situação da interferência: " for="int_tsi_cd" />
+					<p:selectOneMenu id="int_tsi_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorSituacaoInterferencia}" style="width:200px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemValue="Projeto" itemLabel="Projeto" />
+						<f:selectItem itemValue="Construção" itemLabel="Construção" />
+						<f:selectItem itemValue="Operação" itemLabel="Operação" />
+						<f:selectItem itemValue="Desativada" itemLabel="Desativada" />
+					</p:selectOneMenu>
+
+					<p:outputLabel value="Codigo identificador do tipo da finalidade: " for="fin_tfn_cd" />
+					<p:selectOneMenu id="fin_tfn_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoFinalidade}" style="width:200px">
+						<f:selectItem itemValue="" itemLabel="Selecione" />
+						<f:selectItem itemValue="Sem Finalidade" itemLabel="Sem Finalidade" />
+						<f:selectItem itemValue="Abastecimento Público" itemLabel="Abastecimento Público" />
+						<f:selectItem itemValue="Esgotamento Sanitário" itemLabel="Esgotamento Sanitário" />
+						<f:selectItem itemValue="Indústria" itemLabel="Indústria" />
+						<f:selectItem itemValue="Mineração – Extração de Areia/Cascalho em Leito de Rio" itemLabel="Mineração – Extração de Areia/Cascalho em Leito de Rio" />
+						<f:selectItem itemValue="Irrigação" itemLabel="Irrigação" />
+						<f:selectItem itemValue="Criação Animal" itemLabel="Criação Animal" />
+						<f:selectItem itemValue="Aquicultura em Tanque Escavado" itemLabel="Aquicultura em Tanque Escavado" />
+						<f:selectItem itemValue="Termoelétrica" itemLabel="Termoelétrica" />
+						<f:selectItem itemValue="Transposição" itemLabel="Transposição" />
+						<f:selectItem itemValue="Aproveitamento Hidroelétrico" itemLabel="Aproveitamento Hidroelétrico" />
+						<f:selectItem itemValue="Reservatório/Barramento/Regularização Vazoes Usos Múltiplos" itemLabel="Reservatório/Barramento/Regularização Vazoes Usos Múltiplos" />
+						<f:selectItem itemValue="Consumo Humano" itemLabel="Consumo Humano" />
+						<f:selectItem itemValue="Mineração – Outros Processos Extrativos" itemLabel="Mineração – Outros Processos Extrativos" />
+						<f:selectItem itemValue="Obras Hidráulicas" itemLabel="Obras Hidráulicas" />
+						<f:selectItem itemValue="Serviços" itemLabel="Serviços" />
+						<f:selectItem itemValue="Aquicultura em Tanque Rede" itemLabel="Aquicultura em Tanque Rede" />
+						<f:selectItem itemValue="Outras" itemLabel="Outras" />
+					</p:selectOneMenu>
+
+					<p:outputLabel value="Código identificador do tipo de outro uso: " for="fou_tou_cd" />
+					<p:selectOneMenu id="fou_tou_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoOutroUso}" style="width:200px">
+						<f:selectItem itemValue="" itemLabel="Selecione" />
+						<f:selectItem itemValue="Eclusa" itemLabel="Eclusa" />
+						<f:selectItem itemValue="Recreação" itemLabel="Recreação" />
+						<f:selectItem itemValue="Salvamento" itemLabel="Salvamento" />
+						<f:selectItem itemValue="Poço de bombeamento de recuperação ambiental" itemLabel="Poço de bombeamento de recuperação ambiental" />
+						<f:selectItem itemValue="Poço de monitoramento/Piezometro" itemLabel="Poço de monitoramento/Piezometro" />
+						<f:selectItem itemValue="Poço de injeção para recuperação ambiental" itemLabel="Poço de injeção para recuperação ambiental" />
+						<f:selectItem itemValue="Umectação de vias" itemLabel="Umectação de vias" />
+						<f:selectItem itemValue="Sistema de Resfriamento" itemLabel="Sistema de Resfriamento" />
+						<f:selectItem itemValue="Lavagem de veículos" itemLabel="Lavagem de veículos" />
+						<f:selectItem itemValue="Clarificação da água" itemLabel="Clarificação da água" />
+						<f:selectItem itemValue="Depuração de efluentes" itemLabel="Depuração de efluentes" />
+						<f:selectItem itemValue="Disposição de rejeitos" itemLabel="Disposição de rejeitos" />
+						<f:selectItem itemValue="Pesquisa mineral" itemLabel="Pesquisa mineral" />
+						<f:selectItem itemValue="Pesquisa hidrogeológica / teste de bombeamento" itemLabel="Pesquisa hidrogeológica / teste de bombeamento" />
+						<f:selectItem itemValue="Recirculação de água" itemLabel="Recirculação de água" />
+						<f:selectItem itemValue="Urbanização" itemLabel="Urbanização" />
+						<f:selectItem itemValue="Rebaixamento de aquífero" itemLabel="Rebaixamento de aquífero" />
+						<f:selectItem itemValue="Balneário - lazer e clube" itemLabel="Balneário - lazer e clube" />
+						<f:selectItem itemValue="Lavanderia" itemLabel="Lavanderia" />
+						<f:selectItem itemValue="Combate a incêndio" itemLabel="Combate a incêndio" />
+						<f:selectItem itemValue="Hortas, pomares, jardins, paisagismo (área &#60; 1 ha)" itemLabel="Hortas, pomares, jardins, paisagismo (área &#60; 1 ha)" />
+						<f:selectItem itemValue="Teste hidrostático" itemLabel="Teste hidrostático" />
+						<f:selectItem itemValue="Abastecimento de pulverizadores" itemLabel="Abastecimento de pulverizadores" />
+						<f:selectItem itemValue="Outro" itemLabel="Outro" />
+						<f:selectItem itemValue="Construção Civil" itemLabel="Construção Civil" />
+					</p:selectOneMenu>
+
+					<p:outputLabel value="Codigo identificador da situação da interferência: " for="int_tin_cd" />
+					<p:selectOneMenu id="int_tin_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoInterferencia}" style="width:200px">
+						<f:selectItem itemValue="" itemLabel="Selecione" />
+						<f:selectItem itemValue="Captação" itemLabel="Captação" />
+						<f:selectItem itemValue="Lançamento" itemLabel="Lançamento" />
+						<f:selectItem itemValue="Barragem" itemLabel="Barragem" />
+						<f:selectItem itemValue="Ponto de Referência" itemLabel="Ponto de Referência" />
+					</p:selectOneMenu>
 
 					<p:outputLabel value="Tipo finalidade tipo do uso ausente: " for="linkFotoVisaoGeral" />
 					<p:inputText id="linkFotoVisaoGeral" value="#{interferenciaBean.interferencia.tipoFinalidadeTipoDoUsoAusente}" />
-
-
-					<p:outputLabel value="Natureza do Ponto" for="Asb_tnp_enumaa" />
-					<p:selectOneMenu id="Asb_tnp_enumaa" value="#{asbcaracBean.asbcarac.codigoIdentificador}" style="width:200px">
-						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="POCO_ESCAVADO" itemLabel="Poço escavado(cacimba/cisterna)" />
-						<f:selectItem itemValue="FONTE_NATURAL" itemLabel="Fonte natural" />
-						<f:selectItem itemValue="LAGO" itemLabel="Lago" />
-						<f:selectItem itemValue="LAGOA" itemLabel="Lagoa" />
-						<f:selectItem itemValue="NASCENTE" itemLabel="Nascente" />
-						<f:selectItem itemValue="PIEZOMETRO" itemLabel="Piezômetro" />
-						<f:selectItem itemValue="POCO_AMAZONAS" itemLabel="Poço amazonas" />
-						<f:selectItem itemValue="POCO_COLETOR" itemLabel="Poço coletor" />
-						<f:selectItem itemValue="POCO_PONTEIRA" itemLabel="Poço ponteira" />
-						<f:selectItem itemValue="POCO_TUBULAR" itemLabel="Poço tubular" />
-						<f:selectItem itemValue="POCO_DE_MONITORAMENTO" itemLabel="Poço de monitoramento" />
-					</p:selectOneMenu>
-
-
 				</h:panelGrid>
 
 				<p:commandButton value="Salvar" action="#{interferenciaBean.gravar}" ajax="false" rendered="#{interferenciaBean.view == 'add'}"  icon="ui-icon-disk" />
