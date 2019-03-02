@@ -32,7 +32,7 @@ public class Lancamento implements Serializable {
 	
 	@Column(name="lan_int_pfk", nullable=false)
 	@Id
-	private int lan_int_pfk;
+	private Integer lan_int_pfk;
 	
 	@Column(name="cam_lanc_dbo5", columnDefinition="numeric")
 	private BigDecimal cam_lanc_dbo5;
@@ -58,13 +58,11 @@ public class Lancamento implements Serializable {
 	@Column(name="efl_qt_nitrogeniotratado", columnDefinition="numeric")
 	private BigDecimal efl_qt_nitrogeniotratado;
 
-	
-	
-	public int getLan_int_pfk() {
+	public Integer getLan_int_pfk() {
 		return lan_int_pfk;
 	}
 
-	public void setLan_int_pfk(int lan_int_pfk) {
+	public void setLan_int_pfk(Integer lan_int_pfk) {
 		this.lan_int_pfk = lan_int_pfk;
 	}
 

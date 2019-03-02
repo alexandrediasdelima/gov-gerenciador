@@ -84,6 +84,24 @@
 		<managed-bean-name>irrigacaoBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.IrrigacaoBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>lancamentoBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.LancamentoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>	
+	
+	<managed-bean>
+		<managed-bean-name>pecuariaBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.PecuariaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>		
+
+	<managed-bean>
+		<managed-bean-name>testebombeamentoBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.TesteBombeamentoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>	
 	
 	<managed-bean>
@@ -92,7 +110,7 @@
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 
-		<managed-bean>
+	<managed-bean>
 		<managed-bean-name>empreendimentoBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.EmpreendimentoBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>

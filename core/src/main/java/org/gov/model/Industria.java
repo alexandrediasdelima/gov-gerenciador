@@ -32,7 +32,7 @@ public class Industria implements Serializable {
 	
 	@Column(name="ind_int_pfk", nullable=false)
 	@Id
-	private int ind_int_pfk;
+	private Integer ind_int_pfk;
 	
 	@Column(name="cam_indus_tp")
 	private String cam_indus_tp;
@@ -51,11 +51,11 @@ public class Industria implements Serializable {
 
 	
 	
-	public int getInd_int_pfk() {
+	public Integer getInd_int_pfk() {
 		return ind_int_pfk;
 	}
 
-	public void setInd_int_pfk(int ind_int_pfk) {
+	public void setInd_int_pfk(Integer ind_int_pfk) {
 		this.ind_int_pfk = ind_int_pfk;
 	}
 

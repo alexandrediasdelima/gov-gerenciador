@@ -31,7 +31,7 @@ public class Vazao implements Serializable {
 	
 	@Column(name="vz_int_pfk", nullable=false)
 	@Id
-	private int vz_int_pfk ; 
+	private Integer vz_int_pfk ; 
 	  
 	@Column(name="int_vz_maxima", columnDefinition="numeric", nullable=false)
 	private BigDecimal int_vz_maxima ; 
@@ -76,40 +76,40 @@ public class Vazao implements Serializable {
 	private BigDecimal ope_qt_horasdez ; 
 	  
 	@Column(name="ope_qt_diajan", nullable=false)
-	private int ope_qt_diajan ; 
+	private Integer ope_qt_diajan ; 
 	  
 	@Column(name="ope_qt_diafev", nullable=false)
-	private int ope_qt_diafev ; 
+	private Integer ope_qt_diafev ; 
 	  
 	@Column(name="ope_qt_diamar", nullable=false)
-	private int ope_qt_diamar ; 
+	private Integer ope_qt_diamar ; 
 	  
 	@Column(name="ope_qt_diaabr", nullable=false)
-	private int ope_qt_diaabr ; 
+	private Integer ope_qt_diaabr ; 
 	  
 	@Column(name="ope_qt_diamai", nullable=false)
-	private int ope_qt_diamai ; 
+	private Integer ope_qt_diamai ; 
 	  
 	@Column(name="ope_qt_diajun", nullable=false)
-	private int ope_qt_diajun ; 
+	private Integer ope_qt_diajun ; 
 	  
 	@Column(name="ope_qt_diajul", nullable=false)
-	private int ope_qt_diajul ; 
+	private Integer ope_qt_diajul ; 
 	  
 	@Column(name="ope_qt_diaago", nullable=false)
-	private int ope_qt_diaago ; 
+	private Integer ope_qt_diaago ; 
 	  
 	@Column(name="ope_qt_diaset", nullable=false)
-	private int ope_qt_diaset ; 
+	private Integer ope_qt_diaset ; 
 	  
 	@Column(name="ope_qt_diaout", nullable=false)
-	private int ope_qt_diaout ; 
+	private Integer ope_qt_diaout ; 
 	  
 	@Column(name="ope_qt_dianov", nullable=false)
-	private int ope_qt_dianov ; 
+	private Integer ope_qt_dianov ; 
 	  
 	@Column(name="ope_qt_diadez", nullable=false)
-	private int ope_qt_diadez ; 
+	private Integer ope_qt_diadez ; 
 	  
 	@Column(name="ope_vz_mesjan", columnDefinition="numeric", nullable=false)
 	private BigDecimal ope_vz_mesjan ; 
@@ -147,11 +147,11 @@ public class Vazao implements Serializable {
 	@Column(name="ope_vz_mesdez", columnDefinition="numeric", nullable=false)
 	private BigDecimal ope_vz_mesdez ;
 
-	public int getVz_int_pfk() {
+	public Integer getVz_int_pfk() {
 		return vz_int_pfk;
 	}
 
-	public void setVz_int_pfk(int vz_int_pfk) {
+	public void setVz_int_pfk(Integer vz_int_pfk) {
 		this.vz_int_pfk = vz_int_pfk;
 	}
 
@@ -267,99 +267,99 @@ public class Vazao implements Serializable {
 		this.ope_qt_horasdez = ope_qt_horasdez;
 	}
 
-	public int getOpe_qt_diajan() {
+	public Integer getOpe_qt_diajan() {
 		return ope_qt_diajan;
 	}
 
-	public void setOpe_qt_diajan(int ope_qt_diajan) {
+	public void setOpe_qt_diajan(Integer ope_qt_diajan) {
 		this.ope_qt_diajan = ope_qt_diajan;
 	}
 
-	public int getOpe_qt_diafev() {
+	public Integer getOpe_qt_diafev() {
 		return ope_qt_diafev;
 	}
 
-	public void setOpe_qt_diafev(int ope_qt_diafev) {
+	public void setOpe_qt_diafev(Integer ope_qt_diafev) {
 		this.ope_qt_diafev = ope_qt_diafev;
 	}
 
-	public int getOpe_qt_diamar() {
+	public Integer getOpe_qt_diamar() {
 		return ope_qt_diamar;
 	}
 
-	public void setOpe_qt_diamar(int ope_qt_diamar) {
+	public void setOpe_qt_diamar(Integer ope_qt_diamar) {
 		this.ope_qt_diamar = ope_qt_diamar;
 	}
 
-	public int getOpe_qt_diaabr() {
+	public Integer getOpe_qt_diaabr() {
 		return ope_qt_diaabr;
 	}
 
-	public void setOpe_qt_diaabr(int ope_qt_diaabr) {
+	public void setOpe_qt_diaabr(Integer ope_qt_diaabr) {
 		this.ope_qt_diaabr = ope_qt_diaabr;
 	}
 
-	public int getOpe_qt_diamai() {
+	public Integer getOpe_qt_diamai() {
 		return ope_qt_diamai;
 	}
 
-	public void setOpe_qt_diamai(int ope_qt_diamai) {
+	public void setOpe_qt_diamai(Integer ope_qt_diamai) {
 		this.ope_qt_diamai = ope_qt_diamai;
 	}
 
-	public int getOpe_qt_diajun() {
+	public Integer getOpe_qt_diajun() {
 		return ope_qt_diajun;
 	}
 
-	public void setOpe_qt_diajun(int ope_qt_diajun) {
+	public void setOpe_qt_diajun(Integer ope_qt_diajun) {
 		this.ope_qt_diajun = ope_qt_diajun;
 	}
 
-	public int getOpe_qt_diajul() {
+	public Integer getOpe_qt_diajul() {
 		return ope_qt_diajul;
 	}
 
-	public void setOpe_qt_diajul(int ope_qt_diajul) {
+	public void setOpe_qt_diajul(Integer ope_qt_diajul) {
 		this.ope_qt_diajul = ope_qt_diajul;
 	}
 
-	public int getOpe_qt_diaago() {
+	public Integer getOpe_qt_diaago() {
 		return ope_qt_diaago;
 	}
 
-	public void setOpe_qt_diaago(int ope_qt_diaago) {
+	public void setOpe_qt_diaago(Integer ope_qt_diaago) {
 		this.ope_qt_diaago = ope_qt_diaago;
 	}
 
-	public int getOpe_qt_diaset() {
+	public Integer getOpe_qt_diaset() {
 		return ope_qt_diaset;
 	}
 
-	public void setOpe_qt_diaset(int ope_qt_diaset) {
+	public void setOpe_qt_diaset(Integer ope_qt_diaset) {
 		this.ope_qt_diaset = ope_qt_diaset;
 	}
 
-	public int getOpe_qt_diaout() {
+	public Integer getOpe_qt_diaout() {
 		return ope_qt_diaout;
 	}
 
-	public void setOpe_qt_diaout(int ope_qt_diaout) {
+	public void setOpe_qt_diaout(Integer ope_qt_diaout) {
 		this.ope_qt_diaout = ope_qt_diaout;
 	}
 
-	public int getOpe_qt_dianov() {
+	public Integer getOpe_qt_dianov() {
 		return ope_qt_dianov;
 	}
 
-	public void setOpe_qt_dianov(int ope_qt_dianov) {
+	public void setOpe_qt_dianov(Integer ope_qt_dianov) {
 		this.ope_qt_dianov = ope_qt_dianov;
 	}
 
-	public int getOpe_qt_diadez() {
+	public Integer getOpe_qt_diadez() {
 		return ope_qt_diadez;
 	}
 
-	public void setOpe_qt_diadez(int ope_qt_diadez) {
+	public void setOpe_qt_diadez(Integer ope_qt_diadez) {
 		this.ope_qt_diadez = ope_qt_diadez;
 	}
 
@@ -457,5 +457,6 @@ public class Vazao implements Serializable {
 
 	public void setOpe_vz_mesdez(BigDecimal ope_vz_mesdez) {
 		this.ope_vz_mesdez = ope_vz_mesdez;
-	} 
+	}
+
 }

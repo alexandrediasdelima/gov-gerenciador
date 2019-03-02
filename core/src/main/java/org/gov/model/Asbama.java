@@ -32,7 +32,7 @@ public class Asbama implements Serializable {
 
 	@Column(name="ama_int_pfk", nullable=false)
 	@Id
-	private int ama_int_pfk;
+	private Integer ama_int_pfk;
 	
 	@Column(name="ama_qt_calcio", columnDefinition="numeric")
 	private BigDecimal ama_qt_calcio;
@@ -99,11 +99,11 @@ public class Asbama implements Serializable {
 	
 	
 
-	public int getAma_int_pfk() {
+	public Integer getAma_int_pfk() {
 		return ama_int_pfk;
 	}
 
-	public void setAma_int_pfk(int ama_int_pfk) {
+	public void setAma_int_pfk(Integer ama_int_pfk) {
 		this.ama_int_pfk = ama_int_pfk;
 	}
 

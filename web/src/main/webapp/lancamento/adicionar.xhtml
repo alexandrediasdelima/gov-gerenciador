@@ -1,0 +1,71 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+	
+	<style type="text/css">
+		.ui-state-hover { background: none !important; background-image: none !important; }
+	</style>
+			
+	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
+		<h:form id="addLancamento" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		<br/><br/><br/>
+		<p:fieldset legend="Lançamento">
+			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
+				<h:panelGrid columns="2" style="border: 0px solid;">
+					<p:outputLabel value="ID: " for="lan_int_pfk" />
+					<p:inputText  id="lan_int_pfk" maxlength="6" value="#{lancamentoBean.lancamento.lan_int_pfk}" disabled="true"/>
+					
+					<p:outputLabel value="DBO 05: " for="cam_lanc_dbo5" />                                               
+					<p:inputText  id="cam_lanc_dbo5" maxlength="6" value="#{lancamentoBean.lancamento.cam_lanc_dbo5}" />
+					
+					<p:outputLabel value="DBO 20: " for="cam_lanc_dbo20" />                                               
+					<p:inputText  id="cam_lanc_dbo20" maxlength="6" value="#{lancamentoBean.lancamento.cam_lanc_dbo20}" />
+					
+					<p:outputLabel value="Quantidade de DBO do Efluente Bruto: " for="efl_qt_dbobruto" />                                               
+					<p:inputText  id="efl_qt_dbobruto" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_dbobruto}" />
+					
+					<p:outputLabel value="Quantidade de DBO do Efluente Tratado: " for="efl_qt_dbotratado" />                                               
+					<p:inputText  id="efl_qt_dbotratado" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_dbotratado}" />
+					
+					<p:outputLabel value="Quantidade de Fósforo do Efluente Bruto: " for="efl_qt_fosforobruto" />                                               
+					<p:inputText  id="efl_qt_fosforobruto" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_fosforobruto}" />
+					
+					<p:outputLabel value="Quantidade de Fósforo do Efluente Tratado: " for="efl_qt_fosforotratado" />                                               
+					<p:inputText  id="efl_qt_fosforotratado" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_fosforotratado}" />
+					
+					<p:outputLabel value="Quantidade de Nitrogênio do Efluente Bruto: " for="efl_qt_nitrogeniobruto" />                                               
+					<p:inputText  id="efl_qt_nitrogeniobruto" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_nitrogeniobruto}" />
+					
+					<p:outputLabel value="Quantidade de Nitrogênio do Efluente Tratado: " for="efl_qt_nitrogeniotratado" />                                               
+					<p:inputText  id="efl_qt_nitrogeniotratado" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_nitrogeniotratado}" />
+				</h:panelGrid>
+				<br/><br/>
+				
+				<p:commandButton value="Voltar" action="#{lancamentoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Salvar" action="#{lancamentoBean.gravar}"   ajax="false" rendered="#{lancamentoBean.view == 'add'}" icon="ui-icon-disk" />
+				<p:commandButton value="Alterar" action="#{lancamentoBean.alterar}" ajax="false" rendered="#{lancamentoBean.view == 'edit'}" icon="ui-icon-pencil" />
+				<p:commandButton value="Apagar" action="#{lancamentoBean.deletar}"  ajax="false" icon="ui-icon-close" />
+			</p:scrollPanel>
+		</p:fieldset>
+		</h:form>
+	</div>
+	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
+	<script>
+		$(function() {
+			$("#cam_lanc_dbo5").inputmask({mask: "[9][9][9][9][9][9]", greedy: true})
+			$("#cam_lanc_dbo20").inputmask({mask: "[9][9][9][9][9][9]", greedy: true})
+			$("#efl_qt_dbobruto").inputmask({mask: "[9][9][9][9][9][9]", greedy: true})
+			$("#efl_qt_dbotratado").inputmask({mask: "[9][9][9][9][9][9]", greedy: true})
+			$("#efl_qt_fosforobruto").inputmask({mask: "[9][9][9][9][9][9]", greedy: true})
+			$("#efl_qt_fosforotratado").inputmask({mask: "[9][9][9][9][9][9]", greedy: true})
+			$("#efl_qt_nitrogeniobruto").inputmask({mask: "[9][9][9][9][9][9]", greedy: true})
+			$("#efl_qt_nitrogeniotratado").inputmask({mask: "[9][9][9][9][9][9]", greedy: true})
+		})
+	</script>
+</ui:composition>

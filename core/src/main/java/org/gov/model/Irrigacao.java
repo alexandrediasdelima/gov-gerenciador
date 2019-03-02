@@ -32,7 +32,7 @@ public class Irrigacao implements Serializable {
 		
 	@Column(name="irr_int_pfk", nullable=false)
 	@Id
-	private int irr_int_pfk;
+	private Integer irr_int_pfk;
 
 	@Column(name="sir_ar_irrigada", columnDefinition="numeric")
 	private BigDecimal sir_ar_irrigada;
@@ -84,11 +84,11 @@ public class Irrigacao implements Serializable {
 //	@Type(type = "pgsql_enum")
 //	private Sir_tsi_cd sir_tsi_cd_3;
 
-	public int getIrr_int_pfk() {
+	public Integer getIrr_int_pfk() {
 		return irr_int_pfk;
 	}
 
-	public void setIrr_int_pfk(int irr_int_pfk) {
+	public void setIrr_int_pfk(Integer irr_int_pfk) {
 		this.irr_int_pfk = irr_int_pfk;
 	}
 

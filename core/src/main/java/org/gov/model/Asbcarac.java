@@ -29,7 +29,7 @@ public class Asbcarac implements Serializable {
 
 	@Column(name ="asb_int_pfk")
 	@Id
-	private int id;
+	private Integer id;
 
 	@Column(name ="asb_nu_cotaterreno")
 	private BigDecimal altitudeTerreno;
@@ -79,11 +79,11 @@ public class Asbcarac implements Serializable {
 //	@Type(type = "pgsql_enum")
 //	private Asb_tca_cd condicaoAquifero;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
