@@ -103,6 +103,12 @@
 		<managed-bean-class>org.gov.web.controller.TesteBombeamentoBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>	
+
+	<managed-bean>
+		<managed-bean-name>vazaoBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.VazaoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>	
 	
 	<managed-bean>
 		<managed-bean-name>usuarioBean</managed-bean-name>

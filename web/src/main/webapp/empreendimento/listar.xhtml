@@ -13,130 +13,66 @@
   			overflow-x: auto;
 		}
 	</style>
-	<div style="padding-top: 50px">
-	<h:form id="listarEmpreendimento" prependId="false">
 
-		<p:spacer height="1" />
-		<p:panelGrid styleClass="cemPorCento" id="uploadFileRow">
-
-			<p:row>
-				<p:column colspan="3" styleClass="ui-state-default">
-					<p:commandButton icon="ui-icon-plus" value="Adicionar"
-						action="#{empreendimentoBean.adicionarNovo}" ajax="false" />
-				</p:column>
-			</p:row>
-		</p:panelGrid>
-
-		<p:spacer height="1" />
-
-
-		<h:panelGrid>
-			<p:dataTable id="tabelaEmpreendimento" var="empreendimento" value="#{empreendimentoBean.empreendimentos}"
-				paginator="true" paginatorPosition="top" rows="15">
-
-				<p:column>
-					<f:facet name="header">ID</f:facet>
+	<div style="padding-top: 50px;">
+		<h:form id="listarEmpreendimento" prependId="false" style="width:99%;">
+			<br/>
+			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{empreendimentoBean.adicionarNovo}" ajax="false" />
+			<br/><br/>
+			<p:scrollPanel mode="native" style="width:100%">
+				<p:dataTable id="tabelaEmpreendimentos" value="#{empreendimentoBean.empreendimentos}" paginator="true" rows="10" var="empreendimento" paginatorPosition="top" resizableColumns="false" >
+					<f:facet name="header">Empreendimento</f:facet>
+					<p:column headerText="ID">
 						<h:outputText value="#{empreendimento.id}" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Nome do Empreendimento</f:facet>
-					<h:outputText
-						value="#{empreendimento.nomeEmpreendimento}" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Área total da propriedade</f:facet>
-					<h:outputText value="#{empreendimento.areaTotalPropriedade}" />
-
-
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Unidade da area total da propriedade</f:facet>
-					<h:outputText value="#{empreendimento.unidadeAreaTotalPropriedade}" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Endereço do empreendimento</f:facet>
-					<h:outputText value="#{empreendimento.enderecoEmpreendimento}" />
-
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Tipo de logradouro do empreendimento</f:facet>
-					<h:outputText value="#{empreendimento.tipoLogradouroEmpreendimento}" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Nome do logradouro do empreendimento</f:facet>
-					<h:outputText value="#{empreendimento.nomeLogradouroEmpreendimento}" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Número do endereço do empreendimento</f:facet>
-					<h:outputText value="#{empreendimento.numeroLogradouroEmpreendimento}" />
-				</p:column>
-
-
-				<p:column>
-					<f:facet name="header">Complemento do endereço do empreendimento</f:facet>
-					<h:outputText value="#{empreendimento.complementoLogradouroEmpreendimento}"  />
-				</p:column>
-
-
-				<p:column>
-					<f:facet name="header">Nome do acesso principal ao empreendimento</f:facet>
-					<h:outputText value="#{empreendimento.nomeAcessoPrincipalEmpreendimento}" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Local do empreendimento</f:facet>
-					<h:outputText value="#{empreendimento.localEmpreendimento}" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Número de caixa postal do empreendimento</f:facet>
-					<h:outputText value="#{empreendimento.numeroCaixaPostalEmpreendimento}" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Cep do empreendimento</f:facet>
-					<h:outputText value="#{empreendimento.cepEmpreendimento}"/>
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Município onde se localiza o empreendimento</f:facet>
-					<h:outputText value="#{empreendimento.nomeMunicipioEmpreendimento}" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">Código ibge do municipio onde está localizada a interferência</f:facet>
+					</p:column>
+					<p:column headerText="ID Usuário (Proprietário)">
+						<h:outputText value="#{empreendimento.idUsuario}" />
+					</p:column>	
+					<p:column headerText="Nome da Propriedade">
+						<h:outputText value="#{empreendimento.nomeEmpreendimento}" />
+					</p:column>
+					<p:column headerText="Área total">
+						<h:outputText value="#{empreendimento.areaTotalPropriedade} (#{empreendimento.unidadeAreaTotalPropriedade})" />
+					</p:column>
+					<p:column headerText="Endereço">
+						<h:outputText value="#{empreendimento.enderecoEmpreendimento}" />
+					</p:column>						
+					<p:column headerText="Tipo de logradouro">
+						<h:outputText value="#{empreendimento.tipoLogradouroEmpreendimento}" />
+					</p:column>
+					<p:column headerText="Nome">
+						<h:outputText value="#{empreendimento.nomeLogradouroEmpreendimento}" />
+					</p:column>
+					<p:column headerText="Número">
+						<h:outputText value="#{empreendimento.numeroLogradouroEmpreendimento}" />
+					</p:column>
+					<p:column headerText="Complemento">
+						<h:outputText value="#{empreendimento.complementoLogradouroEmpreendimento}" />
+					</p:column>	
+					<p:column headerText="Acesso principal">
+						<h:outputText value="#{empreendimento.nomeAcessoPrincipalEmpreendimento}" />
+					</p:column>	
+					<p:column headerText="Local">
+						<h:outputText value="#{empreendimento.localEmpreendimento}" />
+					</p:column>
+					<p:column headerText="Caixa Postal">
+						<h:outputText value="#{empreendimento.numeroCaixaPostalEmpreendimento}" />
+					</p:column>	
+					<p:column headerText="CEP">
+						<h:outputText value="#{empreendimento.cepEmpreendimento}" />
+					</p:column>	
+					<p:column headerText="Cidade">
+						<h:outputText value="#{empreendimento.nomeMunicipioEmpreendimento}" />
+					</p:column>	
+					<p:column headerText="Código IBGE">
 						<h:outputText value="#{empreendimento.ibgeMunicipioLocalizadaInterferencia}" />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">ID usuário</f:facet>
-						<h:outputText value="#{empreendimento.idUsuario}"  />
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">
-						<h:outputText value="Editar" />
-					</f:facet>
-					<p:commandButton action="#" value="Editar" ajax="false"
-						style="text-decoration: underline;">
-					</p:commandButton>
-				</p:column>
-
-				<p:column>
-					<f:facet name="header">
-						<h:outputText value="Apagar" />
-					</f:facet>
-					<p:commandButton action="#" value="Apagar" ajax="false" />
-				</p:column>
-			</p:dataTable>
-		</h:panelGrid>
-	</h:form>
+					</p:column>	
+					<p:column headerText="Ações">
+						<p:commandButton action="#{empreendimentoBean.telaEditar(empreendimento)}" value="Editar" ajax="false" icon="ui-icon-document"/>
+						<p:commandButton action="#{empreendimentoBean.deletar(empreendimento)}" value="Apagar" ajax="false" icon="ui-icon-cancel" />
+					</p:column>
+				</p:dataTable>
+			</p:scrollPanel>
+		</h:form>
 	</div>
 </ui:composition>

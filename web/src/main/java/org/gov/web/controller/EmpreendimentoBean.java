@@ -25,7 +25,7 @@ public class EmpreendimentoBean extends Controller  {
 	private EmpreendimentoService empreendimentoService;
 	private List<Empreendimento> empreendimentos;
 	private List<Integer> idsUsuarios;
-
+	
 	public EmpreendimentoBean() {
 
 		setEmpreendimento(new Empreendimento());
