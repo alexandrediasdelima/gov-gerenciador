@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import org.gov.model.Asbama;
 import org.gov.model.Empreendimento;
 import org.gov.model.Interferencia;
+import org.gov.model.Usuario;
 import org.gov.util.JPAUtil;
 
 public class EmpreendimentoDaoImpl implements EmpreendimentoDao {
@@ -32,7 +33,7 @@ public class EmpreendimentoDaoImpl implements EmpreendimentoDao {
 	public List<Empreendimento> empreendimentos() {
 
 		entityManager.getTransaction().begin();
-		Query query = entityManager.createQuery("FROM Empreendimento");
+		Query query = entityManager.createQuery("FROM Empreendimento ORDER BY emp_id");
 
 		List<Empreendimento> empreendimentos = query.getResultList();
 
@@ -44,13 +45,23 @@ public class EmpreendimentoDaoImpl implements EmpreendimentoDao {
 	}
 
 	public String remover(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		entityManager.getTransaction().begin();
+		Empreendimento empreendimento = entityManager.find(Empreendimento.class, id);
+
+		entityManager.remove(empreendimento);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return "ok";
 	}
 
 	public String editar(Empreendimento empreendimento) {
-		// TODO Auto-generated method stub
-		return null;
+		entityManager.getTransaction().begin();
+		entityManager.merge(empreendimento);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return "ok";
 	}
 
 	public List<Integer> ids() {

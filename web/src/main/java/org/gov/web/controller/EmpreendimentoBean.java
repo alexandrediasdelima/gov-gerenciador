@@ -49,6 +49,14 @@ public class EmpreendimentoBean extends Controller  {
 		return eval(index());
 	}
 
+	public String gravar() {
+
+		empreendimentoService.gravar(empreendimento);
+		empreendimentos();
+
+		return eval(index());
+	}
+	
 	public String editar() {
 
 		empreendimentoService.editar(empreendimento);
@@ -89,12 +97,6 @@ public class EmpreendimentoBean extends Controller  {
 
 
 	}
-	public String gravar() {
-		empreendimentoService.gravar(empreendimento);
-		empreendimentos();
-		return eval(index());
-
-	}
 
 	public String empreendimentos() {
 		setEmpreendimentos(empreendimentoService.empreendimentos());
@@ -125,6 +127,5 @@ public class EmpreendimentoBean extends Controller  {
 	public void setIdsUsuarios(List<Integer> idsUsuarios) {
 		this.idsUsuarios = idsUsuarios;
 	}
-
 
 }

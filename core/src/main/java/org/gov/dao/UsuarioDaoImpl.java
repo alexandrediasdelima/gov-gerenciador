@@ -35,7 +35,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	public List<Usuario> usuarios() {
 
 		entityManager.getTransaction().begin();
-		Query query = entityManager.createQuery("FROM Usuario");
+		Query query = entityManager.createQuery("FROM Usuario ORDER BY usuario_id");
 
 		List<Usuario> usuarios = query.getResultList();
 

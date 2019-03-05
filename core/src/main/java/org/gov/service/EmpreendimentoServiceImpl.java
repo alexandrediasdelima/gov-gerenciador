@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.gov.dao.EmpreendimentoDao;
 import org.gov.dao.EmpreendimentoDaoImpl;
+import org.gov.dao.UsuarioDaoImpl;
 import org.gov.model.Empreendimento;
 
 
@@ -31,13 +32,13 @@ public class EmpreendimentoServiceImpl implements EmpreendimentoService{
 	}
 
 	public String remover(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		empreendimentoDao = new EmpreendimentoDaoImpl();
+		return empreendimentoDao.remover(id);
 	}
 
 	public String editar(Empreendimento empreendimento) {
-		// TODO Auto-generated method stub
-		return null;
+		empreendimentoDao = new EmpreendimentoDaoImpl();
+		return empreendimentoDao.editar(empreendimento);
 	}
 
 	public List<Integer> ids() {

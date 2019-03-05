@@ -13,68 +13,71 @@
 	</style>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
-		<h:form id="addEmpreendimento" prependId="false" style="width:99%;">
+		<h:form id="addEmpreendimento" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
 		<br/><br/><br/>
 		<p:fieldset legend="Empreendimento">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
 				<h:panelGrid columns="4" style="border: 0px solid;">
-
-					<p:outputLabel value="Nome do Empreendimento:" for="nomeEmpreendimento" />
+					<p:outputLabel value="ID Usuário (Proprietário)" for="idUsuario" />
+					<c:choose>
+						<c:when test="#{empreendimentoBean.view == 'edit'}">
+							<p:outputLabel id="idUsuario" value="#{empreendimentoBean.empreendimento.idUsuario}" />
+						</c:when>
+						<c:otherwise>
+							<p:selectOneMenu id="idUsuario" value="#{empreendimentoBean.empreendimento.idUsuario}" style="width:230px">
+								<f:selectItems value="#{empreendimentoBean.idsUsuarios}" var="id" itemValue="#{id}" itemLabel="#{id}" />
+							</p:selectOneMenu>
+						</c:otherwise>
+					</c:choose>
+					
+					<p:outputLabel value="Nome da Propriedade:" for="nomeEmpreendimento" />
 					<p:inputText id="nomeEmpreendimento" value="#{empreendimentoBean.empreendimento.nomeEmpreendimento}" />
-
-					<p:outputLabel value="Id do Usúario" for="idUser" />
-					<p:selectOneMenu id="idUser" value="#{empreendimentoBean.empreendimento.idUsuario}" style="width:230px">
-						<f:selectItems value="#{empreendimentoBean.idsUsuarios}" var="id" itemValue="#{id}" itemLabel="#{id}"  />
-					</p:selectOneMenu>
-
-					<p:outputLabel value="Área total da propriedade: " for="areaTotal" />
+					
+					<p:outputLabel value="Área total: " for="areaTotal" />
 					<p:inputMask mask="?9999999999999999999" id="areaTotal" value="#{empreendimentoBean.empreendimento.areaTotalPropriedade}"  />
 
-					<p:outputLabel value="Unidade da area total da propriedade: " for="unidade" />
+					<p:outputLabel value="Unidade: " for="unidade" />
 					<p:inputText  id="unidade" value="#{empreendimentoBean.empreendimento.unidadeAreaTotalPropriedade}"  />
 
-					<p:outputLabel value="Endereço do empreendimento: " for="endEmpreendimento" />
+					<p:outputLabel value="Endereço: " for="endEmpreendimento" />
 					<p:inputText id="endEmpreendimento" value="#{empreendimentoBean.empreendimento.enderecoEmpreendimento}" />
 
-					<p:outputLabel value="Tipo de logradouro do empreendimento: " for="tipoLogradouro" />
+					<p:outputLabel value="Tipo de logradouro: " for="tipoLogradouro" />
 					<p:inputText  id="tipoLogradouro" value="#{empreendimentoBean.empreendimento.tipoLogradouroEmpreendimento}" />
 
-					<p:outputLabel value="Nome do logradouro do empreendimento: " for="nomeLogradouro" />
+					<p:outputLabel value="Nome do Logradouro: " for="nomeLogradouro" />
 					<p:inputText id="nomeLogradouro" value="#{empreendimentoBean.empreendimento.nomeLogradouroEmpreendimento}"  />
 
-					<p:outputLabel value="Número do endereço do empreendimento: " for="numeroEmpreendimento" />
+					<p:outputLabel value="Número: " for="numeroEmpreendimento" />
 					<p:inputText id="numeroEmpreendimento" value="#{empreendimentoBean.empreendimento.numeroLogradouroEmpreendimento}" />
 
-					<p:outputLabel value="Complemento do endereço do empreendimento: " for="Complemento" />
+					<p:outputLabel value="Complemento: " for="Complemento" />
 					<p:inputText id="Complemento" value="#{empreendimentoBean.empreendimento.complementoLogradouroEmpreendimento}" />
 
-					<p:outputLabel value="Nome do acesso principal ao empreendimento: " for="nomePrincipalEmpreendimento" />
+					<p:outputLabel value="Acesso Principal: " for="nomePrincipalEmpreendimento" />
 					<p:inputText id="nomePrincipalEmpreendimento" value="#{empreendimentoBean.empreendimento.nomeAcessoPrincipalEmpreendimento}" />
 
-					<p:outputLabel value="Local do empreendimento: " for="localEmpreendimento" />
+					<p:outputLabel value="Local: " for="localEmpreendimento" />
 					<p:inputText id="localEmpreendimento" value="#{empreendimentoBean.empreendimento.localEmpreendimento}" />
 
-					<p:outputLabel value="Número de caixa posta do empreendimento: " for="CaixaPostalEmpreendimento" />
+					<p:outputLabel value="Caixa Postal: " for="CaixaPostalEmpreendimento" />
 					<p:inputText id="CaixaPostalEmpreendimento" value="#{empreendimentoBean.empreendimento.numeroCaixaPostalEmpreendimento}" />
 
-					<p:outputLabel value="Cep do empreendimento: " for="cep" />
+					<p:outputLabel value="CEP: " for="cep" />
 					<p:inputText id="cep" value="#{empreendimentoBean.empreendimento.cepEmpreendimento}" />
 
-					<p:outputLabel value="Município onde se localiza o empreendimento: " for="municipio" />
+					<p:outputLabel value="Cidade: " for="municipio" />
 					<p:inputText id="municipio" value="#{empreendimentoBean.empreendimento.nomeMunicipioEmpreendimento}" />
 
-					<p:outputLabel value="Código ibge do municipio onde está localizada a interferência: " for="codigo" />
+					<p:outputLabel value="Código IBGE: " for="codigo" />
 					<p:inputText id="codigo" value="#{empreendimentoBean.empreendimento.ibgeMunicipioLocalizadaInterferencia}" />
 
-					<p:outputLabel value="Número da outorga: " for="outorga" />
+					<p:outputLabel value="Número da Outorga: " for="outorga" />
 					<p:inputText id="outorga" value="#{empreendimentoBean.empreendimento.numeroOutorga}" />
-
-
-
 				</h:panelGrid>
 
 				<p:commandButton value="Salvar" action="#{empreendimentoBean.gravar}"   ajax="false" rendered="#{empreendimentoBean.view == 'add'}"  icon="ui-icon-disk" />
-				<p:commandButton value="Alterar" action="#" ajax="false" rendered="#{empreendimentoBean.view == 'edit'}"  icon="ui-icon-pencil" />
+				<p:commandButton value="Alterar" action="#{empreendimentoBean.editar}" ajax="false" rendered="#{empreendimentoBean.view == 'edit'}"  icon="ui-icon-pencil" />
 
 			</p:scrollPanel>
 		</p:fieldset>

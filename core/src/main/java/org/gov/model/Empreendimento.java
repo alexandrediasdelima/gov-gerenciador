@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name= "tb_Empreendimento")
+@Table(name= "tb_empreendimento")
 public class Empreendimento implements Serializable {
 
 	/**
@@ -69,7 +69,7 @@ public class Empreendimento implements Serializable {
 	private String numeroOutorga;
 
 	@Column(name="usuario_id")
-	private Integer idUsuario = 37857;
+	private Integer idUsuario;
 
 	public Integer getId() {
 		return id;
