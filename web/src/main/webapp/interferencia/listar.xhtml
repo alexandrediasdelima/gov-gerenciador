@@ -20,7 +20,7 @@
 			<br/><br/>
 			<p:scrollPanel mode="native" style="width:100%">
 				<p:dataTable id="tabelaInterferencias" value="#{interferenciaBean.interferencias}" var="interferencia" paginator="true" rows="10" paginatorPosition="top" resizableColumns="false" >
-					<f:facet name="header">Interferência</f:facet>
+					<f:facet name="header">Interferências</f:facet>
 					<p:column headerText="ID">
 						<h:outputText id="menuInterferencia" value="#{interferencia.id}" style="text-decoration: underline; cursor: pointer" />
 					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="click" autoDisplay="true">
@@ -110,6 +110,9 @@
 					</p:column>
 				</p:dataTable>
 			</p:scrollPanel>
+			<p:blockUI block="tabelaInterferencias" trigger="tabelaInterferencias">
+				<p:graphicImage name="images/loadingbar.gif"/>
+			</p:blockUI>
 		</h:form>
 	</div>
 </ui:composition>

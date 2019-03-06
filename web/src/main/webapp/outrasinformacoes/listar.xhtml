@@ -1,0 +1,66 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+
+	<style type="text/css">
+		.ui-datatable-tablewrapper {
+  			overflow-x: auto;
+		}
+	</style>
+	
+	<div style="padding-top: 50px;">
+		<h:form id="listarOutraInfos" prependId="false" style="width:99%;">
+			<br/>
+			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{outrainfoBean.adicionarNovo}" ajax="false" />
+			<br/><br/>
+			<p:scrollPanel mode="native" style="width:100%">
+				<p:dataTable id="tabelaOutraInfos" value="#{outrainfoBean.outrainfos}" paginator="true" rows="10" var="outrainfo" paginatorPosition="top" resizableColumns="false" >
+					<f:facet name="header">Outras Informações</f:facet>
+					<p:column headerText="ID">
+						<h:outputText value="#{outrainfo.oi_emp_pfk}" />
+					</p:column>
+					<p:column headerText="Destino das Águas Servidas">
+						<h:outputText value="#{outrainfo.cam_agua_servida_destino}" />
+					</p:column>
+					<p:column headerText="Possui Captação de Água Subterrânea">
+						<h:outputText value="#{outrainfo.cam_captacao_agua_subt}" />
+					</p:column>
+					<p:column headerText="Tipo do Poço">
+						<h:outputText value="#{outrainfo.cam_tp_poco}" />
+					</p:column>
+					<p:column headerText="Profundidade do Poço">
+						<h:outputText value="#{outrainfo.cam_profundidade_poco}" />
+					</p:column>
+					<p:column headerText="Profundidade Total">
+						<h:outputText value="#{outrainfo.asb_nu_profundidadefinal}" />
+					</p:column>
+					<p:column headerText="Utilização do Poço">
+						<h:outputText value="#{outrainfo.cam_utilizacao_poco}" />
+					</p:column>
+					<p:column headerText="CAR Realizado">
+						<h:outputText value="#{outrainfo.cam_realizacao_car}" />
+					</p:column>
+					<p:column headerText="Captações Complementares">
+						<h:outputText value="#{outrainfo.cam_captacoes_comple}" />
+					</p:column>
+					<p:column headerText="Planos Futuros para Captação/Lançamento">
+						<h:outputText value="#{outrainfo.cam_capta_lanca_futuro}" />
+					</p:column>
+					<p:column headerText="Ações">
+						<p:commandButton action="#{outrainfoBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document"/>
+						<p:commandButton action="#{outrainfoBean.deletar(usuario)}" value="Apagar" ajax="false" icon="ui-icon-cancel" />
+					</p:column>
+				</p:dataTable>
+			</p:scrollPanel>
+			<p:blockUI block="tabelaOutraInfos" trigger="tabelaOutraInfos">
+				<p:graphicImage name="images/loadingbar.gif"/>
+			</p:blockUI>
+		</h:form>
+	</div>
+</ui:composition>

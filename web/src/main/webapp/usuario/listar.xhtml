@@ -84,7 +84,12 @@
 					</p:column>
 					<p:column headerText="Ações">
 						<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document"/>
-						<p:commandButton action="#{usuarioBean.deletar(usuario)}" value="Apagar" ajax="false" icon="ui-icon-cancel" />
+						<p:commandButton value="Apagar" onclick="confirmation.show();" icon="ui-icon-cancel">
+							<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="APAC" severity="alert" widgetVar="confirmation">
+	            				<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{usuarioBean.deletar(usuario)}" ajax="false" />  
+    	        				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />   
+        					</p:confirmDialog> 
+					    </p:commandButton>
 					</p:column>
 				</p:dataTable>
 			</p:scrollPanel>

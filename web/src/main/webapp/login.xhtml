@@ -7,37 +7,19 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:composite="http://java.sun.com/jsf/composite"
 	xmlns:p="http://primefaces.org/ui">
-
-	<style type="text/css">
-		fieldset { 
-		  display: block;
-		  margin-left: 2px;
-		  margin-right: 2px;
-		  padding-top: 0.35em;
-		  padding-bottom: 0.625em;
-		  padding-left: 0.75em;
-		  padding-right: 0.75em;
-		  border: 0px;
-		}
-	</style>
-
-		<h:form id="login" prependId="false">
-
-		<fieldset>
-			<h:panelGrid columns="3" border="0">
-				<p:outputLabel value="Usuario:" for="usuario" />
-				<p:inputText id="usuario" value="#{loginBean.usuario.usuario}"  required="true" requiredMessage="Usuário Obrigatório"/>
-				<p:outputLabel value="" />
-
-				<p:outputLabel value="Senha:" for="senha" />
-				<p:password id="senha" value="#{loginBean.usuario.senha}" required="true" requiredMessage="Senha Obrigatório" />
-				<p:commandButton value="Entrar" action="#{loginBean.verificarAcesso}" ajax="false" />
-
-			</h:panelGrid>
-		</fieldset>
-
+	<h:form id="login" prependId="false">	
+		<p:fieldset legend="Autorização">
+			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
+				<h:panelGrid columns="3" style="border: 0px solid;">
+					<p:outputLabel value="Usuario:" for="usuario" />
+					<p:inputText id="usuario" value="#{loginBean.usuario.usuario}"  required="true" requiredMessage="Usuário Obrigatório"/>
+					<p:outputLabel value="" />
+					
+					<p:outputLabel value="Senha:" for="senha" />
+					<p:password id="senha" value="#{loginBean.usuario.senha}" required="true" requiredMessage="Senha Obrigatório" />
+					<p:commandButton value="Entrar" action="#{loginBean.verificarAcesso}" ajax="false" />
+				</h:panelGrid>
+			</p:scrollPanel>
+		</p:fieldset>
 	</h:form>
-
-		<br />
-
 </ui:composition>

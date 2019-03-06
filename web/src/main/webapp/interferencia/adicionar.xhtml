@@ -7,19 +7,10 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
 
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
-
-	<script>
-		$(function() {
-			$("#latitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
-    		$("#longitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
-			$("#capacidade").inputmask({mask: "9[9][9][9][9][9][9][9][9].9[9][9][9][9]", greedy: true})
-		})
-	</script>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addInterferencia" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
@@ -144,4 +135,12 @@
 		</p:fieldset>
 		</h:form>
 	</div>
+	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
+	<script>
+		$(function() {
+			$("#latitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
+    		$("#longitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
+			$("#capacidade").inputmask({mask: "9[9][9][9][9][9][9][9][9].9[9][9][9][9]", greedy: true})
+		})
+	</script>
 </ui:composition>

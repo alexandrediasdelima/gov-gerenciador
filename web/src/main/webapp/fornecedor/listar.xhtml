@@ -1,0 +1,59 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+
+	<style type="text/css">
+		.ui-datatable-tablewrapper {
+  			overflow-x: auto;
+		}
+	</style>
+
+	<div style="padding-top: 50px;">
+		<h:form id="listarFornecedor" prependId="false" style="width:99%;">
+			<br/>
+			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{fornecedorBean.adicionarNovo}" ajax="false" />
+			<br/><br/>
+			<p:scrollPanel mode="native" style="width:100%">
+				<p:dataTable id="tabelaFornecedores" value="#{fornecedorBean.fornecedores}" paginator="true" rows="10" var="fornecedor" paginatorPosition="top" resizableColumns="false" >
+					<f:facet name="header">Fornecedores</f:facet>
+					<p:column headerText="ID">
+						<h:outputText value="#{fornecedor.forn_id}" />
+					</p:column>
+					<p:column headerText="ID Usuário (Proprietário)">
+						<h:outputText value="#{fornecedor.usuario_id}" id="usuario_id" />
+					</p:column>	
+					<p:column headerText="Nome">
+						<h:outputText value="#{fornecedor.forn_info_nm}" id="forn_info_nm" />
+					</p:column>	
+					<p:column headerText="Cargo">
+						<h:outputText value="#{fornecedor.forn_info_cargo}" id="forn_info_cargo" />
+					</p:column>	
+					<p:column headerText="Departamento">
+						<h:outputText value="#{fornecedor.forn_info_departamento}" id="forn_info_departamento" />
+					</p:column>	
+					<p:column headerText="Contato">
+						<h:outputText value="#{fornecedor.forn_info_contato_inst}" id="forn_info_contato_inst" />
+					</p:column>
+					<p:column headerText="Ações">
+						<p:commandButton action="#{fornecedorBean.telaEditar(fornecedor)}" value="Editar" ajax="false" icon="ui-icon-document"/>
+						<p:commandButton value="Apagar" onclick="confirmation.show();" icon="ui-icon-cancel">
+							<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="APAC" severity="alert" widgetVar="confirmation">
+	            				<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{fornecedorBean.deletar(fornecedor)}" ajax="false" />  
+    	        				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />   
+        					</p:confirmDialog> 
+					    </p:commandButton>
+					</p:column>
+				</p:dataTable>
+			</p:scrollPanel>
+			<p:blockUI block="tabelaFornecedores" trigger="tabelaFornecedores">
+				<p:graphicImage name="images/loadingbar.gif"/>
+			</p:blockUI>
+		</h:form>
+	</div>
+</ui:composition>
