@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.gov.model.Empreendimento;
-import org.gov.model.Interferencia;
-import org.gov.model.Usuario;
 import org.gov.service.EmpreendimentoService;
 import org.gov.service.EmpreendimentoServiceImpl;
 
@@ -26,7 +24,7 @@ public class EmpreendimentoBean extends Controller  {
 	private EmpreendimentoService empreendimentoService;
 	private List<Empreendimento> empreendimentos;
 	private List<Integer> idsUsuarios;
-	
+
 	public EmpreendimentoBean() {
 
 		setEmpreendimento(new Empreendimento());
@@ -41,7 +39,7 @@ public class EmpreendimentoBean extends Controller  {
 		this.setIdsUsuarios(empreendimentoService.ids());
 		return eval(index());
 	}
-	
+
 	public String telaEditar(Empreendimento empreendimento) {
 
 		this.empreendimento = empreendimento;
@@ -56,7 +54,7 @@ public class EmpreendimentoBean extends Controller  {
 
 		return eval(index());
 	}
-	
+
 	public String editar() {
 
 		empreendimentoService.editar(empreendimento);
@@ -64,14 +62,14 @@ public class EmpreendimentoBean extends Controller  {
 
 		return eval(index());
 	}
-	
-	public String deletar(Empreendimento empreendimento) {
+
+	public String deletar() {
 
 		empreendimentoService.remover(empreendimento.getId());
 		empreendimentos();
 		return eval(index());
 	}
-	
+
 	public String index() {
 		return "/empreendimento/index";
 	}

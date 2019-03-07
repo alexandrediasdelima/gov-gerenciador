@@ -30,7 +30,7 @@
 					</p:column>
 					<p:column headerText="ID Usuário (Proprietário)">
 						<h:outputText value="#{empreendimento.idUsuario}" id="idUsuario" />
-					</p:column>	
+					</p:column>
 					<p:column headerText="Nome da Propriedade">
 						<h:outputText value="#{empreendimento.nomeEmpreendimento}" />
 					</p:column>
@@ -39,7 +39,7 @@
 					</p:column>
 					<p:column headerText="Endereço">
 						<h:outputText value="#{empreendimento.enderecoEmpreendimento}" />
-					</p:column>						
+					</p:column>
 					<p:column headerText="Tipo de logradouro">
 						<h:outputText value="#{empreendimento.tipoLogradouroEmpreendimento}" />
 					</p:column>
@@ -51,22 +51,22 @@
 					</p:column>
 					<p:column headerText="Complemento">
 						<h:outputText value="#{empreendimento.complementoLogradouroEmpreendimento}" />
-					</p:column>	
+					</p:column>
 					<p:column headerText="Acesso principal">
 						<h:outputText value="#{empreendimento.nomeAcessoPrincipalEmpreendimento}" />
-					</p:column>	
+					</p:column>
 					<p:column headerText="Local">
 						<h:outputText value="#{empreendimento.localEmpreendimento}" />
 					</p:column>
 					<p:column headerText="Caixa Postal">
 						<h:outputText value="#{empreendimento.numeroCaixaPostalEmpreendimento}" />
-					</p:column>	
+					</p:column>
 					<p:column headerText="CEP">
 						<h:outputText value="#{empreendimento.cepEmpreendimento}" />
-					</p:column>	
+					</p:column>
 					<p:column headerText="Cidade">
 						<h:outputText value="#{empreendimento.nomeMunicipioEmpreendimento}" />
-					</p:column>	
+					</p:column>
 					<p:column headerText="Código IBGE">
 						<h:outputText value="#{empreendimento.ibgeMunicipioLocalizadaInterferencia}" />
 					</p:column>
@@ -75,14 +75,17 @@
 					</p:column>
 					<p:column headerText="Ações">
 						<p:commandButton action="#{empreendimentoBean.telaEditar(empreendimento)}" value="Editar" ajax="false" icon="ui-icon-document"/>
+
 						<p:commandButton value="Apagar" onclick="confirmation.show();" icon="ui-icon-cancel">
-							<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="APAC" severity="alert" widgetVar="confirmation">
-	            				<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{empreendimentoBean.deletar(empreendimento)}" ajax="false" />  
-    	        				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />   
-        					</p:confirmDialog> 
+	 						<f:setPropertyActionListener value="#{empreendimento}" target="#{empreendimentoBean.empreendimento}" />
 					    </p:commandButton>
 					</p:column>
 				</p:dataTable>
+
+					<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="Empreendimento" severity="alert" widgetVar="confirmation">
+           					<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{empreendimentoBean.deletar}" ajax="false" />
+  	        				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />
+    				</p:confirmDialog>
 			</p:scrollPanel>
 			<p:blockUI block="tabelaEmpreendimentos" trigger="tabelaEmpreendimentos">
 				<p:graphicImage name="images/loadingbar.gif"/>
