@@ -74,7 +74,7 @@ public class ApacBean extends Controller  {
 		return eval(index());
 	}
 
-	public String deletar(Apac apac) {
+	public String deletar() {
 
 		apacService.remover(apac.getNumeroProcesso());
 		apacs();

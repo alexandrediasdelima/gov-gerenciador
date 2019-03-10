@@ -70,7 +70,7 @@ public class FornecedorBean extends Controller  {
 		return eval(index());
 	}
 	
-	public String deletar(Fornecedor fornecedor) {
+	public String deletar() {
 		fornecedorService.remover(fornecedor.getForn_id());
 		fornecedores();
 		return eval(index());

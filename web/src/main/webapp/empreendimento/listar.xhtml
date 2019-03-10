@@ -75,17 +75,15 @@
 					</p:column>
 					<p:column headerText="Ações">
 						<p:commandButton action="#{empreendimentoBean.telaEditar(empreendimento)}" value="Editar" ajax="false" icon="ui-icon-document"/>
-
 						<p:commandButton value="Apagar" onclick="confirmation.show();" icon="ui-icon-cancel">
 	 						<f:setPropertyActionListener value="#{empreendimento}" target="#{empreendimentoBean.empreendimento}" />
 					    </p:commandButton>
 					</p:column>
 				</p:dataTable>
-
-					<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="Empreendimento" severity="alert" widgetVar="confirmation">
-           					<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{empreendimentoBean.deletar}" ajax="false" />
-  	        				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />
-    				</p:confirmDialog>
+				<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="Empreendimento" severity="alert" widgetVar="confirmation">
+					<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{empreendimentoBean.deletar}" ajax="false" />
+					<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />
+   				</p:confirmDialog>
 			</p:scrollPanel>
 			<p:blockUI block="tabelaEmpreendimentos" trigger="tabelaEmpreendimentos">
 				<p:graphicImage name="images/loadingbar.gif"/>

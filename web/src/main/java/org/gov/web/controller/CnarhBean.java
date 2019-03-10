@@ -74,7 +74,7 @@ public class CnarhBean extends Controller  {
 		return eval(index());
 	}
 
-	public String deletar(Cnarh cnarh) {
+	public String deletar() {
 
 		cnarhService.remover(cnarh.getCnarh_id());
 		cnarhs();

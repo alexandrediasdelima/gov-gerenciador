@@ -1,0 +1,42 @@
+ O volume na unidade C n∆o tem nome.
+ O N£mero de SÇrie do Volume Ç A40B-CC73
+
+ Pasta de C:\desenvolvimento\gov-gerenciador\core\src\main\java\org\gov\model
+
+07/02/2019  22:51               344 Acesso.java
+10/03/2019  17:44            11.853 Apac.java
+02/03/2019  15:50             7.326 Asbama.java
+02/03/2019  15:50             4.854 Asbcarac.java
+02/03/2019  15:50             7.538 Asbtst.java
+08/02/2019  20:54               409 Asb_tca_cd.java
+08/02/2019  20:54               662 Asb_tnp_cd.java
+08/02/2019  18:20               341 Asb_tpn_cd.java
+02/03/2019  15:49             1.776 Captacao.java
+10/03/2019  17:47            15.550 Cnarh.java
+25/01/2019  13:51               208 CodigoIdentificador.java
+02/03/2019  15:49             1.242 ConsumoHumano.java
+05/03/2019  11:43             5.776 Empreendimento.java
+08/02/2019  15:25               623 Emp_ds_uf.java
+25/02/2019  22:54             1.181 Fin_tfn_cd.java
+05/03/2019  13:40             2.505 Fornecedor.java
+24/02/2019  18:48             1.445 Fou_tou_cd.java
+02/03/2019  15:48             2.483 Industria.java
+26/02/2019  11:18             8.128 Interferencia.java
+24/02/2019  18:49               430 Int_tin_cd.java
+24/02/2019  18:49               413 Int_tsi_cd.java
+20/02/2019  23:57               366 Int_tsu_cd.java
+02/03/2019  15:48             5.340 Irrigacao.java
+02/03/2019  15:46             3.571 Lancamento.java
+05/03/2019  21:31             3.438 OutraInfo.java
+08/02/2019  20:24               584 Out_tpo_cd.java
+08/02/2019  18:15               564 Out_tsp_cd.java
+02/03/2019  13:36             2.910 Pecuaria.java
+21/02/2019  22:53             8.312 Sir_tct_cd.java
+21/02/2019  22:58             1.576 Sir_tsi_cd.java
+02/03/2019  14:35             4.718 TesteBombeamento.java
+08/02/2019  18:27             1.081 Tst_tmi_cd.java
+08/02/2019  18:30               493 Tst_ttb_cd.java
+10/03/2019  17:50             6.748 Usuario.java
+02/03/2019  15:45            11.959 Vazao.java
+              35 arquivo(s)        126.747 bytes
+               0 pasta(s)   118.791.520.256 bytes dispon°veis

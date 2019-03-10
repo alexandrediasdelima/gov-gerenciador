@@ -60,7 +60,7 @@ public class InterferenciaBean extends Controller  {
 		return eval(index());
 	}
 
-	public String deletar(Interferencia interferencia) {
+	public String deletar() {
 		interferenciaService.remover(interferencia.getId());
 		interferencias();
 		return eval(index());

@@ -162,36 +162,51 @@ public class Cnarh implements Serializable {
 
 	@Column(name="ius_vo_resmax", columnDefinition="numeric")
 	private BigDecimal ius_vo_resmax;
+	
+	@Column(name="asb_tnp_cd")
+	private String asb_tnp_cd;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name="asb_tnp_cd", columnDefinition="asb_tnp_enum")
-	@Type(type="pgsql_enum")
-	@Transient
-	private Asb_tnp_cd asb_tnp_cd;
+	@Column(name="asb_tpn_cd")
+	private String asb_tpn_cd;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name="asb_tpn_cd", columnDefinition="asb_tpn_enum")
-	@Type(type="pgsql_enum")
-	@Transient
-	private Asb_tpn_cd asb_tpn_cd;
+	@Column(name="asb_tca_cd")
+	private String asb_tca_cd;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name="asb_tca_cd", columnDefinition="asb_tca_enum")
-	@Type(type="pgsql_enum")
-	@Transient
-	private Asb_tca_cd asb_tca_cd;
+	@Column(name="tst_ttb_cd")
+	private String tst_ttb_cd;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name="tst_ttb_cd", columnDefinition="tst_ttb_enum")
-	@Type(type="pgsql_enum")
-	@Transient
-	private Tst_ttb_cd tst_ttb_cd;
+	@Column(name="tst_tmi_cd")
+	private String tst_tmi_cd;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name="tst_tmi_cd", columnDefinition="tst_tmi_enum")
-	@Type(type="pgsql_enum")
-	@Transient
-	private Tst_tmi_cd tst_tmi_cd;
+//	@Enumerated(EnumType.STRING)
+//	@Column(name="asb_tnp_cd", columnDefinition="asb_tnp_enum")
+//	@Type(type="pgsql_enum")
+//	@Transient
+//	private Asb_tnp_cd asb_tnp_cd;
+//
+//	@Enumerated(EnumType.STRING)
+//	@Column(name="asb_tpn_cd", columnDefinition="asb_tpn_enum")
+//	@Type(type="pgsql_enum")
+//	@Transient
+//	private Asb_tpn_cd asb_tpn_cd;
+//
+//	@Enumerated(EnumType.STRING)
+//	@Column(name="asb_tca_cd", columnDefinition="asb_tca_enum")
+//	@Type(type="pgsql_enum")
+//	@Transient
+//	private Asb_tca_cd asb_tca_cd;
+//
+//	@Enumerated(EnumType.STRING)
+//	@Column(name="tst_ttb_cd", columnDefinition="tst_ttb_enum")
+//	@Type(type="pgsql_enum")
+//	@Transient
+//	private Tst_ttb_cd tst_ttb_cd;
+//
+//	@Enumerated(EnumType.STRING)
+//	@Column(name="tst_tmi_cd", columnDefinition="tst_tmi_enum")
+//	@Type(type="pgsql_enum")
+//	@Transient
+//	private Tst_tmi_cd tst_tmi_cd;
 
 	public String getCnarh_id() {
 		return cnarh_id;
@@ -537,43 +552,43 @@ public class Cnarh implements Serializable {
 		this.ius_vo_resmax = ius_vo_resmax;
 	}
 
-	public Asb_tnp_cd getAsb_tnp_cd() {
+	public String getAsb_tnp_cd() {
 		return asb_tnp_cd;
 	}
 
-	public void setAsb_tnp_cd(Asb_tnp_cd asb_tnp_cd) {
+	public void setAsb_tnp_cd(String asb_tnp_cd) {
 		this.asb_tnp_cd = asb_tnp_cd;
 	}
 
-	public Asb_tpn_cd getAsb_tpn_cd() {
+	public String getAsb_tpn_cd() {
 		return asb_tpn_cd;
 	}
 
-	public void setAsb_tpn_cd(Asb_tpn_cd asb_tpn_cd) {
+	public void setAsb_tpn_cd(String asb_tpn_cd) {
 		this.asb_tpn_cd = asb_tpn_cd;
 	}
 
-	public Asb_tca_cd getAsb_tca_cd() {
+	public String getAsb_tca_cd() {
 		return asb_tca_cd;
 	}
 
-	public void setAsb_tca_cd(Asb_tca_cd asb_tca_cd) {
+	public void setAsb_tca_cd(String asb_tca_cd) {
 		this.asb_tca_cd = asb_tca_cd;
 	}
 
-	public Tst_ttb_cd getTst_ttb_cd() {
+	public String getTst_ttb_cd() {
 		return tst_ttb_cd;
 	}
 
-	public void setTst_ttb_cd(Tst_ttb_cd tst_ttb_cd) {
+	public void setTst_ttb_cd(String tst_ttb_cd) {
 		this.tst_ttb_cd = tst_ttb_cd;
 	}
 
-	public Tst_tmi_cd getTst_tmi_cd() {
+	public String getTst_tmi_cd() {
 		return tst_tmi_cd;
 	}
 
-	public void setTst_tmi_cd(Tst_tmi_cd tst_tmi_cd) {
+	public void setTst_tmi_cd(String tst_tmi_cd) {
 		this.tst_tmi_cd = tst_tmi_cd;
 	}
 

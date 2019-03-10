@@ -67,8 +67,7 @@ public class UsuarioBean extends Controller  {
 		return eval(index());
 	}
 
-	public String deletar(Usuario usuario) {
-
+	public String deletar() {
 		usuarioService.remover(usuario.getUsuario_id());
 		usuarios();
 		return eval(index());

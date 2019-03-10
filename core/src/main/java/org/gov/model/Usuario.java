@@ -87,11 +87,14 @@ public class Usuario implements Serializable {
 
 	@Column(name="emp_cd_codigoibgecorrespondencia", columnDefinition="numeric")
 	private BigDecimal emp_cd_codigoibgecorrespondencia;
+
+	@Column(name = "emp_ds_uf")
+	private String emp_ds_uf;
 	
-	@Enumerated(EnumType.STRING)
-	@Column(name = "emp_ds_uf", columnDefinition = "emp_ds_uf_enum")
-	@Type(type = "pgsql_enum")
-	private Emp_ds_uf emp_ds_uf;
+//	@Enumerated(EnumType.STRING)
+//	@Column(name = "emp_ds_uf", columnDefinition = "emp_ds_uf_enum")
+//	@Type(type = "pgsql_enum")
+//	private Emp_ds_uf emp_ds_uf;
 
 	@Column(name="emp_ds_relacaopropriedade")
 	private String emp_ds_relacaopropriedade;
@@ -240,11 +243,11 @@ public class Usuario implements Serializable {
 		this.emp_cd_codigoibgecorrespondencia = emp_cd_codigoibgecorrespondencia;
 	}
 
-	public Emp_ds_uf getEmp_ds_uf() {
+	public String getEmp_ds_uf() {
 		return emp_ds_uf;
 	}
 
-	public void setEmp_ds_uf(Emp_ds_uf emp_ds_uf) {
+	public void setEmp_ds_uf(String emp_ds_uf) {
 		this.emp_ds_uf = emp_ds_uf;
 	}
 

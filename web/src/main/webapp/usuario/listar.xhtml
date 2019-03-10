@@ -85,13 +85,14 @@
 					<p:column headerText="Ações">
 						<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document"/>
 						<p:commandButton value="Apagar" onclick="confirmation.show();" icon="ui-icon-cancel">
-							<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="APAC" severity="alert" widgetVar="confirmation">
-	            				<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{usuarioBean.deletar(usuario)}" ajax="false" />  
-    	        				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />   
-        					</p:confirmDialog> 
+							<f:setPropertyActionListener value="#{usuario}" target="#{usuarioBean.usuario}" />
 					    </p:commandButton>
 					</p:column>
 				</p:dataTable>
+				<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="APAC" severity="alert" widgetVar="confirmation">
+	   				<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{usuarioBean.deletar}" ajax="false" />  
+	   				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />   
+				</p:confirmDialog> 
 			</p:scrollPanel>
 			<p:blockUI block="tabelaUsuarios" trigger="tabelaUsuarios">
 				<p:graphicImage name="images/loadingbar.gif"/>

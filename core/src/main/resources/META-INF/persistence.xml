@@ -9,19 +9,47 @@
 		<!-- Implementação do JPA, no nosso caso Hibernate -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<!-- Aqui são listadas todas as entidades -->
-
-		<class>org.gov.model.Livro</class>
-		<class>org.gov.model.Apac</class>
-		<class>org.gov.model.Asbcarac</class>
-		<class>org.gov.model.Cnarh</class>
-		<class>org.gov.model.Usuario</class>
-		<class>org.gov.model.Interferencia</class>
-		<class>org.gov.model.Empreendimento</class>
+		<class>org.gov.model.Acesso.java</class>
+		<class>org.gov.model.Apac.java</class>
+		<class>org.gov.model.Asbama.java</class>
+		<class>org.gov.model.Asbcarac.java</class>
+		<class>org.gov.model.Asbtst.java</class>
+		<class>org.gov.model.Asb_tca_cd.java</class>
+		<class>org.gov.model.Asb_tnp_cd.java</class>
+		<class>org.gov.model.Asb_tpn_cd.java</class>
+		<class>org.gov.model.Captacao.java</class>
+		<class>org.gov.model.Cnarh.java</class>
+		<class>org.gov.model.CodigoIdentificador.java</class>
+		<class>org.gov.model.ConsumoHumano.java</class>
+		<class>org.gov.model.Empreendimento.java</class>
+		<class>org.gov.model.Emp_ds_uf.java</class>
+		<class>org.gov.model.Fin_tfn_cd.java</class>
+		<class>org.gov.model.Fornecedor.java</class>
+		<class>org.gov.model.Fou_tou_cd.java</class>
+		<class>org.gov.model.Industria.java</class>
+		<class>org.gov.model.Interferencia.java</class>
+		<class>org.gov.model.Int_tin_cd.java</class>
+		<class>org.gov.model.Int_tsi_cd.java</class>
+		<class>org.gov.model.Int_tsu_cd.java</class>
+		<class>org.gov.model.Irrigacao.java</class>
+		<class>org.gov.model.Lancamento.java</class>
+		<class>org.gov.model.OutraInfo.java</class>
+		<class>org.gov.model.Out_tpo_cd.java</class>
+		<class>org.gov.model.Out_tsp_cd.java</class>
+		<class>org.gov.model.Pecuaria.java</class>
+		<class>org.gov.model.Sir_tct_cd.java</class>
+		<class>org.gov.model.Sir_tsi_cd.java</class>
+		<class>org.gov.model.TesteBombeamento.java</class>
+		<class>org.gov.model.Tst_tmi_cd.java</class>
+		<class>org.gov.model.Tst_ttb_cd.java</class>
+		<class>org.gov.model.Usuario.java</class>
+		<class>org.gov.model.Vazao.java</class>
+		
 
 		<properties>
 			<!-- Propriedades JDBC -->
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/apac" />
 			<property name="javax.persistence.jdbc.user" value="postgres" />
 			<property name="javax.persistence.jdbc.password" value="a36031578" />
 

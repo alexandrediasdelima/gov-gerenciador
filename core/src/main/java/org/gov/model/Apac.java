@@ -142,15 +142,21 @@ public class Apac implements Serializable {
 	@Column(name = "apa_vz_requerida_m3dia", columnDefinition="numeric")
 	private BigDecimal vazaoRequiridaMediaDia;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name = "out_tpo_cd", columnDefinition = "out_tpo_enum")
-	@Type(type = "pgsql_enum")
-	private Out_tpo_cd out_tpo_cd;
+	@Column(name = "out_tpo_cd")
+	private String out_tpo_cd;
 
-	@Enumerated(EnumType.STRING)
-	@Column(name = "out_tsp_cd", columnDefinition = "out_tsp_enum")
-	@Type(type = "pgsql_enum")
-	private Out_tsp_cd out_tsp_cd;
+	@Column(name = "out_tsp_cd")
+	private String out_tsp_cd;
+	
+//	@Enumerated(EnumType.STRING)
+//	@Column(name = "out_tpo_cd", columnDefinition = "out_tpo_enum")
+//	@Type(type = "pgsql_enum")
+//	private Out_tpo_cd out_tpo_cd;
+//
+//	@Enumerated(EnumType.STRING)
+//	@Column(name = "out_tsp_cd", columnDefinition = "out_tsp_enum")
+//	@Type(type = "pgsql_enum")
+//	private Out_tsp_cd out_tsp_cd;
 
 
 	public String getAnalistaResponsavel() {
@@ -437,19 +443,19 @@ public class Apac implements Serializable {
 		this.outorgaValidaDezembro = outorgaValidaDezembro;
 	}
 
-	public Out_tpo_cd getOut_tpo_cd() {
+	public String getOut_tpo_cd() {
 		return out_tpo_cd;
 	}
 
-	public void setOut_tpo_cd(Out_tpo_cd out_tpo_cd) {
+	public void setOut_tpo_cd(String out_tpo_cd) {
 		this.out_tpo_cd = out_tpo_cd;
 	}
 
-	public Out_tsp_cd getOut_tsp_cd() {
+	public String getOut_tsp_cd() {
 		return out_tsp_cd;
 	}
 
-	public void setOut_tsp_cd(Out_tsp_cd out_tsp_cd) {
+	public void setOut_tsp_cd(String out_tsp_cd) {
 		this.out_tsp_cd = out_tsp_cd;
 	}
 
