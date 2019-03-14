@@ -15,9 +15,9 @@
 
 
 	<managed-bean>
-		<managed-bean-name>livroBean</managed-bean-name>
-		<managed-bean-class>org.gov.web.controller.LivroBean</managed-bean-class>
-		<managed-bean-scope>view</managed-bean-scope>
+		<managed-bean-name>fileUploadBean</managed-bean-name>
+		<managed-bean-class>org.gov.web.controller.FileUploadBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 
 	<managed-bean>
@@ -49,7 +49,7 @@
 		<managed-bean-class>org.gov.web.controller.AsbcaracBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>asbamaBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.AsbamaBean</managed-bean-class>
@@ -73,43 +73,43 @@
 		<managed-bean-class>org.gov.web.controller.ConsumoHumanoBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>industriaBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.IndustriaBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>irrigacaoBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.IrrigacaoBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>lancamentoBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.LancamentoBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>	
-	
+	</managed-bean>
+
 	<managed-bean>
 		<managed-bean-name>pecuariaBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.PecuariaBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>		
+	</managed-bean>
 
 	<managed-bean>
 		<managed-bean-name>testebombeamentoBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.TesteBombeamentoBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>	
+	</managed-bean>
 
 	<managed-bean>
 		<managed-bean-name>vazaoBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.VazaoBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>	
-	
+	</managed-bean>
+
 	<managed-bean>
 		<managed-bean-name>usuarioBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.UsuarioBean</managed-bean-class>
@@ -127,7 +127,7 @@
 		<managed-bean-class>org.gov.web.controller.FornecedorBean</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>outrainfoBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.OutraInfoBean</managed-bean-class>

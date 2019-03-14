@@ -6,15 +6,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.gov.util.PostgreSQLEnumType;
-import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
 @Entity
@@ -147,7 +144,7 @@ public class Apac implements Serializable {
 
 	@Column(name = "out_tsp_cd")
 	private String out_tsp_cd;
-	
+
 //	@Enumerated(EnumType.STRING)
 //	@Column(name = "out_tpo_cd", columnDefinition = "out_tpo_enum")
 //	@Type(type = "pgsql_enum")
