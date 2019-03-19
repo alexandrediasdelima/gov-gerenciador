@@ -9,42 +9,42 @@
 		<!-- Implementação do JPA, no nosso caso Hibernate -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<!-- Aqui são listadas todas as entidades -->
-		<class>org.gov.model.Acesso.java</class>
-		<class>org.gov.model.Apac.java</class>
-		<class>org.gov.model.Asbama.java</class>
-		<class>org.gov.model.Asbcarac.java</class>
-		<class>org.gov.model.Asbtst.java</class>
-		<class>org.gov.model.Asb_tca_cd.java</class>
-		<class>org.gov.model.Asb_tnp_cd.java</class>
-		<class>org.gov.model.Asb_tpn_cd.java</class>
-		<class>org.gov.model.Captacao.java</class>
-		<class>org.gov.model.Cnarh.java</class>
-		<class>org.gov.model.CodigoIdentificador.java</class>
-		<class>org.gov.model.ConsumoHumano.java</class>
-		<class>org.gov.model.Empreendimento.java</class>
-		<class>org.gov.model.Emp_ds_uf.java</class>
-		<class>org.gov.model.Fin_tfn_cd.java</class>
-		<class>org.gov.model.Fornecedor.java</class>
-		<class>org.gov.model.Fou_tou_cd.java</class>
-		<class>org.gov.model.Industria.java</class>
-		<class>org.gov.model.Interferencia.java</class>
-		<class>org.gov.model.Int_tin_cd.java</class>
-		<class>org.gov.model.Int_tsi_cd.java</class>
-		<class>org.gov.model.Int_tsu_cd.java</class>
-		<class>org.gov.model.Irrigacao.java</class>
-		<class>org.gov.model.Lancamento.java</class>
-		<class>org.gov.model.OutraInfo.java</class>
-		<class>org.gov.model.Out_tpo_cd.java</class>
-		<class>org.gov.model.Out_tsp_cd.java</class>
-		<class>org.gov.model.Pecuaria.java</class>
-		<class>org.gov.model.Sir_tct_cd.java</class>
-		<class>org.gov.model.Sir_tsi_cd.java</class>
-		<class>org.gov.model.TesteBombeamento.java</class>
-		<class>org.gov.model.Tst_tmi_cd.java</class>
-		<class>org.gov.model.Tst_ttb_cd.java</class>
-		<class>org.gov.model.Usuario.java</class>
-		<class>org.gov.model.Vazao.java</class>
-		
+		<class>org.gov.model.Acesso</class>
+		<class>org.gov.model.Apac</class>
+		<class>org.gov.model.Asbama</class>
+		<class>org.gov.model.Asbcarac</class>
+		<class>org.gov.model.Asbtst</class>
+		<class>org.gov.model.Asb_tca_cd</class>
+		<class>org.gov.model.Asb_tnp_cd</class>
+		<class>org.gov.model.Asb_tpn_cd</class>
+		<class>org.gov.model.Captacao</class>
+		<class>org.gov.model.Cnarh</class>
+		<class>org.gov.model.CodigoIdentificador</class>
+		<class>org.gov.model.ConsumoHumano</class>
+		<class>org.gov.model.Empreendimento</class>
+		<class>org.gov.model.Emp_ds_uf</class>
+		<class>org.gov.model.Fin_tfn_cd</class>
+		<class>org.gov.model.Fornecedor</class>
+		<class>org.gov.model.Fou_tou_cd</class>
+		<class>org.gov.model.Industria</class>
+		<class>org.gov.model.Interferencia</class>
+		<class>org.gov.model.Int_tin_cd</class>
+		<class>org.gov.model.Int_tsi_cd</class>
+		<class>org.gov.model.Int_tsu_cd</class>
+		<class>org.gov.model.Irrigacao</class>
+		<class>org.gov.model.Lancamento</class>
+		<class>org.gov.model.OutraInfo</class>
+		<class>org.gov.model.Out_tpo_cd</class>
+		<class>org.gov.model.Out_tsp_cd</class>
+		<class>org.gov.model.Pecuaria</class>
+		<class>org.gov.model.Sir_tct_cd</class>
+		<class>org.gov.model.Sir_tsi_cd</class>
+		<class>org.gov.model.TesteBombeamento</class>
+		<class>org.gov.model.Tst_tmi_cd</class>
+		<class>org.gov.model.Tst_ttb_cd</class>
+		<class>org.gov.model.Usuario</class>
+		<class>org.gov.model.Vazao</class>
+
 
 		<properties>
 			<!-- Propriedades JDBC -->

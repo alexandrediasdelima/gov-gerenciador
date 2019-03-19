@@ -33,11 +33,13 @@
 			<artifactId>postgresql</artifactId>
 		</dependency>
 
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-agroal</artifactId>
 			<version>5.4.0.Final</version>
 			<type>pom</type>
+			<scope>provided</scope>
 		</dependency>
 
 
