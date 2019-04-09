@@ -1,5 +1,6 @@
 package org.gov.web.controller;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,10 +16,12 @@ public class UsuarioBean extends Controller  {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private Usuario usuario;
 	private UsuarioService usuarioService;
 	private List<Usuario> usuarios;
+	private List<String> municipios;
+	private String municipio;
 
 
 	public UsuarioBean() {
@@ -44,6 +47,22 @@ public class UsuarioBean extends Controller  {
 		setView(LIST);
 		return eval(index());
 
+	}
+
+	public void atualizarMunicipios() {
+
+		//Buscar no bancio os municipios pela UF
+		setMunicipios(new ArrayList<String>());
+
+		getMunicipios().add("Osasco");
+		getMunicipios().add("São paulo");
+
+	}
+
+	public void atualizarIbge() {
+
+		//buscar no banco IBGE pelo municipio
+		usuario.setEmp_cd_codigoibgecorrespondencia(new BigDecimal(10));
 	}
 
 	public String adicionarNovo() {
@@ -108,6 +127,26 @@ public class UsuarioBean extends Controller  {
 
 	public void setUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
+	}
+
+
+	public List<String> getMunicipios() {
+		return municipios;
+	}
+
+
+	public void setMunicipios(List<String> municipios) {
+		this.municipios = municipios;
+	}
+
+
+	public String getMunicipio() {
+		return municipio;
+	}
+
+
+	public void setMunicipio(String municipio) {
+		this.municipio = municipio;
 	}
 
 }
