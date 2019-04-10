@@ -19,7 +19,6 @@ public class OutraInfo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Column (name="oi_emp_pfk", nullable=false)
 	@Id
-	@GeneratedValue
 	private Integer oi_emp_pfk;
 
 	@Column (name="cam_agua_servida_destino")

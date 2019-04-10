@@ -46,8 +46,8 @@ public class Usuario implements Serializable {
 	@Column(name="emp_nu_cpfcnpj")
 	private String emp_nu_cpfcnpj;
 
-	@Column(name="emp_nu_obscpfcnpj")
-	private String emp_nu_obscpfcnpj;
+	@Column(name="emp_nu_tipodocumento")
+	private String emp_nu_tipodocumento;
 
 	@Column(name="emp_nu_ddd")
 	private String emp_nu_ddd;
@@ -131,12 +131,12 @@ public class Usuario implements Serializable {
 		this.emp_nu_cpfcnpj = emp_nu_cpfcnpj;
 	}
 
-	public String getEmp_nu_obscpfcnpj() {
-		return emp_nu_obscpfcnpj;
+	public String getEmp_nu_tipodocumento() {
+		return emp_nu_tipodocumento;
 	}
 
-	public void setEmp_nu_obscpfcnpj(String emp_nu_obscpfcnpj) {
-		this.emp_nu_obscpfcnpj = emp_nu_obscpfcnpj;
+	public void setEmp_nu_tipodocumento(String emp_nu_tipodocumento) {
+		this.emp_nu_tipodocumento = emp_nu_tipodocumento;
 	}
 
 	public String getEmp_nu_ddd() {

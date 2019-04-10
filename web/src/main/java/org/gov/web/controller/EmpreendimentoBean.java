@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.gov.model.Empreendimento;
+import org.gov.model.Usuario;
 import org.gov.service.EmpreendimentoService;
 import org.gov.service.EmpreendimentoServiceImpl;
 
@@ -23,20 +24,21 @@ public class EmpreendimentoBean extends Controller  {
 	private Empreendimento empreendimento;
 	private EmpreendimentoService empreendimentoService;
 	private List<Empreendimento> empreendimentos;
-	private List<Integer> idsUsuarios;
+	private List<Usuario> usuarios;
 
 	public EmpreendimentoBean() {
 
 		setEmpreendimento(new Empreendimento());
 		empreendimentoService = new EmpreendimentoServiceImpl();
 		setEmpreendimentos(new ArrayList<Empreendimento>());
+		usuarios = new ArrayList<Usuario>();
 		empreendimentos();
 	}
 
 	public String adicionarNovo() {
 		setView(ADD);
 		limparForm();
-		this.setIdsUsuarios(empreendimentoService.ids());
+		this.setUsuarios(empreendimentoService.usuarios());
 		return eval(index());
 	}
 
@@ -71,6 +73,10 @@ public class EmpreendimentoBean extends Controller  {
 	}
 
 	public String index() {
+		return "/empreendimento/index";
+	}
+	
+	public String voltar() {
 		return "/empreendimento/index";
 	}
 
@@ -118,12 +124,13 @@ public class EmpreendimentoBean extends Controller  {
 		this.empreendimentos = empreendimentos;
 	}
 
-	public List<Integer> getIdsUsuarios() {
-		return idsUsuarios;
+	public List<Usuario> getUsuarios() {
+		return usuarios;
 	}
 
-	public void setIdsUsuarios(List<Integer> idsUsuarios) {
-		this.idsUsuarios = idsUsuarios;
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
+
 
 }

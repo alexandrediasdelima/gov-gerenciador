@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.gov.dao.FornecedorDao;
 import org.gov.dao.FornecedorDaoImpl;
+import org.gov.dao.OutraInfoDaoImpl;
 import org.gov.dao.UsuarioDaoImpl;
 import org.gov.model.Fornecedor;
+import org.gov.model.OutraInfo;
 
 
 public class FornecedorServiceImpl implements FornecedorService{
@@ -46,9 +48,9 @@ public class FornecedorServiceImpl implements FornecedorService{
 		return fornecedorDao.ids();
 	}
 
-
-
-
-
+	public Fornecedor pesquisar(int id) {
+		fornecedorDao = new FornecedorDaoImpl();
+		return fornecedorDao.pesquisar(id);
+	}
 
 }

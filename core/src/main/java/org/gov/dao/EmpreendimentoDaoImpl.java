@@ -64,16 +64,16 @@ public class EmpreendimentoDaoImpl implements EmpreendimentoDao {
 		return "ok";
 	}
 
-	public List<Integer> ids() {
+	public List<Usuario> usuarios() {
 		entityManager.getTransaction().begin();
-		Query query = entityManager.createQuery("SELECT u.usuario_id FROM Usuario u");
+		Query query = entityManager.createNativeQuery("SELECT u.usuario_id, CONCAT(LEFT(u.emp_nm_usuario, 15), '..(', LEFT(u.emp_nu_cpfcnpj, 3), '..', RIGHT(u.emp_nu_cpfcnpj, 1), ')') FROM tb_usuario1 u ORDER BY u.emp_nm_usuario");
 
-		List<Integer> ids = query.getResultList();
+		List<Usuario> usuarios = query.getResultList();
 
 		entityManager.getTransaction().commit();
 		entityManager.close();
 
-		return ids;
+		return usuarios;
 	}
 
 

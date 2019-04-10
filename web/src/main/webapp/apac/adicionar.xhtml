@@ -7,140 +7,133 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
+	
+	<style type="text/css">
+		.ui-state-hover { background: none !important; background-image: none !important; }
+	</style>
+	
+	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
+		<h:form id="addApac" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		<br/><br/><br/>
+		<p:fieldset legend="APAC">
+			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
+				<h:panelGrid columns="2" style="border: 0px solid;">
+					<p:outputLabel value="Analista Responsável:" for="analista" />
+					<p:inputText id="analista" value="#{apacBean.apac.analistaResponsavel}" />
+	
+					<p:outputLabel value="Ato Administrativo:" for="preco" />
+					<p:inputText id="preco" value="#{apacBean.apac.atoAdministrativoPublicacaoInstrumento}" />
+	
+					<p:outputLabel value="Data de Vistoria da APAC:" for="dataVistoria" />
+					<p:calendar id="dataVistoria" showOn="button" value="#{apacBean.apac.dataVistoria}" />
+	
+					<p:outputLabel value="Data de Vencimento do Contrato:" for="dataVencimentoContrato" />
+					<p:calendar id="dataVencimentoContrato" showOn="button" value="#{apacBean.apac.dataVencimentoContrato}" />
+	
+					<p:outputLabel value="Data de Entrada do Processo na APAC:" for="dataEntradaProcessoApac" />
+					<p:calendar id="dataEntradaProcessoApac" showOn="button" value="#{apacBean.apac.dataEntradaProcessoApac}"  />
+	
+					<p:outputLabel value="Data de Entrada do Processo na CPRH:" for="dataEntradaProcessoCprh" />
+					<p:calendar id="dataEntradaProcessoCprh" showOn="button" value="#{apacBean.apac.dataEntradaProcessoCprh}"  />
+	
+					<p:outputLabel value="Data de Início do Prazo de Outorga:" for="dataInicioPrazoOutorga" />
+					<p:calendar id="dataInicioPrazoOutorga" showOn="button" value="#{apacBean.apac.dataInicioPrazoOutorga}"  />
+	
+					<p:outputLabel value="Data de Término do Prazo de Outorga:" for="dataTerminoPrazoOutorga" />
+					<p:calendar id="dataTerminoPrazoOutorga" showOn="button" value="#{apacBean.apac.dataTerminoPrazoOutorga}"  />
+	
+					<p:outputLabel value="Garantia:" for="garantia" />
+					<p:inputText id="garantia" value="#{apacBean.apac.garantia}" />
+	
+					<p:outputLabel value="Nome da Obra:" for="nomeObra" />
+					<p:inputText id="nomeObra" value="#{apacBean.apac.nomeObra}"/>
+	
+					<p:outputLabel value="Número do Ato:" for="numeroAto" />
+					<p:inputText id="numeroAto" value="#{apacBean.apac.numeroAto}" />
+	
+					<p:outputLabel value="Número da Notificação de Irregularidades:" for="numeroNotificacaoIrregularidade" />
+					<p:inputText id="numeroNotificacaoIrregularidade" value="#{apacBean.apac.numeroNotificacaoIrregularidadeApac}"/>
+	
+					<p:outputLabel value="Número da Notificação de Isenção:" for="numeroNotificacaoIsencao" />
+					<p:inputText id="numeroNotificacaoIsencao" value="#{apacBean.apac.numeroNotificacaoIsencaoApac}" />
+	
+					<p:outputLabel value="Número de Horas para a Captação por Dia:" for="horasrequeridaPorDia" />
+					<p:inputMask mask="?9999999999" id="horasrequeridaPorDia" value="#{apacBean.apac.horasRequeridaParaCaptacaoPorDia}" />
+	
+					<p:outputLabel value="Número do Termo:" for="numeroTermo" />
+					<p:inputText id="numeroTermo" value="#{apacBean.apac.numeroTermo}" />
+	
+					<p:outputLabel value="Selecione os Mêses que as Outorgas são Válidas:"/>
+					<p:spacer height="1" />
+	
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaJaneiro}" id="jan" label="Basic" itemLabel="Jan" />
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaFevereiro}" id="fev" label="Basic" itemLabel="Fev" />
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaMarco}" id="mar" label="Basic" itemLabel="Mar" />
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaAbril}" id="abril" label="Basic" itemLabel="Abr" />
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaMaio}" id="maio" label="Basic" itemLabel="Mai" />
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaJunho}" id="junho" label="Basic" itemLabel="Jun"/>
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaJulho}" id="jul" label="Basic" itemLabel="Jul"/>
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaAgosto}"  id="ago" label="Basic" itemLabel="Ago"/>
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaSetembro}"  id="set" label="Basic" itemLabel="Set" />
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaOutubro}"  id="out" label="Basic" itemLabel="Out" />
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaNovembro}"  id="nov" label="Basic" itemLabel="Nov" />
+					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaDezembro}"  id="dez" label="Basic" itemLabel="Dez"/>
 
-	<div style="padding-top: 50px; position: absolute;">
-	<h:form id="addApac" prependId="false">
-		<fieldset>
-			<legend> <b>Dados APAC</b></legend>
-			<h:panelGrid columns="2">
-				<p:outputLabel value="Analista Responsável: " for="analista" />
-				<p:inputText id="analista" value="#{apacBean.apac.analistaResponsavel}" />
-
-				<p:outputLabel value="Ato Administrativo: " for="preco" />
-				<p:inputText id="preco" value="#{apacBean.apac.atoAdministrativoPublicacaoInstrumento}" />
-
-				<p:outputLabel value="Data de Vistoria da Apac: " for="dataVistoria" />
-				<p:calendar id="dataVistoria" showOn="button" value="#{apacBean.apac.dataVistoria}" />
-
-				<p:outputLabel value="Data de Vencimento do Contrato: " for="dataVencimentoContrato" />
-				<p:calendar id="dataVencimentoContrato" showOn="button" value="#{apacBean.apac.dataVencimentoContrato}" />
-
-				<p:outputLabel value="Data de Entrada do Processo na Apac: " for="dataEntradaProcessoApac" />
-				<p:calendar id="dataEntradaProcessoApac" showOn="button" value="#{apacBean.apac.dataEntradaProcessoApac}"  />
-
-				<p:outputLabel value="Data de Entrada do Processo na Cprh: " for="dataEntradaProcessoCprh" />
-				<p:calendar id="dataEntradaProcessoCprh" showOn="button" value="#{apacBean.apac.dataEntradaProcessoCprh}"  />
-
-				<p:outputLabel value="Data de inicio do Prazo de Outorga: " for="dataInicioPrazoOutorga" />
-				<p:calendar id="dataInicioPrazoOutorga" showOn="button" value="#{apacBean.apac.dataInicioPrazoOutorga}"  />
-
-				<p:outputLabel value="Data de Término do Prazo de Outorga: " for="dataTerminoPrazoOutorga" />
-				<p:calendar id="dataTerminoPrazoOutorga" showOn="button" value="#{apacBean.apac.dataTerminoPrazoOutorga}"  />
-
-				<p:outputLabel value="Garantia: " for="garantia" />
-				<p:inputText id="garantia" value="#{apacBean.apac.garantia}" />
-
-				<p:outputLabel value="Nome da Obra: " for="nomeObra" />
-				<p:inputText id="nomeObra" value="#{apacBean.apac.nomeObra}"/>
-
-				<p:outputLabel value="Número do Ato: " for="numeroAto" />
-				<p:inputText id="numeroAto" value="#{apacBean.apac.numeroAto}" />
-
-				<p:outputLabel value="Número da Notificação de Irregularidades: " for="numeroNotificacaoIrregularidade" />
-				<p:inputText id="numeroNotificacaoIrregularidade" value="#{apacBean.apac.numeroNotificacaoIrregularidadeApac}"/>
-
-				<p:outputLabel value="Número da Notificação de Isenção: " for="numeroNotificacaoIsencao" />
-				<p:inputText id="numeroNotificacaoIsencao" value="#{apacBean.apac.numeroNotificacaoIsencaoApac}" />
-
-				<p:outputLabel value="Número de Horas para a Captação por Dia: " for="horasrequeridaPorDia" />
-				<p:inputMask mask="?9999999999" id="horasrequeridaPorDia" value="#{apacBean.apac.horasRequeridaParaCaptacaoPorDia}" />
-
-				<p:outputLabel value="Número do Termo: " for="numeroTermo" />
-				<p:inputText id="numeroTermo" value="#{apacBean.apac.numeroTermo}" />
-
-				<p:outputLabel value="Selecione os Mêses que as Outorgas são Válidas: "/>
-				<p:spacer height="1" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaJaneiro}" id="jan" label="Basic" itemLabel="Jan" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaFevereiro}" id="fev" label="Basic" itemLabel="Fev" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaMarco}" id="mar" label="Basic" itemLabel="Mar" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaAbril}" id="abril" label="Basic" itemLabel="Abr" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaMaio}" id="maio" label="Basic" itemLabel="Mai" />
-
-				<p:selectBooleanCheckbox   value="#{apacBean.apac.outorgaValidaJunho}" id="junho" label="Basic" itemLabel="Jun"/>
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaJulho}" id="jul" label="Basic" itemLabel="Jul"/>
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaAgosto}"  id="ago" label="Basic" itemLabel="Ago"/>
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaSetembro}"  id="set" label="Basic" itemLabel="Set" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaOutubro}"  id="out" label="Basic" itemLabel="Out" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaNovembro}"  id="nov" label="Basic" itemLabel="Nov" />
-
-				<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaDezembro}"  id="dez" label="Basic" itemLabel="Dez"/>
-
-				<p:outputLabel value="Prazo da Notificação: " for="prazoNotificacao" />
-				<p:calendar id="prazoNotificacao" showOn="button" value="#{apacBean.apac.prazoNotificacao}" locale="pt_BR" />
-
-				<p:outputLabel value="Número do Processo na Cprh: " for="numeroProcessoCprh" />
-				<p:inputText id="numeroProcessoCprh" value="#{apacBean.apac.numeroProcessoNaCprh}" />
-
-				<p:outputLabel value="Tipo de Obra: " for="tipoObra" />
-				<p:inputText id="tipoObra" value="#{apacBean.apac.tipoObra}" />
-
-				<p:outputLabel value="Número Vazão Outorgada em l/s: " for="numeroVazaoOutorgadaLs" />
-				<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoOutorgadaLs" value="#{apacBean.apac.vazaoOutorgada}" />
-
-				<p:outputLabel value="Número Vazão Outorgada em Média: " for="numeroVazaoOutorgadaMedia" />
-				<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoOutorgadaMedia" value="#{apacBean.apac.vazaoOutorgadaMedia}"/>
-
-				<p:outputLabel value="Número Vazão Requerida l/s: " for="numeroVazaoRequeridals" />
-				<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoRequeridals" value="#{apacBean.apac.vazaoRequiridaLs}"/>
-
-					<p:outputLabel value="Número Vazão Requerida Média por Dia: " for="numeroVazaoRequeridaMedia" />
-				<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoRequeridaMedia" value="#{apacBean.apac.vazaoRequiridaMediaDia}"/>
-
-				<p:outputLabel value="Número do Processo: " for="numeroProcesso" />
-				<p:inputText id="numeroProcesso" value="#{apacBean.apac.numeroProcesso}" required="true" requiredMessage="Número do Processo Obrigatório" />
-
-				<p:outputLabel value="Código Identificador do Tipo de Ato Administrativo" for="out_tpo_cd" />
-				<p:selectOneMenu id="out_tpo_cd" value="#{apacBean.apac.out_tpo_cd}" style="width:200px">
-					<f:selectItem itemLabel="Selecione" itemValue="" />
-					<f:selectItem itemValue="DIREITO_DE_USO" itemLabel="Direito de Uso" />
-					<f:selectItem itemValue="PREVENTIVA" itemLabel="Preventiva" />
-					<f:selectItem itemValue="DRDH" itemLabel="DRDH" />
-					<f:selectItem itemValue="CERTOH" itemLabel="CERTOH" />
-					<f:selectItem itemValue="LICENCA_AUTORIZACAO_PERFURACAO_POCOS" itemLabel="Licença ou autorização para perfuração de poços" />
-					<f:selectItem itemValue="ANUENCIA_PREVIA" itemLabel="Anuência prévia" />
-					<f:selectItem itemValue="CADASTRO" itemLabel="Cadastro" />
-					<f:selectItem itemValue="OUTRA" itemLabel="Outra" />
-				</p:selectOneMenu>
-
-				<p:outputLabel value="Código Identificador do Tipo de Situação do Ato Administrativo" for="out_tsp_cd" />
-				<p:selectOneMenu id="out_tsp_cd" value="#{apacBean.apac.out_tsp_cd}" style="width:200px">
-					<f:selectItem itemLabel="Selecione" itemValue="" />
-					<f:selectItem itemValue="OUTORGADO" itemLabel="Outorgado" />
-					<f:selectItem itemValue="EM_ANALISE" itemLabel="Em Análise" />
-					<f:selectItem itemValue="USO_INSIGNIFICANTE" itemLabel="Uso Insignificante" />
-					<f:selectItem itemValue="INDEFERIDO" itemLabel="Indeferido" />
-					<f:selectItem itemValue="INVALIDO" itemLabel="Inválido" />
-					<f:selectItem itemValue="AUTORIZADO" itemLabel="Autorizado (água subterrânea)" />
-					<f:selectItem itemValue="OUTRA" itemLabel="Outra" />
-				</p:selectOneMenu>
-
-				<p:commandButton value="Salvar" action="#{apacBean.gravar}" ajax="false" rendered="#{apacBean.view == 'add'}"/>
-				<p:commandButton value="Editar" action="#{apacBean.editar}" ajax="false" rendered="#{apacBean.view == 'edit'}" />
-
-
-			</h:panelGrid>
-		</fieldset>
-
-	</h:form>
+					<p:outputLabel value="Prazo da Notificação:" for="prazoNotificacao" />
+					<p:calendar id="prazoNotificacao" showOn="button" value="#{apacBean.apac.prazoNotificacao}" locale="pt_BR" />
+	
+					<p:outputLabel value="Número do Processo na CPRH:" for="numeroProcessoCprh" />
+					<p:inputText id="numeroProcessoCprh" value="#{apacBean.apac.numeroProcessoNaCprh}" />
+	
+					<p:outputLabel value="Tipo de Obra:" for="tipoObra" />
+					<p:inputText id="tipoObra" value="#{apacBean.apac.tipoObra}" />
+	
+					<p:outputLabel value="Número Vazão Outorgada(l/s):" for="numeroVazaoOutorgadaLs" />
+					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoOutorgadaLs" value="#{apacBean.apac.vazaoOutorgada}" />
+	
+					<p:outputLabel value="Número Vazão Outorgada em Média:" for="numeroVazaoOutorgadaMedia" />
+					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoOutorgadaMedia" value="#{apacBean.apac.vazaoOutorgadaMedia}"/>
+	
+					<p:outputLabel value="Número Vazão Requerida(l/s):" for="numeroVazaoRequeridals" />
+					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoRequeridals" value="#{apacBean.apac.vazaoRequiridaLs}"/>
+	
+					<p:outputLabel value="Número Vazão Requerida Média por Dia:" for="numeroVazaoRequeridaMedia" />
+					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoRequeridaMedia" value="#{apacBean.apac.vazaoRequiridaMediaDia}"/>
+	
+					<p:outputLabel value="Número do Processo:" for="numeroProcesso" />
+					<p:inputText id="numeroProcesso" value="#{apacBean.apac.numeroProcesso}" required="true" requiredMessage="Número do Processo Obrigatório" />
+	
+					<p:outputLabel value="Código Identificador do Tipo de Ato Administrativo:" for="out_tpo_cd" />
+					<p:selectOneMenu id="out_tpo_cd" value="#{apacBean.apac.out_tpo_cd}" style="width:200px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemValue="DIREITO_DE_USO" itemLabel="Direito de Uso" />
+						<f:selectItem itemValue="PREVENTIVA" itemLabel="Preventiva" />
+						<f:selectItem itemValue="DRDH" itemLabel="DRDH" />
+						<f:selectItem itemValue="CERTOH" itemLabel="CERTOH" />
+						<f:selectItem itemValue="LICENCA_AUTORIZACAO_PERFURACAO_POCOS" itemLabel="Licença ou autorização para perfuração de poços" />
+						<f:selectItem itemValue="ANUENCIA_PREVIA" itemLabel="Anuência prévia" />
+						<f:selectItem itemValue="CADASTRO" itemLabel="Cadastro" />
+						<f:selectItem itemValue="OUTRA" itemLabel="Outra" />
+					</p:selectOneMenu>
+	
+					<p:outputLabel value="Código Identificador do Tipo de Situação do Ato Administrativo:" for="out_tsp_cd" />
+					<p:selectOneMenu id="out_tsp_cd" value="#{apacBean.apac.out_tsp_cd}" style="width:200px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemValue="OUTORGADO" itemLabel="Outorgado" />
+						<f:selectItem itemValue="EM_ANALISE" itemLabel="Em Análise" />
+						<f:selectItem itemValue="USO_INSIGNIFICANTE" itemLabel="Uso Insignificante" />
+						<f:selectItem itemValue="INDEFERIDO" itemLabel="Indeferido" />
+						<f:selectItem itemValue="INVALIDO" itemLabel="Inválido" />
+						<f:selectItem itemValue="AUTORIZADO" itemLabel="Autorizado (água subterrânea)" />
+						<f:selectItem itemValue="OUTRA" itemLabel="Outra" />
+					</p:selectOneMenu>
+				</h:panelGrid>	
+				<br/><br/>
+				
+				<p:commandButton value="Salvar" action="#{apacBean.gravar}" ajax="false" rendered="#{apacBean.view == 'add'}" icon=" ui-icon-disk" />
+				<p:commandButton value="Salvar" action="#{apacBean.editar}" ajax="false" rendered="#{apacBean.view == 'edit'}" icon=" ui-icon-pencil" />
+			</p:scrollPanel>
+		</p:fieldset>
+		</h:form>
 	</div>
 </ui:composition>

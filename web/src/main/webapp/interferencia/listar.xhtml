@@ -21,7 +21,7 @@
 			<p:scrollPanel mode="native" style="width:100%">
 				<p:dataTable id="tabelaInterferencias" value="#{interferenciaBean.interferencias}" var="interferencia" paginator="true" rows="10" paginatorPosition="top" resizableColumns="false" >
 					<f:facet name="header">Interferências</f:facet>
-					<p:column headerText="ID">
+					<p:column headerText="ID-Interferência">
 						<h:outputText id="menuInterferencia" value="#{interferencia.id}" style="text-decoration: underline; cursor: pointer" />
 					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="click" autoDisplay="true">
 				            <p:submenu label="Águas Subterrâneas">
@@ -39,8 +39,15 @@
 				            <p:menuitem value="Vazão" action="#{vazaoBean.redirecionarTelaCadastro(interferencia.id)}" icon="ui-icon-bullet" />
 					    </p:tieredMenu>
 					</p:column>
+					<p:column headerText="ID-Empreedimento">
+						<h:outputText value="#{interferencia.idEmpreendimento}" />
+					</p:column>
+					<p:column headerText="ID-Cnarh">
+						<h:outputText value="#{interferencia.cnarh_id}" />
+					</p:column>					
 					<p:column headerText="Estudo Hidrológico">
-						<h:outputText value="#{interferencia.haEstudoHidrologicoDaArea}" />
+						<h:panelGroup rendered="#{interferencia.haEstudoHidrologicoDaArea}"><h:outputText value="SIM" /></h:panelGroup>
+						<h:panelGroup rendered="#{!interferencia.haEstudoHidrologicoDaArea}"><h:outputText value="NÃO" /></h:panelGroup>
 					</p:column>
 					<p:column headerText="Captura Lançamento Geral">
 						<h:outputText value="#{interferencia.linkFotoPontoCapturaVisaoGeral}" />
@@ -60,11 +67,8 @@
 					<p:column headerText="Local Interferência">
 						<h:outputText value="#{interferencia.localInterferencia}" />
 					</p:column>
-					<p:column headerText="Curso">
+					<p:column headerText="Nome do Manancial">
 						<h:outputText value="#{interferencia.nomeCursoAgua}" />
-					</p:column>
-					<p:column headerText="Presença Barramento">
-						<h:outputText value="#{interferencia.presencaAusenciaBarramentoParaCaptacao}" />
 					</p:column>
 					<p:column headerText="Barragem">
 						<h:outputText value="#{interferencia.barragemOndeFeitaCaptacao}" />
@@ -75,14 +79,9 @@
 					<p:column headerText="Bacia Hidrográfica">
 						<h:outputText value="#{interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" />
 					</p:column>
-					<p:column headerText="ID Cnarh">
-						<h:outputText value="#{interferencia.cnarh_id}" />
-					</p:column>
+
 					<p:column headerText="Número do Processo">
 						<h:outputText value="#{interferencia.numeroProcesso}" />
-					</p:column>
-					<p:column headerText="ID Empreedimento">
-						<h:outputText value="#{interferencia.idEmpreendimento}" />
 					</p:column>
 					<p:column headerText="Código da Situação Interferência">
 						<h:outputText value="#{interferencia.codigoIdentificadorSituacaoInterferencia}" />

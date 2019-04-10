@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import org.gov.model.Empreendimento;
+import org.gov.model.Usuario;
 
 public interface EmpreendimentoService extends Serializable {
 
@@ -11,6 +12,6 @@ public interface EmpreendimentoService extends Serializable {
 	public List<Empreendimento> empreendimentos();
 	public String remover(Integer id);
 	public String editar(Empreendimento empreendimento);
-	public List<Integer> ids();
+	public List<Usuario> usuarios();
 
 }

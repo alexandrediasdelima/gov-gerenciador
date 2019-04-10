@@ -21,7 +21,7 @@ import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
 @Entity
-@Table(name= "tb_fornecedor")
+@Table(name= "tb_responsavel_informacoes")
 @TypeDef(
 	    name = "pgsql_enum",
 	    typeClass = PostgreSQLEnumType.class)
@@ -49,6 +49,7 @@ public class Fornecedor implements Serializable {
 	@Column (name="forn_info_contato_inst", nullable=false)
 	private String forn_info_contato_inst;
 
+	
 	@Column (name="usuario_id", nullable=false)
 	private Integer usuario_id;
 

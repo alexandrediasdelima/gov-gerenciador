@@ -39,22 +39,22 @@
 					<p:outputLabel value="Data de Instalação: " for="asb_dt_instalacao" />
 					<p:calendar showOn="button"          id="asb_dt_instalacao" value="#{asbtstBean.asbtst.asb_dt_instalacao}" />
 					
-					<p:outputLabel value="Altura da Boca da Tubulação: " for="asb_nu_alturabocatubo" />
+					<p:outputLabel value="Boca da Tubulação(m): " for="asb_nu_alturabocatubo" />
 					<p:inputText maxlength="5"           id="asb_nu_alturabocatubo" value="#{asbtstBean.asbtst.asb_nu_alturabocatubo}" />
 					
-					<p:outputLabel value="Profundidade da Base do Aquífero Captado: " for="asb_nu_base" />
+					<p:outputLabel value="Profundidade da Base do Aquífero(m): " for="asb_nu_base" />
 					<p:inputText maxlength="7"           id="asb_nu_base" value="#{asbtstBean.asbtst.asb_nu_base}" />
 					
-					<p:outputLabel value="Altitude do Terreno: " for="asb_nu_cotaterreno" />
+					<p:outputLabel value="Altitude do Terreno(m): " for="asb_nu_cotaterreno" />
 					<p:inputText maxlength="10"          id="asb_nu_cotaterreno" value="#{asbtstBean.asbtst.asb_nu_cotaterreno}" />
 					
-					<p:outputLabel value="Diâmetro do Filtro: " for="asb_nu_diametrofiltro" />
+					<p:outputLabel value="Diâmetro do Filtro(pol): " for="asb_nu_diametrofiltro" />
 					<p:inputMask mask="?999999999999999" id="asb_nu_diametrofiltro" value="#{asbtstBean.asbtst.asb_nu_diametrofiltro}" />
 					
-					<p:outputLabel value="Diâmetro da Perfuração: " for="asb_nu_diametroperfuracao" />
+					<p:outputLabel value="Diâmetro da Perfuração(pol): " for="asb_nu_diametroperfuracao" />
 					<p:inputMask mask="?999999999999999" id="asb_nu_diametroperfuracao" value="#{asbtstBean.asbtst.asb_nu_diametroperfuracao}" />
 					
-					<p:outputLabel value="Profundidade do Topo do Aquífero Captado: " for="asb_nu_topo" />
+					<p:outputLabel value="Profundidade do Topo do Aquífero(m): " for="asb_nu_topo" />
 					<p:inputText maxlength="7"           id="asb_nu_topo" value="#{asbtstBean.asbtst.asb_nu_topo}" />
 					
 					<p:outputLabel value="Condição do Aquifero: " for="asb_tca_cd" />
@@ -66,7 +66,7 @@
 					<p:outputLabel value="Penetração do Aquifero: " for="asb_tpn_cd" />
 					<p:inputMask mask="?999999999999999" id="asb_tpn_cd" value="#{asbtstBean.asbtst.asb_tpn_cd}" />
 					
-					<p:outputLabel value="Tempo de Duração: " for="tst_ds_tempoduracao" />
+					<p:outputLabel value="Tempo de Duração(h): " for="tst_ds_tempoduracao" />
 					<p:inputText                         id="tst_ds_tempoduracao" value="#{asbtstBean.asbtst.tst_ds_tempoduracao}" />
 					
 					<p:outputLabel value="Data do Teste: " for="tst_dt" />
@@ -75,35 +75,35 @@
 					<p:outputLabel value="Coeficiente de Armazenamento: " for="tst_nu_coeficientearmazenamento" />
 					<p:inputMask mask="?999999999999999" id="tst_nu_coeficientearmazenamento" value="#{asbtstBean.asbtst.tst_nu_coeficientearmazenamento}" />
 					
-					<p:outputLabel value="Condutividade Hidráulica: " for="tst_nu_condutividadehidraulica" />
+					<p:outputLabel value="Condutividade Hidráulica(m/s): " for="tst_nu_condutividadehidraulica" />
 					<p:inputMask mask="?999999999999999" id="tst_nu_condutividadehidraulica" value="#{asbtstBean.asbtst.tst_nu_condutividadehidraulica}" />
 					
-					<p:outputLabel value="Nível Dinâmico: " for="tst_nu_nd" />
+					<p:outputLabel value="Nível Dinâmico(m): " for="tst_nu_nd" />
 					<p:inputText maxlength="10"          id="tst_nu_nd" value="#{asbtstBean.asbtst.tst_nu_nd}" />
 					
-					<p:outputLabel value="Nível Estático: " for="tst_nu_ne" />
+					<p:outputLabel value="Nível Estático(m): " for="tst_nu_ne" />
 					<p:inputText maxlength="10"          id="tst_nu_ne" value="#{asbtstBean.asbtst.tst_nu_ne}" />
 					
-					<p:outputLabel value="Permeabilidade: " for="tst_nu_permeabilidade" />
+					<p:outputLabel value="Permeabilidade(m/s): " for="tst_nu_permeabilidade" />
 					<p:inputMask mask="?999999999999999" id="tst_nu_permeabilidade" value="#{asbtstBean.asbtst.tst_nu_permeabilidade}" />
 					
-					<p:outputLabel value="Transmissividade: " for="tst_nu_transmissividade" />
+					<p:outputLabel value="Transmissividade(m²/s): " for="tst_nu_transmissividade" />
 					<p:inputMask mask="?999999999999999" id="tst_nu_transmissividade" value="#{asbtstBean.asbtst.tst_nu_transmissividade}" />
 					
-					<p:outputLabel value="Método de Interpretação: " for="tst_tmi_cd" />
+					<p:outputLabel value="Tipo de Método de Interpretação: " for="tst_tmi_cd" />
 					<p:inputMask mask="?999999999999999" id="tst_tmi_cd" value="#{asbtstBean.asbtst.tst_tmi_cd}" />
 					
 					<p:outputLabel value="Tipo de Teste de Bombeamento: " for="tst_ttb_cd" />
 					<p:inputMask mask="?999999999999999" id="tst_ttb_cd" value="#{asbtstBean.asbtst.tst_ttb_cd}" />
 					
-					<p:outputLabel value="Vazão de Estabilizaçao: " for="tst_vz_estabilizacao" />
+					<p:outputLabel value="Vazão de Estabilização: " for="tst_vz_estabilizacao" />
 					<p:inputMask mask="?999999999999999" id="tst_vz_estabilizacao" value="#{asbtstBean.asbtst.tst_vz_estabilizacao}" />
 				</h:panelGrid>
 				<br/><br/>
 				
 				<p:commandButton value="Voltar" action="#{asbtstBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:commandButton value="Salvar" action="#{asbtstBean.gravar}"   ajax="false" rendered="#{asbtstBean.view == 'add'}" icon="ui-icon-disk" />
-				<p:commandButton value="Alterar" action="#{asbtstBean.alterar}" ajax="false" rendered="#{asbtstBean.view == 'edit'}" icon="ui-icon-pencil" />
+				<p:commandButton value="Salvar" action="#{asbtstBean.alterar}" ajax="false" rendered="#{asbtstBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{asbtstBean.deletar}"  ajax="false" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>

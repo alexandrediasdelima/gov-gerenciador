@@ -21,11 +21,11 @@
 			<br/><br/>
 			<p:scrollPanel mode="native" style="width:100%">
 				<p:dataTable id="tabelaFornecedores" value="#{fornecedorBean.fornecedores}" paginator="true" rows="10" var="fornecedor" paginatorPosition="top" resizableColumns="false" >
-					<f:facet name="header">Fornecedores</f:facet>
-					<p:column headerText="ID">
+					<f:facet name="header">Responsável pelas Informações</f:facet>
+					<p:column headerText="ID-Responsável pelas Informações">
 						<h:outputText value="#{fornecedor.forn_id}" />
 					</p:column>
-					<p:column headerText="ID Usuário (Proprietário)">
+					<p:column headerText="ID-Usuário">
 						<h:outputText value="#{fornecedor.usuario_id}" id="usuario_id" />
 					</p:column>	
 					<p:column headerText="Nome">

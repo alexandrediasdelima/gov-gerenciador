@@ -31,28 +31,28 @@
 					<p:outputLabel value="ID: " for="id" />
 					<p:inputText id="id" value="#{asbcaracBean.asbcarac.id}" disabled="true" />
 
-					<p:outputLabel value="Altitude do Terreno: " for="altitudeTerreno" />
+					<p:outputLabel value="Altitude do Terreno(m): " for="altitudeTerreno" />
 					<p:inputText id="altitudeTerreno" maxlength="10" value="#{asbcaracBean.asbcarac.altitudeTerreno}" />
 
-					<p:outputLabel value="Altura da boca da tubulação: " for="alturaBocaTubulacao" />
+					<p:outputLabel value="Boca da tubulação(m): " for="alturaBocaTubulacao" />
 					<p:inputText id="alturaBocaTubulacao" maxlength="10" value="#{asbcaracBean.asbcarac.altitudeBocaTubulacao}" />
 
 					<p:outputLabel value="Código identificador do aquifero ponto: " for="cdIdentificadorAquiferoPonto" />
 					<p:inputMask mask="?9999999999999999999" id="cdIdentificadorAquiferoPonto" value="#{asbcaracBean.asbcarac.identificadorAquiferoPonto}" />
 
-					<p:outputLabel value="Data de instalação do poço : " for="dataInstalacao" />
+					<p:outputLabel value="Data de instalação do poço: " for="dataInstalacao" />
 					<p:calendar id="dataInstalacao" showOn="button" value="#{asbcaracBean.asbcarac.dataInstalacaoPoco}" />
 
-					<p:outputLabel value="Diametro da perfuração: " for="diametroPerfuracao" />
+					<p:outputLabel value="Diâmetro da perfuração(pol): " for="diametroPerfuracao" />
 					<p:inputMask mask="?9999999999999999999" id="diametroPerfuracao" value="#{asbcaracBean.asbcarac.diametroPerfuracao}" />
 
-					<p:outputLabel value="Diametro do filtro: " for="diametroFiltro" />
+					<p:outputLabel value="Diâmetro do filtro(pol): " for="diametroFiltro" />
 					<p:inputMask mask="?9999999999999999999" id="diametroFiltro" value="#{asbcaracBean.asbcarac.diametroFiltro}" />
 
-					<p:outputLabel value="Profundidade da base do aquífero captado: " for="pbac" />
+					<p:outputLabel value="Profundidade da base do aquífero(m): " for="pbac" />
 					<p:inputText maxlength="6" id="pbac" value="#{asbcaracBean.asbcarac.profundidadeBaseMedidaApartirSuperficie}" />
 
-					<p:outputLabel value="Profundidade do topo do aquífero captado: " for="pbacTopo" />
+					<p:outputLabel value="Profundidade do topo do aquífero(m): " for="pbacTopo" />
 					<p:inputText maxlength="6" id="pbacTopo" value="#{asbcaracBean.asbcarac.profundidadeTopoMedidaApartirSuperficie}" />
 
 					<p:outputLabel value="Natureza do Ponto" for="Asb_tnp_enum" />
@@ -71,14 +71,14 @@
 						<f:selectItem itemValue="Poço de monitoramento" itemLabel="Poço de monitoramento" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Tipo Penetração Aquifero" for="asb_tpn_enum" />
+					<p:outputLabel value="Tipo Penetração Aquifero:" for="asb_tpn_enum" />
 					<p:selectOneMenu id="asb_tpn_enum" value="#{asbcaracBean.asbcarac.tipoPenetracaoAquifero}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemValue="Parcial" itemLabel="Parcial" />
 						<f:selectItem itemValue="Total" itemLabel="Total" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Condição Aquifero" for="asb_tca_enum" />
+					<p:outputLabel value="Condição Aquifero:" for="asb_tca_enum" />
 					<p:selectOneMenu id="asb_tca_enum" value="#{asbcaracBean.asbcarac.condicaoAquifero}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemValue="Livre" itemLabel="Livre" />
@@ -91,7 +91,7 @@
 
 				<p:commandButton value="Voltar" action="#{asbcaracBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:commandButton value="Salvar" action="#{asbcaracBean.gravar}"   ajax="false" rendered="#{asbcaracBean.view == 'add'}" icon="ui-icon-disk" />
-				<p:commandButton value="Alterar" action="#{asbcaracBean.alterar}" ajax="false" rendered="#{asbcaracBean.view == 'edit'}" icon="ui-icon-pencil" />
+				<p:commandButton value="Salvar" action="#{asbcaracBean.alterar}" ajax="false" rendered="#{asbcaracBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{asbcaracBean.deletar}"  ajax="false" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>

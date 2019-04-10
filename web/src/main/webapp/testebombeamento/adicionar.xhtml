@@ -28,7 +28,7 @@
 					<p:inputText id="tst_nu_condutividadehidraulica" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_condutividadehidraulica}" />
 					
 					<p:outputLabel value="Data do Teste do Bombeamento: " for="tst_dt" />
-					<p:calendar showOn="button" id="tst_dt" value="#{testebombeamentoBean.testebombeamento.tst_dt}" />
+					<p:calendar showOn="button" id="tst_dt" value="#{testebombeamentoBean.testebombeamento.tst_dt}" readonlyInput="true" pattern="dd/mm/yyyy" />
 					
 					<p:outputLabel value="Tempo de Duração do Teste(Horas): " for="tst_ds_tempoduracao" />
 					<p:inputText  id="tst_ds_tempoduracao" value="#{testebombeamentoBean.testebombeamento.tst_ds_tempoduracao}" />
@@ -96,7 +96,7 @@
 				
 				<p:commandButton value="Voltar" action="#{testebombeamentoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:commandButton value="Salvar" action="#{testebombeamentoBean.gravar}"   ajax="false" rendered="#{testebombeamentoBean.view == 'add'}" icon="ui-icon-disk" />
-				<p:commandButton value="Alterar" action="#{testebombeamentoBean.alterar}" ajax="false" rendered="#{testebombeamentoBean.view == 'edit'}" icon="ui-icon-pencil" />
+				<p:commandButton value="Salvar" action="#{testebombeamentoBean.alterar}" ajax="false" rendered="#{testebombeamentoBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{testebombeamentoBean.deletar}"  ajax="false" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>

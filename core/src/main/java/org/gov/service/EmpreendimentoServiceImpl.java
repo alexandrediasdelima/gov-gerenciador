@@ -6,6 +6,7 @@ import org.gov.dao.EmpreendimentoDao;
 import org.gov.dao.EmpreendimentoDaoImpl;
 import org.gov.dao.UsuarioDaoImpl;
 import org.gov.model.Empreendimento;
+import org.gov.model.Usuario;
 
 
 public class EmpreendimentoServiceImpl implements EmpreendimentoService{
@@ -41,14 +42,9 @@ public class EmpreendimentoServiceImpl implements EmpreendimentoService{
 		return empreendimentoDao.editar(empreendimento);
 	}
 
-	public List<Integer> ids() {
+	public List<Usuario> usuarios() {
 		empreendimentoDao = new EmpreendimentoDaoImpl();
-		return empreendimentoDao.ids();
+		return empreendimentoDao.usuarios();
 	}
-
-
-
-
-
 
 }

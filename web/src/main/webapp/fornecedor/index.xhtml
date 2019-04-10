@@ -6,14 +6,6 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 	<ui:define name="body">
-		<c:choose>
-			<c:when
-				test="#{fornecedorBean.view == 'edit' or fornecedorBean.view == 'add'}">
-				<ui:include src="/fornecedor/adicionar.xhtml" />
-			</c:when>
-			<c:otherwise>
-				<ui:include src="/fornecedor/listar.xhtml" />
-			</c:otherwise>
-		</c:choose>
+		<ui:include src="/fornecedor/adicionar.xhtml" />
 	</ui:define>
 </ui:composition>

@@ -15,21 +15,12 @@
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addFornecedor" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
 		<br/><br/><br/>
-		<p:fieldset legend="Fornecedor">
+		<p:fieldset legend="Responsável pelas Informações">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
 				<h:panelGrid columns="2" style="border: 0px solid;">
-					<p:outputLabel value="ID Usuário (Proprietário): " for="usuario_id" />
-					<c:choose>
-						<c:when test="#{fornecedorBean.view == 'edit'}">
-							<p:outputLabel id="usuario_id" value="#{fornecedorBean.fornecedor.usuario_id}" />
-						</c:when>
-						<c:otherwise>
-							<p:selectOneMenu id="usuario_id" value="#{fornecedorBean.fornecedor.usuario_id}" style="width:230px">
-								<f:selectItems value="#{fornecedorBean.idsUsuarios}" var="id" itemValue="#{id}" itemLabel="#{id}" />
-							</p:selectOneMenu>
-						</c:otherwise>
-					</c:choose>
-					
+					<p:outputLabel value="ID-Usuário: " for="usuario_id" />
+					<p:inputText id="usuario_id" value="#{fornecedorBean.fornecedor.usuario_id}" disabled="true" style="width: 100px"/>
+
 					<p:outputLabel value="Nome: " for="forn_info_nm" />
 					<p:inputText id="forn_info_nm" value="#{fornecedorBean.fornecedor.forn_info_nm}" />
 					
@@ -42,10 +33,11 @@
 					<p:outputLabel value="Contato: " for="forn_info_contato_inst" />
 					<p:inputText id="forn_info_contato_inst" value="#{fornecedorBean.fornecedor.forn_info_contato_inst}" />
 				</h:panelGrid>
-
-				<p:commandButton value="Salvar" action="#{fornecedorBean.gravar}"   ajax="false" rendered="#{fornecedorBean.view == 'add'}"  icon="ui-icon-disk" />
-				<p:commandButton value="Alterar" action="#{fornecedorBean.editar}" ajax="false" rendered="#{fornecedorBean.view == 'edit'}"  icon="ui-icon-pencil" />
-
+				
+				<p:commandButton value="Voltar" action="#{fornecedorBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Salvar" action="#{fornecedorBean.gravar}"   ajax="false" rendered="#{fornecedorBean.view == 'add'}" icon="ui-icon-disk" />
+				<p:commandButton value="Salvar" action="#{fornecedorBean.alterar}" ajax="false" rendered="#{fornecedorBean.view == 'edit'}" icon="ui-icon-pencil" />
+				<p:commandButton value="Apagar" action="#{fornecedorBean.deletar}"  ajax="false" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>
 		</h:form>

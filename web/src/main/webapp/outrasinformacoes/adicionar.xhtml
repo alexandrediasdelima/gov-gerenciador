@@ -19,7 +19,7 @@
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
 				<h:panelGrid columns="2" style="border: 0px solid;">
 					<p:outputLabel value="ID: " for="idEmpreendimento" />
-					<p:inputText id="idEmpreendimento" value="#{empreendimento.id}" disabled="true"/>
+					<p:inputText id="idEmpreendimento" value="#{outrainfoBean.outrainfo.oi_emp_pfk}" disabled="true"/>
 					
 					<p:outputLabel value="Destino das Águas Servidas: " for="cam_agua_servida_destino" />
 					<p:inputText id="cam_agua_servida_destino" value="#{outrainfoBean.outrainfo.cam_agua_servida_destino}" />
@@ -52,7 +52,7 @@
 				
 				<p:commandButton value="Voltar" action="#{outrainfoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:commandButton value="Salvar" action="#{outrainfoBean.gravar}"   ajax="false" rendered="#{outrainfoBean.view == 'add'}" icon="ui-icon-disk" />
-				<p:commandButton value="Alterar" action="#{outrainfoBean.alterar}" ajax="false" rendered="#{outrainfoBean.view == 'edit'}" icon="ui-icon-pencil" />
+				<p:commandButton value="Salvar" action="#{outrainfoBean.alterar}" ajax="false" rendered="#{outrainfoBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{outrainfoBean.deletar}"  ajax="false" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>

@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import org.gov.model.Asbama;
 import org.gov.model.Fornecedor;
 import org.gov.model.Interferencia;
+import org.gov.model.OutraInfo;
 import org.gov.model.Usuario;
 import org.gov.util.JPAUtil;
 
@@ -75,5 +77,17 @@ public class FornecedorDaoImpl implements FornecedorDao {
 
 		return ids;
 	}
+	
+	public Fornecedor pesquisar(int id) {
+		entityManager = new JPAUtil().getEntityManager();
+		entityManager.getTransaction().begin();
+		
+		Query query = entityManager.createNativeQuery("SELECT r.* FROM tb_responsavel_informacoes r WHERE r.usuario_id = " + id, Fornecedor.class);
+		Fornecedor fornecedor = (Fornecedor) query.getResultList().stream().findFirst().orElse(null); 
+		
+		entityManager.getTransaction().commit();
+		entityManager.close();
 
+		return fornecedor;
+	}
 }

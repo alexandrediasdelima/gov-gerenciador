@@ -90,7 +90,6 @@ public class UsuarioBean extends Controller  {
 		return "/usuario/index";
 	}
 
-
 	public Usuario getUsuario() {
 		return usuario;
 	}

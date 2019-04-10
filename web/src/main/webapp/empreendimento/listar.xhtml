@@ -22,25 +22,25 @@
 			<p:scrollPanel mode="native" style="width:100%">
 				<p:dataTable id="tabelaEmpreendimentos" value="#{empreendimentoBean.empreendimentos}" paginator="true" rows="10" var="empreendimento" paginatorPosition="top" resizableColumns="false" >
 					<f:facet name="header">Empreendimentos</f:facet>
-					<p:column headerText="ID">
+					<p:column headerText="ID-Empreendimento">
 						<h:outputText id="menuEmpreendimento" value="#{empreendimento.id}" style="text-decoration: underline; cursor: pointer" />
 					    <p:tieredMenu overlay="true" trigger="menuEmpreendimento" my="left top" at="left bottom" triggerEvent="click" autoDisplay="true">
 				        	<p:menuitem value="Outras Informações" action="#{outrainfoBean.redirecionarTelaCadastro(empreendimento.id)}" icon="ui-icon-bullet" />
 					    </p:tieredMenu>
 					</p:column>
-					<p:column headerText="ID Usuário (Proprietário)">
+					<p:column headerText="ID-Usuário">
 						<h:outputText value="#{empreendimento.idUsuario}" id="idUsuario" />
 					</p:column>
 					<p:column headerText="Nome da Propriedade">
 						<h:outputText value="#{empreendimento.nomeEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Área total">
+					<p:column headerText="Área Total(m2)">
 						<h:outputText value="#{empreendimento.areaTotalPropriedade} (#{empreendimento.unidadeAreaTotalPropriedade})" />
 					</p:column>
 					<p:column headerText="Endereço">
 						<h:outputText value="#{empreendimento.enderecoEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Tipo de logradouro">
+					<p:column headerText="Tipo de Logradouro">
 						<h:outputText value="#{empreendimento.tipoLogradouroEmpreendimento}" />
 					</p:column>
 					<p:column headerText="Nome">
@@ -52,7 +52,7 @@
 					<p:column headerText="Complemento">
 						<h:outputText value="#{empreendimento.complementoLogradouroEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Acesso principal">
+					<p:column headerText="Acesso Principal">
 						<h:outputText value="#{empreendimento.nomeAcessoPrincipalEmpreendimento}" />
 					</p:column>
 					<p:column headerText="Local">
@@ -64,7 +64,7 @@
 					<p:column headerText="CEP">
 						<h:outputText value="#{empreendimento.cepEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Cidade">
+					<p:column headerText="Município">
 						<h:outputText value="#{empreendimento.nomeMunicipioEmpreendimento}" />
 					</p:column>
 					<p:column headerText="Código IBGE">

@@ -98,7 +98,6 @@ public class CnarhBean extends Controller  {
 		return "/cnarh/index";
 	}
 
-
 	public Cnarh getCnarh() {
 		return cnarh;
 	}
