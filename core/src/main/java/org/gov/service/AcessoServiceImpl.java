@@ -18,7 +18,7 @@ public class AcessoServiceImpl implements AcessoService{
 
 		acessoDao = new AcessoDaoImpl();
 
-		return acessoDao.verificarAcesso(acesso);
+		return acessoDao.acesso(acesso);
 
 
 	}

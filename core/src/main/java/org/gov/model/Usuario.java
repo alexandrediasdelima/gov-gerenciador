@@ -86,11 +86,11 @@ public class Usuario implements Serializable {
 	private String apa_muni_correspondencia;
 
 	@Column(name="emp_cd_codigoibgecorrespondencia", columnDefinition="numeric")
-	private BigDecimal emp_cd_codigoibgecorrespondencia;
+	private Integer emp_cd_codigoibgecorrespondencia;
 
 	@Column(name = "emp_ds_uf")
 	private String emp_ds_uf;
-	
+
 //	@Enumerated(EnumType.STRING)
 //	@Column(name = "emp_ds_uf", columnDefinition = "emp_ds_uf_enum")
 //	@Type(type = "pgsql_enum")
@@ -235,14 +235,6 @@ public class Usuario implements Serializable {
 		this.apa_muni_correspondencia = apa_muni_correspondencia;
 	}
 
-	public BigDecimal getEmp_cd_codigoibgecorrespondencia() {
-		return emp_cd_codigoibgecorrespondencia;
-	}
-
-	public void setEmp_cd_codigoibgecorrespondencia(BigDecimal emp_cd_codigoibgecorrespondencia) {
-		this.emp_cd_codigoibgecorrespondencia = emp_cd_codigoibgecorrespondencia;
-	}
-
 	public String getEmp_ds_uf() {
 		return emp_ds_uf;
 	}
@@ -257,5 +249,14 @@ public class Usuario implements Serializable {
 
 	public void setEmp_ds_relacaopropriedade(String emp_ds_relacaopropriedade) {
 		this.emp_ds_relacaopropriedade = emp_ds_relacaopropriedade;
+	}
+
+	public Integer getEmp_cd_codigoibgecorrespondencia() {
+		return emp_cd_codigoibgecorrespondencia;
+	}
+
+	public void setEmp_cd_codigoibgecorrespondencia(
+			Integer emp_cd_codigoibgecorrespondencia) {
+		this.emp_cd_codigoibgecorrespondencia = emp_cd_codigoibgecorrespondencia;
 	}
 }

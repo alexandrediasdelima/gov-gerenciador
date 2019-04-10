@@ -1,8 +1,10 @@
 package org.gov.web.controller;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.gov.model.Regiao;
 import org.gov.model.Usuario;
 import org.gov.service.UsuarioService;
 import org.gov.service.UsuarioServiceImpl;
@@ -15,11 +17,11 @@ public class UsuarioBean extends Controller  {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private Usuario usuario;
 	private UsuarioService usuarioService;
 	private List<Usuario> usuarios;
-
+	private List<Regiao> regioes;
 
 	public UsuarioBean() {
 
@@ -44,6 +46,16 @@ public class UsuarioBean extends Controller  {
 		setView(LIST);
 		return eval(index());
 
+	}
+
+	public void atualizarMunicipios() {
+
+		setRegioes(usuarioService.buscarMunicipios(usuario.getEmp_ds_uf()));
+
+	}
+
+	public void atualizarIbge() {
+			usuario.setEmp_cd_codigoibgecorrespondencia(usuarioService.buscarIbge(usuario.getApa_muni_correspondencia()));
 	}
 
 	public String adicionarNovo() {
@@ -108,5 +120,17 @@ public class UsuarioBean extends Controller  {
 	public void setUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
+
+
+	public List<Regiao> getRegioes() {
+		return regioes;
+	}
+
+
+	public void setRegioes(List<Regiao> regioes) {
+		this.regioes = regioes;
+	}
+
+
 
 }
