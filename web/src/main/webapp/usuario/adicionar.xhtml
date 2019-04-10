@@ -65,19 +65,19 @@
 					<p:inputText id="emp_nu_cependereco" value="#{usuarioBean.usuario.emp_nu_cependereco}" />
 
 					<p:outputLabel value="Cidade" for="cidade" />
-				    <h:selectOneMenu id="cidade" value="#{usuarioBean.usuario.apa_muni_correspondencia}">
-                                   <f:selectItems value="#{usuarioBean.municipios}"
-                                                  var="municipio"
-                                                  itemLabel="#{municipio}"
-                                                  itemValue="#{municipio}" />
+				    <p:selectOneMenu id="cidade" value="#{usuarioBean.usuario.apa_muni_correspondencia}">
+                                   <f:selectItems value="#{usuarioBean.regioes}"
+                                                  var="regiao"
+                                                  itemLabel="#{regiao.municipio}"
+                                                  itemValue="#{regiao.municipio}" />
 
                               <p:ajax listener="#{usuarioBean.atualizarIbge}"
                      			 event="change" update="emp_cd_codigoibgecorrespondencia" />
-                     </h:selectOneMenu>
+                     </p:selectOneMenu>
 
 
 					<p:outputLabel value="Código IBGE" for="emp_cd_codigoibgecorrespondencia" />
-					<p:inputMask mask="?99999999" id="emp_cd_codigoibgecorrespondencia" value="#{usuarioBean.usuario.emp_cd_codigoibgecorrespondencia}" onfocus="setCursorPosition(this.el.dom, 0);" />
+					<p:inputText id="emp_cd_codigoibgecorrespondencia" disabled="true" value="#{usuarioBean.usuario.emp_cd_codigoibgecorrespondencia}" onfocus="setCursorPosition(this.el.dom, 0);" />
 
 					<p:outputLabel value="UF" for="emp_ds_uf" />
 					<p:selectOneMenu id="emp_ds_uf" value="#{usuarioBean.usuario.emp_ds_uf}" style="width:230px" required="true" requiredMessage="UF é obrigatório">

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.gov.model.Regiao;
 import org.gov.model.Usuario;
 import org.gov.service.UsuarioService;
 import org.gov.service.UsuarioServiceImpl;
@@ -20,9 +21,7 @@ public class UsuarioBean extends Controller  {
 	private Usuario usuario;
 	private UsuarioService usuarioService;
 	private List<Usuario> usuarios;
-	private List<String> municipios;
-	private String municipio;
-
+	private List<Regiao> regioes;
 
 	public UsuarioBean() {
 
@@ -51,18 +50,12 @@ public class UsuarioBean extends Controller  {
 
 	public void atualizarMunicipios() {
 
-		//Buscar no bancio os municipios pela UF
-		setMunicipios(new ArrayList<String>());
-
-		getMunicipios().add("Osasco");
-		getMunicipios().add("São paulo");
+		setRegioes(usuarioService.buscarMunicipios(usuario.getEmp_ds_uf()));
 
 	}
 
 	public void atualizarIbge() {
-
-		//buscar no banco IBGE pelo municipio
-		usuario.setEmp_cd_codigoibgecorrespondencia(new BigDecimal(10));
+			usuario.setEmp_cd_codigoibgecorrespondencia(usuarioService.buscarIbge(usuario.getApa_muni_correspondencia()));
 	}
 
 	public String adicionarNovo() {
@@ -130,23 +123,15 @@ public class UsuarioBean extends Controller  {
 	}
 
 
-	public List<String> getMunicipios() {
-		return municipios;
+	public List<Regiao> getRegioes() {
+		return regioes;
 	}
 
 
-	public void setMunicipios(List<String> municipios) {
-		this.municipios = municipios;
+	public void setRegioes(List<Regiao> regioes) {
+		this.regioes = regioes;
 	}
 
 
-	public String getMunicipio() {
-		return municipio;
-	}
-
-
-	public void setMunicipio(String municipio) {
-		this.municipio = municipio;
-	}
 
 }
