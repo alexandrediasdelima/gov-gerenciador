@@ -39,6 +39,7 @@
 			<artifactId>hibernate-agroal</artifactId>
 			<version>5.4.0.Final</version>
 			<type>pom</type>
+			<!-- Retirar este comentário quando usar no Wildfly -->
 			<!--scope>provided</scope-->
 		</dependency>
 

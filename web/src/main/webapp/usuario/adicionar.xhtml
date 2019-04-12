@@ -7,6 +7,7 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
+	
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
@@ -24,26 +25,39 @@
 					<p:inputText id="emp_nm_apelido" value="#{usuarioBean.usuario.emp_nm_apelido}" />					
 					
 					<p:outputLabel value="CPF/CNPJ:" for="emp_nu_cpfcnpj" />
-					<p:inputText id="emp_nu_tipodocumento" value="#{usuarioBean.usuario.emp_nu_tipodocumento}" rendered="false" />
 					<p:inputText id="emp_nu_cpfcnpj" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
-					
-					<p:outputLabel value="DDD:" for="emp_nu_ddd" />
-					<p:inputText id="emp_nu_ddd" value="#{usuarioBean.usuario.emp_nu_ddd}" />
-					
-					<p:outputLabel value="Telefone:" for="emp_nu_telefone" />
-					<p:inputText id="emp_nu_telefone" value="#{usuarioBean.usuario.emp_nu_telefone}" />
 					
 					<p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" />
 					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" />
 					
+					<p:outputLabel value="DDD:" for="emp_nu_ddd" />
+					<p:inputText id="emp_nu_ddd" maxlength="2" value="#{usuarioBean.usuario.emp_nu_ddd}" />
+					
+					<p:outputLabel value="Telefone:" for="emp_nu_telefone" />
+					<p:inputText id="emp_nu_telefone" value="#{usuarioBean.usuario.emp_nu_telefone}" />					
+					
 					<p:outputLabel value="Tipo Logradouro:" for="emp_ds_tp_logradouro" />
-					<p:inputText id="emp_ds_tp_logradouro" value="#{usuarioBean.usuario.emp_ds_tp_logradouro}" required="true" requiredMessage="Tipo Logradouro é obrigatório" />
+					<p:selectOneMenu id="emp_ds_tp_logradouro" value="#{usuarioBean.usuario.emp_ds_tp_logradouro}" style="width:230px" required="true" requiredMessage="Tipo Logradouro é obrigatório">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemLabel="AVENIDA" itemValue="AVENIDA" />
+						<f:selectItem itemLabel="ALAMEDA" itemValue="ALAMEDA" />
+						<f:selectItem itemLabel="CHÁCARA" itemValue="CHÁCARA" />
+						<f:selectItem itemLabel="ESTRADA" itemValue="ESTRADA" />
+						<f:selectItem itemLabel="FAZENDA" itemValue="FAZENDA" />
+						<f:selectItem itemLabel="GRANJA" itemValue="GRANJA" />
+						<f:selectItem itemLabel="PRAÇA" itemValue="PRAÇA" />
+						<f:selectItem itemLabel="RODOVIA" itemValue="RODOVIA" />
+						<f:selectItem itemLabel="RUA" itemValue="RUA" />
+						<f:selectItem itemLabel="SÍTIO" itemValue="SÍTIO" />
+						<f:selectItem itemLabel="TRAVESSA" itemValue="TRAVESSA" />
+						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="Endereço:" for="emp_ds_nm_logradouro" />
 					<p:inputText id="emp_ds_nm_logradouro" value="#{usuarioBean.usuario.emp_ds_nm_logradouro}" required="true" requiredMessage="Endereço é obrigatório"/>
 					
 					<p:outputLabel value="Número:" for="emp_nu_logradouro" />
-					<p:inputMask mask="?9999999" id="emp_nu_logradouro" value="#{usuarioBean.usuario.emp_nu_logradouro}" onfocus="setCursorPosition(this.el.dom, 0);" />
+					<p:inputMask id="emp_nu_logradouro" value="#{usuarioBean.usuario.emp_nu_logradouro}" />
 					
 					<p:outputLabel value="Complemento:" for="emp_ds_complementoendereco" />
 					<p:inputText id="emp_ds_complementoendereco" value="#{usuarioBean.usuario.emp_ds_complementoendereco}" />
@@ -85,7 +99,8 @@
 			        </p:selectOneMenu>
 			        
 			        <p:outputLabel value="Município:" for="apa_muni_correspondencia" />
-					<p:selectOneMenu id="apa_muni_correspondencia" value="#{usuarioBean.usuario.apa_muni_correspondencia}">
+					<p:selectOneMenu id="apa_muni_correspondencia" value="#{usuarioBean.usuario.apa_muni_correspondencia}" style="width:230px !important" >
+	                    <f:selectItem itemLabel="Selecione" itemValue="" />
 	                    <f:selectItems value="#{usuarioBean.regioes}"
 	                                   var="regiao"
 	                                   itemLabel="#{regiao.municipio}"
@@ -94,19 +109,30 @@
                      </p:selectOneMenu>
                      
                      <p:outputLabel value="Código IBGE:" for="emp_cd_codigoibgecorrespondencia" />
-                     <p:inputText id="emp_cd_codigoibgecorrespondencia" disabled="true" value="#{usuarioBean.usuario.emp_cd_codigoibgecorrespondencia}" onfocus="setCursorPosition(this.el.dom, 0);" />
+                     <p:inputText id="emp_cd_codigoibgecorrespondencia" disabled="true" value="#{usuarioBean.usuario.emp_cd_codigoibgecorrespondencia}" />
 
 					<p:outputLabel value="CEP:" for="emp_nu_cependereco" />
 					<p:inputText id="emp_nu_cependereco" value="#{usuarioBean.usuario.emp_nu_cependereco}" />
 					
 					<p:outputLabel value="Caixa Postal:" for="emp_nu_caixapostal" />
-					<p:inputMask mask="?9999999" id="emp_nu_caixapostal" value="#{usuarioBean.usuario.emp_nu_caixapostal}" onfocus="setCursorPosition(this.el.dom, 0);" />
+					<p:inputMask id="emp_nu_caixapostal" value="#{usuarioBean.usuario.emp_nu_caixapostal}" />
 					
 					<p:outputLabel value="Referência do Endereço:" for="emp_ds_logradouro" />
 					<p:inputText id="emp_ds_logradouro" value="#{usuarioBean.usuario.emp_ds_logradouro}" />
 					
 					<p:outputLabel value="Relação com a Propriedade:" for="emp_ds_relacaopropriedade" />
-					<p:inputText id="emp_ds_relacaopropriedade" value="#{usuarioBean.usuario.emp_ds_relacaopropriedade}" required="true" requiredMessage="Relação com a Propriedade é obrigatório"/>
+					<p:selectOneMenu id="emp_ds_relacaopropriedade" value="#{usuarioBean.usuario.emp_ds_relacaopropriedade}" style="width:230px" required="true" requiredMessage="Relação com a Propriedade é obrigatório">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemLabel="ALUGADA/ARRENDADA" itemValue="ALUGADA/ARRENDADA" />
+						<f:selectItem itemLabel="CEDIDA" itemValue="CEDIDA" />
+						<f:selectItem itemLabel="COMPRADA" itemValue="COMPRADA" />
+						<f:selectItem itemLabel="OCUPADA/INVADIDA" itemValue="OCUPADA/INVADIDA" />
+						<f:selectItem itemLabel="POSSE (COM TÍTULO)" itemValue="POSSE (COM TÍTULO)" />
+						<f:selectItem itemLabel="POSSE (SEM TÍTULO)" itemValue="POSSE (SEM TÍTULO)" />
+						<f:selectItem itemLabel="USUCAPIÃO" itemValue="USUCAPIÃO" />
+						<f:selectItem itemLabel="HERANÇA" itemValue="HERANÇA" />
+						<f:selectItem itemLabel="OUTRA" itemValue="OUTRA" />
+					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>
 				
@@ -117,4 +143,16 @@
 		</h:form>
 	</div>
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
+	<script>
+		$(function() {
+			$("#emp_ds_emailresponsavel").inputmask({alias: "email"});
+			$("#emp_nu_ddd").inputmask({alias: "numeric", mask: "99", greedy: true, })
+			$("#emp_nu_telefone").inputmask({mask: ["9999-9999", "99999-9999"], greedy: true, removeMaskOnSubmit: true})
+			$("#emp_nu_logradouro").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
+			$("#emp_nu_cependereco").inputmask({mask: "99999-999", greedy: true, removeMaskOnSubmit: true})
+			$("#emp_nu_caixapostal").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
+			})
+	</script>
+	
+	
 </ui:composition>
