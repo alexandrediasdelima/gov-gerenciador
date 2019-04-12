@@ -6,6 +6,7 @@ import org.gov.dao.EmpreendimentoDao;
 import org.gov.dao.EmpreendimentoDaoImpl;
 import org.gov.dao.UsuarioDaoImpl;
 import org.gov.model.Empreendimento;
+import org.gov.model.Regiao;
 import org.gov.model.Usuario;
 
 
@@ -47,4 +48,17 @@ public class EmpreendimentoServiceImpl implements EmpreendimentoService{
 		return empreendimentoDao.usuarios();
 	}
 
+	public List<Regiao> buscarMunicipios(String uf) {
+
+		empreendimentoDao = new EmpreendimentoDaoImpl();
+		return empreendimentoDao.buscarMunicipios(uf);
+
+	}
+
+	public Integer buscarIbge(String municipio) {
+
+		empreendimentoDao = new EmpreendimentoDaoImpl();
+		return empreendimentoDao.buscarIbge(municipio);
+	}
+	
 }

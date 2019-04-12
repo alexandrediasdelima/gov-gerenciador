@@ -34,16 +34,30 @@
 					<p:inputText id="nomeEmpreendimento" value="#{empreendimentoBean.empreendimento.nomeEmpreendimento}" />
 					
 					<p:outputLabel value="Área Total(m2):" for="areaTotal" />
-					<p:inputMask mask="?9999999999999999999" id="areaTotal" value="#{empreendimentoBean.empreendimento.areaTotalPropriedade}"  />
+					<p:inputText id="areaTotal" value="#{empreendimentoBean.empreendimento.areaTotalPropriedade}"  />
 
 					<p:outputLabel value="Unidade:" for="unidade" />
 					<p:inputText  id="unidade" value="#{empreendimentoBean.empreendimento.unidadeAreaTotalPropriedade}"  />
 
+					<p:outputLabel value="Tipo de Logradouro:" for="tipoLogradouro" />
+					<p:selectOneMenu id="tipoLogradouro" value="#{empreendimentoBean.empreendimento.tipoLogradouroEmpreendimento}" style="width:230px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemLabel="AVENIDA" itemValue="AVENIDA" />
+						<f:selectItem itemLabel="ALAMEDA" itemValue="ALAMEDA" />
+						<f:selectItem itemLabel="CHÁCARA" itemValue="CHÁCARA" />
+						<f:selectItem itemLabel="ESTRADA" itemValue="ESTRADA" />
+						<f:selectItem itemLabel="FAZENDA" itemValue="FAZENDA" />
+						<f:selectItem itemLabel="GRANJA" itemValue="GRANJA" />
+						<f:selectItem itemLabel="PRAÇA" itemValue="PRAÇA" />
+						<f:selectItem itemLabel="RODOVIA" itemValue="RODOVIA" />
+						<f:selectItem itemLabel="RUA" itemValue="RUA" />
+						<f:selectItem itemLabel="SÍTIO" itemValue="SÍTIO" />
+						<f:selectItem itemLabel="TRAVESSA" itemValue="TRAVESSA" />
+						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
+					</p:selectOneMenu>
+					
 					<p:outputLabel value="Endereço:" for="endEmpreendimento" />
 					<p:inputText id="endEmpreendimento" value="#{empreendimentoBean.empreendimento.enderecoEmpreendimento}" />
-
-					<p:outputLabel value="Tipo de Logradouro:" for="tipoLogradouro" />
-					<p:inputText  id="tipoLogradouro" value="#{empreendimentoBean.empreendimento.tipoLogradouroEmpreendimento}" />
 
 					<p:outputLabel value="Nome do Logradouro:" for="nomeLogradouro" />
 					<p:inputText id="nomeLogradouro" value="#{empreendimentoBean.empreendimento.nomeLogradouroEmpreendimento}"  />
@@ -51,8 +65,8 @@
 					<p:outputLabel value="Número:" for="numeroEmpreendimento" />
 					<p:inputText id="numeroEmpreendimento" value="#{empreendimentoBean.empreendimento.numeroLogradouroEmpreendimento}" />
 
-					<p:outputLabel value="Complemento:" for="Complemento" />
-					<p:inputText id="Complemento" value="#{empreendimentoBean.empreendimento.complementoLogradouroEmpreendimento}" />
+					<p:outputLabel value="Complemento:" for="complemento" />
+					<p:inputText id="complemento" value="#{empreendimentoBean.empreendimento.complementoLogradouroEmpreendimento}" />
 
 					<p:outputLabel value="Acesso Principal:" for="nomePrincipalEmpreendimento" />
 					<p:inputText id="nomePrincipalEmpreendimento" value="#{empreendimentoBean.empreendimento.nomeAcessoPrincipalEmpreendimento}" />
@@ -60,17 +74,24 @@
 					<p:outputLabel value="Local:" for="localEmpreendimento" />
 					<p:inputText id="localEmpreendimento" value="#{empreendimentoBean.empreendimento.localEmpreendimento}" />
 
-					<p:outputLabel value="Caixa Postal:" for="CaixaPostalEmpreendimento" />
-					<p:inputText id="CaixaPostalEmpreendimento" value="#{empreendimentoBean.empreendimento.numeroCaixaPostalEmpreendimento}" />
+					<p:outputLabel value="Caixa Postal:" for="caixaPostalEmpreendimento" />
+					<p:inputText id="caixaPostalEmpreendimento" value="#{empreendimentoBean.empreendimento.numeroCaixaPostalEmpreendimento}" />
 
 					<p:outputLabel value="CEP:" for="cep" />
 					<p:inputText id="cep" value="#{empreendimentoBean.empreendimento.cepEmpreendimento}" />
 
 					<p:outputLabel value="Município:" for="municipio" />
-					<p:inputText id="municipio" value="#{empreendimentoBean.empreendimento.nomeMunicipioEmpreendimento}" />
+					<p:selectOneMenu id="municipio" value="#{empreendimentoBean.empreendimento.nomeMunicipioEmpreendimento}" style="width:230px !important" >
+	                    <f:selectItem itemLabel="Selecione" itemValue="" />
+	                    <f:selectItems value="#{empreendimentoBean.regioes}"
+	                                   var="regiao"
+	                                   itemLabel="#{regiao.municipio}"
+	                                   itemValue="#{regiao.municipio}" />
+                        <p:ajax listener="#{empreendimentoBean.atualizarIbge}" event="change" update="codigo" />
+                     </p:selectOneMenu>
 
 					<p:outputLabel value="Código IBGE:" for="codigo" />
-					<p:inputText id="codigo" value="#{empreendimentoBean.empreendimento.ibgeMunicipioLocalizadaInterferencia}" />
+					<p:inputText id="codigo" value="#{empreendimentoBean.empreendimento.ibgeMunicipioLocalizadaInterferencia}" disabled="true" />
 
 					<p:outputLabel value="Número da Outorga:" for="outorga" />
 					<p:inputText id="outorga" value="#{empreendimentoBean.empreendimento.numeroOutorga}" />
@@ -84,4 +105,15 @@
 		</p:fieldset>
 		</h:form>
 	</div>
+		<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
+	<script>
+		$(function() {
+			$("#numeroEmpreendimento").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true })
+			$("#cep").inputmask({mask: "99999-999", greedy: true, removeMaskOnSubmit: true })
+			$("#caixaPostalEmpreendimento").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true })
+			
+			$("#areaTotal").inputmask({mask: "9[9][9][9][9][9][9].9[9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9]", greedy: false, clearMaskOnLostFocus: true })
+			
+		})
+	</script>
 </ui:composition>

@@ -99,7 +99,8 @@ public class UsuarioDaoImpl implements UsuarioDao {
 		Query query = entityManager.createQuery("Select r.codIbge from Regiao r where r.municipio =:municipio");
 		query.setParameter("municipio", apa_muni_correspondencia);
 
-		Integer codigo = (Integer) query.getSingleResult();
+		Integer codigo = (Integer) query.getResultList().stream().findFirst().orElse(0);
+		//query.getSingleResult();
 
 		entityManager.getTransaction().commit();
 		entityManager.close();

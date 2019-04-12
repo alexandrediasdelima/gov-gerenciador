@@ -63,7 +63,7 @@ public class Empreendimento implements Serializable {
 	private String nomeMunicipioEmpreendimento;
 
 	@Column(name="ing_nu_ibgemunicipio")
-	private String ibgeMunicipioLocalizadaInterferencia;
+	private Integer ibgeMunicipioLocalizadaInterferencia;
 
 	@Column(name="out_nu_processo_ana")
 	private String numeroOutorga;
@@ -191,12 +191,12 @@ public class Empreendimento implements Serializable {
 		this.nomeMunicipioEmpreendimento = nomeMunicipioEmpreendimento;
 	}
 
-	public String getIbgeMunicipioLocalizadaInterferencia() {
+	public Integer getIbgeMunicipioLocalizadaInterferencia() {
 		return ibgeMunicipioLocalizadaInterferencia;
 	}
 
 	public void setIbgeMunicipioLocalizadaInterferencia(
-			String ibgeMunicipioLocalizadaInterferencia) {
+			Integer ibgeMunicipioLocalizadaInterferencia) {
 		this.ibgeMunicipioLocalizadaInterferencia = ibgeMunicipioLocalizadaInterferencia;
 	}
 

@@ -67,7 +67,7 @@
 					
 					<p:outputLabel value="UF:" for="emp_ds_uf" />
 					<p:selectOneMenu id="emp_ds_uf" value="#{usuarioBean.usuario.emp_ds_uf}" style="width:230px" required="true" requiredMessage="UF é obrigatório">
-						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemLabel="Selecione" itemValue=" " />
 						<f:selectItem itemLabel="AC" itemValue="AC" />
 						<f:selectItem itemLabel="AL" itemValue="AL" />
 						<f:selectItem itemLabel="AM" itemValue="AM" />
@@ -100,7 +100,7 @@
 			        
 			        <p:outputLabel value="Município:" for="apa_muni_correspondencia" />
 					<p:selectOneMenu id="apa_muni_correspondencia" value="#{usuarioBean.usuario.apa_muni_correspondencia}" style="width:230px !important" >
-	                    <f:selectItem itemLabel="Selecione" itemValue="" />
+	                    <f:selectItem itemLabel="Selecione" itemValue=" " />
 	                    <f:selectItems value="#{usuarioBean.regioes}"
 	                                   var="regiao"
 	                                   itemLabel="#{regiao.municipio}"

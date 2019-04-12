@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.gov.model.Empreendimento;
+import org.gov.model.Regiao;
 import org.gov.model.Usuario;
 import org.gov.service.EmpreendimentoService;
 import org.gov.service.EmpreendimentoServiceImpl;
@@ -25,7 +26,8 @@ public class EmpreendimentoBean extends Controller  {
 	private EmpreendimentoService empreendimentoService;
 	private List<Empreendimento> empreendimentos;
 	private List<Usuario> usuarios;
-
+	private List<Regiao> regioes;
+	
 	public EmpreendimentoBean() {
 
 		setEmpreendimento(new Empreendimento());
@@ -39,13 +41,14 @@ public class EmpreendimentoBean extends Controller  {
 		setView(ADD);
 		limparForm();
 		this.setUsuarios(empreendimentoService.usuarios());
+		this.setRegioes(empreendimentoService.buscarMunicipios("PE"));
 		return eval(index());
 	}
 
 	public String telaEditar(Empreendimento empreendimento) {
-
-		this.empreendimento = empreendimento;
 		setView(EDIT);
+		this.empreendimento = empreendimento;
+		this.setRegioes(empreendimentoService.buscarMunicipios("PE"));
 		return eval(index());
 	}
 
@@ -108,6 +111,14 @@ public class EmpreendimentoBean extends Controller  {
 		return eval(index());
 	}
 
+	public void atualizarMunicipios() {
+		setRegioes(empreendimentoService.buscarMunicipios("PE"));
+	}
+	
+	public void atualizarIbge() {
+		empreendimento.setIbgeMunicipioLocalizadaInterferencia(empreendimentoService.buscarIbge(empreendimento.getNomeMunicipioEmpreendimento()));
+	}
+	
 	public Empreendimento getEmpreendimento() {
 		return empreendimento;
 	}
@@ -132,5 +143,14 @@ public class EmpreendimentoBean extends Controller  {
 		this.usuarios = usuarios;
 	}
 
+	public List<Regiao> getRegioes() {
+		return regioes;
+	}
+
+	public void setRegioes(List<Regiao> regioes) {
+		this.regioes = regioes;
+	}
+
+	
 
 }

@@ -49,33 +49,30 @@ public class UsuarioBean extends Controller  {
 	}
 
 	public void atualizarMunicipios() {
-
 		setRegioes(usuarioService.buscarMunicipios(usuario.getEmp_ds_uf()));
-
 	}
 
 	public void atualizarIbge() {
-			usuario.setEmp_cd_codigoibgecorrespondencia(usuarioService.buscarIbge(usuario.getApa_muni_correspondencia()));
+		usuario.setEmp_cd_codigoibgecorrespondencia(usuarioService.buscarIbge(usuario.getApa_muni_correspondencia()));
 	}
 
 	public String adicionarNovo() {
 		setView(ADD);
 		limparForm();
+		this.setRegioes(usuarioService.buscarMunicipios(usuario.getEmp_ds_uf()));
 		return eval(index());
 	}
 
 	public String telaEditar(Usuario usuario) {
-
-		this.usuario = usuario;
 		setView(EDIT);
+		this.usuario = usuario;
+		this.setRegioes(usuarioService.buscarMunicipios(usuario.getEmp_ds_uf()));
 		return eval(index());
 	}
 
 	public String editar() {
-
 		usuarioService.editar(usuario);
 		usuarios();
-
 		return eval(index());
 	}
 

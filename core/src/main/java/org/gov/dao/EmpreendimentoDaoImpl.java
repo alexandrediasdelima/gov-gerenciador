@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import org.gov.model.Asbama;
 import org.gov.model.Empreendimento;
 import org.gov.model.Interferencia;
+import org.gov.model.Regiao;
 import org.gov.model.Usuario;
 import org.gov.util.JPAUtil;
 
@@ -76,6 +77,38 @@ public class EmpreendimentoDaoImpl implements EmpreendimentoDao {
 		return usuarios;
 	}
 
+	public List<Regiao> buscarMunicipios(String uf) {
 
+		entityManager.getTransaction().begin();
+
+		Query query = entityManager.createQuery("Select r from Regiao r where r.uf =:uf");
+		query.setParameter("uf", uf);
+
+		List<Regiao> regioes = query.getResultList();
+
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return regioes;
+
+	}
+
+
+
+	public Integer buscarIbge(String municipio) {
+
+		entityManager.getTransaction().begin();
+
+		Query query = entityManager.createQuery("Select r.codIbge from Regiao r where r.municipio =:municipio");
+		query.setParameter("municipio", municipio);
+
+		Integer codigo = (Integer) query.getResultList().stream().findFirst().orElse(0); 
+		//query.getSingleResult();
+
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return codigo;
+	}
 
 }
