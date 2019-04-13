@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:core="http://faces.experian.com/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:cc="http://java.sun.com/jsf/composite/components"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+	<composite:interface>
+		<composite:attribute name="value"></composite:attribute>
+		<composite:attribute name="id"></composite:attribute>
+	</composite:interface>
+
+	<composite:implementation>
+		<h:panelGroup id="unicoCpf">
+			<p:inputMask
+				mask="?999.999.999-99"
+				value="#{cc.attrs.value}"
+				id="#{cc.attrs.id}"
+				rendered="#{cc.attrs.rendered}"
+			   onblur="completeCPF(this);">
+			</p:inputMask>
+		</h:panelGroup>
+
+		<script type="text/javascript">
+
+		function completeCPF(input){
+
+			var cpf = $(input).val().replace(/[\._-]/g, '');
+
+			if(cpf.length > 0){
+
+				while( cpf.length != 11){
+					cpf = "0" + cpf;
+				}
+
+				$(input).val(cpf);
+			}
+		}
+	</script>
+	</composite:implementation>
+</ui:composition>

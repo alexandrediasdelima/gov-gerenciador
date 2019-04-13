@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:core="http://faces.experian.com/core"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:p="http://primefaces.org/ui">
+
+	<composite:interface>
+		<composite:attribute name="value"></composite:attribute>
+	</composite:interface>
+
+	<composite:implementation>
+
+		<p:inputMask mask="?99.999.999/9999-99"
+			value="#{cc.attrs.value}"
+			id="#{cc.attrs.id}"
+			rendered="#{cc.attrs.rendered}"
+			onblur="formataCNPJ(this.value);">
+		</p:inputMask>
+
+		<script type="text/javascript">
+
+			function formataCNPJ(cnpj) {
+
+				cnpj = formatacaoCNPJ(cnpj);
+				$('.inputText').val(cnpj);
+
+			}
+
+
+			$(document).ready(function() {
+			    $(document).keyup(function(event) {
+			        if (event.keyCode == 13) {
+			        	$("#buttonSubmit").click();
+			        }
+			    })
+			 });
+
+		</script>
+
+	</composite:implementation>
+</ui:composition>

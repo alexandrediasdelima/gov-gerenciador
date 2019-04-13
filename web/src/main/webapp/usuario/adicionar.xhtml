@@ -7,7 +7,7 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	
+
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
@@ -20,22 +20,31 @@
 				<h:panelGrid columns="4" style="border: 0px solid;">
 					<p:outputLabel value="Nome:" for="emp_nm_usuario" />
 					<p:inputText id="emp_nm_usuario" value="#{usuarioBean.usuario.emp_nm_usuario}" />
-					
+
 					<p:outputLabel value="Apelido:" for="emp_nm_apelido" />
-					<p:inputText id="emp_nm_apelido" value="#{usuarioBean.usuario.emp_nm_apelido}" />					
-					
-					<p:outputLabel value="CPF/CNPJ:" for="emp_nu_cpfcnpj" />
-					<p:inputText id="emp_nu_cpfcnpj" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
-					
+					<p:inputText id="emp_nm_apelido" value="#{usuarioBean.usuario.emp_nm_apelido}" />
+
+					<p:outputLabel value="Selecione CPF ou CNPJ" for="documento" />
+					<p:selectOneRadio value="#{usuarioBean.tipoDocumento}" id="documento">
+								<f:selectItem itemLabel="CPF" itemValue="cpf" />
+								<f:selectItem itemLabel="CNPJ" itemValue="cnpj" />
+					<p:ajax listener="#{usuarioBean.atualizaTipoDocumento}" event="change" update="@form" immediate="true"/>
+					</p:selectOneRadio>
+
 					<p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" />
 					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" />
-					
+
+					<p:outputLabel value="CPF/CNPJ:" for="cnpj" />
+
+					<components:cnpj id="cnpj" rendered="#{usuarioBean.tipoDocumento eq 'cnpj'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
+					<components:cpf id="cpf" rendered="#{usuarioBean.tipoDocumento eq 'cpf'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
+
 					<p:outputLabel value="DDD:" for="emp_nu_ddd" />
 					<p:inputText id="emp_nu_ddd" maxlength="2" value="#{usuarioBean.usuario.emp_nu_ddd}" />
-					
+
 					<p:outputLabel value="Telefone:" for="emp_nu_telefone" />
-					<p:inputText id="emp_nu_telefone" value="#{usuarioBean.usuario.emp_nu_telefone}" />					
-					
+					<p:inputText id="emp_nu_telefone" value="#{usuarioBean.usuario.emp_nu_telefone}" />
+
 					<p:outputLabel value="Tipo Logradouro:" for="emp_ds_tp_logradouro" />
 					<p:selectOneMenu id="emp_ds_tp_logradouro" value="#{usuarioBean.usuario.emp_ds_tp_logradouro}" style="width:230px" required="true" requiredMessage="Tipo Logradouro é obrigatório">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -52,19 +61,19 @@
 						<f:selectItem itemLabel="TRAVESSA" itemValue="TRAVESSA" />
 						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Endereço:" for="emp_ds_nm_logradouro" />
 					<p:inputText id="emp_ds_nm_logradouro" value="#{usuarioBean.usuario.emp_ds_nm_logradouro}" required="true" requiredMessage="Endereço é obrigatório"/>
-					
+
 					<p:outputLabel value="Número:" for="emp_nu_logradouro" />
 					<p:inputMask id="emp_nu_logradouro" value="#{usuarioBean.usuario.emp_nu_logradouro}" />
-					
+
 					<p:outputLabel value="Complemento:" for="emp_ds_complementoendereco" />
 					<p:inputText id="emp_ds_complementoendereco" value="#{usuarioBean.usuario.emp_ds_complementoendereco}" />
-					
+
 					<p:outputLabel value="Bairro:" for="emp_ds_bairrodistrito" />
 					<p:inputText id="emp_ds_bairrodistrito" value="#{usuarioBean.usuario.emp_ds_bairrodistrito}" required="true" requiredMessage="Bairro é obrigatório"/>
-					
+
 					<p:outputLabel value="UF:" for="emp_ds_uf" />
 					<p:selectOneMenu id="emp_ds_uf" value="#{usuarioBean.usuario.emp_ds_uf}" style="width:230px" required="true" requiredMessage="UF é obrigatório">
 						<f:selectItem itemLabel="Selecione" itemValue=" " />
@@ -97,7 +106,7 @@
 						<f:selectItem itemLabel="TO" itemValue="TO" />
 						<p:ajax listener="#{usuarioBean.atualizarMunicipios}" event="change" update="apa_muni_correspondencia" />
 			        </p:selectOneMenu>
-			        
+
 			        <p:outputLabel value="Município:" for="apa_muni_correspondencia" />
 					<p:selectOneMenu id="apa_muni_correspondencia" value="#{usuarioBean.usuario.apa_muni_correspondencia}" style="width:230px !important" >
 	                    <f:selectItem itemLabel="Selecione" itemValue=" " />
@@ -107,19 +116,19 @@
 	                                   itemValue="#{regiao.municipio}" />
                         <p:ajax listener="#{usuarioBean.atualizarIbge}" event="change" update="emp_cd_codigoibgecorrespondencia" />
                      </p:selectOneMenu>
-                     
+
                      <p:outputLabel value="Código IBGE:" for="emp_cd_codigoibgecorrespondencia" />
                      <p:inputText id="emp_cd_codigoibgecorrespondencia" disabled="true" value="#{usuarioBean.usuario.emp_cd_codigoibgecorrespondencia}" />
 
 					<p:outputLabel value="CEP:" for="emp_nu_cependereco" />
 					<p:inputText id="emp_nu_cependereco" value="#{usuarioBean.usuario.emp_nu_cependereco}" />
-					
+
 					<p:outputLabel value="Caixa Postal:" for="emp_nu_caixapostal" />
 					<p:inputMask id="emp_nu_caixapostal" value="#{usuarioBean.usuario.emp_nu_caixapostal}" />
-					
+
 					<p:outputLabel value="Referência do Endereço:" for="emp_ds_logradouro" />
 					<p:inputText id="emp_ds_logradouro" value="#{usuarioBean.usuario.emp_ds_logradouro}" />
-					
+
 					<p:outputLabel value="Relação com a Propriedade:" for="emp_ds_relacaopropriedade" />
 					<p:selectOneMenu id="emp_ds_relacaopropriedade" value="#{usuarioBean.usuario.emp_ds_relacaopropriedade}" style="width:230px" required="true" requiredMessage="Relação com a Propriedade é obrigatório">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -135,7 +144,7 @@
 					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>
-				
+
 				<p:commandButton value="Salvar" action="#{usuarioBean.gravar}" ajax="false" rendered="#{usuarioBean.view == 'add'}" icon=" ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{usuarioBean.editar}" ajax="false" rendered="#{usuarioBean.view == 'edit'}" icon=" ui-icon-pencil" />
 			</p:scrollPanel>
@@ -153,6 +162,6 @@
 			$("#emp_nu_caixapostal").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
 			})
 	</script>
-	
-	
+
+
 </ui:composition>

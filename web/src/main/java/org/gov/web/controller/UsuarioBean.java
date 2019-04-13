@@ -22,6 +22,7 @@ public class UsuarioBean extends Controller  {
 	private UsuarioService usuarioService;
 	private List<Usuario> usuarios;
 	private List<Regiao> regioes;
+	private String tipoDocumento = "cpf";
 
 	public UsuarioBean() {
 
@@ -54,6 +55,15 @@ public class UsuarioBean extends Controller  {
 
 	public void atualizarIbge() {
 		usuario.setEmp_cd_codigoibgecorrespondencia(usuarioService.buscarIbge(usuario.getApa_muni_correspondencia()));
+	}
+
+	public void atualizaTipoDocumento() {
+
+		if("cnpj".equals(this.tipoDocumento)) {
+			this.tipoDocumento = "cnpj";
+		}else {
+			this.tipoDocumento = "cpf";
+		}
 	}
 
 	public String adicionarNovo() {
@@ -126,6 +136,16 @@ public class UsuarioBean extends Controller  {
 
 	public void setRegioes(List<Regiao> regioes) {
 		this.regioes = regioes;
+	}
+
+
+	public String getTipoDocumento() {
+		return tipoDocumento;
+	}
+
+
+	public void setTipoDocumento(String tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
 	}
 
 
