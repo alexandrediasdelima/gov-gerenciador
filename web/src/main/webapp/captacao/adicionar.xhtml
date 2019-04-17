@@ -23,13 +23,18 @@
 					<p:inputText id="cap_int_pfk" value="#{captacaoBean.captacao.cap_int_pfk}" disabled="true" />
 	
 					<p:outputLabel value="Informações Adicionais de Consumo: " for="cam_info_adici_consumo" />
-					<p:inputText id="cam_info_adici_consumo" maxlength="50" value="#{captacaoBean.captacao.cam_info_adici_consumo}" />
-	
+					<p:selectOneMenu id="cam_info_adici_consumo" value="#{captacaoBean.captacao.cam_info_adici_consumo}" style="width:230px">
+						<f:selectItem itemLabel="CONSUMO HUMANO" itemValue="CONSUMO HUMANO" />
+						<f:selectItem itemLabel="PECUÁRIA" itemValue="PECUÁRIA" />
+						<f:selectItem itemLabel="INDÚSTRIA" itemValue="INDÚSTRIA" />
+						<f:selectItem itemLabel="NENHUM OUTRO USO" itemValue="NENHUM OUTRO USO" />
+					</p:selectOneMenu>
+					
 					<p:outputLabel value="Subtipo da Captação" for="int_tsu_cd" />
 					<p:selectOneMenu id="int_tsu_cd" value="#{captacaoBean.captacao.int_tsu_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Superficial" itemLabel="Superficial" />
-						<f:selectItem itemValue="Subterrânea" itemLabel="Subterrânea" />						
+						<f:selectItem itemValue="SUPERFICIAL" itemLabel="SUPERFICIAL" />
+						<f:selectItem itemValue="SUBTERRÂNEA" itemLabel="SUBTERRÂNEA" />						
 					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>

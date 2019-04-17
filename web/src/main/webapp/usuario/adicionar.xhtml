@@ -24,18 +24,14 @@
 					<p:outputLabel value="Apelido:" for="emp_nm_apelido" />
 					<p:inputText id="emp_nm_apelido" value="#{usuarioBean.usuario.emp_nm_apelido}" />
 
-					<p:outputLabel value="Selecione CPF ou CNPJ" for="documento" />
-					<p:selectOneRadio value="#{usuarioBean.tipoDocumento}" id="documento">
-								<f:selectItem itemLabel="CPF" itemValue="cpf" />
-								<f:selectItem itemLabel="CNPJ" itemValue="cnpj" />
-					<p:ajax listener="#{usuarioBean.atualizaTipoDocumento}" event="change" update="@form" immediate="true"/>
-					</p:selectOneRadio>
-
 					<p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" />
 					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" />
 
-					<p:outputLabel value="CPF/CNPJ:" for="cnpj" />
-
+					<p:selectOneRadio value="#{usuarioBean.tipoDocumento}" id="documento">
+								<f:selectItem itemLabel="CPF" itemValue="cpf" />
+								<f:selectItem itemLabel="CNPJ:" itemValue="cnpj" />
+					<p:ajax listener="#{usuarioBean.atualizaTipoDocumento}" event="change" update="@form" immediate="true"/>
+					</p:selectOneRadio>
 					<components:cnpj id="cnpj" rendered="#{usuarioBean.tipoDocumento eq 'cnpj'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
 					<components:cpf id="cpf" rendered="#{usuarioBean.tipoDocumento eq 'cpf'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
 

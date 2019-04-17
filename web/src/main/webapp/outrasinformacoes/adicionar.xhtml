@@ -22,28 +22,63 @@
 					<p:inputText id="idEmpreendimento" value="#{outrainfoBean.outrainfo.oi_emp_pfk}" disabled="true"/>
 					
 					<p:outputLabel value="Destino das Águas Servidas: " for="cam_agua_servida_destino" />
-					<p:inputText id="cam_agua_servida_destino" value="#{outrainfoBean.outrainfo.cam_agua_servida_destino}" />
+					<p:selectOneMenu id="cam_agua_servida_destino" value="#{outrainfoBean.outrainfo.cam_agua_servida_destino}" style="width:230px">
+						<f:selectItem itemLabel="FOSSA NEGRA" itemValue="FOSSA NEGRA" />
+						<f:selectItem itemLabel="FOSSA SECA" itemValue="FOSSA SECA" />
+						<f:selectItem itemLabel="FOSSA SÉPTICA" itemValue="FOSSA SÉPTICA" />
+						<f:selectItem itemLabel="LANÇAMENTO EM CURSO D'ÁGUA" itemValue="LANÇAMENTO EM CURSO D'ÁGUA" />
+						<f:selectItem itemLabel="LANÇAMENTO NO MEIO FIO" itemValue="LANÇAMENTO NO MEIO FIO" />
+						<f:selectItem itemLabel="LANÇAMENTO NO SOLO" itemValue="LANÇAMENTO NO SOLO" />
+						<f:selectItem itemLabel="REDE PÚBLICA" itemValue="REDE PÚBLICA" />
+						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="Possui Captação de Água Subterrânea: " for="cam_captacao_agua_subt" />
-					<p:selectBooleanCheckbox id="cam_captacao_agua_subt" value="#{outrainfoBean.outrainfo.cam_captacao_agua_subt}" />
+					<p:selectOneMenu id="cam_captacao_agua_subt" value="#{outrainfoBean.outrainfo.cam_captacao_agua_subt}" style="width:230px">
+						<f:selectItem itemLabel="NÃO" itemValue="false" />
+						<f:selectItem itemLabel="SIM" itemValue="true" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="Tipo do Poço: " for="cam_tp_poco" />
-					<p:inputText id="cam_tp_poco" value="#{outrainfoBean.outrainfo.cam_tp_poco}" />
+					<p:selectOneMenu id="cam_tp_poco" value="#{outrainfoBean.outrainfo.cam_tp_poco}" style="width:230px">
+						<f:selectItem itemLabel="CACIMBA" itemValue="CACIMBA" />
+						<f:selectItem itemLabel="TUBULAR" itemValue="TUBULAR" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="Profundidade do Poço: " for="cam_profundidade_poco" />
-					<p:inputText id="cam_profundidade_poco" value="#{outrainfoBean.outrainfo.cam_profundidade_poco}" />
+					<p:selectOneMenu id="cam_profundidade_poco" value="#{outrainfoBean.outrainfo.cam_profundidade_poco}" style="width:230px">
+						<f:selectItem itemLabel="MENOR QUE 5 METROS" itemValue="MENOR QUE 5 METROS" />
+						<f:selectItem itemLabel="DE 5 A 10 MESTROS" itemValue="DE 5 A 10 MESTROS" />
+						<f:selectItem itemLabel="DE 10 A 20 METROS" itemValue="DE 10 A 20 METROS" />
+						<f:selectItem itemLabel="DE 20 A 50 METROS" itemValue="DE 20 A 50 METROS" />
+						<f:selectItem itemLabel="MAIOR QUE 50 METROS" itemValue="MAIOR QUE 50 METROS" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="Profundidade Total: " for="asb_nu_profundidadefinal" />
 					<p:inputText id="asb_nu_profundidadefinal" value="#{outrainfoBean.outrainfo.asb_nu_profundidadefinal}" />
 					
 					<p:outputLabel value="Utilização do Poço: " for="cam_utilizacao_poco" />
-					<p:inputText id="cam_utilizacao_poco" value="#{outrainfoBean.outrainfo.cam_utilizacao_poco}" />
+					<p:selectOneMenu id="cam_utilizacao_poco" value="#{outrainfoBean.outrainfo.cam_utilizacao_poco}" style="width:230px">
+						<f:selectItem itemLabel="POÇO ATIVO" itemValue="POÇO ATIVO" />
+						<f:selectItem itemLabel="POÇO SECO" itemValue="POÇO SECO" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="CAR Realizado: " for="cam_realizacao_car" />
-					<p:inputText id="cam_realizacao_car" value="#{outrainfoBean.outrainfo.cam_realizacao_car}" />
+					<p:selectOneMenu id="cam_realizacao_car" value="#{outrainfoBean.outrainfo.cam_realizacao_car}" style="width:230px">
+						<f:selectItem itemLabel="NÃO SE APLICA" itemValue="NÃO SE APLICA" />
+						<f:selectItem itemLabel="REALIZADO" itemValue="REALIZADO" />
+						<f:selectItem itemLabel="NÃO REALIZADO" itemValue="NÃO REALIZADO" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="Captações Complementares: " for="cam_captacoes_comple" />
-					<p:inputText id="cam_captacoes_comple" value="#{outrainfoBean.outrainfo.cam_captacoes_comple}" />
+					<p:selectOneMenu id="cam_captacoes_comple" value="#{outrainfoBean.outrainfo.cam_captacoes_comple}" style="width:230px">
+						<f:selectItem itemLabel="MANANCIAL NÃO CARTOGRAFADOS" itemValue="MANANCIAL NÃO CARTOGRAFADOS" />
+						<f:selectItem itemLabel="NÃO EXISTE CAPTAÇÃO COMPLEMENTAR" itemValue="NÃO EXISTE CAPTAÇÃO COMPLEMENTAR" />
+						<f:selectItem itemLabel="NASCENTE" itemValue="NASCENTE" />
+						<f:selectItem itemLabel="POÇO" itemValue="POÇO" />
+						<f:selectItem itemLabel="REDE PÚBLICA" itemValue="REDE PÚBLICA" />
+						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="Planos Futuros para Captação/Lançamento: " for="cam_capta_lanca_futuro" />
 					<p:inputText id="cam_capta_lanca_futuro" value="#{outrainfoBean.outrainfo.cam_capta_lanca_futuro}" />

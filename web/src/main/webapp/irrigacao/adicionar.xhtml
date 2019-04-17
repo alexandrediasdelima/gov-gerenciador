@@ -28,230 +28,233 @@
 					<p:inputText id="sir_ar_irrigada_uni" maxlength="50" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_uni}" />
 					
 					<p:outputLabel value="Possui Outra Cultura Irrigada: " for="sir_ar_irrigada_outra" />
-					<p:selectBooleanCheckbox id="sir_ar_irrigada_outra" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra}" />
+					<p:selectOneMenu id="sir_ar_irrigada_outra" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra}" style="width:230px">
+						<f:selectItem itemLabel="NÃO" itemValue="false" />
+						<f:selectItem itemLabel="SIM" itemValue="true" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência: " for="sir_tsi_cd" />
 					<p:selectOneMenu id="sir_tsi_cd" value="#{irrigacaoBean.irrigacao.sir_tsi_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Sulcos abertos em desnível" itemLabel="Sulcos abertos em desnível" />
-						<f:selectItem itemValue="Inundação permanente (diques em nível)" itemLabel="Inundação permanente (diques em nível)" />
-						<f:selectItem itemValue="Aspersão por sistema convencional" itemLabel="Aspersão por sistema convencional" />
-						<f:selectItem itemValue="Aspersão por sistema autopropelido" itemLabel="Aspersão por sistema autopropelido" />
-						<f:selectItem itemValue="Aspersão por sistema pivô central" itemLabel="Aspersão por sistema pivô central" />
-						<f:selectItem itemValue="Gotejamento" itemLabel="Gotejamento" />
-						<f:selectItem itemValue="Micro aspersão" itemLabel="Micro aspersão" />
-						<f:selectItem itemValue="Tubos perfurados (tripa)" itemLabel="Tubos perfurados (tripa)" />
-						<f:selectItem itemValue="Sulcos interligados em bacias" itemLabel="Sulcos interligados em bacias" />
-						<f:selectItem itemValue="Sub irrigação" itemLabel="Sub irrigação" />
-						<f:selectItem itemValue="Aspersão por sistema pivô central com LEPA" itemLabel="Aspersão por sistema pivô central com LEPA" />
-						<f:selectItem itemValue="Aspersão por canhão hidráulico" itemLabel="Aspersão por canhão hidráulico" />
-						<f:selectItem itemValue="Aspersão por sistema deslocamento linear" itemLabel="Aspersão por sistema deslocamento linear" />
-						<f:selectItem itemValue="Aspersão por sistema em malha" itemLabel="Aspersão por sistema em malha" />
-						<f:selectItem itemValue="Aspersão por sistema pivô central rebocável" itemLabel="Aspersão por sistema pivô central rebocável" />
-						<f:selectItem itemValue="Caminhão regadeira" itemLabel="Caminhão regadeira" />
-						<f:selectItem itemValue="Gotejamento subterrâneo, tubo poroso" itemLabel="Gotejamento subterrâneo, tubo poroso" />
-						<f:selectItem itemValue="Sulcos fechados" itemLabel="Sulcos fechados" />
-						<f:selectItem itemValue="Inundação temporária (diques em desnível)" itemLabel="Inundação temporária (diques em desnível)" />
+						<f:selectItem itemLabel="ASPERSÃO POR CANHÃO HIDRÁULICO" itemValue="12" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA AUTOPROPELIDO" itemValue="4" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA CONVENCIONAL" itemValue="3" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA DESLOCAMENTO LINEAR" itemValue="13" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA EM MALHA" itemValue="14" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA PIVÔ CENTRAL" itemValue="5" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA PIVÔ CENTRAL COM LEPA" itemValue="11" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA PIVÔ CENTRAL REBOCÁVEL" itemValue="15" />
+						<f:selectItem itemLabel="CAMINHÃO REGADEIRA" itemValue="16" />
+						<f:selectItem itemLabel="GOTEJAMENTO" itemValue="6" />
+						<f:selectItem itemLabel="GOTEJAMENTO SUBTERRÂNEO - TUBO POROSO" itemValue="17" />
+						<f:selectItem itemLabel="INUNDAÇÃO PERMANENTE (DIQUES EM NÍVEL)" itemValue="2" />
+						<f:selectItem itemLabel="INUNDAÇÃO TEMPORÁRIA (DIQUES EM DESNÍVEL)" itemValue="19" />
+						<f:selectItem itemLabel="MICRO-ASPERSÃO" itemValue="7" />
+						<f:selectItem itemLabel="SUB-IRRIGAÇÃO" itemValue="10" />
+						<f:selectItem itemLabel="SULCOS ABERTOS EM DESNÍVEL" itemValue="1" />
+						<f:selectItem itemLabel="SULCOS FECHADOS" itemValue="18" />
+						<f:selectItem itemLabel="SULCOS INTERLIGADOS EM BACIAS" itemValue="9" />
+						<f:selectItem itemLabel="TUBOS PERFURADOS (TRIPA)" itemValue="8" />
 					</p:selectOneMenu>
 					
 					<p:outputLabel value="Identificador do Tipo de Cultura: " for="sir_tct_cd" />
 					<p:selectOneMenu id="sir_tct_cd" value="#{irrigacaoBean.irrigacao.sir_tct_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Abacate sem cobertura de chão" itemLabel="Abacate sem cobertura de chão" />
-						<f:selectItem itemValue="Abacaxi (com cobertura de gramíneas)" itemLabel="Abacaxi (com cobertura de gramíneas)" />
-						<f:selectItem itemValue="Abacaxi (solo limpo)" itemLabel="Abacaxi (solo limpo)" />
-						<f:selectItem itemValue="Abiu" itemLabel="Abiu" />
-						<f:selectItem itemValue="Abóbora" itemLabel="Abóbora" />
-						<f:selectItem itemValue="Abobrinha" itemLabel="Abobrinha" />
-						<f:selectItem itemValue="Açaí" itemLabel="Açaí" />
-						<f:selectItem itemValue="Acerola" itemLabel="Acerola" />
-						<f:selectItem itemValue="Aipim" itemLabel="Aipim" />
-						<f:selectItem itemValue="Aipo" itemLabel="Aipo" />
-						<f:selectItem itemValue="Alcachofras" itemLabel="Alcachofras" />
-						<f:selectItem itemValue="Alface" itemLabel="Alface" />
-						<f:selectItem itemValue="Alfafa (feno ciclo individual de corte)" itemLabel="Alfafa (feno ciclo individual de corte)" />
-						<f:selectItem itemValue="Alfafa (feno vários cortes feitos médios)" itemLabel="Alfafa (feno vários cortes feitos médios)" />
-						<f:selectItem itemValue="Alfafa (para semente)" itemLabel="Alfafa (para semente)" />
-						<f:selectItem itemValue="Algaroba" itemLabel="Algaroba" />
-						<f:selectItem itemValue="Algodão" itemLabel="Algodão" />
-						<f:selectItem itemValue="Alho" itemLabel="Alho" />
-						<f:selectItem itemValue="Ameixa" itemLabel="Ameixa" />
-						<f:selectItem itemValue="Amêndoas (sem cobertura de chão)" itemLabel="Amêndoas (sem cobertura de chão)" />
-						<f:selectItem itemValue="Amendoim" itemLabel="Amendoim" />
-						<f:selectItem itemValue="Amora mirtilo (arbustos)" itemLabel="Amora mirtilo (arbustos)" />
-						<f:selectItem itemValue="Araça" itemLabel="Araça" />
-						<f:selectItem itemValue="Arroz" itemLabel="Arroz" />
-						<f:selectItem itemValue="Aspargos" itemLabel="Aspargos" />
-						<f:selectItem itemValue="Atemoia" itemLabel="Atemoia" />
-						<f:selectItem itemValue="Aveia" itemLabel="Aveia" />
-						<f:selectItem itemValue="Banana (1º ano)" itemLabel="Banana (1º ano)" />
-						<f:selectItem itemValue="Banana (2º ano)" itemLabel="Banana (2º ano)" />
-						<f:selectItem itemValue="Banhados com taboas juncos  com geadas" itemLabel="Banhados com taboas juncos  com geadas" />
-						<f:selectItem itemValue="Banhados com taboas juncos  sem geadas" itemLabel="Banhados com taboas juncos  sem geadas" />
-						<f:selectItem itemValue="Banhados vegetação baixa sem geadas" itemLabel="Banhados vegetação baixa sem geadas" />
-						<f:selectItem itemValue="Batata" itemLabel="Batata" />
-						<f:selectItem itemValue="Batata doce" itemLabel="Batata doce" />
-						<f:selectItem itemValue="Batatinha" itemLabel="Batatinha" />
-						<f:selectItem itemValue="Beringela" itemLabel="Beringela" />
-						<f:selectItem itemValue="Beterraba açucareira" itemLabel="Beterraba açucareira" />
-						<f:selectItem itemValue="Beterrabas" itemLabel="Beterrabas" />
-						<f:selectItem itemValue="Brócolis" itemLabel="Brócolis" />
-						<f:selectItem itemValue="Bucha" itemLabel="Bucha" />
-						<f:selectItem itemValue="Buriti" itemLabel="Buriti" />
-						<f:selectItem itemValue="Buritiba" itemLabel="Buritiba" />
-						<f:selectItem itemValue="Cacau" itemLabel="Cacau" />
-						<f:selectItem itemValue="Café (com ervas)" itemLabel="Café (com ervas)" />
-						<f:selectItem itemValue="Café (pouca cobertura de chão)" itemLabel="Café (pouca cobertura de chão)" />
-						<f:selectItem itemValue="Caja" itemLabel="Caja" />
-						<f:selectItem itemValue="Cajamanga" itemLabel="Cajamanga" />
-						<f:selectItem itemValue="Cajarana" itemLabel="Cajarana" />
-						<f:selectItem itemValue="Caju" itemLabel="Caju" />
-						<f:selectItem itemValue="Cana-de-açúcar" itemLabel="Cana-de-açúcar" />
-						<f:selectItem itemValue="Canela" itemLabel="Canela" />
-						<f:selectItem itemValue="Capim Bermuda (colheita de primavera para semente)" itemLabel="Capim Bermuda (colheita de primavera para semente)" />
-						<f:selectItem itemValue="Capim Bermuda (feno vários cortes efeitos médios)" itemLabel="Capim Bermuda (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Capim centeio (feno vários cortes efeitos médios)" itemLabel="Capim centeio (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Capim Sudão anual (feno ciclo individual de corte)" itemLabel="Capim Sudão anual (feno ciclo individual de corte)" />
-						<f:selectItem itemValue="Capim Sudão anual (feno vários cortes efeitos médios)" itemLabel="Capim Sudão anual (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Caqui" itemLabel="Caqui" />
-						<f:selectItem itemValue="Cará" itemLabel="Cará" />
-						<f:selectItem itemValue="Carambola" itemLabel="Carambola" />
-						<f:selectItem itemValue="Cártamo" itemLabel="Cártamo" />
-						<f:selectItem itemValue="Cebolas (secas)" itemLabel="Cebolas (secas)" />
-						<f:selectItem itemValue="Cebolas (sementes)" itemLabel="Cebolas (sementes)" />
-						<f:selectItem itemValue="Cebolas (verdes)" itemLabel="Cebolas (verdes)" />
-						<f:selectItem itemValue="Cebolinha" itemLabel="Cebolinha" />
-						<f:selectItem itemValue="Cenoura" itemLabel="Cenoura" />
-						<f:selectItem itemValue="Cevada" itemLabel="Cevada" />
-						<f:selectItem itemValue="Chá (com árvores de sombreamento)" itemLabel="Chá (com árvores de sombreamento)" />
-						<f:selectItem itemValue="Chá (sem sombreamento)" itemLabel="Chá (sem sombreamento)" />
-						<f:selectItem itemValue="Chuchu" itemLabel="Chuchu" />
-						<f:selectItem itemValue="Citrus cobertura de chão ativa ou invasoras (20% de dossel)" itemLabel="Citrus cobertura de chão ativa ou invasoras (20% de dossel)" />
-						<f:selectItem itemValue="Citrus cobertura de chão ativa ou invasoras (50% de dossel)" itemLabel="Citrus cobertura de chão ativa ou invasoras (50% de dossel)" />
-						<f:selectItem itemValue="Citrus cobertura de chão ativa ou invasoras (70% de dossel)" itemLabel="Citrus cobertura de chão ativa ou invasoras (70% de dossel)" />
-						<f:selectItem itemValue="Citrus sem cobertura de chão (20% de dossel)" itemLabel="Citrus sem cobertura de chão (20% de dossel)" />
-						<f:selectItem itemValue="Citrus sem cobertura de chão (50% de dossel)" itemLabel="Citrus sem cobertura de chão (50% de dossel)" />
-						<f:selectItem itemValue="Citrus sem cobertura de chão (70% de dossel)" itemLabel="Citrus sem cobertura de chão (70% de dossel)" />
-						<f:selectItem itemValue="Coco Seco" itemLabel="Coco Seco" />
-						<f:selectItem itemValue="Coco Verde" itemLabel="Coco Verde" />
-						<f:selectItem itemValue="Coentro" itemLabel="Coentro" />
-						<f:selectItem itemValue="Cogumelo" itemLabel="Cogumelo" />
-						<f:selectItem itemValue="Colza Canola" itemLabel="Colza Canola" />
-						<f:selectItem itemValue="Cominho" itemLabel="Cominho" />
-						<f:selectItem itemValue="Coníferas" itemLabel="Coníferas" />
-						<f:selectItem itemValue="Couve (ou Couve simples)" itemLabel="Couve (ou Couve simples)" />
-						<f:selectItem itemValue="Couve de bruxelas" itemLabel="Couve de bruxelas" />
-						<f:selectItem itemValue="Couve flor" itemLabel="Couve flor" />
-						<f:selectItem itemValue="Crotalaria (Arbusto)" itemLabel="Crotalaria (Arbusto)" />
-						<f:selectItem itemValue="Cupuaçu" itemLabel="Cupuaçu" />
-						<f:selectItem itemValue="Damascos pêssegos (cobertura de chão ativa com geadas)" itemLabel="Damascos pêssegos (cobertura de chão ativa com geadas)" />
-						<f:selectItem itemValue="Damascos pêssegos (cobertura de chão ativa sem geadas)" itemLabel="Damascos pêssegos (cobertura de chão ativa sem geadas)" />
-						<f:selectItem itemValue="Damascos pêssegos (sem cobertura de chão com geadas)" itemLabel="Damascos pêssegos (sem cobertura de chão com geadas)" />
-						<f:selectItem itemValue="Damascos pêssegos (sem cobertura de chão sem geadas)" itemLabel="Damascos pêssegos (sem cobertura de chão sem geadas)" />
-						<f:selectItem itemValue="Ervilha (fresca)" itemLabel="Ervilha (fresca)" />
-						<f:selectItem itemValue="Ervilha (seca semente)" itemLabel="Ervilha (seca semente)" />
-						<f:selectItem itemValue="Espinafre" itemLabel="Espinafre" />
-						<f:selectItem itemValue="Eucalipito" itemLabel="Eucalipito" />
-						<f:selectItem itemValue="Fava (colheita fresca)" itemLabel="Fava (colheita fresca)" />
-						<f:selectItem itemValue="Fava (grão semente)" itemLabel="Fava (grão semente)" />
-						<f:selectItem itemValue="Feijão caupi (e feijão mungo)" itemLabel="Feijão caupi (e feijão mungo)" />
-						<f:selectItem itemValue="Feijão verde" itemLabel="Feijão verde" />
-						<f:selectItem itemValue="Feijão Vigna" itemLabel="Feijão Vigna" />
-						<f:selectItem itemValue="Feijões (grãos)" itemLabel="Feijões (grãos)" />
-						<f:selectItem itemValue="Figo" itemLabel="Figo" />
-						<f:selectItem itemValue="Flores" itemLabel="Flores" />
-						<f:selectItem itemValue="Fumo" itemLabel="Fumo" />
-						<f:selectItem itemValue="Gegelim" itemLabel="Gegelim" />
-						<f:selectItem itemValue="Giló" itemLabel="Giló" />
-						<f:selectItem itemValue="Girassol" itemLabel="Girassol" />
-						<f:selectItem itemValue="Goiaba" itemLabel="Goiaba" />
-						<f:selectItem itemValue="Gramados (estação fria)" itemLabel="Gramados (estação fria)" />
-						<f:selectItem itemValue="Gramados (estação quente)" itemLabel="Gramados (estação quente)" />
-						<f:selectItem itemValue="Grão de bico" itemLabel="Grão de bico" />
-						<f:selectItem itemValue="Graviola" itemLabel="Graviola" />
-						<f:selectItem itemValue="Hortaliças" itemLabel="Hortaliças" />
-						<f:selectItem itemValue="Hortelã" itemLabel="Hortelã" />
-						<f:selectItem itemValue="Inhame" itemLabel="Inhame" />
-						<f:selectItem itemValue="Jaboticaba" itemLabel="Jaboticaba" />
-						<f:selectItem itemValue="Jaca" itemLabel="Jaca" />
-						<f:selectItem itemValue="Jambo" itemLabel="Jambo" />
-						<f:selectItem itemValue="Jenipapo" itemLabel="Jenipapo" />
-						<f:selectItem itemValue="Juçara" itemLabel="Juçara" />
-						<f:selectItem itemValue="Kiwi" itemLabel="Kiwi" />
-						<f:selectItem itemValue="Lentilha" itemLabel="Lentilha" />
-						<f:selectItem itemValue="Lichia" itemLabel="Lichia" />
-						<f:selectItem itemValue="Linho" itemLabel="Linho" />
-						<f:selectItem itemValue="Lúpulo" itemLabel="Lúpulo" />
-						<f:selectItem itemValue="Maças cerejas e peras (cobertura de chão ativa com geadas)" itemLabel="Maças cerejas e peras (cobertura de chão ativa com geadas)" />
-						<f:selectItem itemValue="Maças cerejas e peras (cobertura de chão ativa sem geadas)" itemLabel="Maças cerejas e peras (cobertura de chão ativa sem geadas)" />
-						<f:selectItem itemValue="Maças cerejas e peras (sem cobertura de chão com geadas)" itemLabel="Maças cerejas e peras (sem cobertura de chão com geadas)" />
-						<f:selectItem itemValue="Maças cerejas e peras (sem cobertura de chão sem geadas)" itemLabel="Maças cerejas e peras (sem cobertura de chão sem geadas)" />
-						<f:selectItem itemValue="Mamao" itemLabel="Mamao" />
-						<f:selectItem itemValue="Mamona" itemLabel="Mamona" />
-						<f:selectItem itemValue="Mandiocas  (ano 1)" itemLabel="Mandiocas  (ano 1)" />
-						<f:selectItem itemValue="Mandiocas  (ano 2)" itemLabel="Mandiocas  (ano 2)" />
-						<f:selectItem itemValue="Manga" itemLabel="Manga" />
-						<f:selectItem itemValue="Mangaba" itemLabel="Mangaba" />
-						<f:selectItem itemValue="Mangostao" itemLabel="Mangostao" />
-						<f:selectItem itemValue="Maracuja" itemLabel="Maracuja" />
-						<f:selectItem itemValue="Maxixe" itemLabel="Maxixe" />
-						<f:selectItem itemValue="Melancias" itemLabel="Melancias" />
-						<f:selectItem itemValue="Melão cantaloupe" itemLabel="Melão cantaloupe" />
-						<f:selectItem itemValue="Melões" itemLabel="Melões" />
-						<f:selectItem itemValue="Milheto" itemLabel="Milheto" />
-						<f:selectItem itemValue="Milho (doce)" itemLabel="Milho (doce)" />
-						<f:selectItem itemValue="Milho (grão e pipoca)" itemLabel="Milho (grão e pipoca)" />
-						<f:selectItem itemValue="Milho-verde" itemLabel="Milho-verde" />
-						<f:selectItem itemValue="Morangos" itemLabel="Morangos" />
-						<f:selectItem itemValue="Murici" itemLabel="Murici" />
-						<f:selectItem itemValue="Nabo (e nabo-redondo)" itemLabel="Nabo (e nabo-redondo)" />
-						<f:selectItem itemValue="Nectarina" itemLabel="Nectarina" />
-						<f:selectItem itemValue="Nogueira (pomares)" itemLabel="Nogueira (pomares)" />
-						<f:selectItem itemValue="Noz Macadamia" itemLabel="Noz Macadamia" />
-						<f:selectItem itemValue="Oliveira (40 a 60% de cobertura do solo pelo dossel)" itemLabel="Oliveira (40 a 60% de cobertura do solo pelo dossel)" />
-						<f:selectItem itemValue="Palmeira" itemLabel="Palmeira" />
-						<f:selectItem itemValue="Pântano banhado solo úmido" itemLabel="Pântano banhado solo úmido" />
-						<f:selectItem itemValue="Pântano banhados  água estagnada" itemLabel="Pântano banhados  água estagnada" />
-						<f:selectItem itemValue="Pastagem (pastoreio extensivo)" itemLabel="Pastagem (pastoreio extensivo)" />
-						<f:selectItem itemValue="Pastagem (pastoreio rotativo)" itemLabel="Pastagem (pastoreio rotativo)" />
-						<f:selectItem itemValue="Pastinaca (chirívia)" itemLabel="Pastinaca (chirívia)" />
-						<f:selectItem itemValue="Pepino (colheita fresca)" itemLabel="Pepino (colheita fresca)" />
-						<f:selectItem itemValue="Pepino (colheita mecânica)" itemLabel="Pepino (colheita mecânica)" />
-						<f:selectItem itemValue="Pequi" itemLabel="Pequi" />
-						<f:selectItem itemValue="Pessego" itemLabel="Pessego" />
-						<f:selectItem itemValue="Pimenta" itemLabel="Pimenta" />
-						<f:selectItem itemValue="Pimentão" itemLabel="Pimentão" />
-						<f:selectItem itemValue="Pinha" itemLabel="Pinha" />
-						<f:selectItem itemValue="Pistache sem cobertura do solo" itemLabel="Pistache sem cobertura do solo" />
-						<f:selectItem itemValue="Pitanga" itemLabel="Pitanga" />
-						<f:selectItem itemValue="Pomar" itemLabel="Pomar" />
-						<f:selectItem itemValue="Pupunha" itemLabel="Pupunha" />
-						<f:selectItem itemValue="Quiabo" itemLabel="Quiabo" />
-						<f:selectItem itemValue="Rabanete" itemLabel="Rabanete" />
-						<f:selectItem itemValue="Rambutan" itemLabel="Rambutan" />
-						<f:selectItem itemValue="Repolho" itemLabel="Repolho" />
-						<f:selectItem itemValue="Roma" itemLabel="Roma" />
-						<f:selectItem itemValue="Salsa" itemLabel="Salsa" />
-						<f:selectItem itemValue="Sapoti" itemLabel="Sapoti" />
-						<f:selectItem itemValue="Seriguela" itemLabel="Seriguela" />
-						<f:selectItem itemValue="Seringueira" itemLabel="Seringueira" />
-						<f:selectItem itemValue="Sisal" itemLabel="Sisal" />
-						<f:selectItem itemValue="Soja" itemLabel="Soja" />
-						<f:selectItem itemValue="Sorgo (doce)" itemLabel="Sorgo (doce)" />
-						<f:selectItem itemValue="Sorgo (grão)" itemLabel="Sorgo (grão)" />
-						<f:selectItem itemValue="Tamareira (Tâmaras)" itemLabel="Tamareira (Tâmaras)" />
-						<f:selectItem itemValue="Tamarindo" itemLabel="Tamarindo" />
-						<f:selectItem itemValue="Tangerina" itemLabel="Tangerina" />
-						<f:selectItem itemValue="Tomate" itemLabel="Tomate" />
-						<f:selectItem itemValue="Trevo (feno ciclo individual de corte)" itemLabel="Trevo (feno ciclo individual de corte)" />
-						<f:selectItem itemValue="Trevo (feno vários cortes efeitos médios)" itemLabel="Trevo (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Trigo" itemLabel="Trigo" />
-						<f:selectItem itemValue="Trigo inverno" itemLabel="Trigo inverno" />
-						<f:selectItem itemValue="Trigo primavera" itemLabel="Trigo primavera" />
-						<f:selectItem itemValue="Umbu" itemLabel="Umbu" />
-						<f:selectItem itemValue="Uvas (mesa ou passas)" itemLabel="Uvas (mesa ou passas)" />
-						<f:selectItem itemValue="Uvas (vinho)" itemLabel="Uvas (vinho)" />
-						<f:selectItem itemValue="Vagem" itemLabel="Vagem" />
+						<f:selectItem itemLabel="ABACATE, SEM COBERTURA DE CHÃO" itemValue="104" />
+						<f:selectItem itemLabel="ABACAXI (COM COBERTURA DE GRAMÍNEAS)" itemValue="87" />
+						<f:selectItem itemLabel="ABACAXI (SOLO LIMPO)" itemValue="86" />
+						<f:selectItem itemLabel="ABIU" itemValue="1004" />
+						<f:selectItem itemLabel="ABÓBORA" itemValue="20" />
+						<f:selectItem itemLabel="ABOBRINHA" itemValue="21" />
+						<f:selectItem itemLabel="AÇAÍ" itemValue="1005" />
+						<f:selectItem itemLabel="ACEROLA" itemValue="1006" />
+						<f:selectItem itemLabel="AIPIM" itemValue="1062" />
+						<f:selectItem itemLabel="AIPO" itemValue="6" />
+						<f:selectItem itemLabel="ALCACHOFRAS" itemValue="43" />
+						<f:selectItem itemLabel="ALFACE" itemValue="8" />
+						<f:selectItem itemLabel="ALFAFA (FENO, CICLO INDIVIDUAL DE CORTE)" itemValue="66" />
+						<f:selectItem itemLabel="ALFAFA (FENO, VÁRIOS CORTES, FEITOS MÉDIOS)" itemValue="65" />
+						<f:selectItem itemLabel="ALFAFA (PARA SEMENTE)" itemValue="67" />
+						<f:selectItem itemLabel="ALGAROBA" itemValue="1103" />
+						<f:selectItem itemLabel="ALGODÃO" itemValue="47" />
+						<f:selectItem itemLabel="ALHO" itemValue="7" />
+						<f:selectItem itemLabel="AMEIXA" itemValue="1007" />
+						<f:selectItem itemLabel="AMÊNDOAS (SEM COBERTURA DE CHÃO)" itemValue="95" />
+						<f:selectItem itemLabel="AMENDOIM" itemValue="38" />
+						<f:selectItem itemLabel="AMORA, MIRTILO (ARBUSTOS)" itemValue="91" />
+						<f:selectItem itemLabel="ARAÇA" itemValue="1008" />
+						<f:selectItem itemLabel="ARROZ" itemValue="64" />
+						<f:selectItem itemLabel="ASPARGOS" itemValue="44" />
+						<f:selectItem itemLabel="ATEMOIA" itemValue="1009" />
+						<f:selectItem itemLabel="AVEIA" itemValue="56" />
+						<f:selectItem itemLabel="BANANA (1º ANO)" itemValue="79" />
+						<f:selectItem itemLabel="BANANA (2º ANO)" itemValue="80" />
+						<f:selectItem itemLabel="BANHADOS COM TABOAS, JUNCOS,  COM GEADAS" itemValue="116" />
+						<f:selectItem itemLabel="BANHADOS COM TABOAS, JUNCOS,  SEM GEADAS" itemValue="117" />
+						<f:selectItem itemLabel="BANHADOS, VEGETAÇÃO BAIXA, SEM GEADAS" itemValue="118" />
+						<f:selectItem itemLabel="BATATA" itemValue="28" />
+						<f:selectItem itemLabel="BATATA DOCE" itemValue="29" />
+						<f:selectItem itemLabel="BATATINHA" itemValue="1068" />
+						<f:selectItem itemLabel="BERINGELA" itemValue="14" />
+						<f:selectItem itemLabel="BETERRABA AÇUCAREIRA" itemValue="31" />
+						<f:selectItem itemLabel="BETERRABAS" itemValue="24" />
+						<f:selectItem itemLabel="BRÓCOLIS" itemValue="1" />
+						<f:selectItem itemLabel="BUCHA" itemValue="1115" />
+						<f:selectItem itemLabel="BURITI" itemValue="1013" />
+						<f:selectItem itemLabel="BURITIBA" itemValue="1014" />
+						<f:selectItem itemLabel="CACAU" itemValue="81" />
+						<f:selectItem itemLabel="CAFÉ (COM ERVAS)" itemValue="83" />
+						<f:selectItem itemLabel="CAFÉ (POUCA COBERTURA DE CHÃO)" itemValue="82" />
+						<f:selectItem itemLabel="CAJA" itemValue="1018" />
+						<f:selectItem itemLabel="CAJAMANGA" itemValue="1019" />
+						<f:selectItem itemLabel="CAJARANA" itemValue="1113" />
+						<f:selectItem itemLabel="CAJU" itemValue="1015" />
+						<f:selectItem itemLabel="CANA-DE-AÇÚCAR" itemValue="121" />
+						<f:selectItem itemLabel="CANELA" itemValue="1071" />
+						<f:selectItem itemLabel="CAPIM BERMUDA (COLHEITA DE PRIMAVERA PARA SEMENTE)" itemValue="69" />
+						<f:selectItem itemLabel="CAPIM BERMUDA (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="68" />
+						<f:selectItem itemLabel="CAPIM CENTEIO (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="72" />
+						<f:selectItem itemLabel="CAPIM SUDÃO ¿ ANUAL (FENO, CICLO INDIVIDUAL DE CORTE)" itemValue="74" />
+						<f:selectItem itemLabel="CAPIM SUDÃO ¿ ANUAL (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="73" />
+						<f:selectItem itemLabel="CAQUI" itemValue="1016" />
+						<f:selectItem itemLabel="CARÁ" itemValue="1093" />
+						<f:selectItem itemLabel="CARAMBOLA" itemValue="1017" />
+						<f:selectItem itemLabel="CÁRTAMO" itemValue="52" />
+						<f:selectItem itemLabel="CEBOLAS (SECAS)" itemValue="9" />
+						<f:selectItem itemLabel="CEBOLAS (SEMENTES)" itemValue="11" />
+						<f:selectItem itemLabel="CEBOLAS (VERDES)" itemValue="10" />
+						<f:selectItem itemLabel="CEBOLINHA" itemValue="1118" />
+						<f:selectItem itemLabel="CENOURA" itemValue="4" />
+						<f:selectItem itemLabel="CEVADA" itemValue="55" />
+						<f:selectItem itemLabel="CHÁ (COM ÁRVORES DE SOMBREAMENTO)" itemValue="90" />
+						<f:selectItem itemLabel="CHÁ (SEM SOMBREAMENTO)" itemValue="89" />
+						<f:selectItem itemLabel="CHUCHU" itemValue="1074" />
+						<f:selectItem itemLabel="CITRUS, COBERTURA DE CHÃO ATIVA OU INVASORAS (20% DE DOSSEL)" itemValue="110" />
+						<f:selectItem itemLabel="CITRUS, COBERTURA DE CHÃO ATIVA OU INVASORAS (50% DE DOSSEL)" itemValue="109" />
+						<f:selectItem itemLabel="CITRUS, COBERTURA DE CHÃO ATIVA OU INVASORAS (70% DE DOSSEL)" itemValue="108" />
+						<f:selectItem itemLabel="CITRUS, SEM COBERTURA DE CHÃO (20% DE DOSSEL)" itemValue="107" />
+						<f:selectItem itemLabel="CITRUS, SEM COBERTURA DE CHÃO (50% DE DOSSEL)" itemValue="106" />
+						<f:selectItem itemLabel="CITRUS, SEM COBERTURA DE CHÃO (70% DE DOSSEL)" itemValue="105" />
+						<f:selectItem itemLabel="COCO SECO" itemValue="1122" />
+						<f:selectItem itemLabel="COCO VERDE" itemValue="1020" />
+						<f:selectItem itemLabel="COENTRO" itemValue="1075" />
+						<f:selectItem itemLabel="COGUMELO" itemValue="1117" />
+						<f:selectItem itemLabel="COLZA, CANOLA" itemValue="51" />
+						<f:selectItem itemLabel="COMINHO" itemValue="1076" />
+						<f:selectItem itemLabel="CONÍFERAS" itemValue="115" />
+						<f:selectItem itemLabel="COUVE (OU COUVE SIMPLES)" itemValue="1094" />
+						<f:selectItem itemLabel="COUVE DE BRUXELAS" itemValue="2" />
+						<f:selectItem itemLabel="COUVE FLOR" itemValue="5" />
+						<f:selectItem itemLabel="CROTALARIA (ARBUSTO)" itemValue="1108" />
+						<f:selectItem itemLabel="CUPUAÇU" itemValue="1021" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (COBERTURA DE CHÃO ATIVA, COM GEADAS)" itemValue="102" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (COBERTURA DE CHÃO ATIVA, SEM GEADAS)" itemValue="103" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (SEM COBERTURA DE CHÃO, COM GEADAS)" itemValue="100" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (SEM COBERTURA DE CHÃO, SEM GEADAS)" itemValue="101" />
+						<f:selectItem itemLabel="ERVILHA (FRESCA)" itemValue="40" />
+						<f:selectItem itemLabel="ERVILHA (SECA, SEMENTE)" itemValue="41" />
+						<f:selectItem itemLabel="ESPINAFRE" itemValue="12" />
+						<f:selectItem itemLabel="EUCALIPITO" itemValue="1130" />
+						<f:selectItem itemLabel="FAVA (COLHEITA FRESCA)" itemValue="35" />
+						<f:selectItem itemLabel="FAVA (GRÃO, SEMENTE)" itemValue="36" />
+						<f:selectItem itemLabel="FEIJÃO CAUPI (E FEIJÃO MUNGO)" itemValue="37" />
+						<f:selectItem itemLabel="FEIJÃO VERDE" itemValue="32" />
+						<f:selectItem itemLabel="FEIJÃO VIGNA" itemValue="1099" />
+						<f:selectItem itemLabel="FEIJÕES (GRÃOS)" itemValue="33" />
+						<f:selectItem itemLabel="FIGO" itemValue="1022" />
+						<f:selectItem itemLabel="FLORES" itemValue="1105" />
+						<f:selectItem itemLabel="FUMO" itemValue="1127" />
+						<f:selectItem itemLabel="GEGELIM" itemValue="53" />
+						<f:selectItem itemLabel="GILÓ" itemValue="1126" />
+						<f:selectItem itemLabel="GIRASSOL" itemValue="54" />
+						<f:selectItem itemLabel="GOIABA" itemValue="1023" />
+						<f:selectItem itemLabel="GRAMADOS (ESTAÇÃO FRIA)" itemValue="77" />
+						<f:selectItem itemLabel="GRAMADOS (ESTAÇÃO QUENTE)" itemValue="78" />
+						<f:selectItem itemLabel="GRÃO DE BICO" itemValue="34" />
+						<f:selectItem itemLabel="GRAVIOLA" itemValue="1024" />
+						<f:selectItem itemLabel="HORTALIÇAS" itemValue="1120" />
+						<f:selectItem itemLabel="HORTELÃ" itemValue="45" />
+						<f:selectItem itemLabel="INHAME" itemValue="1079" />
+						<f:selectItem itemLabel="JABOTICABA" itemValue="1025" />
+						<f:selectItem itemLabel="JACA" itemValue="1026" />
+						<f:selectItem itemLabel="JAMBO" itemValue="1027" />
+						<f:selectItem itemLabel="JENIPAPO" itemValue="1028" />
+						<f:selectItem itemLabel="JUÇARA" itemValue="1029" />
+						<f:selectItem itemLabel="KIWI" itemValue="111" />
+						<f:selectItem itemLabel="LENTILHA" itemValue="39" />
+						<f:selectItem itemLabel="LICHIA" itemValue="1031" />
+						<f:selectItem itemLabel="LINHO" itemValue="48" />
+						<f:selectItem itemLabel="LÚPULO" itemValue="94" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (COBERTURA DE CHÃO ATIVA, COM GEADAS)" itemValue="98" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (COBERTURA DE CHÃO ATIVA, SEM GEADAS)" itemValue="99" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (SEM COBERTURA DE CHÃO, COM GEADAS)" itemValue="96" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (SEM COBERTURA DE CHÃO, SEM GEADAS)" itemValue="97" />
+						<f:selectItem itemLabel="MAMAO" itemValue="1036" />
+						<f:selectItem itemLabel="MAMONA" itemValue="50" />
+						<f:selectItem itemLabel="MANDIOCAS  (ANO 1)" itemValue="25" />
+						<f:selectItem itemLabel="MANDIOCAS  (ANO 2)" itemValue="26" />
+						<f:selectItem itemLabel="MANGA" itemValue="1037" />
+						<f:selectItem itemLabel="MANGABA" itemValue="1034" />
+						<f:selectItem itemLabel="MANGOSTAO" itemValue="1035" />
+						<f:selectItem itemLabel="MARACUJA" itemValue="1038" />
+						<f:selectItem itemLabel="MAXIXE" itemValue="1092" />
+						<f:selectItem itemLabel="MELANCIAS" itemValue="23" />
+						<f:selectItem itemLabel="MELÃO CANTALOUPE" itemValue="17" />
+						<f:selectItem itemLabel="MELÕES" itemValue="22" />
+						<f:selectItem itemLabel="MILHETO" itemValue="61" />
+						<f:selectItem itemLabel="MILHO (DOCE)" itemValue="60" />
+						<f:selectItem itemLabel="MILHO (GRÃO E PIPOCA)" itemValue="59" />
+						<f:selectItem itemLabel="MILHO-VERDE" itemValue="1123" />
+						<f:selectItem itemLabel="MORANGOS" itemValue="46" />
+						<f:selectItem itemLabel="MURICI" itemValue="1039" />
+						<f:selectItem itemLabel="NABO (E NABO-REDONDO)" itemValue="30" />
+						<f:selectItem itemLabel="NECTARINA" itemValue="1040" />
+						<f:selectItem itemLabel="NOGUEIRA (POMARES)" itemValue="114" />
+						<f:selectItem itemLabel="NOZ MACADAMIA" itemValue="1041" />
+						<f:selectItem itemLabel="OLIVEIRA (40 A 60% DE COBERTURA DO SOLO PELO DOSSEL)" itemValue="112" />
+						<f:selectItem itemLabel="PALMEIRA" itemValue="85" />
+						<f:selectItem itemLabel="PÂNTANO, BANHADO, SOLO ÚMIDO" itemValue="120" />
+						<f:selectItem itemLabel="PÂNTANO, BANHADOS,  ÁGUA ESTAGNADA" itemValue="119" />
+						<f:selectItem itemLabel="PASTAGEM (PASTOREIO EXTENSIVO)" itemValue="76" />
+						<f:selectItem itemLabel="PASTAGEM (PASTOREIO ROTATIVO)" itemValue="75" />
+						<f:selectItem itemLabel="PASTINACA (CHIRÍVIA)" itemValue="27" />
+						<f:selectItem itemLabel="PEPINO (COLHEITA FRESCA)" itemValue="18" />
+						<f:selectItem itemLabel="PEPINO (COLHEITA MECÂNICA)" itemValue="19" />
+						<f:selectItem itemLabel="PEQUI" itemValue="1042" />
+						<f:selectItem itemLabel="PESSEGO" itemValue="1043" />
+						<f:selectItem itemLabel="PIMENTA" itemValue="1090" />
+						<f:selectItem itemLabel="PIMENTÃO" itemValue="15" />
+						<f:selectItem itemLabel="PINHA" itemValue="1044" />
+						<f:selectItem itemLabel="PISTACHE, SEM COBERTURA DO SOLO" itemValue="113" />
+						<f:selectItem itemLabel="PITANGA" itemValue="1045" />
+						<f:selectItem itemLabel="POMAR" itemValue="1129" />
+						<f:selectItem itemLabel="PUPUNHA" itemValue="1046" />
+						<f:selectItem itemLabel="QUIABO" itemValue="1086" />
+						<f:selectItem itemLabel="RABANETE" itemValue="13" />
+						<f:selectItem itemLabel="RAMBUTAN" itemValue="1047" />
+						<f:selectItem itemLabel="REPOLHO" itemValue="3" />
+						<f:selectItem itemLabel="ROMA" itemValue="1048" />
+						<f:selectItem itemLabel="SALSA" itemValue="1119" />
+						<f:selectItem itemLabel="SAPOTI" itemValue="1049" />
+						<f:selectItem itemLabel="SERIGUELA" itemValue="1050" />
+						<f:selectItem itemLabel="SERINGUEIRA" itemValue="88" />
+						<f:selectItem itemLabel="SISAL" itemValue="49" />
+						<f:selectItem itemLabel="SOJA" itemValue="42" />
+						<f:selectItem itemLabel="SORGO (DOCE)" itemValue="63" />
+						<f:selectItem itemLabel="SORGO (GRÃO)" itemValue="62" />
+						<f:selectItem itemLabel="TAMAREIRA (TÂMARAS)" itemValue="84" />
+						<f:selectItem itemLabel="TAMARINDO" itemValue="1051" />
+						<f:selectItem itemLabel="TANGERINA" itemValue="1052" />
+						<f:selectItem itemLabel="TOMATE" itemValue="16" />
+						<f:selectItem itemLabel="TREVO (FENO, CICLO INDIVIDUAL DE CORTE)" itemValue="71" />
+						<f:selectItem itemLabel="TREVO (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="70" />
+						<f:selectItem itemLabel="TRIGO" itemValue="130" />
+						<f:selectItem itemLabel="TRIGO INVERNO" itemValue="58" />
+						<f:selectItem itemLabel="TRIGO PRIMAVERA" itemValue="57" />
+						<f:selectItem itemLabel="UMBU" itemValue="1054" />
+						<f:selectItem itemLabel="UVAS (MESA OU PASSAS)" itemValue="92" />
+						<f:selectItem itemLabel="UVAS (VINHO)" itemValue="93" />
+						<f:selectItem itemLabel="VAGEM" itemValue="1116" />
 					</p:selectOneMenu>
 					
 					<p:outputLabel value="Área Total Irrigada (2): " for="sir_ar_irrigada_2" />
@@ -261,230 +264,233 @@
 					<p:inputText id="sir_ar_irrigada_uni_2" maxlength="50" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_uni_2}" />
 					
 					<p:outputLabel value="Possui Outra Cultura Irrigada (2): " for="sir_ar_irrigada_outra_2" />
-					<p:selectBooleanCheckbox id="sir_ar_irrigada_outra_2" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra_2}" />
+					<p:selectOneMenu id="sir_ar_irrigada_outra_2" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra_2}" style="width:230px">
+						<f:selectItem itemLabel="NÃO" itemValue="false" />
+						<f:selectItem itemLabel="SIM" itemValue="true" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência (2): " for="sir_tsi_cd_2" />
 					<p:selectOneMenu id="sir_tsi_cd_2" value="#{irrigacaoBean.irrigacao.sir_tsi_cd_2}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Sulcos abertos em desnível" itemLabel="Sulcos abertos em desnível" />
-						<f:selectItem itemValue="Inundação permanente (diques em nível)" itemLabel="Inundação permanente (diques em nível)" />
-						<f:selectItem itemValue="Aspersão por sistema convencional" itemLabel="Aspersão por sistema convencional" />
-						<f:selectItem itemValue="Aspersão por sistema autopropelido" itemLabel="Aspersão por sistema autopropelido" />
-						<f:selectItem itemValue="Aspersão por sistema pivô central" itemLabel="Aspersão por sistema pivô central" />
-						<f:selectItem itemValue="Gotejamento" itemLabel="Gotejamento" />
-						<f:selectItem itemValue="Micro aspersão" itemLabel="Micro aspersão" />
-						<f:selectItem itemValue="Tubos perfurados (tripa)" itemLabel="Tubos perfurados (tripa)" />
-						<f:selectItem itemValue="Sulcos interligados em bacias" itemLabel="Sulcos interligados em bacias" />
-						<f:selectItem itemValue="Sub irrigação" itemLabel="Sub irrigação" />
-						<f:selectItem itemValue="Aspersão por sistema pivô central com LEPA" itemLabel="Aspersão por sistema pivô central com LEPA" />
-						<f:selectItem itemValue="Aspersão por canhão hidráulico" itemLabel="Aspersão por canhão hidráulico" />
-						<f:selectItem itemValue="Aspersão por sistema deslocamento linear" itemLabel="Aspersão por sistema deslocamento linear" />
-						<f:selectItem itemValue="Aspersão por sistema em malha" itemLabel="Aspersão por sistema em malha" />
-						<f:selectItem itemValue="Aspersão por sistema pivô central rebocável" itemLabel="Aspersão por sistema pivô central rebocável" />
-						<f:selectItem itemValue="Caminhão regadeira" itemLabel="Caminhão regadeira" />
-						<f:selectItem itemValue="Gotejamento subterrâneo, tubo poroso" itemLabel="Gotejamento subterrâneo, tubo poroso" />
-						<f:selectItem itemValue="Sulcos fechados" itemLabel="Sulcos fechados" />
-						<f:selectItem itemValue="Inundação temporária (diques em desnível)" itemLabel="Inundação temporária (diques em desnível)" />
+						<f:selectItem itemLabel="ASPERSÃO POR CANHÃO HIDRÁULICO" itemValue="12" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA AUTOPROPELIDO" itemValue="4" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA CONVENCIONAL" itemValue="3" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA DESLOCAMENTO LINEAR" itemValue="13" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA EM MALHA" itemValue="14" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA PIVÔ CENTRAL" itemValue="5" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA PIVÔ CENTRAL COM LEPA" itemValue="11" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA PIVÔ CENTRAL REBOCÁVEL" itemValue="15" />
+						<f:selectItem itemLabel="CAMINHÃO REGADEIRA" itemValue="16" />
+						<f:selectItem itemLabel="GOTEJAMENTO" itemValue="6" />
+						<f:selectItem itemLabel="GOTEJAMENTO SUBTERRÂNEO - TUBO POROSO" itemValue="17" />
+						<f:selectItem itemLabel="INUNDAÇÃO PERMANENTE (DIQUES EM NÍVEL)" itemValue="2" />
+						<f:selectItem itemLabel="INUNDAÇÃO TEMPORÁRIA (DIQUES EM DESNÍVEL)" itemValue="19" />
+						<f:selectItem itemLabel="MICRO-ASPERSÃO" itemValue="7" />
+						<f:selectItem itemLabel="SUB-IRRIGAÇÃO" itemValue="10" />
+						<f:selectItem itemLabel="SULCOS ABERTOS EM DESNÍVEL" itemValue="1" />
+						<f:selectItem itemLabel="SULCOS FECHADOS" itemValue="18" />
+						<f:selectItem itemLabel="SULCOS INTERLIGADOS EM BACIAS" itemValue="9" />
+						<f:selectItem itemLabel="TUBOS PERFURADOS (TRIPA)" itemValue="8" />
 					</p:selectOneMenu>
 					
 					<p:outputLabel value="Identificador do Tipo de Cultura (2): " for="sir_tct_cd_2" />
 					<p:selectOneMenu id="sir_tct_cd_2" value="#{irrigacaoBean.irrigacao.sir_tct_cd_2}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Abacate sem cobertura de chão" itemLabel="Abacate sem cobertura de chão" />
-						<f:selectItem itemValue="Abacaxi (com cobertura de gramíneas)" itemLabel="Abacaxi (com cobertura de gramíneas)" />
-						<f:selectItem itemValue="Abacaxi (solo limpo)" itemLabel="Abacaxi (solo limpo)" />
-						<f:selectItem itemValue="Abiu" itemLabel="Abiu" />
-						<f:selectItem itemValue="Abóbora" itemLabel="Abóbora" />
-						<f:selectItem itemValue="Abobrinha" itemLabel="Abobrinha" />
-						<f:selectItem itemValue="Açaí" itemLabel="Açaí" />
-						<f:selectItem itemValue="Acerola" itemLabel="Acerola" />
-						<f:selectItem itemValue="Aipim" itemLabel="Aipim" />
-						<f:selectItem itemValue="Aipo" itemLabel="Aipo" />
-						<f:selectItem itemValue="Alcachofras" itemLabel="Alcachofras" />
-						<f:selectItem itemValue="Alface" itemLabel="Alface" />
-						<f:selectItem itemValue="Alfafa (feno ciclo individual de corte)" itemLabel="Alfafa (feno ciclo individual de corte)" />
-						<f:selectItem itemValue="Alfafa (feno vários cortes feitos médios)" itemLabel="Alfafa (feno vários cortes feitos médios)" />
-						<f:selectItem itemValue="Alfafa (para semente)" itemLabel="Alfafa (para semente)" />
-						<f:selectItem itemValue="Algaroba" itemLabel="Algaroba" />
-						<f:selectItem itemValue="Algodão" itemLabel="Algodão" />
-						<f:selectItem itemValue="Alho" itemLabel="Alho" />
-						<f:selectItem itemValue="Ameixa" itemLabel="Ameixa" />
-						<f:selectItem itemValue="Amêndoas (sem cobertura de chão)" itemLabel="Amêndoas (sem cobertura de chão)" />
-						<f:selectItem itemValue="Amendoim" itemLabel="Amendoim" />
-						<f:selectItem itemValue="Amora mirtilo (arbustos)" itemLabel="Amora mirtilo (arbustos)" />
-						<f:selectItem itemValue="Araça" itemLabel="Araça" />
-						<f:selectItem itemValue="Arroz" itemLabel="Arroz" />
-						<f:selectItem itemValue="Aspargos" itemLabel="Aspargos" />
-						<f:selectItem itemValue="Atemoia" itemLabel="Atemoia" />
-						<f:selectItem itemValue="Aveia" itemLabel="Aveia" />
-						<f:selectItem itemValue="Banana (1º ano)" itemLabel="Banana (1º ano)" />
-						<f:selectItem itemValue="Banana (2º ano)" itemLabel="Banana (2º ano)" />
-						<f:selectItem itemValue="Banhados com taboas juncos  com geadas" itemLabel="Banhados com taboas juncos  com geadas" />
-						<f:selectItem itemValue="Banhados com taboas juncos  sem geadas" itemLabel="Banhados com taboas juncos  sem geadas" />
-						<f:selectItem itemValue="Banhados vegetação baixa sem geadas" itemLabel="Banhados vegetação baixa sem geadas" />
-						<f:selectItem itemValue="Batata" itemLabel="Batata" />
-						<f:selectItem itemValue="Batata doce" itemLabel="Batata doce" />
-						<f:selectItem itemValue="Batatinha" itemLabel="Batatinha" />
-						<f:selectItem itemValue="Beringela" itemLabel="Beringela" />
-						<f:selectItem itemValue="Beterraba açucareira" itemLabel="Beterraba açucareira" />
-						<f:selectItem itemValue="Beterrabas" itemLabel="Beterrabas" />
-						<f:selectItem itemValue="Brócolis" itemLabel="Brócolis" />
-						<f:selectItem itemValue="Bucha" itemLabel="Bucha" />
-						<f:selectItem itemValue="Buriti" itemLabel="Buriti" />
-						<f:selectItem itemValue="Buritiba" itemLabel="Buritiba" />
-						<f:selectItem itemValue="Cacau" itemLabel="Cacau" />
-						<f:selectItem itemValue="Café (com ervas)" itemLabel="Café (com ervas)" />
-						<f:selectItem itemValue="Café (pouca cobertura de chão)" itemLabel="Café (pouca cobertura de chão)" />
-						<f:selectItem itemValue="Caja" itemLabel="Caja" />
-						<f:selectItem itemValue="Cajamanga" itemLabel="Cajamanga" />
-						<f:selectItem itemValue="Cajarana" itemLabel="Cajarana" />
-						<f:selectItem itemValue="Caju" itemLabel="Caju" />
-						<f:selectItem itemValue="Cana-de-açúcar" itemLabel="Cana-de-açúcar" />
-						<f:selectItem itemValue="Canela" itemLabel="Canela" />
-						<f:selectItem itemValue="Capim Bermuda (colheita de primavera para semente)" itemLabel="Capim Bermuda (colheita de primavera para semente)" />
-						<f:selectItem itemValue="Capim Bermuda (feno vários cortes efeitos médios)" itemLabel="Capim Bermuda (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Capim centeio (feno vários cortes efeitos médios)" itemLabel="Capim centeio (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Capim Sudão anual (feno ciclo individual de corte)" itemLabel="Capim Sudão anual (feno ciclo individual de corte)" />
-						<f:selectItem itemValue="Capim Sudão anual (feno vários cortes efeitos médios)" itemLabel="Capim Sudão anual (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Caqui" itemLabel="Caqui" />
-						<f:selectItem itemValue="Cará" itemLabel="Cará" />
-						<f:selectItem itemValue="Carambola" itemLabel="Carambola" />
-						<f:selectItem itemValue="Cártamo" itemLabel="Cártamo" />
-						<f:selectItem itemValue="Cebolas (secas)" itemLabel="Cebolas (secas)" />
-						<f:selectItem itemValue="Cebolas (sementes)" itemLabel="Cebolas (sementes)" />
-						<f:selectItem itemValue="Cebolas (verdes)" itemLabel="Cebolas (verdes)" />
-						<f:selectItem itemValue="Cebolinha" itemLabel="Cebolinha" />
-						<f:selectItem itemValue="Cenoura" itemLabel="Cenoura" />
-						<f:selectItem itemValue="Cevada" itemLabel="Cevada" />
-						<f:selectItem itemValue="Chá (com árvores de sombreamento)" itemLabel="Chá (com árvores de sombreamento)" />
-						<f:selectItem itemValue="Chá (sem sombreamento)" itemLabel="Chá (sem sombreamento)" />
-						<f:selectItem itemValue="Chuchu" itemLabel="Chuchu" />
-						<f:selectItem itemValue="Citrus cobertura de chão ativa ou invasoras (20% de dossel)" itemLabel="Citrus cobertura de chão ativa ou invasoras (20% de dossel)" />
-						<f:selectItem itemValue="Citrus cobertura de chão ativa ou invasoras (50% de dossel)" itemLabel="Citrus cobertura de chão ativa ou invasoras (50% de dossel)" />
-						<f:selectItem itemValue="Citrus cobertura de chão ativa ou invasoras (70% de dossel)" itemLabel="Citrus cobertura de chão ativa ou invasoras (70% de dossel)" />
-						<f:selectItem itemValue="Citrus sem cobertura de chão (20% de dossel)" itemLabel="Citrus sem cobertura de chão (20% de dossel)" />
-						<f:selectItem itemValue="Citrus sem cobertura de chão (50% de dossel)" itemLabel="Citrus sem cobertura de chão (50% de dossel)" />
-						<f:selectItem itemValue="Citrus sem cobertura de chão (70% de dossel)" itemLabel="Citrus sem cobertura de chão (70% de dossel)" />
-						<f:selectItem itemValue="Coco Seco" itemLabel="Coco Seco" />
-						<f:selectItem itemValue="Coco Verde" itemLabel="Coco Verde" />
-						<f:selectItem itemValue="Coentro" itemLabel="Coentro" />
-						<f:selectItem itemValue="Cogumelo" itemLabel="Cogumelo" />
-						<f:selectItem itemValue="Colza Canola" itemLabel="Colza Canola" />
-						<f:selectItem itemValue="Cominho" itemLabel="Cominho" />
-						<f:selectItem itemValue="Coníferas" itemLabel="Coníferas" />
-						<f:selectItem itemValue="Couve (ou Couve simples)" itemLabel="Couve (ou Couve simples)" />
-						<f:selectItem itemValue="Couve de bruxelas" itemLabel="Couve de bruxelas" />
-						<f:selectItem itemValue="Couve flor" itemLabel="Couve flor" />
-						<f:selectItem itemValue="Crotalaria (Arbusto)" itemLabel="Crotalaria (Arbusto)" />
-						<f:selectItem itemValue="Cupuaçu" itemLabel="Cupuaçu" />
-						<f:selectItem itemValue="Damascos pêssegos (cobertura de chão ativa com geadas)" itemLabel="Damascos pêssegos (cobertura de chão ativa com geadas)" />
-						<f:selectItem itemValue="Damascos pêssegos (cobertura de chão ativa sem geadas)" itemLabel="Damascos pêssegos (cobertura de chão ativa sem geadas)" />
-						<f:selectItem itemValue="Damascos pêssegos (sem cobertura de chão com geadas)" itemLabel="Damascos pêssegos (sem cobertura de chão com geadas)" />
-						<f:selectItem itemValue="Damascos pêssegos (sem cobertura de chão sem geadas)" itemLabel="Damascos pêssegos (sem cobertura de chão sem geadas)" />
-						<f:selectItem itemValue="Ervilha (fresca)" itemLabel="Ervilha (fresca)" />
-						<f:selectItem itemValue="Ervilha (seca semente)" itemLabel="Ervilha (seca semente)" />
-						<f:selectItem itemValue="Espinafre" itemLabel="Espinafre" />
-						<f:selectItem itemValue="Eucalipito" itemLabel="Eucalipito" />
-						<f:selectItem itemValue="Fava (colheita fresca)" itemLabel="Fava (colheita fresca)" />
-						<f:selectItem itemValue="Fava (grão semente)" itemLabel="Fava (grão semente)" />
-						<f:selectItem itemValue="Feijão caupi (e feijão mungo)" itemLabel="Feijão caupi (e feijão mungo)" />
-						<f:selectItem itemValue="Feijão verde" itemLabel="Feijão verde" />
-						<f:selectItem itemValue="Feijão Vigna" itemLabel="Feijão Vigna" />
-						<f:selectItem itemValue="Feijões (grãos)" itemLabel="Feijões (grãos)" />
-						<f:selectItem itemValue="Figo" itemLabel="Figo" />
-						<f:selectItem itemValue="Flores" itemLabel="Flores" />
-						<f:selectItem itemValue="Fumo" itemLabel="Fumo" />
-						<f:selectItem itemValue="Gegelim" itemLabel="Gegelim" />
-						<f:selectItem itemValue="Giló" itemLabel="Giló" />
-						<f:selectItem itemValue="Girassol" itemLabel="Girassol" />
-						<f:selectItem itemValue="Goiaba" itemLabel="Goiaba" />
-						<f:selectItem itemValue="Gramados (estação fria)" itemLabel="Gramados (estação fria)" />
-						<f:selectItem itemValue="Gramados (estação quente)" itemLabel="Gramados (estação quente)" />
-						<f:selectItem itemValue="Grão de bico" itemLabel="Grão de bico" />
-						<f:selectItem itemValue="Graviola" itemLabel="Graviola" />
-						<f:selectItem itemValue="Hortaliças" itemLabel="Hortaliças" />
-						<f:selectItem itemValue="Hortelã" itemLabel="Hortelã" />
-						<f:selectItem itemValue="Inhame" itemLabel="Inhame" />
-						<f:selectItem itemValue="Jaboticaba" itemLabel="Jaboticaba" />
-						<f:selectItem itemValue="Jaca" itemLabel="Jaca" />
-						<f:selectItem itemValue="Jambo" itemLabel="Jambo" />
-						<f:selectItem itemValue="Jenipapo" itemLabel="Jenipapo" />
-						<f:selectItem itemValue="Juçara" itemLabel="Juçara" />
-						<f:selectItem itemValue="Kiwi" itemLabel="Kiwi" />
-						<f:selectItem itemValue="Lentilha" itemLabel="Lentilha" />
-						<f:selectItem itemValue="Lichia" itemLabel="Lichia" />
-						<f:selectItem itemValue="Linho" itemLabel="Linho" />
-						<f:selectItem itemValue="Lúpulo" itemLabel="Lúpulo" />
-						<f:selectItem itemValue="Maças cerejas e peras (cobertura de chão ativa com geadas)" itemLabel="Maças cerejas e peras (cobertura de chão ativa com geadas)" />
-						<f:selectItem itemValue="Maças cerejas e peras (cobertura de chão ativa sem geadas)" itemLabel="Maças cerejas e peras (cobertura de chão ativa sem geadas)" />
-						<f:selectItem itemValue="Maças cerejas e peras (sem cobertura de chão com geadas)" itemLabel="Maças cerejas e peras (sem cobertura de chão com geadas)" />
-						<f:selectItem itemValue="Maças cerejas e peras (sem cobertura de chão sem geadas)" itemLabel="Maças cerejas e peras (sem cobertura de chão sem geadas)" />
-						<f:selectItem itemValue="Mamao" itemLabel="Mamao" />
-						<f:selectItem itemValue="Mamona" itemLabel="Mamona" />
-						<f:selectItem itemValue="Mandiocas  (ano 1)" itemLabel="Mandiocas  (ano 1)" />
-						<f:selectItem itemValue="Mandiocas  (ano 2)" itemLabel="Mandiocas  (ano 2)" />
-						<f:selectItem itemValue="Manga" itemLabel="Manga" />
-						<f:selectItem itemValue="Mangaba" itemLabel="Mangaba" />
-						<f:selectItem itemValue="Mangostao" itemLabel="Mangostao" />
-						<f:selectItem itemValue="Maracuja" itemLabel="Maracuja" />
-						<f:selectItem itemValue="Maxixe" itemLabel="Maxixe" />
-						<f:selectItem itemValue="Melancias" itemLabel="Melancias" />
-						<f:selectItem itemValue="Melão cantaloupe" itemLabel="Melão cantaloupe" />
-						<f:selectItem itemValue="Melões" itemLabel="Melões" />
-						<f:selectItem itemValue="Milheto" itemLabel="Milheto" />
-						<f:selectItem itemValue="Milho (doce)" itemLabel="Milho (doce)" />
-						<f:selectItem itemValue="Milho (grão e pipoca)" itemLabel="Milho (grão e pipoca)" />
-						<f:selectItem itemValue="Milho-verde" itemLabel="Milho-verde" />
-						<f:selectItem itemValue="Morangos" itemLabel="Morangos" />
-						<f:selectItem itemValue="Murici" itemLabel="Murici" />
-						<f:selectItem itemValue="Nabo (e nabo-redondo)" itemLabel="Nabo (e nabo-redondo)" />
-						<f:selectItem itemValue="Nectarina" itemLabel="Nectarina" />
-						<f:selectItem itemValue="Nogueira (pomares)" itemLabel="Nogueira (pomares)" />
-						<f:selectItem itemValue="Noz Macadamia" itemLabel="Noz Macadamia" />
-						<f:selectItem itemValue="Oliveira (40 a 60% de cobertura do solo pelo dossel)" itemLabel="Oliveira (40 a 60% de cobertura do solo pelo dossel)" />
-						<f:selectItem itemValue="Palmeira" itemLabel="Palmeira" />
-						<f:selectItem itemValue="Pântano banhado solo úmido" itemLabel="Pântano banhado solo úmido" />
-						<f:selectItem itemValue="Pântano banhados  água estagnada" itemLabel="Pântano banhados  água estagnada" />
-						<f:selectItem itemValue="Pastagem (pastoreio extensivo)" itemLabel="Pastagem (pastoreio extensivo)" />
-						<f:selectItem itemValue="Pastagem (pastoreio rotativo)" itemLabel="Pastagem (pastoreio rotativo)" />
-						<f:selectItem itemValue="Pastinaca (chirívia)" itemLabel="Pastinaca (chirívia)" />
-						<f:selectItem itemValue="Pepino (colheita fresca)" itemLabel="Pepino (colheita fresca)" />
-						<f:selectItem itemValue="Pepino (colheita mecânica)" itemLabel="Pepino (colheita mecânica)" />
-						<f:selectItem itemValue="Pequi" itemLabel="Pequi" />
-						<f:selectItem itemValue="Pessego" itemLabel="Pessego" />
-						<f:selectItem itemValue="Pimenta" itemLabel="Pimenta" />
-						<f:selectItem itemValue="Pimentão" itemLabel="Pimentão" />
-						<f:selectItem itemValue="Pinha" itemLabel="Pinha" />
-						<f:selectItem itemValue="Pistache sem cobertura do solo" itemLabel="Pistache sem cobertura do solo" />
-						<f:selectItem itemValue="Pitanga" itemLabel="Pitanga" />
-						<f:selectItem itemValue="Pomar" itemLabel="Pomar" />
-						<f:selectItem itemValue="Pupunha" itemLabel="Pupunha" />
-						<f:selectItem itemValue="Quiabo" itemLabel="Quiabo" />
-						<f:selectItem itemValue="Rabanete" itemLabel="Rabanete" />
-						<f:selectItem itemValue="Rambutan" itemLabel="Rambutan" />
-						<f:selectItem itemValue="Repolho" itemLabel="Repolho" />
-						<f:selectItem itemValue="Roma" itemLabel="Roma" />
-						<f:selectItem itemValue="Salsa" itemLabel="Salsa" />
-						<f:selectItem itemValue="Sapoti" itemLabel="Sapoti" />
-						<f:selectItem itemValue="Seriguela" itemLabel="Seriguela" />
-						<f:selectItem itemValue="Seringueira" itemLabel="Seringueira" />
-						<f:selectItem itemValue="Sisal" itemLabel="Sisal" />
-						<f:selectItem itemValue="Soja" itemLabel="Soja" />
-						<f:selectItem itemValue="Sorgo (doce)" itemLabel="Sorgo (doce)" />
-						<f:selectItem itemValue="Sorgo (grão)" itemLabel="Sorgo (grão)" />
-						<f:selectItem itemValue="Tamareira (Tâmaras)" itemLabel="Tamareira (Tâmaras)" />
-						<f:selectItem itemValue="Tamarindo" itemLabel="Tamarindo" />
-						<f:selectItem itemValue="Tangerina" itemLabel="Tangerina" />
-						<f:selectItem itemValue="Tomate" itemLabel="Tomate" />
-						<f:selectItem itemValue="Trevo (feno ciclo individual de corte)" itemLabel="Trevo (feno ciclo individual de corte)" />
-						<f:selectItem itemValue="Trevo (feno vários cortes efeitos médios)" itemLabel="Trevo (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Trigo" itemLabel="Trigo" />
-						<f:selectItem itemValue="Trigo inverno" itemLabel="Trigo inverno" />
-						<f:selectItem itemValue="Trigo primavera" itemLabel="Trigo primavera" />
-						<f:selectItem itemValue="Umbu" itemLabel="Umbu" />
-						<f:selectItem itemValue="Uvas (mesa ou passas)" itemLabel="Uvas (mesa ou passas)" />
-						<f:selectItem itemValue="Uvas (vinho)" itemLabel="Uvas (vinho)" />
-						<f:selectItem itemValue="Vagem" itemLabel="Vagem" />
+						<f:selectItem itemLabel="ABACATE, SEM COBERTURA DE CHÃO" itemValue="104" />
+						<f:selectItem itemLabel="ABACAXI (COM COBERTURA DE GRAMÍNEAS)" itemValue="87" />
+						<f:selectItem itemLabel="ABACAXI (SOLO LIMPO)" itemValue="86" />
+						<f:selectItem itemLabel="ABIU" itemValue="1004" />
+						<f:selectItem itemLabel="ABÓBORA" itemValue="20" />
+						<f:selectItem itemLabel="ABOBRINHA" itemValue="21" />
+						<f:selectItem itemLabel="AÇAÍ" itemValue="1005" />
+						<f:selectItem itemLabel="ACEROLA" itemValue="1006" />
+						<f:selectItem itemLabel="AIPIM" itemValue="1062" />
+						<f:selectItem itemLabel="AIPO" itemValue="6" />
+						<f:selectItem itemLabel="ALCACHOFRAS" itemValue="43" />
+						<f:selectItem itemLabel="ALFACE" itemValue="8" />
+						<f:selectItem itemLabel="ALFAFA (FENO, CICLO INDIVIDUAL DE CORTE)" itemValue="66" />
+						<f:selectItem itemLabel="ALFAFA (FENO, VÁRIOS CORTES, FEITOS MÉDIOS)" itemValue="65" />
+						<f:selectItem itemLabel="ALFAFA (PARA SEMENTE)" itemValue="67" />
+						<f:selectItem itemLabel="ALGAROBA" itemValue="1103" />
+						<f:selectItem itemLabel="ALGODÃO" itemValue="47" />
+						<f:selectItem itemLabel="ALHO" itemValue="7" />
+						<f:selectItem itemLabel="AMEIXA" itemValue="1007" />
+						<f:selectItem itemLabel="AMÊNDOAS (SEM COBERTURA DE CHÃO)" itemValue="95" />
+						<f:selectItem itemLabel="AMENDOIM" itemValue="38" />
+						<f:selectItem itemLabel="AMORA, MIRTILO (ARBUSTOS)" itemValue="91" />
+						<f:selectItem itemLabel="ARAÇA" itemValue="1008" />
+						<f:selectItem itemLabel="ARROZ" itemValue="64" />
+						<f:selectItem itemLabel="ASPARGOS" itemValue="44" />
+						<f:selectItem itemLabel="ATEMOIA" itemValue="1009" />
+						<f:selectItem itemLabel="AVEIA" itemValue="56" />
+						<f:selectItem itemLabel="BANANA (1º ANO)" itemValue="79" />
+						<f:selectItem itemLabel="BANANA (2º ANO)" itemValue="80" />
+						<f:selectItem itemLabel="BANHADOS COM TABOAS, JUNCOS,  COM GEADAS" itemValue="116" />
+						<f:selectItem itemLabel="BANHADOS COM TABOAS, JUNCOS,  SEM GEADAS" itemValue="117" />
+						<f:selectItem itemLabel="BANHADOS, VEGETAÇÃO BAIXA, SEM GEADAS" itemValue="118" />
+						<f:selectItem itemLabel="BATATA" itemValue="28" />
+						<f:selectItem itemLabel="BATATA DOCE" itemValue="29" />
+						<f:selectItem itemLabel="BATATINHA" itemValue="1068" />
+						<f:selectItem itemLabel="BERINGELA" itemValue="14" />
+						<f:selectItem itemLabel="BETERRABA AÇUCAREIRA" itemValue="31" />
+						<f:selectItem itemLabel="BETERRABAS" itemValue="24" />
+						<f:selectItem itemLabel="BRÓCOLIS" itemValue="1" />
+						<f:selectItem itemLabel="BUCHA" itemValue="1115" />
+						<f:selectItem itemLabel="BURITI" itemValue="1013" />
+						<f:selectItem itemLabel="BURITIBA" itemValue="1014" />
+						<f:selectItem itemLabel="CACAU" itemValue="81" />
+						<f:selectItem itemLabel="CAFÉ (COM ERVAS)" itemValue="83" />
+						<f:selectItem itemLabel="CAFÉ (POUCA COBERTURA DE CHÃO)" itemValue="82" />
+						<f:selectItem itemLabel="CAJA" itemValue="1018" />
+						<f:selectItem itemLabel="CAJAMANGA" itemValue="1019" />
+						<f:selectItem itemLabel="CAJARANA" itemValue="1113" />
+						<f:selectItem itemLabel="CAJU" itemValue="1015" />
+						<f:selectItem itemLabel="CANA-DE-AÇÚCAR" itemValue="121" />
+						<f:selectItem itemLabel="CANELA" itemValue="1071" />
+						<f:selectItem itemLabel="CAPIM BERMUDA (COLHEITA DE PRIMAVERA PARA SEMENTE)" itemValue="69" />
+						<f:selectItem itemLabel="CAPIM BERMUDA (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="68" />
+						<f:selectItem itemLabel="CAPIM CENTEIO (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="72" />
+						<f:selectItem itemLabel="CAPIM SUDÃO ¿ ANUAL (FENO, CICLO INDIVIDUAL DE CORTE)" itemValue="74" />
+						<f:selectItem itemLabel="CAPIM SUDÃO ¿ ANUAL (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="73" />
+						<f:selectItem itemLabel="CAQUI" itemValue="1016" />
+						<f:selectItem itemLabel="CARÁ" itemValue="1093" />
+						<f:selectItem itemLabel="CARAMBOLA" itemValue="1017" />
+						<f:selectItem itemLabel="CÁRTAMO" itemValue="52" />
+						<f:selectItem itemLabel="CEBOLAS (SECAS)" itemValue="9" />
+						<f:selectItem itemLabel="CEBOLAS (SEMENTES)" itemValue="11" />
+						<f:selectItem itemLabel="CEBOLAS (VERDES)" itemValue="10" />
+						<f:selectItem itemLabel="CEBOLINHA" itemValue="1118" />
+						<f:selectItem itemLabel="CENOURA" itemValue="4" />
+						<f:selectItem itemLabel="CEVADA" itemValue="55" />
+						<f:selectItem itemLabel="CHÁ (COM ÁRVORES DE SOMBREAMENTO)" itemValue="90" />
+						<f:selectItem itemLabel="CHÁ (SEM SOMBREAMENTO)" itemValue="89" />
+						<f:selectItem itemLabel="CHUCHU" itemValue="1074" />
+						<f:selectItem itemLabel="CITRUS, COBERTURA DE CHÃO ATIVA OU INVASORAS (20% DE DOSSEL)" itemValue="110" />
+						<f:selectItem itemLabel="CITRUS, COBERTURA DE CHÃO ATIVA OU INVASORAS (50% DE DOSSEL)" itemValue="109" />
+						<f:selectItem itemLabel="CITRUS, COBERTURA DE CHÃO ATIVA OU INVASORAS (70% DE DOSSEL)" itemValue="108" />
+						<f:selectItem itemLabel="CITRUS, SEM COBERTURA DE CHÃO (20% DE DOSSEL)" itemValue="107" />
+						<f:selectItem itemLabel="CITRUS, SEM COBERTURA DE CHÃO (50% DE DOSSEL)" itemValue="106" />
+						<f:selectItem itemLabel="CITRUS, SEM COBERTURA DE CHÃO (70% DE DOSSEL)" itemValue="105" />
+						<f:selectItem itemLabel="COCO SECO" itemValue="1122" />
+						<f:selectItem itemLabel="COCO VERDE" itemValue="1020" />
+						<f:selectItem itemLabel="COENTRO" itemValue="1075" />
+						<f:selectItem itemLabel="COGUMELO" itemValue="1117" />
+						<f:selectItem itemLabel="COLZA, CANOLA" itemValue="51" />
+						<f:selectItem itemLabel="COMINHO" itemValue="1076" />
+						<f:selectItem itemLabel="CONÍFERAS" itemValue="115" />
+						<f:selectItem itemLabel="COUVE (OU COUVE SIMPLES)" itemValue="1094" />
+						<f:selectItem itemLabel="COUVE DE BRUXELAS" itemValue="2" />
+						<f:selectItem itemLabel="COUVE FLOR" itemValue="5" />
+						<f:selectItem itemLabel="CROTALARIA (ARBUSTO)" itemValue="1108" />
+						<f:selectItem itemLabel="CUPUAÇU" itemValue="1021" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (COBERTURA DE CHÃO ATIVA, COM GEADAS)" itemValue="102" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (COBERTURA DE CHÃO ATIVA, SEM GEADAS)" itemValue="103" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (SEM COBERTURA DE CHÃO, COM GEADAS)" itemValue="100" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (SEM COBERTURA DE CHÃO, SEM GEADAS)" itemValue="101" />
+						<f:selectItem itemLabel="ERVILHA (FRESCA)" itemValue="40" />
+						<f:selectItem itemLabel="ERVILHA (SECA, SEMENTE)" itemValue="41" />
+						<f:selectItem itemLabel="ESPINAFRE" itemValue="12" />
+						<f:selectItem itemLabel="EUCALIPITO" itemValue="1130" />
+						<f:selectItem itemLabel="FAVA (COLHEITA FRESCA)" itemValue="35" />
+						<f:selectItem itemLabel="FAVA (GRÃO, SEMENTE)" itemValue="36" />
+						<f:selectItem itemLabel="FEIJÃO CAUPI (E FEIJÃO MUNGO)" itemValue="37" />
+						<f:selectItem itemLabel="FEIJÃO VERDE" itemValue="32" />
+						<f:selectItem itemLabel="FEIJÃO VIGNA" itemValue="1099" />
+						<f:selectItem itemLabel="FEIJÕES (GRÃOS)" itemValue="33" />
+						<f:selectItem itemLabel="FIGO" itemValue="1022" />
+						<f:selectItem itemLabel="FLORES" itemValue="1105" />
+						<f:selectItem itemLabel="FUMO" itemValue="1127" />
+						<f:selectItem itemLabel="GEGELIM" itemValue="53" />
+						<f:selectItem itemLabel="GILÓ" itemValue="1126" />
+						<f:selectItem itemLabel="GIRASSOL" itemValue="54" />
+						<f:selectItem itemLabel="GOIABA" itemValue="1023" />
+						<f:selectItem itemLabel="GRAMADOS (ESTAÇÃO FRIA)" itemValue="77" />
+						<f:selectItem itemLabel="GRAMADOS (ESTAÇÃO QUENTE)" itemValue="78" />
+						<f:selectItem itemLabel="GRÃO DE BICO" itemValue="34" />
+						<f:selectItem itemLabel="GRAVIOLA" itemValue="1024" />
+						<f:selectItem itemLabel="HORTALIÇAS" itemValue="1120" />
+						<f:selectItem itemLabel="HORTELÃ" itemValue="45" />
+						<f:selectItem itemLabel="INHAME" itemValue="1079" />
+						<f:selectItem itemLabel="JABOTICABA" itemValue="1025" />
+						<f:selectItem itemLabel="JACA" itemValue="1026" />
+						<f:selectItem itemLabel="JAMBO" itemValue="1027" />
+						<f:selectItem itemLabel="JENIPAPO" itemValue="1028" />
+						<f:selectItem itemLabel="JUÇARA" itemValue="1029" />
+						<f:selectItem itemLabel="KIWI" itemValue="111" />
+						<f:selectItem itemLabel="LENTILHA" itemValue="39" />
+						<f:selectItem itemLabel="LICHIA" itemValue="1031" />
+						<f:selectItem itemLabel="LINHO" itemValue="48" />
+						<f:selectItem itemLabel="LÚPULO" itemValue="94" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (COBERTURA DE CHÃO ATIVA, COM GEADAS)" itemValue="98" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (COBERTURA DE CHÃO ATIVA, SEM GEADAS)" itemValue="99" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (SEM COBERTURA DE CHÃO, COM GEADAS)" itemValue="96" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (SEM COBERTURA DE CHÃO, SEM GEADAS)" itemValue="97" />
+						<f:selectItem itemLabel="MAMAO" itemValue="1036" />
+						<f:selectItem itemLabel="MAMONA" itemValue="50" />
+						<f:selectItem itemLabel="MANDIOCAS  (ANO 1)" itemValue="25" />
+						<f:selectItem itemLabel="MANDIOCAS  (ANO 2)" itemValue="26" />
+						<f:selectItem itemLabel="MANGA" itemValue="1037" />
+						<f:selectItem itemLabel="MANGABA" itemValue="1034" />
+						<f:selectItem itemLabel="MANGOSTAO" itemValue="1035" />
+						<f:selectItem itemLabel="MARACUJA" itemValue="1038" />
+						<f:selectItem itemLabel="MAXIXE" itemValue="1092" />
+						<f:selectItem itemLabel="MELANCIAS" itemValue="23" />
+						<f:selectItem itemLabel="MELÃO CANTALOUPE" itemValue="17" />
+						<f:selectItem itemLabel="MELÕES" itemValue="22" />
+						<f:selectItem itemLabel="MILHETO" itemValue="61" />
+						<f:selectItem itemLabel="MILHO (DOCE)" itemValue="60" />
+						<f:selectItem itemLabel="MILHO (GRÃO E PIPOCA)" itemValue="59" />
+						<f:selectItem itemLabel="MILHO-VERDE" itemValue="1123" />
+						<f:selectItem itemLabel="MORANGOS" itemValue="46" />
+						<f:selectItem itemLabel="MURICI" itemValue="1039" />
+						<f:selectItem itemLabel="NABO (E NABO-REDONDO)" itemValue="30" />
+						<f:selectItem itemLabel="NECTARINA" itemValue="1040" />
+						<f:selectItem itemLabel="NOGUEIRA (POMARES)" itemValue="114" />
+						<f:selectItem itemLabel="NOZ MACADAMIA" itemValue="1041" />
+						<f:selectItem itemLabel="OLIVEIRA (40 A 60% DE COBERTURA DO SOLO PELO DOSSEL)" itemValue="112" />
+						<f:selectItem itemLabel="PALMEIRA" itemValue="85" />
+						<f:selectItem itemLabel="PÂNTANO, BANHADO, SOLO ÚMIDO" itemValue="120" />
+						<f:selectItem itemLabel="PÂNTANO, BANHADOS,  ÁGUA ESTAGNADA" itemValue="119" />
+						<f:selectItem itemLabel="PASTAGEM (PASTOREIO EXTENSIVO)" itemValue="76" />
+						<f:selectItem itemLabel="PASTAGEM (PASTOREIO ROTATIVO)" itemValue="75" />
+						<f:selectItem itemLabel="PASTINACA (CHIRÍVIA)" itemValue="27" />
+						<f:selectItem itemLabel="PEPINO (COLHEITA FRESCA)" itemValue="18" />
+						<f:selectItem itemLabel="PEPINO (COLHEITA MECÂNICA)" itemValue="19" />
+						<f:selectItem itemLabel="PEQUI" itemValue="1042" />
+						<f:selectItem itemLabel="PESSEGO" itemValue="1043" />
+						<f:selectItem itemLabel="PIMENTA" itemValue="1090" />
+						<f:selectItem itemLabel="PIMENTÃO" itemValue="15" />
+						<f:selectItem itemLabel="PINHA" itemValue="1044" />
+						<f:selectItem itemLabel="PISTACHE, SEM COBERTURA DO SOLO" itemValue="113" />
+						<f:selectItem itemLabel="PITANGA" itemValue="1045" />
+						<f:selectItem itemLabel="POMAR" itemValue="1129" />
+						<f:selectItem itemLabel="PUPUNHA" itemValue="1046" />
+						<f:selectItem itemLabel="QUIABO" itemValue="1086" />
+						<f:selectItem itemLabel="RABANETE" itemValue="13" />
+						<f:selectItem itemLabel="RAMBUTAN" itemValue="1047" />
+						<f:selectItem itemLabel="REPOLHO" itemValue="3" />
+						<f:selectItem itemLabel="ROMA" itemValue="1048" />
+						<f:selectItem itemLabel="SALSA" itemValue="1119" />
+						<f:selectItem itemLabel="SAPOTI" itemValue="1049" />
+						<f:selectItem itemLabel="SERIGUELA" itemValue="1050" />
+						<f:selectItem itemLabel="SERINGUEIRA" itemValue="88" />
+						<f:selectItem itemLabel="SISAL" itemValue="49" />
+						<f:selectItem itemLabel="SOJA" itemValue="42" />
+						<f:selectItem itemLabel="SORGO (DOCE)" itemValue="63" />
+						<f:selectItem itemLabel="SORGO (GRÃO)" itemValue="62" />
+						<f:selectItem itemLabel="TAMAREIRA (TÂMARAS)" itemValue="84" />
+						<f:selectItem itemLabel="TAMARINDO" itemValue="1051" />
+						<f:selectItem itemLabel="TANGERINA" itemValue="1052" />
+						<f:selectItem itemLabel="TOMATE" itemValue="16" />
+						<f:selectItem itemLabel="TREVO (FENO, CICLO INDIVIDUAL DE CORTE)" itemValue="71" />
+						<f:selectItem itemLabel="TREVO (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="70" />
+						<f:selectItem itemLabel="TRIGO" itemValue="130" />
+						<f:selectItem itemLabel="TRIGO INVERNO" itemValue="58" />
+						<f:selectItem itemLabel="TRIGO PRIMAVERA" itemValue="57" />
+						<f:selectItem itemLabel="UMBU" itemValue="1054" />
+						<f:selectItem itemLabel="UVAS (MESA OU PASSAS)" itemValue="92" />
+						<f:selectItem itemLabel="UVAS (VINHO)" itemValue="93" />
+						<f:selectItem itemLabel="VAGEM" itemValue="1116" />
 					</p:selectOneMenu>
 					
 					<p:outputLabel value="Área Total Irrigada (3): " for="sir_ar_irrigada_3" />
@@ -494,230 +500,233 @@
 					<p:inputText id="sir_ar_irrigada_uni_3" maxlength="50" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_uni_3}" />
 					
 					<p:outputLabel value="Possui Outra Cultura Irrigada (3): " for="sir_ar_irrigada_outra_3" />
-					<p:selectBooleanCheckbox id="sir_ar_irrigada_outra_3" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra_3}" />
+					<p:selectOneMenu id="sir_ar_irrigada_outra_3" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra_3}" style="width:230px">
+						<f:selectItem itemLabel="NÃO" itemValue="false" />
+						<f:selectItem itemLabel="SIM" itemValue="true" />
+					</p:selectOneMenu>
 					
 					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência (3): " for="sir_tsi_cd_3" />
 					<p:selectOneMenu id="sir_tsi_cd_3" value="#{irrigacaoBean.irrigacao.sir_tsi_cd_3}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Sulcos abertos em desnível" itemLabel="Sulcos abertos em desnível" />
-						<f:selectItem itemValue="Inundação permanente (diques em nível)" itemLabel="Inundação permanente (diques em nível)" />
-						<f:selectItem itemValue="Aspersão por sistema convencional" itemLabel="Aspersão por sistema convencional" />
-						<f:selectItem itemValue="Aspersão por sistema autopropelido" itemLabel="Aspersão por sistema autopropelido" />
-						<f:selectItem itemValue="Aspersão por sistema pivô central" itemLabel="Aspersão por sistema pivô central" />
-						<f:selectItem itemValue="Gotejamento" itemLabel="Gotejamento" />
-						<f:selectItem itemValue="Micro aspersão" itemLabel="Micro aspersão" />
-						<f:selectItem itemValue="Tubos perfurados (tripa)" itemLabel="Tubos perfurados (tripa)" />
-						<f:selectItem itemValue="Sulcos interligados em bacias" itemLabel="Sulcos interligados em bacias" />
-						<f:selectItem itemValue="Sub irrigação" itemLabel="Sub irrigação" />
-						<f:selectItem itemValue="Aspersão por sistema pivô central com LEPA" itemLabel="Aspersão por sistema pivô central com LEPA" />
-						<f:selectItem itemValue="Aspersão por canhão hidráulico" itemLabel="Aspersão por canhão hidráulico" />
-						<f:selectItem itemValue="Aspersão por sistema deslocamento linear" itemLabel="Aspersão por sistema deslocamento linear" />
-						<f:selectItem itemValue="Aspersão por sistema em malha" itemLabel="Aspersão por sistema em malha" />
-						<f:selectItem itemValue="Aspersão por sistema pivô central rebocável" itemLabel="Aspersão por sistema pivô central rebocável" />
-						<f:selectItem itemValue="Caminhão regadeira" itemLabel="Caminhão regadeira" />
-						<f:selectItem itemValue="Gotejamento subterrâneo, tubo poroso" itemLabel="Gotejamento subterrâneo, tubo poroso" />
-						<f:selectItem itemValue="Sulcos fechados" itemLabel="Sulcos fechados" />
-						<f:selectItem itemValue="Inundação temporária (diques em desnível)" itemLabel="Inundação temporária (diques em desnível)" />
+						<f:selectItem itemLabel="ASPERSÃO POR CANHÃO HIDRÁULICO" itemValue="12" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA AUTOPROPELIDO" itemValue="4" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA CONVENCIONAL" itemValue="3" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA DESLOCAMENTO LINEAR" itemValue="13" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA EM MALHA" itemValue="14" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA PIVÔ CENTRAL" itemValue="5" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA PIVÔ CENTRAL COM LEPA" itemValue="11" />
+						<f:selectItem itemLabel="ASPERSÃO POR SISTEMA PIVÔ CENTRAL REBOCÁVEL" itemValue="15" />
+						<f:selectItem itemLabel="CAMINHÃO REGADEIRA" itemValue="16" />
+						<f:selectItem itemLabel="GOTEJAMENTO" itemValue="6" />
+						<f:selectItem itemLabel="GOTEJAMENTO SUBTERRÂNEO - TUBO POROSO" itemValue="17" />
+						<f:selectItem itemLabel="INUNDAÇÃO PERMANENTE (DIQUES EM NÍVEL)" itemValue="2" />
+						<f:selectItem itemLabel="INUNDAÇÃO TEMPORÁRIA (DIQUES EM DESNÍVEL)" itemValue="19" />
+						<f:selectItem itemLabel="MICRO-ASPERSÃO" itemValue="7" />
+						<f:selectItem itemLabel="SUB-IRRIGAÇÃO" itemValue="10" />
+						<f:selectItem itemLabel="SULCOS ABERTOS EM DESNÍVEL" itemValue="1" />
+						<f:selectItem itemLabel="SULCOS FECHADOS" itemValue="18" />
+						<f:selectItem itemLabel="SULCOS INTERLIGADOS EM BACIAS" itemValue="9" />
+						<f:selectItem itemLabel="TUBOS PERFURADOS (TRIPA)" itemValue="8" />
 					</p:selectOneMenu>
 					
 					<p:outputLabel value="Identificador do Tipo de Cultura (3): " for="sir_tct_cd_3" />
 					<p:selectOneMenu id="sir_tct_cd_3" value="#{irrigacaoBean.irrigacao.sir_tct_cd_3}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Abacate sem cobertura de chão" itemLabel="Abacate sem cobertura de chão" />
-						<f:selectItem itemValue="Abacaxi (com cobertura de gramíneas)" itemLabel="Abacaxi (com cobertura de gramíneas)" />
-						<f:selectItem itemValue="Abacaxi (solo limpo)" itemLabel="Abacaxi (solo limpo)" />
-						<f:selectItem itemValue="Abiu" itemLabel="Abiu" />
-						<f:selectItem itemValue="Abóbora" itemLabel="Abóbora" />
-						<f:selectItem itemValue="Abobrinha" itemLabel="Abobrinha" />
-						<f:selectItem itemValue="Açaí" itemLabel="Açaí" />
-						<f:selectItem itemValue="Acerola" itemLabel="Acerola" />
-						<f:selectItem itemValue="Aipim" itemLabel="Aipim" />
-						<f:selectItem itemValue="Aipo" itemLabel="Aipo" />
-						<f:selectItem itemValue="Alcachofras" itemLabel="Alcachofras" />
-						<f:selectItem itemValue="Alface" itemLabel="Alface" />
-						<f:selectItem itemValue="Alfafa (feno ciclo individual de corte)" itemLabel="Alfafa (feno ciclo individual de corte)" />
-						<f:selectItem itemValue="Alfafa (feno vários cortes feitos médios)" itemLabel="Alfafa (feno vários cortes feitos médios)" />
-						<f:selectItem itemValue="Alfafa (para semente)" itemLabel="Alfafa (para semente)" />
-						<f:selectItem itemValue="Algaroba" itemLabel="Algaroba" />
-						<f:selectItem itemValue="Algodão" itemLabel="Algodão" />
-						<f:selectItem itemValue="Alho" itemLabel="Alho" />
-						<f:selectItem itemValue="Ameixa" itemLabel="Ameixa" />
-						<f:selectItem itemValue="Amêndoas (sem cobertura de chão)" itemLabel="Amêndoas (sem cobertura de chão)" />
-						<f:selectItem itemValue="Amendoim" itemLabel="Amendoim" />
-						<f:selectItem itemValue="Amora mirtilo (arbustos)" itemLabel="Amora mirtilo (arbustos)" />
-						<f:selectItem itemValue="Araça" itemLabel="Araça" />
-						<f:selectItem itemValue="Arroz" itemLabel="Arroz" />
-						<f:selectItem itemValue="Aspargos" itemLabel="Aspargos" />
-						<f:selectItem itemValue="Atemoia" itemLabel="Atemoia" />
-						<f:selectItem itemValue="Aveia" itemLabel="Aveia" />
-						<f:selectItem itemValue="Banana (1º ano)" itemLabel="Banana (1º ano)" />
-						<f:selectItem itemValue="Banana (2º ano)" itemLabel="Banana (2º ano)" />
-						<f:selectItem itemValue="Banhados com taboas juncos  com geadas" itemLabel="Banhados com taboas juncos  com geadas" />
-						<f:selectItem itemValue="Banhados com taboas juncos  sem geadas" itemLabel="Banhados com taboas juncos  sem geadas" />
-						<f:selectItem itemValue="Banhados vegetação baixa sem geadas" itemLabel="Banhados vegetação baixa sem geadas" />
-						<f:selectItem itemValue="Batata" itemLabel="Batata" />
-						<f:selectItem itemValue="Batata doce" itemLabel="Batata doce" />
-						<f:selectItem itemValue="Batatinha" itemLabel="Batatinha" />
-						<f:selectItem itemValue="Beringela" itemLabel="Beringela" />
-						<f:selectItem itemValue="Beterraba açucareira" itemLabel="Beterraba açucareira" />
-						<f:selectItem itemValue="Beterrabas" itemLabel="Beterrabas" />
-						<f:selectItem itemValue="Brócolis" itemLabel="Brócolis" />
-						<f:selectItem itemValue="Bucha" itemLabel="Bucha" />
-						<f:selectItem itemValue="Buriti" itemLabel="Buriti" />
-						<f:selectItem itemValue="Buritiba" itemLabel="Buritiba" />
-						<f:selectItem itemValue="Cacau" itemLabel="Cacau" />
-						<f:selectItem itemValue="Café (com ervas)" itemLabel="Café (com ervas)" />
-						<f:selectItem itemValue="Café (pouca cobertura de chão)" itemLabel="Café (pouca cobertura de chão)" />
-						<f:selectItem itemValue="Caja" itemLabel="Caja" />
-						<f:selectItem itemValue="Cajamanga" itemLabel="Cajamanga" />
-						<f:selectItem itemValue="Cajarana" itemLabel="Cajarana" />
-						<f:selectItem itemValue="Caju" itemLabel="Caju" />
-						<f:selectItem itemValue="Cana-de-açúcar" itemLabel="Cana-de-açúcar" />
-						<f:selectItem itemValue="Canela" itemLabel="Canela" />
-						<f:selectItem itemValue="Capim Bermuda (colheita de primavera para semente)" itemLabel="Capim Bermuda (colheita de primavera para semente)" />
-						<f:selectItem itemValue="Capim Bermuda (feno vários cortes efeitos médios)" itemLabel="Capim Bermuda (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Capim centeio (feno vários cortes efeitos médios)" itemLabel="Capim centeio (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Capim Sudão anual (feno ciclo individual de corte)" itemLabel="Capim Sudão anual (feno ciclo individual de corte)" />
-						<f:selectItem itemValue="Capim Sudão anual (feno vários cortes efeitos médios)" itemLabel="Capim Sudão anual (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Caqui" itemLabel="Caqui" />
-						<f:selectItem itemValue="Cará" itemLabel="Cará" />
-						<f:selectItem itemValue="Carambola" itemLabel="Carambola" />
-						<f:selectItem itemValue="Cártamo" itemLabel="Cártamo" />
-						<f:selectItem itemValue="Cebolas (secas)" itemLabel="Cebolas (secas)" />
-						<f:selectItem itemValue="Cebolas (sementes)" itemLabel="Cebolas (sementes)" />
-						<f:selectItem itemValue="Cebolas (verdes)" itemLabel="Cebolas (verdes)" />
-						<f:selectItem itemValue="Cebolinha" itemLabel="Cebolinha" />
-						<f:selectItem itemValue="Cenoura" itemLabel="Cenoura" />
-						<f:selectItem itemValue="Cevada" itemLabel="Cevada" />
-						<f:selectItem itemValue="Chá (com árvores de sombreamento)" itemLabel="Chá (com árvores de sombreamento)" />
-						<f:selectItem itemValue="Chá (sem sombreamento)" itemLabel="Chá (sem sombreamento)" />
-						<f:selectItem itemValue="Chuchu" itemLabel="Chuchu" />
-						<f:selectItem itemValue="Citrus cobertura de chão ativa ou invasoras (20% de dossel)" itemLabel="Citrus cobertura de chão ativa ou invasoras (20% de dossel)" />
-						<f:selectItem itemValue="Citrus cobertura de chão ativa ou invasoras (50% de dossel)" itemLabel="Citrus cobertura de chão ativa ou invasoras (50% de dossel)" />
-						<f:selectItem itemValue="Citrus cobertura de chão ativa ou invasoras (70% de dossel)" itemLabel="Citrus cobertura de chão ativa ou invasoras (70% de dossel)" />
-						<f:selectItem itemValue="Citrus sem cobertura de chão (20% de dossel)" itemLabel="Citrus sem cobertura de chão (20% de dossel)" />
-						<f:selectItem itemValue="Citrus sem cobertura de chão (50% de dossel)" itemLabel="Citrus sem cobertura de chão (50% de dossel)" />
-						<f:selectItem itemValue="Citrus sem cobertura de chão (70% de dossel)" itemLabel="Citrus sem cobertura de chão (70% de dossel)" />
-						<f:selectItem itemValue="Coco Seco" itemLabel="Coco Seco" />
-						<f:selectItem itemValue="Coco Verde" itemLabel="Coco Verde" />
-						<f:selectItem itemValue="Coentro" itemLabel="Coentro" />
-						<f:selectItem itemValue="Cogumelo" itemLabel="Cogumelo" />
-						<f:selectItem itemValue="Colza Canola" itemLabel="Colza Canola" />
-						<f:selectItem itemValue="Cominho" itemLabel="Cominho" />
-						<f:selectItem itemValue="Coníferas" itemLabel="Coníferas" />
-						<f:selectItem itemValue="Couve (ou Couve simples)" itemLabel="Couve (ou Couve simples)" />
-						<f:selectItem itemValue="Couve de bruxelas" itemLabel="Couve de bruxelas" />
-						<f:selectItem itemValue="Couve flor" itemLabel="Couve flor" />
-						<f:selectItem itemValue="Crotalaria (Arbusto)" itemLabel="Crotalaria (Arbusto)" />
-						<f:selectItem itemValue="Cupuaçu" itemLabel="Cupuaçu" />
-						<f:selectItem itemValue="Damascos pêssegos (cobertura de chão ativa com geadas)" itemLabel="Damascos pêssegos (cobertura de chão ativa com geadas)" />
-						<f:selectItem itemValue="Damascos pêssegos (cobertura de chão ativa sem geadas)" itemLabel="Damascos pêssegos (cobertura de chão ativa sem geadas)" />
-						<f:selectItem itemValue="Damascos pêssegos (sem cobertura de chão com geadas)" itemLabel="Damascos pêssegos (sem cobertura de chão com geadas)" />
-						<f:selectItem itemValue="Damascos pêssegos (sem cobertura de chão sem geadas)" itemLabel="Damascos pêssegos (sem cobertura de chão sem geadas)" />
-						<f:selectItem itemValue="Ervilha (fresca)" itemLabel="Ervilha (fresca)" />
-						<f:selectItem itemValue="Ervilha (seca semente)" itemLabel="Ervilha (seca semente)" />
-						<f:selectItem itemValue="Espinafre" itemLabel="Espinafre" />
-						<f:selectItem itemValue="Eucalipito" itemLabel="Eucalipito" />
-						<f:selectItem itemValue="Fava (colheita fresca)" itemLabel="Fava (colheita fresca)" />
-						<f:selectItem itemValue="Fava (grão semente)" itemLabel="Fava (grão semente)" />
-						<f:selectItem itemValue="Feijão caupi (e feijão mungo)" itemLabel="Feijão caupi (e feijão mungo)" />
-						<f:selectItem itemValue="Feijão verde" itemLabel="Feijão verde" />
-						<f:selectItem itemValue="Feijão Vigna" itemLabel="Feijão Vigna" />
-						<f:selectItem itemValue="Feijões (grãos)" itemLabel="Feijões (grãos)" />
-						<f:selectItem itemValue="Figo" itemLabel="Figo" />
-						<f:selectItem itemValue="Flores" itemLabel="Flores" />
-						<f:selectItem itemValue="Fumo" itemLabel="Fumo" />
-						<f:selectItem itemValue="Gegelim" itemLabel="Gegelim" />
-						<f:selectItem itemValue="Giló" itemLabel="Giló" />
-						<f:selectItem itemValue="Girassol" itemLabel="Girassol" />
-						<f:selectItem itemValue="Goiaba" itemLabel="Goiaba" />
-						<f:selectItem itemValue="Gramados (estação fria)" itemLabel="Gramados (estação fria)" />
-						<f:selectItem itemValue="Gramados (estação quente)" itemLabel="Gramados (estação quente)" />
-						<f:selectItem itemValue="Grão de bico" itemLabel="Grão de bico" />
-						<f:selectItem itemValue="Graviola" itemLabel="Graviola" />
-						<f:selectItem itemValue="Hortaliças" itemLabel="Hortaliças" />
-						<f:selectItem itemValue="Hortelã" itemLabel="Hortelã" />
-						<f:selectItem itemValue="Inhame" itemLabel="Inhame" />
-						<f:selectItem itemValue="Jaboticaba" itemLabel="Jaboticaba" />
-						<f:selectItem itemValue="Jaca" itemLabel="Jaca" />
-						<f:selectItem itemValue="Jambo" itemLabel="Jambo" />
-						<f:selectItem itemValue="Jenipapo" itemLabel="Jenipapo" />
-						<f:selectItem itemValue="Juçara" itemLabel="Juçara" />
-						<f:selectItem itemValue="Kiwi" itemLabel="Kiwi" />
-						<f:selectItem itemValue="Lentilha" itemLabel="Lentilha" />
-						<f:selectItem itemValue="Lichia" itemLabel="Lichia" />
-						<f:selectItem itemValue="Linho" itemLabel="Linho" />
-						<f:selectItem itemValue="Lúpulo" itemLabel="Lúpulo" />
-						<f:selectItem itemValue="Maças cerejas e peras (cobertura de chão ativa com geadas)" itemLabel="Maças cerejas e peras (cobertura de chão ativa com geadas)" />
-						<f:selectItem itemValue="Maças cerejas e peras (cobertura de chão ativa sem geadas)" itemLabel="Maças cerejas e peras (cobertura de chão ativa sem geadas)" />
-						<f:selectItem itemValue="Maças cerejas e peras (sem cobertura de chão com geadas)" itemLabel="Maças cerejas e peras (sem cobertura de chão com geadas)" />
-						<f:selectItem itemValue="Maças cerejas e peras (sem cobertura de chão sem geadas)" itemLabel="Maças cerejas e peras (sem cobertura de chão sem geadas)" />
-						<f:selectItem itemValue="Mamao" itemLabel="Mamao" />
-						<f:selectItem itemValue="Mamona" itemLabel="Mamona" />
-						<f:selectItem itemValue="Mandiocas  (ano 1)" itemLabel="Mandiocas  (ano 1)" />
-						<f:selectItem itemValue="Mandiocas  (ano 2)" itemLabel="Mandiocas  (ano 2)" />
-						<f:selectItem itemValue="Manga" itemLabel="Manga" />
-						<f:selectItem itemValue="Mangaba" itemLabel="Mangaba" />
-						<f:selectItem itemValue="Mangostao" itemLabel="Mangostao" />
-						<f:selectItem itemValue="Maracuja" itemLabel="Maracuja" />
-						<f:selectItem itemValue="Maxixe" itemLabel="Maxixe" />
-						<f:selectItem itemValue="Melancias" itemLabel="Melancias" />
-						<f:selectItem itemValue="Melão cantaloupe" itemLabel="Melão cantaloupe" />
-						<f:selectItem itemValue="Melões" itemLabel="Melões" />
-						<f:selectItem itemValue="Milheto" itemLabel="Milheto" />
-						<f:selectItem itemValue="Milho (doce)" itemLabel="Milho (doce)" />
-						<f:selectItem itemValue="Milho (grão e pipoca)" itemLabel="Milho (grão e pipoca)" />
-						<f:selectItem itemValue="Milho-verde" itemLabel="Milho-verde" />
-						<f:selectItem itemValue="Morangos" itemLabel="Morangos" />
-						<f:selectItem itemValue="Murici" itemLabel="Murici" />
-						<f:selectItem itemValue="Nabo (e nabo-redondo)" itemLabel="Nabo (e nabo-redondo)" />
-						<f:selectItem itemValue="Nectarina" itemLabel="Nectarina" />
-						<f:selectItem itemValue="Nogueira (pomares)" itemLabel="Nogueira (pomares)" />
-						<f:selectItem itemValue="Noz Macadamia" itemLabel="Noz Macadamia" />
-						<f:selectItem itemValue="Oliveira (40 a 60% de cobertura do solo pelo dossel)" itemLabel="Oliveira (40 a 60% de cobertura do solo pelo dossel)" />
-						<f:selectItem itemValue="Palmeira" itemLabel="Palmeira" />
-						<f:selectItem itemValue="Pântano banhado solo úmido" itemLabel="Pântano banhado solo úmido" />
-						<f:selectItem itemValue="Pântano banhados  água estagnada" itemLabel="Pântano banhados  água estagnada" />
-						<f:selectItem itemValue="Pastagem (pastoreio extensivo)" itemLabel="Pastagem (pastoreio extensivo)" />
-						<f:selectItem itemValue="Pastagem (pastoreio rotativo)" itemLabel="Pastagem (pastoreio rotativo)" />
-						<f:selectItem itemValue="Pastinaca (chirívia)" itemLabel="Pastinaca (chirívia)" />
-						<f:selectItem itemValue="Pepino (colheita fresca)" itemLabel="Pepino (colheita fresca)" />
-						<f:selectItem itemValue="Pepino (colheita mecânica)" itemLabel="Pepino (colheita mecânica)" />
-						<f:selectItem itemValue="Pequi" itemLabel="Pequi" />
-						<f:selectItem itemValue="Pessego" itemLabel="Pessego" />
-						<f:selectItem itemValue="Pimenta" itemLabel="Pimenta" />
-						<f:selectItem itemValue="Pimentão" itemLabel="Pimentão" />
-						<f:selectItem itemValue="Pinha" itemLabel="Pinha" />
-						<f:selectItem itemValue="Pistache sem cobertura do solo" itemLabel="Pistache sem cobertura do solo" />
-						<f:selectItem itemValue="Pitanga" itemLabel="Pitanga" />
-						<f:selectItem itemValue="Pomar" itemLabel="Pomar" />
-						<f:selectItem itemValue="Pupunha" itemLabel="Pupunha" />
-						<f:selectItem itemValue="Quiabo" itemLabel="Quiabo" />
-						<f:selectItem itemValue="Rabanete" itemLabel="Rabanete" />
-						<f:selectItem itemValue="Rambutan" itemLabel="Rambutan" />
-						<f:selectItem itemValue="Repolho" itemLabel="Repolho" />
-						<f:selectItem itemValue="Roma" itemLabel="Roma" />
-						<f:selectItem itemValue="Salsa" itemLabel="Salsa" />
-						<f:selectItem itemValue="Sapoti" itemLabel="Sapoti" />
-						<f:selectItem itemValue="Seriguela" itemLabel="Seriguela" />
-						<f:selectItem itemValue="Seringueira" itemLabel="Seringueira" />
-						<f:selectItem itemValue="Sisal" itemLabel="Sisal" />
-						<f:selectItem itemValue="Soja" itemLabel="Soja" />
-						<f:selectItem itemValue="Sorgo (doce)" itemLabel="Sorgo (doce)" />
-						<f:selectItem itemValue="Sorgo (grão)" itemLabel="Sorgo (grão)" />
-						<f:selectItem itemValue="Tamareira (Tâmaras)" itemLabel="Tamareira (Tâmaras)" />
-						<f:selectItem itemValue="Tamarindo" itemLabel="Tamarindo" />
-						<f:selectItem itemValue="Tangerina" itemLabel="Tangerina" />
-						<f:selectItem itemValue="Tomate" itemLabel="Tomate" />
-						<f:selectItem itemValue="Trevo (feno ciclo individual de corte)" itemLabel="Trevo (feno ciclo individual de corte)" />
-						<f:selectItem itemValue="Trevo (feno vários cortes efeitos médios)" itemLabel="Trevo (feno vários cortes efeitos médios)" />
-						<f:selectItem itemValue="Trigo" itemLabel="Trigo" />
-						<f:selectItem itemValue="Trigo inverno" itemLabel="Trigo inverno" />
-						<f:selectItem itemValue="Trigo primavera" itemLabel="Trigo primavera" />
-						<f:selectItem itemValue="Umbu" itemLabel="Umbu" />
-						<f:selectItem itemValue="Uvas (mesa ou passas)" itemLabel="Uvas (mesa ou passas)" />
-						<f:selectItem itemValue="Uvas (vinho)" itemLabel="Uvas (vinho)" />
-						<f:selectItem itemValue="Vagem" itemLabel="Vagem" />
+						<f:selectItem itemLabel="ABACATE, SEM COBERTURA DE CHÃO" itemValue="104" />
+						<f:selectItem itemLabel="ABACAXI (COM COBERTURA DE GRAMÍNEAS)" itemValue="87" />
+						<f:selectItem itemLabel="ABACAXI (SOLO LIMPO)" itemValue="86" />
+						<f:selectItem itemLabel="ABIU" itemValue="1004" />
+						<f:selectItem itemLabel="ABÓBORA" itemValue="20" />
+						<f:selectItem itemLabel="ABOBRINHA" itemValue="21" />
+						<f:selectItem itemLabel="AÇAÍ" itemValue="1005" />
+						<f:selectItem itemLabel="ACEROLA" itemValue="1006" />
+						<f:selectItem itemLabel="AIPIM" itemValue="1062" />
+						<f:selectItem itemLabel="AIPO" itemValue="6" />
+						<f:selectItem itemLabel="ALCACHOFRAS" itemValue="43" />
+						<f:selectItem itemLabel="ALFACE" itemValue="8" />
+						<f:selectItem itemLabel="ALFAFA (FENO, CICLO INDIVIDUAL DE CORTE)" itemValue="66" />
+						<f:selectItem itemLabel="ALFAFA (FENO, VÁRIOS CORTES, FEITOS MÉDIOS)" itemValue="65" />
+						<f:selectItem itemLabel="ALFAFA (PARA SEMENTE)" itemValue="67" />
+						<f:selectItem itemLabel="ALGAROBA" itemValue="1103" />
+						<f:selectItem itemLabel="ALGODÃO" itemValue="47" />
+						<f:selectItem itemLabel="ALHO" itemValue="7" />
+						<f:selectItem itemLabel="AMEIXA" itemValue="1007" />
+						<f:selectItem itemLabel="AMÊNDOAS (SEM COBERTURA DE CHÃO)" itemValue="95" />
+						<f:selectItem itemLabel="AMENDOIM" itemValue="38" />
+						<f:selectItem itemLabel="AMORA, MIRTILO (ARBUSTOS)" itemValue="91" />
+						<f:selectItem itemLabel="ARAÇA" itemValue="1008" />
+						<f:selectItem itemLabel="ARROZ" itemValue="64" />
+						<f:selectItem itemLabel="ASPARGOS" itemValue="44" />
+						<f:selectItem itemLabel="ATEMOIA" itemValue="1009" />
+						<f:selectItem itemLabel="AVEIA" itemValue="56" />
+						<f:selectItem itemLabel="BANANA (1º ANO)" itemValue="79" />
+						<f:selectItem itemLabel="BANANA (2º ANO)" itemValue="80" />
+						<f:selectItem itemLabel="BANHADOS COM TABOAS, JUNCOS,  COM GEADAS" itemValue="116" />
+						<f:selectItem itemLabel="BANHADOS COM TABOAS, JUNCOS,  SEM GEADAS" itemValue="117" />
+						<f:selectItem itemLabel="BANHADOS, VEGETAÇÃO BAIXA, SEM GEADAS" itemValue="118" />
+						<f:selectItem itemLabel="BATATA" itemValue="28" />
+						<f:selectItem itemLabel="BATATA DOCE" itemValue="29" />
+						<f:selectItem itemLabel="BATATINHA" itemValue="1068" />
+						<f:selectItem itemLabel="BERINGELA" itemValue="14" />
+						<f:selectItem itemLabel="BETERRABA AÇUCAREIRA" itemValue="31" />
+						<f:selectItem itemLabel="BETERRABAS" itemValue="24" />
+						<f:selectItem itemLabel="BRÓCOLIS" itemValue="1" />
+						<f:selectItem itemLabel="BUCHA" itemValue="1115" />
+						<f:selectItem itemLabel="BURITI" itemValue="1013" />
+						<f:selectItem itemLabel="BURITIBA" itemValue="1014" />
+						<f:selectItem itemLabel="CACAU" itemValue="81" />
+						<f:selectItem itemLabel="CAFÉ (COM ERVAS)" itemValue="83" />
+						<f:selectItem itemLabel="CAFÉ (POUCA COBERTURA DE CHÃO)" itemValue="82" />
+						<f:selectItem itemLabel="CAJA" itemValue="1018" />
+						<f:selectItem itemLabel="CAJAMANGA" itemValue="1019" />
+						<f:selectItem itemLabel="CAJARANA" itemValue="1113" />
+						<f:selectItem itemLabel="CAJU" itemValue="1015" />
+						<f:selectItem itemLabel="CANA-DE-AÇÚCAR" itemValue="121" />
+						<f:selectItem itemLabel="CANELA" itemValue="1071" />
+						<f:selectItem itemLabel="CAPIM BERMUDA (COLHEITA DE PRIMAVERA PARA SEMENTE)" itemValue="69" />
+						<f:selectItem itemLabel="CAPIM BERMUDA (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="68" />
+						<f:selectItem itemLabel="CAPIM CENTEIO (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="72" />
+						<f:selectItem itemLabel="CAPIM SUDÃO ¿ ANUAL (FENO, CICLO INDIVIDUAL DE CORTE)" itemValue="74" />
+						<f:selectItem itemLabel="CAPIM SUDÃO ¿ ANUAL (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="73" />
+						<f:selectItem itemLabel="CAQUI" itemValue="1016" />
+						<f:selectItem itemLabel="CARÁ" itemValue="1093" />
+						<f:selectItem itemLabel="CARAMBOLA" itemValue="1017" />
+						<f:selectItem itemLabel="CÁRTAMO" itemValue="52" />
+						<f:selectItem itemLabel="CEBOLAS (SECAS)" itemValue="9" />
+						<f:selectItem itemLabel="CEBOLAS (SEMENTES)" itemValue="11" />
+						<f:selectItem itemLabel="CEBOLAS (VERDES)" itemValue="10" />
+						<f:selectItem itemLabel="CEBOLINHA" itemValue="1118" />
+						<f:selectItem itemLabel="CENOURA" itemValue="4" />
+						<f:selectItem itemLabel="CEVADA" itemValue="55" />
+						<f:selectItem itemLabel="CHÁ (COM ÁRVORES DE SOMBREAMENTO)" itemValue="90" />
+						<f:selectItem itemLabel="CHÁ (SEM SOMBREAMENTO)" itemValue="89" />
+						<f:selectItem itemLabel="CHUCHU" itemValue="1074" />
+						<f:selectItem itemLabel="CITRUS, COBERTURA DE CHÃO ATIVA OU INVASORAS (20% DE DOSSEL)" itemValue="110" />
+						<f:selectItem itemLabel="CITRUS, COBERTURA DE CHÃO ATIVA OU INVASORAS (50% DE DOSSEL)" itemValue="109" />
+						<f:selectItem itemLabel="CITRUS, COBERTURA DE CHÃO ATIVA OU INVASORAS (70% DE DOSSEL)" itemValue="108" />
+						<f:selectItem itemLabel="CITRUS, SEM COBERTURA DE CHÃO (20% DE DOSSEL)" itemValue="107" />
+						<f:selectItem itemLabel="CITRUS, SEM COBERTURA DE CHÃO (50% DE DOSSEL)" itemValue="106" />
+						<f:selectItem itemLabel="CITRUS, SEM COBERTURA DE CHÃO (70% DE DOSSEL)" itemValue="105" />
+						<f:selectItem itemLabel="COCO SECO" itemValue="1122" />
+						<f:selectItem itemLabel="COCO VERDE" itemValue="1020" />
+						<f:selectItem itemLabel="COENTRO" itemValue="1075" />
+						<f:selectItem itemLabel="COGUMELO" itemValue="1117" />
+						<f:selectItem itemLabel="COLZA, CANOLA" itemValue="51" />
+						<f:selectItem itemLabel="COMINHO" itemValue="1076" />
+						<f:selectItem itemLabel="CONÍFERAS" itemValue="115" />
+						<f:selectItem itemLabel="COUVE (OU COUVE SIMPLES)" itemValue="1094" />
+						<f:selectItem itemLabel="COUVE DE BRUXELAS" itemValue="2" />
+						<f:selectItem itemLabel="COUVE FLOR" itemValue="5" />
+						<f:selectItem itemLabel="CROTALARIA (ARBUSTO)" itemValue="1108" />
+						<f:selectItem itemLabel="CUPUAÇU" itemValue="1021" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (COBERTURA DE CHÃO ATIVA, COM GEADAS)" itemValue="102" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (COBERTURA DE CHÃO ATIVA, SEM GEADAS)" itemValue="103" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (SEM COBERTURA DE CHÃO, COM GEADAS)" itemValue="100" />
+						<f:selectItem itemLabel="DAMASCOS, PÊSSEGOS (SEM COBERTURA DE CHÃO, SEM GEADAS)" itemValue="101" />
+						<f:selectItem itemLabel="ERVILHA (FRESCA)" itemValue="40" />
+						<f:selectItem itemLabel="ERVILHA (SECA, SEMENTE)" itemValue="41" />
+						<f:selectItem itemLabel="ESPINAFRE" itemValue="12" />
+						<f:selectItem itemLabel="EUCALIPITO" itemValue="1130" />
+						<f:selectItem itemLabel="FAVA (COLHEITA FRESCA)" itemValue="35" />
+						<f:selectItem itemLabel="FAVA (GRÃO, SEMENTE)" itemValue="36" />
+						<f:selectItem itemLabel="FEIJÃO CAUPI (E FEIJÃO MUNGO)" itemValue="37" />
+						<f:selectItem itemLabel="FEIJÃO VERDE" itemValue="32" />
+						<f:selectItem itemLabel="FEIJÃO VIGNA" itemValue="1099" />
+						<f:selectItem itemLabel="FEIJÕES (GRÃOS)" itemValue="33" />
+						<f:selectItem itemLabel="FIGO" itemValue="1022" />
+						<f:selectItem itemLabel="FLORES" itemValue="1105" />
+						<f:selectItem itemLabel="FUMO" itemValue="1127" />
+						<f:selectItem itemLabel="GEGELIM" itemValue="53" />
+						<f:selectItem itemLabel="GILÓ" itemValue="1126" />
+						<f:selectItem itemLabel="GIRASSOL" itemValue="54" />
+						<f:selectItem itemLabel="GOIABA" itemValue="1023" />
+						<f:selectItem itemLabel="GRAMADOS (ESTAÇÃO FRIA)" itemValue="77" />
+						<f:selectItem itemLabel="GRAMADOS (ESTAÇÃO QUENTE)" itemValue="78" />
+						<f:selectItem itemLabel="GRÃO DE BICO" itemValue="34" />
+						<f:selectItem itemLabel="GRAVIOLA" itemValue="1024" />
+						<f:selectItem itemLabel="HORTALIÇAS" itemValue="1120" />
+						<f:selectItem itemLabel="HORTELÃ" itemValue="45" />
+						<f:selectItem itemLabel="INHAME" itemValue="1079" />
+						<f:selectItem itemLabel="JABOTICABA" itemValue="1025" />
+						<f:selectItem itemLabel="JACA" itemValue="1026" />
+						<f:selectItem itemLabel="JAMBO" itemValue="1027" />
+						<f:selectItem itemLabel="JENIPAPO" itemValue="1028" />
+						<f:selectItem itemLabel="JUÇARA" itemValue="1029" />
+						<f:selectItem itemLabel="KIWI" itemValue="111" />
+						<f:selectItem itemLabel="LENTILHA" itemValue="39" />
+						<f:selectItem itemLabel="LICHIA" itemValue="1031" />
+						<f:selectItem itemLabel="LINHO" itemValue="48" />
+						<f:selectItem itemLabel="LÚPULO" itemValue="94" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (COBERTURA DE CHÃO ATIVA, COM GEADAS)" itemValue="98" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (COBERTURA DE CHÃO ATIVA, SEM GEADAS)" itemValue="99" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (SEM COBERTURA DE CHÃO, COM GEADAS)" itemValue="96" />
+						<f:selectItem itemLabel="MAÇAS, CEREJAS E PERAS (SEM COBERTURA DE CHÃO, SEM GEADAS)" itemValue="97" />
+						<f:selectItem itemLabel="MAMAO" itemValue="1036" />
+						<f:selectItem itemLabel="MAMONA" itemValue="50" />
+						<f:selectItem itemLabel="MANDIOCAS  (ANO 1)" itemValue="25" />
+						<f:selectItem itemLabel="MANDIOCAS  (ANO 2)" itemValue="26" />
+						<f:selectItem itemLabel="MANGA" itemValue="1037" />
+						<f:selectItem itemLabel="MANGABA" itemValue="1034" />
+						<f:selectItem itemLabel="MANGOSTAO" itemValue="1035" />
+						<f:selectItem itemLabel="MARACUJA" itemValue="1038" />
+						<f:selectItem itemLabel="MAXIXE" itemValue="1092" />
+						<f:selectItem itemLabel="MELANCIAS" itemValue="23" />
+						<f:selectItem itemLabel="MELÃO CANTALOUPE" itemValue="17" />
+						<f:selectItem itemLabel="MELÕES" itemValue="22" />
+						<f:selectItem itemLabel="MILHETO" itemValue="61" />
+						<f:selectItem itemLabel="MILHO (DOCE)" itemValue="60" />
+						<f:selectItem itemLabel="MILHO (GRÃO E PIPOCA)" itemValue="59" />
+						<f:selectItem itemLabel="MILHO-VERDE" itemValue="1123" />
+						<f:selectItem itemLabel="MORANGOS" itemValue="46" />
+						<f:selectItem itemLabel="MURICI" itemValue="1039" />
+						<f:selectItem itemLabel="NABO (E NABO-REDONDO)" itemValue="30" />
+						<f:selectItem itemLabel="NECTARINA" itemValue="1040" />
+						<f:selectItem itemLabel="NOGUEIRA (POMARES)" itemValue="114" />
+						<f:selectItem itemLabel="NOZ MACADAMIA" itemValue="1041" />
+						<f:selectItem itemLabel="OLIVEIRA (40 A 60% DE COBERTURA DO SOLO PELO DOSSEL)" itemValue="112" />
+						<f:selectItem itemLabel="PALMEIRA" itemValue="85" />
+						<f:selectItem itemLabel="PÂNTANO, BANHADO, SOLO ÚMIDO" itemValue="120" />
+						<f:selectItem itemLabel="PÂNTANO, BANHADOS,  ÁGUA ESTAGNADA" itemValue="119" />
+						<f:selectItem itemLabel="PASTAGEM (PASTOREIO EXTENSIVO)" itemValue="76" />
+						<f:selectItem itemLabel="PASTAGEM (PASTOREIO ROTATIVO)" itemValue="75" />
+						<f:selectItem itemLabel="PASTINACA (CHIRÍVIA)" itemValue="27" />
+						<f:selectItem itemLabel="PEPINO (COLHEITA FRESCA)" itemValue="18" />
+						<f:selectItem itemLabel="PEPINO (COLHEITA MECÂNICA)" itemValue="19" />
+						<f:selectItem itemLabel="PEQUI" itemValue="1042" />
+						<f:selectItem itemLabel="PESSEGO" itemValue="1043" />
+						<f:selectItem itemLabel="PIMENTA" itemValue="1090" />
+						<f:selectItem itemLabel="PIMENTÃO" itemValue="15" />
+						<f:selectItem itemLabel="PINHA" itemValue="1044" />
+						<f:selectItem itemLabel="PISTACHE, SEM COBERTURA DO SOLO" itemValue="113" />
+						<f:selectItem itemLabel="PITANGA" itemValue="1045" />
+						<f:selectItem itemLabel="POMAR" itemValue="1129" />
+						<f:selectItem itemLabel="PUPUNHA" itemValue="1046" />
+						<f:selectItem itemLabel="QUIABO" itemValue="1086" />
+						<f:selectItem itemLabel="RABANETE" itemValue="13" />
+						<f:selectItem itemLabel="RAMBUTAN" itemValue="1047" />
+						<f:selectItem itemLabel="REPOLHO" itemValue="3" />
+						<f:selectItem itemLabel="ROMA" itemValue="1048" />
+						<f:selectItem itemLabel="SALSA" itemValue="1119" />
+						<f:selectItem itemLabel="SAPOTI" itemValue="1049" />
+						<f:selectItem itemLabel="SERIGUELA" itemValue="1050" />
+						<f:selectItem itemLabel="SERINGUEIRA" itemValue="88" />
+						<f:selectItem itemLabel="SISAL" itemValue="49" />
+						<f:selectItem itemLabel="SOJA" itemValue="42" />
+						<f:selectItem itemLabel="SORGO (DOCE)" itemValue="63" />
+						<f:selectItem itemLabel="SORGO (GRÃO)" itemValue="62" />
+						<f:selectItem itemLabel="TAMAREIRA (TÂMARAS)" itemValue="84" />
+						<f:selectItem itemLabel="TAMARINDO" itemValue="1051" />
+						<f:selectItem itemLabel="TANGERINA" itemValue="1052" />
+						<f:selectItem itemLabel="TOMATE" itemValue="16" />
+						<f:selectItem itemLabel="TREVO (FENO, CICLO INDIVIDUAL DE CORTE)" itemValue="71" />
+						<f:selectItem itemLabel="TREVO (FENO, VÁRIOS CORTES, EFEITOS MÉDIOS)" itemValue="70" />
+						<f:selectItem itemLabel="TRIGO" itemValue="130" />
+						<f:selectItem itemLabel="TRIGO INVERNO" itemValue="58" />
+						<f:selectItem itemLabel="TRIGO PRIMAVERA" itemValue="57" />
+						<f:selectItem itemLabel="UMBU" itemValue="1054" />
+						<f:selectItem itemLabel="UVAS (MESA OU PASSAS)" itemValue="92" />
+						<f:selectItem itemLabel="UVAS (VINHO)" itemValue="93" />
+						<f:selectItem itemLabel="VAGEM" itemValue="1116" />
 					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>

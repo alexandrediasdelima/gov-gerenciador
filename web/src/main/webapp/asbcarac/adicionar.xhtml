@@ -58,33 +58,33 @@
 					<p:outputLabel value="Natureza do Ponto" for="Asb_tnp_enum" />
 					<p:selectOneMenu id="Asb_tnp_enum" value="#{asbcaracBean.asbcarac.codigoIdentificador}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Poço escavado(cacimba/cisterna)" itemLabel="Poço escavado(cacimba/cisterna)" />
-						<f:selectItem itemValue="Fonte natural" itemLabel="Fonte natural" />
-						<f:selectItem itemValue="Lago" itemLabel="Lago" />
-						<f:selectItem itemValue="Lagoa" itemLabel="Lagoa" />
-						<f:selectItem itemValue="Nascente" itemLabel="Nascente" />
-						<f:selectItem itemValue="Piezômetro" itemLabel="Piezômetro" />
-						<f:selectItem itemValue="Poço amazonas" itemLabel="Poço amazonas" />
-						<f:selectItem itemValue="Poço coletor" itemLabel="Poço coletor" />
-						<f:selectItem itemValue="Poço ponteira" itemLabel="Poço ponteira" />
-						<f:selectItem itemValue="Poço tubular" itemLabel="Poço tubular" />
-						<f:selectItem itemValue="Poço de monitoramento" itemLabel="Poço de monitoramento" />
+						<f:selectItem itemLabel="FONTE NATURAL" itemValue="FONTE NATURAL" />
+						<f:selectItem itemLabel="LAGO" itemValue="LAGO" />
+						<f:selectItem itemLabel="LAGOA" itemValue="LAGOA" />
+						<f:selectItem itemLabel="NASCENTE" itemValue="NASCENTE" />
+						<f:selectItem itemLabel="PIEZÔMETRO" itemValue="PIEZÔMETRO" />
+						<f:selectItem itemLabel="POÇO AMAZONAS" itemValue="POÇO AMAZONAS" />
+						<f:selectItem itemLabel="POÇO COLETOR" itemValue="POÇO COLETOR" />
+						<f:selectItem itemLabel="POÇO DE MONITORAMENTO" itemValue="POÇO DE MONITORAMENTO" />
+						<f:selectItem itemLabel="POÇO ESCAVADO(CACIMBA/CISTERNA)" itemValue="POÇO ESCAVADO(CACIMBA/CISTERNA)" />
+						<f:selectItem itemLabel="POÇO PONTEIRA" itemValue="POÇO PONTEIRA" />
+						<f:selectItem itemLabel="POÇO TUBULAR" itemValue="POÇO TUBULAR" />
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Tipo Penetração Aquifero:" for="asb_tpn_enum" />
 					<p:selectOneMenu id="asb_tpn_enum" value="#{asbcaracBean.asbcarac.tipoPenetracaoAquifero}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Parcial" itemLabel="Parcial" />
-						<f:selectItem itemValue="Total" itemLabel="Total" />
+						<f:selectItem itemValue="PARCIAL" itemLabel="PARCIAL" />
+						<f:selectItem itemValue="TOTAL" itemLabel="TOTAL" />
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Condição Aquifero:" for="asb_tca_enum" />
 					<p:selectOneMenu id="asb_tca_enum" value="#{asbcaracBean.asbcarac.condicaoAquifero}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Livre" itemLabel="Livre" />
-						<f:selectItem itemValue="Confinado" itemLabel="Confinado" />
-						<f:selectItem itemValue="Semi-livre" itemLabel="Semi-livre" />
-						<f:selectItem itemValue="Semi-confinado" itemLabel="Semi-confinado" />
+						<f:selectItem itemValue="CONFINADO" itemLabel="CONFINADO" />
+						<f:selectItem itemValue="LIVRE" itemLabel="LIVRE" />
+						<f:selectItem itemValue="SEMI-CONFINADO" itemLabel="SEMI-CONFINADO" />
+						<f:selectItem itemValue="SEMI-LIVRE" itemLabel="SEMI-LIVRE" />
 					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>

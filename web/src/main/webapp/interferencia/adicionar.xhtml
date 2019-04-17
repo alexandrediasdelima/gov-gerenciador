@@ -18,115 +18,1052 @@
 		<p:fieldset legend="Interferência">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
 				<h:panelGrid columns="2" style="border: 0px solid;">
-					<p:outputLabel value="Há um estudo hidrológico da área:" for="estudoHidrologico" />
-					<p:selectBooleanCheckbox value="#{interferenciaBean.interferencia.haEstudoHidrologicoDaArea}" label="Basic" id="estudoHidrologico" />
-
-					<p:outputLabel value="Link para a foto do ponto de captura/lançamento numa visão geral:" for="fotoVisaoGeral" />
+					<p:outputLabel value="Há Estudo Hidrológico da Área:" for="estudoHidrologico" />
+					<p:selectOneMenu id="estudoHidrologico" value="#{interferenciaBean.interferencia.haEstudoHidrologicoDaArea}" style="width:230px">
+						<f:selectItem itemLabel="SIM" itemValue="SIM" />
+						<f:selectItem itemLabel="NÃO" itemValue="NÃO" />
+					</p:selectOneMenu>
+					
+					<p:outputLabel value="Link para a Foto do Ponto de Captura/Lançamento em Visão Geral:" for="fotoVisaoGeral" />
 					<p:inputText id="fotoVisaoGeral" value="#{interferenciaBean.interferencia.linkFotoPontoCapturaVisaoGeral}" />
 
-					<p:outputLabel value="Link para a foto do ponto de captura/lançamento numa visão detalhada:" for="fotoVisaoDetalhada" />
+					<p:outputLabel value="Link para a Foto do Ponto de Captura/Lançamento em Visão Detalhada:" for="fotoVisaoDetalhada" />
 					<p:inputText id="fotoVisaoDetalhada" value="#{interferenciaBean.interferencia.linkFotoPontoCapturaVisaoDetalhada}" />
 
-					<p:outputLabel value="link para a imagem do croqui de localização do ponto de localização da captação/lançamento:" for="linkCroqui" />
+					<p:outputLabel value="Link para a Imagem do Croqui de Localização do Ponto da Captação/Lançamento:" for="linkCroqui" />
 					<p:inputText id="linkCroqui" value="#{interferenciaBean.interferencia.linkImagemCroquiLocalizacao}" />
 
-					<p:outputLabel value="Latitude do ponto de interferência:" for="latitude" />
+					<p:outputLabel value="Latitude do Ponto de Interferência:" for="latitude" />
 					<p:inputText id="latitude" maxlength="14" value="#{interferenciaBean.interferencia.latitudeLocalizacaoPontoInterferencia}"/>
 
-					<p:outputLabel value="Longitude do ponto de interferência:" for="longitude" />
+					<p:outputLabel value="Longitude do Ponto de Interferência:" for="longitude" />
 					<p:inputText id="longitude" maxlength="14" value="#{interferenciaBean.interferencia.longitudeLocalizacaoPontoInterferencia}"/>
 
 					<p:outputLabel value="Local da Interferência:" for="localInterferencia" />
-					<p:inputText id="localInterferencia" value="#{interferenciaBean.interferencia.localInterferencia}" />
-
-					<p:outputLabel value="Nome do curso da agua:" for="nomeCurso" />
-					<p:inputText id="nomeCurso" value="#{interferenciaBean.interferencia.nomeCursoAgua}" />
-
-					<p:outputLabel value="Presença ou Ausência de barramento para a captação:" for="presenca" />
-					<p:selectBooleanCheckbox value="#{interferenciaBean.interferencia.presencaAusenciaBarramentoParaCaptacao}" label="Basic" id="presenca" />
+					<p:selectOneMenu id="localInterferencia" value="#{interferenciaBean.interferencia.localInterferencia}" style="width:230px">
+						<f:selectItem itemLabel="BARRAGEM" itemValue="BARRAGEM" />
+						<f:selectItem itemLabel="CURSO D'ÁGUA" itemValue="CURSO D'ÁGUA" />
+					</p:selectOneMenu>
+					
+					<p:outputLabel value="Nome do Curso da Água:" for="nomeCurso" />
+					<p:selectOneMenu id="nomeCurso" value="#{interferenciaBean.interferencia.nomeCursoAgua}" style="width:230px">
+						<f:selectItem itemLabel="ARROIO CAITÉ" itemValue="ARROIO CAITÉ" />
+						<f:selectItem itemLabel="ARROIO DESTERRO" itemValue="ARROIO DESTERRO" />
+						<f:selectItem itemLabel="ARROIO DO MAXIMINO" itemValue="ARROIO DO MAXIMINO" />
+						<f:selectItem itemLabel="ARROIO DOIS RIOS" itemValue="ARROIO DOIS RIOS" />
+						<f:selectItem itemLabel="BAIXA DA CARNAÍBA" itemValue="BAIXA DA CARNAÍBA" />
+						<f:selectItem itemLabel="BAIXA DA SIMPATIA" itemValue="BAIXA DA SIMPATIA" />
+						<f:selectItem itemLabel="BAIXA DA VASSOURA" itemValue="BAIXA DA VASSOURA" />
+						<f:selectItem itemLabel="BAIXA DAS FURNAS" itemValue="BAIXA DAS FURNAS" />
+						<f:selectItem itemLabel="BAIXA DO BERRO" itemValue="BAIXA DO BERRO" />
+						<f:selectItem itemLabel="BAIXA DO LERO" itemValue="BAIXA DO LERO" />
+						<f:selectItem itemLabel="BAIXA DO MORRO" itemValue="BAIXA DO MORRO" />
+						<f:selectItem itemLabel="BAIXA DO MUQUÉM" itemValue="BAIXA DO MUQUÉM" />
+						<f:selectItem itemLabel="BAIXA DO UMBUZEIRO" itemValue="BAIXA DO UMBUZEIRO" />
+						<f:selectItem itemLabel="BAIXA GRANDE" itemValue="BAIXA GRANDE" />
+						<f:selectItem itemLabel="BREJINHO DA SERRA" itemValue="BREJINHO DA SERRA" />
+						<f:selectItem itemLabel="BREJINHO DOS CORREIAS" itemValue="BREJINHO DOS CORREIAS" />
+						<f:selectItem itemLabel="BREJO DOS COQUEIROS" itemValue="BREJO DOS COQUEIROS" />
+						<f:selectItem itemLabel="CANAL DA TINTA" itemValue="CANAL DA TINTA" />
+						<f:selectItem itemLabel="CÓRREGO ABACAXI" itemValue="CÓRREGO ABACAXI" />
+						<f:selectItem itemLabel="CÓRREGO LUANDA" itemValue="CÓRREGO LUANDA" />
+						<f:selectItem itemLabel="CÓRREGO TERRA NOVA" itemValue="CÓRREGO TERRA NOVA" />
+						<f:selectItem itemLabel="CÓRREGO VERDE" itemValue="CÓRREGO VERDE" />
+						<f:selectItem itemLabel="RIACHÃO" itemValue="RIACHÃO" />
+						<f:selectItem itemLabel="RIACHO ACAUÃ" itemValue="RIACHO ACAUÃ" />
+						<f:selectItem itemLabel="RIACHO AÇUDINHO" itemValue="RIACHO AÇUDINHO" />
+						<f:selectItem itemLabel="RIACHO ÁGUA" itemValue="RIACHO ÁGUA" />
+						<f:selectItem itemLabel="RIACHO ÁGUA COMPRIDA" itemValue="RIACHO ÁGUA COMPRIDA" />
+						<f:selectItem itemLabel="RIACHO ÁGUA DO BICHO" itemValue="RIACHO ÁGUA DO BICHO" />
+						<f:selectItem itemLabel="RIACHO ÁGUA FRIA" itemValue="RIACHO ÁGUA FRIA" />
+						<f:selectItem itemLabel="RIACHO ALEGRE" itemValue="RIACHO ALEGRE" />
+						<f:selectItem itemLabel="RIACHO ALGODOAIS" itemValue="RIACHO ALGODOAIS" />
+						<f:selectItem itemLabel="RIACHO ALGODÕES" itemValue="RIACHO ALGODÕES" />
+						<f:selectItem itemLabel="RIACHO ALUCIANA" itemValue="RIACHO ALUCIANA" />
+						<f:selectItem itemLabel="RIACHO AMA FERRREIRA" itemValue="RIACHO AMA FERRREIRA" />
+						<f:selectItem itemLabel="RIACHO AMARANTE" itemValue="RIACHO AMARANTE" />
+						<f:selectItem itemLabel="RIACHO ANTINHA" itemValue="RIACHO ANTINHA" />
+						<f:selectItem itemLabel="RIACHO ARAÇÁ" itemValue="RIACHO ARAÇÁ" />
+						<f:selectItem itemLabel="RIACHO ARAME" itemValue="RIACHO ARAME" />
+						<f:selectItem itemLabel="RIACHO AREAL" itemValue="RIACHO AREAL" />
+						<f:selectItem itemLabel="RIACHO AREIAL" itemValue="RIACHO AREIAL" />
+						<f:selectItem itemLabel="RIACHO AROMBADO" itemValue="RIACHO AROMBADO" />
+						<f:selectItem itemLabel="RIACHO ARUAPÉ" itemValue="RIACHO ARUAPÉ" />
+						<f:selectItem itemLabel="RIACHO BAIXA DO CAPIM" itemValue="RIACHO BAIXA DO CAPIM" />
+						<f:selectItem itemLabel="RIACHO BAIXIO" itemValue="RIACHO BAIXIO" />
+						<f:selectItem itemLabel="RIACHO BAIXIO VERDE" itemValue="RIACHO BAIXIO VERDE" />
+						<f:selectItem itemLabel="RIACHO BAIXO GRANDE" itemValue="RIACHO BAIXO GRANDE" />
+						<f:selectItem itemLabel="RIACHO BANANA" itemValue="RIACHO BANANA" />
+						<f:selectItem itemLabel="RIACHO BARRA DA FORQUILHA" itemValue="RIACHO BARRA DA FORQUILHA" />
+						<f:selectItem itemLabel="RIACHO BARRA DO BOI" itemValue="RIACHO BARRA DO BOI" />
+						<f:selectItem itemLabel="RIACHO BARRACÃO" itemValue="RIACHO BARRACÃO" />
+						<f:selectItem itemLabel="RIACHO BARREIRO" itemValue="RIACHO BARREIRO" />
+						<f:selectItem itemLabel="RIACHO BARRIGÃO" itemValue="RIACHO BARRIGÃO" />
+						<f:selectItem itemLabel="RIACHO BARRIGUDA" itemValue="RIACHO BARRIGUDA" />
+						<f:selectItem itemLabel="RIACHO BARROCAS" itemValue="RIACHO BARROCAS" />
+						<f:selectItem itemLabel="RIACHO BEBEDOR" itemValue="RIACHO BEBEDOR" />
+						<f:selectItem itemLabel="RIACHO BELA VISTA" itemValue="RIACHO BELA VISTA" />
+						<f:selectItem itemLabel="RIACHO BELÉM" itemValue="RIACHO BELÉM" />
+						<f:selectItem itemLabel="RIACHO BELO HORIZONTE" itemValue="RIACHO BELO HORIZONTE" />
+						<f:selectItem itemLabel="RIACHO BEM-QUERER" itemValue="RIACHO BEM-QUERER" />
+						<f:selectItem itemLabel="RIACHO BOA ESPERANÇA" itemValue="RIACHO BOA ESPERANÇA" />
+						<f:selectItem itemLabel="RIACHO BOA VISTA" itemValue="RIACHO BOA VISTA" />
+						<f:selectItem itemLabel="RIACHO BODES" itemValue="RIACHO BODES" />
+						<f:selectItem itemLabel="RIACHO BOI MANSO" itemValue="RIACHO BOI MANSO" />
+						<f:selectItem itemLabel="RIACHO BOM DESTINO" itemValue="RIACHO BOM DESTINO" />
+						<f:selectItem itemLabel="RIACHO BOM VIVER" itemValue="RIACHO BOM VIVER" />
+						<f:selectItem itemLabel="RIACHO BONITO" itemValue="RIACHO BONITO" />
+						<f:selectItem itemLabel="RIACHO BOQUEIRÃO" itemValue="RIACHO BOQUEIRÃO" />
+						<f:selectItem itemLabel="RIACHO BORBA" itemValue="RIACHO BORBA" />
+						<f:selectItem itemLabel="RIACHO BRAGA" itemValue="RIACHO BRAGA" />
+						<f:selectItem itemLabel="RIACHO BRAVA CANA" itemValue="RIACHO BRAVA CANA" />
+						<f:selectItem itemLabel="RIACHO BREJO" itemValue="RIACHO BREJO" />
+						<f:selectItem itemLabel="RIACHO BREJO SECO" itemValue="RIACHO BREJO SECO" />
+						<f:selectItem itemLabel="RIACHO BUMBÁ" itemValue="RIACHO BUMBÁ" />
+						<f:selectItem itemLabel="RIACHO CABOCLINHO" itemValue="RIACHO CABOCLINHO" />
+						<f:selectItem itemLabel="RIACHO CAÇATUBA" itemValue="RIACHO CAÇATUBA" />
+						<f:selectItem itemLabel="RIACHO CACHEADO" itemValue="RIACHO CACHEADO" />
+						<f:selectItem itemLabel="RIACHO CACHOEIRA" itemValue="RIACHO CACHOEIRA" />
+						<f:selectItem itemLabel="RIACHO CACHOEIRA DO BEZERRO" itemValue="RIACHO CACHOEIRA DO BEZERRO" />
+						<f:selectItem itemLabel="RIACHO CACHOEIRA DO ROBERTO" itemValue="RIACHO CACHOEIRA DO ROBERTO" />
+						<f:selectItem itemLabel="RIACHO CACHOEIRINHA" itemValue="RIACHO CACHOEIRINHA" />
+						<f:selectItem itemLabel="RIACHO CACHOEIRÍNHA" itemValue="RIACHO CACHOEIRÍNHA" />
+						<f:selectItem itemLabel="RIACHO CACIMBA" itemValue="RIACHO CACIMBA" />
+						<f:selectItem itemLabel="RIACHO CACIMBA NOVA" itemValue="RIACHO CACIMBA NOVA" />
+						<f:selectItem itemLabel="RIACHO CACIMBA SALGADA" itemValue="RIACHO CACIMBA SALGADA" />
+						<f:selectItem itemLabel="RIACHO CAFÉ" itemValue="RIACHO CAFÉ" />
+						<f:selectItem itemLabel="RIACHO CAIANA" itemValue="RIACHO CAIANA" />
+						<f:selectItem itemLabel="RIACHO CAIÇARA" itemValue="RIACHO CAIÇARA" />
+						<f:selectItem itemLabel="RIACHO CAIEIRA" itemValue="RIACHO CAIEIRA" />
+						<f:selectItem itemLabel="RIACHO CAIPORA" itemValue="RIACHO CAIPORA" />
+						<f:selectItem itemLabel="RIACHO CAJAZEIRAS" itemValue="RIACHO CAJAZEIRAS" />
+						<f:selectItem itemLabel="RIACHO CALAÇO" itemValue="RIACHO CALAÇO" />
+						<f:selectItem itemLabel="RIACHO CALDEIRÃO" itemValue="RIACHO CALDEIRÃO" />
+						<f:selectItem itemLabel="RIACHO CALDEIRÃO DO ANGICO" itemValue="RIACHO CALDEIRÃO DO ANGICO" />
+						<f:selectItem itemLabel="RIACHO CAMANZENGUE" itemValue="RIACHO CAMANZENGUE" />
+						<f:selectItem itemLabel="RIACHO CAMURIM" itemValue="RIACHO CAMURIM" />
+						<f:selectItem itemLabel="RIACHO CAMUTANGA" itemValue="RIACHO CAMUTANGA" />
+						<f:selectItem itemLabel="RIACHO CANAÃ" itemValue="RIACHO CANAÃ" />
+						<f:selectItem itemLabel="RIACHO CANA-BRAVA" itemValue="RIACHO CANA-BRAVA" />
+						<f:selectItem itemLabel="RIACHO CANAVIEIRA" itemValue="RIACHO CANAVIEIRA" />
+						<f:selectItem itemLabel="RIACHO CANOA" itemValue="RIACHO CANOA" />
+						<f:selectItem itemLabel="RIACHO CANOAS" itemValue="RIACHO CANOAS" />
+						<f:selectItem itemLabel="RIACHO CANTA GALO" itemValue="RIACHO CANTA GALO" />
+						<f:selectItem itemLabel="RIACHO CAPIAZINHO" itemValue="RIACHO CAPIAZINHO" />
+						<f:selectItem itemLabel="RIACHO CAPIM GROSSO" itemValue="RIACHO CAPIM GROSSO" />
+						<f:selectItem itemLabel="RIACHO CARACARÁ" itemValue="RIACHO CARACARÁ" />
+						<f:selectItem itemLabel="RIACHO CARAIBA" itemValue="RIACHO CARAIBA" />
+						<f:selectItem itemLabel="RIACHO CARAÍBAS" itemValue="RIACHO CARAÍBAS" />
+						<f:selectItem itemLabel="RIACHO CARANATUBA" itemValue="RIACHO CARANATUBA" />
+						<f:selectItem itemLabel="RIACHO CARAPOTÓS" itemValue="RIACHO CARAPOTÓS" />
+						<f:selectItem itemLabel="RIACHO CARNIJÓ" itemValue="RIACHO CARNIJÓ" />
+						<f:selectItem itemLabel="RIACHO CATOLÉ" itemValue="RIACHO CATOLÉ" />
+						<f:selectItem itemLabel="RIACHO CAVALCANTE" itemValue="RIACHO CAVALCANTE" />
+						<f:selectItem itemLabel="RIACHO CHORÃO" itemValue="RIACHO CHORÃO" />
+						<f:selectItem itemLabel="RIACHO CIPRIANO" itemValue="RIACHO CIPRIANO" />
+						<f:selectItem itemLabel="RIACHO CLARA" itemValue="RIACHO CLARA" />
+						<f:selectItem itemLabel="RIACHO COCAL" itemValue="RIACHO COCAL" />
+						<f:selectItem itemLabel="RIACHO COITADINHA" itemValue="RIACHO COITADINHA" />
+						<f:selectItem itemLabel="RIACHO COITÉ" itemValue="RIACHO COITÉ" />
+						<f:selectItem itemLabel="RIACHO CONCEIÇÃO" itemValue="RIACHO CONCEIÇÃO" />
+						<f:selectItem itemLabel="RIACHO COQUEIRO" itemValue="RIACHO COQUEIRO" />
+						<f:selectItem itemLabel="RIACHO COVA DA ONÇA" itemValue="RIACHO COVA DA ONÇA" />
+						<f:selectItem itemLabel="RIACHO COXIA" itemValue="RIACHO COXIA" />
+						<f:selectItem itemLabel="RIACHO CRAVIÉ" itemValue="RIACHO CRAVIÉ" />
+						<f:selectItem itemLabel="RIACHO CRISPIN" itemValue="RIACHO CRISPIN" />
+						<f:selectItem itemLabel="RIACHO CRISTÓVÃO" itemValue="RIACHO CRISTÓVÃO" />
+						<f:selectItem itemLabel="RIACHO CRUZ DOIS IRMÃOS" itemValue="RIACHO CRUZ DOIS IRMÃOS" />
+						<f:selectItem itemLabel="RIACHO CUMBE" itemValue="RIACHO CUMBE" />
+						<f:selectItem itemLabel="RIACHO CUPIARA" itemValue="RIACHO CUPIARA" />
+						<f:selectItem itemLabel="RIACHO CUPISSURA" itemValue="RIACHO CUPISSURA" />
+						<f:selectItem itemLabel="RIACHO CURTUME" itemValue="RIACHO CURTUME" />
+						<f:selectItem itemLabel="RIACHO D`ALDEIA" itemValue="RIACHO D`ALDEIA" />
+						<f:selectItem itemLabel="RIACHO DA ÁGUA BRANCA" itemValue="RIACHO DA ÁGUA BRANCA" />
+						<f:selectItem itemLabel="RIACHO DA ÁGUA DA PRATA" itemValue="RIACHO DA ÁGUA DA PRATA" />
+						<f:selectItem itemLabel="RIACHO DA AREIA" itemValue="RIACHO DA AREIA" />
+						<f:selectItem itemLabel="RIACHO DA ATRAVESSA" itemValue="RIACHO DA ATRAVESSA" />
+						<f:selectItem itemLabel="RIACHO DA BAIXA" itemValue="RIACHO DA BAIXA" />
+						<f:selectItem itemLabel="RIACHO DA BAIXA FUNDA" itemValue="RIACHO DA BAIXA FUNDA" />
+						<f:selectItem itemLabel="RIACHO DA BAIXA GRANDE" itemValue="RIACHO DA BAIXA GRANDE" />
+						<f:selectItem itemLabel="RIACHO DA BARRA" itemValue="RIACHO DA BARRA" />
+						<f:selectItem itemLabel="RIACHO DA BARRAGEM" itemValue="RIACHO DA BARRAGEM" />
+						<f:selectItem itemLabel="RIACHO DA BARREIRA" itemValue="RIACHO DA BARREIRA" />
+						<f:selectItem itemLabel="RIACHO DA BARROCA" itemValue="RIACHO DA BARROCA" />
+						<f:selectItem itemLabel="RIACHO DA BICA" itemValue="RIACHO DA BICA" />
+						<f:selectItem itemLabel="RIACHO DA BOA ESPERANÇA" itemValue="RIACHO DA BOA ESPERANÇA" />
+						<f:selectItem itemLabel="RIACHO DA BOA VISTA" itemValue="RIACHO DA BOA VISTA" />
+						<f:selectItem itemLabel="RIACHO DA BRAVA" itemValue="RIACHO DA BRAVA" />
+						<f:selectItem itemLabel="RIACHO DA BRÍGIDA" itemValue="RIACHO DA BRÍGIDA" />
+						<f:selectItem itemLabel="RIACHO DA CACHOEIRA" itemValue="RIACHO DA CACHOEIRA" />
+						<f:selectItem itemLabel="RIACHO DA CACIMBINHA" itemValue="RIACHO DA CACIMBINHA" />
+						<f:selectItem itemLabel="RIACHO DA CAIEIRA" itemValue="RIACHO DA CAIEIRA" />
+						<f:selectItem itemLabel="RIACHO DA CANOA" itemValue="RIACHO DA CANOA" />
+						<f:selectItem itemLabel="RIACHO DA CARNAUBEIRA" itemValue="RIACHO DA CARNAUBEIRA" />
+						<f:selectItem itemLabel="RIACHO DA CASA DA PEDRA" itemValue="RIACHO DA CASA DA PEDRA" />
+						<f:selectItem itemLabel="RIACHO DA CASA VELHA" itemValue="RIACHO DA CASA VELHA" />
+						<f:selectItem itemLabel="RIACHO DA CASINHA" itemValue="RIACHO DA CASINHA" />
+						<f:selectItem itemLabel="RIACHO DA CATIA" itemValue="RIACHO DA CATIA" />
+						<f:selectItem itemLabel="RIACHO DA CONCEIÇÃO" itemValue="RIACHO DA CONCEIÇÃO" />
+						<f:selectItem itemLabel="RIACHO DA CUSTÓDIA" itemValue="RIACHO DA CUSTÓDIA" />
+						<f:selectItem itemLabel="RIACHO DA FORMOSA" itemValue="RIACHO DA FORMOSA" />
+						<f:selectItem itemLabel="RIACHO DA FORQUILHA" itemValue="RIACHO DA FORQUILHA" />
+						<f:selectItem itemLabel="RIACHO DA GAMELEIRA" itemValue="RIACHO DA GAMELEIRA" />
+						<f:selectItem itemLabel="RIACHO DA GANGORRA" itemValue="RIACHO DA GANGORRA" />
+						<f:selectItem itemLabel="RIACHO DA GROTA" itemValue="RIACHO DA GROTA" />
+						<f:selectItem itemLabel="RIACHO DA INGAZEIRA" itemValue="RIACHO DA INGAZEIRA" />
+						<f:selectItem itemLabel="RIACHO DA IPUEIRA" itemValue="RIACHO DA IPUEIRA" />
+						<f:selectItem itemLabel="RIACHO DA JUREMA" itemValue="RIACHO DA JUREMA" />
+						<f:selectItem itemLabel="RIACHO DA JURUBEBA" itemValue="RIACHO DA JURUBEBA" />
+						<f:selectItem itemLabel="RIACHO DA LAGOA" itemValue="RIACHO DA LAGOA" />
+						<f:selectItem itemLabel="RIACHO DA LAGOA COMPRIDA" itemValue="RIACHO DA LAGOA COMPRIDA" />
+						<f:selectItem itemLabel="RIACHO DA LAJE" itemValue="RIACHO DA LAJE" />
+						<f:selectItem itemLabel="RIACHO DA LUÍZA" itemValue="RIACHO DA LUÍZA" />
+						<f:selectItem itemLabel="RIACHO DA MACAMBIRA" itemValue="RIACHO DA MACAMBIRA" />
+						<f:selectItem itemLabel="RIACHO DA MALAGUETA" itemValue="RIACHO DA MALAGUETA" />
+						<f:selectItem itemLabel="RIACHO DA MALHADA" itemValue="RIACHO DA MALHADA" />
+						<f:selectItem itemLabel="RIACHO DA MALHADA GRANDE" itemValue="RIACHO DA MALHADA GRANDE" />
+						<f:selectItem itemLabel="RIACHO DA MANIÇOBA" itemValue="RIACHO DA MANIÇOBA" />
+						<f:selectItem itemLabel="RIACHO DA MARAVILHA" itemValue="RIACHO DA MARAVILHA" />
+						<f:selectItem itemLabel="RIACHO DA MARIA PRETA" itemValue="RIACHO DA MARIA PRETA" />
+						<f:selectItem itemLabel="RIACHO DA MELANCIA" itemValue="RIACHO DA MELANCIA" />
+						<f:selectItem itemLabel="RIACHO DA MINA" itemValue="RIACHO DA MINA" />
+						<f:selectItem itemLabel="RIACHO DA MUNDÉ" itemValue="RIACHO DA MUNDÉ" />
+						<f:selectItem itemLabel="RIACHO DA OLARIA" itemValue="RIACHO DA OLARIA" />
+						<f:selectItem itemLabel="RIACHO DA ONÇA" itemValue="RIACHO DA ONÇA" />
+						<f:selectItem itemLabel="RIACHO DA PASSAGEM" itemValue="RIACHO DA PASSAGEM" />
+						<f:selectItem itemLabel="RIACHO DA PEDRA" itemValue="RIACHO DA PEDRA" />
+						<f:selectItem itemLabel="RIACHO DA PEDRA BRANCA" itemValue="RIACHO DA PEDRA BRANCA" />
+						<f:selectItem itemLabel="RIACHO DA PEDRA D`ÁGUA" itemValue="RIACHO DA PEDRA D`ÁGUA" />
+						<f:selectItem itemLabel="RIACHO DA PENHA" itemValue="RIACHO DA PENHA" />
+						<f:selectItem itemLabel="RIACHO DA PITANGA" itemValue="RIACHO DA PITANGA" />
+						<f:selectItem itemLabel="RIACHO DA PITOMBEIRA" itemValue="RIACHO DA PITOMBEIRA" />
+						<f:selectItem itemLabel="RIACHO DA PONTE BRANCA" itemValue="RIACHO DA PONTE BRANCA" />
+						<f:selectItem itemLabel="RIACHO DA POSSE" itemValue="RIACHO DA POSSE" />
+						<f:selectItem itemLabel="RIACHO DA PRAÇA" itemValue="RIACHO DA PRAÇA" />
+						<f:selectItem itemLabel="RIACHO DA QUEIMADA" itemValue="RIACHO DA QUEIMADA" />
+						<f:selectItem itemLabel="RIACHO DA QUEIMADA REDONDA" itemValue="RIACHO DA QUEIMADA REDONDA" />
+						<f:selectItem itemLabel="RIACHO DA QUIXABA" itemValue="RIACHO DA QUIXABA" />
+						<f:selectItem itemLabel="RIACHO DA QUIXABINHA" itemValue="RIACHO DA QUIXABINHA" />
+						<f:selectItem itemLabel="RIACHO DA RANCHARIA" itemValue="RIACHO DA RANCHARIA" />
+						<f:selectItem itemLabel="RIACHO DA ROÇA" itemValue="RIACHO DA ROÇA" />
+						<f:selectItem itemLabel="RIACHO DA ROÇA VELHA" itemValue="RIACHO DA ROÇA VELHA" />
+						<f:selectItem itemLabel="RIACHO DA SALINA" itemValue="RIACHO DA SALINA" />
+						<f:selectItem itemLabel="RIACHO DA SANTA FÉ" itemValue="RIACHO DA SANTA FÉ" />
+						<f:selectItem itemLabel="RIACHO DA SERRA" itemValue="RIACHO DA SERRA" />
+						<f:selectItem itemLabel="RIACHO DA SERRA BRANCA" itemValue="RIACHO DA SERRA BRANCA" />
+						<f:selectItem itemLabel="RIACHO DA SIMPATIA" itemValue="RIACHO DA SIMPATIA" />
+						<f:selectItem itemLabel="RIACHO DA SUCUARANA" itemValue="RIACHO DA SUCUARANA" />
+						<f:selectItem itemLabel="RIACHO DA TÁBOA" itemValue="RIACHO DA TÁBOA" />
+						<f:selectItem itemLabel="RIACHO DA TIRIRICA" itemValue="RIACHO DA TIRIRICA" />
+						<f:selectItem itemLabel="RIACHO DA UMBURAMA" itemValue="RIACHO DA UMBURAMA" />
+						<f:selectItem itemLabel="RIACHO DA URTIGA" itemValue="RIACHO DA URTIGA" />
+						<f:selectItem itemLabel="RIACHO DA VALÉRIA" itemValue="RIACHO DA VALÉRIA" />
+						<f:selectItem itemLabel="RIACHO DA VELHA" itemValue="RIACHO DA VELHA" />
+						<f:selectItem itemLabel="RIACHO DA VENTANIA" itemValue="RIACHO DA VENTANIA" />
+						<f:selectItem itemLabel="RIACHO DA VEREDA DA EMA" itemValue="RIACHO DA VEREDA DA EMA" />
+						<f:selectItem itemLabel="RIACHO DA VIAÇÃO" itemValue="RIACHO DA VIAÇÃO" />
+						<f:selectItem itemLabel="RIACHO DA VOLTA" itemValue="RIACHO DA VOLTA" />
+						<f:selectItem itemLabel="RIACHO DAS ABÓBORAS" itemValue="RIACHO DAS ABÓBORAS" />
+						<f:selectItem itemLabel="RIACHO DAS ALMAS" itemValue="RIACHO DAS ALMAS" />
+						<f:selectItem itemLabel="RIACHO DAS AREIAS" itemValue="RIACHO DAS AREIAS" />
+						<f:selectItem itemLabel="RIACHO DAS BAIXAS" itemValue="RIACHO DAS BAIXAS" />
+						<f:selectItem itemLabel="RIACHO DAS BALANÇAS" itemValue="RIACHO DAS BALANÇAS" />
+						<f:selectItem itemLabel="RIACHO DAS BANANEIRAS" itemValue="RIACHO DAS BANANEIRAS" />
+						<f:selectItem itemLabel="RIACHO DAS BARRACAS" itemValue="RIACHO DAS BARRACAS" />
+						<f:selectItem itemLabel="RIACHO DAS BATATAS" itemValue="RIACHO DAS BATATAS" />
+						<f:selectItem itemLabel="RIACHO DAS CACIMBAS" itemValue="RIACHO DAS CACIMBAS" />
+						<f:selectItem itemLabel="RIACHO DAS GARÇAS" itemValue="RIACHO DAS GARÇAS" />
+						<f:selectItem itemLabel="RIACHO DAS GRAÇAS" itemValue="RIACHO DAS GRAÇAS" />
+						<f:selectItem itemLabel="RIACHO DAS LAJES" itemValue="RIACHO DAS LAJES" />
+						<f:selectItem itemLabel="RIACHO DAS PAIXÕES" itemValue="RIACHO DAS PAIXÕES" />
+						<f:selectItem itemLabel="RIACHO DAS PEDRAS" itemValue="RIACHO DAS PEDRAS" />
+						<f:selectItem itemLabel="RIACHO DAS PIRANHAS" itemValue="RIACHO DAS PIRANHAS" />
+						<f:selectItem itemLabel="RIACHO DAS PORCAS" itemValue="RIACHO DAS PORCAS" />
+						<f:selectItem itemLabel="RIACHO DAS PORTEIRAS" itemValue="RIACHO DAS PORTEIRAS" />
+						<f:selectItem itemLabel="RIACHO DAS QUEIMADAS" itemValue="RIACHO DAS QUEIMADAS" />
+						<f:selectItem itemLabel="RIACHO DAS SALINAS" itemValue="RIACHO DAS SALINAS" />
+						<f:selectItem itemLabel="RIACHO DAS TABOCAS" itemValue="RIACHO DAS TABOCAS" />
+						<f:selectItem itemLabel="RIACHO DAS TRAÍRAS" itemValue="RIACHO DAS TRAÍRAS" />
+						<f:selectItem itemLabel="RIACHO DAS TUBIBAS" itemValue="RIACHO DAS TUBIBAS" />
+						<f:selectItem itemLabel="RIACHO DAS VASSOURAS" itemValue="RIACHO DAS VASSOURAS" />
+						<f:selectItem itemLabel="RIACHO DE BAIXO" itemValue="RIACHO DE BAIXO" />
+						<f:selectItem itemLabel="RIACHO DE CAMPOS" itemValue="RIACHO DE CAMPOS" />
+						<f:selectItem itemLabel="RIACHO DENDÊ" itemValue="RIACHO DENDÊ" />
+						<f:selectItem itemLabel="RIACHO DIQUE" itemValue="RIACHO DIQUE" />
+						<f:selectItem itemLabel="RIACHO DO ACIO" itemValue="RIACHO DO ACIO" />
+						<f:selectItem itemLabel="RIACHO DO ALHO" itemValue="RIACHO DO ALHO" />
+						<f:selectItem itemLabel="RIACHO DO AMARANTE" itemValue="RIACHO DO AMARANTE" />
+						<f:selectItem itemLabel="RIACHO DO AMOLAR" itemValue="RIACHO DO AMOLAR" />
+						<f:selectItem itemLabel="RIACHO DO ANGICO" itemValue="RIACHO DO ANGICO" />
+						<f:selectItem itemLabel="RIACHO DO ANGU" itemValue="RIACHO DO ANGU" />
+						<f:selectItem itemLabel="RIACHO DO AREIAL" itemValue="RIACHO DO AREIAL" />
+						<f:selectItem itemLabel="RIACHO DO BÁLSAMO" itemValue="RIACHO DO BÁLSAMO" />
+						<f:selectItem itemLabel="RIACHO DO BARBADO" itemValue="RIACHO DO BARBADO" />
+						<f:selectItem itemLabel="RIACHO DO BARBOSA" itemValue="RIACHO DO BARBOSA" />
+						<f:selectItem itemLabel="RIACHO DO BARREIRO" itemValue="RIACHO DO BARREIRO" />
+						<f:selectItem itemLabel="RIACHO DO BARRO" itemValue="RIACHO DO BARRO" />
+						<f:selectItem itemLabel="RIACHO DO BELÉM" itemValue="RIACHO DO BELÉM" />
+						<f:selectItem itemLabel="RIACHO DO BESOURO" itemValue="RIACHO DO BESOURO" />
+						<f:selectItem itemLabel="RIACHO DO BEZERRO" itemValue="RIACHO DO BEZERRO" />
+						<f:selectItem itemLabel="RIACHO DO BODE" itemValue="RIACHO DO BODE" />
+						<f:selectItem itemLabel="RIACHO DO BOI" itemValue="RIACHO DO BOI" />
+						<f:selectItem itemLabel="RIACHO DO BOI MORTO" itemValue="RIACHO DO BOI MORTO" />
+						<f:selectItem itemLabel="RIACHO DO BOIÃO" itemValue="RIACHO DO BOIÃO" />
+						<f:selectItem itemLabel="RIACHO DO BOM JESUS" itemValue="RIACHO DO BOM JESUS" />
+						<f:selectItem itemLabel="RIACHO DO BOQUEIRÃO" itemValue="RIACHO DO BOQUEIRÃO" />
+						<f:selectItem itemLabel="RIACHO DO BREJINHO" itemValue="RIACHO DO BREJINHO" />
+						<f:selectItem itemLabel="RIACHO DO BREJO" itemValue="RIACHO DO BREJO" />
+						<f:selectItem itemLabel="RIACHO DO BREJO DA MADRE DE DEUS" itemValue="RIACHO DO BREJO DA MADRE DE DEUS" />
+						<f:selectItem itemLabel="RIACHO DO BURACO" itemValue="RIACHO DO BURACO" />
+						<f:selectItem itemLabel="RIACHO DO CABOCLO" itemValue="RIACHO DO CABOCLO" />
+						<f:selectItem itemLabel="RIACHO DO CAFUNDÓ" itemValue="RIACHO DO CAFUNDÓ" />
+						<f:selectItem itemLabel="RIACHO DO CÁGADO" itemValue="RIACHO DO CÁGADO" />
+						<f:selectItem itemLabel="RIACHO DO CAJUEIRO" itemValue="RIACHO DO CAJUEIRO" />
+						<f:selectItem itemLabel="RIACHO DO CALDEIRÃO" itemValue="RIACHO DO CALDEIRÃO" />
+						<f:selectItem itemLabel="RIACHO DO CAMPO GRANDE" itemValue="RIACHO DO CAMPO GRANDE" />
+						<f:selectItem itemLabel="RIACHO DO CAPIM GROSSO" itemValue="RIACHO DO CAPIM GROSSO" />
+						<f:selectItem itemLabel="RIACHO DO CARACUI" itemValue="RIACHO DO CARACUI" />
+						<f:selectItem itemLabel="RIACHO DO CARACUÍ" itemValue="RIACHO DO CARACUÍ" />
+						<f:selectItem itemLabel="RIACHO DO CATIMBAU" itemValue="RIACHO DO CATIMBAU" />
+						<f:selectItem itemLabel="RIACHO DO CEDRO" itemValue="RIACHO DO CEDRO" />
+						<f:selectItem itemLabel="RIACHO DO CHOCALHO" itemValue="RIACHO DO CHOCALHO" />
+						<f:selectItem itemLabel="RIACHO DO CIPÓ" itemValue="RIACHO DO CIPÓ" />
+						<f:selectItem itemLabel="RIACHO DO CORISCO" itemValue="RIACHO DO CORISCO" />
+						<f:selectItem itemLabel="RIACHO DO COVÃO" itemValue="RIACHO DO COVÃO" />
+						<f:selectItem itemLabel="RIACHO DO COXO" itemValue="RIACHO DO COXO" />
+						<f:selectItem itemLabel="RIACHO DO CUMBUCO" itemValue="RIACHO DO CUMBUCO" />
+						<f:selectItem itemLabel="RIACHO DO DEFUNTO" itemValue="RIACHO DO DEFUNTO" />
+						<f:selectItem itemLabel="RIACHO DO DOMINGOS" itemValue="RIACHO DO DOMINGOS" />
+						<f:selectItem itemLabel="RIACHO DO DORMENTE" itemValue="RIACHO DO DORMENTE" />
+						<f:selectItem itemLabel="RIACHO DO DUNGA" itemValue="RIACHO DO DUNGA" />
+						<f:selectItem itemLabel="RIACHO DO ESPINHO" itemValue="RIACHO DO ESPINHO" />
+						<f:selectItem itemLabel="RIACHO DO ESPÍRITO SANTO" itemValue="RIACHO DO ESPÍRITO SANTO" />
+						<f:selectItem itemLabel="RIACHO DO ESPORÃO" itemValue="RIACHO DO ESPORÃO" />
+						<f:selectItem itemLabel="RIACHO DO ESTREITO" itemValue="RIACHO DO ESTREITO" />
+						<f:selectItem itemLabel="RIACHO DO EXU" itemValue="RIACHO DO EXU" />
+						<f:selectItem itemLabel="RIACHO DO FELICIANO" itemValue="RIACHO DO FELICIANO" />
+						<f:selectItem itemLabel="RIACHO DO FERNANDO" itemValue="RIACHO DO FERNANDO" />
+						<f:selectItem itemLabel="RIACHO DO FIRMIANO" itemValue="RIACHO DO FIRMIANO" />
+						<f:selectItem itemLabel="RIACHO DO FOGO" itemValue="RIACHO DO FOGO" />
+						<f:selectItem itemLabel="RIACHO DO FORNO" itemValue="RIACHO DO FORNO" />
+						<f:selectItem itemLabel="RIACHO DO GADO" itemValue="RIACHO DO GADO" />
+						<f:selectItem itemLabel="RIACHO DO GALEÃO" itemValue="RIACHO DO GALEÃO" />
+						<f:selectItem itemLabel="RIACHO DO GAMA" itemValue="RIACHO DO GAMA" />
+						<f:selectItem itemLabel="RIACHO DO GATO" itemValue="RIACHO DO GATO" />
+						<f:selectItem itemLabel="RIACHO DO GENTIO" itemValue="RIACHO DO GENTIO" />
+						<f:selectItem itemLabel="RIACHO DO ICÓ" itemValue="RIACHO DO ICÓ" />
+						<f:selectItem itemLabel="RIACHO DO ICÔ" itemValue="RIACHO DO ICÔ" />
+						<f:selectItem itemLabel="RIACHO DO INFERNO" itemValue="RIACHO DO INFERNO" />
+						<f:selectItem itemLabel="RIACHO DO ITACURUBA" itemValue="RIACHO DO ITACURUBA" />
+						<f:selectItem itemLabel="RIACHO DO JABURU" itemValue="RIACHO DO JABURU" />
+						<f:selectItem itemLabel="RIACHO DO JACU" itemValue="RIACHO DO JACU" />
+						<f:selectItem itemLabel="RIACHO DO JATOBAZINHO" itemValue="RIACHO DO JATOBAZINHO" />
+						<f:selectItem itemLabel="RIACHO DO JOÃO MANOEL" itemValue="RIACHO DO JOÃO MANOEL" />
+						<f:selectItem itemLabel="RIACHO DO JUÁ" itemValue="RIACHO DO JUÁ" />
+						<f:selectItem itemLabel="RIACHO DO JUAZEIRO" itemValue="RIACHO DO JUAZEIRO" />
+						<f:selectItem itemLabel="RIACHO DO JUCÁ" itemValue="RIACHO DO JUCÁ" />
+						<f:selectItem itemLabel="RIACHO DO JUNCO" itemValue="RIACHO DO JUNCO" />
+						<f:selectItem itemLabel="RIACHO DO LAZÃO" itemValue="RIACHO DO LAZÃO" />
+						<f:selectItem itemLabel="RIACHO DO LETREIRO" itemValue="RIACHO DO LETREIRO" />
+						<f:selectItem itemLabel="RIACHO DO LIGEIRO" itemValue="RIACHO DO LIGEIRO" />
+						<f:selectItem itemLabel="RIACHO DO LIMITÃO" itemValue="RIACHO DO LIMITÃO" />
+						<f:selectItem itemLabel="RIACHO DO LÔBO" itemValue="RIACHO DO LÔBO" />
+						<f:selectItem itemLabel="RIACHO DO LOGRADOURO" itemValue="RIACHO DO LOGRADOURO" />
+						<f:selectItem itemLabel="RIACHO DO LOPES" itemValue="RIACHO DO LOPES" />
+						<f:selectItem itemLabel="RIACHO DO MACACO" itemValue="RIACHO DO MACACO" />
+						<f:selectItem itemLabel="RIACHO DO MALHADO REAL" itemValue="RIACHO DO MALHADO REAL" />
+						<f:selectItem itemLabel="RIACHO DO MANDACARU" itemValue="RIACHO DO MANDACARU" />
+						<f:selectItem itemLabel="RIACHO DO MANDANTE" itemValue="RIACHO DO MANDANTE" />
+						<f:selectItem itemLabel="RIACHO DO MANDIM" itemValue="RIACHO DO MANDIM" />
+						<f:selectItem itemLabel="RIACHO DO MANUINO" itemValue="RIACHO DO MANUINO" />
+						<f:selectItem itemLabel="RIACHO DO MARI" itemValue="RIACHO DO MARI" />
+						<f:selectItem itemLabel="RIACHO DO MARTELO" itemValue="RIACHO DO MARTELO" />
+						<f:selectItem itemLabel="RIACHO DO MEDUBIM" itemValue="RIACHO DO MEDUBIM" />
+						<f:selectItem itemLabel="RIACHO DO MEIO" itemValue="RIACHO DO MEIO" />
+						<f:selectItem itemLabel="RIACHO DO MEL" itemValue="RIACHO DO MEL" />
+						<f:selectItem itemLabel="RIACHO DO MELO" itemValue="RIACHO DO MELO" />
+						<f:selectItem itemLabel="RIACHO DO MIGUEL" itemValue="RIACHO DO MIGUEL" />
+						<f:selectItem itemLabel="RIACHO DO MIMOSO" itemValue="RIACHO DO MIMOSO" />
+						<f:selectItem itemLabel="RIACHO DO MINADOR" itemValue="RIACHO DO MINADOR" />
+						<f:selectItem itemLabel="RIACHO DO MINGU" itemValue="RIACHO DO MINGU" />
+						<f:selectItem itemLabel="RIACHO DO MOCAMBO" itemValue="RIACHO DO MOCAMBO" />
+						<f:selectItem itemLabel="RIACHO DO MOCÓ" itemValue="RIACHO DO MOCÓ" />
+						<f:selectItem itemLabel="RIACHO DO MORCEGO" itemValue="RIACHO DO MORCEGO" />
+						<f:selectItem itemLabel="RIACHO DO MORORÓ" itemValue="RIACHO DO MORORÓ" />
+						<f:selectItem itemLabel="RIACHO DO MOSELO" itemValue="RIACHO DO MOSELO" />
+						<f:selectItem itemLabel="RIACHO DO MOTA" itemValue="RIACHO DO MOTA" />
+						<f:selectItem itemLabel="RIACHO DO MOURÃO" itemValue="RIACHO DO MOURÃO" />
+						<f:selectItem itemLabel="RIACHO DO MULATO" itemValue="RIACHO DO MULATO" />
+						<f:selectItem itemLabel="RIACHO DO MULUNGU" itemValue="RIACHO DO MULUNGU" />
+						<f:selectItem itemLabel="RIACHO DO MUNDO SÓBRIO" itemValue="RIACHO DO MUNDO SÓBRIO" />
+						<f:selectItem itemLabel="RIACHO DO MUQUÉM" itemValue="RIACHO DO MUQUÉM" />
+						<f:selectItem itemLabel="RIACHO DO NAVIO" itemValue="RIACHO DO NAVIO" />
+						<f:selectItem itemLabel="RIACHO DO OLHO- D'ÁGUA" itemValue="RIACHO DO OLHO- D'ÁGUA" />
+						<f:selectItem itemLabel="RIACHO DO OURICURI" itemValue="RIACHO DO OURICURI" />
+						<f:selectItem itemLabel="RIACHO DO PADRE" itemValue="RIACHO DO PADRE" />
+						<f:selectItem itemLabel="RIACHO DO PAI JOÃO" itemValue="RIACHO DO PAI JOÃO" />
+						<f:selectItem itemLabel="RIACHO DO PAPAGAIO" itemValue="RIACHO DO PAPAGAIO" />
+						<f:selectItem itemLabel="RIACHO DO PASCOAL" itemValue="RIACHO DO PASCOAL" />
+						<f:selectItem itemLabel="RIACHO DO PASSARINHO" itemValue="RIACHO DO PASSARINHO" />
+						<f:selectItem itemLabel="RIACHO DO PATI" itemValue="RIACHO DO PATI" />
+						<f:selectItem itemLabel="RIACHO DO PAU BRANCO" itemValue="RIACHO DO PAU BRANCO" />
+						<f:selectItem itemLabel="RIACHO DO PAU D`ARCO" itemValue="RIACHO DO PAU D`ARCO" />
+						<f:selectItem itemLabel="RIACHO DO PAU FERRO" itemValue="RIACHO DO PAU FERRO" />
+						<f:selectItem itemLabel="RIACHO DO PAUIÚ" itemValue="RIACHO DO PAUIÚ" />
+						<f:selectItem itemLabel="RIACHO DO PAULO" itemValue="RIACHO DO PAULO" />
+						<f:selectItem itemLabel="RIACHO DO PEIXE" itemValue="RIACHO DO PEIXE" />
+						<f:selectItem itemLabel="RIACHO DO PENEDO" itemValue="RIACHO DO PENEDO" />
+						<f:selectItem itemLabel="RIACHO DO PERIQUITO" itemValue="RIACHO DO PERIQUITO" />
+						<f:selectItem itemLabel="RIACHO DO PIAU" itemValue="RIACHO DO PIAU" />
+						<f:selectItem itemLabel="RIACHO DO PINHEIRO" itemValue="RIACHO DO PINHEIRO" />
+						<f:selectItem itemLabel="RIACHO DO PINTO" itemValue="RIACHO DO PINTO" />
+						<f:selectItem itemLabel="RIACHO DO PIORÉ" itemValue="RIACHO DO PIORÉ" />
+						<f:selectItem itemLabel="RIACHO DO POÇÃO" itemValue="RIACHO DO POÇÃO" />
+						<f:selectItem itemLabel="RIACHO DO POÇO" itemValue="RIACHO DO POÇO" />
+						<f:selectItem itemLabel="RIACHO DO POÇO D`ANTA" itemValue="RIACHO DO POÇO D`ANTA" />
+						<f:selectItem itemLabel="RIACHO DO PORTAL" itemValue="RIACHO DO PORTAL" />
+						<f:selectItem itemLabel="RIACHO DO PRADICÓ" itemValue="RIACHO DO PRADICÓ" />
+						<f:selectItem itemLabel="RIACHO DO QUIXABÁ" itemValue="RIACHO DO QUIXABÁ" />
+						<f:selectItem itemLabel="RIACHO DO REMÉDIO" itemValue="RIACHO DO REMÉDIO" />
+						<f:selectItem itemLabel="RIACHO DO RETIRO" itemValue="RIACHO DO RETIRO" />
+						<f:selectItem itemLabel="RIACHO DO RONCA" itemValue="RIACHO DO RONCA" />
+						<f:selectItem itemLabel="RIACHO DO SACO" itemValue="RIACHO DO SACO" />
+						<f:selectItem itemLabel="RIACHO DO SAGUIM ICÓS" itemValue="RIACHO DO SAGUIM ICÓS" />
+						<f:selectItem itemLabel="RIACHO DO SAL" itemValue="RIACHO DO SAL" />
+						<f:selectItem itemLabel="RIACHO DO SALÃO" itemValue="RIACHO DO SALÃO" />
+						<f:selectItem itemLabel="RIACHO DO SALGADINHO" itemValue="RIACHO DO SALGADINHO" />
+						<f:selectItem itemLabel="RIACHO DO SALGADO" itemValue="RIACHO DO SALGADO" />
+						<f:selectItem itemLabel="RIACHO DO SALGUEIRO" itemValue="RIACHO DO SALGUEIRO" />
+						<f:selectItem itemLabel="RIACHO DO SEBO" itemValue="RIACHO DO SEBO" />
+						<f:selectItem itemLabel="RIACHO DO SERROTE" itemValue="RIACHO DO SERROTE" />
+						<f:selectItem itemLabel="RIACHO DO SERROTE DO BOI" itemValue="RIACHO DO SERROTE DO BOI" />
+						<f:selectItem itemLabel="RIACHO DO SERROTINHO" itemValue="RIACHO DO SERROTINHO" />
+						<f:selectItem itemLabel="RIACHO DO SIMÃO" itemValue="RIACHO DO SIMÃO" />
+						<f:selectItem itemLabel="RIACHO DO SÍTIO" itemValue="RIACHO DO SÍTIO" />
+						<f:selectItem itemLabel="RIACHO DO SOCORRO" itemValue="RIACHO DO SOCORRO" />
+						<f:selectItem itemLabel="RIACHO DO TABULEIRO DOS CAVALOS" itemValue="RIACHO DO TABULEIRO DOS CAVALOS" />
+						<f:selectItem itemLabel="RIACHO DO TAMANDUÁ" itemValue="RIACHO DO TAMANDUÁ" />
+						<f:selectItem itemLabel="RIACHO DO TAMBORI" itemValue="RIACHO DO TAMBORI" />
+						<f:selectItem itemLabel="RIACHO DO TAMBORIM" itemValue="RIACHO DO TAMBORIM" />
+						<f:selectItem itemLabel="RIACHO DO TANQUE" itemValue="RIACHO DO TANQUE" />
+						<f:selectItem itemLabel="RIACHO DO TAPUIO" itemValue="RIACHO DO TAPUIO" />
+						<f:selectItem itemLabel="RIACHO DO TIGRE" itemValue="RIACHO DO TIGRE" />
+						<f:selectItem itemLabel="RIACHO DO TINGUIZEIRO" itemValue="RIACHO DO TINGUIZEIRO" />
+						<f:selectItem itemLabel="RIACHO DO TOCAICO" itemValue="RIACHO DO TOCAICO" />
+						<f:selectItem itemLabel="RIACHO DO TOCO DO PAU" itemValue="RIACHO DO TOCO DO PAU" />
+						<f:selectItem itemLabel="RIACHO DO TOURO" itemValue="RIACHO DO TOURO" />
+						<f:selectItem itemLabel="RIACHO DO TRAPICHE" itemValue="RIACHO DO TRAPICHE" />
+						<f:selectItem itemLabel="RIACHO DO UMBURANO" itemValue="RIACHO DO UMBURANO" />
+						<f:selectItem itemLabel="RIACHO DO UMBUZEIRO" itemValue="RIACHO DO UMBUZEIRO" />
+						<f:selectItem itemLabel="RIACHO DO VEADO" itemValue="RIACHO DO VEADO" />
+						<f:selectItem itemLabel="RIACHO DO VIEIRA" itemValue="RIACHO DO VIEIRA" />
+						<f:selectItem itemLabel="RIACHO DO XICURU" itemValue="RIACHO DO XICURU" />
+						<f:selectItem itemLabel="RIACHO DOCE" itemValue="RIACHO DOCE" />
+						<f:selectItem itemLabel="RIACHO DOCE OU MULUNGU" itemValue="RIACHO DOCE OU MULUNGU" />
+						<f:selectItem itemLabel="RIACHO DOMINICANO" itemValue="RIACHO DOMINICANO" />
+						<f:selectItem itemLabel="RIACHO DOS BARREIOS" itemValue="RIACHO DOS BARREIOS" />
+						<f:selectItem itemLabel="RIACHO DOS BEZERROS" itemValue="RIACHO DOS BEZERROS" />
+						<f:selectItem itemLabel="RIACHO DOS BODES" itemValue="RIACHO DOS BODES" />
+						<f:selectItem itemLabel="RIACHO DOS BRANDÕES" itemValue="RIACHO DOS BRANDÕES" />
+						<f:selectItem itemLabel="RIACHO DOS CAIBROS" itemValue="RIACHO DOS CAIBROS" />
+						<f:selectItem itemLabel="RIACHO DOS CALDEIRÕES" itemValue="RIACHO DOS CALDEIRÕES" />
+						<f:selectItem itemLabel="RIACHO DOS CAMPOS" itemValue="RIACHO DOS CAMPOS" />
+						<f:selectItem itemLabel="RIACHO DOS CAVALOS" itemValue="RIACHO DOS CAVALOS" />
+						<f:selectItem itemLabel="RIACHO DOS FERNANDES" itemValue="RIACHO DOS FERNANDES" />
+						<f:selectItem itemLabel="RIACHO DOS GROTÕES" itemValue="RIACHO DOS GROTÕES" />
+						<f:selectItem itemLabel="RIACHO DOS ICÓS" itemValue="RIACHO DOS ICÓS" />
+						<f:selectItem itemLabel="RIACHO DOS MACACOS" itemValue="RIACHO DOS MACACOS" />
+						<f:selectItem itemLabel="RIACHO DOS MARES" itemValue="RIACHO DOS MARES" />
+						<f:selectItem itemLabel="RIACHO DOS MILAGRES" itemValue="RIACHO DOS MILAGRES" />
+						<f:selectItem itemLabel="RIACHO DOS MOCÓS" itemValue="RIACHO DOS MOCÓS" />
+						<f:selectItem itemLabel="RIACHO DOS MORAES" itemValue="RIACHO DOS MORAES" />
+						<f:selectItem itemLabel="RIACHO DOS NEGREIROS" itemValue="RIACHO DOS NEGREIROS" />
+						<f:selectItem itemLabel="RIACHO DOS NEGROS" itemValue="RIACHO DOS NEGROS" />
+						<f:selectItem itemLabel="RIACHO DOS PAPAGAIOS" itemValue="RIACHO DOS PAPAGAIOS" />
+						<f:selectItem itemLabel="RIACHO DOS PEREIROS" itemValue="RIACHO DOS PEREIROS" />
+						<f:selectItem itemLabel="RIACHO DOS PICOS" itemValue="RIACHO DOS PICOS" />
+						<f:selectItem itemLabel="RIACHO DOS PILÕES" itemValue="RIACHO DOS PILÕES" />
+						<f:selectItem itemLabel="RIACHO DOS POÇOS" itemValue="RIACHO DOS POÇOS" />
+						<f:selectItem itemLabel="RIACHO DOS PORCOS" itemValue="RIACHO DOS PORCOS" />
+						<f:selectItem itemLabel="RIACHO DOS PORQUINHOS" itemValue="RIACHO DOS PORQUINHOS" />
+						<f:selectItem itemLabel="RIACHO DOS REIS" itemValue="RIACHO DOS REIS" />
+						<f:selectItem itemLabel="RIACHO DOS SERROTES GRANDES" itemValue="RIACHO DOS SERROTES GRANDES" />
+						<f:selectItem itemLabel="RIACHO DOS TRÊS UMBUZEIROS" itemValue="RIACHO DOS TRÊS UMBUZEIROS" />
+						<f:selectItem itemLabel="RIACHO DUAS BARRAS" itemValue="RIACHO DUAS BARRAS" />
+						<f:selectItem itemLabel="RIACHO EIXO GRANDE" itemValue="RIACHO EIXO GRANDE" />
+						<f:selectItem itemLabel="RIACHO FARIAS" itemValue="RIACHO FARIAS" />
+						<f:selectItem itemLabel="RIACHO FAZENDA VELHA" itemValue="RIACHO FAZENDA VELHA" />
+						<f:selectItem itemLabel="RIACHO FECHADO" itemValue="RIACHO FECHADO" />
+						<f:selectItem itemLabel="RIACHO FÉLIX DO REGO" itemValue="RIACHO FÉLIX DO REGO" />
+						<f:selectItem itemLabel="RIACHO FLORES" itemValue="RIACHO FLORES" />
+						<f:selectItem itemLabel="RIACHO FORQUILHA" itemValue="RIACHO FORQUILHA" />
+						<f:selectItem itemLabel="RIACHO FORTALEZA" itemValue="RIACHO FORTALEZA" />
+						<f:selectItem itemLabel="RIACHO FUNDINHA" itemValue="RIACHO FUNDINHA" />
+						<f:selectItem itemLabel="RIACHO FUNDO" itemValue="RIACHO FUNDO" />
+						<f:selectItem itemLabel="RIACHO GABRIEL" itemValue="RIACHO GABRIEL" />
+						<f:selectItem itemLabel="RIACHO GAIOLA" itemValue="RIACHO GAIOLA" />
+						<f:selectItem itemLabel="RIACHO GAMELEIRA" itemValue="RIACHO GAMELEIRA" />
+						<f:selectItem itemLabel="RIACHO GARAPAS" itemValue="RIACHO GARAPAS" />
+						<f:selectItem itemLabel="RIACHO GARRAPATEIRA" itemValue="RIACHO GARRAPATEIRA" />
+						<f:selectItem itemLabel="RIACHO GENIPAPO" itemValue="RIACHO GENIPAPO" />
+						<f:selectItem itemLabel="RIACHO GITÓ" itemValue="RIACHO GITÓ" />
+						<f:selectItem itemLabel="RIACHO GORIMUM" itemValue="RIACHO GORIMUM" />
+						<f:selectItem itemLabel="RIACHO GRANDE" itemValue="RIACHO GRANDE" />
+						<f:selectItem itemLabel="RIACHO GRAVATÁ" itemValue="RIACHO GRAVATÁ" />
+						<f:selectItem itemLabel="RIACHO GROSSO" itemValue="RIACHO GROSSO" />
+						<f:selectItem itemLabel="RIACHO GROTA FUNDA" itemValue="RIACHO GROTA FUNDA" />
+						<f:selectItem itemLabel="RIACHO GROTA SERRA VERDE" itemValue="RIACHO GROTA SERRA VERDE" />
+						<f:selectItem itemLabel="RIACHO GUABIRABA" itemValue="RIACHO GUABIRABA" />
+						<f:selectItem itemLabel="RIACHO IBEAPECU" itemValue="RIACHO IBEAPECU" />
+						<f:selectItem itemLabel="RIACHO ILBA" itemValue="RIACHO ILBA" />
+						<f:selectItem itemLabel="RIACHO INGAZEIRA" itemValue="RIACHO INGAZEIRA" />
+						<f:selectItem itemLabel="RIACHO IPUEIRA" itemValue="RIACHO IPUEIRA" />
+						<f:selectItem itemLabel="RIACHO IPUEÍRA" itemValue="RIACHO IPUEÍRA" />
+						<f:selectItem itemLabel="RIACHO ITAONGUINHA" itemValue="RIACHO ITAONGUINHA" />
+						<f:selectItem itemLabel="RIACHO JACARÉ" itemValue="RIACHO JACARÉ" />
+						<f:selectItem itemLabel="RIACHO JACURUTU" itemValue="RIACHO JACURUTU" />
+						<f:selectItem itemLabel="RIACHO JAMAFORNO" itemValue="RIACHO JAMAFORNO" />
+						<f:selectItem itemLabel="RIACHO JAPARANDUBA" itemValue="RIACHO JAPARANDUBA" />
+						<f:selectItem itemLabel="RIACHO JARACALIA" itemValue="RIACHO JARACALIA" />
+						<f:selectItem itemLabel="RIACHO JARDIM" itemValue="RIACHO JARDIM" />
+						<f:selectItem itemLabel="RIACHO JARUPARI" itemValue="RIACHO JARUPARI" />
+						<f:selectItem itemLabel="RIACHO JATAÚBA" itemValue="RIACHO JATAÚBA" />
+						<f:selectItem itemLabel="RIACHO JATOBÁ" itemValue="RIACHO JATOBÁ" />
+						<f:selectItem itemLabel="RIACHO JIBÓIA" itemValue="RIACHO JIBÓIA" />
+						<f:selectItem itemLabel="RIACHO JOÃO MARINHO" itemValue="RIACHO JOÃO MARINHO" />
+						<f:selectItem itemLabel="RIACHO JOLCHÁ" itemValue="RIACHO JOLCHÁ" />
+						<f:selectItem itemLabel="RIACHO JUAZEIRO" itemValue="RIACHO JUAZEIRO" />
+						<f:selectItem itemLabel="RIACHO JUREMA" itemValue="RIACHO JUREMA" />
+						<f:selectItem itemLabel="RIACHO LADEIRA VERMELHA" itemValue="RIACHO LADEIRA VERMELHA" />
+						<f:selectItem itemLabel="RIACHO LAGOA DA VACA" itemValue="RIACHO LAGOA DA VACA" />
+						<f:selectItem itemLabel="RIACHO LAGOA SECA" itemValue="RIACHO LAGOA SECA" />
+						<f:selectItem itemLabel="RIACHO LAGOINHA" itemValue="RIACHO LAGOINHA" />
+						<f:selectItem itemLabel="RIACHO LARANJEIRA" itemValue="RIACHO LARANJEIRA" />
+						<f:selectItem itemLabel="RIACHO LIBERAL" itemValue="RIACHO LIBERAL" />
+						<f:selectItem itemLabel="RIACHO LOGRADOURO" itemValue="RIACHO LOGRADOURO" />
+						<f:selectItem itemLabel="RIACHO LOPES" itemValue="RIACHO LOPES" />
+						<f:selectItem itemLabel="RIACHO MACACO" itemValue="RIACHO MACACO" />
+						<f:selectItem itemLabel="RIACHO MACAMBIRA" itemValue="RIACHO MACAMBIRA" />
+						<f:selectItem itemLabel="RIACHO MAÇAMBIRA" itemValue="RIACHO MAÇAMBIRA" />
+						<f:selectItem itemLabel="RIACHO MAGÉ" itemValue="RIACHO MAGÉ" />
+						<f:selectItem itemLabel="RIACHO MALHADA DE AREIA" itemValue="RIACHO MALHADA DE AREIA" />
+						<f:selectItem itemLabel="RIACHO MALHADA DE PEDRAS" itemValue="RIACHO MALHADA DE PEDRAS" />
+						<f:selectItem itemLabel="RIACHO MANCEL JERÔNIMO" itemValue="RIACHO MANCEL JERÔNIMO" />
+						<f:selectItem itemLabel="RIACHO MANDACARU" itemValue="RIACHO MANDACARU" />
+						<f:selectItem itemLabel="RIACHO MANDIOCA" itemValue="RIACHO MANDIOCA" />
+						<f:selectItem itemLabel="RIACHO MANGUEIRA" itemValue="RIACHO MANGUEIRA" />
+						<f:selectItem itemLabel="RIACHO MANIMBU" itemValue="RIACHO MANIMBU" />
+						<f:selectItem itemLabel="RIACHO MANOEL ANTÔNIO" itemValue="RIACHO MANOEL ANTÔNIO" />
+						<f:selectItem itemLabel="RIACHO MANUEL JOAQUIM" itemValue="RIACHO MANUEL JOAQUIM" />
+						<f:selectItem itemLabel="RIACHO MARACAJÁ" itemValue="RIACHO MARACAJÁ" />
+						<f:selectItem itemLabel="RIACHO MARÉ" itemValue="RIACHO MARÉ" />
+						<f:selectItem itemLabel="RIACHO MARI" itemValue="RIACHO MARI" />
+						<f:selectItem itemLabel="RIACHO MARINHEIRO" itemValue="RIACHO MARINHEIRO" />
+						<f:selectItem itemLabel="RIACHO MARIZINHO" itemValue="RIACHO MARIZINHO" />
+						<f:selectItem itemLabel="RIACHO MASSANGANA" itemValue="RIACHO MASSANGANA" />
+						<f:selectItem itemLabel="RIACHO MASSARANDUBA" itemValue="RIACHO MASSARANDUBA" />
+						<f:selectItem itemLabel="RIACHO MATA PASTO" itemValue="RIACHO MATA PASTO" />
+						<f:selectItem itemLabel="RIACHO MEIRIM" itemValue="RIACHO MEIRIM" />
+						<f:selectItem itemLabel="RIACHO MEU REFÚGIO" itemValue="RIACHO MEU REFÚGIO" />
+						<f:selectItem itemLabel="RIACHO MILAGRE" itemValue="RIACHO MILAGRE" />
+						<f:selectItem itemLabel="RIACHO MIMOSO" itemValue="RIACHO MIMOSO" />
+						<f:selectItem itemLabel="RIACHO MINA GRANDE" itemValue="RIACHO MINA GRANDE" />
+						<f:selectItem itemLabel="RIACHO MINGAIÚ" itemValue="RIACHO MINGAIÚ" />
+						<f:selectItem itemLabel="RIACHO MIRUEIRA" itemValue="RIACHO MIRUEIRA" />
+						<f:selectItem itemLabel="RIACHO MOCAMBO" itemValue="RIACHO MOCAMBO" />
+						<f:selectItem itemLabel="RIACHO MOCÓ" itemValue="RIACHO MOCÓ" />
+						<f:selectItem itemLabel="RIACHO MONJOLO" itemValue="RIACHO MONJOLO" />
+						<f:selectItem itemLabel="RIACHO MONTADO" itemValue="RIACHO MONTADO" />
+						<f:selectItem itemLabel="RIACHO MORCEGO" itemValue="RIACHO MORCEGO" />
+						<f:selectItem itemLabel="RIACHO MOROJÓ" itemValue="RIACHO MOROJÓ" />
+						<f:selectItem itemLabel="RIACHO MULUNGU" itemValue="RIACHO MULUNGU" />
+						<f:selectItem itemLabel="RIACHO MULUNGÚ" itemValue="RIACHO MULUNGÚ" />
+						<f:selectItem itemLabel="RIACHO MUNDURI" itemValue="RIACHO MUNDURI" />
+						<f:selectItem itemLabel="RIACHO MURIOGA" itemValue="RIACHO MURIOGA" />
+						<f:selectItem itemLabel="RIACHO MUTUCA" itemValue="RIACHO MUTUCA" />
+						<f:selectItem itemLabel="RIACHO MUZUMBA" itemValue="RIACHO MUZUMBA" />
+						<f:selectItem itemLabel="RIACHO NATUBA" itemValue="RIACHO NATUBA" />
+						<f:selectItem itemLabel="RIACHO NOVO" itemValue="RIACHO NOVO" />
+						<f:selectItem itemLabel="RIACHO OLHO D`ÁGUA" itemValue="RIACHO OLHO D`ÁGUA" />
+						<f:selectItem itemLabel="RIACHO OLHO D´AGUA" itemValue="RIACHO OLHO D´AGUA" />
+						<f:selectItem itemLabel="RIACHO OURICURI" itemValue="RIACHO OURICURI" />
+						<f:selectItem itemLabel="RIACHO PAI DOMINGOS" itemValue="RIACHO PAI DOMINGOS" />
+						<f:selectItem itemLabel="RIACHO PAISSANDU" itemValue="RIACHO PAISSANDU" />
+						<f:selectItem itemLabel="RIACHO PALHETA" itemValue="RIACHO PALHETA" />
+						<f:selectItem itemLabel="RIACHO PANELA D`ÁGUA" itemValue="RIACHO PANELA D`ÁGUA" />
+						<f:selectItem itemLabel="RIACHO PAPAGAIO" itemValue="RIACHO PAPAGAIO" />
+						<f:selectItem itemLabel="RIACHO PAQUEVIRA" itemValue="RIACHO PAQUEVIRA" />
+						<f:selectItem itemLabel="RIACHO PARÁ" itemValue="RIACHO PARÁ" />
+						<f:selectItem itemLabel="RIACHO PAREDÃO" itemValue="RIACHO PAREDÃO" />
+						<f:selectItem itemLabel="RIACHO PASSAGEM DA PEDRA" itemValue="RIACHO PASSAGEM DA PEDRA" />
+						<f:selectItem itemLabel="RIACHO PASSIVA" itemValue="RIACHO PASSIVA" />
+						<f:selectItem itemLabel="RIACHO PÁTIO VELHO" itemValue="RIACHO PÁTIO VELHO" />
+						<f:selectItem itemLabel="RIACHO PAU BRANCO" itemValue="RIACHO PAU BRANCO" />
+						<f:selectItem itemLabel="RIACHO PAU D`ARCO" itemValue="RIACHO PAU D`ARCO" />
+						<f:selectItem itemLabel="RIACHO PAU FERRADO" itemValue="RIACHO PAU FERRADO" />
+						<f:selectItem itemLabel="RIACHO PAU-AMARELO" itemValue="RIACHO PAU-AMARELO" />
+						<f:selectItem itemLabel="RIACHO PAU-DE-FUMO" itemValue="RIACHO PAU-DE-FUMO" />
+						<f:selectItem itemLabel="RIACHO PAU-FERRO" itemValue="RIACHO PAU-FERRO" />
+						<f:selectItem itemLabel="RIACHO PAULISTA" itemValue="RIACHO PAULISTA" />
+						<f:selectItem itemLabel="RIACHO PÉ DA SERRA" itemValue="RIACHO PÉ DA SERRA" />
+						<f:selectItem itemLabel="RIACHO PERIQUITO" itemValue="RIACHO PERIQUITO" />
+						<f:selectItem itemLabel="RIACHO PIAÇÃO" itemValue="RIACHO PIAÇÃO" />
+						<f:selectItem itemLabel="RIACHO PINDOBA" itemValue="RIACHO PINDOBA" />
+						<f:selectItem itemLabel="RIACHO PIRANA" itemValue="RIACHO PIRANA" />
+						<f:selectItem itemLabel="RIACHO PITANGUEIRAS" itemValue="RIACHO PITANGUEIRAS" />
+						<f:selectItem itemLabel="RIACHO PITOMBEIRA" itemValue="RIACHO PITOMBEIRA" />
+						<f:selectItem itemLabel="RIACHO PITOMBEIRAS" itemValue="RIACHO PITOMBEIRAS" />
+						<f:selectItem itemLabel="RIACHO PITU" itemValue="RIACHO PITU" />
+						<f:selectItem itemLabel="RIACHO POCINHO" itemValue="RIACHO POCINHO" />
+						<f:selectItem itemLabel="RIACHO POÇO COMPRIDO OU LAGOA DO BOI" itemValue="RIACHO POÇO COMPRIDO OU LAGOA DO BOI" />
+						<f:selectItem itemLabel="RIACHO POÇO DA AREIA" itemValue="RIACHO POÇO DA AREIA" />
+						<f:selectItem itemLabel="RIACHO POÇO DO BOI" itemValue="RIACHO POÇO DO BOI" />
+						<f:selectItem itemLabel="RIACHO POÇO DO CURRAL" itemValue="RIACHO POÇO DO CURRAL" />
+						<f:selectItem itemLabel="RIACHO POÇO DO NEGRO" itemValue="RIACHO POÇO DO NEGRO" />
+						<f:selectItem itemLabel="RIACHO POÇO DO SAL" itemValue="RIACHO POÇO DO SAL" />
+						<f:selectItem itemLabel="RIACHO POGI" itemValue="RIACHO POGI" />
+						<f:selectItem itemLabel="RIACHO PONTA DE PAU" itemValue="RIACHO PONTA DE PAU" />
+						<f:selectItem itemLabel="RIACHO POUCO TEMPO" itemValue="RIACHO POUCO TEMPO" />
+						<f:selectItem itemLabel="RIACHO POUCO-TEMPO" itemValue="RIACHO POUCO-TEMPO" />
+						<f:selectItem itemLabel="RIACHO PRETO" itemValue="RIACHO PRETO" />
+						<f:selectItem itemLabel="RIACHO PRUÁ" itemValue="RIACHO PRUÁ" />
+						<f:selectItem itemLabel="RIACHO PURGATÓRIO" itemValue="RIACHO PURGATÓRIO" />
+						<f:selectItem itemLabel="RIACHO QUATI" itemValue="RIACHO QUATI" />
+						<f:selectItem itemLabel="RIACHO QUEBRA-UNHA" itemValue="RIACHO QUEBRA-UNHA" />
+						<f:selectItem itemLabel="RIACHO QUISABA" itemValue="RIACHO QUISABA" />
+						<f:selectItem itemLabel="RIACHO QUIXABÁ" itemValue="RIACHO QUIXABÁ" />
+						<f:selectItem itemLabel="RIACHO QUIXABEIRA" itemValue="RIACHO QUIXABEIRA" />
+						<f:selectItem itemLabel="RIACHO RECREIO" itemValue="RIACHO RECREIO" />
+						<f:selectItem itemLabel="RIACHO RIACHÃO" itemValue="RIACHO RIACHÃO" />
+						<f:selectItem itemLabel="RIACHO RIACHINHO" itemValue="RIACHO RIACHINHO" />
+						<f:selectItem itemLabel="RIACHO RIBEIRA" itemValue="RIACHO RIBEIRA" />
+						<f:selectItem itemLabel="RIACHO RIBEIRO" itemValue="RIACHO RIBEIRO" />
+						<f:selectItem itemLabel="RIACHO RODEADOR" itemValue="RIACHO RODEADOR" />
+						<f:selectItem itemLabel="RIACHO RODÍZIO" itemValue="RIACHO RODÍZIO" />
+						<f:selectItem itemLabel="RIACHO RONCADOR" itemValue="RIACHO RONCADOR" />
+						<f:selectItem itemLabel="RIACHO RUMO TORTO" itemValue="RIACHO RUMO TORTO" />
+						<f:selectItem itemLabel="RIACHO SÃ DE SOUZA" itemValue="RIACHO SÃ DE SOUZA" />
+						<f:selectItem itemLabel="RIACHO SACO DA SERRA" itemValue="RIACHO SACO DA SERRA" />
+						<f:selectItem itemLabel="RIACHO SACRABETÓ" itemValue="RIACHO SACRABETÓ" />
+						<f:selectItem itemLabel="RIACHO SALGADINHO" itemValue="RIACHO SALGADINHO" />
+						<f:selectItem itemLabel="RIACHO SALGADO" itemValue="RIACHO SALGADO" />
+						<f:selectItem itemLabel="RIACHO SALGUEIRO" itemValue="RIACHO SALGUEIRO" />
+						<f:selectItem itemLabel="RIACHO SALINA" itemValue="RIACHO SALINA" />
+						<f:selectItem itemLabel="RIACHO SALOBRO" itemValue="RIACHO SALOBRO" />
+						<f:selectItem itemLabel="RIACHO SANTA FÉ" itemValue="RIACHO SANTA FÉ" />
+						<f:selectItem itemLabel="RIACHO SANTA ROSA" itemValue="RIACHO SANTA ROSA" />
+						<f:selectItem itemLabel="RIACHO SANTO ANTÔNIO" itemValue="RIACHO SANTO ANTÔNIO" />
+						<f:selectItem itemLabel="RIACHO SÃO BENTO" itemValue="RIACHO SÃO BENTO" />
+						<f:selectItem itemLabel="RIACHO SÃO CRISTOVÃO" itemValue="RIACHO SÃO CRISTOVÃO" />
+						<f:selectItem itemLabel="RIACHO SÃO DOMINGOS" itemValue="RIACHO SÃO DOMINGOS" />
+						<f:selectItem itemLabel="RIACHO SÃO GONÇALO" itemValue="RIACHO SÃO GONÇALO" />
+						<f:selectItem itemLabel="RIACHO SÃO JOÃO" itemValue="RIACHO SÃO JOÃO" />
+						<f:selectItem itemLabel="RIACHO SÃO JOSÉ" itemValue="RIACHO SÃO JOSÉ" />
+						<f:selectItem itemLabel="RIACHO SÃO MIGUEL" itemValue="RIACHO SÃO MIGUEL" />
+						<f:selectItem itemLabel="RIACHO SÃO PEDRO" itemValue="RIACHO SÃO PEDRO" />
+						<f:selectItem itemLabel="RIACHO SAQUINHO" itemValue="RIACHO SAQUINHO" />
+						<f:selectItem itemLabel="RIACHO SECO" itemValue="RIACHO SECO" />
+						<f:selectItem itemLabel="RIACHO SERIDÓ" itemValue="RIACHO SERIDÓ" />
+						<f:selectItem itemLabel="RIACHO SETE CÓRREGOS" itemValue="RIACHO SETE CÓRREGOS" />
+						<f:selectItem itemLabel="RIACHO SIMÃO" itemValue="RIACHO SIMÃO" />
+						<f:selectItem itemLabel="RIACHO SIMÃO DO PONTAL" itemValue="RIACHO SIMÃO DO PONTAL" />
+						<f:selectItem itemLabel="RIACHO SIPAÚBAI" itemValue="RIACHO SIPAÚBAI" />
+						<f:selectItem itemLabel="RIACHO SÍTIO DO SERROTE" itemValue="RIACHO SÍTIO DO SERROTE" />
+						<f:selectItem itemLabel="RIACHO SOARES" itemValue="RIACHO SOARES" />
+						<f:selectItem itemLabel="RIACHO TABARUMA" itemValue="RIACHO TABARUMA" />
+						<f:selectItem itemLabel="RIACHO TABATINGA" itemValue="RIACHO TABATINGA" />
+						<f:selectItem itemLabel="RIACHO TABOCAS" itemValue="RIACHO TABOCAS" />
+						<f:selectItem itemLabel="RIACHO TABOQUINHA" itemValue="RIACHO TABOQUINHA" />
+						<f:selectItem itemLabel="RIACHO TACAIMBÓ" itemValue="RIACHO TACAIMBÓ" />
+						<f:selectItem itemLabel="RIACHO TALHADO" itemValue="RIACHO TALHADO" />
+						<f:selectItem itemLabel="RIACHO TANQUE" itemValue="RIACHO TANQUE" />
+						<f:selectItem itemLabel="RIACHO TANQUE VERDE" itemValue="RIACHO TANQUE VERDE" />
+						<f:selectItem itemLabel="RIACHO TAPERA" itemValue="RIACHO TAPERA" />
+						<f:selectItem itemLabel="RIACHO TAPUIO" itemValue="RIACHO TAPUIO" />
+						<f:selectItem itemLabel="RIACHO TAQUARA" itemValue="RIACHO TAQUARA" />
+						<f:selectItem itemLabel="RIACHO TERRA NOVA" itemValue="RIACHO TERRA NOVA" />
+						<f:selectItem itemLabel="RIACHO TIGRE" itemValue="RIACHO TIGRE" />
+						<f:selectItem itemLabel="RIACHO TOPADA" itemValue="RIACHO TOPADA" />
+						<f:selectItem itemLabel="RIACHO TRAPUÁ" itemValue="RIACHO TRAPUÁ" />
+						<f:selectItem itemLabel="RIACHO TRÊS RIACHOS" itemValue="RIACHO TRÊS RIACHOS" />
+						<f:selectItem itemLabel="RIACHO TUCUTU" itemValue="RIACHO TUCUTU" />
+						<f:selectItem itemLabel="RIACHO URIMAMÃ" itemValue="RIACHO URIMAMÃ" />
+						<f:selectItem itemLabel="RIACHO URUBAS" itemValue="RIACHO URUBAS" />
+						<f:selectItem itemLabel="RIACHO URUBU" itemValue="RIACHO URUBU" />
+						<f:selectItem itemLabel="RIACHO URUGUAI" itemValue="RIACHO URUGUAI" />
+						<f:selectItem itemLabel="RIACHO UTINGA DE CIMA" itemValue="RIACHO UTINGA DE CIMA" />
+						<f:selectItem itemLabel="RIACHO VACA MORTA" itemValue="RIACHO VACA MORTA" />
+						<f:selectItem itemLabel="RIACHO VARGEM D`ÁGUA" itemValue="RIACHO VARGEM D`ÁGUA" />
+						<f:selectItem itemLabel="RIACHO VARGEM GRANDE" itemValue="RIACHO VARGEM GRANDE" />
+						<f:selectItem itemLabel="RIACHO VARJÃO" itemValue="RIACHO VARJÃO" />
+						<f:selectItem itemLabel="RIACHO VARZINHA" itemValue="RIACHO VARZINHA" />
+						<f:selectItem itemLabel="RIACHO VENEZA" itemValue="RIACHO VENEZA" />
+						<f:selectItem itemLabel="RIACHO VENTURA" itemValue="RIACHO VENTURA" />
+						<f:selectItem itemLabel="RIACHO VERDE" itemValue="RIACHO VERDE" />
+						<f:selectItem itemLabel="RIACHO VERTENTE" itemValue="RIACHO VERTENTE" />
+						<f:selectItem itemLabel="RIACHO VIRA MÃO" itemValue="RIACHO VIRA MÃO" />
+						<f:selectItem itemLabel="RIACHO VITÓRIA" itemValue="RIACHO VITÓRIA" />
+						<f:selectItem itemLabel="RIACHO VÔO DA MORTE" itemValue="RIACHO VÔO DA MORTE" />
+						<f:selectItem itemLabel="RIACHO XIXÁ" itemValue="RIACHO XIXÁ" />
+						<f:selectItem itemLabel="RIACHO ZÉ PEREIRA" itemValue="RIACHO ZÉ PEREIRA" />
+						<f:selectItem itemLabel="RIACHO ZUMBI" itemValue="RIACHO ZUMBI" />
+						<f:selectItem itemLabel="RIBEIRÃO DA ONÇA" itemValue="RIBEIRÃO DA ONÇA" />
+						<f:selectItem itemLabel="RIBEIRÃO SALINAS" itemValue="RIBEIRÃO SALINAS" />
+						<f:selectItem itemLabel="RIO ACAÚ" itemValue="RIO ACAÚ" />
+						<f:selectItem itemLabel="RIO ÁGUA CHOCA" itemValue="RIO ÁGUA CHOCA" />
+						<f:selectItem itemLabel="RIO ÁGUA TORTA" itemValue="RIO ÁGUA TORTA" />
+						<f:selectItem itemLabel="RIO AMARAJI" itemValue="RIO AMARAJI" />
+						<f:selectItem itemLabel="RIO ARAÇA" itemValue="RIO ARAÇA" />
+						<f:selectItem itemLabel="RIO ARATACA" itemValue="RIO ARATACA" />
+						<f:selectItem itemLabel="RIO ARATANGI" itemValue="RIO ARATANGI" />
+						<f:selectItem itemLabel="RIO ARIMBI" itemValue="RIO ARIMBI" />
+						<f:selectItem itemLabel="RIO BÁLSAMO" itemValue="RIO BÁLSAMO" />
+						<f:selectItem itemLabel="RIO BARRA DO GOIANA" itemValue="RIO BARRA DO GOIANA" />
+						<f:selectItem itemLabel="RIO BEBERIBE" itemValue="RIO BEBERIBE" />
+						<f:selectItem itemLabel="RIO BONANÇA" itemValue="RIO BONANÇA" />
+						<f:selectItem itemLabel="RIO BOTAFOGO" itemValue="RIO BOTAFOGO" />
+						<f:selectItem itemLabel="RIO BREJÃO" itemValue="RIO BREJÃO" />
+						<f:selectItem itemLabel="RIO CALAI" itemValue="RIO CALAI" />
+						<f:selectItem itemLabel="RIO CANHOTO" itemValue="RIO CANHOTO" />
+						<f:selectItem itemLabel="RIO CAPIBARIBE" itemValue="RIO CAPIBARIBE" />
+						<f:selectItem itemLabel="RIO CAPIBARIBE-MIRIM" itemValue="RIO CAPIBARIBE-MIRIM" />
+						<f:selectItem itemLabel="RIO CARAÇA" itemValue="RIO CARAÇA" />
+						<f:selectItem itemLabel="RIO CARAÚ" itemValue="RIO CARAÚ" />
+						<f:selectItem itemLabel="RIO CARIMÃ" itemValue="RIO CARIMÃ" />
+						<f:selectItem itemLabel="RIO CATAMBA" itemValue="RIO CATAMBA" />
+						<f:selectItem itemLabel="RIO CATUCÁ" itemValue="RIO CATUCÁ" />
+						<f:selectItem itemLabel="RIO CATUNGUBA" itemValue="RIO CATUNGUBA" />
+						<f:selectItem itemLabel="RIO CONGA" itemValue="RIO CONGA" />
+						<f:selectItem itemLabel="RIO CORDEIRO" itemValue="RIO CORDEIRO" />
+						<f:selectItem itemLabel="RIO COROPE" itemValue="RIO COROPE" />
+						<f:selectItem itemLabel="RIO CORRENTES" itemValue="RIO CORRENTES" />
+						<f:selectItem itemLabel="RIO CRUANGI" itemValue="RIO CRUANGI" />
+						<f:selectItem itemLabel="RIO DA CHATA" itemValue="RIO DA CHATA" />
+						<f:selectItem itemLabel="RIO DA EMBIRIBEIRA" itemValue="RIO DA EMBIRIBEIRA" />
+						<f:selectItem itemLabel="RIO DA GUABIRABA" itemValue="RIO DA GUABIRABA" />
+						<f:selectItem itemLabel="RIO DA PIABA" itemValue="RIO DA PIABA" />
+						<f:selectItem itemLabel="RIO DAS BESTAS" itemValue="RIO DAS BESTAS" />
+						<f:selectItem itemLabel="RIO DAS PACAS" itemValue="RIO DAS PACAS" />
+						<f:selectItem itemLabel="RIO DO AZEITE" itemValue="RIO DO AZEITE" />
+						<f:selectItem itemLabel="RIO DO BARRO BRANCO" itemValue="RIO DO BARRO BRANCO" />
+						<f:selectItem itemLabel="RIO DO FEIJÃO" itemValue="RIO DO FEIJÃO" />
+						<f:selectItem itemLabel="RIO DO PONTAL" itemValue="RIO DO PONTAL" />
+						<f:selectItem itemLabel="RIO DOIS RIACHOS" itemValue="RIO DOIS RIACHOS" />
+						<f:selectItem itemLabel="RIO DOS BOIS" itemValue="RIO DOS BOIS" />
+						<f:selectItem itemLabel="RIO DOS MANDANTES" itemValue="RIO DOS MANDANTES" />
+						<f:selectItem itemLabel="RIO DUAS UNAS" itemValue="RIO DUAS UNAS" />
+						<f:selectItem itemLabel="RIO FERREIROS" itemValue="RIO FERREIROS" />
+						<f:selectItem itemLabel="RIO FRAGOSO" itemValue="RIO FRAGOSO" />
+						<f:selectItem itemLabel="RIO GAIPIÓ" itemValue="RIO GAIPIÓ" />
+						<f:selectItem itemLabel="RIO GANGORRA" itemValue="RIO GANGORRA" />
+						<f:selectItem itemLabel="RIO GARANUZINHO" itemValue="RIO GARANUZINHO" />
+						<f:selectItem itemLabel="RIO GARAÚNA" itemValue="RIO GARAÚNA" />
+						<f:selectItem itemLabel="RIO GITÓ" itemValue="RIO GITÓ" />
+						<f:selectItem itemLabel="RIO GOIANA" itemValue="RIO GOIANA" />
+						<f:selectItem itemLabel="RIO GOITÁ" itemValue="RIO GOITÁ" />
+						<f:selectItem itemLabel="RIO GURJAÚ" itemValue="RIO GURJAÚ" />
+						<f:selectItem itemLabel="RIO IGARASSU" itemValue="RIO IGARASSU" />
+						<f:selectItem itemLabel="RIO INHAÚMA" itemValue="RIO INHAÚMA" />
+						<f:selectItem itemLabel="RIO IPANEMA" itemValue="RIO IPANEMA" />
+						<f:selectItem itemLabel="RIO IPOJUCA" itemValue="RIO IPOJUCA" />
+						<f:selectItem itemLabel="RIO ITAPECURU" itemValue="RIO ITAPECURU" />
+						<f:selectItem itemLabel="RIO ITAPESSOCA" itemValue="RIO ITAPESSOCA" />
+						<f:selectItem itemLabel="RIO ITAPINASSU" itemValue="RIO ITAPINASSU" />
+						<f:selectItem itemLabel="RIO ITAPIREMA" itemValue="RIO ITAPIREMA" />
+						<f:selectItem itemLabel="RIO JABOATÃO" itemValue="RIO JABOATÃO" />
+						<f:selectItem itemLabel="RIO JACUÍPE" itemValue="RIO JACUÍPE" />
+						<f:selectItem itemLabel="RIO JAGUARIBE" itemValue="RIO JAGUARIBE" />
+						<f:selectItem itemLabel="RIO JARAPIÁ" itemValue="RIO JARAPIÁ" />
+						<f:selectItem itemLabel="RIO JARDIM" itemValue="RIO JARDIM" />
+						<f:selectItem itemLabel="RIO JEQUIÁ" itemValue="RIO JEQUIÁ" />
+						<f:selectItem itemLabel="RIO JOCUNDA" itemValue="RIO JOCUNDA" />
+						<f:selectItem itemLabel="RIO MANIÇOBA" itemValue="RIO MANIÇOBA" />
+						<f:selectItem itemLabel="RIO MANINIMBU" itemValue="RIO MANINIMBU" />
+						<f:selectItem itemLabel="RIO MANIQUARA" itemValue="RIO MANIQUARA" />
+						<f:selectItem itemLabel="RIO MANS" itemValue="RIO MANS" />
+						<f:selectItem itemLabel="RIO MASCARENHAS" itemValue="RIO MASCARENHAS" />
+						<f:selectItem itemLabel="RIO MASSARANDUBA" itemValue="RIO MASSARANDUBA" />
+						<f:selectItem itemLabel="RIO MAURITI" itemValue="RIO MAURITI" />
+						<f:selectItem itemLabel="RIO MEGAÓ" itemValue="RIO MEGAÓ" />
+						<f:selectItem itemLabel="RIO MEREPE" itemValue="RIO MEREPE" />
+						<f:selectItem itemLabel="RIO MONGUBA" itemValue="RIO MONGUBA" />
+						<f:selectItem itemLabel="RIO MONJOPE" itemValue="RIO MONJOPE" />
+						<f:selectItem itemLabel="RIO MORNO" itemValue="RIO MORNO" />
+						<f:selectItem itemLabel="RIO MOXOTÓ" itemValue="RIO MOXOTÓ" />
+						<f:selectItem itemLabel="RIO MUMBECA" itemValue="RIO MUMBECA" />
+						<f:selectItem itemLabel="RIO MUNDAÚ" itemValue="RIO MUNDAÚ" />
+						<f:selectItem itemLabel="RIO MUNDAUZINHO" itemValue="RIO MUNDAUZINHO" />
+						<f:selectItem itemLabel="RIO MURIBARA" itemValue="RIO MURIBARA" />
+						<f:selectItem itemLabel="RIO MUSSAÍBA" itemValue="RIO MUSSAÍBA" />
+						<f:selectItem itemLabel="RIO PACAS" itemValue="RIO PACAS" />
+						<f:selectItem itemLabel="RIO PAGÉ" itemValue="RIO PAGÉ" />
+						<f:selectItem itemLabel="RIO PAJEÚ" itemValue="RIO PAJEÚ" />
+						<f:selectItem itemLabel="RIO PALMEIRA" itemValue="RIO PALMEIRA" />
+						<f:selectItem itemLabel="RIO PANELAS" itemValue="RIO PANELAS" />
+						<f:selectItem itemLabel="RIO PARANÁ" itemValue="RIO PARANÁ" />
+						<f:selectItem itemLabel="RIO PARATIBE" itemValue="RIO PARATIBE" />
+						<f:selectItem itemLabel="RIO PARIPE" itemValue="RIO PARIPE" />
+						<f:selectItem itemLabel="RIO PAU A PIQUE" itemValue="RIO PAU A PIQUE" />
+						<f:selectItem itemLabel="RIO PILÃO" itemValue="RIO PILÃO" />
+						<f:selectItem itemLabel="RIO PIRAPEMA" itemValue="RIO PIRAPEMA" />
+						<f:selectItem itemLabel="RIO PITOMBEIRA" itemValue="RIO PITOMBEIRA" />
+						<f:selectItem itemLabel="RIO PIXAÓ" itemValue="RIO PIXAÓ" />
+						<f:selectItem itemLabel="RIO PLUTÁ" itemValue="RIO PLUTÁ" />
+						<f:selectItem itemLabel="RIO POBRE" itemValue="RIO POBRE" />
+						<f:selectItem itemLabel="RIO PORÇÃO" itemValue="RIO PORÇÃO" />
+						<f:selectItem itemLabel="RIO QUATI" itemValue="RIO QUATI" />
+						<f:selectItem itemLabel="RIO QUATIS" itemValue="RIO QUATIS" />
+						<f:selectItem itemLabel="RIO REGALIA" itemValue="RIO REGALIA" />
+						<f:selectItem itemLabel="RIO RIBEIRÃO" itemValue="RIO RIBEIRÃO" />
+						<f:selectItem itemLabel="RIO RIBEIRO" itemValue="RIO RIBEIRO" />
+						<f:selectItem itemLabel="RIO SALGADINHO" itemValue="RIO SALGADINHO" />
+						<f:selectItem itemLabel="RIO SALGADO" itemValue="RIO SALGADO" />
+						<f:selectItem itemLabel="RIO SALITRE" itemValue="RIO SALITRE" />
+						<f:selectItem itemLabel="RIO SAMPAIO" itemValue="RIO SAMPAIO" />
+						<f:selectItem itemLabel="RIO SÃO FRANCISCO" itemValue="RIO SÃO FRANCISCO" />
+						<f:selectItem itemLabel="RIO SÃO JOSÉ" itemValue="RIO SÃO JOSÉ" />
+						<f:selectItem itemLabel="RIO SECO" itemValue="RIO SECO" />
+						<f:selectItem itemLabel="RIO SIBIRÓ" itemValue="RIO SIBIRÓ" />
+						<f:selectItem itemLabel="RIO SIBIRÓ DO MEIO" itemValue="RIO SIBIRÓ DO MEIO" />
+						<f:selectItem itemLabel="RIO SIRIGI" itemValue="RIO SIRIGI" />
+						<f:selectItem itemLabel="RIO SIRINHAÉM" itemValue="RIO SIRINHAÉM" />
+						<f:selectItem itemLabel="RIO TABATINGA" itemValue="RIO TABATINGA" />
+						<f:selectItem itemLabel="RIO TAMBÉ" itemValue="RIO TAMBÉ" />
+						<f:selectItem itemLabel="RIO TAPACURÁ" itemValue="RIO TAPACURÁ" />
+						<f:selectItem itemLabel="RIO TAPERA" itemValue="RIO TAPERA" />
+						<f:selectItem itemLabel="RIO TATUOCA" itemValue="RIO TATUOCA" />
+						<f:selectItem itemLabel="RIO TEJIPIÓ" itemValue="RIO TEJIPIÓ" />
+						<f:selectItem itemLabel="RIO TRACUNHAÉM" itemValue="RIO TRACUNHAÉM" />
+						<f:selectItem itemLabel="RIO TRAIPU" itemValue="RIO TRAIPU" />
+						<f:selectItem itemLabel="RIO TUÍMA" itemValue="RIO TUÍMA" />
+						<f:selectItem itemLabel="RIO UNA" itemValue="RIO UNA" />
+						<f:selectItem itemLabel="RIO UTINGA" itemValue="RIO UTINGA" />
+						<f:selectItem itemLabel="RIO VARJOTA" itemValue="RIO VARJOTA" />
+						<f:selectItem itemLabel="RIO VÁZEA DO UNA" itemValue="RIO VÁZEA DO UNA" />
+						<f:selectItem itemLabel="RIO VERTENTE DOCE" itemValue="RIO VERTENTE DOCE" />
+						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
+					</p:selectOneMenu>
 
 					<p:outputLabel value="Barragem onde é feita a captação:" for="barragemCaptacao" />
-					<p:inputText id="barragemCaptacao" value="#{interferenciaBean.interferencia.barragemOndeFeitaCaptacao}" />
+					<p:selectOneMenu id="barragemCaptacao" value="#{interferenciaBean.interferencia.barragemOndeFeitaCaptacao}" style="width:230px">
+						<f:selectItem itemLabel="GUARAREMA (ALIANÇA)" itemValue="GUARAREMA (ALIANÇA)" />
+						<f:selectItem itemLabel="PALMEIRINHA/PEDRAFINA" itemValue="PALMEIRINHA/PEDRAFINA" />
+						<f:selectItem itemLabel="SIRIGI" itemValue="SIRIGI" />
+						<f:selectItem itemLabel="TIUMA" itemValue="TIUMA" />
+						<f:selectItem itemLabel="CARPINA" itemValue="CARPINA" />
+						<f:selectItem itemLabel="CURSAI" itemValue="CURSAI" />
+						<f:selectItem itemLabel="ENG. GERCINO PONTES" itemValue="ENG. GERCINO PONTES" />
+						<f:selectItem itemLabel="GOITA" itemValue="GOITA" />
+						<f:selectItem itemLabel="JUCAZINHO" itemValue="JUCAZINHO" />
+						<f:selectItem itemLabel="MACHADO" itemValue="MACHADO" />
+						<f:selectItem itemLabel="MATEUS VIEIRA" itemValue="MATEUS VIEIRA" />
+						<f:selectItem itemLabel="MATRIZ DA LUZ" itemValue="MATRIZ DA LUZ" />
+						<f:selectItem itemLabel="OITIS" itemValue="OITIS" />
+						<f:selectItem itemLabel="POCO FUNDO" itemValue="POCO FUNDO" />
+						<f:selectItem itemLabel="SANTANA II" itemValue="SANTANA II" />
+						<f:selectItem itemLabel="TABOCAS-PIACA" itemValue="TABOCAS-PIACA" />
+						<f:selectItem itemLabel="TAPACURA" itemValue="TAPACURA" />
+						<f:selectItem itemLabel="VARZEA DO UNA" itemValue="VARZEA DO UNA" />
+						<f:selectItem itemLabel="BELO JARDIM (PEDRO MOURA JR.)" itemValue="BELO JARDIM (PEDRO MOURA JR.)" />
+						<f:selectItem itemLabel="BREJO DOS COELHOS" itemValue="BREJO DOS COELHOS" />
+						<f:selectItem itemLabel="DUAS SERRAS" itemValue="DUAS SERRAS" />
+						<f:selectItem itemLabel="ENG. SEVERINO GUERRA" itemValue="ENG. SEVERINO GUERRA" />
+						<f:selectItem itemLabel="GUILHERME AZEVEDO" itemValue="GUILHERME AZEVEDO" />
+						<f:selectItem itemLabel="JAIME NEJAIM" itemValue="JAIME NEJAIM" />
+						<f:selectItem itemLabel="MANUINO (BEZERROS)" itemValue="MANUINO (BEZERROS)" />
+						<f:selectItem itemLabel="PAO DE ACUCAR" itemValue="PAO DE ACUCAR" />
+						<f:selectItem itemLabel="SAPATOS" itemValue="SAPATOS" />
+						<f:selectItem itemLabel="SERRA DOS CAVALOS" itemValue="SERRA DOS CAVALOS" />
+						<f:selectItem itemLabel="TAQUARA" itemValue="TAQUARA" />
+						<f:selectItem itemLabel="BONITINHO" itemValue="BONITINHO" />
+						<f:selectItem itemLabel="BREJAO" itemValue="BREJAO" />
+						<f:selectItem itemLabel="BREJO DO BURACO" itemValue="BREJO DO BURACO" />
+						<f:selectItem itemLabel="CAIANINHA" itemValue="CAIANINHA" />
+						<f:selectItem itemLabel="GURJAO" itemValue="GURJAO" />
+						<f:selectItem itemLabel="PAU FERRO (UNA)" itemValue="PAU FERRO (UNA)" />
+						<f:selectItem itemLabel="POCO DA AREIA" itemValue="POCO DA AREIA" />
+						<f:selectItem itemLabel="PRATA" itemValue="PRATA" />
+						<f:selectItem itemLabel="SAO JACQUES" itemValue="SAO JACQUES" />
+						<f:selectItem itemLabel="SERRO AZUL" itemValue="SERRO AZUL" />
+						<f:selectItem itemLabel="CAJARANA" itemValue="CAJARANA" />
+						<f:selectItem itemLabel="INHUMAS" itemValue="INHUMAS" />
+						<f:selectItem itemLabel="MUNDAU" itemValue="MUNDAU" />
+						<f:selectItem itemLabel="MUNDAU II (CAJUEIRO)" itemValue="MUNDAU II (CAJUEIRO)" />
+						<f:selectItem itemLabel="ARCOVERDE/RIACHO DO PAU" itemValue="ARCOVERDE/RIACHO DO PAU" />
+						<f:selectItem itemLabel="INGAZEIRA" itemValue="INGAZEIRA" />
+						<f:selectItem itemLabel="IPANEMINHA" itemValue="IPANEMINHA" />
+						<f:selectItem itemLabel="MORORO" itemValue="MORORO" />
+						<f:selectItem itemLabel="MULUNGU" itemValue="MULUNGU" />
+						<f:selectItem itemLabel="BARRA" itemValue="BARRA" />
+						<f:selectItem itemLabel="CACHOEIRA I" itemValue="CACHOEIRA I" />
+						<f:selectItem itemLabel="ENG. FRANCISCO SABOIA" itemValue="ENG. FRANCISCO SABOIA" />
+						<f:selectItem itemLabel="MARRECAS" itemValue="MARRECAS" />
+						<f:selectItem itemLabel="ARRODEIO" itemValue="ARRODEIO" />
+						<f:selectItem itemLabel="BARRA DO JUA" itemValue="BARRA DO JUA" />
+						<f:selectItem itemLabel="BOA VISTA (ITAPETIM)" itemValue="BOA VISTA (ITAPETIM)" />
+						<f:selectItem itemLabel="BOM SUCESSO" itemValue="BOM SUCESSO" />
+						<f:selectItem itemLabel="BREJINHO" itemValue="BREJINHO" />
+						<f:selectItem itemLabel="BROTAS" itemValue="BROTAS" />
+						<f:selectItem itemLabel="CACHOEIRA II" itemValue="CACHOEIRA II" />
+						<f:selectItem itemLabel="CHINELO" itemValue="CHINELO" />
+						<f:selectItem itemLabel="JAZIGO" itemValue="JAZIGO" />
+						<f:selectItem itemLabel="LAJE DO GATO" itemValue="LAJE DO GATO" />
+						<f:selectItem itemLabel="MAE D AGUA" itemValue="MAE D AGUA" />
+						<f:selectItem itemLabel="QUEBRA UNHA" itemValue="QUEBRA UNHA" />
+						<f:selectItem itemLabel="ROSARIO" itemValue="ROSARIO" />
+						<f:selectItem itemLabel="SACO I" itemValue="SACO I" />
+						<f:selectItem itemLabel="SAO JOSE" itemValue="SAO JOSE" />
+						<f:selectItem itemLabel="SAO JOSE II" itemValue="SAO JOSE II" />
+						<f:selectItem itemLabel="SERRINHA II" itemValue="SERRINHA II" />
+						<f:selectItem itemLabel="SERRINHA/SERRARIA" itemValue="SERRINHA/SERRARIA" />
+						<f:selectItem itemLabel="SERROTE" itemValue="SERROTE" />
+						<f:selectItem itemLabel="ABOBORAS" itemValue="ABOBORAS" />
+						<f:selectItem itemLabel="BARRA DO CHAPEU" itemValue="BARRA DO CHAPEU" />
+						<f:selectItem itemLabel="BOA VISTA (SALGUEIRO)" itemValue="BOA VISTA (SALGUEIRO)" />
+						<f:selectItem itemLabel="JUA" itemValue="JUA" />
+						<f:selectItem itemLabel="NILO COELHO (TERRA NOVA)" itemValue="NILO COELHO (TERRA NOVA)" />
+						<f:selectItem itemLabel="POCO GRANDE (SERRITA)" itemValue="POCO GRANDE (SERRITA)" />
+						<f:selectItem itemLabel="SALGUEIRO" itemValue="SALGUEIRO" />
+						<f:selectItem itemLabel="ALGODOES" itemValue="ALGODOES" />
+						<f:selectItem itemLabel="ARARIPINA (BAIXIO)" itemValue="ARARIPINA (BAIXIO)" />
+						<f:selectItem itemLabel="BARRIGUDA" itemValue="BARRIGUDA" />
+						<f:selectItem itemLabel="BARRINHA" itemValue="BARRINHA" />
+						<f:selectItem itemLabel="CACHIMBO" itemValue="CACHIMBO" />
+						<f:selectItem itemLabel="CAICARA" itemValue="CAICARA" />
+						<f:selectItem itemLabel="CHAPEU" itemValue="CHAPEU" />
+						<f:selectItem itemLabel="ENG. CAMACHO" itemValue="ENG. CAMACHO" />
+						<f:selectItem itemLabel="ENTREMONTES" itemValue="ENTREMONTES" />
+						<f:selectItem itemLabel="LAGOA DO BARRO" itemValue="LAGOA DO BARRO" />
+						<f:selectItem itemLabel="LOPES II" itemValue="LOPES II" />
+						<f:selectItem itemLabel="PARNAMIRIM" itemValue="PARNAMIRIM" />
+						<f:selectItem itemLabel="RANCHARIA" itemValue="RANCHARIA" />
+						<f:selectItem itemLabel="SITIO DOS MOREIRAS" itemValue="SITIO DOS MOREIRAS" />
+						<f:selectItem itemLabel="VARZINHA" itemValue="VARZINHA" />
+						<f:selectItem itemLabel="CACIMBA" itemValue="CACIMBA" />
+						<f:selectItem itemLabel="SACO II" itemValue="SACO II" />
+						<f:selectItem itemLabel="BARRA DA MELANCIA" itemValue="BARRA DA MELANCIA" />
+						<f:selectItem itemLabel="BARREIRA DA ALEGRIA (AFRÂNIO)" itemValue="BARREIRA DA ALEGRIA (AFRÂNIO)" />
+						<f:selectItem itemLabel="CRUZ DE SALINA" itemValue="CRUZ DE SALINA" />
+						<f:selectItem itemLabel="PAU BRANCO" itemValue="PAU BRANCO" />
+						<f:selectItem itemLabel="PAU FERRO (PETROLINA)" itemValue="PAU FERRO (PETROLINA)" />
+						<f:selectItem itemLabel="SOLEDADE" itemValue="SOLEDADE" />
+						<f:selectItem itemLabel="TERRA NOVA" itemValue="TERRA NOVA" />
+						<f:selectItem itemLabel="VIRA BEIJU" itemValue="VIRA BEIJU" />
+						<f:selectItem itemLabel="BOTAFOGO" itemValue="BOTAFOGO" />
+						<f:selectItem itemLabel="BITA" itemValue="BITA" />
+						<f:selectItem itemLabel="DUAS UNAS" itemValue="DUAS UNAS" />
+						<f:selectItem itemLabel="GURJAU" itemValue="GURJAU" />
+						<f:selectItem itemLabel="PIRAPAMA" itemValue="PIRAPAMA" />
+						<f:selectItem itemLabel="SICUPEMA" itemValue="SICUPEMA" />
+						<f:selectItem itemLabel="UTINGA/TABATINGA" itemValue="UTINGA/TABATINGA" />
+						<f:selectItem itemLabel="OUTRAS" itemValue="OUTRAS" />
+					</p:selectOneMenu>
 
 					<p:outputLabel value="Capacidade máxima de acumulação (m³):" for="capacidade" />
 					<p:inputText maxlength="15" id="capacidade" value="#{interferenciaBean.interferencia.capacidadeMaximaAcumulacao}" />
 
 					<p:outputLabel value="Bacia hidrográfica onde esta inserida a captação/lançamento:" for="bacia" />
-					<p:inputText id="bacia" value="#{interferenciaBean.interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" />
+					<p:selectOneMenu id="bacia" value="#{interferenciaBean.interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" style="width:230px">
+						<f:selectItem itemLabel="BRIGIDA" itemValue="BRIGIDA" />
+						<f:selectItem itemLabel="CAPIBARIBE" itemValue="CAPIBARIBE" />
+						<f:selectItem itemLabel="GARCAS" itemValue="GARCAS" />
+						<f:selectItem itemLabel="GI1" itemValue="GI1" />
+						<f:selectItem itemLabel="GI2" itemValue="GI2" />
+						<f:selectItem itemLabel="GI3" itemValue="GI3" />
+						<f:selectItem itemLabel="GI4" itemValue="GI4" />
+						<f:selectItem itemLabel="GI5" itemValue="GI5" />
+						<f:selectItem itemLabel="GI6" itemValue="GI6" />
+						<f:selectItem itemLabel="GI7" itemValue="GI7" />
+						<f:selectItem itemLabel="GI8" itemValue="GI8" />
+						<f:selectItem itemLabel="GL1" itemValue="GL1" />
+						<f:selectItem itemLabel="GL2" itemValue="GL2" />
+						<f:selectItem itemLabel="GL3" itemValue="GL3" />
+						<f:selectItem itemLabel="GL4" itemValue="GL4" />
+						<f:selectItem itemLabel="GL5" itemValue="GL5" />
+						<f:selectItem itemLabel="GL6" itemValue="GL6" />
+						<f:selectItem itemLabel="GOIANA" itemValue="GOIANA" />
+						<f:selectItem itemLabel="IPANEMA" itemValue="IPANEMA" />
+						<f:selectItem itemLabel="IPOJUCA" itemValue="IPOJUCA" />
+						<f:selectItem itemLabel="MOXOTO" itemValue="MOXOTO" />
+						<f:selectItem itemLabel="MUNDAU" itemValue="MUNDAU" />
+						<f:selectItem itemLabel="PAJEU" itemValue="PAJEU" />
+						<f:selectItem itemLabel="PONTAL" itemValue="PONTAL" />
+						<f:selectItem itemLabel="SIRINHAEM" itemValue="SIRINHAEM" />
+						<f:selectItem itemLabel="TERRA NOVA" itemValue="TERRA NOVA" />
+						<f:selectItem itemLabel="UNA" itemValue="UNA" />
+					</p:selectOneMenu>
 
-					<p:outputLabel value="Codigo identificador da situação da interferência:" for="int_tsi_cd" />
-					<p:selectOneMenu id="int_tsi_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorSituacaoInterferencia}" style="width:200px">
+					<p:outputLabel value="Situação da Interferência:" for="int_tsi_cd" />
+					<p:selectOneMenu id="int_tsi_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorSituacaoInterferencia}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Projeto" itemLabel="Projeto" />
-						<f:selectItem itemValue="Construção" itemLabel="Construção" />
-						<f:selectItem itemValue="Operação" itemLabel="Operação" />
-						<f:selectItem itemValue="Desativada" itemLabel="Desativada" />
+						<f:selectItem itemLabel="PROJETO" itemValue="1" />
+						<f:selectItem itemLabel="CONSTRUÇÃO" itemValue="2" />
+						<f:selectItem itemLabel="OPERAÇÃO" itemValue="3" />
+						<f:selectItem itemLabel="DESATIVADA" itemValue="4" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Codigo identificador do tipo da finalidade:" for="fin_tfn_cd" />
-					<p:selectOneMenu id="fin_tfn_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoFinalidade}" style="width:200px">
+					<p:outputLabel value="Tipo da Finalidade:" for="fin_tfn_cd" />
+					<p:selectOneMenu id="fin_tfn_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoFinalidade}" style="width:230px">
 						<f:selectItem itemValue="" itemLabel="Selecione" />
-						<f:selectItem itemValue="Sem Finalidade" itemLabel="Sem Finalidade" />
-						<f:selectItem itemValue="Abastecimento Público" itemLabel="Abastecimento Público" />
-						<f:selectItem itemValue="Esgotamento Sanitário" itemLabel="Esgotamento Sanitário" />
-						<f:selectItem itemValue="Indústria" itemLabel="Indústria" />
-						<f:selectItem itemValue="Mineração – Extração de Areia/Cascalho em Leito de Rio" itemLabel="Mineração – Extração de Areia/Cascalho em Leito de Rio" />
-						<f:selectItem itemValue="Irrigação" itemLabel="Irrigação" />
-						<f:selectItem itemValue="Criação Animal" itemLabel="Criação Animal" />
-						<f:selectItem itemValue="Aquicultura em Tanque Escavado" itemLabel="Aquicultura em Tanque Escavado" />
-						<f:selectItem itemValue="Termoelétrica" itemLabel="Termoelétrica" />
-						<f:selectItem itemValue="Transposição" itemLabel="Transposição" />
-						<f:selectItem itemValue="Aproveitamento Hidroelétrico" itemLabel="Aproveitamento Hidroelétrico" />
-						<f:selectItem itemValue="Reservatório/Barramento/Regularização Vazoes Usos Múltiplos" itemLabel="Reservatório/Barramento/Regularização Vazoes Usos Múltiplos" />
-						<f:selectItem itemValue="Consumo Humano" itemLabel="Consumo Humano" />
-						<f:selectItem itemValue="Mineração – Outros Processos Extrativos" itemLabel="Mineração – Outros Processos Extrativos" />
-						<f:selectItem itemValue="Obras Hidráulicas" itemLabel="Obras Hidráulicas" />
-						<f:selectItem itemValue="Serviços" itemLabel="Serviços" />
-						<f:selectItem itemValue="Aquicultura em Tanque Rede" itemLabel="Aquicultura em Tanque Rede" />
-						<f:selectItem itemValue="Outras" itemLabel="Outras" />
+						<f:selectItem itemLabel="ABASTECIMENTO PÚBLICO" itemValue="1" />
+						<f:selectItem itemLabel="APROVEITAMENTO HIDROELÉTRICO" itemValue="10" />
+						<f:selectItem itemLabel="AQUICULTURA EM TANQUE ESCAVADO" itemValue="7" />
+						<f:selectItem itemLabel="AQUICULTURA EM TANQUE REDE" itemValue="18" />
+						<f:selectItem itemLabel="CONSUMO HUMANO" itemValue="12" />
+						<f:selectItem itemLabel="CRIAÇÃO ANIMAL" itemValue="6" />
+						<f:selectItem itemLabel="ESGOTAMENTO SANITÁRIO" itemValue="2" />
+						<f:selectItem itemLabel="INDÚSTRIA" itemValue="3" />
+						<f:selectItem itemLabel="IRRIGAÇÃO" itemValue="5" />
+						<f:selectItem itemLabel="MINERAÇÃO – EXTRAÇÃO DE AREIA/CASCALHO EM LEITO DE RIO" itemValue="4" />
+						<f:selectItem itemLabel="MINERAÇÃO – OUTROS PROCESSOS EXTRATIVOS" itemValue="13" />
+						<f:selectItem itemLabel="OBRAS HIDRÁULICAS" itemValue="15" />
+						<f:selectItem itemLabel="RESERVATÓRIO/BARRAMENTO/REGULARIZAÇÃO DE VAZÕES PARA USOS MÚLTIPLOS" itemValue="11" />
+						<f:selectItem itemLabel="SEM FINALIDADE" itemValue="0" />
+						<f:selectItem itemLabel="SERVIÇOS" itemValue="16" />
+						<f:selectItem itemLabel="TERMOELÉTRICA" itemValue="8" />
+						<f:selectItem itemLabel="TRANSPOSIÇÃO" itemValue="9" />
+						<f:selectItem itemLabel="OUTRAS" itemValue="99" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Código identificador do tipo de outro uso:" for="fou_tou_cd" />
-					<p:selectOneMenu id="fou_tou_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoOutroUso}" style="width:200px">
+					<p:outputLabel value="Tipo de Outro Uso:" for="fou_tou_cd" />
+					<p:selectOneMenu id="fou_tou_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoOutroUso}" style="width:230px">
 						<f:selectItem itemValue="" itemLabel="Selecione" />
-						<f:selectItem itemValue="Eclusa" itemLabel="Eclusa" />
-						<f:selectItem itemValue="Recreação" itemLabel="Recreação" />
-						<f:selectItem itemValue="Salvamento" itemLabel="Salvamento" />
-						<f:selectItem itemValue="Poço de bombeamento de recuperação ambiental" itemLabel="Poço de bombeamento de recuperação ambiental" />
-						<f:selectItem itemValue="Poço de monitoramento/Piezometro" itemLabel="Poço de monitoramento/Piezometro" />
-						<f:selectItem itemValue="Poço de injeção para recuperação ambiental" itemLabel="Poço de injeção para recuperação ambiental" />
-						<f:selectItem itemValue="Umectação de vias" itemLabel="Umectação de vias" />
-						<f:selectItem itemValue="Sistema de Resfriamento" itemLabel="Sistema de Resfriamento" />
-						<f:selectItem itemValue="Lavagem de veículos" itemLabel="Lavagem de veículos" />
-						<f:selectItem itemValue="Clarificação da água" itemLabel="Clarificação da água" />
-						<f:selectItem itemValue="Depuração de efluentes" itemLabel="Depuração de efluentes" />
-						<f:selectItem itemValue="Disposição de rejeitos" itemLabel="Disposição de rejeitos" />
-						<f:selectItem itemValue="Pesquisa mineral" itemLabel="Pesquisa mineral" />
-						<f:selectItem itemValue="Pesquisa hidrogeológica / teste de bombeamento" itemLabel="Pesquisa hidrogeológica / teste de bombeamento" />
-						<f:selectItem itemValue="Recirculação de água" itemLabel="Recirculação de água" />
-						<f:selectItem itemValue="Urbanização" itemLabel="Urbanização" />
-						<f:selectItem itemValue="Rebaixamento de aquífero" itemLabel="Rebaixamento de aquífero" />
-						<f:selectItem itemValue="Balneário - lazer e clube" itemLabel="Balneário - lazer e clube" />
-						<f:selectItem itemValue="Lavanderia" itemLabel="Lavanderia" />
-						<f:selectItem itemValue="Combate a incêndio" itemLabel="Combate a incêndio" />
-						<f:selectItem itemValue="Hortas, pomares, jardins, paisagismo (área &#60; 1 ha)" itemLabel="Hortas, pomares, jardins, paisagismo (área &#60; 1 ha)" />
-						<f:selectItem itemValue="Teste hidrostático" itemLabel="Teste hidrostático" />
-						<f:selectItem itemValue="Abastecimento de pulverizadores" itemLabel="Abastecimento de pulverizadores" />
-						<f:selectItem itemValue="Outro" itemLabel="Outro" />
-						<f:selectItem itemValue="Construção Civil" itemLabel="Construção Civil" />
+						<f:selectItem itemLabel="ABASTECIMENTO DE PULVERIZADORES" itemValue="51" />
+						<f:selectItem itemLabel="BALNEÁRIO - LAZER E CLUBE" itemValue="39" />
+						<f:selectItem itemLabel="CLARIFICAÇÃO DA ÁGUA" itemValue="22" />
+						<f:selectItem itemLabel="COMBATE A INCÊNDIO" itemValue="45" />
+						<f:selectItem itemLabel="CONSTRUÇÃO CIVIL" itemValue="54" />
+						<f:selectItem itemLabel="DEPURAÇÃO DE EFLUENTES" itemValue="26" />
+						<f:selectItem itemLabel="DISPOSIÇÃO DE REJEITOS" itemValue="27" />
+						<f:selectItem itemLabel="ECLUSA" itemValue="1" />
+						<f:selectItem itemLabel="HORTAS, POMARES, JARDINS, PAISAGISMO (ÁREA &lt; 1 HA)" itemValue="49" />
+						<f:selectItem itemLabel="LAVAGEM DE VEÍCULOS" itemValue="21" />
+						<f:selectItem itemLabel="LAVANDERIA" itemValue="44" />
+						<f:selectItem itemLabel="PESQUISA HIDROGEOLÓGICA / TESTE DE BOMBEAMENTO" itemValue="29" />
+						<f:selectItem itemLabel="PESQUISA MINERAL" itemValue="28" />
+						<f:selectItem itemLabel="POÇO DE BOMBEAMENTO DE RECUPERAÇÃO AMBIENTAL" itemValue="14" />
+						<f:selectItem itemLabel="POÇO DE INJEÇÃO PARA RECUPERAÇÃO AMBIENTAL" itemValue="16" />
+						<f:selectItem itemLabel="POÇO DE MONITORAMENTO/PIEZOMETRO" itemValue="15" />
+						<f:selectItem itemLabel="REBAIXAMENTO DE AQUÍFERO" itemValue="32" />
+						<f:selectItem itemLabel="RECIRCULAÇÃO DE ÁGUA" itemValue="30" />
+						<f:selectItem itemLabel="RECREAÇÃO" itemValue="2" />
+						<f:selectItem itemLabel="SALVAMENTO" itemValue="3" />
+						<f:selectItem itemLabel="SISTEMA DE RESFRIAMENTO" itemValue="19" />
+						<f:selectItem itemLabel="TESTE HIDROSTÁTICO" itemValue="50" />
+						<f:selectItem itemLabel="UMECTAÇÃO DE VIAS" itemValue="17" />
+						<f:selectItem itemLabel="URBANIZAÇÃO" itemValue="31" />
+						<f:selectItem itemLabel="OUTRO" itemValue="53" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Codigo identificador da situação da interferência:" for="int_tin_cd" />
-					<p:selectOneMenu id="int_tin_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoInterferencia}" style="width:200px">
+					<p:outputLabel value="Tipo da Interferência:" for="int_tin_cd" />
+					<p:selectOneMenu id="int_tin_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoInterferencia}" style="width:230px">
 						<f:selectItem itemValue="" itemLabel="Selecione" />
-						<f:selectItem itemValue="Captação" itemLabel="Captação" />
-						<f:selectItem itemValue="Lançamento" itemLabel="Lançamento" />
-						<f:selectItem itemValue="Barragem" itemLabel="Barragem" />
-						<f:selectItem itemValue="Ponto de Referência" itemLabel="Ponto de Referência" />
+						<f:selectItem itemLabel="CAPTAÇÃO" itemValue="1" />
+						<f:selectItem itemLabel="LANÇAMENTO" itemValue="2" />
+						<f:selectItem itemLabel="BARRAGEM" itemValue="3" />
+						<f:selectItem itemLabel="PONTO DE REFERÊNCIA" itemValue="4" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Tipo finalidade tipo do uso ausente:" for="linkFotoVisaoGeral" />
-					<p:inputText id="linkFotoVisaoGeral" value="#{interferenciaBean.interferencia.tipoFinalidadeTipoDoUsoAusente}" />
 				</h:panelGrid>
 
 				<p:commandButton value="Salvar" action="#{interferenciaBean.gravar}" ajax="false" rendered="#{interferenciaBean.view == 'add'}"  icon="ui-icon-disk" />
