@@ -1,6 +1,5 @@
 package org.gov.web.controller;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +22,7 @@ public class UsuarioBean extends Controller  {
 	private List<Usuario> usuarios;
 	private List<Regiao> regioes;
 	private String tipoDocumento = "cpf";
+	private List<Usuario> filteredUsuarios;
 
 	public UsuarioBean() {
 
@@ -146,6 +146,16 @@ public class UsuarioBean extends Controller  {
 
 	public void setTipoDocumento(String tipoDocumento) {
 		this.tipoDocumento = tipoDocumento;
+	}
+
+
+	public List<Usuario> getFilteredUsuarios() {
+		return filteredUsuarios;
+	}
+
+
+	public void setFilteredUsuarios(List<Usuario> filteredUsuarios) {
+		this.filteredUsuarios = filteredUsuarios;
 	}
 
 

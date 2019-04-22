@@ -7,13 +7,24 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	
+
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
+			.help {
+				height: 130px;
+				width: 200px;
+				vertical-align: middle;
+			}
 	</style>
-	
+
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addCnarh" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+
+		<p:tooltip for="altura" styleClass="help" value="Campo numérico que representa a altura total do reservatório" position="top"/>
+		<p:tooltip for="area" styleClass="help" value="Campo numérico que representa a área total do reservatório" position="top"/>
+		<p:tooltip for="numSiagas" styleClass="help" value="Campo numérico que representa o número de registro de uma captação subterrânea no sistema siagas." position="top"/>
+		<p:tooltip for="volume" styleClass="help" value="Campo numérico que representa o volume máximo do reservatório" position="top"/>
+
 		<br/><br/><br/>
 		<p:fieldset legend="CNARH">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
@@ -27,18 +38,18 @@
 						<c:otherwise>
 							<p:inputText id="cnarh_id" value="#{cnarhBean.cnarh.cnarh_id}" required="true" requiredMessage="Id Obrigatório" disabled="false" />
 						</c:otherwise>
-					</c:choose>			
-					
-					<p:outputLabel value="Altura Total do Reservatório(m):" for="ius_nu_alturares" />
+					</c:choose>
+
+					<p:outputLabel value="Altura Total do Reservatório(m):" for="ius_nu_alturares" id="altura" />
 					<p:inputText id="ius_nu_alturares" value="#{cnarhBean.cnarh.ius_nu_alturares}" />
-					
-					<p:outputLabel value="Área Total do Reservatório(m2):" for="ius_ar_resmax" />
+
+					<p:outputLabel value="Área Total do Reservatório(m2):" for="ius_ar_resmax" id="area" />
 					<p:inputText id="ius_ar_resmax" value="#{cnarhBean.cnarh.ius_ar_resmax}" />
-	
-					<p:outputLabel value="Número Siagas:" for="int_nu_siagas" />
+
+					<p:outputLabel value="Número Siagas:" for="int_nu_siagas" id="numSiagas" />
 					<p:inputText id="int_nu_siagas" value="#{cnarhBean.cnarh.int_nu_siagas}" />
-					
-					<p:outputLabel value="Volume Máximo do Reservatório(m³/h):" for="ius_vo_resmax" />
+
+					<p:outputLabel value="Volume Máximo do Reservatório(m³/h):" for="ius_vo_resmax" id="volume" />
 					<p:inputText id="ius_vo_resmax" value="#{cnarhBean.cnarh.ius_vo_resmax}" />
 				</h:panelGrid>
 				<br/><br/>

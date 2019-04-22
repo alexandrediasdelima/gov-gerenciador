@@ -10,38 +10,63 @@
 
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
+				.help {
+				height: 130px;
+				width: 200px;
+				vertical-align: middle;
+			}
 	</style>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addUsuario" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
 		<br/><br/><br/>
+
+		<p:tooltip  for="nomeUsuario" styleClass="help" value="Campo descritivo que representa o nome do usuário (ou razão social) de recursos hídricos." position="top"/>
+		<p:tooltip  for="email" styleClass="help" value="Campo descritivo que representa o email de contato do responsável pelo empreendimento." position="top"/>
+		<p:tooltip  for="ddd" styleClass="help" value="Campo numérico que representa o ddd do telefone de contato do responsável pelo empreendimento (usuário)." position="top"/>
+		<p:tooltip  for="apelido" styleClass="help" value="Campo descritivo que representa o apelido do usuário." position="top"/>
+		<p:tooltip  for="documento" styleClass="help" value="Campo numérico que representa o número de identificação do usuário. este campo pode ser preenchido com o cpf ou cnpj do usuário." position="top"/>
+		<p:tooltip  for="telefone" styleClass="help" value="Campo numérico que representa o número do telefone de contato do responsável pelo empreendimento (usuário)." position="top"/>
+		<p:tooltip  for="tipoLogradouro" styleClass="help" value="Campo que representa o tipo de logradouro para envio de correspondência." position="top"/>
+		<p:tooltip  for="endereco" styleClass="help" value="Campo descritivo que representa o endereços para envio de correspondência." position="top"/>
+		<p:tooltip  for="numero" styleClass="help" value="Campo numérico que representa o número do endereço de correspondência." position="top"/>
+		<p:tooltip  for="complemento" styleClass="help" value="Campo descritivo que representa o complemento do endereço para envio de correspondência." position="top"/>
+		<p:tooltip  for="bairro" styleClass="help" value="Campo descritivo que representa o bairro/distrito para envio de correspondência." position="top"/>
+		<p:tooltip  for="uf" styleClass="help" value="Campo que representa a uf do endereço de correspondência." position="top"/>
+		<p:tooltip  for="municipio" styleClass="help" value="Campo que representa o municipio." position="top"/>
+		<p:tooltip  for="codIBGE" styleClass="help" value="Campo numérico que representa o código ibge do município do endereço de correspondência." position="top"/>
+		<p:tooltip  for="cep" styleClass="help" value="Campo numérico que representa o número do cep do endereço de correspondência." position="top"/>
+		<p:tooltip  for="caixaPostal" styleClass="help" value="Campo numérico que representa o número da caixa postal do responsável pelo empreendimento." position="top"/>
+		<p:tooltip  for="referencia" styleClass="help" value="Campo que representa referência do endereço" position="top"/>
+		<p:tooltip  for="relacao" styleClass="help" value="Campo que representa a relação com a propriedade." position="top"/>
+
 		<p:fieldset legend="Usuário">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
 				<h:panelGrid columns="4" style="border: 0px solid;">
-					<p:outputLabel value="Nome:" for="emp_nm_usuario" />
+					<p:outputLabel value="Nome:" for="emp_nm_usuario" id="nomeUsuario" />
 					<p:inputText id="emp_nm_usuario" value="#{usuarioBean.usuario.emp_nm_usuario}" />
 
-					<p:outputLabel value="Apelido:" for="emp_nm_apelido" />
+					<p:outputLabel value="Apelido:" for="emp_nm_apelido" id="apelido"/>
 					<p:inputText id="emp_nm_apelido" value="#{usuarioBean.usuario.emp_nm_apelido}" />
 
-					<p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" />
+					<p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" id="email" />
 					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" />
 
 					<p:selectOneRadio value="#{usuarioBean.tipoDocumento}" id="documento">
-								<f:selectItem itemLabel="CPF" itemValue="cpf" />
+								<f:selectItem itemLabel="CPF" itemValue="cpf"  />
 								<f:selectItem itemLabel="CNPJ:" itemValue="cnpj" />
 					<p:ajax listener="#{usuarioBean.atualizaTipoDocumento}" event="change" update="@form" immediate="true"/>
 					</p:selectOneRadio>
 					<components:cnpj id="cnpj" rendered="#{usuarioBean.tipoDocumento eq 'cnpj'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
 					<components:cpf id="cpf" rendered="#{usuarioBean.tipoDocumento eq 'cpf'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
 
-					<p:outputLabel value="DDD:" for="emp_nu_ddd" />
+					<p:outputLabel value="DDD:" for="emp_nu_ddd" id="ddd" />
 					<p:inputText id="emp_nu_ddd" maxlength="2" value="#{usuarioBean.usuario.emp_nu_ddd}" />
 
-					<p:outputLabel value="Telefone:" for="emp_nu_telefone" />
+					<p:outputLabel value="Telefone:" for="emp_nu_telefone" id="telefone" />
 					<p:inputText id="emp_nu_telefone" value="#{usuarioBean.usuario.emp_nu_telefone}" />
 
-					<p:outputLabel value="Tipo Logradouro:" for="emp_ds_tp_logradouro" />
+					<p:outputLabel value="Tipo Logradouro:" for="emp_ds_tp_logradouro" id="tipoLogradouro"/>
 					<p:selectOneMenu id="emp_ds_tp_logradouro" value="#{usuarioBean.usuario.emp_ds_tp_logradouro}" style="width:230px" required="true" requiredMessage="Tipo Logradouro é obrigatório">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="AVENIDA" itemValue="AVENIDA" />
@@ -58,19 +83,19 @@
 						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Endereço:" for="emp_ds_nm_logradouro" />
+					<p:outputLabel value="Endereço:" for="emp_ds_nm_logradouro" id="endereco"/>
 					<p:inputText id="emp_ds_nm_logradouro" value="#{usuarioBean.usuario.emp_ds_nm_logradouro}" required="true" requiredMessage="Endereço é obrigatório"/>
 
-					<p:outputLabel value="Número:" for="emp_nu_logradouro" />
+					<p:outputLabel value="Número:" for="emp_nu_logradouro" id="numero" />
 					<p:inputMask id="emp_nu_logradouro" value="#{usuarioBean.usuario.emp_nu_logradouro}" />
 
-					<p:outputLabel value="Complemento:" for="emp_ds_complementoendereco" />
+					<p:outputLabel value="Complemento:" for="emp_ds_complementoendereco" id="complemento" />
 					<p:inputText id="emp_ds_complementoendereco" value="#{usuarioBean.usuario.emp_ds_complementoendereco}" />
 
-					<p:outputLabel value="Bairro:" for="emp_ds_bairrodistrito" />
+					<p:outputLabel value="Bairro:" for="emp_ds_bairrodistrito" id="bairro" />
 					<p:inputText id="emp_ds_bairrodistrito" value="#{usuarioBean.usuario.emp_ds_bairrodistrito}" required="true" requiredMessage="Bairro é obrigatório"/>
 
-					<p:outputLabel value="UF:" for="emp_ds_uf" />
+					<p:outputLabel value="UF:" for="emp_ds_uf" id="uf" />
 					<p:selectOneMenu id="emp_ds_uf" value="#{usuarioBean.usuario.emp_ds_uf}" style="width:230px" required="true" requiredMessage="UF é obrigatório">
 						<f:selectItem itemLabel="Selecione" itemValue=" " />
 						<f:selectItem itemLabel="AC" itemValue="AC" />
@@ -103,7 +128,7 @@
 						<p:ajax listener="#{usuarioBean.atualizarMunicipios}" event="change" update="apa_muni_correspondencia" />
 			        </p:selectOneMenu>
 
-			        <p:outputLabel value="Município:" for="apa_muni_correspondencia" />
+			        <p:outputLabel value="Município:" for="apa_muni_correspondencia" id="municipio" />
 					<p:selectOneMenu id="apa_muni_correspondencia" value="#{usuarioBean.usuario.apa_muni_correspondencia}" style="width:230px !important" >
 	                    <f:selectItem itemLabel="Selecione" itemValue=" " />
 	                    <f:selectItems value="#{usuarioBean.regioes}"
@@ -113,19 +138,19 @@
                         <p:ajax listener="#{usuarioBean.atualizarIbge}" event="change" update="emp_cd_codigoibgecorrespondencia" />
                      </p:selectOneMenu>
 
-                     <p:outputLabel value="Código IBGE:" for="emp_cd_codigoibgecorrespondencia" />
+                     <p:outputLabel value="Código IBGE:" for="emp_cd_codigoibgecorrespondencia" id="codIBGE" />
                      <p:inputText id="emp_cd_codigoibgecorrespondencia" disabled="true" value="#{usuarioBean.usuario.emp_cd_codigoibgecorrespondencia}" />
 
-					<p:outputLabel value="CEP:" for="emp_nu_cependereco" />
+					<p:outputLabel value="CEP:" for="emp_nu_cependereco" id="cep" />
 					<p:inputText id="emp_nu_cependereco" value="#{usuarioBean.usuario.emp_nu_cependereco}" />
 
-					<p:outputLabel value="Caixa Postal:" for="emp_nu_caixapostal" />
+					<p:outputLabel value="Caixa Postal:" for="emp_nu_caixapostal" id="caixaPostal" />
 					<p:inputMask id="emp_nu_caixapostal" value="#{usuarioBean.usuario.emp_nu_caixapostal}" />
 
-					<p:outputLabel value="Referência do Endereço:" for="emp_ds_logradouro" />
+					<p:outputLabel value="Referência do Endereço:" for="emp_ds_logradouro" id="referencia" />
 					<p:inputText id="emp_ds_logradouro" value="#{usuarioBean.usuario.emp_ds_logradouro}" />
 
-					<p:outputLabel value="Relação com a Propriedade:" for="emp_ds_relacaopropriedade" />
+					<p:outputLabel value="Relação com a Propriedade:" for="emp_ds_relacaopropriedade" id="relacao" />
 					<p:selectOneMenu id="emp_ds_relacaopropriedade" value="#{usuarioBean.usuario.emp_ds_relacaopropriedade}" style="width:230px" required="true" requiredMessage="Relação com a Propriedade é obrigatório">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="ALUGADA/ARRENDADA" itemValue="ALUGADA/ARRENDADA" />

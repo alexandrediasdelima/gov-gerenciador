@@ -21,6 +21,7 @@ public class InterferenciaBean extends Controller  {
 	private Interferencia interferencia;
 	private List<Interferencia> interferencias;
 	private InterferenciaService interferenciaService;
+	private List<Interferencia> filteredInterferencias;
 	
 	public String interferencias() {
 		interferencias = interferenciaService.interferencias();
@@ -93,4 +94,13 @@ public class InterferenciaBean extends Controller  {
 		this.interferencias = interferencias;
 	}
 
+	public List<Interferencia> getFilteredInterferencias() {
+		return filteredInterferencias;
+	}
+
+	public void setFilteredInterferencias(List<Interferencia> filteredInterferencias) {
+		this.filteredInterferencias = filteredInterferencias;
+	}
+
+	
 }

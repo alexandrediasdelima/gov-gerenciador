@@ -7,32 +7,40 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	
+
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
+		.help {
+				height: 155px;
+				width: 225px;
+				vertical-align: middle;
+			}
 	</style>
-			
+
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addIrrigacao" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+
+		<p:tooltip for="areaTotal" styleClass="help" value="Campo numérico que representa a área total irrigada pelo ponto de captação." position="top"/>
+
 		<br/><br/><br/>
 		<p:fieldset legend="Irrigação">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
 				<h:panelGrid columns="2" style="border: 0px solid;">
 					<p:outputLabel value="ID: " for="irr_int_pfk" />
 					<p:inputText id="irr_int_pfk" value="#{irrigacaoBean.irrigacao.irr_int_pfk}" disabled="true"/>
-					
-					<p:outputLabel value="Área Total Irrigada: " for="sir_ar_irrigada" />
+
+					<p:outputLabel value="Área Total Irrigada: " for="sir_ar_irrigada" id="areaTotal" />
 					<p:inputText id="sir_ar_irrigada" maxlength="16" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada}" />
-					
+
 					<p:outputLabel value="Unidade da Área Total Irrigada: " for="sir_ar_irrigada_uni" />
 					<p:inputText id="sir_ar_irrigada_uni" maxlength="50" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_uni}" />
-					
+
 					<p:outputLabel value="Possui Outra Cultura Irrigada: " for="sir_ar_irrigada_outra" />
 					<p:selectOneMenu id="sir_ar_irrigada_outra" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra}" style="width:230px">
 						<f:selectItem itemLabel="NÃO" itemValue="false" />
 						<f:selectItem itemLabel="SIM" itemValue="true" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência: " for="sir_tsi_cd" />
 					<p:selectOneMenu id="sir_tsi_cd" value="#{irrigacaoBean.irrigacao.sir_tsi_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -56,7 +64,7 @@
 						<f:selectItem itemLabel="SULCOS INTERLIGADOS EM BACIAS" itemValue="9" />
 						<f:selectItem itemLabel="TUBOS PERFURADOS (TRIPA)" itemValue="8" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Identificador do Tipo de Cultura: " for="sir_tct_cd" />
 					<p:selectOneMenu id="sir_tct_cd" value="#{irrigacaoBean.irrigacao.sir_tct_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -256,19 +264,19 @@
 						<f:selectItem itemLabel="UVAS (VINHO)" itemValue="93" />
 						<f:selectItem itemLabel="VAGEM" itemValue="1116" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Área Total Irrigada (2): " for="sir_ar_irrigada_2" />
 					<p:inputText id="sir_ar_irrigada_2" maxlength="16" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_2}" />
-					
+
 					<p:outputLabel value="Unidade da Área Total Irrigada (2): " for="sir_ar_irrigada_uni_2" />
 					<p:inputText id="sir_ar_irrigada_uni_2" maxlength="50" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_uni_2}" />
-					
+
 					<p:outputLabel value="Possui Outra Cultura Irrigada (2): " for="sir_ar_irrigada_outra_2" />
 					<p:selectOneMenu id="sir_ar_irrigada_outra_2" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra_2}" style="width:230px">
 						<f:selectItem itemLabel="NÃO" itemValue="false" />
 						<f:selectItem itemLabel="SIM" itemValue="true" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência (2): " for="sir_tsi_cd_2" />
 					<p:selectOneMenu id="sir_tsi_cd_2" value="#{irrigacaoBean.irrigacao.sir_tsi_cd_2}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -292,7 +300,7 @@
 						<f:selectItem itemLabel="SULCOS INTERLIGADOS EM BACIAS" itemValue="9" />
 						<f:selectItem itemLabel="TUBOS PERFURADOS (TRIPA)" itemValue="8" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Identificador do Tipo de Cultura (2): " for="sir_tct_cd_2" />
 					<p:selectOneMenu id="sir_tct_cd_2" value="#{irrigacaoBean.irrigacao.sir_tct_cd_2}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -492,19 +500,19 @@
 						<f:selectItem itemLabel="UVAS (VINHO)" itemValue="93" />
 						<f:selectItem itemLabel="VAGEM" itemValue="1116" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Área Total Irrigada (3): " for="sir_ar_irrigada_3" />
 					<p:inputText id="sir_ar_irrigada_3" maxlength="16" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_3}" />
-					
+
 					<p:outputLabel value="Unidade da Área Total Irrigada (3): " for="sir_ar_irrigada_uni_3" />
 					<p:inputText id="sir_ar_irrigada_uni_3" maxlength="50" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_uni_3}" />
-					
+
 					<p:outputLabel value="Possui Outra Cultura Irrigada (3): " for="sir_ar_irrigada_outra_3" />
 					<p:selectOneMenu id="sir_ar_irrigada_outra_3" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra_3}" style="width:230px">
 						<f:selectItem itemLabel="NÃO" itemValue="false" />
 						<f:selectItem itemLabel="SIM" itemValue="true" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência (3): " for="sir_tsi_cd_3" />
 					<p:selectOneMenu id="sir_tsi_cd_3" value="#{irrigacaoBean.irrigacao.sir_tsi_cd_3}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -528,7 +536,7 @@
 						<f:selectItem itemLabel="SULCOS INTERLIGADOS EM BACIAS" itemValue="9" />
 						<f:selectItem itemLabel="TUBOS PERFURADOS (TRIPA)" itemValue="8" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Identificador do Tipo de Cultura (3): " for="sir_tct_cd_3" />
 					<p:selectOneMenu id="sir_tct_cd_3" value="#{irrigacaoBean.irrigacao.sir_tct_cd_3}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -730,7 +738,7 @@
 					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>
-				
+
 				<p:commandButton value="Voltar" action="#{irrigacaoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:commandButton value="Salvar" action="#{irrigacaoBean.gravar}"   ajax="false" rendered="#{irrigacaoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{irrigacaoBean.alterar}" ajax="false" rendered="#{irrigacaoBean.view == 'edit'}" icon="ui-icon-pencil" />

@@ -27,6 +27,7 @@ public class EmpreendimentoBean extends Controller  {
 	private List<Empreendimento> empreendimentos;
 	private List<Usuario> usuarios;
 	private List<Regiao> regioes;
+	private List<Empreendimento> filteredEmpreendimentos;
 	
 	public EmpreendimentoBean() {
 
@@ -149,6 +150,14 @@ public class EmpreendimentoBean extends Controller  {
 
 	public void setRegioes(List<Regiao> regioes) {
 		this.regioes = regioes;
+	}
+
+	public List<Empreendimento> getFilteredEmpreendimentos() {
+		return filteredEmpreendimentos;
+	}
+
+	public void setFilteredEmpreendimentos(List<Empreendimento> filteredEmpreendimentos) {
+		this.filteredEmpreendimentos = filteredEmpreendimentos;
 	}
 
 	

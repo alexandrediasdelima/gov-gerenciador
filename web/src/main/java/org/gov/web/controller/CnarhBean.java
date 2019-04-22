@@ -26,6 +26,7 @@ public class CnarhBean extends Controller  {
 	private Cnarh cnarh;
 	private CnarhService cnarhService;
 	private List<Cnarh> cnarhs;
+	private List<Cnarh> filteredCnarhs;
 
 
 	public CnarhBean() {
@@ -117,4 +118,16 @@ public class CnarhBean extends Controller  {
 		this.cnarhs = cnarhs;
 	}
 
+
+	public List<Cnarh> getFilteredCnarhs() {
+		return filteredCnarhs;
+	}
+
+
+	public void setFilteredCnarhs(List<Cnarh> filteredCnarhs) {
+		this.filteredCnarhs = filteredCnarhs;
+	}
+
+	
+	
 }

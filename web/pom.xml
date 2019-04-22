@@ -36,9 +36,9 @@
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>3.5</version>
+			<version>6.2</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/primefaces-3.5.jar</systemPath>
+			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/primefaces-6.2.jar</systemPath>
 		</dependency>
 
 

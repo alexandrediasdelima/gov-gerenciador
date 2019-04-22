@@ -8,69 +8,71 @@
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
 
-	<style type="text/css">
-		.ui-datatable-tablewrapper {
-  			overflow-x: auto;
+	<style>
+		.ui-datatable table {
+ 		   table-layout: auto;
 		}
 	</style>
 
 	<div style="padding-top: 50px;">
-		<h:form id="listarEmpreendimento" prependId="false" style="width:99%;">
+		<h:form id="listarEmpreendimento" prependId="false">
 			<br/>
 			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{empreendimentoBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
-			<p:scrollPanel mode="native" style="width:100%">
-				<p:dataTable id="tabelaEmpreendimentos" value="#{empreendimentoBean.empreendimentos}" paginator="true" rows="10" var="empreendimento" paginatorPosition="top" resizableColumns="false" >
+				<p:dataTable id="tabelaEmpreendimentos" value="#{empreendimentoBean.empreendimentos}" widgetVar="tabelaEmpreendimentos" 
+				emptyMessage="Não foram encontrados registros." filteredValue="#{empreendimentoBean.filteredEmpreendimentos}" 
+				paginator="true" rows="10" var="empreendimento" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
+				resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
 					<f:facet name="header">Empreendimentos</f:facet>
-					<p:column headerText="ID-Empreendimento">
+					<p:column headerText="ID-Empreendimento"  filterBy="#{empreendimento.id}" filterMatchMode="contains" sortBy="#{empreendimento.id}" >
 						<h:outputText id="menuEmpreendimento" value="#{empreendimento.id}" style="text-decoration: underline; cursor: pointer" />
 					    <p:tieredMenu overlay="true" trigger="menuEmpreendimento" my="left top" at="left bottom" triggerEvent="click" autoDisplay="true">
 				        	<p:menuitem value="Outras Informações" action="#{outrainfoBean.redirecionarTelaCadastro(empreendimento.id)}" icon="ui-icon-bullet" />
 					    </p:tieredMenu>
 					</p:column>
-					<p:column headerText="ID-Usuário">
+					<p:column headerText="ID-Usuário" filterBy="#{empreendimento.idUsuario}" filterMatchMode="contains" sortBy="#{empreendimento.idUsuario}" >
 						<h:outputText value="#{empreendimento.idUsuario}" id="idUsuario" />
 					</p:column>
-					<p:column headerText="Nome da Propriedade">
+					<p:column headerText="Nome da Propriedade" filterBy="#{empreendimento.nomeEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.nomeEmpreendimento}" >
 						<h:outputText value="#{empreendimento.nomeEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Área Total(m2)">
+					<p:column headerText="Área Total(m2)" filterBy="#{empreendimento.areaTotalPropriedade}" filterMatchMode="contains" sortBy="#{empreendimento.areaTotalPropriedade}" >
 						<h:outputText value="#{empreendimento.areaTotalPropriedade} (#{empreendimento.unidadeAreaTotalPropriedade})" />
 					</p:column>
-					<p:column headerText="Endereço">
+					<p:column headerText="Endereço" filterBy="#{empreendimento.enderecoEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.enderecoEmpreendimento}" >
 						<h:outputText value="#{empreendimento.enderecoEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Tipo de Logradouro">
+					<p:column headerText="Tipo de Logradouro" filterBy="#{empreendimento.tipoLogradouroEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.tipoLogradouroEmpreendimento}" >
 						<h:outputText value="#{empreendimento.tipoLogradouroEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Nome">
+					<p:column headerText="Nome" filterBy="#{empreendimento.nomeLogradouroEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.nomeLogradouroEmpreendimento}" >
 						<h:outputText value="#{empreendimento.nomeLogradouroEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Número">
+					<p:column headerText="Número" filterBy="#{empreendimento.numeroLogradouroEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.numeroLogradouroEmpreendimento}" >
 						<h:outputText value="#{empreendimento.numeroLogradouroEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Complemento">
+					<p:column headerText="Complemento" filterBy="#{empreendimento.complementoLogradouroEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.complementoLogradouroEmpreendimento}" >
 						<h:outputText value="#{empreendimento.complementoLogradouroEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Acesso Principal">
+					<p:column headerText="Acesso Principal" filterBy="#{empreendimento.nomeAcessoPrincipalEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.nomeAcessoPrincipalEmpreendimento}" >
 						<h:outputText value="#{empreendimento.nomeAcessoPrincipalEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Local">
+					<p:column headerText="Local" filterBy="#{empreendimento.localEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.localEmpreendimento}" >
 						<h:outputText value="#{empreendimento.localEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Caixa Postal">
+					<p:column headerText="Caixa Postal" filterBy="#{empreendimento.numeroCaixaPostalEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.numeroCaixaPostalEmpreendimento}" >
 						<h:outputText value="#{empreendimento.numeroCaixaPostalEmpreendimento}" />
 					</p:column>
-					<p:column headerText="CEP">
+					<p:column headerText="CEP" filterBy="#{empreendimento.cepEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.cepEmpreendimento}" >
 						<h:outputText value="#{empreendimento.cepEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Município">
+					<p:column headerText="Município" filterBy="#{empreendimento.nomeMunicipioEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.nomeMunicipioEmpreendimento}" >
 						<h:outputText value="#{empreendimento.nomeMunicipioEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Código IBGE">
+					<p:column headerText="Código IBGE" filterBy="#{empreendimento.ibgeMunicipioLocalizadaInterferencia}" filterMatchMode="contains" sortBy="#{empreendimento.ibgeMunicipioLocalizadaInterferencia}" >
 						<h:outputText value="#{empreendimento.ibgeMunicipioLocalizadaInterferencia}" />
 					</p:column>
-					<p:column headerText="Número da Outorga">
+					<p:column headerText="Número da Outorga" filterBy="#{empreendimento.numeroOutorga}" filterMatchMode="contains" sortBy="#{empreendimento.numeroOutorga}" >
 						<h:outputText value="#{empreendimento.numeroOutorga}" />
 					</p:column>
 					<p:column headerText="Ações">
@@ -84,7 +86,6 @@
 					<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{empreendimentoBean.deletar}" ajax="false" />
 					<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />
    				</p:confirmDialog>
-			</p:scrollPanel>
 			<p:blockUI block="tabelaEmpreendimentos" trigger="tabelaEmpreendimentos">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>

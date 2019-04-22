@@ -8,33 +8,36 @@
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
 
-	<style type="text/css">
-		.ui-datatable-tablewrapper {
-  			overflow-x: auto;
+	<style>
+		.ui-datatable table {
+ 		   table-layout: auto;
 		}
 	</style>
 	
 	<div style="padding-top: 50px;">
-		<h:form id="listarCnarhs" prependId="false" style="width:99%;">
+		<h:form id="listarCnarhs" prependId="false" >
 			<br/>
             <p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{cnarhBean.adicionarBtnNovoCnarh}" ajax="false" />
 			<br/><br/>
-            <p:scrollPanel mode="native" style="width:100%">
-				<p:dataTable id="tabelaCnarhs" value="#{cnarhBean.cnarhs}" paginator="true" rows="10" var="cnarh" paginatorPosition="top" resizableColumns="false" >
+				<p:dataTable id="tabelaCnarhs" value="#{cnarhBean.cnarhs}" widgetVar="tabelaCnarhs" 
+				emptyMessage="Não foram encontrados registros." filteredValue="#{cnarhBean.filteredCnarhs}" 
+				paginator="true" rows="10" var="cnarh" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
+				resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
+				
 					<f:facet name="header">CNARH</f:facet>
-					<p:column headerText="ID-CNARH">
+					<p:column headerText="ID-CNARH" filterBy="#{cnarh.cnarh_id}" filterMatchMode="contains" sortBy="#{cnarh.cnarh_id}" >
 						<h:outputText value="#{cnarh.cnarh_id}" />
 					</p:column>
-					<p:column headerText="Altura Total Reservatório(m)">
+					<p:column headerText="Altura Total Reservatório(m)" filterBy="#{cnarh.ius_nu_alturares}" filterMatchMode="contains" sortBy="#{cnarh.ius_nu_alturares}" >
 						<h:outputText value="#{cnarh.ius_nu_alturares}" />
 					</p:column>
-					<p:column headerText="Área Total Reservatório(m2)">
+					<p:column headerText="Área Total Reservatório(m2)" filterBy="#{cnarh.ius_ar_resmax}" filterMatchMode="contains" sortBy="#{cnarh.ius_ar_resmax}" >
 						<h:outputText value="#{cnarh.ius_ar_resmax}" />
 					</p:column>
-					<p:column headerText="Numero Siagas">
+					<p:column headerText="Numero Siagas" filterBy="#{cnarh.int_nu_siagas}" filterMatchMode="contains" sortBy="#{cnarh.int_nu_siagas}" >
 						<h:outputText value="#{cnarh.int_nu_siagas}" />
 					</p:column>
-					<p:column headerText="Volume Máximo Reservatório(m³/h)">
+					<p:column headerText="Volume Máximo Reservatório(m³/h)" filterBy="#{cnarh.ius_vo_resmax}" filterMatchMode="contains" sortBy="#{cnarh.ius_vo_resmax}" >
 						<h:outputText value="#{cnarh.ius_vo_resmax}" />
 					</p:column>
 					<p:column headerText="Ações">
@@ -48,7 +51,6 @@
       				<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{cnarhBean.deletar}" ajax="false" />  
       				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />   
 				</p:confirmDialog>
-			</p:scrollPanel>
 			<p:blockUI block="tabelaCnarhs" trigger="tabelaCnarhs">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>

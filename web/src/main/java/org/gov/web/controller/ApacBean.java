@@ -26,6 +26,7 @@ public class ApacBean extends Controller  {
 	private Apac apac;
 	private ApacService apacService;
 	private List<Apac> apacs;
+	private List<Apac> filteredApacs;
 
 
 	public ApacBean() {
@@ -151,5 +152,17 @@ public class ApacBean extends Controller  {
 	public void setApacs(List<Apac> apacs) {
 		this.apacs = apacs;
 	}
+
+
+	public List<Apac> getFilteredApacs() {
+		return filteredApacs;
+	}
+
+
+	public void setFilteredApacs(List<Apac> filteredApacs) {
+		this.filteredApacs = filteredApacs;
+	}
+	
+	
 
 }

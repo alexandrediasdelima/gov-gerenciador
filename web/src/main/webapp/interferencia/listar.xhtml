@@ -8,20 +8,24 @@
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
 
-	<style type="text/css">
-		.ui-datatable-tablewrapper {
-  			overflow-x: auto;
+	<style>
+		.ui-datatable table {
+ 		   table-layout: auto;
 		}
 	</style>
+	
 	<div style="padding-top: 50px;">
-		<h:form id="listarInterferencias" prependId="false" style="width:99%;">
+		<h:form id="listarInterferencias" prependId="false">
 			<br/>
 			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{interferenciaBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
-			<p:scrollPanel mode="native" style="width:100%">
-				<p:dataTable id="tabelaInterferencias" value="#{interferenciaBean.interferencias}" var="interferencia" paginator="true" rows="10" paginatorPosition="top" resizableColumns="false" >
+				<p:dataTable id="tabelaInterferencias" value="#{interferenciaBean.interferencias}" widgetVar="tabelaInterferencias" 
+				emptyMessage="Não foram encontrados registros." filteredValue="#{interferenciaBean.filteredInterferencias}" 
+				paginator="true" rows="10" var="interferencia" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
+				resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
 					<f:facet name="header">Interferências</f:facet>
-					<p:column headerText="ID-Interferência">
+					
+					<p:column headerText="ID-Interferência" filterBy="#{interferencia.id}" filterMatchMode="contains" sortBy="#{interferencia.id}" >
 						<h:outputText id="menuInterferencia" value="#{interferencia.id}" style="text-decoration: underline; cursor: pointer" />
 					    <p:tieredMenu overlay="true" trigger="menuInterferencia" my="left top" at="left bottom" triggerEvent="click" autoDisplay="true">
 				            <p:submenu label="Águas Subterrâneas">
@@ -39,63 +43,63 @@
 				            <p:menuitem value="Vazão" action="#{vazaoBean.redirecionarTelaCadastro(interferencia.id)}" icon="ui-icon-bullet" />
 					    </p:tieredMenu>
 					</p:column>
-					<p:column headerText="ID-Empreedimento">
+					<p:column headerText="ID-Empreedimento" filterBy="#{interferencia.idEmpreendimento}" filterMatchMode="contains" sortBy="#{interferencia.idEmpreendimento}" >
 						<h:outputText value="#{interferencia.idEmpreendimento}" />
 					</p:column>
-					<p:column headerText="ID-Cnarh">
+					<p:column headerText="ID-Cnarh" filterBy="#{interferencia.cnarh_id}" filterMatchMode="contains" sortBy="#{interferencia.cnarh_id}" >
 						<h:outputText value="#{interferencia.cnarh_id}" />
 					</p:column>					
-					<p:column headerText="Estudo Hidrológico">
+					<p:column headerText="Estudo Hidrológico" filterBy="#{interferencia.haEstudoHidrologicoDaArea}" filterMatchMode="contains" sortBy="#{interferencia.haEstudoHidrologicoDaArea}" >
 						<h:panelGroup rendered="#{interferencia.haEstudoHidrologicoDaArea}"><h:outputText value="SIM" /></h:panelGroup>
 						<h:panelGroup rendered="#{!interferencia.haEstudoHidrologicoDaArea}"><h:outputText value="NÃO" /></h:panelGroup>
 					</p:column>
-					<p:column headerText="Captura Lançamento Geral">
+					<p:column headerText="Captura Lançamento Geral" filterBy="#{interferencia.linkFotoPontoCapturaVisaoGeral}" filterMatchMode="contains" sortBy="#{interferencia.linkFotoPontoCapturaVisaoGeral}" >
 						<h:outputText value="#{interferencia.linkFotoPontoCapturaVisaoGeral}" />
 					</p:column>
-					<p:column headerText="Latitude">
+					<p:column headerText="Latitude" filterBy="#{interferencia.latitudeLocalizacaoPontoInterferencia}" filterMatchMode="contains" sortBy="#{interferencia.latitudeLocalizacaoPontoInterferencia}" >
 						<h:outputText value="#{interferencia.latitudeLocalizacaoPontoInterferencia}" />
 					</p:column>
-					<p:column headerText="Longitude">
+					<p:column headerText="Longitude" filterBy="#{interferencia.longitudeLocalizacaoPontoInterferencia}" filterMatchMode="contains" sortBy="#{interferencia.longitudeLocalizacaoPontoInterferencia}" >
 						<h:outputText value="#{interferencia.longitudeLocalizacaoPontoInterferencia}" />
 					</p:column>
-					<p:column headerText="Captura Lançamento Detalhe">
+					<p:column headerText="Captura Lançamento Detalhe" filterBy="#{interferencia.linkFotoPontoCapturaVisaoDetalhada}" filterMatchMode="contains" sortBy="#{interferencia.linkFotoPontoCapturaVisaoDetalhada}" >
 						<h:outputText value="#{interferencia.linkFotoPontoCapturaVisaoDetalhada}" />
 					</p:column>
-					<p:column headerText="Croqui Localização">
+					<p:column headerText="Croqui Localização" filterBy="#{interferencia.linkImagemCroquiLocalizacao}" filterMatchMode="contains" sortBy="#{interferencia.linkImagemCroquiLocalizacao}" >
 						<h:outputText value="#{interferencia.linkImagemCroquiLocalizacao}" />
 					</p:column>
-					<p:column headerText="Local Interferência">
+					<p:column headerText="Local Interferência" filterBy="#{interferencia.localInterferencia}" filterMatchMode="contains" sortBy="#{interferencia.localInterferencia}" >
 						<h:outputText value="#{interferencia.localInterferencia}" />
 					</p:column>
-					<p:column headerText="Nome do Manancial">
+					<p:column headerText="Nome do Manancial" filterBy="#{interferencia.nomeCursoAgua}" filterMatchMode="contains" sortBy="#{interferencia.nomeCursoAgua}" >
 						<h:outputText value="#{interferencia.nomeCursoAgua}" />
 					</p:column>
-					<p:column headerText="Barragem">
+					<p:column headerText="Barragem" filterBy="#{interferencia.barragemOndeFeitaCaptacao}" filterMatchMode="contains" sortBy="#{interferencia.barragemOndeFeitaCaptacao}" >
 						<h:outputText value="#{interferencia.barragemOndeFeitaCaptacao}" />
 					</p:column>
-					<p:column headerText="Capacidade Máxima de Acumulação">
+					<p:column headerText="Capacidade Máxima de Acumulação" filterBy="#{interferencia.capacidadeMaximaAcumulacao}" filterMatchMode="contains" sortBy="#{interferencia.capacidadeMaximaAcumulacao}" >
 						<h:outputText value="#{interferencia.capacidadeMaximaAcumulacao}" />
 					</p:column>
-					<p:column headerText="Bacia Hidrográfica">
+					<p:column headerText="Bacia Hidrográfica" filterBy="#{interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" filterMatchMode="contains" sortBy="#{interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" >
 						<h:outputText value="#{interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" />
 					</p:column>
 
-					<p:column headerText="Número do Processo">
+					<p:column headerText="Número do Processo" filterBy="#{interferencia.numeroProcesso}" filterMatchMode="contains" sortBy="#{interferencia.numeroProcesso}" >
 						<h:outputText value="#{interferencia.numeroProcesso}" />
 					</p:column>
-					<p:column headerText="Código da Situação Interferência">
+					<p:column headerText="Código da Situação Interferência" filterBy="#{interferencia.codigoIdentificadorSituacaoInterferencia}" filterMatchMode="contains" sortBy="#{interferencia.codigoIdentificadorSituacaoInterferencia}" >
 						<h:outputText value="#{interferencia.codigoIdentificadorSituacaoInterferencia}" />
 					</p:column>
-					<p:column headerText="Código da Finalidade">
+					<p:column headerText="Código da Finalidade" filterBy="#{interferencia.codigoIdentificadorTipoFinalidade}" filterMatchMode="contains" sortBy="#{interferencia.codigoIdentificadorTipoFinalidade}" >
 						<h:outputText value="#{interferencia.codigoIdentificadorTipoFinalidade}" />
 					</p:column>
-					<p:column headerText="Código de Outro Uso">
+					<p:column headerText="Código de Outro Uso" filterBy="#{interferencia.codigoIdentificadorTipoOutroUso}" filterMatchMode="contains" sortBy="#{interferencia.codigoIdentificadorTipoOutroUso}" >
 						<h:outputText value="#{interferencia.codigoIdentificadorTipoOutroUso}" />
 					</p:column>
-					<p:column headerText="Código do Tipo de Interferência">
+					<p:column headerText="Código do Tipo de Interferência" filterBy="#{interferencia.codigoIdentificadorTipoInterferencia}" filterMatchMode="contains" sortBy="#{interferencia.codigoIdentificadorTipoInterferencia}" >
 						<h:outputText value="#{interferencia.codigoIdentificadorTipoInterferencia}" />
 					</p:column>
-					<p:column headerText="Tipo de Finalidade">
+					<p:column headerText="Tipo de Finalidade" filterBy="#{interferencia.tipoFinalidadeTipoDoUsoAusente}" filterMatchMode="contains" sortBy="#{interferencia.tipoFinalidadeTipoDoUsoAusente}" >
 						<h:outputText value="#{interferencia.tipoFinalidadeTipoDoUsoAusente}" />
 					</p:column>
 					<p:column headerText="Ações">
@@ -109,7 +113,6 @@
 	            	<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{interferenciaBean.deletar}" ajax="false" />  
     	        	<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />   
         		</p:confirmDialog> 
-			</p:scrollPanel>
 			<p:blockUI block="tabelaInterferencias" trigger="tabelaInterferencias">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>

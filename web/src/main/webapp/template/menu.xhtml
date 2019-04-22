@@ -9,18 +9,18 @@
 	<h:form style="width: 99%">
 		<div style="position: fixed; width: 98%; z-index: 100 !important">
 		<p:menubar>
-			<p:menuitem value="Home" url="/index.xhtml" icon="ui-icon-home" />
-			<p:menuitem value="Apac" url= "/apac/" icon="ui-icon-check"/>
-			<p:menuitem value="Cnarh" url= "/cnarh/" icon="ui-icon-check"/>
+			<p:menuitem value="Home" url="#{facesContext.externalContext.request.contextPath}" icon="ui-icon-home" ajax="false" />
+			<p:menuitem value="Apac" url= "#{facesContext.externalContext.request.contextPath}/apac/" icon="ui-icon-check" ajax="false" />
+			<p:menuitem value="Cnarh" url= "#{facesContext.externalContext.request.contextPath}/cnarh/" icon="ui-icon-check" ajax="false" />
 			<p:submenu label="Usuário" icon="ui-icon-check">
-	           	<p:menuitem value="Usuário" url="/usuario/" icon="ui-icon-check" />
+	           	<p:menuitem value="Usuário" url="#{facesContext.externalContext.request.contextPath}/usuario/" icon="ui-icon-check" ajax="false" />
 	           	<p:submenu label="Empreendimento" icon="ui-icon-check">
-	           		<p:menuitem value="Empreendimento" url="/empreendimento/" icon="ui-icon-check" />
+	           		<p:menuitem value="Empreendimento" url="#{facesContext.externalContext.request.contextPath}/empreendimento/" icon="ui-icon-check" ajax="false" />
 					<ui:remove><p:menuitem value="Outras Informações" url="/outrasinformacoes/" icon="ui-icon-check"/></ui:remove>
-					<p:menuitem value="Interferência" url="/interferencia/" icon="ui-icon-check" />
+					<p:menuitem value="Interferência" url="#{facesContext.externalContext.request.contextPath}/interferencia/" icon="ui-icon-check" ajax="false" />
 	           	</p:submenu>
 	       	</p:submenu>
-	       	<p:menuitem value="Upload" url= "/upload/" icon="ui-icon-check" rendered="false"/>
+	       	<p:menuitem value="Upload" url= "#{facesContext.externalContext.request.contextPath}/upload/" icon="ui-icon-check" ajax="false"/>
 	       	<p:menuitem value="Sair" action="#{loginBean.deslogar}" ajax="false" icon="ui-icon-closethick" />
 		</p:menubar>
 		</div>
