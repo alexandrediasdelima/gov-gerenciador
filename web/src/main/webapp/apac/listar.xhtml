@@ -156,7 +156,6 @@
 					    </p:commandButton>
 					</p:column>
 				</p:dataTable>
-				
 				<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="APAC" severity="alert" widgetVar="confirmation">
           			<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{apacBean.deletar}" ajax="false" />
  	        		<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />

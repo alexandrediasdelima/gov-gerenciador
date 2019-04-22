@@ -49,10 +49,10 @@
 		<properties>
 			<!-- Propriedades JDBC -->
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/post" />
 			<property name="javax.persistence.jdbc.user" value="postgres" />
-			<property name="javax.persistence.jdbc.password" value="geologia" />
-			
+			<property name="javax.persistence.jdbc.password" value="a36031578" />
+
 			<!--property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/apac_nippon_09042019" />
 			<property name="javax.persistence.jdbc.user" value="postgres" />

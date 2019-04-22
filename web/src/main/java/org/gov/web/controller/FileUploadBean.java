@@ -25,7 +25,7 @@ public class FileUploadBean extends Controller {
 
         if(file != null) {
 
-        	String caminhoDestinoArquivo = "C:/ambiente-java/teste/" + file.getFileName();
+        	String caminhoDestinoArquivo = "C:/import_cad/" + file.getFileName();
         	boolean transferenciaSucesso = false;
         	try {
 				transferenciaSucesso = copyFile(file.getInputstream(), caminhoDestinoArquivo);

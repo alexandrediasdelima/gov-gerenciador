@@ -11,8 +11,8 @@
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 		.help {
-				height: 155px;
-				width: 225px;
+				height: 125px;
+				width: 200px;
 				vertical-align: middle;
 			}
 	</style>
@@ -21,6 +21,20 @@
 		<h:form id="addIrrigacao" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
 
 		<p:tooltip for="areaTotal" styleClass="help" value="Campo numérico que representa a área total irrigada pelo ponto de captação." position="top"/>
+		<p:tooltip for="unidadeArea" styleClass="help" value="Campo descritivo que representa a unidade da área total irrigada pelo ponto de captação." position="top"/>
+		<p:tooltip for="possuiCulturaIrrigada" styleClass="help" value="Campo que representa se possui outra cultura irrigada." position="top"/>
+		<p:tooltip for="sistemaIrrigacao" styleClass="help" value="Campo que representa o sistema de irrigação utilizado pela interferência." position="top"/>
+		<p:tooltip for="identificadorCultura" styleClass="help" value="Campo que representa o codigo identificador do tipo de cultura." position="top"/>
+		<p:tooltip for="areaTotalIrrigada" styleClass="help" value="Campo que representa a área total irrigada (2) pelo ponto de captação" position="top"/>
+		<p:tooltip for="unidadeAreaTotalIrrigada" styleClass="help" value="Campo que representa a unidade da área total irrigada (2) pelo ponto de captação." position="top"/>
+		<p:tooltip for="possuiOutraCulturaIrrigada" styleClass="help" value="Campo que representa se possui outra cultura irrigada (2)." position="top"/>
+		<p:tooltip for="sistemaIrrigacaoInterferencia" styleClass="help" value="Campo que representa o sistema de irrigação (2) utilizado pela interferência." position="top"/>
+		<p:tooltip for="identificadorTipoCultura" styleClass="help" value="Campo que representa o codigo identificador do tipo de cultura (2)" position="top"/>
+		<p:tooltip for="areaTotalTres" styleClass="help" value="Campo que representa a área total irrigada (3) pelo ponto de captação." position="top"/>
+		<p:tooltip for="uniAreaTotal" styleClass="help" value="Campo que representa a unidade da área total irrigada (3) pelo ponto de captação." position="top"/>
+		<p:tooltip for="possuiOutraCultuIrriga" styleClass="help" value="Campo descritivo que representa se possui outra cultura irrigada (3)." position="top"/>
+		<p:tooltip for="sistemaIrrigacaoInterferenciaTres" styleClass="help" value="Campo que representa o sistema de irrigação (3) utilizado pela interferência." position="top"/>
+		<p:tooltip for="identificadorCulturaTres" styleClass="help" value="Campo que representa o codigo identificador do tipo de cultura (3)." position="top"/>
 
 		<br/><br/><br/>
 		<p:fieldset legend="Irrigação">
@@ -32,16 +46,16 @@
 					<p:outputLabel value="Área Total Irrigada: " for="sir_ar_irrigada" id="areaTotal" />
 					<p:inputText id="sir_ar_irrigada" maxlength="16" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada}" />
 
-					<p:outputLabel value="Unidade da Área Total Irrigada: " for="sir_ar_irrigada_uni" />
+					<p:outputLabel value="Unidade da Área Total Irrigada: " for="sir_ar_irrigada_uni" id="unidadeArea" />
 					<p:inputText id="sir_ar_irrigada_uni" maxlength="50" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_uni}" />
 
-					<p:outputLabel value="Possui Outra Cultura Irrigada: " for="sir_ar_irrigada_outra" />
+					<p:outputLabel value="Possui Outra Cultura Irrigada: " for="sir_ar_irrigada_outra" id="possuiCulturaIrrigada" />
 					<p:selectOneMenu id="sir_ar_irrigada_outra" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra}" style="width:230px">
 						<f:selectItem itemLabel="NÃO" itemValue="false" />
 						<f:selectItem itemLabel="SIM" itemValue="true" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência: " for="sir_tsi_cd" />
+					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência: " for="sir_tsi_cd" id="sistemaIrrigacao" />
 					<p:selectOneMenu id="sir_tsi_cd" value="#{irrigacaoBean.irrigacao.sir_tsi_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="ASPERSÃO POR CANHÃO HIDRÁULICO" itemValue="12" />
@@ -65,7 +79,7 @@
 						<f:selectItem itemLabel="TUBOS PERFURADOS (TRIPA)" itemValue="8" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Identificador do Tipo de Cultura: " for="sir_tct_cd" />
+					<p:outputLabel value="Identificador do Tipo de Cultura: " for="sir_tct_cd" id="identificadorCultura"/>
 					<p:selectOneMenu id="sir_tct_cd" value="#{irrigacaoBean.irrigacao.sir_tct_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="ABACATE, SEM COBERTURA DE CHÃO" itemValue="104" />
@@ -265,19 +279,19 @@
 						<f:selectItem itemLabel="VAGEM" itemValue="1116" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Área Total Irrigada (2): " for="sir_ar_irrigada_2" />
+					<p:outputLabel value="Área Total Irrigada (2): " for="sir_ar_irrigada_2" id="areaTotalIrrigada" />
 					<p:inputText id="sir_ar_irrigada_2" maxlength="16" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_2}" />
 
-					<p:outputLabel value="Unidade da Área Total Irrigada (2): " for="sir_ar_irrigada_uni_2" />
+					<p:outputLabel value="Unidade da Área Total Irrigada (2): " for="sir_ar_irrigada_uni_2" id="unidadeAreaTotalIrrigada" />
 					<p:inputText id="sir_ar_irrigada_uni_2" maxlength="50" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_uni_2}" />
 
-					<p:outputLabel value="Possui Outra Cultura Irrigada (2): " for="sir_ar_irrigada_outra_2" />
+					<p:outputLabel value="Possui Outra Cultura Irrigada (2): " for="sir_ar_irrigada_outra_2" id="possuiOutraCulturaIrrigada" />
 					<p:selectOneMenu id="sir_ar_irrigada_outra_2" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra_2}" style="width:230px">
 						<f:selectItem itemLabel="NÃO" itemValue="false" />
 						<f:selectItem itemLabel="SIM" itemValue="true" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência (2): " for="sir_tsi_cd_2" />
+					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência (2): " for="sir_tsi_cd_2" id="sistemaIrrigacaoInterferencia"/>
 					<p:selectOneMenu id="sir_tsi_cd_2" value="#{irrigacaoBean.irrigacao.sir_tsi_cd_2}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="ASPERSÃO POR CANHÃO HIDRÁULICO" itemValue="12" />
@@ -301,7 +315,7 @@
 						<f:selectItem itemLabel="TUBOS PERFURADOS (TRIPA)" itemValue="8" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Identificador do Tipo de Cultura (2): " for="sir_tct_cd_2" />
+					<p:outputLabel value="Identificador do Tipo de Cultura (2): " for="sir_tct_cd_2" id="identificadorTipoCultura" />
 					<p:selectOneMenu id="sir_tct_cd_2" value="#{irrigacaoBean.irrigacao.sir_tct_cd_2}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="ABACATE, SEM COBERTURA DE CHÃO" itemValue="104" />
@@ -501,19 +515,19 @@
 						<f:selectItem itemLabel="VAGEM" itemValue="1116" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Área Total Irrigada (3): " for="sir_ar_irrigada_3" />
+					<p:outputLabel value="Área Total Irrigada (3): " for="sir_ar_irrigada_3" id="areaTotalTres" />
 					<p:inputText id="sir_ar_irrigada_3" maxlength="16" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_3}" />
 
-					<p:outputLabel value="Unidade da Área Total Irrigada (3): " for="sir_ar_irrigada_uni_3" />
+					<p:outputLabel value="Unidade da Área Total Irrigada (3): " for="sir_ar_irrigada_uni_3" id="uniAreaTotal" />
 					<p:inputText id="sir_ar_irrigada_uni_3" maxlength="50" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_uni_3}" />
 
-					<p:outputLabel value="Possui Outra Cultura Irrigada (3): " for="sir_ar_irrigada_outra_3" />
+					<p:outputLabel value="Possui Outra Cultura Irrigada (3): " for="sir_ar_irrigada_outra_3" id="possuiOutraCultuIrriga" />
 					<p:selectOneMenu id="sir_ar_irrigada_outra_3" value="#{irrigacaoBean.irrigacao.sir_ar_irrigada_outra_3}" style="width:230px">
 						<f:selectItem itemLabel="NÃO" itemValue="false" />
 						<f:selectItem itemLabel="SIM" itemValue="true" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência (3): " for="sir_tsi_cd_3" />
+					<p:outputLabel value="Sistema de Irrigação Utilizado pela Interferência (3): " for="sir_tsi_cd_3" id="sistemaIrrigacaoInterferenciaTres"/>
 					<p:selectOneMenu id="sir_tsi_cd_3" value="#{irrigacaoBean.irrigacao.sir_tsi_cd_3}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="ASPERSÃO POR CANHÃO HIDRÁULICO" itemValue="12" />
@@ -537,7 +551,7 @@
 						<f:selectItem itemLabel="TUBOS PERFURADOS (TRIPA)" itemValue="8" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Identificador do Tipo de Cultura (3): " for="sir_tct_cd_3" />
+					<p:outputLabel value="Identificador do Tipo de Cultura (3): " for="sir_tct_cd_3" id="identificadorCulturaTres" />
 					<p:selectOneMenu id="sir_tct_cd_3" value="#{irrigacaoBean.irrigacao.sir_tct_cd_3}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="ABACATE, SEM COBERTURA DE CHÃO" itemValue="104" />
