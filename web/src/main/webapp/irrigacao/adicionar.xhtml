@@ -10,32 +10,10 @@
 
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
-		.help {
-				height: 125px;
-				width: 200px;
-				vertical-align: middle;
-			}
 	</style>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addIrrigacao" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
-
-		<p:tooltip for="areaTotal" styleClass="help" value="Campo numérico que representa a área total irrigada pelo ponto de captação." position="top"/>
-		<p:tooltip for="unidadeArea" styleClass="help" value="Campo descritivo que representa a unidade da área total irrigada pelo ponto de captação." position="top"/>
-		<p:tooltip for="possuiCulturaIrrigada" styleClass="help" value="Campo que representa se possui outra cultura irrigada." position="top"/>
-		<p:tooltip for="sistemaIrrigacao" styleClass="help" value="Campo que representa o sistema de irrigação utilizado pela interferência." position="top"/>
-		<p:tooltip for="identificadorCultura" styleClass="help" value="Campo que representa o codigo identificador do tipo de cultura." position="top"/>
-		<p:tooltip for="areaTotalIrrigada" styleClass="help" value="Campo que representa a área total irrigada (2) pelo ponto de captação" position="top"/>
-		<p:tooltip for="unidadeAreaTotalIrrigada" styleClass="help" value="Campo que representa a unidade da área total irrigada (2) pelo ponto de captação." position="top"/>
-		<p:tooltip for="possuiOutraCulturaIrrigada" styleClass="help" value="Campo que representa se possui outra cultura irrigada (2)." position="top"/>
-		<p:tooltip for="sistemaIrrigacaoInterferencia" styleClass="help" value="Campo que representa o sistema de irrigação (2) utilizado pela interferência." position="top"/>
-		<p:tooltip for="identificadorTipoCultura" styleClass="help" value="Campo que representa o codigo identificador do tipo de cultura (2)" position="top"/>
-		<p:tooltip for="areaTotalTres" styleClass="help" value="Campo que representa a área total irrigada (3) pelo ponto de captação." position="top"/>
-		<p:tooltip for="uniAreaTotal" styleClass="help" value="Campo que representa a unidade da área total irrigada (3) pelo ponto de captação." position="top"/>
-		<p:tooltip for="possuiOutraCultuIrriga" styleClass="help" value="Campo descritivo que representa se possui outra cultura irrigada (3)." position="top"/>
-		<p:tooltip for="sistemaIrrigacaoInterferenciaTres" styleClass="help" value="Campo que representa o sistema de irrigação (3) utilizado pela interferência." position="top"/>
-		<p:tooltip for="identificadorCulturaTres" styleClass="help" value="Campo que representa o codigo identificador do tipo de cultura (3)." position="top"/>
-
 		<br/><br/><br/>
 		<p:fieldset legend="Irrigação">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
@@ -759,6 +737,23 @@
 				<p:commandButton value="Apagar" action="#{irrigacaoBean.deletar}"  ajax="false" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>
+		
+		<p:tooltip for="areaTotal" value="Campo numérico que representa a área total irrigada pelo ponto de captação." position="top"/>
+		<p:tooltip for="unidadeArea" value="Campo descritivo que representa a unidade da área total irrigada pelo ponto de captação." position="top"/>
+		<p:tooltip for="possuiCulturaIrrigada" value="Campo que representa se possui outra cultura irrigada." position="top"/>
+		<p:tooltip for="sistemaIrrigacao" value="Campo que representa o sistema de irrigação utilizado pela interferência." position="top"/>
+		<p:tooltip for="identificadorCultura" value="Campo que representa o codigo identificador do tipo de cultura." position="top"/>
+		<p:tooltip for="areaTotalIrrigada" value="Campo que representa a área total irrigada (2) pelo ponto de captação" position="top"/>
+		<p:tooltip for="unidadeAreaTotalIrrigada" value="Campo que representa a unidade da área total irrigada (2) pelo ponto de captação." position="top"/>
+		<p:tooltip for="possuiOutraCulturaIrrigada" value="Campo que representa se possui outra cultura irrigada (2)." position="top"/>
+		<p:tooltip for="sistemaIrrigacaoInterferencia" value="Campo que representa o sistema de irrigação (2) utilizado pela interferência." position="top"/>
+		<p:tooltip for="identificadorTipoCultura" value="Campo que representa o codigo identificador do tipo de cultura (2)" position="top"/>
+		<p:tooltip for="areaTotalTres" value="Campo que representa a área total irrigada (3) pelo ponto de captação." position="top"/>
+		<p:tooltip for="uniAreaTotal" value="Campo que representa a unidade da área total irrigada (3) pelo ponto de captação." position="top"/>
+		<p:tooltip for="possuiOutraCultuIrriga" value="Campo descritivo que representa se possui outra cultura irrigada (3)." position="top"/>
+		<p:tooltip for="sistemaIrrigacaoInterferenciaTres" value="Campo que representa o sistema de irrigação (3) utilizado pela interferência." position="top"/>
+		<p:tooltip for="identificadorCulturaTres" value="Campo que representa o codigo identificador do tipo de cultura (3)." position="top"/>
+		
 		</h:form>
 	</div>
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />

@@ -13,32 +13,10 @@
 				background: none !important;
 				background-image: none !important;
 			}
-
-			.help {
-				height: 150px;
-				width: 210px;
-				vertical-align: middle;
-			}
 		</style>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addInterferencia" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
-
-		<p:tooltip for="estuHidrologico" styleClass="help" value="Campo descritivo que representa se há um estudo hidrológico da área." position="top"/>
-		<p:tooltip for="fotoGeral" styleClass="help" value="Campo que armazena o link para a foto do ponto de captura/lançamento numa visada geral." position="top"/>
-		<p:tooltip for="fotoDetalhada" styleClass="help" value="Campo que armazena o link para a foto do ponto de captura/lançamento numa visada de detalhe." position="top"/>
-		<p:tooltip for="lnkCroqui" styleClass="help" value="Campo que armazena o link para a imagem do croqui de localização do ponto de localização da captação/lançamento." position="top"/>
-		<p:tooltip for="latitudeInterferencia" styleClass="help" value="Campo numérico que representa a latitude de localização do ponto de interferência, em grau decimal com sete casas de precisão." position="top"/>
-		<p:tooltip for="longitudeInterferencia" styleClass="help" value="Campo numérico que representa a longitude de localização do ponto de interferência, em grau decimal com sete casas de precisão." position="top"/>
-		<p:tooltip for="loInterferencia" styleClass="help" value="Campo descritivo que representa qual é o local da interferência." position="top"/>
-		<p:tooltip for="nomeCursoAgua" styleClass="help" value="Campo descritivo que representa o nome do curso de agua onde se insere a captação/lançamento." position="top"/>
-		<p:tooltip for="barra" styleClass="help" value="Campo descritivo que representa a barragem onde é feita a captação/lançamento." position="top"/>
-		<p:tooltip for="capacidadeMaxima" styleClass="help" value="Campo numérico que representa a capacidade máxima de acumulação (m³)." position="top"/>
-		<p:tooltip for="baciaHidro" styleClass="help" value="Campo descritivo que representa a bacia hidrográfica onde esta inserida a captação/lançamento." position="top"/>
-		<p:tooltip for="situacao" styleClass="help" value="Campo que representa o codigo identificador da situação da interferência." position="top"/>
-		<p:tooltip for="tpFinalidade" styleClass="help" value="Campo descritivo que representa o tipo da finalidade" position="top"/>
-		<p:tooltip for="tpOutroUso" styleClass="help" value="Campo que representa o codigo identificador do tipo de outro uso" position="top"/>
-		<p:tooltip for="tpInterf" styleClass="help" value="Campo que representa o codigo identificador da situação da interferência." position="top"/>
 
 		<br/><br/><br/>
 		<p:fieldset legend="Interferência">
@@ -1097,6 +1075,23 @@
 				<p:commandButton value="Salvar" action="#{interferenciaBean.editar}" ajax="false" rendered="#{interferenciaBean.view == 'edit'}" icon="ui-icon-pencil" />
 			</p:scrollPanel>
 		</p:fieldset>
+		
+		<p:tooltip for="estuHidrologico" value="Campo descritivo que representa se há um estudo hidrológico da área." position="top"/>
+		<p:tooltip for="fotoGeral" value="Campo que armazena o link para a foto do ponto de captura/lançamento numa visada geral." position="top"/>
+		<p:tooltip for="fotoDetalhada" value="Campo que armazena o link para a foto do ponto de captura/lançamento numa visada de detalhe." position="top"/>
+		<p:tooltip for="lnkCroqui" value="Campo que armazena o link para a imagem do croqui de localização do ponto de localização da captação/lançamento." position="top"/>
+		<p:tooltip for="latitudeInterferencia" value="Campo numérico que representa a latitude de localização do ponto de interferência, em grau decimal com sete casas de precisão." position="top"/>
+		<p:tooltip for="longitudeInterferencia" value="Campo numérico que representa a longitude de localização do ponto de interferência, em grau decimal com sete casas de precisão." position="top"/>
+		<p:tooltip for="loInterferencia" value="Campo descritivo que representa qual é o local da interferência." position="top"/>
+		<p:tooltip for="nomeCursoAgua" value="Campo descritivo que representa o nome do curso de agua onde se insere a captação/lançamento." position="top"/>
+		<p:tooltip for="barra" value="Campo descritivo que representa a barragem onde é feita a captação/lançamento." position="top"/>
+		<p:tooltip for="capacidadeMaxima" value="Campo numérico que representa a capacidade máxima de acumulação (m³)." position="top"/>
+		<p:tooltip for="baciaHidro" value="Campo descritivo que representa a bacia hidrográfica onde esta inserida a captação/lançamento." position="top"/>
+		<p:tooltip for="situacao" value="Campo que representa o codigo identificador da situação da interferência." position="top"/>
+		<p:tooltip for="tpFinalidade" value="Campo descritivo que representa o tipo da finalidade" position="top"/>
+		<p:tooltip for="tpOutroUso" value="Campo que representa o codigo identificador do tipo de outro uso" position="top"/>
+		<p:tooltip for="tpInterf" value="Campo que representa o codigo identificador da situação da interferência." position="top"/>
+		
 		</h:form>
 	</div>
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />

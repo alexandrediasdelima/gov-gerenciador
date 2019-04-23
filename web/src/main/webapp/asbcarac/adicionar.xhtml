@@ -11,11 +11,6 @@
 
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
-		.help {
-				height: 150px;
-				width: 210px;
-				vertical-align: middle;
-			}
 	</style>
 
 	<script>
@@ -29,18 +24,6 @@
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addAsbcarac" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
-
-		<p:tooltip for="altTerreno" styleClass="help" value="Campo numérico que representa a altitude do terreno." position="top"/>
-		<p:tooltip for="bocaTubulacao" styleClass="help" value="Campo numérico que representa a altura da boca da tubulação." position="top"/>
-		<p:tooltip for="codigoIdentificador" styleClass="help" value="Campo numérico que representa o código identificador do aquífero ponto." position="top"/>
-		<p:tooltip for="data" styleClass="help" value="Campo descritivo que representa a data de instalação do poço." position="top"/>
-		<p:tooltip for="diamePerfuracao" styleClass="help" value="Campo numérico que representa o diâmetro perfuração." position="top"/>
-		<p:tooltip for="diameFiltro" styleClass="help" value="Campo numérico que representa o diâmetro do filtro." position="top"/>
-		<p:tooltip for="profundidadeSuperficie" styleClass="help" value="Campo numérico que representa a profundidade da base do aquífero captado, medida em metros a partir da superfície." position="top"/>
-		<p:tooltip for="profundidadeTopo" styleClass="help" value="Campo numérico que representa a profundidade do topo do aquífero captado, medida em metros a partir da superfície." position="top"/>
-		<p:tooltip for="natureza" styleClass="help" value="Campo que representa o código identificador da natureza do ponto." position="top"/>
-		<p:tooltip for="tpPenetracao" styleClass="help" value="Campo que representa o tipo de penetração do aquífero." position="top"/>
-		<p:tooltip for="condicao" styleClass="help" value="Campo que representa a condição do aquífero." position="top"/>
 
 		<br/><br/><br/>
 		<p:fieldset legend="Águas Subterrâneas - Características">
@@ -113,6 +96,19 @@
 				<p:commandButton value="Apagar" action="#{asbcaracBean.deletar}"  ajax="false" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>
+		
+		<p:tooltip for="altTerreno" value="Campo numérico que representa a altitude do terreno." position="top"/>
+		<p:tooltip for="bocaTubulacao" value="Campo numérico que representa a altura da boca da tubulação." position="top"/>
+		<p:tooltip for="codigoIdentificador" value="Campo numérico que representa o código identificador do aquífero ponto." position="top"/>
+		<p:tooltip for="data" value="Campo descritivo que representa a data de instalação do poço." position="top"/>
+		<p:tooltip for="diamePerfuracao" value="Campo numérico que representa o diâmetro perfuração." position="top"/>
+		<p:tooltip for="diameFiltro" value="Campo numérico que representa o diâmetro do filtro." position="top"/>
+		<p:tooltip for="profundidadeSuperficie" value="Campo numérico que representa a profundidade da base do aquífero captado, medida em metros a partir da superfície." position="top"/>
+		<p:tooltip for="profundidadeTopo" value="Campo numérico que representa a profundidade do topo do aquífero captado, medida em metros a partir da superfície." position="top"/>
+		<p:tooltip for="natureza" value="Campo que representa o código identificador da natureza do ponto." position="top"/>
+		<p:tooltip for="tpPenetracao" value="Campo que representa o tipo de penetração do aquífero." position="top"/>
+		<p:tooltip for="condicao" value="Campo que representa a condição do aquífero." position="top"/>
+		
 		</h:form>
 	</div>
 </ui:composition>
