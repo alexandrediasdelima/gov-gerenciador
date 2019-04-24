@@ -1,0 +1,852 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+
+	<style type="text/css">
+		.ui-state-hover { background: none !important; background-image: none !important; }
+		.central { width: 85%; margin: 0 auto; }
+	</style>
+
+	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
+		<h:form id="fichaCampo" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		<br/><br/><br/>
+			<p:panelGrid styleClass="central">
+			    <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Dados do Usuário</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+		            <p:column><p:outputLabel value="Nome:" for="emp_nm_usuario" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_nm_usuario" value="#{fichaCampoBean.fichaCampo.emp_nm_usuario}" /></p:column>
+					<p:column><p:outputLabel value="Apelido:" for="emp_nm_apelido" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_nm_apelido" value="#{fichaCampoBean.fichaCampo.emp_nm_apelido}" /></p:column>
+		        </p:row>
+		        <p:row>
+		            <p:column><p:outputLabel value="CPF/CNPJ:" for="emp_nu_cpfcnpj" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_nu_cpfcnpj" value="#{fichaCampoBean.fichaCampo.emp_nu_cpfcnpj}" /></p:column>
+					<p:column><p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_ds_emailresponsavel" value="#{fichaCampoBean.fichaCampo.emp_ds_emailresponsavel}" /></p:column>
+		        </p:row>
+		        <p:row>
+		        	<p:column><p:outputLabel value="Telefone:" for="emp_nu_telefone" /></p:column>
+					<p:column>
+						<p:outputLabel style="font-weight: bold" id="emp_nu_ddd" value="(#{fichaCampoBean.fichaCampo.emp_nu_ddd}) " />
+						<p:outputLabel style="font-weight: bold" id="emp_nu_telefone" value="#{fichaCampoBean.fichaCampo.emp_nu_telefone}" />
+					</p:column>
+					<p:column><p:outputLabel value="Relação com a propriedade:" for="emp_ds_relacaopropriedade" /></p:column>
+					<p:column colspan="3"><p:outputLabel style="font-weight: bold" id="emp_ds_relacaopropriedade" value="#{fichaCampoBean.fichaCampo.emp_ds_relacaopropriedade}" /></p:column>
+		        </p:row>
+		 	 </p:panelGrid>
+		 	 <p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Endereço de Correspondência</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+			    	<p:column><p:outputLabel value="Logradouro:" for="emp_ds_nm_logradouro" /></p:column>
+			    	<p:column colspan="3">
+			    		<p:outputLabel style="font-weight: bold" id="emp_ds_tp_logradouro" value="#{fichaCampoBean.fichaCampo.emp_ds_tp_logradouro} " />
+						<p:outputLabel style="font-weight: bold" id="emp_ds_nm_logradouro" value="#{fichaCampoBean.fichaCampo.emp_ds_nm_logradouro}" />
+					</p:column>
+		        </p:row>
+		        <p:row>
+					<p:column><p:outputLabel value="Número do Logradouro:" for="emp_ds_nu_logradouro" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_ds_nu_logradouro" value="#{fichaCampoBean.fichaCampo.emp_nu_logradouro}" /></p:column>
+					<p:column><p:outputLabel value="Complemento:" for="emp_ds_complementoendereco" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_ds_complementoendereco" value="#{fichaCampoBean.fichaCampo.emp_ds_complementoendereco}" /></p:column>
+		        </p:row>
+		        <p:row>
+					<p:column><p:outputLabel value="Bairro/Distrito:" for="emp_ds_bairrodistrito" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_ds_bairrodistrito" value="#{fichaCampoBean.fichaCampo.emp_ds_bairrodistrito}" /></p:column>
+					<p:column><p:outputLabel value="Caixa Postal:" for="emp_nu_caixapostal" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_nu_caixapostal" value="#{fichaCampoBean.fichaCampo.emp_nu_caixapostal}" /></p:column>
+		        </p:row>
+		        <p:row>
+					<p:column><p:outputLabel value="Cep:" for="emp_nu_cependereco" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_nu_cependereco" value="#{fichaCampoBean.fichaCampo.emp_nu_cependereco}" /></p:column>
+					<p:column><p:outputLabel value="Município:" for="apa_muni_correspondencia" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_muni_correspondencia" value="#{fichaCampoBean.fichaCampo.apa_muni_correspondencia}" /></p:column>
+		        </p:row>
+		        <p:row>
+					<p:column><p:outputLabel value="Código IBGE do Município:" for="emp_cd_codigoibgecorrespondencia" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_cd_codigoibgecorrespondencia" value="#{fichaCampoBean.fichaCampo.emp_cd_codigoibgecorrespondencia}" /></p:column>
+					<p:column><p:outputLabel value="Código da UF:" for="emp_ds_uf_enum" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_ds_uf_enum" value="#{fichaCampoBean.fichaCampo.emp_ds_uf}" /></p:column>
+		        </p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Empreendimento</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+					<p:column><p:outputLabel value="Nome do empreendimento:" for="emp_nm_empreendimento" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="emp_nm_empreendimento" value="#{fichaCampoBean.fichaCampo.emp_nm_empreendimento}" /></p:column>
+					<p:column><p:outputLabel value="Área total da propriedade (ha):" for="cam_ar_total" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_ar_total" value="#{fichaCampoBean.fichaCampo.cam_ar_total}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Número da outorga (ANA)" for="out_nu_processo_ana" /></p:column>
+					<p:column colspan="3"><p:outputLabel style="font-weight: bold" id="out_nu_processo_ana" value="#{fichaCampoBean.fichaCampo.out_nu_processo_ana}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Endereço do Empreendimento</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+			    	<p:column><p:outputLabel value="Mesmo endereço de correspondência?:" for="cam_end_propriedade" /></p:column>
+					<p:column colspan="3"><p:outputLabel style="font-weight: bold" id="cam_end_propriedade" value="#{fichaCampoBean.fichaCampo.cam_end_propriedade}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="logradouro:" for="cam_nm_logradouro" /></p:column>
+					<p:column>
+						<p:outputLabel style="font-weight: bold" id="cam_tp_logradouro" value="#{fichaCampoBean.fichaCampo.cam_tp_logradouro} " />
+						<p:outputLabel style="font-weight: bold" id="cam_nm_logradouro" value="#{fichaCampoBean.fichaCampo.cam_nm_logradouro}" />
+					</p:column>
+					<p:column><p:outputLabel value="Número:" for="cam_nu_endereco" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_nu_endereco" value="#{fichaCampoBean.fichaCampo.cam_nu_endereco}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Complemento:" for="cam_complemento_end" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_complemento_end" value="#{fichaCampoBean.fichaCampo.cam_complemento_end}" /></p:column>
+					<p:column><p:outputLabel value="Local:" for="apa_local" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_local" value="#{fichaCampoBean.fichaCampo.apa_local}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Acesso principal:" for="cam_acesso_principal_end" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_acesso_principal_end" value="#{fichaCampoBean.fichaCampo.cam_acesso_principal_end}" /></p:column>
+					<p:column><p:outputLabel value="Caixa postal:" for="cam_caixapostal_end" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_caixapostal_end" value="#{fichaCampoBean.fichaCampo.cam_caixapostal_end}" /></p:column>
+				</p:row>
+		    	<p:row>
+					<p:column><p:outputLabel value="Cep:" for="cam_cep_end" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_cep_end" value="#{fichaCampoBean.fichaCampo.cam_cep_end}" /></p:column>
+					<p:column><p:outputLabel value="Município:" for="apa_muni_empreendimento" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_muni_empreendimento" value="#{fichaCampoBean.fichaCampo.apa_muni_empreendimento}" /></p:column>
+		    	</p:row>
+		    	<p:row>
+					<p:column><p:outputLabel value="Código do Município (IBGE):" for="ing_nu_ibgemunicipio" /></p:column>
+					<p:column colspan="3"><p:outputLabel style="font-weight: bold" id="ing_nu_ibgemunicipio" value="#{fichaCampoBean.fichaCampo.ing_nu_ibgemunicipio}" /></p:column>
+		    	</p:row>
+		    </p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Interferência</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+			    	<p:column><p:outputLabel value="Latitude da interferência (Datum Sirgas 2.000 - Coord. Decimal):" for="int_cr_latitude" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="int_cr_latitude" value="#{fichaCampoBean.fichaCampo.int_cr_latitude}" /></p:column>
+					<p:column><p:outputLabel value="Longitude da interferência (Datum Sirgas 2.000 - Coord. Decimal):" for="int_cr_longitude" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="int_cr_longitude" value="#{fichaCampoBean.fichaCampo.int_cr_longitude}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Há estudo hidrológico na área?" for="apa_est_hidrologico" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_est_hidrologico" value="#{fichaCampoBean.fichaCampo.apa_est_hidrologico}" /></p:column>
+					<p:column><p:outputLabel value="Local da interferência:" for="apa_curso_barragem" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_curso_barragem" value="#{fichaCampoBean.fichaCampo.apa_curso_barragem}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Nome do curso d'água:" for="apa_manancial" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_manancial" value="#{fichaCampoBean.fichaCampo.apa_manancial}" /></p:column>
+					<p:column><p:outputLabel value="Nome da barragem:" for="apa_barragem" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_barragem" value="#{fichaCampoBean.fichaCampo.apa_barragem}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Bacia hidrográfica:" for="apa_bacia" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_bacia" value="#{fichaCampoBean.fichaCampo.apa_bacia}" /></p:column>
+					<p:column><p:outputLabel value="Tipo de finalidade:" for="fin_tfn_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="fin_tfn_cd" value="#{fichaCampoBean.fichaCampo.fin_tfn_cd}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Outro tipo de finalidade:" for="fou_tou_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="fou_tou_cd" value="#{fichaCampoBean.fichaCampo.fou_tou_cd}" /></p:column>
+					<p:column><p:outputLabel value="Outro tipo de finalidade não listado:" for="fou_tou_tp_outro" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="fou_tou_tp_outro" value="#{fichaCampoBean.fichaCampo.fou_tou_tp_outro}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Tipo de interferência:" for="int_tin_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="int_tin_cd" value="#{fichaCampoBean.fichaCampo.int_tin_cd}" /></p:column>
+					<p:column><p:outputLabel value="Situação da interferência:" for="int_tsi_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="int_tsi_cd" value="#{fichaCampoBean.fichaCampo.int_tsi_cd}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid styleClass="central">
+		        <p:row>
+		        	<p:column style="width:33%"><p:outputLabel value="Foto geral do ponto de interferência:" for="fot_cap_lanc_geral" /></p:column>
+			        <p:column style="width:34%"><p:outputLabel value="Foto de detalhe do ponto de interferência:" for="fot_cap_lanc_detalhe" /></p:column>
+			        <p:column style="width:33%"><p:outputLabel value="Foto do Croqui:" for="fot_croqui_localizacao" /></p:column>
+		        </p:row>
+		        <p:row>
+		        	<p:column><p:outputLabel style="font-weight: bold" id="fot_cap_lanc_geral" value="#{fichaCampoBean.fichaCampo.fot_cap_lanc_geral}" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="fot_cap_lanc_detalhe" value="#{fichaCampoBean.fichaCampo.fot_cap_lanc_detalhe}" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="fot_croqui_localizacao" value="#{fichaCampoBean.fichaCampo.fot_croqui_localizacao}" /></p:column>
+		        </p:row>
+		   	</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Lançamento</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+					<p:column><p:outputLabel value="DBO-5 (mg/l):" for="cam_lanc_dbo5" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_lanc_dbo5" value="#{fichaCampoBean.fichaCampo.cam_lanc_dbo5}" /></p:column>
+					<p:column><p:outputLabel value="DBO-20 (mg/l):" for="cam_lanc_dbo20" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_lanc_dbo20" value="#{fichaCampoBean.fichaCampo.cam_lanc_dbo20}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="DBO bruto (mg/l):" for="efl_qt_dbobruto" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="efl_qt_dbobruto" value="#{fichaCampoBean.fichaCampo.efl_qt_dbobruto}" /></p:column>
+					<p:column><p:outputLabel value="DBO tratado (mg/l):" for="efl_qt_dbotratado" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="efl_qt_dbotratado" value="#{fichaCampoBean.fichaCampo.efl_qt_dbotratado}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Fósforo bruto (mg/l):" for="efl_qt_fosforobruto" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="efl_qt_fosforobruto" value="#{fichaCampoBean.fichaCampo.efl_qt_fosforobruto}" /></p:column>
+					<p:column><p:outputLabel value="Fósforo tratado (mg/l):" for="efl_qt_fosforotratado" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="efl_qt_fosforotratado" value="#{fichaCampoBean.fichaCampo.efl_qt_fosforotratado}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Nitrogênio bruto(mg/l):" for="efl_qt_nitrogeniobruto" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="efl_qt_nitrogeniobruto" value="#{fichaCampoBean.fichaCampo.efl_qt_nitrogeniobruto}" /></p:column>
+					<p:column><p:outputLabel value="Nitrogênio tratado (mg/l):" for="efl_qt_nitrogeniotratado" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="efl_qt_nitrogeniotratado" value="#{fichaCampoBean.fichaCampo.efl_qt_nitrogeniotratado}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Captação</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+			    	<p:column><p:outputLabel value="Informações adicionais sobre o consumo:" for="cam_info_adici_consumo" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_info_adici_consumo" value="#{fichaCampoBean.fichaCampo.cam_info_adici_consumo}" /></p:column>
+					<p:column><p:outputLabel value="Captação superficial ou subterrânea?" for="int_tsu_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="int_tsu_cd" value="#{fichaCampoBean.fichaCampo.int_tsu_cd}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Consumo Humano</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+			    	<p:column><p:outputLabel value="Estimativa populacional da área urbanizada:" for="cam_pop_urb_estimada" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_pop_urb_estimada" value="#{fichaCampoBean.fichaCampo.cam_pop_urb_estimada}" /></p:column>
+					<p:column><p:outputLabel value="Estimativa populacional da área rural" for="cam_pop_rural_estimada" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_pop_rural_estimada" value="#{fichaCampoBean.fichaCampo.cam_pop_rural_estimada}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Consumo Animal</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+					<p:column><p:outputLabel value="Quantidade de equídeos:" for="cam_qt_equideo" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_qt_equideo" value="#{fichaCampoBean.fichaCampo.cam_qt_equideo}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade de bovinos:" for="cam_qt_bovino" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_qt_bovino" value="#{fichaCampoBean.fichaCampo.cam_qt_bovino}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Quantidade de ovinos:" for="cam_qt_ovino" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_qt_ovino" value="#{fichaCampoBean.fichaCampo.cam_qt_ovino}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade de caprinos:" for="cam_qt_caprino" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_qt_caprino" value="#{fichaCampoBean.fichaCampo.cam_qt_caprino}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Quantidade de suínos:" for="cam_qt_suino" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_qt_suino" value="#{fichaCampoBean.fichaCampo.cam_qt_suino}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade de aves:" for="cam_qt_ave" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_qt_ave" value="#{fichaCampoBean.fichaCampo.cam_qt_ave}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Outro tipo de criação:" for="cam_pec_outro" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_pec_outro" value="#{fichaCampoBean.fichaCampo.cam_pec_outro}" /></p:column>
+					<p:column><p:outputLabel value="Número de animais (outro tipo de criação):" for="cam_qt_outro" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_qt_outro" value="#{fichaCampoBean.fichaCampo.cam_qt_outro}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Indústria</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+					<p:column><p:outputLabel value="Tipo de indústria:" for="cam_indus_tp" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_indus_tp" value="#{fichaCampoBean.fichaCampo.cam_indus_tp}" /></p:column>
+					<p:column><p:outputLabel value="Número de empregados da indústria:" for="cam_indus_nu_empregados" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_indus_nu_empregados" value="#{fichaCampoBean.fichaCampo.cam_indus_nu_empregados}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Matéria-prima principal da indústria:" for="cam_indus_materia_prima" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_indus_materia_prima" value="#{fichaCampoBean.fichaCampo.cam_indus_materia_prima}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade de produtos produzidos anualmente:" for="cam_qt_pdt_an" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_qt_pdt_an" value="#{fichaCampoBean.fichaCampo.cam_qt_pdt_an}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Unidade de medida referente a produção anual:" for="cam_qt_pdt_an_uni" /></p:column>
+					<p:column colspan="3"><p:outputLabel style="font-weight: bold" id="cam_qt_pdt_an_uni" value="#{fichaCampoBean.fichaCampo.cam_qt_pdt_an_uni}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Fonte das informações - Indústria</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+					<p:column><p:outputLabel value="Nome do responsável pelas informações:" for="forn_info_nm" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="forn_info_nm" value="#{fichaCampoBean.fichaCampo.forn_info_nm}" /></p:column>
+					<p:column><p:outputLabel value="Cargo:" for="forn_info_cargo" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="forn_info_cargo" value="#{fichaCampoBean.fichaCampo.forn_info_cargo}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Departamento:" for="forn_info_departamento" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="forn_info_departamento" value="#{fichaCampoBean.fichaCampo.forn_info_departamento}" /></p:column>
+					<p:column><p:outputLabel value="Contato:" for="forn_info_contato_inst" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="forn_info_contato_inst" value="#{fichaCampoBean.fichaCampo.forn_info_contato_inst}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<!-- CRIAR UM SUB GRUPO POR CULTURA -->
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Irrigação</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+					<p:column><p:outputLabel value="Área total irrigada (ha):" for="sir_ar_irrigada" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_ar_irrigada" value="#{fichaCampoBean.fichaCampo.sir_ar_irrigada}" /></p:column>
+					<p:column><p:outputLabel value="Sistema de irrigação utilizado:" for="sir_tsi_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_tsi_cd" value="#{fichaCampoBean.fichaCampo.sir_tsi_cd}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Tipo de cultura irrigada:" for="sir_tct_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_tct_cd" value="#{fichaCampoBean.fichaCampo.sir_tct_cd}" /></p:column>
+					<p:column><p:outputLabel value="Possui outra cultura?" for="sir_ar_irrigada_outra" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_ar_irrigada_outra" value="#{fichaCampoBean.fichaCampo.sir_ar_irrigada_outra}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Área total irrigada (2) (ha):" for="sir_ar_irrigada_2" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_ar_irrigada_2" value="#{fichaCampoBean.fichaCampo.sir_ar_irrigada_2}" /></p:column>
+					<p:column><p:outputLabel value="Sistema de irrigação utilizado (2):" for="sir_tsi_cd_2" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_tsi_cd_2" value="#{fichaCampoBean.fichaCampo.sir_ar_irrigada_outra}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Tipo de cultura (2):" for="sir_tct_cd_2" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_tct_cd_2" value="#{fichaCampoBean.fichaCampo.sir_tct_cd_2}" /></p:column>
+					<p:column><p:outputLabel value="Possui outra cultura irrigada? (2)" for="sir_ar_irrigada_outra_2" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_ar_irrigada_outra_2" value="#{fichaCampoBean.fichaCampo.sir_ar_irrigada_outra_2}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Área total irrigada (3) (ha):" for="sir_ar_irrigada_3" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_ar_irrigada_3" value="#{fichaCampoBean.fichaCampo.sir_ar_irrigada_3}" /></p:column>
+					<p:column><p:outputLabel value="Sistema de irrigação utilizado (3):" for="sir_tsi_cd_3" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_tsi_cd_3" value="#{fichaCampoBean.fichaCampo.sir_tsi_cd_3}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Tipo de cultura irrigada (3):" for="sir_tct_cd_3" /></p:column>
+					<p:column ><p:outputLabel style="font-weight: bold" id="sir_tct_cd_3" value="#{fichaCampoBean.fichaCampo.sir_tct_cd_3}" /></p:column>
+					<p:column><p:outputLabel value="Possui outra cultura irrigada? (3)" for="sir_ar_irrigada_outra_3" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="sir_ar_irrigada_outra_3" value="#{fichaCampoBean.fichaCampo.sir_ar_irrigada_outra_3}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Vazão</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+				    <p:column><p:outputLabel value="Vazão máxima:" for="int_vz_maxima" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="int_vz_maxima" value="#{fichaCampoBean.fichaCampo.int_vz_maxima}" /></p:column>
+					<p:column><p:outputLabel value="Vazão aferida em campo:" for="cam_vz_afe" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_vz_afe" value="#{fichaCampoBean.fichaCampo.cam_vz_afe}" /></p:column>
+			    </p:row>
+			</p:panelGrid>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Horas diárias</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+			    	<p:column><p:outputLabel value="Janeiro:" for="ope_qt_horasjan" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasjan" value="#{fichaCampoBean.fichaCampo.ope_qt_horasjan}" /></p:column>
+					<p:column><p:outputLabel value="Fevereiro:" for="ope_qt_horasfev" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasfev" value="#{fichaCampoBean.fichaCampo.ope_qt_horasfev}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Março:" for="ope_qt_horasmar" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasmar" value="#{fichaCampoBean.fichaCampo.ope_qt_horasmar}" /></p:column>
+					<p:column><p:outputLabel value="Abril:" for="ope_qt_horasabr" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasabr" value="#{fichaCampoBean.fichaCampo.ope_qt_horasabr}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Maio:" for="ope_qt_horasmai" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasmai" value="#{fichaCampoBean.fichaCampo.ope_qt_horasmai}" /></p:column>
+					<p:column><p:outputLabel value="Junho:" for="ope_qt_horasjun" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasjun" value="#{fichaCampoBean.fichaCampo.ope_qt_horasjun}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Julho:" for="ope_qt_horasjul" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasjul" value="#{fichaCampoBean.fichaCampo.ope_qt_horasjul}" /></p:column>
+					<p:column><p:outputLabel value="Agosto:" for="ope_qt_horasago" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasago" value="#{fichaCampoBean.fichaCampo.ope_qt_horasago}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Setembro:" for="ope_qt_horasset" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasset" value="#{fichaCampoBean.fichaCampo.ope_qt_horasset}" /></p:column>
+					<p:column><p:outputLabel value="Outubro:" for="ope_qt_horasout" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasout" value="#{fichaCampoBean.fichaCampo.ope_qt_horasout}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Novembro:" for="ope_qt_horasnov" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasnov" value="#{fichaCampoBean.fichaCampo.ope_qt_horasnov}" /></p:column>
+					<p:column><p:outputLabel value="Dezembro:" for="ope_qt_horasdez" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_horasdez" value="#{fichaCampoBean.fichaCampo.ope_qt_horasdez}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Dias no mês</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+			    	<p:column><p:outputLabel value="Janeiro:" for="ope_qt_diajan" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diajan" value="#{fichaCampoBean.fichaCampo.ope_qt_diajan}" /></p:column>
+					<p:column><p:outputLabel value="Fevereiro:" for="ope_qt_diafev" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diafev" value="#{fichaCampoBean.fichaCampo.ope_qt_diafev}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Março:" for="ope_qt_diamar" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diamar" value="#{fichaCampoBean.fichaCampo.ope_qt_diamar}" /></p:column>
+					<p:column><p:outputLabel value="Abril:" for="ope_qt_diaabr" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diaabr" value="#{fichaCampoBean.fichaCampo.ope_qt_diaabr}" /></p:column>	
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Maio:" for="ope_qt_diamai" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diamai" value="#{fichaCampoBean.fichaCampo.ope_qt_diamai}" /></p:column>
+					<p:column><p:outputLabel value="Junho:" for="ope_qt_diajun" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diajun" value="#{fichaCampoBean.fichaCampo.ope_qt_diajun}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Julho:" for="ope_qt_diajul" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diajul" value="#{fichaCampoBean.fichaCampo.ope_qt_diajul}" /></p:column>
+					<p:column><p:outputLabel value="Agosto:" for="ope_qt_diaago" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diaago" value="#{fichaCampoBean.fichaCampo.ope_qt_diaago}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Setembro:" for="ope_qt_diaset" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diaset" value="#{fichaCampoBean.fichaCampo.ope_qt_diaset}" /></p:column>
+					<p:column><p:outputLabel value="Outubro:" for="ope_qt_diaout" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diaout" value="#{fichaCampoBean.fichaCampo.ope_qt_diaout}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Novembro:" for="ope_qt_dianov" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_dianov" value="#{fichaCampoBean.fichaCampo.ope_qt_dianov}" /></p:column>
+					<p:column><p:outputLabel value="Dezembro:" for="ope_qt_diadez" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diadez" value="#{fichaCampoBean.fichaCampo.ope_qt_diadez}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Vazão mensal</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+					<p:column><p:outputLabel value="Janeiro:" for="ope_vz_mesjan" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesjan" value="#{fichaCampoBean.fichaCampo.ope_vz_mesjan}" /></p:column>
+					<p:column><p:outputLabel value="Fevereiro:" for="ope_vz_mesfev" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesfev" value="#{fichaCampoBean.fichaCampo.ope_vz_mesfev}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Março:" for="ope_vz_mesmar" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesmar" value="#{fichaCampoBean.fichaCampo.ope_vz_mesmar}" /></p:column>
+					<p:column><p:outputLabel value="Abril:" for="ope_vz_mesabr" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesabr" value="#{fichaCampoBean.fichaCampo.ope_vz_mesabr}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Maio:" for="ope_vz_mesmai" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesmai" value="#{fichaCampoBean.fichaCampo.ope_vz_mesmai}" /></p:column>
+					<p:column><p:outputLabel value="Junho:" for="ope_vz_mesjun" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesjun" value="#{fichaCampoBean.fichaCampo.ope_vz_mesjun}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Julho:" for="ope_vz_mesjul" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesjul" value="#{fichaCampoBean.fichaCampo.ope_vz_mesjul}" /></p:column>
+					<p:column><p:outputLabel value="Agosto:" for="ope_vz_mesago" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesago" value="#{fichaCampoBean.fichaCampo.ope_vz_mesago}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Setembro:" for="ope_vz_messet" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_messet" value="#{fichaCampoBean.fichaCampo.ope_vz_messet}" /></p:column>
+					<p:column><p:outputLabel value="Outubro:" for="ope_vz_mesout" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesout" value="#{fichaCampoBean.fichaCampo.ope_vz_mesout}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Novembro:" for="ope_vz_mesnov" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesnov" value="#{fichaCampoBean.fichaCampo.ope_vz_mesnov}" /></p:column>
+					<p:column><p:outputLabel value="Dezembro:" for="ope_vz_mesdez" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ope_vz_mesdez" value="#{fichaCampoBean.fichaCampo.ope_vz_mesdez}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">CNARH</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+					<p:column><p:outputLabel value="Altura total do reservatório (m):" for="ius_nu_alturares" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ius_nu_alturares" value="#{fichaCampoBean.fichaCampo.ius_nu_alturares}" /></p:column>
+					<p:column><p:outputLabel value="Área total do reservatório (ha):" for="ius_ar_resmax" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ius_ar_resmax" value="#{fichaCampoBean.fichaCampo.ius_ar_resmax}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Registro de captação subterrânea (SIAGAS):" for="int_nu_siagas" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="int_nu_siagas" value="#{fichaCampoBean.fichaCampo.int_nu_siagas}" /></p:column>
+					<p:column><p:outputLabel value="Volume máximo do reservatório (hm³):" for="ius_vo_resmax" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ius_vo_resmax" value="#{fichaCampoBean.fichaCampo.ius_vo_resmax}" /></p:column>
+				</p:row>
+			</p:panelGrid>			
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">APAC</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+			    	<p:column><p:outputLabel value="Número do processo:" for="out_nu_processo" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="out_nu_processo" value="#{fichaCampoBean.fichaCampo.out_nu_processo}" /></p:column>
+					<p:column><p:outputLabel value="Número do protocolo" for="apa_prot_cprh" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_prot_cprh" value="#{fichaCampoBean.fichaCampo.apa_prot_cprh}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Data de entrada do processo na APAC:" for="apa_entr_apac" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_entr_apac" value="#{fichaCampoBean.fichaCampo.apa_entr_apac}" /></p:column>
+					<p:column><p:outputLabel value="Data de entrada do processo na CPRH:" for="apa_entr_cprh" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_entr_cprh" value="#{fichaCampoBean.fichaCampo.apa_entr_cprh}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Analista responsável:" for="apa_analista" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_analista" value="#{fichaCampoBean.fichaCampo.apa_analista}" /></p:column>
+					<p:column><p:outputLabel value="Tipo do Ato Administrativo:" for="out_tpo_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="out_tpo_cd" value="#{fichaCampoBean.fichaCampo.out_tpo_cd}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Ato Administrativo ou Instrumento de Regularização:" for="out_ds_ato" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="out_ds_ato" value="#{fichaCampoBean.fichaCampo.out_ds_ato}" /></p:column>
+					<p:column><p:outputLabel value="Data de início do prazo da outorga:" for="out_dt_inicial" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="out_dt_inicial" value="#{fichaCampoBean.fichaCampo.out_dt_inicial}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Data de término do prazo da outorga:" for="out_dt_final" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="out_dt_final" value="#{fichaCampoBean.fichaCampo.out_dt_final}" /></p:column>
+					<p:column><p:outputLabel value="Situação do Ato Administrativo:" for="out_tsp_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="out_tsp_cd" value="#{fichaCampoBean.fichaCampo.out_tsp_cd}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Vazão outorgada (l/s):" for="apa_vz_outorga_ls" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_outorga_ls" value="#{fichaCampoBean.fichaCampo.apa_vz_outorga_ls}" /></p:column>
+					<p:column><p:outputLabel value="Vazão outorgada média:" for="apa_vz_outorga_media" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_outorga_media" value="#{fichaCampoBean.fichaCampo.apa_vz_outorga_media}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Vazão outorgada (m³/dia):" for="apa_vz_outorga_m3dia" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_outorga_m3dia" value="#{fichaCampoBean.fichaCampo.apa_vz_outorga_m3dia}" /></p:column>
+					<p:column><p:outputLabel value="Horas requeridas para captação por dia:" for="apa_vz_requerida_horas_dia" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_requerida_horas_dia" value="#{fichaCampoBean.fichaCampo.apa_vz_requerida_horas_dia}" /></p:column>	
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Vazão requerida (l/s):" for="apa_vz_requerida_ls" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_requerida_ls" value="#{fichaCampoBean.fichaCampo.apa_vz_requerida_ls}" /></p:column>									
+					<p:column><p:outputLabel value="Vazão requerida média diária (m³/dia):" for="apa_vz_requerida_media" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_requerida_media" value="#{fichaCampoBean.fichaCampo.apa_vz_requerida_media}" /></p:column>					
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Garantia:" for="apa_garantia" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_garantia" value="#{fichaCampoBean.fichaCampo.apa_garantia}" /></p:column>
+					<p:column><p:outputLabel value="Data da vistoria APAC:" for="apa_dt_vistoria" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_dt_vistoria" value="#{fichaCampoBean.fichaCampo.apa_dt_vistoria}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Vencimento do contrato de concessão:" for="apa_dt_contrato_concessao" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_dt_contrato_concessao" value="#{fichaCampoBean.fichaCampo.apa_dt_contrato_concessao}" /></p:column>
+					<p:column><p:outputLabel value="Número da notificação de irregularidades:" for="apa_nu_notificacao" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_nu_notificacao" value="#{fichaCampoBean.fichaCampo.apa_nu_notificacao}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Prazo da notificação:" for="apa_prazo_notificacao" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_prazo_notificacao" value="#{fichaCampoBean.fichaCampo.apa_prazo_notificacao}" /></p:column>
+					<p:column><p:outputLabel value="Tipo de obra:" for="apa_obra_tp" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_obra_tp" value="#{fichaCampoBean.fichaCampo.apa_obra_tp}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Nome da obra:" for="apa_nm_obra" /></p:column>
+					<p:column colspan="3"><p:outputLabel style="font-weight: bold" id="apa_nm_obra" value="#{fichaCampoBean.fichaCampo.apa_nm_obra}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Validade da outorga (APAC)</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+			    	<p:column><p:outputLabel value="Janeiro:" for="apa_outorga_jan" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_jan" value="#{fichaCampoBean.fichaCampo.apa_outorga_jan}" /></p:column>
+					<p:column><p:outputLabel value="Fevereiro:" for="apa_outorga_fev" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_fev" value="#{fichaCampoBean.fichaCampo.apa_outorga_fev}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Março:" for="apa_outorga_mar" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_mar" value="#{fichaCampoBean.fichaCampo.apa_outorga_mar}" /></p:column>
+					<p:column><p:outputLabel value="Abril:" for="apa_outorga_abr" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_abr" value="#{fichaCampoBean.fichaCampo.apa_outorga_abr}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Maio:" for="apa_outorga_mai" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_mai" value="#{fichaCampoBean.fichaCampo.apa_outorga_mai}" /></p:column>
+					<p:column><p:outputLabel value="Julho:" for="apa_outorga_jun" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_jun" value="#{fichaCampoBean.fichaCampo.apa_outorga_jun}" /></p:column>																
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Junho:" for="apa_outorga_jul" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_jul" value="#{fichaCampoBean.fichaCampo.apa_outorga_jul}" /></p:column>
+					<p:column><p:outputLabel value="Agosto:" for="apa_outorga_ago" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_ago" value="#{fichaCampoBean.fichaCampo.apa_outorga_ago}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Outubro:" for="apa_outorga_set" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_set" value="#{fichaCampoBean.fichaCampo.apa_outorga_set}" /></p:column>						
+					<p:column><p:outputLabel value="Setembro:" for="apa_outorga_out" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_out" value="#{fichaCampoBean.fichaCampo.apa_outorga_out}" /></p:column>				
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Novembro:" for="apa_outorga_nov" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_nov" value="#{fichaCampoBean.fichaCampo.apa_outorga_nov}" /></p:column>
+					<p:column><p:outputLabel value="Dezembro:" for="apa_outorga_dez" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_dez" value="#{fichaCampoBean.fichaCampo.apa_outorga_dez}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Outras informações</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>    
+					<p:column><p:outputLabel value="Destino das águas servidas:" for="cam_agua_servida_destino" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_agua_servida_destino" value="#{fichaCampoBean.fichaCampo.cam_agua_servida_destino}" /></p:column>
+					<p:column><p:outputLabel value="Foi realizado o CAR?" for="cam_realizacao_car" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="cam_realizacao_car" value="#{fichaCampoBean.fichaCampo.cam_realizacao_car}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Há captações complementares?" for="cam_captacoes_comple" /></p:column>
+					<p:column colspan="3"><p:outputLabel style="font-weight: bold" id="cam_captacoes_comple" value="#{fichaCampoBean.fichaCampo.cam_captacoes_comple}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Água Subterrânea</p:column>
+			        </p:row>
+			        <p:row>
+			            <p:column colspan="4">Caracterização</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row> 
+					<p:column><p:outputLabel value="Bacia Hidrogeológica:" for="apa_bacia_hidrogeo" rendered="false" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="apa_bacia_hidrogeo" value="#{fichaCampoBean.fichaCampo.fichaCampoBean.fichaCampo.apa_bacia_hidrogeo}" rendered="false" /></p:column>
+					<p:column><p:outputLabel value="Natureza do ponto:" for="asb_tnp_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_tnp_cd" value="#{fichaCampoBean.fichaCampo.asb_tnp_cd}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Data de instalação do poço:" for="asb_dt_instalacao" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_dt_instalacao" value="#{fichaCampoBean.fichaCampo.asb_dt_instalacao}" /></p:column>
+					<p:column><p:outputLabel value="Código identificador do aquífero:" for="asb_aqp_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_aqp_cd" value="#{fichaCampoBean.fichaCampo.asb_aqp_cd}" /></p:column>	
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Condição do aquífero" for="asb_tca_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_tca_cd" value="#{fichaCampoBean.fichaCampo.asb_tca_cd}" /></p:column>
+					<p:column><p:outputLabel value="Tipo de penetração do aquífero:" for="asb_tpn_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_tpn_cd" value="#{fichaCampoBean.fichaCampo.asb_tpn_cd}" /></p:column>														
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Altitude do terreno (m):" for="asb_nu_cotaterreno" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_cotaterreno" value="#{fichaCampoBean.fichaCampo.asb_nu_cotaterreno}" /></p:column>
+					<p:column><p:outputLabel value="Altura da boca da tubulação (m):" for="asb_nu_alturabocatubo" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_alturabocatubo" value="#{fichaCampoBean.fichaCampo.asb_nu_alturabocatubo}" /></p:column>								
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Diâmetro de perfuração do poço (pol):" for="asb_nu_diametroperfuracao" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_diametroperfuracao" value="#{fichaCampoBean.fichaCampo.asb_nu_diametroperfuracao}" /></p:column>
+					<p:column><p:outputLabel value="Diâmetro do filtro (pol):" for="asb_nu_diametrofiltro" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_diametrofiltro" value="#{fichaCampoBean.fichaCampo.asb_nu_diametrofiltro}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Profundidade topo do aquifero (a partir da superfície) (m):" for="asb_nu_topo" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_topo" value="#{fichaCampoBean.fichaCampo.asb_nu_topo}" /></p:column>
+					<p:column><p:outputLabel value="Profundidade base do aquifero (a partir da superfície) (m):" for="asb_nu_base" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_base" value="#{fichaCampoBean.fichaCampo.asb_nu_base}" /></p:column>	
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Teste de bombeamento</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+			    	<p:column><p:outputLabel value="Data:" for="tst_dt" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="tst_dt" value="#{fichaCampoBean.fichaCampo.tst_dt}" /></p:column>
+					<p:column><p:outputLabel value="Tempo de duração (h):" for="tst_ds_tempoduracao" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="tst_ds_tempoduracao" value="#{fichaCampoBean.fichaCampo.tst_ds_tempoduracao}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Nível dinâmico (m):" for="tst_nu_nd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="tst_nu_nd" value="#{fichaCampoBean.fichaCampo.tst_nu_nd}" /></p:column>
+					<p:column><p:outputLabel value="Nível estático (m):" for="tst_nu_ne" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="tst_nu_ne" value="#{fichaCampoBean.fichaCampo.tst_nu_ne}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Vazão de estabilização (m³/h):" for="tst_vz_estabilizacao" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="tst_vz_estabilizacao" value="#{fichaCampoBean.fichaCampo.tst_vz_estabilizacao}" /></p:column>
+					<p:column><p:outputLabel value="Tipo do teste de bombeamento:" for="tst_ttb_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="tst_ttb_cd" value="#{fichaCampoBean.fichaCampo.tst_ttb_cd}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Método de interpretação:" for="tst_tmi_cd" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="tst_tmi_cd" value="#{fichaCampoBean.fichaCampo.tst_tmi_cd}" /></p:column>	
+					<p:column><p:outputLabel value="Transmissividade (m³/s):" for="tst_nu_transmissividade" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="tst_nu_transmissividade" value="#{fichaCampoBean.fichaCampo.tst_nu_transmissividade}"/></p:column>																		
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Coeficiente de armazenamento:" for="tst_nu_coeficientearmazenamento" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="tst_nu_coeficientearmazenamento" value="#{fichaCampoBean.fichaCampo.tst_nu_coeficientearmazenamento}" /></p:column>
+					<p:column><p:outputLabel value="Permeabilidade (m/s):" for="tst_nu_permeabilidade" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="tst_nu_permeabilidade" value="#{fichaCampoBean.fichaCampo.tst_nu_permeabilidade}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Condutividade hidraulica (m/s):" for="tst_nu_condutividadehidraulica" /></p:column>
+					<p:column colspan="3"><p:outputLabel style="font-weight: bold" id="tst_nu_condutividadehidraulica" value="#{fichaCampoBean.fichaCampo.tst_nu_condutividadehidraulica}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<p:panelGrid styleClass="central">
+		        <f:facet name="header">
+			        <p:row>
+			            <p:column colspan="4">Análise</p:column>
+			        </p:row>
+			    </f:facet>
+			    <p:row>
+					<p:column><p:outputLabel value="Data de análise:" for="ama_dt_analise" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_dt_analise" value="#{fichaCampoBean.fichaCampo.ama_dt_analise}" /></p:column>
+					<p:column><p:outputLabel value="Data de coleta:" for="ama_dt_coleta" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_dt_coleta" value="#{fichaCampoBean.fichaCampo.ama_dt_coleta}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Condutividade elétrica (µS/cm):" for="ama_nu_condutividadeeletrica" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_nu_condutividadeeletrica" value="#{fichaCampoBean.fichaCampo.ama_nu_condutividadeeletrica}" /></p:column>
+					<p:column><p:outputLabel value="Temperatura (°C):" for="ama_qt_temperatura" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_temperatura" value="#{fichaCampoBean.fichaCampo.ama_qt_temperatura}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="PH:" for="ama_qt_ph" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_ph" value="#{fichaCampoBean.fichaCampo.ama_qt_ph}" /></p:column>
+					<p:column><p:outputLabel value="Sólidos totais dissolvidos (mg/l):" for="ama_qt_std" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_std" value="#{fichaCampoBean.fichaCampo.ama_qt_std}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Quantidade de Cálcio (Ca) (mg/l):" for="ama_qt_calcio" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_calcio" value="#{fichaCampoBean.fichaCampo.ama_qt_calcio}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade de Cloreto (Cl) (mg/l):" for="ama_qt_cloreto" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_cloreto" value="#{fichaCampoBean.fichaCampo.ama_qt_cloreto}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Quantidade de Carbonato (CO3) (mg/l):" for="ama_qt_carbonato" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_carbonato" value="#{fichaCampoBean.fichaCampo.ama_qt_carbonato}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade Dureza total (mg/l):" for="ama_qt_durezatotal" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_durezatotal" value="#{fichaCampoBean.fichaCampo.ama_qt_durezatotal}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Quantidade de Fluoretos (F) (mg/l):" for="ama_qt_fluoretos" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_fluoretos" value="#{fichaCampoBean.fichaCampo.ama_qt_fluoretos}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade de Ferro total (Fe) (mg/l):" for="ama_qt_ferrototal" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_ferrototal" value="#{fichaCampoBean.fichaCampo.ama_qt_ferrototal}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Quantidade de Bicarbonato (HCO3) (mg/l):" for="ama_qt_bicarbonato" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_bicarbonato" value="#{fichaCampoBean.fichaCampo.ama_qt_bicarbonato}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade de Potássio (K) (mg/l):" for="ama_qt_potassio" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_potassio" value="#{fichaCampoBean.fichaCampo.ama_qt_potassio}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Quantidade de Magnésio (Mg) (mg/l):" for="ama_qt_magnesio" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_magnesio" value="#{fichaCampoBean.fichaCampo.ama_qt_magnesio}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade de Sódio (Na) (mg/l):" for="ama_qt_sodio" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_sodio" value="#{fichaCampoBean.fichaCampo.ama_qt_sodio}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Quantidade de Nitritos (NO2) (mg/l):" for="ama_qt_nitritos" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_nitritos" value="#{fichaCampoBean.fichaCampo.ama_qt_nitritos}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade de Nitratos (NO3) (mg/l):" for="ama_qt_nitratos" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_nitratos" value="#{fichaCampoBean.fichaCampo.ama_qt_nitratos}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Quantidade de Sulfato (SO4) (mg/l):" for="ama_qt_sulfato" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_sulfato" value="#{fichaCampoBean.fichaCampo.ama_qt_sulfato}" /></p:column>
+					<p:column><p:outputLabel value="Quantidade de Coliformes fecais (nº/100ml):" for="ama_qt_coliformesfecais" /></p:column>
+					<p:column><p:outputLabel style="font-weight: bold" id="ama_qt_coliformesfecais" value="#{fichaCampoBean.fichaCampo.ama_qt_coliformesfecais}" /></p:column>
+				</p:row>
+				<p:row>
+					<p:column><p:outputLabel value="Quantidade de Coliformes totais (nº/100ml):" for="ama_qt_coliformestotais" /></p:column>
+					<p:column colspan="3"><p:outputLabel style="font-weight: bold" id="ama_qt_coliformestotais" value="#{fichaCampoBean.fichaCampo.ama_qt_coliformestotais}" /></p:column>
+				</p:row>
+			</p:panelGrid>
+			<br/><br/>
+			<div style="margin: 0 auto; border: 0px solid; width: 20%;">
+				<p:commandButton value="Voltar" action="#{fichaCampoBean.voltar}" ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Imprimir" action="#" ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+			</div>
+			<br/><br/>
+		</h:form>
+	</div>
+</ui:composition>

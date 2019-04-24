@@ -13,7 +13,7 @@
 	</style>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
-		<h:form id="addUsuario" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		<h:form id="addUsuario" prependId="false" style="width:99%;" >
 		<br/><br/><br/>
 		<p:fieldset legend="Usuário">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
@@ -28,13 +28,18 @@
 					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" />
 
 					<p:selectOneRadio value="#{usuarioBean.tipoDocumento}" id="documento">
-								<f:selectItem itemLabel="CPF" itemValue="cpf"  />
-								<f:selectItem itemLabel="CNPJ:" itemValue="cnpj" />
-					<p:ajax listener="#{usuarioBean.atualizaTipoDocumento}" event="change" update="@form" immediate="true"/>
+						<f:selectItem itemLabel="CPF" itemValue="cpf" />
+						<f:selectItem itemLabel="CNPJ:" itemValue="cnpj" />
 					</p:selectOneRadio>
-					<components:cnpj id="cnpj" rendered="#{usuarioBean.tipoDocumento eq 'cnpj'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
-					<components:cpf id="cpf" rendered="#{usuarioBean.tipoDocumento eq 'cpf'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
-
+					<h:panelGroup rendered="true">
+						<p:inputText id="cpf" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
+					</h:panelGroup>
+					<h:panelGroup rendered="false">
+						<p:inputText id="cnpj" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
+					</h:panelGroup>
+					
+					
+					
 					<p:outputLabel value="DDD:" for="emp_nu_ddd" id="ddd" />
 					<p:inputText id="emp_nu_ddd" maxlength="2" value="#{usuarioBean.usuario.emp_nu_ddd}" />
 
@@ -44,9 +49,12 @@
 					<p:outputLabel value="Tipo Logradouro:" for="emp_ds_tp_logradouro" id="tipoLogradouro"/>
 					<p:selectOneMenu id="emp_ds_tp_logradouro" value="#{usuarioBean.usuario.emp_ds_tp_logradouro}" style="width:230px" required="true" requiredMessage="Tipo Logradouro é obrigatório">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemLabel="ASSENTAMENTO" itemValue="ASSENTAMENTO" />
 						<f:selectItem itemLabel="AVENIDA" itemValue="AVENIDA" />
 						<f:selectItem itemLabel="ALAMEDA" itemValue="ALAMEDA" />
 						<f:selectItem itemLabel="CHÁCARA" itemValue="CHÁCARA" />
+						<f:selectItem itemLabel="CONDOMÍNIO" itemValue="CONDOMÍNIO" />
+						<f:selectItem itemLabel="ENGENHO" itemValue="ENGENHO" />
 						<f:selectItem itemLabel="ESTRADA" itemValue="ESTRADA" />
 						<f:selectItem itemLabel="FAZENDA" itemValue="FAZENDA" />
 						<f:selectItem itemLabel="GRANJA" itemValue="GRANJA" />
@@ -55,6 +63,7 @@
 						<f:selectItem itemLabel="RUA" itemValue="RUA" />
 						<f:selectItem itemLabel="SÍTIO" itemValue="SÍTIO" />
 						<f:selectItem itemLabel="TRAVESSA" itemValue="TRAVESSA" />
+						<f:selectItem itemLabel="VILA" itemValue="VILA" />
 						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
 					</p:selectOneMenu>
 
@@ -176,6 +185,8 @@
 			$("#emp_nu_logradouro").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
 			$("#emp_nu_cependereco").inputmask({mask: "99999-999", greedy: true, removeMaskOnSubmit: true})
 			$("#emp_nu_caixapostal").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
+			$("#cpf").inputmask({mask: "999.999.999-99", greedy: true, removeMaskOnSubmit: true})
+			$("#cnpj").inputmask({mask: "99.999.999/9999-99", greedy: true, removeMaskOnSubmit: true})
 			})
 	</script>
 

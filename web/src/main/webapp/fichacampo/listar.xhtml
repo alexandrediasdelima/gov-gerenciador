@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:components="http://java.sun.com/jsf/composite/components">
+	
+	<style>
+		.ui-datatable table {
+ 		   table-layout: auto;
+		}
+	</style>
+	
+	<div style="padding-top: 50px;">
+		<h:form id="listarFichaCampo" prependId="false">
+			<br/>
+			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{usuarioBean.adicionarNovo}" ajax="false" />
+			<br/><br/>
+				<p:dataTable id="tabelaFichaCampo" value="#{fichaCampoBean.fichasCampo}" widgetVar="tabelaFichaCampo" 
+				emptyMessage="Não foram encontrados registros." filteredValue="#{fichaCampoBean.filteredFichaCampo}" 
+				paginator="true" rows="10" var="fichaCampo" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
+				resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
+					<f:facet name="header">Ficha de Campo</f:facet>
+					<p:column headerText="Usuário">
+						<h:outputText value="#{fichaCampo.emp_nm_usuario}" id="emp_nm_usuario" />
+					</p:column>
+					<p:column headerText="CPF/CNPJ">
+						<h:outputText value="#{fichaCampo.emp_nu_cpfcnpj}" id="emp_nu_cpfcnpj"/>
+					</p:column>
+					<p:column headerText="Ações">
+						<p:commandButton action="#{fichaCampoBean.telaFicha(fichaCampo)}" value="Ficha" ajax="false" icon="ui-icon-document"/>
+					</p:column>
+				</p:dataTable>
+				<p:blockUI block="tabelaFichaCampo" trigger="tabelaFichaCampo">
+					<p:graphicImage name="images/loadingbar.gif"/>
+				</p:blockUI>
+		</h:form>
+	</div>
+</ui:composition>
