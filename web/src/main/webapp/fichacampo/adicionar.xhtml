@@ -10,12 +10,14 @@
 
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
-		.central { width: 85%; margin: 0 auto; }
+		.central { width: 100% !important; margin: 0 auto; }
 	</style>
 
-	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
+	
 		<h:form id="fichaCampo" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
 		<br/><br/><br/>
+			<p:graphicImage library="images" name="minilogo_grey.jpg" width="134" height="42"/>
+			<br/>
 			<p:panelGrid styleClass="central">
 			    <f:facet name="header">
 			        <p:row>
@@ -206,10 +208,10 @@
 			        </p:row>
 			    </f:facet>
 			    <p:row>
-					<p:column><p:outputLabel value="DBO-5 (mg/l):" for="cam_lanc_dbo5" /></p:column>
-					<p:column><p:outputLabel style="font-weight: bold" id="cam_lanc_dbo5" value="#{fichaCampoBean.fichaCampo.cam_lanc_dbo5}" /></p:column>
-					<p:column><p:outputLabel value="DBO-20 (mg/l):" for="cam_lanc_dbo20" /></p:column>
-					<p:column><p:outputLabel style="font-weight: bold" id="cam_lanc_dbo20" value="#{fichaCampoBean.fichaCampo.cam_lanc_dbo20}" /></p:column>
+					<p:column style="width:20%"><p:outputLabel value="DBO-5 (mg/l):" for="cam_lanc_dbo5" /></p:column>
+					<p:column style="width:30%"><p:outputLabel style="font-weight: bold" id="cam_lanc_dbo5" value="#{fichaCampoBean.fichaCampo.cam_lanc_dbo5}" /></p:column>
+					<p:column style="width:20%"><p:outputLabel value="DBO-20 (mg/l):" for="cam_lanc_dbo20" /></p:column>
+					<p:column style="width:30%"><p:outputLabel style="font-weight: bold" id="cam_lanc_dbo20" value="#{fichaCampoBean.fichaCampo.cam_lanc_dbo20}" /></p:column>
 				</p:row>
 				<p:row>
 					<p:column><p:outputLabel value="DBO bruto (mg/l):" for="efl_qt_dbobruto" /></p:column>
@@ -848,5 +850,4 @@
 			</div>
 			<br/><br/>
 		</h:form>
-	</div>
 </ui:composition>

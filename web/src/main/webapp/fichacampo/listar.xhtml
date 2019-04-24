@@ -16,22 +16,20 @@
 	
 	<div style="padding-top: 50px;">
 		<h:form id="listarFichaCampo" prependId="false">
-			<br/>
-			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{usuarioBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
 				<p:dataTable id="tabelaFichaCampo" value="#{fichaCampoBean.fichasCampo}" widgetVar="tabelaFichaCampo" 
 				emptyMessage="Não foram encontrados registros." filteredValue="#{fichaCampoBean.filteredFichaCampo}" 
 				paginator="true" rows="10" var="fichaCampo" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
 				resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
 					<f:facet name="header">Ficha de Campo</f:facet>
-					<p:column headerText="Usuário">
-						<h:outputText value="#{fichaCampo.emp_nm_usuario}" id="emp_nm_usuario" />
+					<p:column headerText="Ações" width="10%">
+						<p:commandButton action="#{fichaCampoBean.telaFicha(fichaCampo)}" value="Ficha" ajax="false" icon="ui-icon-document"/>
 					</p:column>
-					<p:column headerText="CPF/CNPJ">
+					<p:column headerText="CPF/CNPJ" width="10%" filterBy="#{fichaCampo.emp_nu_cpfcnpj}" filterMatchMode="contains" sortBy="#{fichaCampo.emp_nu_cpfcnpj}">
 						<h:outputText value="#{fichaCampo.emp_nu_cpfcnpj}" id="emp_nu_cpfcnpj"/>
 					</p:column>
-					<p:column headerText="Ações">
-						<p:commandButton action="#{fichaCampoBean.telaFicha(fichaCampo)}" value="Ficha" ajax="false" icon="ui-icon-document"/>
+					<p:column headerText="Usuário" width="80%" filterBy="#{fichaCampo.emp_nm_usuario}" filterMatchMode="contains" sortBy="#{fichaCampo.emp_nm_usuario}">
+						<h:outputText value="#{fichaCampo.emp_nm_usuario}" id="emp_nm_usuario" />
 					</p:column>
 				</p:dataTable>
 				<p:blockUI block="tabelaFichaCampo" trigger="tabelaFichaCampo">
