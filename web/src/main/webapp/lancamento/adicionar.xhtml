@@ -7,11 +7,11 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	
+
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
-			
+
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addLancamento" prependId="false" style="width:99%;" >
 		<br/><br/><br/>
@@ -20,39 +20,49 @@
 				<h:panelGrid columns="2" style="border: 0px solid;">
 					<p:outputLabel value="ID: " for="lan_int_pfk" />
 					<p:inputText  id="lan_int_pfk" maxlength="6" value="#{lancamentoBean.lancamento.lan_int_pfk}" disabled="true"/>
-					
-					<p:outputLabel value="DBO 05: " for="cam_lanc_dbo5" />                                               
+
+					<p:outputLabel value="DBO 05: " for="cam_lanc_dbo5" id="db05" />
 					<p:inputText  id="cam_lanc_dbo5" maxlength="6" value="#{lancamentoBean.lancamento.cam_lanc_dbo5}" />
-					
-					<p:outputLabel value="DBO 20: " for="cam_lanc_dbo20" />                                               
+
+					<p:outputLabel value="DBO 20: " for="cam_lanc_dbo20" id="db20" />
 					<p:inputText  id="cam_lanc_dbo20" maxlength="6" value="#{lancamentoBean.lancamento.cam_lanc_dbo20}" />
-					
-					<p:outputLabel value="Quantidade de DBO do Efluente Bruto: " for="efl_qt_dbobruto" />                                               
+
+					<p:outputLabel value="Quantidade de DBO do Efluente Bruto: " for="efl_qt_dbobruto" id="efluente" />
 					<p:inputText  id="efl_qt_dbobruto" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_dbobruto}" />
-					
-					<p:outputLabel value="Quantidade de DBO do Efluente Tratado: " for="efl_qt_dbotratado" />                                               
+
+					<p:outputLabel value="Quantidade de DBO do Efluente Tratado: " for="efl_qt_dbotratado" id="efluenteTratado" />
 					<p:inputText  id="efl_qt_dbotratado" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_dbotratado}" />
-					
-					<p:outputLabel value="Quantidade de Fósforo do Efluente Bruto: " for="efl_qt_fosforobruto" />                                               
+
+					<p:outputLabel value="Quantidade de Fósforo do Efluente Bruto: " for="efl_qt_fosforobruto" id="efluenteBruto" />
 					<p:inputText  id="efl_qt_fosforobruto" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_fosforobruto}" />
-					
-					<p:outputLabel value="Quantidade de Fósforo do Efluente Tratado: " for="efl_qt_fosforotratado" />                                               
+
+					<p:outputLabel value="Quantidade de Fósforo do Efluente Tratado: " for="efl_qt_fosforotratado" id="fosforo" />
 					<p:inputText  id="efl_qt_fosforotratado" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_fosforotratado}" />
-					
-					<p:outputLabel value="Quantidade de Nitrogênio do Efluente Bruto: " for="efl_qt_nitrogeniobruto" />                                               
+
+					<p:outputLabel value="Quantidade de Nitrogênio do Efluente Bruto: " for="efl_qt_nitrogeniobruto" id="nitrogenio" />
 					<p:inputText  id="efl_qt_nitrogeniobruto" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_nitrogeniobruto}" />
-					
-					<p:outputLabel value="Quantidade de Nitrogênio do Efluente Tratado: " for="efl_qt_nitrogeniotratado" />                                               
+
+					<p:outputLabel value="Quantidade de Nitrogênio do Efluente Tratado: " for="efl_qt_nitrogeniotratado" id="nitrogenioTratado" />
 					<p:inputText  id="efl_qt_nitrogeniotratado" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_nitrogeniotratado}" />
 				</h:panelGrid>
 				<br/><br/>
-				
+
 				<p:commandButton value="Voltar" action="#{lancamentoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:commandButton value="Salvar" action="#{lancamentoBean.gravar}"   ajax="false" rendered="#{lancamentoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{lancamentoBean.alterar}" ajax="false" rendered="#{lancamentoBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{lancamentoBean.deletar}"  ajax="false" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>
+
+		<p:tooltip for="db05" value="Campo numérico que representa a DBO5." position="top"/>
+		<p:tooltip for="db20" value="Campo numérico que representa a DBO-20." position="top"/>
+		<p:tooltip for="efluente" value="Campo numérico que representa a quantidade de dbo do efluente bruto. valor máximo 7200." position="top"/>
+		<p:tooltip for="efluenteTratado" value="Campo numérico que representa a quantidade de dbo do efluente tratado. deve necessariamente ser menor que o valor bruto." position="top"/>
+		<p:tooltip for="efluenteBruto" value="Campo numérico que representa a quantidade de fósforo do efluente bruto." position="top"/>
+		<p:tooltip for="fosforo" value="Campo numérico que representa a quantidade de fósforo do efluente tratado." position="top"/>
+		<p:tooltip for="nitrogenio" value="Campo numérico que representa a quantidade de nitrogênio do efluente bruto." position="top"/>
+		<p:tooltip for="nitrogenioTratado" value="Campo numérico que representa a quantidade de nitrogênio do efluente tratado." position="top"/>
+
 		</h:form>
 	</div>
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />

@@ -7,11 +7,11 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	
+
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
-			
+
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addVazao" prependId="false" style="width:99%;" >
 		<br/><br/><br/>
@@ -20,129 +20,171 @@
 				<h:panelGrid columns="6" style="border: 0px solid;">
 					<p:outputLabel value="ID: " for="vz_int_pfk" />
 					<p:inputText id="vz_int_pfk" value="#{vazaoBean.vazao.vz_int_pfk}" disabled="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Quant. de Vazão Máxima" for="int_vz_maxima" />
+
+					<p:outputLabel value="Quant. de Vazão Máxima" for="int_vz_maxima" id="vazaoMaxima" />
 					<p:inputText id="int_vz_maxima" value="#{vazaoBean.vazao.int_vz_maxima}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Vazão Aferida em Campo" for="cam_vz_afe" />
+
+					<p:outputLabel value="Vazão Aferida em Campo" for="cam_vz_afe" id="vazaoAferida" />
 					<p:inputText  id="cam_vz_afe" value="#{vazaoBean.vazao.cam_vz_afe}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Janeiro(horas/dia)" for="ope_qt_horasjan" />
+
+					<p:outputLabel value="Operação em Janeiro(horas/dia)" for="ope_qt_horasjan" id="operacaoJaneiro" />
 					<p:inputText  id="ope_qt_horasjan" value="#{vazaoBean.vazao.ope_qt_horasjan}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Fevereiro(horas/dia)" for="ope_qt_horasfev" />
+
+					<p:outputLabel value="Operação em Fevereiro(horas/dia)" for="ope_qt_horasfev" id="operacaofev" />
 					<p:inputText  id="ope_qt_horasfev" value="#{vazaoBean.vazao.ope_qt_horasfev}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Março(horas/dia)" for="ope_qt_horasmar" />
+
+					<p:outputLabel value="Operação em Março(horas/dia)" for="ope_qt_horasmar" id="operacaomar" />
 					<p:inputText  id="ope_qt_horasmar" value="#{vazaoBean.vazao.ope_qt_horasmar}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Abril(horas/dia)" for="ope_qt_horasabr" />
+
+					<p:outputLabel value="Operação em Abril(horas/dia)" for="ope_qt_horasabr" id="operacaoabr" />
 					<p:inputText  id="ope_qt_horasabr" value="#{vazaoBean.vazao.ope_qt_horasabr}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Maio(horas/dia)" for="ope_qt_horasmai" />
+
+					<p:outputLabel value="Operação em Maio(horas/dia)" for="ope_qt_horasmai" id="operacaomai"/>
 					<p:inputText  id="ope_qt_horasmai" value="#{vazaoBean.vazao.ope_qt_horasmai}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Junho(horas/dia)" for="ope_qt_horasjun" />
+
+					<p:outputLabel value="Operação em Junho(horas/dia)" for="ope_qt_horasjun" id="operacaojun" />
 					<p:inputText  id="ope_qt_horasjun" value="#{vazaoBean.vazao.ope_qt_horasjun}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Julho(horas/dia)" for="ope_qt_horasjul" />
+
+					<p:outputLabel value="Operação em Julho(horas/dia)" for="ope_qt_horasjul" id="operacaojul" />
 					<p:inputText  id="ope_qt_horasjul" value="#{vazaoBean.vazao.ope_qt_horasjul}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Agosto(horas/dia)" for="ope_qt_horasago" />
+
+					<p:outputLabel value="Operação em Agosto(horas/dia)" for="ope_qt_horasago" id="operacaoago"/>
 					<p:inputText  id="ope_qt_horasago" value="#{vazaoBean.vazao.ope_qt_horasago}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Setembro(horas/dia)" for="ope_qt_horasset" />
+
+					<p:outputLabel value="Operação em Setembro(horas/dia)" for="ope_qt_horasset" id="operacaoset" />
 					<p:inputText  id="ope_qt_horasset" value="#{vazaoBean.vazao.ope_qt_horasset}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Outubro(horas/dia)" for="ope_qt_horasout" />
+
+					<p:outputLabel value="Operação em Outubro(horas/dia)" for="ope_qt_horasout" id="operacaoout" />
 					<p:inputText  id="ope_qt_horasout" value="#{vazaoBean.vazao.ope_qt_horasout}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Novembro(horas/dia)" for="ope_qt_horasnov" />
+
+					<p:outputLabel value="Operação em Novembro(horas/dia)" for="ope_qt_horasnov" id="operacaonov" />
 					<p:inputText  id="ope_qt_horasnov" value="#{vazaoBean.vazao.ope_qt_horasnov}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Dezembro(horas/dia)" for="ope_qt_horasdez" />
+
+					<p:outputLabel value="Operação em Dezembro(horas/dia)" for="ope_qt_horasdez" id="operacaodez" />
 					<p:inputText  id="ope_qt_horasdez" value="#{vazaoBean.vazao.ope_qt_horasdez}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Janeiro(dias)" for="ope_qt_diajan" />
+
+					<p:outputLabel value="Operação em Janeiro(dias)" for="ope_qt_diajan" id="operacaoDiaJaneiro" />
 					<p:inputText  id="ope_qt_diajan" value="#{vazaoBean.vazao.ope_qt_diajan}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Fevereiro(dias)" for="ope_qt_diafev" />
+
+					<p:outputLabel value="Operação em Fevereiro(dias)" for="ope_qt_diafev" id="operacaoDiafev" />
 					<p:inputText  id="ope_qt_diafev" value="#{vazaoBean.vazao.ope_qt_diafev}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Março(dias)" for="ope_qt_diamar" />
+
+					<p:outputLabel value="Operação em Março(dias)" for="ope_qt_diamar" id="operacaoDiamar"/>
 					<p:inputText  id="ope_qt_diamar" value="#{vazaoBean.vazao.ope_qt_diamar}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Abril(dias)" for="ope_qt_diaabr" />
+
+					<p:outputLabel value="Operação em Abril(dias)" for="ope_qt_diaabr" id="operacaoDiaabr" />
 					<p:inputText  id="ope_qt_diaabr" value="#{vazaoBean.vazao.ope_qt_diaabr}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Maio(dias)" for="ope_qt_diamai" />
+
+					<p:outputLabel value="Operação em Maio(dias)" for="ope_qt_diamai" id="operacaoDiamai"/>
 					<p:inputText  id="ope_qt_diamai" value="#{vazaoBean.vazao.ope_qt_diamai}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Junho(dias)" for="ope_qt_diajun" />
+
+					<p:outputLabel value="Operação em Junho(dias)" for="ope_qt_diajun" id="operacaoDiajun" />
 					<p:inputText  id="ope_qt_diajun" value="#{vazaoBean.vazao.ope_qt_diajun}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Julho(dias)" for="ope_qt_diajul" />
+
+					<p:outputLabel value="Operação em Julho(dias)" for="ope_qt_diajul" id="operacaoDiajul" />
 					<p:inputText  id="ope_qt_diajul" value="#{vazaoBean.vazao.ope_qt_diajul}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Agosto(dias)" for="ope_qt_diaago" />
+
+					<p:outputLabel value="Operação em Agosto(dias)" for="ope_qt_diaago" id="operacaoDiaago" />
 					<p:inputText  id="ope_qt_diaago" value="#{vazaoBean.vazao.ope_qt_diaago}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Setembro(dias)" for="ope_qt_diaset" />
+
+					<p:outputLabel value="Operação em Setembro(dias)" for="ope_qt_diaset" id="operacaoDiaset"/>
 					<p:inputText  id="ope_qt_diaset" value="#{vazaoBean.vazao.ope_qt_diaset}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Outubro(dias)" for="ope_qt_diaout" />
+
+					<p:outputLabel value="Operação em Outubro(dias)" for="ope_qt_diaout" id="operacaoDiaout" />
 					<p:inputText  id="ope_qt_diaout" value="#{vazaoBean.vazao.ope_qt_diaout}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Novembro(dias)" for="ope_qt_dianov" />
+
+					<p:outputLabel value="Operação em Novembro(dias)" for="ope_qt_dianov" id="operacaoDianov" />
 					<p:inputText  id="ope_qt_dianov" value="#{vazaoBean.vazao.ope_qt_dianov}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Operação em Dezembro(dias)" for="ope_qt_diadez" />
+
+					<p:outputLabel value="Operação em Dezembro(dias)" for="ope_qt_diadez" id="operacaoDiadez" />
 					<p:inputText  id="ope_qt_diadez" value="#{vazaoBean.vazao.ope_qt_diadez}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Quant Vazão Janeiro" for="ope_vz_mesjan" />
+
+					<p:outputLabel value="Quant Vazão Janeiro" for="ope_vz_mesjan"  id="operacaoVazaoJaneiro"/>
 					<p:inputText  id="ope_vz_mesjan" value="#{vazaoBean.vazao.ope_vz_mesjan}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Quant Vazão Fevereiro" for="ope_vz_mesfev" />
+
+					<p:outputLabel value="Quant Vazão Fevereiro" for="ope_vz_mesfev" id="operacaoVazaofev"/>
 					<p:inputText  id="ope_vz_mesfev" value="#{vazaoBean.vazao.ope_vz_mesfev}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Quant Vazão Março" for="ope_vz_mesmar" />
+
+					<p:outputLabel value="Quant Vazão Março" for="ope_vz_mesmar" id="operacaoVazaomar" />
 					<p:inputText  id="ope_vz_mesmar" value="#{vazaoBean.vazao.ope_vz_mesmar}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Quant Vazão Abril" for="ope_vz_mesabr" />
+
+					<p:outputLabel value="Quant Vazão Abril" for="ope_vz_mesabr" id="operacaoVazaoabr"/>
 					<p:inputText  id="ope_vz_mesabr" value="#{vazaoBean.vazao.ope_vz_mesabr}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Quant Vazão Maio" for="ope_vz_mesmai" />
+
+					<p:outputLabel value="Quant Vazão Maio" for="ope_vz_mesmai" id="operacaoVazaomai" />
 					<p:inputText  id="ope_vz_mesmai" value="#{vazaoBean.vazao.ope_vz_mesmai}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Quant Vazão Junho" for="ope_vz_mesjun" />
+
+					<p:outputLabel value="Quant Vazão Junho" for="ope_vz_mesjun" id="operacaoVazaojun"/>
 					<p:inputText  id="ope_vz_mesjun" value="#{vazaoBean.vazao.ope_vz_mesjun}" required="true" style="width: 100px"/>
 
-					<p:outputLabel value="Quant Vazão Julho" for="ope_vz_mesjul" />
+					<p:outputLabel value="Quant Vazão Julho" for="ope_vz_mesjul" id="operacaoVazaojul" />
 					<p:inputText  id="ope_vz_mesjul" value="#{vazaoBean.vazao.ope_vz_mesjul}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Quant Vazão Agosto" for="ope_vz_mesago" />
+
+					<p:outputLabel value="Quant Vazão Agosto" for="ope_vz_mesago" id="operacaoVazaoago" />
 					<p:inputText  id="ope_vz_mesago" value="#{vazaoBean.vazao.ope_vz_mesago}" required="true" style="width: 100px"/>
 
-					<p:outputLabel value="Quant Vazão Setembro" for="ope_vz_messet" />
+					<p:outputLabel value="Quant Vazão Setembro" for="ope_vz_messet" id="operacaoVazaoset" />
 					<p:inputText  id="ope_vz_messet" value="#{vazaoBean.vazao.ope_vz_messet}" required="true" style="width: 100px"/>
-										
-					<p:outputLabel value="Quant Vazão Outubro" for="ope_vz_mesout" />
+
+					<p:outputLabel value="Quant Vazão Outubro" for="ope_vz_mesout" id="operacaoVazaoout" />
 					<p:inputText  id="ope_vz_mesout" value="#{vazaoBean.vazao.ope_vz_mesout}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Quant Vazão Novembro" for="ope_vz_mesnov" />
+
+					<p:outputLabel value="Quant Vazão Novembro" for="ope_vz_mesnov" id="operacaoVazaonov"/>
 					<p:inputText  id="ope_vz_mesnov" value="#{vazaoBean.vazao.ope_vz_mesnov}" required="true" style="width: 100px"/>
-					
-					<p:outputLabel value="Quant Vazão Dezembro" for="ope_vz_mesdez" />
+
+					<p:outputLabel value="Quant Vazão Dezembro" for="ope_vz_mesdez" id="operacaoVazaodez" />
 					<p:inputText  id="ope_vz_mesdez" value="#{vazaoBean.vazao.ope_vz_mesdez}" required="true" style="width: 100px"/>
 				</h:panelGrid>
 				<br/><br/>
-				
+
 				<p:commandButton value="Voltar" action="#{vazaoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:commandButton value="Salvar" action="#{vazaoBean.gravar}"   ajax="false" rendered="#{vazaoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{vazaoBean.alterar}" ajax="false" rendered="#{vazaoBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{vazaoBean.deletar}"  ajax="false" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>
+
+		<p:tooltip for="vazaoMaxima" value="Campo numérico que representa a quantidade de vazão máxima." position="top"/>
+		<p:tooltip for="vazaoAferida" value="Vazão aferida em campo" position="top"/>
+		<p:tooltip for="operacaoJaneiro" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de janeiro." position="top"/>
+		<p:tooltip for="operacaofev" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de fevereiro." position="top"/>
+		<p:tooltip for="operacaomar" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de março" position="top"/>
+		<p:tooltip for="operacaoabr" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de abril" position="top"/>
+		<p:tooltip for="operacaomai" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de maio" position="top"/>
+		<p:tooltip for="operacaojun" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de junho" position="top"/>
+		<p:tooltip for="operacaojul" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de julho" position="top"/>
+		<p:tooltip for="operacaoago" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de agosto" position="top"/>
+		<p:tooltip for="operacaoset" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de setembro" position="top"/>
+		<p:tooltip for="operacaoout" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de outubro" position="top"/>
+		<p:tooltip for="operacaonov" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de novembro" position="top"/>
+		<p:tooltip for="operacaodez" value="Campo numérico que representa a quantidade de horas diárias de operação para o mês de dezembro" position="top"/>
+
+		<p:tooltip for="operacaoDiaJaneiro" value="Campo numérico que representa a quantidade de dias de operação para o mês de janeiro." position="top"/>
+		<p:tooltip for="operacaoDiafev" value="Campo numérico que representa a quantidade de dias de operação para o mês de fevereiro." position="top"/>
+		<p:tooltip for="operacaoDiamar" value="Campo numérico que representa a quantidade de dias de operação para o mês de março." position="top"/>
+		<p:tooltip for="operacaoDiaabr" value="Campo numérico que representa a quantidade de dias de operação para o mês de abril" position="top"/>
+		<p:tooltip for="operacaoDiamai" value="Campo numérico que representa a quantidade de dias de operação para o mês de maio" position="top"/>
+		<p:tooltip for="operacaoDiajun" value="Campo numérico que representa a quantidade de dias de operação para o mês de junho" position="top"/>
+		<p:tooltip for="operacaoDiajul" value="Campo numérico que representa a quantidade de dias de operação para o mês de julho" position="top"/>
+		<p:tooltip for="operacaoDiaago" value="Campo numérico que representa a quantidade de dias de operação para o mês de agosto" position="top"/>
+		<p:tooltip for="operacaoDiaset" value="Campo numérico que representa a quantidade de dias de operação para o mês de setembro" position="top"/>
+		<p:tooltip for="operacaoDiaout" value="Campo numérico que representa a quantidade de dias de operação para o mês de outubro" position="top"/>
+		<p:tooltip for="operacaoDianov" value="Campo numérico que representa a quantidade de dias de operação para o mês de novembro" position="top"/>
+		<p:tooltip for="operacaoDiadez" value="Campo numérico que representa a quantidade de dias de operação para o mês de dezembro" position="top"/>
+
+		<p:tooltip for="operacaoVazaoJaneiro" value="Campo númerico que representa a quantidade de vazão para o mês de janeiro." position="top"/>
+		<p:tooltip for="operacaoVazaofev" value="Campo númerico que representa a quantidade de vazão para o mês de fevereiro." position="top"/>
+		<p:tooltip for="operacaoVazaomar" value="Campo númerico que representa a quantidade de vazão para o mês de março." position="top"/>
+		<p:tooltip for="operacaoVazaoabr" value="Campo númerico que representa a quantidade de vazão para o mês de abril." position="top"/>
+		<p:tooltip for="operacaoVazaomai" value="Campo númerico que representa a quantidade de vazão para o mês de mai" position="top"/>
+		<p:tooltip for="operacaoVazaojun" value="Campo númerico que representa a quantidade de vazão para o mês de junho." position="top"/>
+		<p:tooltip for="operacaoVazaojul" value="Campo númerico que representa a quantidade de vazão para o mês de julho." position="top"/>
+		<p:tooltip for="operacaoVazaoago" value="Campo númerico que representa a quantidade de vazão para o mês de agosto." position="top"/>
+		<p:tooltip for="operacaoVazaoset" value="Campo númerico que representa a quantidade de vazão para o mês de setembro" position="top"/>
+		<p:tooltip for="operacaoVazaoout" value="Campo númerico que representa a quantidade de vazão para o mês de outubro." position="top"/>
+		<p:tooltip for="operacaoVazaonov" value="Campo númerico que representa a quantidade de vazão para o mês de novembro." position="top"/>
+		<p:tooltip for="operacaoVazaodez" value="Campo númerico que representa a quantidade de vazão para o mês de dezembro." position="top"/>
+
 		</h:form>
 	</div>
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />

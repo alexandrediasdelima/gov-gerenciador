@@ -11,7 +11,7 @@
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
-		
+
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addTesteBombeamento" prependId="false" style="width:99%;" >
 		<br/><br/><br/>
@@ -20,35 +20,35 @@
 				<h:panelGrid columns="4" style="border: 0px solid;">
 					<p:outputLabel value="ID: " for="tstbomb_int_pfk" />
 					<p:inputText  id="tstbomb_int_pfk" value="#{testebombeamentoBean.testebombeamento.tstbomb_int_pfk}" disabled="true" />
-					
-					<p:outputLabel value="Coeficiente de Armazenamento: " for="tst_nu_coeficientearmazenamento" />
+
+					<p:outputLabel value="Coeficiente de Armazenamento: " for="tst_nu_coeficientearmazenamento" id="coeficiente" />
 					<p:inputText  id="tst_nu_coeficientearmazenamento" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_coeficientearmazenamento}" />
-					
-					<p:outputLabel value="Condutividade Hidráulica: " for="tst_nu_condutividadehidraulica" />
+
+					<p:outputLabel value="Condutividade Hidráulica: " for="tst_nu_condutividadehidraulica" id="condutiva" />
 					<p:inputText id="tst_nu_condutividadehidraulica" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_condutividadehidraulica}" />
-					
-					<p:outputLabel value="Data do Teste do Bombeamento: " for="tst_dt" />
+
+					<p:outputLabel value="Data do Teste do Bombeamento: " for="tst_dt" id="data"/>
 					<p:calendar showOn="button" id="tst_dt" value="#{testebombeamentoBean.testebombeamento.tst_dt}" readonlyInput="true" pattern="dd/mm/yyyy" />
-					
-					<p:outputLabel value="Tempo de Duração do Teste(Horas): " for="tst_ds_tempoduracao" />
+
+					<p:outputLabel value="Tempo de Duração do Teste(Horas): " for="tst_ds_tempoduracao" id="duracao"/>
 					<p:inputText  id="tst_ds_tempoduracao" value="#{testebombeamentoBean.testebombeamento.tst_ds_tempoduracao}" />
-					
-					<p:outputLabel value="Nível Dinâmico: " for="tst_nu_nd" />
+
+					<p:outputLabel value="Nível Dinâmico: " for="tst_nu_nd" id="dinamico" />
 					<p:inputText  id="tst_nu_nd" maxlength="10" value="#{testebombeamentoBean.testebombeamento.tst_nu_nd}" />
-					
-					<p:outputLabel value="Nível Estático: " for="tst_nu_ne" />
+
+					<p:outputLabel value="Nível Estático: " for="tst_nu_ne" id="estatico" />
 					<p:inputText  id="tst_nu_ne" maxlength="10" value="#{testebombeamentoBean.testebombeamento.tst_nu_ne}" />
-					
-					<p:outputLabel value="Permeabilidade: " for="tst_nu_permeabilidade" />
+
+					<p:outputLabel value="Permeabilidade: " for="tst_nu_permeabilidade" id="permeabilidade"/>
 					<p:inputText  id="tst_nu_permeabilidade" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_permeabilidade}" />
-					
-					<p:outputLabel value="Transmissividade: " for="tst_nu_transmissividade" />
+
+					<p:outputLabel value="Transmissividade: " for="tst_nu_transmissividade" id="transmissividade"/>
 					<p:inputText  id="tst_nu_transmissividade" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_transmissividade}" />
-					
-					<p:outputLabel value="Vazão de Estabilização: " for="tst_vz_estabilizacao" />
+
+					<p:outputLabel value="Vazão de Estabilização: " for="tst_vz_estabilizacao" id="estabilizacao" />
 					<p:inputText  id="tst_vz_estabilizacao" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_vz_estabilizacao}" />
-					
-					<p:outputLabel value="Tipo de Teste de Bombeamento: " for="tst_ttb_cd" />
+
+					<p:outputLabel value="Tipo de Teste de Bombeamento: " for="tst_ttb_cd" id="tipo" />
 					<p:selectOneMenu id="tst_ttb_cd" value="#{testebombeamentoBean.testebombeamento.tst_ttb_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemValue="Rebaixamento" itemLabel="Rebaixamento" />
@@ -58,8 +58,8 @@
 						<f:selectItem itemValue="Recuperação" itemLabel="Recuperação" />
 						<f:selectItem itemValue="Continuo" itemLabel="Continuo " />
 					</p:selectOneMenu>
-					
-					<p:outputLabel value="Método de Interpretação: " for="tst_tmi_cd" />
+
+					<p:outputLabel value="Método de Interpretação: " for="tst_tmi_cd" id="interpretacao" />
 					<p:selectOneMenu id="tst_tmi_cd" value="#{testebombeamentoBean.testebombeamento.tst_tmi_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemValue="Aron-scott" itemLabel="Aron-scott" />
@@ -93,13 +93,26 @@
 					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>
-				
+
 				<p:commandButton value="Voltar" action="#{testebombeamentoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:commandButton value="Salvar" action="#{testebombeamentoBean.gravar}"   ajax="false" rendered="#{testebombeamentoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{testebombeamentoBean.alterar}" ajax="false" rendered="#{testebombeamentoBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{testebombeamentoBean.deletar}"  ajax="false" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>
+
+		<p:tooltip for="coeficiente" value="Campo numérico que representa o coeficiente de armazenamento." position="top"/>
+		<p:tooltip for="condutiva" value="Campo numérico que representa a condutividade hidráulica." position="top"/>
+		<p:tooltip for="data" value="Campo que representa a data do teste do bombeamento." position="top"/>
+		<p:tooltip for="duracao" value="Campo numérico que representa a descrição do tempo de duração do teste de bombeamento em horas." position="top"/>
+		<p:tooltip for="dinamico" value="Campo numérico que representa o nível dinâmico." position="top"/>
+		<p:tooltip for="estatico" value="Campo numérico que representa o nível estático." position="top"/>
+		<p:tooltip for="permeabilidade" value="Campo numérico que representa a permeabilidade." position="top"/>
+		<p:tooltip for="transmissividade" value="Campo numérico que representa a transmissividade." position="top"/>
+		<p:tooltip for="estabilizacao" value="Campo numérico que representa a vazão de estabilização." position="top"/>
+		<p:tooltip for="tipo" value="Campo que representa o tipo de teste de bombeamento." position="top"/>
+		<p:tooltip for="interpretacao" value="Campo que representa o tipo de método de interpretação." position="top"/>
+
 		</h:form>
 	</div>
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
