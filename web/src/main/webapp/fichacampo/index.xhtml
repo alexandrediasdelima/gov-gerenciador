@@ -9,7 +9,7 @@
 
 			<c:choose>
 			<c:when
-				test="#{fichaCampoBean.view == 'edit' or fichaCampoBean.view == 'add'}">
+				test="#{fichaCampoBean.view == 'edit'}">
 				<ui:include src="/fichacampo/adicionar.xhtml" />
 			</c:when>
 			<c:otherwise>

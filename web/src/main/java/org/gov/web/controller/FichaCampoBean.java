@@ -3,6 +3,8 @@ package org.gov.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.event.ActionEvent;
+
 import org.gov.model.FichaCampo;
 import org.gov.service.FichaCampoService;
 import org.gov.service.FichaCampoServiceImpl;
@@ -39,6 +41,9 @@ public class FichaCampoBean extends Controller  {
 		return "/fichacampo/index";
 	}
 	
+	public void resetView() {
+		setView(LIST);
+	}
 
 	public String fichasCampo() {
 		setFichasCampo(fichaCampoService.fichasCampo());
