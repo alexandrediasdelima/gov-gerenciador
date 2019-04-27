@@ -34,8 +34,8 @@
 					</p:selectOneRadio>
 
 					<h:panelGroup id="documento">
-						<p:inputMask mask="?999.999.999-99" rendered="#{usuarioBean.tipoDocumento eq 'cpf'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"  />
-						<p:inputMask mask="?99.999.999/9999-99" rendered="#{usuarioBean.tipoDocumento eq 'cnpj'}"  value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
+						<components:cpf rendered="#{usuarioBean.tipoDocumento eq 'cpf'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
+						<components:cnpj rendered="#{usuarioBean.tipoDocumento eq 'cnpj'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
 					</h:panelGroup>
 
 
@@ -183,8 +183,6 @@
 			$("#emp_nu_logradouro").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
 			$("#emp_nu_cependereco").inputmask({mask: "99999-999", greedy: true, removeMaskOnSubmit: true})
 			$("#emp_nu_caixapostal").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
-			$("#cpf").inputmask({mask: "999.999.999-99", greedy: true, removeMaskOnSubmit: true})
-			$("#cnpj").inputmask({mask: "99.999.999/9999-99", greedy: true, removeMaskOnSubmit: true})
 			})
 	</script>
 

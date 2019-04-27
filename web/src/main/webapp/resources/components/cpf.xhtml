@@ -11,6 +11,8 @@
 	<composite:interface>
 		<composite:attribute name="value"></composite:attribute>
 		<composite:attribute name="id"></composite:attribute>
+		<composite:attribute name="mask"></composite:attribute>
+		<composite:attribute name="rendered"></composite:attribute>
 	</composite:interface>
 
 	<composite:implementation>
@@ -26,6 +28,7 @@
 		<script type="text/javascript">
 
 		function completeCPF(input){
+
 
 			var cpf = $(input).val().replace(/[\._-]/g, '');
 

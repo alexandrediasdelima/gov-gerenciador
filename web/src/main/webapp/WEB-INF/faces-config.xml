@@ -139,6 +139,17 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 
+
+	<validator>
+		<validator-id>cnpjValidator</validator-id>
+		<validator-class>org.gov.web.validator.CnpjValidador</validator-class>
+	</validator>
+
+	<converter>
+		<converter-id>cnpjConvert</converter-id>
+		<converter-class>org.gov.web.converter.CnpjConverter</converter-class>
+	</converter>
+
 	<!-- Configurações -->
 
 	<application>
