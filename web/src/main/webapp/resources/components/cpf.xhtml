@@ -11,6 +11,8 @@
 	<composite:interface>
 		<composite:attribute name="value"></composite:attribute>
 		<composite:attribute name="id"></composite:attribute>
+		<composite:attribute name="mask"></composite:attribute>
+		<composite:attribute name="rendered"></composite:attribute>
 	</composite:interface>
 
 	<composite:implementation>
@@ -20,13 +22,16 @@
 				value="#{cc.attrs.value}"
 				id="#{cc.attrs.id}"
 				rendered="#{cc.attrs.rendered}"
-			   onblur="completeCPF(this);">
+				validator="cpfValidator"
+				required="true"
+				requiredMessage="Cpf é obrigatório">
 			</p:inputMask>
 		</h:panelGroup>
 
 		<script type="text/javascript">
 
 		function completeCPF(input){
+
 
 			var cpf = $(input).val().replace(/[\._-]/g, '');
 

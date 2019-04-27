@@ -10,7 +10,6 @@
 
 	<lifecycle>
 		<phase-listener>org.gov.web.listener.Autorizador</phase-listener>
-
 	</lifecycle>
 
 
@@ -133,12 +132,58 @@
 		<managed-bean-class>org.gov.web.controller.OutraInfoBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>fichaCampoBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.FichaCampoBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+
+
+	<validator>
+		<validator-id>cnpjValidator</validator-id>
+		<validator-class>org.gov.web.validator.CnpjValidador</validator-class>
+	</validator>
+
+	<validator>
+		<validator-id>horaValidator</validator-id>
+		<validator-class>org.gov.web.validator.HoraValidator</validator-class>
+	</validator>
+
+	<validator>
+		<validator-id>mesComTrintaDiaValidator</validator-id>
+		<validator-class>org.gov.web.validator.MesComTrintaDiaValidator</validator-class>
+	</validator>
+
+	<validator>
+		<validator-id>mesFevereiroDiaValidator</validator-id>
+		<validator-class>org.gov.web.validator.MesFevereiroDiaValidator</validator-class>
+	</validator>
+
+	<validator>
+		<validator-id>mesComTrintaUMDiaValidator</validator-id>
+		<validator-class>org.gov.web.validator.MesComTrintaUMDiaValidator</validator-class>
+	</validator>
+
+	<validator>
+		<validator-id>quantidadeDBOValidator</validator-id>
+		<validator-class>org.gov.web.validator.QuantidadeDBOValidator</validator-class>
+	</validator>
+
+	<validator>
+		<validator-id>emailValidator</validator-id>
+		<validator-class>org.gov.web.validator.EmailValidator</validator-class>
+	</validator>
+
+	<validator>
+		<validator-id>cpfValidator</validator-id>
+		<validator-class>org.gov.web.validator.CPFValidador</validator-class>
+	</validator>
+
+	<converter>
+		<converter-id>cnpjConvert</converter-id>
+		<converter-class>org.gov.web.converter.CnpjConverter</converter-class>
+	</converter>
 
 	<!-- Configurações -->
 

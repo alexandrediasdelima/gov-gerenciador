@@ -8,6 +8,9 @@
 
 	<composite:interface>
 		<composite:attribute name="value"></composite:attribute>
+		<composite:attribute name="mask"></composite:attribute>
+		<composite:attribute name="id"></composite:attribute>
+		<composite:attribute name="rendered"></composite:attribute>
 	</composite:interface>
 
 	<composite:implementation>
@@ -15,8 +18,12 @@
 		<p:inputMask mask="?99.999.999/9999-99"
 			value="#{cc.attrs.value}"
 			id="#{cc.attrs.id}"
+			styleClass="cnpjFormatado"
 			rendered="#{cc.attrs.rendered}"
-			onblur="formataCNPJ(this.value);">
+			validator="cnpjValidator"
+			converter="cnpjConvert"
+			required="true"
+			requiredMessage="Cnpj é obrigatório">
 		</p:inputMask>
 
 		<script type="text/javascript">
@@ -24,10 +31,9 @@
 			function formataCNPJ(cnpj) {
 
 				cnpj = formatacaoCNPJ(cnpj);
-				$('.inputText').val(cnpj);
+				$('.cnpjFormatado').val(cnpj);
 
 			}
-
 
 			$(document).ready(function() {
 			    $(document).keyup(function(event) {

@@ -25,21 +25,20 @@
 					<p:inputText id="emp_nm_apelido" value="#{usuarioBean.usuario.emp_nm_apelido}" />
 
 					<p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" id="email" />
-					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" />
+					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" validator="emailValidator" />
 
-					<p:selectOneRadio value="#{usuarioBean.tipoDocumento}" id="documento">
+					<p:selectOneRadio value="#{usuarioBean.tipoDocumento}">
 						<f:selectItem itemLabel="CPF" itemValue="cpf" />
 						<f:selectItem itemLabel="CNPJ:" itemValue="cnpj" />
+						<f:ajax render="@this documento" />
 					</p:selectOneRadio>
-					<h:panelGroup rendered="true">
-						<p:inputText id="cpf" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
+
+					<h:panelGroup id="documento">
+						<components:cpf rendered="#{usuarioBean.tipoDocumento eq 'cpf'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
+						<components:cnpj rendered="#{usuarioBean.tipoDocumento eq 'cnpj'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
 					</h:panelGroup>
-					<h:panelGroup rendered="false">
-						<p:inputText id="cnpj" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
-					</h:panelGroup>
-					
-					
-					
+
+
 					<p:outputLabel value="DDD:" for="emp_nu_ddd" id="ddd" />
 					<p:inputText id="emp_nu_ddd" maxlength="2" value="#{usuarioBean.usuario.emp_nu_ddd}" />
 
@@ -154,12 +153,11 @@
 				<p:commandButton value="Salvar" action="#{usuarioBean.editar}" ajax="false" rendered="#{usuarioBean.view == 'edit'}" icon=" ui-icon-pencil" />
 			</p:scrollPanel>
 		</p:fieldset>
-		
+
 		<p:tooltip  for="nomeUsuario" value="Campo descritivo que representa o nome do usuário (ou razão social) de recursos hídricos." position="top"/>
 		<p:tooltip  for="email" value="Campo descritivo que representa o email de contato do responsável pelo empreendimento." position="top"/>
 		<p:tooltip  for="ddd" value="Campo numérico que representa o ddd do telefone de contato do responsável pelo empreendimento (usuário)." position="top"/>
 		<p:tooltip  for="apelido" value="Campo descritivo que representa o apelido do usuário." position="top"/>
-		<p:tooltip  for="documento" value="Campo numérico que representa o número de identificação do usuário. este campo pode ser preenchido com o cpf ou cnpj do usuário." position="top"/>
 		<p:tooltip  for="telefone" value="Campo numérico que representa o número do telefone de contato do responsável pelo empreendimento (usuário)." position="top"/>
 		<p:tooltip  for="tipoLogradouro" value="Campo que representa o tipo de logradouro para envio de correspondência." position="top"/>
 		<p:tooltip  for="endereco" value="Campo descritivo que representa o endereços para envio de correspondência." position="top"/>
@@ -173,7 +171,7 @@
 		<p:tooltip  for="caixaPostal" value="Campo numérico que representa o número da caixa postal do responsável pelo empreendimento." position="top"/>
 		<p:tooltip  for="referencia" value="Campo que representa referência do endereço" position="top"/>
 		<p:tooltip  for="relacao" value="Campo que representa a relação com a propriedade." position="top"/>
-		
+
 		</h:form>
 	</div>
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
@@ -185,8 +183,6 @@
 			$("#emp_nu_logradouro").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
 			$("#emp_nu_cependereco").inputmask({mask: "99999-999", greedy: true, removeMaskOnSubmit: true})
 			$("#emp_nu_caixapostal").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
-			$("#cpf").inputmask({mask: "999.999.999-99", greedy: true, removeMaskOnSubmit: true})
-			$("#cnpj").inputmask({mask: "99.999.999/9999-99", greedy: true, removeMaskOnSubmit: true})
 			})
 	</script>
 
