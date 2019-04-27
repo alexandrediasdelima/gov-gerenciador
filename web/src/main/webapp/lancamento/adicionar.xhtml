@@ -28,7 +28,7 @@
 					<p:inputText  id="cam_lanc_dbo20" maxlength="6" value="#{lancamentoBean.lancamento.cam_lanc_dbo20}" />
 
 					<p:outputLabel value="Quantidade de DBO do Efluente Bruto: " for="efl_qt_dbobruto" id="efluente" />
-					<p:inputText  id="efl_qt_dbobruto" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_dbobruto}" />
+					<p:inputText  id="efl_qt_dbobruto" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_dbobruto}" validator="quantidadeDBOValidator" />
 
 					<p:outputLabel value="Quantidade de DBO do Efluente Tratado: " for="efl_qt_dbotratado" id="efluenteTratado" />
 					<p:inputText  id="efl_qt_dbotratado" maxlength="6" value="#{lancamentoBean.lancamento.efl_qt_dbotratado}" />

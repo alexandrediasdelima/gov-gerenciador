@@ -25,7 +25,7 @@
 					<p:inputText id="emp_nm_apelido" value="#{usuarioBean.usuario.emp_nm_apelido}" />
 
 					<p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" id="email" />
-					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" />
+					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" validator="emailValidator" />
 
 					<p:selectOneRadio value="#{usuarioBean.tipoDocumento}">
 						<f:selectItem itemLabel="CPF" itemValue="cpf" />

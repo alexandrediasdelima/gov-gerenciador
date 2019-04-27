@@ -2,6 +2,7 @@ package org.gov.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -28,122 +29,122 @@ public class Vazao implements Serializable {
 	 *
 	 */
 	private  static final long serialVersionUID = 1L;
-	
+
 	@Column(name="vz_int_pfk", nullable=false)
 	@Id
-	private Integer vz_int_pfk ; 
-	  
+	private Integer vz_int_pfk ;
+
 	@Column(name="int_vz_maxima", columnDefinition="numeric", nullable=false)
-	private BigDecimal int_vz_maxima ; 
-	  
+	private BigDecimal int_vz_maxima ;
+
 	@Column(name="cam_vz_afe", columnDefinition="numeric", nullable=false)
-	private BigDecimal cam_vz_afe ; 
-	  
+	private BigDecimal cam_vz_afe ;
+
 	@Column(name="ope_qt_horasjan", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasjan ; 
-	  
+	private BigDecimal ope_qt_horasjan ;
+
 	@Column(name="ope_qt_horasfev", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasfev ; 
-	  
+	private BigDecimal ope_qt_horasfev ;
+
 	@Column(name="ope_qt_horasmar", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasmar ; 
-	  
+	private BigDecimal ope_qt_horasmar ;
+
 	@Column(name="ope_qt_horasabr", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasabr ; 
-	  
+	private BigDecimal ope_qt_horasabr ;
+
 	@Column(name="ope_qt_horasmai", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasmai ; 
-	  
+	private BigDecimal ope_qt_horasmai ;
+
 	@Column(name="ope_qt_horasjun", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasjun ; 
-	  
+	private BigDecimal ope_qt_horasjun ;
+
 	@Column(name="ope_qt_horasjul", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasjul ; 
-	  
+	private BigDecimal ope_qt_horasjul ;
+
 	@Column(name="ope_qt_horasago", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasago ; 
-	  
+	private BigDecimal ope_qt_horasago ;
+
 	@Column(name="ope_qt_horasset", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasset ; 
-	  
+	private BigDecimal ope_qt_horasset ;
+
 	@Column(name="ope_qt_horasout", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasout ; 
-	  
+	private BigDecimal ope_qt_horasout ;
+
 	@Column(name="ope_qt_horasnov", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasnov ; 
-	  
+	private BigDecimal ope_qt_horasnov ;
+
 	@Column(name="ope_qt_horasdez", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_qt_horasdez ; 
-	  
+	private BigDecimal ope_qt_horasdez ;
+
 	@Column(name="ope_qt_diajan", nullable=false)
-	private Integer ope_qt_diajan ; 
-	  
+	private Integer ope_qt_diajan ;
+
 	@Column(name="ope_qt_diafev", nullable=false)
-	private Integer ope_qt_diafev ; 
-	  
+	private Integer ope_qt_diafev ;
+
 	@Column(name="ope_qt_diamar", nullable=false)
-	private Integer ope_qt_diamar ; 
-	  
+	private Integer ope_qt_diamar ;
+
 	@Column(name="ope_qt_diaabr", nullable=false)
-	private Integer ope_qt_diaabr ; 
-	  
+	private Integer ope_qt_diaabr ;
+
 	@Column(name="ope_qt_diamai", nullable=false)
-	private Integer ope_qt_diamai ; 
-	  
+	private Integer ope_qt_diamai ;
+
 	@Column(name="ope_qt_diajun", nullable=false)
-	private Integer ope_qt_diajun ; 
-	  
+	private Integer ope_qt_diajun ;
+
 	@Column(name="ope_qt_diajul", nullable=false)
-	private Integer ope_qt_diajul ; 
-	  
+	private Integer ope_qt_diajul ;
+
 	@Column(name="ope_qt_diaago", nullable=false)
-	private Integer ope_qt_diaago ; 
-	  
+	private Integer ope_qt_diaago ;
+
 	@Column(name="ope_qt_diaset", nullable=false)
-	private Integer ope_qt_diaset ; 
-	  
+	private Integer ope_qt_diaset ;
+
 	@Column(name="ope_qt_diaout", nullable=false)
-	private Integer ope_qt_diaout ; 
-	  
+	private Integer ope_qt_diaout ;
+
 	@Column(name="ope_qt_dianov", nullable=false)
-	private Integer ope_qt_dianov ; 
-	  
+	private Integer ope_qt_dianov ;
+
 	@Column(name="ope_qt_diadez", nullable=false)
-	private Integer ope_qt_diadez ; 
-	  
+	private Integer ope_qt_diadez ;
+
 	@Column(name="ope_vz_mesjan", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_mesjan ; 
-	  
+	private BigDecimal ope_vz_mesjan ;
+
 	@Column(name="ope_vz_mesfev", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_mesfev ; 
-	  
+	private BigDecimal ope_vz_mesfev ;
+
 	@Column(name="ope_vz_mesmar", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_mesmar ; 
-	  
+	private BigDecimal ope_vz_mesmar ;
+
 	@Column(name="ope_vz_mesabr", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_mesabr ; 
-	  
+	private BigDecimal ope_vz_mesabr ;
+
 	@Column(name="ope_vz_mesmai", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_mesmai ; 
-	  
+	private BigDecimal ope_vz_mesmai ;
+
 	@Column(name="ope_vz_mesjul", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_mesjul ; 
-	  
+	private BigDecimal ope_vz_mesjul ;
+
 	@Column(name="ope_vz_mesjun", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_mesjun ; 
-	  
+	private BigDecimal ope_vz_mesjun ;
+
 	@Column(name="ope_vz_mesago", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_mesago ; 
-	  
+	private BigDecimal ope_vz_mesago ;
+
 	@Column(name="ope_vz_mesout", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_mesout ; 
-	  
+	private BigDecimal ope_vz_mesout ;
+
 	@Column(name="ope_vz_messet", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_messet ; 
-	  
+	private BigDecimal ope_vz_messet ;
+
 	@Column(name="ope_vz_mesnov", columnDefinition="numeric", nullable=false)
-	private BigDecimal ope_vz_mesnov ; 
-	  
+	private BigDecimal ope_vz_mesnov ;
+
 	@Column(name="ope_vz_mesdez", columnDefinition="numeric", nullable=false)
 	private BigDecimal ope_vz_mesdez ;
 
@@ -458,5 +459,6 @@ public class Vazao implements Serializable {
 	public void setOpe_vz_mesdez(BigDecimal ope_vz_mesdez) {
 		this.ope_vz_mesdez = ope_vz_mesdez;
 	}
+
 
 }
