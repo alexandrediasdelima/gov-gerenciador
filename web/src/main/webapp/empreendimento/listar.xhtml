@@ -36,8 +36,8 @@
 					<p:column headerText="Nome da Propriedade" filterBy="#{empreendimento.nomeEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.nomeEmpreendimento}" >
 						<h:outputText value="#{empreendimento.nomeEmpreendimento}" />
 					</p:column>
-					<p:column headerText="Área Total(m2)" filterBy="#{empreendimento.areaTotalPropriedade}" filterMatchMode="contains" sortBy="#{empreendimento.areaTotalPropriedade}" >
-						<h:outputText value="#{empreendimento.areaTotalPropriedade} (#{empreendimento.unidadeAreaTotalPropriedade})" />
+					<p:column headerText="Área Total(Hectare)" filterBy="#{empreendimento.areaTotalPropriedade}" filterMatchMode="contains" sortBy="#{empreendimento.areaTotalPropriedade}" >
+						<h:outputText value="#{empreendimento.areaTotalPropriedade}" />
 					</p:column>
 					<p:column headerText="Endereço" filterBy="#{empreendimento.enderecoEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.enderecoEmpreendimento}" >
 						<h:outputText value="#{empreendimento.enderecoEmpreendimento}" />

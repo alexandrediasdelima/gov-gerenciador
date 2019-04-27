@@ -30,174 +30,165 @@ public class Interferencia implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Column(name ="int_id")
+	@Column(name="int_id", columnDefinition="integer", nullable=false)
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq_gen")
 	@SequenceGenerator(name = "users_seq_gen", sequenceName = "tb_interferencia_int_id_seq")
-	private Integer id;
+	private Integer int_id;
 
-	@Column(name="apa_est_hidrologico")
-	private Boolean haEstudoHidrologicoDaArea;
+	@Column(name="apa_est_hidrologico", columnDefinition="boolean", nullable=false)
+	private Boolean apa_est_hidrologico;
 
-	@Column(name="fot_cap_lanc_geral", columnDefinition="text")
-	private String linkFotoPontoCapturaVisaoGeral;
+	@Column(name="fot_cap_lanc_geral", columnDefinition="text", nullable=false)
+	private String fot_cap_lanc_geral;
 
-	@Column(name="int_cr_latitude")
-	private BigDecimal latitudeLocalizacaoPontoInterferencia;
+	@Column(name="int_cr_latitude", columnDefinition="numeric(12,10)", nullable=false)
+	private BigDecimal int_cr_latitude;
 
-	@Column(name="int_cr_longitude")
-	private BigDecimal longitudeLocalizacaoPontoInterferencia;
+	@Column(name="int_cr_longitude", columnDefinition="numeric(12,10)", nullable=false)
+	private BigDecimal int_cr_longitude;
 
-	@Column(name="fot_cap_lanc_detalhe", columnDefinition="text")
-	private String linkFotoPontoCapturaVisaoDetalhada;
+	@Column(name="fot_cap_lanc_detalhe", columnDefinition="text", nullable=false)
+	private String fot_cap_lanc_detalhe;
 
-	@Column(name="fot_croqui_localizacao", columnDefinition="text")
-	private String linkImagemCroquiLocalizacao;
+	@Column(name="fot_croqui_localizacao", columnDefinition="text", nullable=false)
+	private String fot_croqui_localizacao;
 
-	@Column(name="apa_curso_barragem")
-	private String localInterferencia;
+	@Column(name="apa_curso_barragem", columnDefinition="character varying(150)", nullable=false)
+	private String apa_curso_barragem;
 
-	@Column(name="apa_curso")
-	private String nomeCursoAgua;
+	@Column(name="apa_manancial", columnDefinition="character varying(150)", nullable=false)
+	private String apa_manancial;
 
-	@Column(name="apa_presenca_barramento")
-	private Boolean presencaAusenciaBarramentoParaCaptacao;
+	@Column(name="apa_barragem", columnDefinition="character varying(150)", nullable=false)
+	private String apa_barragem;
 
-	@Column(name="apa_barragem")
-	private String barragemOndeFeitaCaptacao;
+	@Column(name="apa_cap_maxacumula", columnDefinition="numeric(14,5)", nullable=false)
+	private BigDecimal apa_cap_maxacumula;
 
-	@Column(name="apa_cap_maxacumula")
-	private BigDecimal capacidadeMaximaAcumulacao;
+	@Column(name="apa_bacia", columnDefinition="character varying(150)", nullable=false)
+	private String apa_bacia;
 
-	@Column(name="apa_bacia")
-	private String baciaHidrograficaOndeEstaInseridaCaptacao;
-
-	@Column(name="cnarh_id")
+	@Column(name="cnarh_id", columnDefinition="character varying")
 	private String cnarh_id;
 
-	@Column(name="out_nu_processo")
-	private String numeroProcesso;
+	@Column(name="out_nu_processo", columnDefinition="character varying(150)")
+	private String out_nu_processo;
 
-	@Column(name="emp_id")
-	private Integer idEmpreendimento;
+	@Column(name="emp_id", columnDefinition="integer", nullable=false)
+	private String emp_id;
 
-	@Column(name ="int_tsi_cd")
-	private String codigoIdentificadorSituacaoInterferencia;
+	@Column(name="fin_tfn_cd", columnDefinition="character varying", nullable=false)
+	private String fin_tfn_cd;
 
-	@Column(name ="fin_tfn_cd")
-	private String codigoIdentificadorTipoFinalidade;
+	@Column(name="fou_tou_cd", columnDefinition="character varying")
+	private String fou_tou_cd;
 
-	@Column(name ="fou_tou_cd")
-	private String codigoIdentificadorTipoOutroUso;
-
-	@Column(name ="int_tin_cd")
-	private String codigoIdentificadorTipoInterferencia;
+	@Column(name="int_tin_cd", columnDefinition="character varying", nullable=false)
+	private String int_tin_cd;
 
 	@Column(name="fou_tou_tp_outro", columnDefinition="text")
-	private String tipoFinalidadeTipoDoUsoAusente;
+	private String fou_tou_tp_outro;
 
-	public Integer getId() {
-		return id;
+	@Column(name="int_tsi_cd", columnDefinition="character varying(255)")
+	private String int_tsi_cd;
+
+	
+	
+	public Integer getInt_id() {
+		return int_id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setInt_id(Integer int_id) {
+		this.int_id = int_id;
 	}
 
-	public Boolean getHaEstudoHidrologicoDaArea() {
-		return haEstudoHidrologicoDaArea;
+	public Boolean getApa_est_hidrologico() {
+		return apa_est_hidrologico;
 	}
 
-	public void setHaEstudoHidrologicoDaArea(Boolean haEstudoHidrologicoDaArea) {
-		this.haEstudoHidrologicoDaArea = haEstudoHidrologicoDaArea;
+	public void setApa_est_hidrologico(Boolean apa_est_hidrologico) {
+		this.apa_est_hidrologico = apa_est_hidrologico;
 	}
 
-	public String getLinkFotoPontoCapturaVisaoGeral() {
-		return linkFotoPontoCapturaVisaoGeral;
+	public String getFot_cap_lanc_geral() {
+		return fot_cap_lanc_geral;
 	}
 
-	public void setLinkFotoPontoCapturaVisaoGeral(String linkFotoPontoCapturaVisaoGeral) {
-		this.linkFotoPontoCapturaVisaoGeral = linkFotoPontoCapturaVisaoGeral;
+	public void setFot_cap_lanc_geral(String fot_cap_lanc_geral) {
+		this.fot_cap_lanc_geral = fot_cap_lanc_geral;
 	}
 
-	public BigDecimal getLatitudeLocalizacaoPontoInterferencia() {
-		return latitudeLocalizacaoPontoInterferencia;
+	public BigDecimal getInt_cr_latitude() {
+		return int_cr_latitude;
 	}
 
-	public void setLatitudeLocalizacaoPontoInterferencia(BigDecimal latitudeLocalizacaoPontoInterferencia) {
-		this.latitudeLocalizacaoPontoInterferencia = latitudeLocalizacaoPontoInterferencia;
+	public void setInt_cr_latitude(BigDecimal int_cr_latitude) {
+		this.int_cr_latitude = int_cr_latitude;
 	}
 
-	public BigDecimal getLongitudeLocalizacaoPontoInterferencia() {
-		return longitudeLocalizacaoPontoInterferencia;
+	public BigDecimal getInt_cr_longitude() {
+		return int_cr_longitude;
 	}
 
-	public void setLongitudeLocalizacaoPontoInterferencia(BigDecimal longitudeLocalizacaoPontoInterferencia) {
-		this.longitudeLocalizacaoPontoInterferencia = longitudeLocalizacaoPontoInterferencia;
+	public void setInt_cr_longitude(BigDecimal int_cr_longitude) {
+		this.int_cr_longitude = int_cr_longitude;
 	}
 
-	public String getLinkFotoPontoCapturaVisaoDetalhada() {
-		return linkFotoPontoCapturaVisaoDetalhada;
+	public String getFot_cap_lanc_detalhe() {
+		return fot_cap_lanc_detalhe;
 	}
 
-	public void setLinkFotoPontoCapturaVisaoDetalhada(String linkFotoPontoCapturaVisaoDetalhada) {
-		this.linkFotoPontoCapturaVisaoDetalhada = linkFotoPontoCapturaVisaoDetalhada;
+	public void setFot_cap_lanc_detalhe(String fot_cap_lanc_detalhe) {
+		this.fot_cap_lanc_detalhe = fot_cap_lanc_detalhe;
 	}
 
-	public String getLinkImagemCroquiLocalizacao() {
-		return linkImagemCroquiLocalizacao;
+	public String getFot_croqui_localizacao() {
+		return fot_croqui_localizacao;
 	}
 
-	public void setLinkImagemCroquiLocalizacao(String linkImagemCroquiLocalizacao) {
-		this.linkImagemCroquiLocalizacao = linkImagemCroquiLocalizacao;
+	public void setFot_croqui_localizacao(String fot_croqui_localizacao) {
+		this.fot_croqui_localizacao = fot_croqui_localizacao;
 	}
 
-	public String getLocalInterferencia() {
-		return localInterferencia;
+	public String getApa_curso_barragem() {
+		return apa_curso_barragem;
 	}
 
-	public void setLocalInterferencia(String localInterferencia) {
-		this.localInterferencia = localInterferencia;
+	public void setApa_curso_barragem(String apa_curso_barragem) {
+		this.apa_curso_barragem = apa_curso_barragem;
 	}
 
-	public String getNomeCursoAgua() {
-		return nomeCursoAgua;
+	public String getApa_manancial() {
+		return apa_manancial;
 	}
 
-	public void setNomeCursoAgua(String nomeCursoAgua) {
-		this.nomeCursoAgua = nomeCursoAgua;
+	public void setApa_manancial(String apa_manancial) {
+		this.apa_manancial = apa_manancial;
 	}
 
-	public Boolean getPresencaAusenciaBarramentoParaCaptacao() {
-		return presencaAusenciaBarramentoParaCaptacao;
+	public String getApa_barragem() {
+		return apa_barragem;
 	}
 
-	public void setPresencaAusenciaBarramentoParaCaptacao(Boolean presencaAusenciaBarramentoParaCaptacao) {
-		this.presencaAusenciaBarramentoParaCaptacao = presencaAusenciaBarramentoParaCaptacao;
+	public void setApa_barragem(String apa_barragem) {
+		this.apa_barragem = apa_barragem;
 	}
 
-	public String getBarragemOndeFeitaCaptacao() {
-		return barragemOndeFeitaCaptacao;
+	public BigDecimal getApa_cap_maxacumula() {
+		return apa_cap_maxacumula;
 	}
 
-	public void setBarragemOndeFeitaCaptacao(String barragemOndeFeitaCaptacao) {
-		this.barragemOndeFeitaCaptacao = barragemOndeFeitaCaptacao;
+	public void setApa_cap_maxacumula(BigDecimal apa_cap_maxacumula) {
+		this.apa_cap_maxacumula = apa_cap_maxacumula;
 	}
 
-	public BigDecimal getCapacidadeMaximaAcumulacao() {
-		return capacidadeMaximaAcumulacao;
+	public String getApa_bacia() {
+		return apa_bacia;
 	}
 
-	public void setCapacidadeMaximaAcumulacao(BigDecimal capacidadeMaximaAcumulacao) {
-		this.capacidadeMaximaAcumulacao = capacidadeMaximaAcumulacao;
-	}
-
-	public String getBaciaHidrograficaOndeEstaInseridaCaptacao() {
-		return baciaHidrograficaOndeEstaInseridaCaptacao;
-	}
-
-	public void setBaciaHidrograficaOndeEstaInseridaCaptacao(String baciaHidrograficaOndeEstaInseridaCaptacao) {
-		this.baciaHidrograficaOndeEstaInseridaCaptacao = baciaHidrograficaOndeEstaInseridaCaptacao;
+	public void setApa_bacia(String apa_bacia) {
+		this.apa_bacia = apa_bacia;
 	}
 
 	public String getCnarh_id() {
@@ -208,60 +199,62 @@ public class Interferencia implements Serializable {
 		this.cnarh_id = cnarh_id;
 	}
 
-	public String getNumeroProcesso() {
-		return numeroProcesso;
+	public String getOut_nu_processo() {
+		return out_nu_processo;
 	}
 
-	public void setNumeroProcesso(String numeroProcesso) {
-		this.numeroProcesso = numeroProcesso;
+	public void setOut_nu_processo(String out_nu_processo) {
+		this.out_nu_processo = out_nu_processo;
 	}
 
-	public Integer getIdEmpreendimento() {
-		return idEmpreendimento;
+	public String getEmp_id() {
+		return emp_id;
 	}
 
-	public void setIdEmpreendimento(Integer idEmpreendimento) {
-		this.idEmpreendimento = idEmpreendimento;
+	public void setEmp_id(String emp_id) {
+		this.emp_id = emp_id;
 	}
 
-	public String getCodigoIdentificadorSituacaoInterferencia() {
-		return codigoIdentificadorSituacaoInterferencia;
+	public String getFin_tfn_cd() {
+		return fin_tfn_cd;
 	}
 
-	public void setCodigoIdentificadorSituacaoInterferencia(String codigoIdentificadorSituacaoInterferencia) {
-		this.codigoIdentificadorSituacaoInterferencia = codigoIdentificadorSituacaoInterferencia;
+	public void setFin_tfn_cd(String fin_tfn_cd) {
+		this.fin_tfn_cd = fin_tfn_cd;
 	}
 
-	public String getCodigoIdentificadorTipoFinalidade() {
-		return codigoIdentificadorTipoFinalidade;
+	public String getFou_tou_cd() {
+		return fou_tou_cd;
 	}
 
-	public void setCodigoIdentificadorTipoFinalidade(String codigoIdentificadorTipoFinalidade) {
-		this.codigoIdentificadorTipoFinalidade = codigoIdentificadorTipoFinalidade;
+	public void setFou_tou_cd(String fou_tou_cd) {
+		this.fou_tou_cd = fou_tou_cd;
 	}
 
-	public String getCodigoIdentificadorTipoOutroUso() {
-		return codigoIdentificadorTipoOutroUso;
+	public String getInt_tin_cd() {
+		return int_tin_cd;
 	}
 
-	public void setCodigoIdentificadorTipoOutroUso(String codigoIdentificadorTipoOutroUso) {
-		this.codigoIdentificadorTipoOutroUso = codigoIdentificadorTipoOutroUso;
+	public void setInt_tin_cd(String int_tin_cd) {
+		this.int_tin_cd = int_tin_cd;
 	}
 
-	public String getCodigoIdentificadorTipoInterferencia() {
-		return codigoIdentificadorTipoInterferencia;
+	public String getFou_tou_tp_outro() {
+		return fou_tou_tp_outro;
 	}
 
-	public void setCodigoIdentificadorTipoInterferencia(String codigoIdentificadorTipoInterferencia) {
-		this.codigoIdentificadorTipoInterferencia = codigoIdentificadorTipoInterferencia;
+	public void setFou_tou_tp_outro(String fou_tou_tp_outro) {
+		this.fou_tou_tp_outro = fou_tou_tp_outro;
 	}
 
-	public String getTipoFinalidadeTipoDoUsoAusente() {
-		return tipoFinalidadeTipoDoUsoAusente;
+	public String getInt_tsi_cd() {
+		return int_tsi_cd;
 	}
 
-	public void setTipoFinalidadeTipoDoUsoAusente(String tipoFinalidadeTipoDoUsoAusente) {
-		this.tipoFinalidadeTipoDoUsoAusente = tipoFinalidadeTipoDoUsoAusente;
+	public void setInt_tsi_cd(String int_tsi_cd) {
+		this.int_tsi_cd = int_tsi_cd;
 	}
+
+	
 
 }

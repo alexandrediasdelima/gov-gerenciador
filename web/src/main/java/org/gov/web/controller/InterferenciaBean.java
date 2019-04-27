@@ -2,6 +2,10 @@ package org.gov.web.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.gov.model.Apac;
+import org.gov.model.Cnarh;
+import org.gov.model.Empreendimento;
 import org.gov.model.Interferencia;
 import org.gov.model.Usuario;
 import org.gov.service.InterferenciaService;
@@ -22,18 +26,26 @@ public class InterferenciaBean extends Controller  {
 	private List<Interferencia> interferencias;
 	private InterferenciaService interferenciaService;
 	private List<Interferencia> filteredInterferencias;
+	private List<Cnarh> cnarhs;
+	private List<Apac> processos;
+	private List<Empreendimento> empreendimentos;
 	
-	public String interferencias() {
-		interferencias = interferenciaService.interferencias();
-		setView(LIST);
-		return eval(index());
-	}
+	private boolean isOutroUso;
 	
 	public InterferenciaBean() {
 		setInterferencia(new Interferencia());
 		interferenciaService = new InterferenciaServiceImpl();
 		interferencias = new ArrayList<Interferencia>();
+		cnarhs = new ArrayList<Cnarh>();
+		processos = new ArrayList<Apac>();
+		empreendimentos = new ArrayList<Empreendimento>();
 		interferencias();
+	}
+	
+	public String interferencias() {
+		interferencias = interferenciaService.interferencias();
+		setView(LIST);
+		return eval(index());
 	}
 	
 	public String gravar() {
@@ -45,6 +57,9 @@ public class InterferenciaBean extends Controller  {
 	public String adicionarNovo() {
 		setView(ADD);
 		limparForm();
+		this.setCnarhs(interferenciaService.cnarhs());
+		this.setProcessos(interferenciaService.processos());
+		this.setEmpreendimentos(interferenciaService.empreendimentos());
 		return eval(index());
 	}
 
@@ -62,17 +77,26 @@ public class InterferenciaBean extends Controller  {
 	}
 
 	public String deletar() {
-		interferenciaService.remover(interferencia.getId());
+		interferenciaService.remover(interferencia.getInt_id());
 		interferencias();
 		return eval(index());
 	}
 	
-	 private void limparForm() {
+	private void limparForm() {
 //		 this.usuario.setAreaTotalReserv(null);
 //		 this.usuario.setNumeroSiagas(null);
 //		 this.usuario.setVolumeMaxReserv(null);
 	}	
 
+	public void apresentarOutroUso() {
+		if ("53".equals(interferencia.getFou_tou_cd())) {
+			isOutroUso = true;
+		} else {
+			isOutroUso = false;
+		}
+	}
+	 
+	
 	public String index() {
 		return "/interferencia/index";
 	}
@@ -102,5 +126,38 @@ public class InterferenciaBean extends Controller  {
 		this.filteredInterferencias = filteredInterferencias;
 	}
 
+	public Boolean getIsOutroUso() {
+		return isOutroUso;
+	}
+
+	public void setIsOutroUso(Boolean isOutroUso) {
+		this.isOutroUso = isOutroUso;
+	}
+
+	public List<Cnarh> getCnarhs() {
+		return cnarhs;
+	}
+
+	public void setCnarhs(List<Cnarh> cnarhs) {
+		this.cnarhs = cnarhs;
+	}
+
+	public List<Apac> getProcessos() {
+		return processos;
+	}
+
+	public void setProcessos(List<Apac> processos) {
+		this.processos = processos;
+	}
+
+	public List<Empreendimento> getEmpreendimentos() {
+		return empreendimentos;
+	}
+
+	public void setEmpreendimentos(List<Empreendimento> empreendimentos) {
+		this.empreendimentos = empreendimentos;
+	}
+
+	
 	
 }

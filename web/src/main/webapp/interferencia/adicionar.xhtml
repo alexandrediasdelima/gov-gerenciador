@@ -7,51 +7,85 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-
-		<style type="text/css">
-			.ui-state-hover {
-				background: none !important;
-				background-image: none !important;
-			}
-		</style>
-
+	
+	<style type="text/css">
+		.ui-state-hover {
+			background: none !important;
+			background-image: none !important;
+		}
+	</style>
+	
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addInterferencia" prependId="false" style="width:99%;" >
-
 		<br/><br/><br/>
 		<p:fieldset legend="Interferência">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
 				<h:panelGrid columns="2" style="border: 0px solid;">
+					<p:outputLabel value="ID-Cnarh:" />
+					<c:choose>
+						<c:when test="#{interferenciaBean.view == 'edit'}">
+							<p:inputText id="idCnarh" value="#{interferenciaBean.interferencia.cnarh_id}" disabled="true" />
+						</c:when>
+						<c:otherwise>
+							<p:selectOneMenu id="idCnarh" value="#{interferenciaBean.interferencia.cnarh_id}" style="width:230px">
+								<f:selectItems value="#{interferenciaBean.cnarhs}" var="cnarh" itemValue="#{cnarh[0]}" itemLabel="#{cnarh[1]}" />
+							</p:selectOneMenu>
+						</c:otherwise>
+					</c:choose>
+					
+					<p:outputLabel value="ID-Apac:" />
+					<c:choose>
+						<c:when test="#{interferenciaBean.view == 'edit'}">
+							<p:inputText id="idApac" value="#{interferenciaBean.interferencia.out_nu_processo}" disabled="true" />
+						</c:when>
+						<c:otherwise>
+							<p:selectOneMenu id="idApac" value="#{interferenciaBean.interferencia.out_nu_processo}" style="width:230px">
+								<f:selectItems value="#{interferenciaBean.processos}" var="processo" itemValue="#{processo[0]}" itemLabel="#{processo[0]}" />
+							</p:selectOneMenu>
+						</c:otherwise>
+					</c:choose>
+					
+					<p:outputLabel value="ID-Empreendimento:" />
+					<c:choose>
+						<c:when test="#{interferenciaBean.view == 'edit'}">
+							<p:inputText id="idEmpreendimento" value="#{interferenciaBean.interferencia.emp_id}" disabled="true" />
+						</c:when>
+						<c:otherwise>
+							<p:selectOneMenu id="idEmpreendimento" value="#{interferenciaBean.interferencia.emp_id}" style="width:230px">
+								<f:selectItems value="#{interferenciaBean.empreendimentos}" var="empreendimento" itemValue="#{empreendimento[0]}" itemLabel="#{empreendimento[1]} (#{empreendimento[2]}-#{empreendimento[3]})" />
+							</p:selectOneMenu>
+						</c:otherwise>
+					</c:choose>
 
 					<p:outputLabel value="Há Estudo Hidrológico da Área:" for="estudoHidrologico" id="estuHidrologico" />
-					<p:selectOneMenu id="estudoHidrologico" value="#{interferenciaBean.interferencia.haEstudoHidrologicoDaArea}" style="width:230px">
+					<p:selectOneMenu id="estudoHidrologico" value="#{interferenciaBean.interferencia.apa_est_hidrologico}" style="width:230px">
 						<f:selectItem itemLabel="SIM" itemValue="SIM" />
 						<f:selectItem itemLabel="NÃO" itemValue="NÃO" />
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Link para a Foto do Ponto de Captura/Lançamento em Visão Geral:" for="fotoVisaoGeral" id="fotoGeral"/>
-					<p:inputText id="fotoVisaoGeral" value="#{interferenciaBean.interferencia.linkFotoPontoCapturaVisaoGeral}" />
+					<p:inputText id="fotoVisaoGeral" value="#{interferenciaBean.interferencia.fot_cap_lanc_geral}" />
 
 					<p:outputLabel value="Link para a Foto do Ponto de Captura/Lançamento em Visão Detalhada:" for="fotoVisaoDetalhada" id="fotoDetalhada" />
-					<p:inputText id="fotoVisaoDetalhada" value="#{interferenciaBean.interferencia.linkFotoPontoCapturaVisaoDetalhada}" />
+					<p:inputText id="fotoVisaoDetalhada" value="#{interferenciaBean.interferencia.fot_cap_lanc_detalhe}" />
 
 					<p:outputLabel value="Link para a Imagem do Croqui de Localização do Ponto da Captação/Lançamento:" for="linkCroqui" id="lnkCroqui" />
-					<p:inputText id="linkCroqui" value="#{interferenciaBean.interferencia.linkImagemCroquiLocalizacao}" />
+					<p:inputText id="linkCroqui" value="#{interferenciaBean.interferencia.fot_croqui_localizacao}" />
 
 					<p:outputLabel value="Latitude do Ponto de Interferência:" for="latitude" id="latitudeInterferencia" />
-					<p:inputText id="latitude" maxlength="14" value="#{interferenciaBean.interferencia.latitudeLocalizacaoPontoInterferencia}"/>
+					<p:inputText id="latitude" maxlength="14" value="#{interferenciaBean.interferencia.int_cr_latitude}"/>
 
 					<p:outputLabel value="Longitude do Ponto de Interferência:" for="longitude" id="longitudeInterferencia" />
-					<p:inputText id="longitude" maxlength="14" value="#{interferenciaBean.interferencia.longitudeLocalizacaoPontoInterferencia}"/>
-
+					<p:inputText id="longitude" maxlength="14" value="#{interferenciaBean.interferencia.int_cr_longitude}"/>
+					
 					<p:outputLabel value="Local da Interferência:" for="localInterferencia" id="loInterferencia" />
-					<p:selectOneMenu id="localInterferencia" value="#{interferenciaBean.interferencia.localInterferencia}" style="width:230px">
+					<p:selectOneMenu id="localInterferencia" value="#{interferenciaBean.interferencia.apa_curso_barragem}" style="width:230px">
 						<f:selectItem itemLabel="BARRAGEM" itemValue="BARRAGEM" />
 						<f:selectItem itemLabel="CURSO D'ÁGUA" itemValue="CURSO D'ÁGUA" />
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Nome do Curso da Água:" for="nomeCurso" id="nomeCursoAgua"/>
-					<p:selectOneMenu id="nomeCurso" value="#{interferenciaBean.interferencia.nomeCursoAgua}" style="width:230px">
+					<p:selectOneMenu id="nomeCurso" value="#{interferenciaBean.interferencia.apa_manancial}" style="width:230px">
 						<f:selectItem itemLabel="ARROIO CAITÉ" itemValue="ARROIO CAITÉ" />
 						<f:selectItem itemLabel="ARROIO DESTERRO" itemValue="ARROIO DESTERRO" />
 						<f:selectItem itemLabel="ARROIO DO MAXIMINO" itemValue="ARROIO DO MAXIMINO" />
@@ -850,7 +884,7 @@
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Barragem onde é feita a captação:" for="barragemCaptacao" id="barra"/>
-					<p:selectOneMenu id="barragemCaptacao" value="#{interferenciaBean.interferencia.barragemOndeFeitaCaptacao}" style="width:230px">
+					<p:selectOneMenu id="barragemCaptacao" value="#{interferenciaBean.interferencia.apa_barragem}" style="width:230px">
 						<f:selectItem itemLabel="GUARAREMA (ALIANÇA)" itemValue="GUARAREMA (ALIANÇA)" />
 						<f:selectItem itemLabel="PALMEIRINHA/PEDRAFINA" itemValue="PALMEIRINHA/PEDRAFINA" />
 						<f:selectItem itemLabel="SIRIGI" itemValue="SIRIGI" />
@@ -965,10 +999,10 @@
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Capacidade máxima de acumulação (m³):" for="capacidade" id="capacidadeMaxima" />
-					<p:inputText maxlength="15" id="capacidade" value="#{interferenciaBean.interferencia.capacidadeMaximaAcumulacao}" />
+					<p:inputText maxlength="15" id="capacidade" value="#{interferenciaBean.interferencia.apa_cap_maxacumula}" />
 
 					<p:outputLabel value="Bacia hidrográfica onde esta inserida a captação/lançamento:" for="bacia" id="baciaHidro" />
-					<p:selectOneMenu id="bacia" value="#{interferenciaBean.interferencia.baciaHidrograficaOndeEstaInseridaCaptacao}" style="width:230px">
+					<p:selectOneMenu id="bacia" value="#{interferenciaBean.interferencia.apa_bacia}" style="width:230px">
 						<f:selectItem itemLabel="BRIGIDA" itemValue="BRIGIDA" />
 						<f:selectItem itemLabel="CAPIBARIBE" itemValue="CAPIBARIBE" />
 						<f:selectItem itemLabel="GARCAS" itemValue="GARCAS" />
@@ -999,7 +1033,7 @@
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Situação da Interferência:" for="int_tsi_cd" id="situacao"/>
-					<p:selectOneMenu id="int_tsi_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorSituacaoInterferencia}" style="width:230px">
+					<p:selectOneMenu id="int_tsi_cd" value="#{interferenciaBean.interferencia.int_tsi_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="PROJETO" itemValue="1" />
 						<f:selectItem itemLabel="CONSTRUÇÃO" itemValue="2" />
@@ -1008,7 +1042,7 @@
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Tipo da Finalidade:" for="fin_tfn_cd" id="tpFinalidade" />
-					<p:selectOneMenu id="fin_tfn_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoFinalidade}" style="width:230px">
+					<p:selectOneMenu id="fin_tfn_cd" value="#{interferenciaBean.interferencia.fin_tfn_cd}" style="width:230px">
 						<f:selectItem itemValue="" itemLabel="Selecione" />
 						<f:selectItem itemLabel="ABASTECIMENTO PÚBLICO" itemValue="1" />
 						<f:selectItem itemLabel="APROVEITAMENTO HIDROELÉTRICO" itemValue="10" />
@@ -1031,8 +1065,8 @@
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Tipo de Outro Uso:" for="fou_tou_cd" id="tpOutroUso" />
-					<p:selectOneMenu id="fou_tou_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoOutroUso}" style="width:230px">
-						<f:selectItem itemValue="" itemLabel="Selecione" />
+					<p:selectOneMenu id="fou_tou_cd" value="#{interferenciaBean.interferencia.fou_tou_cd}" style="width:230px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="ABASTECIMENTO DE PULVERIZADORES" itemValue="51" />
 						<f:selectItem itemLabel="BALNEÁRIO - LAZER E CLUBE" itemValue="39" />
 						<f:selectItem itemLabel="CLARIFICAÇÃO DA ÁGUA" itemValue="22" />
@@ -1058,16 +1092,24 @@
 						<f:selectItem itemLabel="UMECTAÇÃO DE VIAS" itemValue="17" />
 						<f:selectItem itemLabel="URBANIZAÇÃO" itemValue="31" />
 						<f:selectItem itemLabel="OUTRO" itemValue="53" />
+						<p:ajax listener="#{interferenciaBean.apresentarOutroUso}" event="change" update="panelDescOutroUso" />
 					</p:selectOneMenu>
+					
+					<h:panelGroup id="panelDescOutroUso">
+						<p:outputLabel value="Qual?:" id="labelDescOutroUso" for="descOutroUso" rendered="#{interferenciaBean.isOutroUso}" />
+						<p:inputText maxlength="100" id="descOutroUso" value="#{interferenciaBean.interferencia.fou_tou_tp_outro}" rendered="#{interferenciaBean.isOutroUso}" />
+					</h:panelGroup>
 
 					<p:outputLabel value="Tipo da Interferência:" for="int_tin_cd" id="tpInterf" />
-					<p:selectOneMenu id="int_tin_cd" value="#{interferenciaBean.interferencia.codigoIdentificadorTipoInterferencia}" style="width:230px">
+					<p:selectOneMenu id="int_tin_cd" value="#{interferenciaBean.interferencia.int_tin_cd}" style="width:230px">
 						<f:selectItem itemValue="" itemLabel="Selecione" />
 						<f:selectItem itemLabel="CAPTAÇÃO" itemValue="1" />
 						<f:selectItem itemLabel="LANÇAMENTO" itemValue="2" />
 						<f:selectItem itemLabel="BARRAGEM" itemValue="3" />
 						<f:selectItem itemLabel="PONTO DE REFERÊNCIA" itemValue="4" />
 					</p:selectOneMenu>
+					
+					
 
 				</h:panelGrid>
 
