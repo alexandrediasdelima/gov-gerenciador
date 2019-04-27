@@ -317,15 +317,6 @@ public class FichaCampo implements Serializable {
 	@Column (name="int_tsi_cd")
 	private String int_tsi_cd;
 
-	@Column (name="int_obs")
-	private String int_obs;
-
-	@Column (name="apa_curso")
-	private String apa_curso;
-
-	@Column (name="apa_presenca_barramento")
-	private String apa_presenca_barramento;
-
 	@Column (name="irr_int_pfk")
 	private String irr_int_pfk;
 
@@ -1498,30 +1489,6 @@ public class FichaCampo implements Serializable {
 
 	public void setInt_tsi_cd(String int_tsi_cd) {
 		this.int_tsi_cd = int_tsi_cd;
-	}
-
-	public String getInt_obs() {
-		return int_obs;
-	}
-
-	public void setInt_obs(String int_obs) {
-		this.int_obs = int_obs;
-	}
-
-	public String getApa_curso() {
-		return apa_curso;
-	}
-
-	public void setApa_curso(String apa_curso) {
-		this.apa_curso = apa_curso;
-	}
-
-	public String getApa_presenca_barramento() {
-		return apa_presenca_barramento;
-	}
-
-	public void setApa_presenca_barramento(String apa_presenca_barramento) {
-		this.apa_presenca_barramento = apa_presenca_barramento;
 	}
 
 	public String getIrr_int_pfk() {

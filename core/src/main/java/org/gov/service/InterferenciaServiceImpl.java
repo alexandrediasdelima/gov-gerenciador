@@ -2,9 +2,14 @@ package org.gov.service;
 
 import java.util.List;
 
+import org.gov.dao.EmpreendimentoDaoImpl;
 import org.gov.dao.InterferenciaDao;
 import org.gov.dao.InterferenciaDaoImpl;
+import org.gov.model.Apac;
+import org.gov.model.Cnarh;
+import org.gov.model.Empreendimento;
 import org.gov.model.Interferencia;
+import org.gov.model.Usuario;
 
 
 public class InterferenciaServiceImpl implements InterferenciaService{
@@ -38,7 +43,20 @@ public class InterferenciaServiceImpl implements InterferenciaService{
 		return interferenciaDao.editar(interferencia);
 	}
 	
+	public List<Cnarh> cnarhs() {
+		interferenciaDao = new InterferenciaDaoImpl();
+		return interferenciaDao.cnarhs();
+	}
 	
+	public List<Apac> processos() {
+		interferenciaDao = new InterferenciaDaoImpl();
+		return interferenciaDao.processos();
+	}
+	
+	public List<Empreendimento> empreendimentos() {
+		interferenciaDao = new InterferenciaDaoImpl();
+		return interferenciaDao.empreendimentos();
+	}
 	
 //	public String gravar(Interferencia interferencia) {
 //

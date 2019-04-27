@@ -112,6 +112,15 @@ public class EmpreendimentoBean extends Controller  {
 		return eval(index());
 	}
 
+	public List<String> completeText(String query) {
+        List<String> results = new ArrayList<String>();
+        for(int i = 0; i < 10; i++) {
+            results.add(query + i);
+        }
+         
+        return results;
+    }
+	
 	public void atualizarMunicipios() {
 		setRegioes(empreendimentoService.buscarMunicipios("PE"));
 	}

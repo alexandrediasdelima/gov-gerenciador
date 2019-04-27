@@ -1,7 +1,12 @@
 package org.gov.dao;
 
 import javax.persistence.EntityManager;
+
+import org.gov.model.Apac;
+import org.gov.model.Cnarh;
+import org.gov.model.Empreendimento;
 import org.gov.model.Interferencia;
+import org.gov.model.Usuario;
 import org.gov.util.JPAUtil;
 import java.util.List;
 import javax.persistence.Query;
@@ -63,4 +68,40 @@ public class InterferenciaDaoImpl implements InterferenciaDao {
 
 	}
 
+	public List<Cnarh> cnarhs() {
+		entityManager.getTransaction().begin();
+		Query query = entityManager.createNativeQuery("SELECT c.cnarh_id FROM tb_cnarh c ORDER BY c.cnarh_id");
+
+		List<Cnarh> cnarhs = query.getResultList();
+
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return cnarhs;
+	}
+	
+	public List<Apac> processos() {
+		entityManager.getTransaction().begin();
+		Query query = entityManager.createNativeQuery("SELECT a.out_nu_processo FROM tb_apac a ORDER BY a.out_nu_processo");
+
+		List<Apac> processos = query.getResultList();
+
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return processos;
+	}
+	
+	public List<Empreendimento> empreendimentos() {
+		entityManager.getTransaction().begin();
+		Query query = entityManager.createNativeQuery("SELECT e.emp_id, e.emp_nm_empreendimento, u.emp_nu_cpfcnpj, u.emp_nm_usuario FROM tb_empreendimento e INNER JOIN tb_usuario u ON e.usuario_id = u.usuario_id ORDER BY e.emp_nm_empreendimento");
+
+		List<Empreendimento> empreendimentos = query.getResultList();
+
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return empreendimentos;
+	}
+	
 }
