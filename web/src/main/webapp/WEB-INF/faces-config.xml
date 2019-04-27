@@ -10,7 +10,6 @@
 
 	<lifecycle>
 		<phase-listener>org.gov.web.listener.Autorizador</phase-listener>
-
 	</lifecycle>
 
 
@@ -133,7 +132,7 @@
 		<managed-bean-class>org.gov.web.controller.OutraInfoBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>fichaCampoBean</managed-bean-name>
 		<managed-bean-class>org.gov.web.controller.FichaCampoBean</managed-bean-class>
