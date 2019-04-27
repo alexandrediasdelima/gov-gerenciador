@@ -16,7 +16,7 @@ public class EmailValidator implements Validator {
 
 		String email = (String) obj;
 
-		if(!validaEmail(email)) {
+		if(email != null && !validaEmail(email)) {
 			throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Email incorreto", null));
 		}
 

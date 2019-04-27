@@ -29,13 +29,13 @@
 							</p:selectOneMenu>
 						</c:otherwise>
 					</c:choose>
-					
+
 					<p:outputLabel value="Nome do Empreendimento:" for="nomeEmpreendimento" />
 					<p:inputText id="nomeEmpreendimento" value="#{empreendimentoBean.empreendimento.nomeEmpreendimento}" required="true" />
-					
+
 					<p:outputLabel value="Área Total(Hectare):" for="areaTotal" />
 					<p:inputText id="areaTotal" value="#{empreendimentoBean.empreendimento.areaTotalPropriedade}" required="true" />
-					
+
 					<p:outputLabel value="Tipo de Logradouro:" for="tipoLogradouro" />
 					<p:selectOneMenu id="tipoLogradouro" value="#{empreendimentoBean.empreendimento.tipoLogradouroEmpreendimento}" required="true" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -52,7 +52,7 @@
 						<f:selectItem itemLabel="TRAVESSA" itemValue="TRAVESSA" />
 						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
 					</p:selectOneMenu>
-					
+
 					<p:outputLabel value="Endereço:" for="endEmpreendimento" />
 					<p:inputText id="endEmpreendimento" value="#{empreendimentoBean.empreendimento.enderecoEmpreendimento}" required="true" />
 
@@ -92,17 +92,20 @@
 
 					<p:outputLabel value="Número da Outorga:" for="outorga" />
 					<p:inputText id="outorga" value="#{empreendimentoBean.empreendimento.numeroOutorga}" required="true" />
-					
+
 					<p:outputLabel type="hidden" />
 					<p:inputText id="unidade" type="hidden" value="Hectare" />
 				</h:panelGrid>
-				
+
 				<p:commandButton value="Voltar" action="#{empreendimentoBean.voltar}" ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{empreendimentoBean.gravar}" ajax="false" rendered="#{empreendimentoBean.view == 'add'}"  icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{empreendimentoBean.editar}" ajax="false" rendered="#{empreendimentoBean.view == 'edit'}"  icon="ui-icon-pencil" />
 
 			</p:scrollPanel>
 		</p:fieldset>
+
+		<p:tooltip for="nomeEmpreendimento" value="Campo descritivo que representa o nome do empreendimento." position="top"/>
+
 		</h:form>
 	</div>
 		<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
@@ -111,9 +114,9 @@
 			$("#numeroEmpreendimento").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true })
 			$("#cep").inputmask({mask: "99999-999", greedy: true, removeMaskOnSubmit: true })
 			$("#caixaPostalEmpreendimento").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true })
-			
+
 			$("#areaTotal").inputmask({mask: "9[9][9][9][9][9][9].9[9]", greedy: false, clearMaskOnLostFocus: true })
-			
+
 		})
 	</script>
 </ui:composition>
