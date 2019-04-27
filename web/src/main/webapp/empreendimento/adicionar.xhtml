@@ -13,7 +13,7 @@
 	</style>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
-		<h:form id="addEmpreendimento" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		<h:form id="addEmpreendimento" prependId="false" style="width:99%;">
 		<br/><br/><br/>
 		<p:fieldset legend="Empreendimento">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
@@ -30,13 +30,13 @@
 						</c:otherwise>
 					</c:choose>
 
-					<p:outputLabel value="Nome do Empreendimento:" for="nomeEmpreendimento" />
+					<p:outputLabel value="Nome do Empreendimento:" for="nomeEmpreendimento" id="nmEmpreendimento"/>
 					<p:inputText id="nomeEmpreendimento" value="#{empreendimentoBean.empreendimento.nomeEmpreendimento}" required="true" />
 
-					<p:outputLabel value="Área Total(Hectare):" for="areaTotal" />
+					<p:outputLabel value="Área Total(Hectare):" for="areaTotal" id="total" />
 					<p:inputText id="areaTotal" value="#{empreendimentoBean.empreendimento.areaTotalPropriedade}" required="true" />
 
-					<p:outputLabel value="Tipo de Logradouro:" for="tipoLogradouro" />
+					<p:outputLabel value="Tipo de Logradouro:" for="tipoLogradouro" id="tpLogradouro" />
 					<p:selectOneMenu id="tipoLogradouro" value="#{empreendimentoBean.empreendimento.tipoLogradouroEmpreendimento}" required="true" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemLabel="AVENIDA" itemValue="AVENIDA" />
@@ -53,31 +53,31 @@
 						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Endereço:" for="endEmpreendimento" />
+					<p:outputLabel value="Endereço:" for="endEmpreendimento" id="enderecoEmpreendimento" />
 					<p:inputText id="endEmpreendimento" value="#{empreendimentoBean.empreendimento.enderecoEmpreendimento}" required="true" />
 
-					<p:outputLabel value="Nome do Logradouro:" for="nomeLogradouro" />
+					<p:outputLabel value="Nome do Logradouro:" for="nomeLogradouro" id="nmLogradouro" />
 					<p:inputText id="nomeLogradouro" value="#{empreendimentoBean.empreendimento.nomeLogradouroEmpreendimento}" required="true" />
 
-					<p:outputLabel value="Número:" for="numeroEmpreendimento" />
+					<p:outputLabel value="Número:" for="numeroEmpreendimento" id="numero" />
 					<p:inputText id="numeroEmpreendimento" value="#{empreendimentoBean.empreendimento.numeroLogradouroEmpreendimento}" required="true" />
 
-					<p:outputLabel value="Complemento:" for="complemento" />
+					<p:outputLabel value="Complemento:" for="complemento" id="comple" />
 					<p:inputText id="complemento" value="#{empreendimentoBean.empreendimento.complementoLogradouroEmpreendimento}" required="true" />
 
-					<p:outputLabel value="Acesso Principal:" for="nomePrincipalEmpreendimento" />
+					<p:outputLabel value="Acesso Principal:" for="nomePrincipalEmpreendimento" id="acesso" />
 					<p:inputText id="nomePrincipalEmpreendimento" value="#{empreendimentoBean.empreendimento.nomeAcessoPrincipalEmpreendimento}" required="true" />
 
-					<p:outputLabel value="Local:" for="localEmpreendimento" />
+					<p:outputLabel value="Local:" for="localEmpreendimento" id="local" />
 					<p:inputText id="localEmpreendimento" value="#{empreendimentoBean.empreendimento.localEmpreendimento}" required="true" />
 
-					<p:outputLabel value="Caixa Postal:" for="caixaPostalEmpreendimento" />
+					<p:outputLabel value="Caixa Postal:" for="caixaPostalEmpreendimento" id="cxPostal"/>
 					<p:inputText id="caixaPostalEmpreendimento" value="#{empreendimentoBean.empreendimento.numeroCaixaPostalEmpreendimento}" />
 
-					<p:outputLabel value="CEP:" for="cep" />
+					<p:outputLabel value="CEP:" for="cep" id="cp" />
 					<p:inputText id="cep" value="#{empreendimentoBean.empreendimento.cepEmpreendimento}" required="true" />
 
-					<p:outputLabel value="Município:" for="municipio" />
+					<p:outputLabel value="Município:" for="municipio" id="muni" />
 					<p:selectOneMenu id="municipio" value="#{empreendimentoBean.empreendimento.nomeMunicipioEmpreendimento}" required="true" style="width:230px !important" >
 	                    <f:selectItem itemLabel="Selecione" itemValue="" />
 	                    <f:selectItems value="#{empreendimentoBean.regioes}"
@@ -87,10 +87,10 @@
                         <p:ajax listener="#{empreendimentoBean.atualizarIbge}" event="change" update="codigo" />
                      </p:selectOneMenu>
 
-					<p:outputLabel value="Código IBGE:" for="codigo" />
+					<p:outputLabel value="Código IBGE:" for="codigo" id="cdIbge" />
 					<p:inputText id="codigo" value="#{empreendimentoBean.empreendimento.ibgeMunicipioLocalizadaInterferencia}" required="true" disabled="true" />
 
-					<p:outputLabel value="Número da Outorga:" for="outorga" />
+					<p:outputLabel value="Número da Outorga:" for="outorga" id="nomeOu" />
 					<p:inputText id="outorga" value="#{empreendimentoBean.empreendimento.numeroOutorga}" required="true" />
 
 					<p:outputLabel type="hidden" />
@@ -104,7 +104,20 @@
 			</p:scrollPanel>
 		</p:fieldset>
 
-		<p:tooltip for="nomeEmpreendimento" value="Campo descritivo que representa o nome do empreendimento." position="top"/>
+		<p:tooltip for="nmEmpreendimento" value="Campo descritivo que representa o nome do empreendimento." position="top"/>
+		<p:tooltip for="total" value="Campo numérico que representa a área total da propriedade." position="top"/>
+		<p:tooltip for="tpLogradouro" value="Campo descritivo que representa o tipo de logradouro do empreendimento." position="top"/>
+		<p:tooltip for="enderecoEmpreendimento" value="Campo descritivo que representa se o endereço do empreendimento é o mesmo que o da correspondência." position="top"/>
+		<p:tooltip for="nmLogradouro" value="Campo descritivo que representa se o endereço do empreendimento é o mesmo que o da correspondência." position="top"/>
+		<p:tooltip for="numero" value="Campo numérico que representa o número do endereço do empreendimento." position="top"/>
+		<p:tooltip for="comple" value="Campo descritivo que representa o complemento do endereço do empreendimento." position="top"/>
+		<p:tooltip for="acesso" value="Campo descritivo que representa o nome do acesso principal ao empreendimento." position="top"/>
+		<p:tooltip for="local" value="Campo descritivo que representa o local do empreeendimento." position="top"/>
+		<p:tooltip for="cxPostal" value="Campo numérico que representa o número da caixa postal do empreendimento." position="top"/>
+		<p:tooltip for="cp" value="Campo numérico que representa o número do cep do empreendimento." position="top"/>
+		<p:tooltip for="muni" value="Campo que representa o nome do município onde se localiza o empreendimento." position="top"/>
+		<p:tooltip for="cdIbge" value="Campo que representa o código ibge do municipio onde está localizada a interferência." position="top"/>
+		<p:tooltip for="nomeOu" value="Campo numérico que representa o número da outorga" position="top"/>
 
 		</h:form>
 	</div>
