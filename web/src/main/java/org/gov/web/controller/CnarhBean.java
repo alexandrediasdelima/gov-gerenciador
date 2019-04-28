@@ -83,9 +83,11 @@ public class CnarhBean extends Controller  {
 	}
 
 	 private void limparForm() {
-//		 this.cnarh.setAreaTotalReserv(null);
-//		 this.cnarh.setNumeroSiagas(null);
-//		 this.cnarh.setVolumeMaxReserv(null);
+		 this.cnarh.setCnarh_id(null);
+		 this.cnarh.setInt_nu_siagas(null);
+		 this.cnarh.setIus_ar_resmax(null);
+		 this.cnarh.setIus_nu_alturares(null);
+		 this.cnarh.setIus_vo_resmax(null);
 	}
 
 	public void onDateSelect(SelectEvent event) {
@@ -131,6 +133,6 @@ public class CnarhBean extends Controller  {
 		this.filteredCnarhs = filteredCnarhs;
 	}
 
-	
-	
+
+
 }
