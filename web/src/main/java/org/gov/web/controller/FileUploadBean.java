@@ -1,5 +1,6 @@
 package org.gov.web.controller;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,7 +26,10 @@ public class FileUploadBean extends Controller {
 
         if(file != null) {
 
-        	String caminhoDestinoArquivo = "C:/import_cad/" + file.getFileName();
+        	String nomeArquivo = verificaArquivoComMesmoNome(file.getFileName());
+
+        	String caminhoDestinoArquivo = "C:/import_cad/" + nomeArquivo;
+
         	boolean transferenciaSucesso = false;
         	try {
 				transferenciaSucesso = copyFile(file.getInputstream(), caminhoDestinoArquivo);
@@ -44,7 +48,32 @@ public class FileUploadBean extends Controller {
         }
     }
 
-    public void handleFileUpload(FileUploadEvent event) {
+	private String verificaArquivoComMesmoNome(String fileName) {
+
+
+		String arquivo = cortarTrecho(fileName, ".txt");
+
+		File file = new File("C:/import_cad/");
+
+		File[] listFiles = file.listFiles();
+
+		int cont = 1;
+
+		for (File f : listFiles) {
+
+			String arquivoNovo = cortarTrecho(f.getName(), ".txt");
+
+			if (arquivoNovo.equals(arquivo)) {
+				arquivo = arquivo + cont;
+				cont++;
+
+			}
+		}
+
+		return arquivo + ".txt";
+	}
+
+	public void handleFileUpload(FileUploadEvent event) {
         FacesMessage msg = new FacesMessage("Sucesso", event.getFile().getFileName() + " Enviado");
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
@@ -64,9 +93,13 @@ public class FileUploadBean extends Controller {
       boolean success = true;
       try {
          os = new FileOutputStream(outFile);
+
          buffer = new byte[is.available()];
          is.read(buffer);
          os.write(buffer);
+
+
+
       } catch (IOException e) {
          success = false;
       } catch (OutOfMemoryError e) {
@@ -83,4 +116,40 @@ public class FileUploadBean extends Controller {
       }
       return success;
    }
+
+   public static void main(String[] args) {
+
+	   String arq = "documento.txt";
+
+	   String arquivo = cortarTrecho(arq, ".txt");
+
+	   File file = new File("C:/import_cad/");
+
+	   File[] listFiles = file.listFiles();
+
+	   int cont = 1;
+
+		for (File f : listFiles) {
+
+			String arquivoNovo = cortarTrecho(f.getName(), ".txt");
+
+			System.out.println(arquivoNovo);
+
+			if(arquivoNovo.equals(arquivo)) {
+				arquivo = arquivo + cont;
+				cont ++;
+
+			}
+	   }
+
+	}
+
+   public static String cortarTrecho(String nome, String trecho) {
+
+       int index = nome.indexOf(trecho);
+       nome = nome.substring(0, index);
+       return nome;
+
+   }
+
 }
