@@ -8,6 +8,7 @@ import org.gov.model.Cnarh;
 import org.gov.model.Empreendimento;
 import org.gov.model.Interferencia;
 import org.gov.model.Usuario;
+import org.gov.service.ApacServiceImpl;
 import org.gov.service.InterferenciaService;
 import org.gov.service.InterferenciaServiceImpl;
 
@@ -49,6 +50,12 @@ public class InterferenciaBean extends Controller  {
 	}
 	
 	public String gravar() {
+		if(getCnarhs().size() == 0) {
+			this.interferencia.setCnarh_id(null);
+		}
+		if(getProcessos().size() == 0) {
+			this.interferencia.setOut_nu_processo(null);
+		}
 		interferenciaService.gravar(interferencia);
 		interferencias();
 		return eval(index());
@@ -83,10 +90,27 @@ public class InterferenciaBean extends Controller  {
 	}
 	
 	private void limparForm() {
-//		 this.usuario.setAreaTotalReserv(null);
-//		 this.usuario.setNumeroSiagas(null);
-//		 this.usuario.setVolumeMaxReserv(null);
-	}	
+		this.interferencia.setInt_id(null);
+		this.interferencia.setApa_est_hidrologico(null);
+		this.interferencia.setFot_cap_lanc_geral(null);
+		this.interferencia.setInt_cr_latitude(null);
+		this.interferencia.setInt_cr_longitude(null);
+		this.interferencia.setFot_cap_lanc_detalhe(null);
+		this.interferencia.setFot_croqui_localizacao(null);
+		this.interferencia.setApa_curso_barragem(null);
+		this.interferencia.setApa_manancial(null);
+		this.interferencia.setApa_barragem(null);
+		this.interferencia.setApa_cap_maxacumula(null);
+		this.interferencia.setApa_bacia(null);
+		this.interferencia.setCnarh_id(null);
+		this.interferencia.setOut_nu_processo(null);
+		this.interferencia.setEmp_id(null);
+		this.interferencia.setFin_tfn_cd(null);
+		this.interferencia.setFou_tou_cd(null);
+		this.interferencia.setInt_tin_cd(null);
+		this.interferencia.setFou_tou_tp_outro(null);
+		this.interferencia.setInt_tsi_cd(null);
+	}
 
 	public void apresentarOutroUso() {
 		if ("53".equals(interferencia.getFou_tou_cd())) {

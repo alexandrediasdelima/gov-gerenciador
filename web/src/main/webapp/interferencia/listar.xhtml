@@ -103,15 +103,11 @@
 					</p:column>
 					<p:column headerText="Ações">
 						<p:commandButton action="#{interferenciaBean.telaEditar(interferencia)}" value="Editar" ajax="false" icon="ui-icon-document" />
-						<p:commandButton value="Apagar" onclick="confirmation.show();" icon="ui-icon-cancel">
+						<p:commandButton value="Apagar" action="#{interferenciaBean.deletar}" ajax="false" icon="ui-icon-cancel">
 							<f:setPropertyActionListener value="#{interferencia}" target="#{interferenciaBean.interferencia}" />
 					    </p:commandButton>
 					</p:column>
-				</p:dataTable>
-				<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="APAC" severity="alert" widgetVar="confirmation">
-	            	<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{interferenciaBean.deletar}" ajax="false" />  
-    	        	<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />   
-        		</p:confirmDialog> 
+				</p:dataTable> 
 			<p:blockUI block="tabelaInterferencias" trigger="tabelaInterferencias">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>

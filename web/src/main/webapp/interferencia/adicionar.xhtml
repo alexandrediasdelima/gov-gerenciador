@@ -883,7 +883,7 @@
 						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Barragem onde é feita a captação:" for="barragemCaptacao" id="barra"/>
+					<p:outputLabel value="Barragem Onde é Feita a Captação:" for="barragemCaptacao" id="barra"/>
 					<p:selectOneMenu id="barragemCaptacao" value="#{interferenciaBean.interferencia.apa_barragem}" style="width:230px">
 						<f:selectItem itemLabel="GUARAREMA (ALIANÇA)" itemValue="GUARAREMA (ALIANÇA)" />
 						<f:selectItem itemLabel="PALMEIRINHA/PEDRAFINA" itemValue="PALMEIRINHA/PEDRAFINA" />
@@ -998,10 +998,10 @@
 						<f:selectItem itemLabel="OUTRAS" itemValue="OUTRAS" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Capacidade máxima de acumulação (m³):" for="capacidade" id="capacidadeMaxima" />
+					<p:outputLabel value="Capacidade Máxima de Acumulação (m³):" for="capacidade" id="capacidadeMaxima" />
 					<p:inputText maxlength="15" id="capacidade" value="#{interferenciaBean.interferencia.apa_cap_maxacumula}" required="true" />
 
-					<p:outputLabel value="Bacia hidrográfica onde esta inserida a captação/lançamento:" for="bacia" id="baciaHidro" />
+					<p:outputLabel value="Bacia Hidrográfica Onde está Inserida a Captação/Lançamento:" for="bacia" id="baciaHidro" />
 					<p:selectOneMenu id="bacia" value="#{interferenciaBean.interferencia.apa_bacia}" required="true" style="width:230px">
 						<f:selectItem itemLabel="BRIGIDA" itemValue="BRIGIDA" />
 						<f:selectItem itemLabel="CAPIBARIBE" itemValue="CAPIBARIBE" />
@@ -1043,7 +1043,6 @@
 
 					<p:outputLabel value="Tipo da Finalidade:" for="fin_tfn_cd" id="tpFinalidade" />
 					<p:selectOneMenu id="fin_tfn_cd" value="#{interferenciaBean.interferencia.fin_tfn_cd}" required="true" style="width:230px">
-						<f:selectItem itemValue="" itemLabel="Selecione" />
 						<f:selectItem itemLabel="ABASTECIMENTO PÚBLICO" itemValue="1" />
 						<f:selectItem itemLabel="APROVEITAMENTO HIDROELÉTRICO" itemValue="10" />
 						<f:selectItem itemLabel="AQUICULTURA EM TANQUE ESCAVADO" itemValue="7" />
@@ -1065,37 +1064,37 @@
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Tipo de Outro Uso:" for="fou_tou_cd" id="tpOutroUso" />
-					<p:selectOneMenu id="fou_tou_cd" value="#{interferenciaBean.interferencia.fou_tou_cd}" style="width:230px">
-						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemLabel="ABASTECIMENTO DE PULVERIZADORES" itemValue="51" />
-						<f:selectItem itemLabel="BALNEÁRIO - LAZER E CLUBE" itemValue="39" />
-						<f:selectItem itemLabel="CLARIFICAÇÃO DA ÁGUA" itemValue="22" />
-						<f:selectItem itemLabel="COMBATE A INCÊNDIO" itemValue="45" />
-						<f:selectItem itemLabel="CONSTRUÇÃO CIVIL" itemValue="54" />
-						<f:selectItem itemLabel="DEPURAÇÃO DE EFLUENTES" itemValue="26" />
-						<f:selectItem itemLabel="DISPOSIÇÃO DE REJEITOS" itemValue="27" />
-						<f:selectItem itemLabel="ECLUSA" itemValue="1" />
-						<f:selectItem itemLabel="HORTAS, POMARES, JARDINS, PAISAGISMO (ÁREA &lt; 1 HA)" itemValue="49" />
-						<f:selectItem itemLabel="LAVAGEM DE VEÍCULOS" itemValue="21" />
-						<f:selectItem itemLabel="LAVANDERIA" itemValue="44" />
-						<f:selectItem itemLabel="PESQUISA HIDROGEOLÓGICA / TESTE DE BOMBEAMENTO" itemValue="29" />
-						<f:selectItem itemLabel="PESQUISA MINERAL" itemValue="28" />
-						<f:selectItem itemLabel="POÇO DE BOMBEAMENTO DE RECUPERAÇÃO AMBIENTAL" itemValue="14" />
-						<f:selectItem itemLabel="POÇO DE INJEÇÃO PARA RECUPERAÇÃO AMBIENTAL" itemValue="16" />
-						<f:selectItem itemLabel="POÇO DE MONITORAMENTO/PIEZOMETRO" itemValue="15" />
-						<f:selectItem itemLabel="REBAIXAMENTO DE AQUÍFERO" itemValue="32" />
-						<f:selectItem itemLabel="RECIRCULAÇÃO DE ÁGUA" itemValue="30" />
-						<f:selectItem itemLabel="RECREAÇÃO" itemValue="2" />
-						<f:selectItem itemLabel="SALVAMENTO" itemValue="3" />
-						<f:selectItem itemLabel="SISTEMA DE RESFRIAMENTO" itemValue="19" />
-						<f:selectItem itemLabel="TESTE HIDROSTÁTICO" itemValue="50" />
-						<f:selectItem itemLabel="UMECTAÇÃO DE VIAS" itemValue="17" />
-						<f:selectItem itemLabel="URBANIZAÇÃO" itemValue="31" />
-						<f:selectItem itemLabel="OUTRO" itemValue="53" />
-						<p:ajax listener="#{interferenciaBean.apresentarOutroUso}" event="change" update="panelDescOutroUso" />
-					</p:selectOneMenu>
-					
 					<h:panelGroup id="panelDescOutroUso">
+						<p:selectOneMenu id="fou_tou_cd" value="#{interferenciaBean.interferencia.fou_tou_cd}" style="width:230px">
+							<f:selectItem itemLabel="Selecione" itemValue="" />
+							<f:selectItem itemLabel="ABASTECIMENTO DE PULVERIZADORES" itemValue="51" />
+							<f:selectItem itemLabel="BALNEÁRIO - LAZER E CLUBE" itemValue="39" />
+							<f:selectItem itemLabel="CLARIFICAÇÃO DA ÁGUA" itemValue="22" />
+							<f:selectItem itemLabel="COMBATE A INCÊNDIO" itemValue="45" />
+							<f:selectItem itemLabel="CONSTRUÇÃO CIVIL" itemValue="54" />
+							<f:selectItem itemLabel="DEPURAÇÃO DE EFLUENTES" itemValue="26" />
+							<f:selectItem itemLabel="DISPOSIÇÃO DE REJEITOS" itemValue="27" />
+							<f:selectItem itemLabel="ECLUSA" itemValue="1" />
+							<f:selectItem itemLabel="HORTAS, POMARES, JARDINS, PAISAGISMO (ÁREA &lt; 1 HA)" itemValue="49" />
+							<f:selectItem itemLabel="LAVAGEM DE VEÍCULOS" itemValue="21" />
+							<f:selectItem itemLabel="LAVANDERIA" itemValue="44" />
+							<f:selectItem itemLabel="PESQUISA HIDROGEOLÓGICA / TESTE DE BOMBEAMENTO" itemValue="29" />
+							<f:selectItem itemLabel="PESQUISA MINERAL" itemValue="28" />
+							<f:selectItem itemLabel="POÇO DE BOMBEAMENTO DE RECUPERAÇÃO AMBIENTAL" itemValue="14" />
+							<f:selectItem itemLabel="POÇO DE INJEÇÃO PARA RECUPERAÇÃO AMBIENTAL" itemValue="16" />
+							<f:selectItem itemLabel="POÇO DE MONITORAMENTO/PIEZOMETRO" itemValue="15" />
+							<f:selectItem itemLabel="REBAIXAMENTO DE AQUÍFERO" itemValue="32" />
+							<f:selectItem itemLabel="RECIRCULAÇÃO DE ÁGUA" itemValue="30" />
+							<f:selectItem itemLabel="RECREAÇÃO" itemValue="2" />
+							<f:selectItem itemLabel="SALVAMENTO" itemValue="3" />
+							<f:selectItem itemLabel="SISTEMA DE RESFRIAMENTO" itemValue="19" />
+							<f:selectItem itemLabel="TESTE HIDROSTÁTICO" itemValue="50" />
+							<f:selectItem itemLabel="UMECTAÇÃO DE VIAS" itemValue="17" />
+							<f:selectItem itemLabel="URBANIZAÇÃO" itemValue="31" />
+							<f:selectItem itemLabel="OUTRO" itemValue="53" />
+							<p:ajax listener="#{interferenciaBean.apresentarOutroUso}" event="change" update="panelDescOutroUso" />
+						</p:selectOneMenu>
+					
 						<p:outputLabel value="Qual?:" id="labelDescOutroUso" for="descOutroUso" rendered="#{interferenciaBean.isOutroUso}" />
 						<p:inputText maxlength="100" id="descOutroUso" value="#{interferenciaBean.interferencia.fou_tou_tp_outro}" rendered="#{interferenciaBean.isOutroUso}" />
 					</h:panelGroup>
