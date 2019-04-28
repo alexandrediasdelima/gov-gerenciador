@@ -151,16 +151,9 @@
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{apacBean.telaEditar(apac)}" value="Editar" ajax="false" icon="ui-icon-document" />
-					
 					<p:commandButton value="Apagar" action="#{apacBean.deletar}" oncomplete="PF('tabelaApacs').filter()" update="@form" icon="ui-icon-cancel">
-				        <p:confirm header="Apac" message="Confirma a exclusão?" />
 				        <f:setPropertyActionListener value="#{apac}" target="#{apacBean.apac}" />
 				    </p:commandButton>
-				    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
-				        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" />
-				        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" />
-				    </p:confirmDialog>
-
 				</p:column>
 			</p:dataTable>
 			<p:blockUI block="tabelaApacs" trigger="tabelaApacs">
