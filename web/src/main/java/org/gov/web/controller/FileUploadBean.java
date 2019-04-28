@@ -1,10 +1,10 @@
 package org.gov.web.controller;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Date;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -26,9 +26,7 @@ public class FileUploadBean extends Controller {
 
         if(file != null) {
 
-        	String nomeArquivo = verificaArquivoComMesmoNome(file.getFileName());
-
-        	String caminhoDestinoArquivo = "C:/import_cad/" + nomeArquivo;
+        	String caminhoDestinoArquivo = "C:/import_cad/" + new Date().getTime() + file.getFileName();
 
         	boolean transferenciaSucesso = false;
         	try {
@@ -47,31 +45,6 @@ public class FileUploadBean extends Controller {
 
         }
     }
-
-	private String verificaArquivoComMesmoNome(String fileName) {
-
-
-		String arquivo = cortarTrecho(fileName, ".txt");
-
-		File file = new File("C:/import_cad/");
-
-		File[] listFiles = file.listFiles();
-
-		int cont = 1;
-
-		for (File f : listFiles) {
-
-			String arquivoNovo = cortarTrecho(f.getName(), ".txt");
-
-			if (arquivoNovo.equals(arquivo)) {
-				arquivo = arquivo + cont;
-				cont++;
-
-			}
-		}
-
-		return arquivo + ".txt";
-	}
 
 	public void handleFileUpload(FileUploadEvent event) {
         FacesMessage msg = new FacesMessage("Sucesso", event.getFile().getFileName() + " Enviado");
@@ -117,32 +90,6 @@ public class FileUploadBean extends Controller {
       return success;
    }
 
-   public static void main(String[] args) {
-
-	   String arq = "documento.txt";
-
-	   String arquivo = cortarTrecho(arq, ".txt");
-
-	   File file = new File("C:/import_cad/");
-
-	   File[] listFiles = file.listFiles();
-
-	   int cont = 1;
-
-		for (File f : listFiles) {
-
-			String arquivoNovo = cortarTrecho(f.getName(), ".txt");
-
-			System.out.println(arquivoNovo);
-
-			if(arquivoNovo.equals(arquivo)) {
-				arquivo = arquivo + cont;
-				cont ++;
-
-			}
-	   }
-
-	}
 
    public static String cortarTrecho(String nome, String trecho) {
 

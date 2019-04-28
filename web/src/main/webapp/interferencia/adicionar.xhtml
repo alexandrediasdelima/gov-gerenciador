@@ -7,16 +7,16 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	
+
 	<style type="text/css">
 		.ui-state-hover {
 			background: none !important;
 			background-image: none !important;
 		}
 	</style>
-	
+
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
-		<h:form id="addInterferencia" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		<h:form id="addInterferencia" enctype="multipart/form-data" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
 		<br/><br/><br/>
 		<p:fieldset legend="Interferência">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
@@ -32,7 +32,7 @@
 							</p:selectOneMenu>
 						</c:otherwise>
 					</c:choose>
-					
+
 					<p:outputLabel value="ID-Apac:" />
 					<c:choose>
 						<c:when test="#{interferenciaBean.view == 'edit'}">
@@ -44,7 +44,7 @@
 							</p:selectOneMenu>
 						</c:otherwise>
 					</c:choose>
-					
+
 					<p:outputLabel value="ID-Empreendimento:" />
 					<c:choose>
 						<c:when test="#{interferenciaBean.view == 'edit'}">
@@ -64,20 +64,21 @@
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Link para a Foto do Ponto de Captura/Lançamento em Visão Geral:" for="fotoVisaoGeral" id="fotoGeral"/>
-					<p:inputText id="fotoVisaoGeral" value="#{interferenciaBean.interferencia.fot_cap_lanc_geral}" required="true" />
+					<p:fileUpload value="#{interferenciaBean.fotoCapturaGeral}" required="true" mode="simple" skinSimple="true" id="fotoVisaoGeral"/>
 
 					<p:outputLabel value="Link para a Foto do Ponto de Captura/Lançamento em Visão Detalhada:" for="fotoVisaoDetalhada" id="fotoDetalhada" />
-					<p:inputText id="fotoVisaoDetalhada" value="#{interferenciaBean.interferencia.fot_cap_lanc_detalhe}" required="true" />
+					<p:fileUpload value="#{interferenciaBean.fotoCapturaDetalhe}" mode="simple" skinSimple="true" required="true" id="fotoVisaoDetalhada" />
 
 					<p:outputLabel value="Link para a Imagem do Croqui de Localização do Ponto da Captação/Lançamento:" for="linkCroqui" id="lnkCroqui" />
-					<p:inputText id="linkCroqui" value="#{interferenciaBean.interferencia.fot_croqui_localizacao}" required="true" />
+					<p:fileUpload  value="#{interferenciaBean.fotoCroqui}" mode="simple" skinSimple="true" id="linkCroqui" required="true"/>
+
 
 					<p:outputLabel value="Latitude do Ponto de Interferência:" for="latitude" id="latitudeInterferencia" />
 					<p:inputText id="latitude" maxlength="14" value="#{interferenciaBean.interferencia.int_cr_latitude}" required="true"/>
 
 					<p:outputLabel value="Longitude do Ponto de Interferência:" for="longitude" id="longitudeInterferencia" />
 					<p:inputText id="longitude" maxlength="14" value="#{interferenciaBean.interferencia.int_cr_longitude}" required="true"/>
-					
+
 					<p:outputLabel value="Local da Interferência:" for="localInterferencia" id="loInterferencia" />
 					<p:selectOneMenu id="localInterferencia" value="#{interferenciaBean.interferencia.apa_curso_barragem}" required="true" style="width:230px">
 						<f:selectItem itemLabel="BARRAGEM" itemValue="BARRAGEM" />
@@ -1094,7 +1095,7 @@
 							<f:selectItem itemLabel="OUTRO" itemValue="53" />
 							<p:ajax listener="#{interferenciaBean.apresentarOutroUso}" event="change" update="panelDescOutroUso" />
 						</p:selectOneMenu>
-					
+
 						<p:outputLabel value="Qual?:" id="labelDescOutroUso" for="descOutroUso" rendered="#{interferenciaBean.isOutroUso}" />
 						<p:inputText maxlength="100" id="descOutroUso" value="#{interferenciaBean.interferencia.fou_tou_tp_outro}" rendered="#{interferenciaBean.isOutroUso}" />
 					</h:panelGroup>
@@ -1114,7 +1115,7 @@
 				<p:commandButton value="Salvar" action="#{interferenciaBean.editar}" ajax="false" rendered="#{interferenciaBean.view == 'edit'}" icon="ui-icon-pencil" />
 			</p:scrollPanel>
 		</p:fieldset>
-		
+
 		<p:tooltip for="estuHidrologico" value="Campo descritivo que representa se há um estudo hidrológico da área." position="top"/>
 		<p:tooltip for="fotoGeral" value="Campo que armazena o link para a foto do ponto de captura/lançamento numa visada geral." position="top"/>
 		<p:tooltip for="fotoDetalhada" value="Campo que armazena o link para a foto do ponto de captura/lançamento numa visada de detalhe." position="top"/>
@@ -1130,7 +1131,7 @@
 		<p:tooltip for="tpFinalidade" value="Campo descritivo que representa o tipo da finalidade" position="top"/>
 		<p:tooltip for="tpOutroUso" value="Campo que representa o codigo identificador do tipo de outro uso" position="top"/>
 		<p:tooltip for="tpInterf" value="Campo que representa o codigo identificador da situação da interferência." position="top"/>
-		
+
 		</h:form>
 	</div>
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
