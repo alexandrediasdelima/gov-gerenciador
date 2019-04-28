@@ -11,13 +11,19 @@
 
 	<filter>
 		<filter-name>primeFacesFileUploadFilter</filter-name>
-		<filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
+		<filter-class>org.primefaces.webapp.filter.FileUploadFilter
+		</filter-class>
 	</filter>
 
 	<filter-mapping>
 		<filter-name>primeFacesFileUploadFilter</filter-name>
 		<servlet-name>facesServlet</servlet-name>
 	</filter-mapping>
+
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/error.xhtml</location>
+	</error-page>
 
 	<context-param>
 		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
@@ -35,7 +41,8 @@
 	</context-param>
 
 	<context-param>
-		<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+		<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL
+		</param-name>
 		<param-value>true</param-value>
 	</context-param>
 
