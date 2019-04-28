@@ -112,8 +112,7 @@
 			        </p:selectOneMenu>
 
 			        <p:outputLabel value="Município:" for="apa_muni_correspondencia" id="municipio" />
-					<p:selectOneMenu id="apa_muni_correspondencia" value="#{usuarioBean.usuario.apa_muni_correspondencia}" style="width:230px !important" >
-	                    <f:selectItem itemLabel="Selecione" itemValue=" " />
+					<p:selectOneMenu id="apa_muni_correspondencia" value="#{usuarioBean.usuario.apa_muni_correspondencia}" required="true" style="width:230px !important" >
 	                    <f:selectItems value="#{usuarioBean.regioes}"
 	                                   var="regiao"
 	                                   itemLabel="#{regiao.municipio}"
@@ -148,26 +147,26 @@
 					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>
-
+				<p:commandButton value="Voltar" action="#{usuarioBean.voltar}" ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{usuarioBean.gravar}" ajax="false" rendered="#{usuarioBean.view == 'add'}" icon=" ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{usuarioBean.editar}" ajax="false" rendered="#{usuarioBean.view == 'edit'}" icon=" ui-icon-pencil" />
 			</p:scrollPanel>
 		</p:fieldset>
 
 		<p:tooltip  for="nomeUsuario" value="Campo descritivo que representa o nome do usuário (ou razão social) de recursos hídricos." position="top"/>
-		<p:tooltip  for="email" value="Campo descritivo que representa o email de contato do responsável pelo empreendimento." position="top"/>
+		<p:tooltip  for="email" value="Campo descritivo que representa o e-mail de contato do responsável pelo empreendimento." position="top"/>
 		<p:tooltip  for="ddd" value="Campo numérico que representa o ddd do telefone de contato do responsável pelo empreendimento (usuário)." position="top"/>
 		<p:tooltip  for="apelido" value="Campo descritivo que representa o apelido do usuário." position="top"/>
 		<p:tooltip  for="telefone" value="Campo numérico que representa o número do telefone de contato do responsável pelo empreendimento (usuário)." position="top"/>
 		<p:tooltip  for="tipoLogradouro" value="Campo que representa o tipo de logradouro para envio de correspondência." position="top"/>
-		<p:tooltip  for="endereco" value="Campo descritivo que representa o endereços para envio de correspondência." position="top"/>
+		<p:tooltip  for="endereco" value="Campo descritivo que representa o endereço para envio de correspondência." position="top"/>
 		<p:tooltip  for="numero" value="Campo numérico que representa o número do endereço de correspondência." position="top"/>
 		<p:tooltip  for="complemento" value="Campo descritivo que representa o complemento do endereço para envio de correspondência." position="top"/>
 		<p:tooltip  for="bairro" value="Campo descritivo que representa o bairro/distrito para envio de correspondência." position="top"/>
-		<p:tooltip  for="uf" value="Campo que representa a uf do endereço de correspondência." position="top"/>
-		<p:tooltip  for="municipio" value="Campo que representa o municipio." position="top"/>
+		<p:tooltip  for="uf" value="Campo que representa a UF do endereço de correspondência." position="top"/>
+		<p:tooltip  for="municipio" value="Campo que representa o município." position="top"/>
 		<p:tooltip  for="codIBGE" value="Campo numérico que representa o código ibge do município do endereço de correspondência." position="top"/>
-		<p:tooltip  for="cep" value="Campo numérico que representa o número do cep do endereço de correspondência." position="top"/>
+		<p:tooltip  for="cep" value="Campo numérico que representa o número do CEP do endereço de correspondência." position="top"/>
 		<p:tooltip  for="caixaPostal" value="Campo numérico que representa o número da caixa postal do responsável pelo empreendimento." position="top"/>
 		<p:tooltip  for="referencia" value="Campo que representa referência do endereço" position="top"/>
 		<p:tooltip  for="relacao" value="Campo que representa a relação com a propriedade." position="top"/>

@@ -105,6 +105,10 @@ public class UsuarioBean extends Controller  {
 //	    }
 
 
+	public String voltar() {
+		return "/usuario/index";
+	}
+		
 	public String index() {
 		return "/usuario/index";
 	}

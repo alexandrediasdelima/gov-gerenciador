@@ -22,22 +22,22 @@
 					<p:inputText id="usuario_id" value="#{fornecedorBean.fornecedor.usuario_id}" disabled="true" style="width: 100px"/>
 
 					<p:outputLabel value="Nome: " for="forn_info_nm" />
-					<p:inputText id="forn_info_nm" value="#{fornecedorBean.fornecedor.forn_info_nm}" />
+					<p:inputText id="forn_info_nm" value="#{fornecedorBean.fornecedor.forn_info_nm}" required="true" />
 					
 					<p:outputLabel value="Cargo: " for="forn_info_cargo" />
-					<p:inputText id="forn_info_cargo" value="#{fornecedorBean.fornecedor.forn_info_cargo}" />
+					<p:inputText id="forn_info_cargo" value="#{fornecedorBean.fornecedor.forn_info_cargo}" required="true" />
 					
 					<p:outputLabel value="Departamento: " for="forn_info_departamento" />
-					<p:inputText id="forn_info_departamento" value="#{fornecedorBean.fornecedor.forn_info_departamento}" />
+					<p:inputText id="forn_info_departamento" value="#{fornecedorBean.fornecedor.forn_info_departamento}" required="true" />
 					
 					<p:outputLabel value="Contato: " for="forn_info_contato_inst" />
-					<p:inputText id="forn_info_contato_inst" value="#{fornecedorBean.fornecedor.forn_info_contato_inst}" />
+					<p:inputText id="forn_info_contato_inst" value="#{fornecedorBean.fornecedor.forn_info_contato_inst}" required="true" />
 				</h:panelGrid>
 				
-				<p:commandButton value="Voltar" action="#{fornecedorBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Voltar" action="#{fornecedorBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{fornecedorBean.gravar}"   ajax="false" rendered="#{fornecedorBean.view == 'add'}" icon="ui-icon-disk" />
-				<p:commandButton value="Salvar" action="#{fornecedorBean.alterar}" ajax="false" rendered="#{fornecedorBean.view == 'edit'}" icon="ui-icon-pencil" />
-				<p:commandButton value="Apagar" action="#{fornecedorBean.deletar}"  ajax="false" icon="ui-icon-close" />
+				<p:commandButton value="Salvar" action="#{fornecedorBean.alterar}"  ajax="false" rendered="#{fornecedorBean.view == 'edit'}" icon="ui-icon-pencil" />
+				<p:commandButton value="Apagar" action="#{fornecedorBean.deletar}"  ajax="false" rendered="#{fornecedorBean.view == 'edit'}" icon="ui-icon-close" />
 			</p:scrollPanel>
 		</p:fieldset>
 		</h:form>

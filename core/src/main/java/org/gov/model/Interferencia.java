@@ -76,7 +76,7 @@ public class Interferencia implements Serializable {
 	private String out_nu_processo;
 
 	@Column(name="emp_id", columnDefinition="integer", nullable=false)
-	private String emp_id;
+	private Integer emp_id;
 
 	@Column(name="fin_tfn_cd", columnDefinition="character varying", nullable=false)
 	private String fin_tfn_cd;
@@ -207,11 +207,11 @@ public class Interferencia implements Serializable {
 		this.out_nu_processo = out_nu_processo;
 	}
 
-	public String getEmp_id() {
+	public Integer getEmp_id() {
 		return emp_id;
 	}
 
-	public void setEmp_id(String emp_id) {
+	public void setEmp_id(Integer emp_id) {
 		this.emp_id = emp_id;
 	}
 

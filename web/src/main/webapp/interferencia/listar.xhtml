@@ -31,7 +31,8 @@
 				            <p:submenu label="Águas Subterrâneas">
 					            <p:menuitem value="Características" action="#{asbcaracBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 					            <p:menuitem value="Amostras" action="#{asbamaBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
-					            <p:menuitem value="Testes" action="#{asbtstBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
+					            <ui:remove><p:menuitem value="Testes" action="#{asbtstBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" /></ui:remove>
+					            <p:menuitem value="Teste Bombeamento" action="#{testebombeamentoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 				            </p:submenu>
 				            <p:menuitem value="Captação" action="#{captacaoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 				            <p:menuitem value="Consumo Humano" action="#{consumohumanoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
@@ -39,7 +40,6 @@
 				            <p:menuitem value="Irrigação" action="#{irrigacaoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 				            <p:menuitem value="Lançamento" action="#{lancamentoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 				            <p:menuitem value="Pecuária" action="#{pecuariaBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
-				            <p:menuitem value="Teste Bombeamento" action="#{testebombeamentoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 				            <p:menuitem value="Vazão" action="#{vazaoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 					    </p:tieredMenu>
 					</p:column>

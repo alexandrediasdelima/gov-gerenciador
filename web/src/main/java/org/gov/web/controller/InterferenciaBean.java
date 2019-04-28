@@ -95,7 +95,10 @@ public class InterferenciaBean extends Controller  {
 			isOutroUso = false;
 		}
 	}
-	 
+
+	public String voltar() {
+		return "/interferencia/index";
+	}
 	
 	public String index() {
 		return "/interferencia/index";
