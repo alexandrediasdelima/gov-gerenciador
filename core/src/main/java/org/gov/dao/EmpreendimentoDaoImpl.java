@@ -67,7 +67,7 @@ public class EmpreendimentoDaoImpl implements EmpreendimentoDao {
 
 	public List<Usuario> usuarios() {
 		entityManager.getTransaction().begin();
-		Query query = entityManager.createNativeQuery("SELECT u.usuario_id, CONCAT(u.emp_nm_usuario, ' (', u.emp_nu_cpfcnpj, ')') FROM tb_usuario1 u ORDER BY u.emp_nm_usuario");
+		Query query = entityManager.createNativeQuery("SELECT u.usuario_id, CONCAT(u.emp_nm_usuario, ' (', u.emp_nu_cpfcnpj, ')') FROM tb_usuario u ORDER BY u.emp_nm_usuario");
 
 		List<Usuario> usuarios = query.getResultList();
 
@@ -102,7 +102,7 @@ public class EmpreendimentoDaoImpl implements EmpreendimentoDao {
 		Query query = entityManager.createQuery("Select r.codIbge from Regiao r where r.municipio =:municipio");
 		query.setParameter("municipio", municipio);
 
-		Integer codigo = (Integer) query.getResultList().stream().findFirst().orElse(0); 
+		Integer codigo = (Integer) query.getResultList().stream().findFirst().orElse(0);
 		//query.getSingleResult();
 
 		entityManager.getTransaction().commit();

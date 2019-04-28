@@ -28,7 +28,7 @@ public class EmpreendimentoBean extends Controller  {
 	private List<Usuario> usuarios;
 	private List<Regiao> regioes;
 	private List<Empreendimento> filteredEmpreendimentos;
-	
+
 	public EmpreendimentoBean() {
 
 		setEmpreendimento(new Empreendimento());
@@ -55,6 +55,7 @@ public class EmpreendimentoBean extends Controller  {
 
 	public String gravar() {
 
+		empreendimento.setUnidadeAreaTotalPropriedade("Hectare");
 		empreendimentoService.gravar(empreendimento);
 		empreendimentos();
 
@@ -79,7 +80,7 @@ public class EmpreendimentoBean extends Controller  {
 	public String index() {
 		return "/empreendimento/index";
 	}
-	
+
 	public String voltar() {
 		return "/empreendimento/index";
 	}
@@ -117,18 +118,18 @@ public class EmpreendimentoBean extends Controller  {
         for(int i = 0; i < 10; i++) {
             results.add(query + i);
         }
-         
+
         return results;
     }
-	
+
 	public void atualizarMunicipios() {
 		setRegioes(empreendimentoService.buscarMunicipios("PE"));
 	}
-	
+
 	public void atualizarIbge() {
 		empreendimento.setIbgeMunicipioLocalizadaInterferencia(empreendimentoService.buscarIbge(empreendimento.getNomeMunicipioEmpreendimento()));
 	}
-	
+
 	public Empreendimento getEmpreendimento() {
 		return empreendimento;
 	}
@@ -169,6 +170,6 @@ public class EmpreendimentoBean extends Controller  {
 		this.filteredEmpreendimentos = filteredEmpreendimentos;
 	}
 
-	
+
 
 }

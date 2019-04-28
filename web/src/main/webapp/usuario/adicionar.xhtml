@@ -125,7 +125,7 @@
                      <p:inputText id="emp_cd_codigoibgecorrespondencia" disabled="true" value="#{usuarioBean.usuario.emp_cd_codigoibgecorrespondencia}" />
 
 					<p:outputLabel value="CEP:" for="emp_nu_cependereco" id="cep" />
-					<p:inputText id="emp_nu_cependereco" value="#{usuarioBean.usuario.emp_nu_cependereco}" />
+					<p:inputText id="emp_nu_cependereco" value="#{usuarioBean.usuario.emp_nu_cependereco}" validator="cepValidator" />
 
 					<p:outputLabel value="Caixa Postal:" for="emp_nu_caixapostal" id="caixaPostal" />
 					<p:inputMask id="emp_nu_caixapostal" value="#{usuarioBean.usuario.emp_nu_caixapostal}" />

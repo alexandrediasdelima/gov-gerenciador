@@ -75,7 +75,7 @@
 					<p:inputText id="caixaPostalEmpreendimento" value="#{empreendimentoBean.empreendimento.numeroCaixaPostalEmpreendimento}" />
 
 					<p:outputLabel value="CEP:" for="cep" id="cp" />
-					<p:inputText id="cep" value="#{empreendimentoBean.empreendimento.cepEmpreendimento}" required="true" />
+					<p:inputText id="cep" value="#{empreendimentoBean.empreendimento.cepEmpreendimento}" required="true" validator="cepValidator" />
 
 					<p:outputLabel value="Município:" for="municipio" id="muni" />
 					<p:selectOneMenu id="municipio" value="#{empreendimentoBean.empreendimento.nomeMunicipioEmpreendimento}" required="true" style="width:230px !important" >
@@ -93,8 +93,6 @@
 					<p:outputLabel value="Número da Outorga:" for="outorga" id="nomeOu" />
 					<p:inputText id="outorga" value="#{empreendimentoBean.empreendimento.numeroOutorga}" required="true" />
 
-					<p:outputLabel type="hidden" />
-					<p:inputText id="unidade" type="hidden" value="Hectare" />
 				</h:panelGrid>
 
 				<p:commandButton value="Voltar" action="#{empreendimentoBean.voltar}" ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
@@ -128,7 +126,7 @@
 			$("#cep").inputmask({mask: "99999-999", greedy: true, removeMaskOnSubmit: true })
 			$("#caixaPostalEmpreendimento").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true })
 
-			$("#areaTotal").inputmask({mask: "9[9][9][9][9][9][9].9[9]", greedy: false, clearMaskOnLostFocus: true })
+			$("#areaTotal").inputmask({mask: "9[9][9][9][9][9][9].[9][9]", greedy: false, clearMaskOnLostFocus: true })
 
 		})
 	</script>

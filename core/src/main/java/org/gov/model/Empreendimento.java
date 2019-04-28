@@ -30,7 +30,7 @@ public class Empreendimento implements Serializable {
 	private BigDecimal areaTotalPropriedade;
 
 	@Column(name="cam_ar_total_uni")
-	private String unidadeAreaTotalPropriedade;
+	private String unidadeAreaTotalPropriedade = "Hectare";
 
 	@Column(name="cam_end_propriedade")
 	private String enderecoEmpreendimento;
