@@ -35,7 +35,7 @@ public class CnarhDaoImpl implements CnarhDao {
 	public List<Cnarh> cnarhs() {
 
 		entityManager.getTransaction().begin();
-		Query query = entityManager.createQuery("FROM Cnarh");
+		Query query = entityManager.createQuery("FROM Cnarh ORDER BY cnarh_id");
 
 		List<Cnarh> cnarhs = query.getResultList();
 

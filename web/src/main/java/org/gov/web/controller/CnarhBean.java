@@ -94,6 +94,9 @@ public class CnarhBean extends Controller  {
 	        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
 	    }
 
+	public String voltar() {
+		return "/cnarh/index";
+	}
 
 	public String index() {
 		return "/cnarh/index";

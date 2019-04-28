@@ -40,7 +40,7 @@
 						</c:when>
 						<c:otherwise>
 							<p:selectOneMenu id="idApac" value="#{interferenciaBean.interferencia.out_nu_processo}" style="width:230px">
-								<f:selectItems value="#{interferenciaBean.processos}" var="processo" itemValue="#{processo[0]}" itemLabel="#{processo[0]}" />
+								<f:selectItems value="#{interferenciaBean.processos}" var="processo" itemValue="#{processo}" itemLabel="#{processo}" />
 							</p:selectOneMenu>
 						</c:otherwise>
 					</c:choose>

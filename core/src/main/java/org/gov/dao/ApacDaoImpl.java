@@ -35,7 +35,7 @@ public class ApacDaoImpl implements ApacDao {
 	public List<Apac> apacs() {
 
 		entityManager.getTransaction().begin();
-		Query query = entityManager.createQuery("FROM Apac");
+		Query query = entityManager.createQuery("FROM Apac ORDER BY out_nu_processo");
 
 		List<Apac> apacs = query.getResultList();
 

@@ -42,8 +42,9 @@
 					<p:inputText id="ius_vo_resmax" value="#{cnarhBean.cnarh.ius_vo_resmax}" />
 				</h:panelGrid>
 				<br/><br/>
-				<p:commandButton value="Salvar" action="#{cnarhBean.gravar}" ajax="false" rendered="#{cnarhBean.view == 'add'}" icon="ui-icon-disk" />
-				<p:commandButton value="Salvar" action="#{cnarhBean.editar}" ajax="false" rendered="#{cnarhBean.view == 'edit'}" icon="ui-icon-pencil" />
+				<p:commandButton value="Voltar" action="#{cnarhBean.voltar}" ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
+				<p:commandButton value="Salvar" action="#{cnarhBean.gravar}" ajax="false" rendered="#{cnarhBean.view == 'add'}"  icon="ui-icon-disk" />
+				<p:commandButton value="Salvar" action="#{cnarhBean.editar}" ajax="false" rendered="#{cnarhBean.view == 'edit'}"  icon="ui-icon-pencil" />
 			</p:scrollPanel>
 		</p:fieldset>
 		

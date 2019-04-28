@@ -35,7 +35,7 @@ public class InterferenciaDaoImpl implements InterferenciaDao {
 	public List<Interferencia> interferencias() {
 
 		entityManager.getTransaction().begin();
-		Query query = entityManager.createQuery("FROM Interferencia");
+		Query query = entityManager.createQuery("FROM Interferencia ORDER BY int_id");
 
 		List<Interferencia> interferencias = query.getResultList();
 

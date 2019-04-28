@@ -20,82 +20,86 @@
 			<br/>
 			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{usuarioBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
-				<p:dataTable id="tabelaUsuarios" value="#{usuarioBean.usuarios}" widgetVar="tabelaUsuarios" 
-				emptyMessage="Não foram encontrados registros." filteredValue="#{usuarioBean.filteredUsuarios}" 
-				paginator="true" rows="10" var="usuario" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
-				resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
-					<f:facet name="header">Usuários</f:facet>
-					<p:column headerText="ID-Usuário" filterBy="#{usuario.usuario_id}" filterMatchMode="contains" sortBy="#{usuario.usuario_id}">
-						<h:outputText id="menuUsuario" value="#{usuario.usuario_id}" style="text-decoration: underline; cursor: pointer" />
-						<p:tieredMenu overlay="true" trigger="menuUsuario" my="left top" at="left bottom" triggerEvent="click" autoDisplay="true" style="width: 325px !important">
-							<p:menuitem value="Responsável pelas Informações" action="#{fornecedorBean.redirecionarTelaCadastro(usuario.usuario_id)}" icon="ui-icon-bullet"  />
-						</p:tieredMenu>
-					</p:column>
-					<p:column headerText="Nome" filterBy="#{usuario.emp_nm_usuario}" filterMatchMode="contains" sortBy="#{usuario.emp_nm_usuario}">
-						<h:outputText value="#{usuario.emp_nm_usuario}" />
-					</p:column>
-					<p:column headerText="Apelido" filterBy="#{usuario.emp_nm_apelido}" filterMatchMode="contains" sortBy="#{usuario.emp_nm_apelido}">
-						<h:outputText value="#{usuario.emp_nm_apelido}" />
-					</p:column>
-					<p:column headerText="CPF/CNPJ" filterBy="#{usuario.emp_nu_cpfcnpj}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_cpfcnpj}">
-						<h:outputText value="#{usuario.emp_nu_cpfcnpj}" />
-					</p:column>
-					<p:column headerText="DDD" filterBy="#{usuario.emp_nu_ddd}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_ddd}">
-						<h:outputText value="#{usuario.emp_nu_ddd}" />
-					</p:column>
-					<p:column headerText="Telefone" filterBy="#{usuario.emp_nu_telefone}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_telefone}">
-						<h:outputText value="#{usuario.emp_nu_telefone}" />
-					</p:column>
-					<p:column headerText="E-mail" filterBy="#{usuario.emp_ds_emailresponsavel}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_emailresponsavel}">
-						<h:outputText value="#{usuario.emp_ds_emailresponsavel}" />
-					</p:column>
-					<p:column headerText="Tipo Logradouro" filterBy="#{usuario.emp_ds_tp_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_tp_logradouro}">
-						<h:outputText value="#{usuario.emp_ds_tp_logradouro}" />
-					</p:column>
-					<p:column headerText="Endereço" filterBy="#{usuario.emp_ds_nm_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_nm_logradouro}">
-						<h:outputText value="#{usuario.emp_ds_nm_logradouro}" />
-					</p:column>
-					<p:column headerText="Número" filterBy="#{usuario.emp_nu_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_logradouro}">
-						<h:outputText value="#{usuario.emp_nu_logradouro}" />
-					</p:column>
-					<p:column headerText="Complemento" filterBy="#{usuario.emp_ds_complementoendereco}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_complementoendereco}">
-						<h:outputText value="#{usuario.emp_ds_complementoendereco}" />
-					</p:column>
-					<p:column headerText="Bairro" filterBy="#{usuario.emp_ds_bairrodistrito}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_bairrodistrito}">
-						<h:outputText value="#{usuario.emp_ds_bairrodistrito}" />
-					</p:column>
-					<p:column headerText="Município" filterBy="#{usuario.apa_muni_correspondencia}" filterMatchMode="contains" sortBy="#{usuario.apa_muni_correspondencia}">
-						<h:outputText value="#{usuario.apa_muni_correspondencia}" />
-					</p:column>
-					<p:column headerText="Código IBGE" filterBy="#{usuario.emp_cd_codigoibgecorrespondencia}" filterMatchMode="contains" sortBy="#{usuario.emp_cd_codigoibgecorrespondencia}">
-						<h:outputText value="#{usuario.emp_cd_codigoibgecorrespondencia}" />
-					</p:column>
-					<p:column headerText="UF" filterBy="#{usuario.emp_ds_uf}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_cependereco}">
-						<h:outputText value="#{usuario.emp_nu_cependereco}" />
-					</p:column>
-					<p:column headerText="CEP" filterBy="#{usuario.emp_nu_cependereco}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_cependereco}">
-						<h:outputText value="#{usuario.emp_nu_cependereco}" />
-					</p:column>
-					<p:column headerText="Caixa Postal" filterBy="#{usuario.emp_nu_caixapostal}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_caixapostal}">
-						<h:outputText value="#{usuario.emp_nu_caixapostal}" />
-					</p:column>
-					<p:column headerText="Referência do Endereço" filterBy="#{usuario.emp_ds_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_logradouro}">
-						<h:outputText value="#{usuario.emp_ds_logradouro}" />
-					</p:column>
-					<p:column headerText="Relação com a Propriedade" filterBy="#{usuario.emp_ds_relacaopropriedade}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_relacaopropriedade}">
-						<h:outputText value="#{usuario.emp_ds_relacaopropriedade}" />
-					</p:column>
-					<p:column headerText="Ações">
-						<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document"/>
-						<p:commandButton value="Apagar" onclick="confirmation.show();" icon="ui-icon-cancel">
-							<f:setPropertyActionListener value="#{usuario}" target="#{usuarioBean.usuario}" />
-					    </p:commandButton>
-					</p:column>
-				</p:dataTable>
-				<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="APAC" severity="alert" widgetVar="confirmation">
-	   				<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{usuarioBean.deletar}" ajax="false" />
-	   				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />
-				</p:confirmDialog>
+			<p:dataTable id="tabelaUsuarios" value="#{usuarioBean.usuarios}" widgetVar="tabelaUsuarios" 
+			emptyMessage="Não foram encontrados registros." filteredValue="#{usuarioBean.filteredUsuarios}" 
+			paginator="true" rows="10" var="usuario" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
+			resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
+				<f:facet name="header">Usuários</f:facet>
+				<p:column headerText="ID-Usuário" filterBy="#{usuario.usuario_id}" filterMatchMode="contains" sortBy="#{usuario.usuario_id}">
+					<h:outputText id="menuUsuario" value="#{usuario.usuario_id}" style="text-decoration: underline; cursor: pointer" />
+					<p:tieredMenu overlay="true" trigger="menuUsuario" my="left top" at="left bottom" triggerEvent="click" autoDisplay="true" style="width: 325px !important">
+						<p:menuitem value="Responsável pelas Informações" action="#{fornecedorBean.redirecionarTelaCadastro(usuario.usuario_id)}" icon="ui-icon-bullet"  />
+					</p:tieredMenu>
+				</p:column>
+				<p:column headerText="Nome" filterBy="#{usuario.emp_nm_usuario}" filterMatchMode="contains" sortBy="#{usuario.emp_nm_usuario}">
+					<h:outputText value="#{usuario.emp_nm_usuario}" />
+				</p:column>
+				<p:column headerText="Apelido" filterBy="#{usuario.emp_nm_apelido}" filterMatchMode="contains" sortBy="#{usuario.emp_nm_apelido}">
+					<h:outputText value="#{usuario.emp_nm_apelido}" />
+				</p:column>
+				<p:column headerText="CPF/CNPJ" filterBy="#{usuario.emp_nu_cpfcnpj}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_cpfcnpj}">
+					<h:outputText value="#{usuario.emp_nu_cpfcnpj}" />
+				</p:column>
+				<p:column headerText="DDD" filterBy="#{usuario.emp_nu_ddd}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_ddd}">
+					<h:outputText value="#{usuario.emp_nu_ddd}" />
+				</p:column>
+				<p:column headerText="Telefone" filterBy="#{usuario.emp_nu_telefone}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_telefone}">
+					<h:outputText value="#{usuario.emp_nu_telefone}" />
+				</p:column>
+				<p:column headerText="E-mail" filterBy="#{usuario.emp_ds_emailresponsavel}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_emailresponsavel}">
+					<h:outputText value="#{usuario.emp_ds_emailresponsavel}" />
+				</p:column>
+				<p:column headerText="Tipo Logradouro" filterBy="#{usuario.emp_ds_tp_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_tp_logradouro}">
+					<h:outputText value="#{usuario.emp_ds_tp_logradouro}" />
+				</p:column>
+				<p:column headerText="Endereço" filterBy="#{usuario.emp_ds_nm_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_nm_logradouro}">
+					<h:outputText value="#{usuario.emp_ds_nm_logradouro}" />
+				</p:column>
+				<p:column headerText="Número" filterBy="#{usuario.emp_nu_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_logradouro}">
+					<h:outputText value="#{usuario.emp_nu_logradouro}" />
+				</p:column>
+				<p:column headerText="Complemento" filterBy="#{usuario.emp_ds_complementoendereco}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_complementoendereco}">
+					<h:outputText value="#{usuario.emp_ds_complementoendereco}" />
+				</p:column>
+				<p:column headerText="Bairro" filterBy="#{usuario.emp_ds_bairrodistrito}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_bairrodistrito}">
+					<h:outputText value="#{usuario.emp_ds_bairrodistrito}" />
+				</p:column>
+				<p:column headerText="Município" filterBy="#{usuario.apa_muni_correspondencia}" filterMatchMode="contains" sortBy="#{usuario.apa_muni_correspondencia}">
+					<h:outputText value="#{usuario.apa_muni_correspondencia}" />
+				</p:column>
+				<p:column headerText="Código IBGE" filterBy="#{usuario.emp_cd_codigoibgecorrespondencia}" filterMatchMode="contains" sortBy="#{usuario.emp_cd_codigoibgecorrespondencia}">
+					<h:outputText value="#{usuario.emp_cd_codigoibgecorrespondencia}" />
+				</p:column>
+				<p:column headerText="UF" filterBy="#{usuario.emp_ds_uf}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_cependereco}">
+					<h:outputText value="#{usuario.emp_nu_cependereco}" />
+				</p:column>
+				<p:column headerText="CEP" filterBy="#{usuario.emp_nu_cependereco}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_cependereco}">
+					<h:outputText value="#{usuario.emp_nu_cependereco}" />
+				</p:column>
+				<p:column headerText="Caixa Postal" filterBy="#{usuario.emp_nu_caixapostal}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_caixapostal}">
+					<h:outputText value="#{usuario.emp_nu_caixapostal}" />
+				</p:column>
+				<p:column headerText="Referência do Endereço" filterBy="#{usuario.emp_ds_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_logradouro}">
+					<h:outputText value="#{usuario.emp_ds_logradouro}" />
+				</p:column>
+				<p:column headerText="Relação com a Propriedade" filterBy="#{usuario.emp_ds_relacaopropriedade}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_relacaopropriedade}">
+					<h:outputText value="#{usuario.emp_ds_relacaopropriedade}" />
+				</p:column>
+				<p:column headerText="Ações">
+					<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document"/>
+					
+					<p:commandButton value="Apagar" action="#{usuarioBean.deletar}" oncomplete="PF('tabelaUsuarios').filter()" update="@form" icon="ui-icon-cancel">
+				        <p:confirm header="Apac" message="Confirma a exclusão?" />
+				        <f:setPropertyActionListener value="#{usuario}" target="#{usuarioBean.usuario}" />
+				    </p:commandButton>
+				    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+				        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" />
+				        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" />
+				    </p:confirmDialog>
+					
+				</p:column>
+			</p:dataTable>
+
 			<p:blockUI block="tabelaUsuarios" trigger="tabelaUsuarios">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>

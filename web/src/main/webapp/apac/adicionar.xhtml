@@ -132,7 +132,7 @@
 					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>
-
+				<p:commandButton value="Voltar" action="#{apacBean.voltar}" ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{apacBean.gravar}" ajax="false" rendered="#{apacBean.view == 'add'}" icon=" ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{apacBean.editar}" ajax="false" rendered="#{apacBean.view == 'edit'}" icon=" ui-icon-pencil" />
 			</p:scrollPanel>

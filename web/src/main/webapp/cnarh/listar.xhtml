@@ -19,38 +19,41 @@
 			<br/>
             <p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{cnarhBean.adicionarBtnNovoCnarh}" ajax="false" />
 			<br/><br/>
-				<p:dataTable id="tabelaCnarhs" value="#{cnarhBean.cnarhs}" widgetVar="tabelaCnarhs" 
-				emptyMessage="Não foram encontrados registros." filteredValue="#{cnarhBean.filteredCnarhs}" 
-				paginator="true" rows="10" var="cnarh" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
-				resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
-				
-					<f:facet name="header">CNARH</f:facet>
-					<p:column headerText="ID-CNARH" filterBy="#{cnarh.cnarh_id}" filterMatchMode="contains" sortBy="#{cnarh.cnarh_id}" >
-						<h:outputText value="#{cnarh.cnarh_id}" />
-					</p:column>
-					<p:column headerText="Altura Total Reservatório(m)" filterBy="#{cnarh.ius_nu_alturares}" filterMatchMode="contains" sortBy="#{cnarh.ius_nu_alturares}" >
-						<h:outputText value="#{cnarh.ius_nu_alturares}" />
-					</p:column>
-					<p:column headerText="Área Total Reservatório(m2)" filterBy="#{cnarh.ius_ar_resmax}" filterMatchMode="contains" sortBy="#{cnarh.ius_ar_resmax}" >
-						<h:outputText value="#{cnarh.ius_ar_resmax}" />
-					</p:column>
-					<p:column headerText="Numero Siagas" filterBy="#{cnarh.int_nu_siagas}" filterMatchMode="contains" sortBy="#{cnarh.int_nu_siagas}" >
-						<h:outputText value="#{cnarh.int_nu_siagas}" />
-					</p:column>
-					<p:column headerText="Volume Máximo Reservatório(m³/h)" filterBy="#{cnarh.ius_vo_resmax}" filterMatchMode="contains" sortBy="#{cnarh.ius_vo_resmax}" >
-						<h:outputText value="#{cnarh.ius_vo_resmax}" />
-					</p:column>
-					<p:column headerText="Ações">
-						<p:commandButton action="#{cnarhBean.telaEditar(cnarh)}" value="Editar" ajax="false" icon="ui-icon-document" />
-						<p:commandButton value="Apagar" onclick="confirmation.show();" icon="ui-icon-cancel">
-							<f:setPropertyActionListener value="#{cnarh}" target="#{cnarhBean.cnarh}" />
-					    </p:commandButton>
-					</p:column>
-				</p:dataTable>
-				<p:confirmDialog message="Confirma a exclusão?" showEffect="fade" hideEffect="fade" header="APAC" severity="alert" widgetVar="confirmation">
-      				<p:commandButton value="Sim" oncomplete="confirmation.hide()" action="#{cnarhBean.deletar}" ajax="false" />  
-      				<p:commandButton value="Não" onclick="confirmation.hide()" type="button" />   
-				</p:confirmDialog>
+			<p:dataTable id="tabelaCnarhs" value="#{cnarhBean.cnarhs}" widgetVar="tabelaCnarhs" 
+			emptyMessage="Não foram encontrados registros." filteredValue="#{cnarhBean.filteredCnarhs}" 
+			paginator="true" rows="10" var="cnarh" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
+			resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
+			
+				<f:facet name="header">CNARH</f:facet>
+				<p:column headerText="ID-CNARH" filterBy="#{cnarh.cnarh_id}" filterMatchMode="contains" sortBy="#{cnarh.cnarh_id}" >
+					<h:outputText value="#{cnarh.cnarh_id}" />
+				</p:column>
+				<p:column headerText="Altura Total Reservatório(m)" filterBy="#{cnarh.ius_nu_alturares}" filterMatchMode="contains" sortBy="#{cnarh.ius_nu_alturares}" >
+					<h:outputText value="#{cnarh.ius_nu_alturares}" />
+				</p:column>
+				<p:column headerText="Área Total Reservatório(m2)" filterBy="#{cnarh.ius_ar_resmax}" filterMatchMode="contains" sortBy="#{cnarh.ius_ar_resmax}" >
+					<h:outputText value="#{cnarh.ius_ar_resmax}" />
+				</p:column>
+				<p:column headerText="Numero Siagas" filterBy="#{cnarh.int_nu_siagas}" filterMatchMode="contains" sortBy="#{cnarh.int_nu_siagas}" >
+					<h:outputText value="#{cnarh.int_nu_siagas}" />
+				</p:column>
+				<p:column headerText="Volume Máximo Reservatório(m³/h)" filterBy="#{cnarh.ius_vo_resmax}" filterMatchMode="contains" sortBy="#{cnarh.ius_vo_resmax}" >
+					<h:outputText value="#{cnarh.ius_vo_resmax}" />
+				</p:column>
+				<p:column headerText="Ações">
+					<p:commandButton action="#{cnarhBean.telaEditar(cnarh)}" value="Editar" ajax="false" icon="ui-icon-document" />
+					
+					<p:commandButton value="Apagar" action="#{cnarhBean.deletar}" oncomplete="PF('tabelaCnarhs').filter()" update="@form" icon="ui-icon-cancel">
+				        <p:confirm header="Apac" message="Confirma a exclusão?" />
+				        <f:setPropertyActionListener value="#{cnarh}" target="#{cnarhBean.cnarh}" />
+				    </p:commandButton>
+				    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+				        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" />
+				        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" />
+				    </p:confirmDialog>
+				    
+				</p:column>
+			</p:dataTable>
 			<p:blockUI block="tabelaCnarhs" trigger="tabelaCnarhs">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>
