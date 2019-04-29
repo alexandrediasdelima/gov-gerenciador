@@ -113,19 +113,11 @@ public class IndustriaBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-//		this.industria.setAltitudeBocaTubulacao(null);
-//		this.industria.setAltitudeTerreno(null);
-//		this.industria.setCodigoIdentificador(null);
-//		this.industria.setCondicaoAquifero(null);
-//		this.industria.setDataInstalacaoPoco(null);
-//		this.industria.setDiametroFiltro(null);
-//		this.industria.setDiametroPerfuracao(null);
-//		this.industria.setIdentificadorAquiferoPonto(null);
-//		this.industria.setProfundidadeBaseMedidaApartirSuperficie(null);
-//		this.industria.setProfundidadeTopoMedidaApartirSuperficie(null);
-//		this.industria.setTipoPenetracaoAquifero(null);
-
+		this.industria.setCam_indus_tp(null);
+		this.industria.setCam_indus_nu_empregados(null);
+		this.industria.setCam_indus_materia_prima(null);
+		this.industria.setCam_qt_pdt_an(null);
+		this.industria.setCam_qt_pdt_an_uni(null);
 	}
 
 }

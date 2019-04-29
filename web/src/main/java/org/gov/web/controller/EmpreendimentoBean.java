@@ -3,6 +3,7 @@ package org.gov.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.gov.model.Cnarh;
 import org.gov.model.Empreendimento;
 import org.gov.model.Regiao;
 import org.gov.model.Usuario;
@@ -36,6 +37,26 @@ public class EmpreendimentoBean extends Controller  {
 		setEmpreendimentos(new ArrayList<Empreendimento>());
 		usuarios = new ArrayList<Usuario>();
 		empreendimentos();
+	}
+	
+	public String redirecionarTelaCadastro(int id) {
+
+		empreendimento = new Empreendimento();
+		this.empreendimento.setId(id);
+
+		Empreendimento usr = empreendimentoService.pesquisar(id);
+		setView(ADD);
+
+		if(usr != null) {
+			this.empreendimento = usr;
+			setView(EDIT);
+		}
+
+		return eval(index());
+	}
+
+	public void resetView() {
+		setView(LIST);
 	}
 
 	public String adicionarNovo() {
@@ -82,6 +103,7 @@ public class EmpreendimentoBean extends Controller  {
 	}
 
 	public String voltar() {
+		setView(LIST);
 		return "/empreendimento/index";
 	}
 

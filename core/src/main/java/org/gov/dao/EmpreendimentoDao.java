@@ -16,4 +16,5 @@ public interface EmpreendimentoDao extends Serializable {
 	public List<Usuario> usuarios();
 	public List<Regiao> buscarMunicipios(String uf);
 	public Integer buscarIbge(String municipio);
+	public Empreendimento pesquisar(int id);
 }

@@ -90,7 +90,7 @@
 				</h:panelGrid>
 				<br/><br/>
 
-				<p:commandButton value="Voltar" action="#{asbcaracBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Voltar" action="#{asbcaracBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{asbcaracBean.gravar}"   ajax="false" rendered="#{asbcaracBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{asbcaracBean.alterar}" ajax="false" rendered="#{asbcaracBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{asbcaracBean.deletar}"  ajax="false" icon="ui-icon-close" />

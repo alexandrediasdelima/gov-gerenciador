@@ -92,19 +92,15 @@ public class OutraInfoBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-//		this.outrainfo.setAltitudeBocaTubulacao(null);
-//		this.outrainfo.setAltitudeTerreno(null);
-//		this.outrainfo.setCodigoIdentificador(null);
-//		this.outrainfo.setCondicaoAquifero(null);
-//		this.outrainfo.setDataInstalacaoPoco(null);
-//		this.outrainfo.setDiametroFiltro(null);
-//		this.outrainfo.setDiametroPerfuracao(null);
-//		this.outrainfo.setIdentificadorAquiferoPonto(null);
-//		this.outrainfo.setProfundidadeBaseMedidaApartirSuperficie(null);
-//		this.outrainfo.setProfundidadeTopoMedidaApartirSuperficie(null);
-//		this.outrainfo.setTipoPenetracaoAquifero(null);
-
+		this.outrainfo.setCam_agua_servida_destino(null);
+		this.outrainfo.setCam_captacao_agua_subt(null);
+		this.outrainfo.setCam_tp_poco(null);
+		this.outrainfo.setCam_profundidade_poco(null);
+		this.outrainfo.setAsb_nu_profundidadefinal(null);
+		this.outrainfo.setCam_utilizacao_poco(null);
+		this.outrainfo.setCam_realizacao_car(null);
+		this.outrainfo.setCam_captacoes_comple(null);
+		this.outrainfo.setCam_capta_lanca_futuro(null);
 	}
 
 	public int getId() {

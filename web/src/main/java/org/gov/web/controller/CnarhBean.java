@@ -8,6 +8,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 import org.gov.model.Cnarh;
+import org.gov.model.Usuario;
 import org.gov.service.CnarhService;
 import org.gov.service.CnarhServiceImpl;
 import org.primefaces.event.SelectEvent;
@@ -37,7 +38,26 @@ public class CnarhBean extends Controller  {
 		cnarhs();
 	}
 
+	public String redirecionarTelaCadastro(String id) {
 
+		cnarh = new Cnarh();
+		this.cnarh.setCnarh_id(id);
+
+		Cnarh usr = cnarhService.pesquisar(id);
+		setView(ADD);
+
+		if(usr != null) {
+			this.cnarh = usr;
+			setView(EDIT);
+		}
+
+		return eval(index());
+	}
+
+	public void resetView() {
+		setView(LIST);
+	}
+	
 	public String gravar() {
 
 		cnarhService.gravar(cnarh);
@@ -97,6 +117,7 @@ public class CnarhBean extends Controller  {
 	    }
 
 	public String voltar() {
+		setView(LIST);
 		return "/cnarh/index";
 	}
 

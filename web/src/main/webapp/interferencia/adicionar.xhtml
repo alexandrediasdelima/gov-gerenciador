@@ -16,7 +16,7 @@
 	</style>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
-		<h:form id="addInterferencia" enctype="multipart/form-data" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		<h:form id="addInterferencia" enctype="multipart/form-data" prependId="false" style="width:99%;" >
 		<br/><br/><br/>
 		<p:fieldset legend="Interferência">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
@@ -28,7 +28,7 @@
 						</c:when>
 						<c:otherwise>
 							<p:selectOneMenu id="idCnarh" value="#{interferenciaBean.interferencia.cnarh_id}" style="width:230px">
-								<f:selectItems value="#{interferenciaBean.cnarhs}" var="cnarh" itemValue="#{cnarh[0]}" itemLabel="#{cnarh[1]}" />
+								<f:selectItems value="#{interferenciaBean.cnarhs}" var="cnarh" itemValue="#{cnarh}" itemLabel="#{cnarh}" />
 							</p:selectOneMenu>
 						</c:otherwise>
 					</c:choose>
@@ -1137,8 +1137,8 @@
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
 	<script>
 		$(function() {
-			$("#latitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
-    		$("#longitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
+			$("#latitude").inputmask({mask: "[-]99[.][9][9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
+    		$("#longitude").inputmask({mask: "[-]99[.][9][9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
 			$("#capacidade").inputmask({mask: "9[9][9][9][9][9][9][9][9].9[9][9][9][9]", greedy: true})
 		})
 	</script>

@@ -36,7 +36,6 @@
 			            </p:submenu>
 			            <p:menuitem value="Captação" action="#{captacaoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 			            <p:menuitem value="Consumo Humano" action="#{consumohumanoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
-			            <p:menuitem value="Indústria" action="#{industriaBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 			            <p:menuitem value="Irrigação" action="#{irrigacaoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 			            <p:menuitem value="Lançamento" action="#{lancamentoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 			            <p:menuitem value="Pecuária" action="#{pecuariaBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
@@ -44,10 +43,10 @@
 				    </p:tieredMenu>
 				</p:column>
 				<p:column headerText="ID-Empreedimento" filterBy="#{interferencia.emp_id}" filterMatchMode="contains" sortBy="#{interferencia.emp_id}" >
-					<h:outputText value="#{interferencia.emp_id}" />
+					<p:commandLink value="#{interferencia.emp_id}" action="#{empreendimentoBean.redirecionarTelaCadastro(interferencia.emp_id)}" />
 				</p:column>
 				<p:column headerText="ID-Cnarh" filterBy="#{interferencia.cnarh_id}" filterMatchMode="contains" sortBy="#{interferencia.cnarh_id}" >
-					<h:outputText value="#{interferencia.cnarh_id}" />
+					<p:commandLink value="#{interferencia.cnarh_id}" action="#{cnarhBean.redirecionarTelaCadastro(interferencia.cnarh_id)}" />
 				</p:column>					
 				<p:column headerText="Estudo Hidrológico" filterBy="#{interferencia.apa_est_hidrologico}" filterMatchMode="contains" sortBy="#{interferencia.apa_est_hidrologico}" >
 					<h:panelGroup rendered="#{interferencia.apa_est_hidrologico}"><h:outputText value="SIM" /></h:panelGroup>
@@ -56,17 +55,17 @@
 				<p:column headerText="Captura Lançamento Geral" filterBy="#{interferencia.fot_cap_lanc_geral}" filterMatchMode="contains" sortBy="#{interferencia.fot_cap_lanc_geral}" >
 					<h:outputText value="#{interferencia.fot_cap_lanc_geral}" />
 				</p:column>
-				<p:column headerText="Latitude" filterBy="#{interferencia.int_cr_latitude}" filterMatchMode="contains" sortBy="#{interferencia.int_cr_latitude}" >
-					<h:outputText value="#{interferencia.int_cr_latitude}" />
-				</p:column>
-				<p:column headerText="Longitude" filterBy="#{interferencia.int_cr_longitude}" filterMatchMode="contains" sortBy="#{interferencia.int_cr_longitude}" >
-					<h:outputText value="#{interferencia.int_cr_longitude}" />
-				</p:column>
 				<p:column headerText="Captura Lançamento Detalhe" filterBy="#{interferencia.fot_cap_lanc_detalhe}" filterMatchMode="contains" sortBy="#{interferencia.fot_cap_lanc_detalhe}" >
 					<h:outputText value="#{interferencia.fot_cap_lanc_detalhe}" />
 				</p:column>
 				<p:column headerText="Croqui Localização" filterBy="#{interferencia.fot_croqui_localizacao}" filterMatchMode="contains" sortBy="#{interferencia.fot_croqui_localizacao}" >
 					<h:outputText value="#{interferencia.fot_croqui_localizacao}" />
+				</p:column>
+				<p:column headerText="Latitude" filterBy="#{interferencia.int_cr_latitude}" filterMatchMode="contains" sortBy="#{interferencia.int_cr_latitude}" >
+					<h:outputText value="#{interferencia.int_cr_latitude}" />
+				</p:column>
+				<p:column headerText="Longitude" filterBy="#{interferencia.int_cr_longitude}" filterMatchMode="contains" sortBy="#{interferencia.int_cr_longitude}" >
+					<h:outputText value="#{interferencia.int_cr_longitude}" />
 				</p:column>
 				<p:column headerText="Local Interferência" filterBy="#{interferencia.apa_curso_barragem}" filterMatchMode="contains" sortBy="#{interferencia.apa_curso_barragem}" >
 					<h:outputText value="#{interferencia.apa_curso_barragem}" />

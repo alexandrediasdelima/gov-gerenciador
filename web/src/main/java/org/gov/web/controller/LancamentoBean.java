@@ -113,19 +113,14 @@ public class LancamentoBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-//		this.lancamento.setAltitudeBocaTubulacao(null);
-//		this.lancamento.setAltitudeTerreno(null);
-//		this.lancamento.setCodigoIdentificador(null);
-//		this.lancamento.setCondicaoAquifero(null);
-//		this.lancamento.setDataInstalacaoPoco(null);
-//		this.lancamento.setDiametroFiltro(null);
-//		this.lancamento.setDiametroPerfuracao(null);
-//		this.lancamento.setIdentificadorAquiferoPonto(null);
-//		this.lancamento.setProfundidadeBaseMedidaApartirSuperficie(null);
-//		this.lancamento.setProfundidadeTopoMedidaApartirSuperficie(null);
-//		this.lancamento.setTipoPenetracaoAquifero(null);
-
+		this.lancamento.setCam_lanc_dbo5(null);
+		this.lancamento.setCam_lanc_dbo20(null);
+		this.lancamento.setEfl_qt_dbobruto(null);
+		this.lancamento.setEfl_qt_dbotratado(null);
+		this.lancamento.setEfl_qt_fosforobruto(null);
+		this.lancamento.setEfl_qt_fosforotratado(null);
+		this.lancamento.setEfl_qt_nitrogeniobruto(null);
+		this.lancamento.setEfl_qt_nitrogeniotratado(null);
 	}
 
 }

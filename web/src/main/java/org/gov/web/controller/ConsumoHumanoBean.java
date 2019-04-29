@@ -113,19 +113,8 @@ public class ConsumoHumanoBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-//		this.consumohumano.setAltitudeBocaTubulacao(null);
-//		this.consumohumano.setAltitudeTerreno(null);
-//		this.consumohumano.setCodigoIdentificador(null);
-//		this.consumohumano.setCondicaoAquifero(null);
-//		this.consumohumano.setDataInstalacaoPoco(null);
-//		this.consumohumano.setDiametroFiltro(null);
-//		this.consumohumano.setDiametroPerfuracao(null);
-//		this.consumohumano.setIdentificadorAquiferoPonto(null);
-//		this.consumohumano.setProfundidadeBaseMedidaApartirSuperficie(null);
-//		this.consumohumano.setProfundidadeTopoMedidaApartirSuperficie(null);
-//		this.consumohumano.setTipoPenetracaoAquifero(null);
-
+		this.consumohumano.setCam_pop_urb_estimada(null);
+		this.consumohumano.setCam_pop_rural_estimada(null);
 	}
 
 }

@@ -2,8 +2,10 @@ package org.gov.service;
 
 import java.util.List;
 
+import org.gov.dao.OutraInfoDaoImpl;
 import org.gov.dao.UsuarioDao;
 import org.gov.dao.UsuarioDaoImpl;
+import org.gov.model.OutraInfo;
 import org.gov.model.Regiao;
 import org.gov.model.Usuario;
 
@@ -54,6 +56,12 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 		usuarioDao = new UsuarioDaoImpl();
 		return usuarioDao.buscarIbge(apa_muni_correspondencia);
+	}
+	
+	public Usuario pesquisar(int id) {
+
+		usuarioDao = new UsuarioDaoImpl();
+		return usuarioDao.pesquisar(id);
 	}
 
 }

@@ -31,7 +31,7 @@
 				</h:panelGrid>
 				<br/><br/>
 
-				<p:commandButton value="Voltar" action="#{consumohumanoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Voltar" action="#{consumohumanoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{consumohumanoBean.gravar}"   ajax="false" rendered="#{consumohumanoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{consumohumanoBean.alterar}" ajax="false" rendered="#{consumohumanoBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{consumohumanoBean.deletar}"  ajax="false" icon="ui-icon-close" />

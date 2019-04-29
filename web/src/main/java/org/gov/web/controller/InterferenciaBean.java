@@ -1,6 +1,9 @@
 package org.gov.web.controller;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,13 +43,15 @@ public class InterferenciaBean extends Controller  {
 	private List<Cnarh> cnarhs;
 	private List<Apac> processos;
 	private List<Empreendimento> empreendimentos;
-	private UploadedFile fotoCapturaGeral;
-	private UploadedFile fotoCapturaDetalhe;
-	private UploadedFile fotoCroqui;
+	private transient UploadedFile fotoCapturaGeral;
+	private transient UploadedFile fotoCapturaDetalhe;
+	private transient UploadedFile fotoCroqui;
+//	private byte[] array;
+//	private transient FileInputStream fis;
 
 	private boolean isOutroUso;
 
-	public InterferenciaBean() {
+	public InterferenciaBean()  {
 		setInterferencia(new Interferencia());
 		interferenciaService = new InterferenciaServiceImpl();
 		interferencias = new ArrayList<Interferencia>();
@@ -56,13 +61,27 @@ public class InterferenciaBean extends Controller  {
 		interferencias();
 	}
 
-	public String interferencias() {
+	public String interferencias()  {
 		interferencias = interferenciaService.interferencias();
 		setView(LIST);
+		
+//		String mimeType = "image/jpg";
+//		File file = new File("C:/import_cad/imagens/15564982740071536680806557.jpg");
+//		ByteArrayOutputStream out = new ByteArrayOutputStream();
+//		fis = new FileInputStream(file);
+//		int b;
+//		
+//		while((b = fis.read()) > -1) {
+//			out.write(b);
+//		}
+//		out.close();
+//		fis.close();
+//		setArray(out.toByteArray());
+		
 		return eval(index());
 	}
 
-	public String gravar() {
+	public String gravar()  {
 		if(getCnarhs().size() == 0) {
 			this.interferencia.setCnarh_id(null);
 		}
@@ -94,14 +113,14 @@ public class InterferenciaBean extends Controller  {
 		return eval(index());
 	}
 
-	public String editar() {
+	public String editar()  {
 		interferenciaService.editar(interferencia);
 		interferencias();
 
 		return eval(index());
 	}
 
-	public String deletar() {
+	public String deletar()  {
 		interferenciaService.remover(interferencia.getInt_id());
 		interferencias();
 		return eval(index());
@@ -287,6 +306,22 @@ public class InterferenciaBean extends Controller  {
 	public void setFotoCroqui(UploadedFile fotoCroqui) {
 		this.fotoCroqui = fotoCroqui;
 	}
+
+//	public byte[] getArray() {
+//		return array;
+//	}
+//
+//	public void setArray(byte[] array) {
+//		this.array = array;
+//	}
+//
+//	public FileInputStream getFis() {
+//		return fis;
+//	}
+//
+//	public void setFis(FileInputStream fis) {
+//		this.fis = fis;
+//	}
 
 
 

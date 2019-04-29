@@ -94,7 +94,7 @@
 				</h:panelGrid>
 				<br/><br/>
 
-				<p:commandButton value="Voltar" action="#{testebombeamentoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Voltar" action="#{testebombeamentoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{testebombeamentoBean.gravar}"   ajax="false" rendered="#{testebombeamentoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{testebombeamentoBean.alterar}" ajax="false" rendered="#{testebombeamentoBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{testebombeamentoBean.deletar}"  ajax="false" icon="ui-icon-close" />

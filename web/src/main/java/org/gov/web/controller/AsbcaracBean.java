@@ -113,18 +113,17 @@ public class AsbcaracBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-		this.asbcarac.setAltitudeBocaTubulacao(null);
 		this.asbcarac.setAltitudeTerreno(null);
-		this.asbcarac.setCodigoIdentificador(null);
-		this.asbcarac.setCondicaoAquifero(null);
-		this.asbcarac.setDataInstalacaoPoco(null);
-		this.asbcarac.setDiametroFiltro(null);
-		this.asbcarac.setDiametroPerfuracao(null);
+		this.asbcarac.setAltitudeBocaTubulacao(null);
 		this.asbcarac.setIdentificadorAquiferoPonto(null);
+		this.asbcarac.setDataInstalacaoPoco(null);
+		this.asbcarac.setDiametroPerfuracao(null);
+		this.asbcarac.setDiametroFiltro(null);
 		this.asbcarac.setProfundidadeBaseMedidaApartirSuperficie(null);
 		this.asbcarac.setProfundidadeTopoMedidaApartirSuperficie(null);
+		this.asbcarac.setCodigoIdentificador(null);
 		this.asbcarac.setTipoPenetracaoAquifero(null);
+		this.asbcarac.setCondicaoAquifero(null);
 
 	}
 

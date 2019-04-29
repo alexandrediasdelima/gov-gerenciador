@@ -2,9 +2,11 @@ package org.gov.service;
 
 import java.util.List;
 
+import org.gov.dao.CnarhDaoImpl;
 import org.gov.dao.EmpreendimentoDao;
 import org.gov.dao.EmpreendimentoDaoImpl;
 import org.gov.dao.UsuarioDaoImpl;
+import org.gov.model.Cnarh;
 import org.gov.model.Empreendimento;
 import org.gov.model.Regiao;
 import org.gov.model.Usuario;
@@ -59,6 +61,11 @@ public class EmpreendimentoServiceImpl implements EmpreendimentoService{
 
 		empreendimentoDao = new EmpreendimentoDaoImpl();
 		return empreendimentoDao.buscarIbge(municipio);
+	}
+	
+	public Empreendimento pesquisar(int id) {
+		empreendimentoDao = new EmpreendimentoDaoImpl();
+		return empreendimentoDao.pesquisar(id);
 	}
 	
 }

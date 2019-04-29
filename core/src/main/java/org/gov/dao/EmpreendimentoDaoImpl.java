@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import org.gov.model.Asbama;
+import org.gov.model.Cnarh;
 import org.gov.model.Empreendimento;
 import org.gov.model.Interferencia;
 import org.gov.model.Regiao;
@@ -111,4 +112,16 @@ public class EmpreendimentoDaoImpl implements EmpreendimentoDao {
 		return codigo;
 	}
 
+	public Empreendimento pesquisar(int id) {
+
+		entityManager = new JPAUtil().getEntityManager();
+
+		entityManager.getTransaction().begin();
+		Empreendimento empreendimento = entityManager.find(Empreendimento.class, id);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return empreendimento;
+	}
+	
 }

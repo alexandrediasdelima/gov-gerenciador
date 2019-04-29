@@ -113,18 +113,21 @@ public class IrrigacaoBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-//		this.irrigacao.setAltitudeBocaTubulacao(null);
-//		this.irrigacao.setAltitudeTerreno(null);
-//		this.irrigacao.setCodigoIdentificador(null);
-//		this.irrigacao.setCondicaoAquifero(null);
-//		this.irrigacao.setDataInstalacaoPoco(null);
-//		this.irrigacao.setDiametroFiltro(null);
-//		this.irrigacao.setDiametroPerfuracao(null);
-//		this.irrigacao.setIdentificadorAquiferoPonto(null);
-//		this.irrigacao.setProfundidadeBaseMedidaApartirSuperficie(null);
-//		this.irrigacao.setProfundidadeTopoMedidaApartirSuperficie(null);
-//		this.irrigacao.setTipoPenetracaoAquifero(null);
+		this.irrigacao.setSir_ar_irrigada(null);
+		this.irrigacao.setSir_ar_irrigada_uni(null);
+		this.irrigacao.setSir_ar_irrigada_outra(null);
+		this.irrigacao.setSir_tsi_cd(null);
+		this.irrigacao.setSir_tct_cd(null);
+		this.irrigacao.setSir_ar_irrigada_2(null);
+		this.irrigacao.setSir_ar_irrigada_uni_2(null);
+		this.irrigacao.setSir_ar_irrigada_outra_2(null);
+		this.irrigacao.setSir_tsi_cd_2(null);
+		this.irrigacao.setSir_tct_cd_2(null);
+		this.irrigacao.setSir_ar_irrigada_3(null);
+		this.irrigacao.setSir_ar_irrigada_uni_3(null);
+		this.irrigacao.setSir_ar_irrigada_outra_3(null);
+		this.irrigacao.setSir_tsi_cd_3(null);
+		this.irrigacao.setSir_tct_cd_3(null);
 
 	}
 

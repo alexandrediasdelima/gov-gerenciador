@@ -160,23 +160,10 @@ public class FornecedorBean extends Controller  {
 
 	
 	private void limparForm() {
-//		this.fornecedor.setAreaTotalPropriedade(null);
-//		this.fornecedor.setCepEmpreendimento(null);
-//		this.fornecedor.setComplementoLogradouroEmpreendimento(null);
-//		this.fornecedor.setEnderecoEmpreendimento(null);
-//		this.fornecedor.setIbgeMunicipioLocalizadaInterferencia(null);
-//		this.fornecedor.setId(null);
-//		//this.fornecedor.setIdUsuario(null);
-//		this.fornecedor.setLocalEmpreendimento(null);
-//		this.fornecedor.setNomeAcessoPrincipalEmpreendimento(null);
-//		this.fornecedor.setNomeEmpreendimento(null);
-//		this.fornecedor.setNomeLogradouroEmpreendimento(null);
-//		this.fornecedor.setNomeMunicipioEmpreendimento(null);
-//		this.fornecedor.setNumeroCaixaPostalEmpreendimento(null);
-//		this.fornecedor.setNumeroLogradouroEmpreendimento(null);
-//		this.fornecedor.setNumeroOutorga(null);
-//		this.fornecedor.setTipoLogradouroEmpreendimento(null);
-//		this.fornecedor.setUnidadeAreaTotalPropriedade(null);
+		this.fornecedor.setForn_info_nm(null);
+		this.fornecedor.setForn_info_cargo(null);
+		this.fornecedor.setForn_info_departamento(null);
+		this.fornecedor.setForn_info_contato_inst(null);
 	}
 
 	public int getId() {

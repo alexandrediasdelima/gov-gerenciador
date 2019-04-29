@@ -31,7 +31,7 @@
 				    </p:tieredMenu>
 				</p:column>
 				<p:column headerText="ID-Usuário" filterBy="#{empreendimento.idUsuario}" filterMatchMode="contains" sortBy="#{empreendimento.idUsuario}" >
-					<h:outputText value="#{empreendimento.idUsuario}" id="idUsuario" />
+					<p:commandLink id="idUsuario" value="#{empreendimento.idUsuario}" action="#{usuarioBean.redirecionarTelaCadastro(empreendimento.idUsuario)}" />
 				</p:column>
 				<p:column headerText="Nome da Propriedade" filterBy="#{empreendimento.nomeEmpreendimento}" filterMatchMode="contains" sortBy="#{empreendimento.nomeEmpreendimento}" >
 					<h:outputText value="#{empreendimento.nomeEmpreendimento}" />

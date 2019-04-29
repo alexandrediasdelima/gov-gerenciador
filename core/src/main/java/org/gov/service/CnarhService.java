@@ -11,5 +11,5 @@ public interface CnarhService extends Serializable {
 	public List<Cnarh> cnarhs();
 	public String remover(String id);
 	public String editar(Cnarh cnarh);
-
+	public Cnarh pesquisar(String id);
 }

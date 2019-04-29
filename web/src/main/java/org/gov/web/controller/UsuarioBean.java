@@ -3,6 +3,7 @@ package org.gov.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.gov.model.OutraInfo;
 import org.gov.model.Regiao;
 import org.gov.model.Usuario;
 import org.gov.service.UsuarioService;
@@ -32,7 +33,26 @@ public class UsuarioBean extends Controller  {
 		usuarios();
 	}
 
+	public String redirecionarTelaCadastro(int id) {
 
+		usuario = new Usuario();
+		this.usuario.setUsuario_id(id);
+
+		Usuario usr = usuarioService.pesquisar(id);
+		setView(ADD);
+
+		if(usr != null) {
+			this.usuario = usr;
+			setView(EDIT);
+		}
+
+		return eval(index());
+	}
+
+	public void resetView() {
+		setView(LIST);
+	}
+	
 	public String gravar() {
 
 		usuarioService.gravar(usuario);
@@ -93,9 +113,24 @@ public class UsuarioBean extends Controller  {
 	}
 
 	 private void limparForm() {
-//		 this.usuario.setAreaTotalReserv(null);
-//		 this.usuario.setNumeroSiagas(null);
-//		 this.usuario.setVolumeMaxReserv(null);
+		 this.usuario.setEmp_nm_usuario(null);
+		 this.usuario.setEmp_nm_apelido(null);
+		 this.usuario.setEmp_nu_cpfcnpj(null);
+		 this.usuario.setEmp_nu_tipodocumento(null);
+		 this.usuario.setEmp_nu_ddd(null);
+		 this.usuario.setEmp_nu_telefone(null);
+		 this.usuario.setEmp_ds_emailresponsavel(null);
+		 this.usuario.setEmp_ds_tp_logradouro(null);
+		 this.usuario.setEmp_ds_nm_logradouro(null);
+		 this.usuario.setEmp_ds_logradouro(null);
+		 this.usuario.setEmp_nu_logradouro(null);
+		 this.usuario.setEmp_ds_complementoendereco(null);
+		 this.usuario.setEmp_ds_bairrodistrito(null);
+		 this.usuario.setEmp_nu_caixapostal(null);
+		 this.usuario.setEmp_nu_cependereco(null);
+		 this.usuario.setApa_muni_correspondencia(null);
+		 this.usuario.setEmp_cd_codigoibgecorrespondencia(null);
+		 this.usuario.setEmp_ds_uf(null);
 	}
 
 //	public void onDateSelect(SelectEvent event) {
@@ -106,6 +141,7 @@ public class UsuarioBean extends Controller  {
 
 
 	public String voltar() {
+		setView(LIST);
 		return "/usuario/index";
 	}
 		
