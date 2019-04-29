@@ -32,7 +32,7 @@
 					<p:outputLabel value="Altura Total do Reservatório(m):" for="ius_nu_alturares" id="altura" />
 					<p:inputText id="ius_nu_alturares" value="#{cnarhBean.cnarh.ius_nu_alturares}" />
 
-					<p:outputLabel value="Área Total do Reservatório(m2):" for="ius_ar_resmax" id="area" />
+					<p:outputLabel value="Área Total do Reservatório(m²):" for="ius_ar_resmax" id="area" />
 					<p:inputText id="ius_ar_resmax" value="#{cnarhBean.cnarh.ius_ar_resmax}" />
 
 					<p:outputLabel value="Número Siagas:" for="int_nu_siagas" id="numSiagas" />
@@ -58,11 +58,11 @@
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
 	<script>
 		$(function() {
-			$("#cnarh_id").inputmask({alias: "numeric", mask: "9[9][9][9][9][9][9]", greedy: true, })
-			$("#ius_nu_alturares").inputmask({alias: "numeric", mask: "9[9][9][9][9][9][9][9][9][9][9][9][9].[9][9]", greedy: true, })
-			$("#ius_ar_resmax").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9][9][9][9]9.[9][9][9][9][9]", greedy: true, })
-			$("#int_nu_siagas").inputmask({alias: "numeric", mask: "9[9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9]", greedy: true, })
-			$("#ius_vo_resmax").inputmask({alias: "numeric", mask: "9[9][9][9][9][9][9][9][9][9].[9][9][9][9][9]", greedy: true, })
+			$("#cnarh_id").inputmask({mask: "9[9][9][9][9][9][9]", greedy: true, })
+			$("#ius_nu_alturares").inputmask({mask: "[9][9][9][9][9][9][9][9][9][9][9][9][9].[9][9]", greedy: true })
+			$("#ius_ar_resmax").inputmask({mask: "[9][9][9][9][9][9][9][9][9][9][.][9][9]", greedy: true })
+			$("#int_nu_siagas").inputmask({mask: "[9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9][9]", greedy: true })
+			$("#ius_vo_resmax").inputmask({mask: "[9][9][9][9][9][9][9][9][9][9][.][9][9]", greedy: true })
 		})
 	</script>
 </ui:composition>

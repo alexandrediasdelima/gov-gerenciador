@@ -76,17 +76,10 @@
 					<h:outputText value="#{empreendimento.numeroOutorga}" />
 				</p:column>
 				<p:column headerText="Ações">
-					<p:commandButton action="#{empreendimentoBean.telaEditar(empreendimento)}" value="Editar" ajax="false" icon="ui-icon-document"/>
-					
+					<p:commandButton action="#{empreendimentoBean.telaEditar(empreendimento)}" value="Editar" ajax="false" icon="ui-icon-document"/>					
 					<p:commandButton value="Apagar" action="#{empreendimentoBean.deletar}" oncomplete="PF('tabelaEmpreendimentos').filter()" update="@form" icon="ui-icon-cancel">
-				        <p:confirm header="Apac" message="Confirma a exclusão?" />
 				        <f:setPropertyActionListener value="#{empreendimento}" target="#{empreendimentoBean.empreendimento}" />
 				    </p:commandButton>
-				    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
-				        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" />
-				        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" />
-				    </p:confirmDialog>
-
 				</p:column>
 			</p:dataTable>
 			<p:blockUI block="tabelaEmpreendimentos" trigger="tabelaEmpreendimentos">

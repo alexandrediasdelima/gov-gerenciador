@@ -42,16 +42,9 @@
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{cnarhBean.telaEditar(cnarh)}" value="Editar" ajax="false" icon="ui-icon-document" />
-					
 					<p:commandButton value="Apagar" action="#{cnarhBean.deletar}" oncomplete="PF('tabelaCnarhs').filter()" update="@form" icon="ui-icon-cancel">
-				        <p:confirm header="Apac" message="Confirma a exclusão?" />
 				        <f:setPropertyActionListener value="#{cnarh}" target="#{cnarhBean.cnarh}" />
 				    </p:commandButton>
-				    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
-				        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" />
-				        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" />
-				    </p:confirmDialog>
-				    
 				</p:column>
 			</p:dataTable>
 			<p:blockUI block="tabelaCnarhs" trigger="tabelaCnarhs">

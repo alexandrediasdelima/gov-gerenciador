@@ -13,7 +13,7 @@
 	</style>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
-		<h:form id="addUsuario" prependId="false" style="width:99%;">
+		<h:form id="addUsuario" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
 		<br/><br/><br/>
 		<p:fieldset legend="Usuário">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
@@ -113,6 +113,7 @@
 
 			        <p:outputLabel value="Município:" for="apa_muni_correspondencia" id="municipio" />
 					<p:selectOneMenu id="apa_muni_correspondencia" value="#{usuarioBean.usuario.apa_muni_correspondencia}" required="true" style="width:230px !important" >
+	                    <f:selectItem itemLabel="Selecione" itemValue=" " />
 	                    <f:selectItems value="#{usuarioBean.regioes}"
 	                                   var="regiao"
 	                                   itemLabel="#{regiao.municipio}"

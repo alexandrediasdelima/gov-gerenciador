@@ -24,6 +24,9 @@
 			paginator="true" rows="10" var="apac" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
 			resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
 				<f:facet name="header">APAC</f:facet>
+				<p:column headerText="Número do Processo" filterBy="#{apac.numeroProcesso}" filterMatchMode="contains" sortBy="#{apac.numeroProcesso}">
+					<h:outputText value="#{apac.numeroProcesso}" />
+				</p:column>
 				<p:column headerText="Analista Responsável" filterBy="#{apac.analistaResponsavel}" filterMatchMode="contains" sortBy="#{apac.analistaResponsavel}">
 					<h:outputText value="#{apac.analistaResponsavel}" />
 				</p:column>
@@ -139,9 +142,6 @@
 				</p:column>
 				<p:column headerText="Número Vazão Requerida Média por Dia" filterBy="#{apac.vazaoRequiridaMediaDia}" filterMatchMode="contains" sortBy="#{apac.vazaoRequiridaMediaDia}">
 					<h:outputText value="#{apac.vazaoRequiridaMediaDia}" />
-				</p:column>
-				<p:column headerText="Número do Processo" filterBy="#{apac.numeroProcesso}" filterMatchMode="contains" sortBy="#{apac.numeroProcesso}">
-					<h:outputText value="#{apac.numeroProcesso}" />
 				</p:column>
 				<p:column headerText="Ato Administrativo ou Instrumento de Regularização" filterBy="#{apac.out_tpo_cd}" filterMatchMode="contains" sortBy="#{apac.out_tpo_cd}">
 					<h:outputText value="#{apac.out_tpo_cd}" />
