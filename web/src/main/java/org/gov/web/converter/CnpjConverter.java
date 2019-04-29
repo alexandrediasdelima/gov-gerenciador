@@ -11,7 +11,12 @@ public class CnpjConverter implements Converter {
 	public Object getAsObject(FacesContext arg0, UIComponent arg1, String cnpj) {
 		// TODO Auto-generated method stub
 		try {
-			return CNPJUtil.unFormat(cnpj);
+
+			if(cnpj != null) {
+				return CNPJUtil.unFormat(cnpj);
+			}else {
+				return cnpj;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			return cnpj;
