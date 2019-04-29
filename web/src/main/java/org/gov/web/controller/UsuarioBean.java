@@ -34,7 +34,6 @@ public class UsuarioBean extends Controller  {
 	}
 
 	public String redirecionarTelaCadastro(int id) {
-
 		usuario = new Usuario();
 		this.usuario.setUsuario_id(id);
 
@@ -50,23 +49,21 @@ public class UsuarioBean extends Controller  {
 	}
 
 	public void resetView() {
-		setView(LIST);
+		//setView(LIST);
 	}
 	
 	public String gravar() {
-
+		setView(LIST);
 		usuarioService.gravar(usuario);
 		usuarios();
-
+		
 		return eval(index());
 	}
 
 	public String usuarios() {
-
-		usuarios = usuarioService.usuarios();
+		this.usuarios = usuarioService.usuarios();
 		setView(LIST);
 		return eval(index());
-
 	}
 
 	public void atualizarMunicipios() {
@@ -78,7 +75,6 @@ public class UsuarioBean extends Controller  {
 	}
 
 	public void atualizaTipoDocumento() {
-
 		if("cnpj".equals(this.tipoDocumento)) {
 			this.tipoDocumento = "cnpj";
 		}else {
@@ -101,18 +97,21 @@ public class UsuarioBean extends Controller  {
 	}
 
 	public String editar() {
+		setView(LIST);
 		usuarioService.editar(usuario);
 		usuarios();
 		return eval(index());
 	}
 
 	public String deletar() {
+		setView(LIST);
 		usuarioService.remover(usuario.getUsuario_id());
 		usuarios();
 		return eval(index());
 	}
 
 	 private void limparForm() {
+		 this.usuario.setUsuario_id(null);
 		 this.usuario.setEmp_nm_usuario(null);
 		 this.usuario.setEmp_nm_apelido(null);
 		 this.usuario.setEmp_nu_cpfcnpj(null);

@@ -55,11 +55,11 @@ public class CnarhBean extends Controller  {
 	}
 
 	public void resetView() {
-		setView(LIST);
+		//setView(LIST);
 	}
 	
 	public String gravar() {
-
+		setView(LIST);
 		cnarhService.gravar(cnarh);
 		cnarhs();
 
@@ -67,11 +67,9 @@ public class CnarhBean extends Controller  {
 	}
 
 	public String cnarhs() {
-
-		cnarhs = cnarhService.cnarhs();
+		this.cnarhs = cnarhService.cnarhs();
 		setView(LIST);
 		return eval(index());
-
 	}
 
 	public String adicionarBtnNovoCnarh() {
@@ -88,15 +86,14 @@ public class CnarhBean extends Controller  {
 	}
 
 	public String editar() {
-
+		setView(LIST);
 		cnarhService.editar(cnarh);
 		cnarhs();
-
 		return eval(index());
 	}
 
 	public String deletar() {
-
+		setView(LIST);
 		cnarhService.remover(cnarh.getCnarh_id());
 		cnarhs();
 		return eval(index());

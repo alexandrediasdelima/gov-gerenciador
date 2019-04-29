@@ -23,6 +23,8 @@ import org.gov.model.Usuario;
 import org.gov.service.ApacServiceImpl;
 import org.gov.service.InterferenciaService;
 import org.gov.service.InterferenciaServiceImpl;
+import org.primefaces.model.DefaultStreamedContent;
+import org.primefaces.model.StreamedContent;
 import org.primefaces.model.UploadedFile;
 
 
@@ -34,7 +36,7 @@ public class InterferenciaBean extends Controller  {
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 
 	private Interferencia interferencia;
 	private List<Interferencia> interferencias;
@@ -46,11 +48,8 @@ public class InterferenciaBean extends Controller  {
 	private transient UploadedFile fotoCapturaGeral;
 	private transient UploadedFile fotoCapturaDetalhe;
 	private transient UploadedFile fotoCroqui;
-//	private byte[] array;
-//	private transient FileInputStream fis;
-
 	private boolean isOutroUso;
-
+	
 	public InterferenciaBean()  {
 		setInterferencia(new Interferencia());
 		interferenciaService = new InterferenciaServiceImpl();
@@ -60,24 +59,10 @@ public class InterferenciaBean extends Controller  {
 		empreendimentos = new ArrayList<Empreendimento>();
 		interferencias();
 	}
-
+	
 	public String interferencias()  {
 		interferencias = interferenciaService.interferencias();
 		setView(LIST);
-		
-//		String mimeType = "image/jpg";
-//		File file = new File("C:/import_cad/imagens/15564982740071536680806557.jpg");
-//		ByteArrayOutputStream out = new ByteArrayOutputStream();
-//		fis = new FileInputStream(file);
-//		int b;
-//		
-//		while((b = fis.read()) > -1) {
-//			out.write(b);
-//		}
-//		out.close();
-//		fis.close();
-//		setArray(out.toByteArray());
-		
 		return eval(index());
 	}
 
@@ -306,23 +291,5 @@ public class InterferenciaBean extends Controller  {
 	public void setFotoCroqui(UploadedFile fotoCroqui) {
 		this.fotoCroqui = fotoCroqui;
 	}
-
-//	public byte[] getArray() {
-//		return array;
-//	}
-//
-//	public void setArray(byte[] array) {
-//		this.array = array;
-//	}
-//
-//	public FileInputStream getFis() {
-//		return fis;
-//	}
-//
-//	public void setFis(FileInputStream fis) {
-//		this.fis = fis;
-//	}
-
-
 
 }
