@@ -13,7 +13,7 @@
 	</style>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
-		<h:form id="addUsuario" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		<h:form id="addUsuario" prependId="false"  style="width:99%;" acceptcharset="ISO-8859-1">
 		
 		<br/><br/><br/>
 		<p:fieldset legend="Usuário">
@@ -28,7 +28,7 @@
 					<p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" id="email" />
 					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" validator="emailValidator" />
 
-					<p:selectOneRadio value="#{usuarioBean.tipoDocumento}">
+					<p:selectOneRadio id="tipoDocumento" value="#{usuarioBean.tipoDocumento}">
 						<f:selectItem itemLabel="CPF" itemValue="cpf" />
 						<f:selectItem itemLabel="CNPJ:" itemValue="cnpj" />
 						<f:ajax render="@this documento" />
@@ -175,17 +175,7 @@
 
 		</h:form>
 	</div>
-	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
-	<script>
-		$(function() {
-			$("#emp_ds_emailresponsavel").inputmask({alias: "email"});
-			$("#emp_nu_ddd").inputmask({alias: "numeric", mask: "99", greedy: true, })
-			$("#emp_nu_telefone").inputmask({mask: ["9999-9999", "99999-9999"], greedy: true, removeMaskOnSubmit: true})
-			$("#emp_nu_logradouro").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
-			$("#emp_nu_cependereco").inputmask({mask: "99999-999", greedy: true, removeMaskOnSubmit: true})
-			$("#emp_nu_caixapostal").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
-			})
-	</script>
+	
 
 
 </ui:composition>

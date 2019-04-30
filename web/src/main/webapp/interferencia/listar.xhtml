@@ -15,10 +15,13 @@
 	</style>
 	
 	<div style="padding-top: 50px;">
-		<h:form id="listarInterferencias" prependId="false">
+		<h:form id="listarInterferencias" enctype="multipart/form-data" prependId="false">
 			<br/>
 			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{interferenciaBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
+			
+			<p:graphicImage value="#{interferenciaBean.array}" />
+			
 			<p:dataTable id="tabelaInterferencias" value="#{interferenciaBean.interferencias}" widgetVar="tabelaInterferencias" 
 			emptyMessage="Não foram encontrados registros." filteredValue="#{interferenciaBean.filteredInterferencias}" 
 			paginator="true" rows="10" var="interferencia" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 

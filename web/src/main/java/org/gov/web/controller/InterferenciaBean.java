@@ -50,7 +50,11 @@ public class InterferenciaBean extends Controller  {
 	private transient UploadedFile fotoCroqui;
 	private boolean isOutroUso;
 	
-	public InterferenciaBean()  {
+	private transient FileInputStream fis;
+	private transient byte[] array;
+	
+	
+	public InterferenciaBean() throws IOException  {
 		setInterferencia(new Interferencia());
 		interferenciaService = new InterferenciaServiceImpl();
 		interferencias = new ArrayList<Interferencia>();
@@ -60,13 +64,27 @@ public class InterferenciaBean extends Controller  {
 		interferencias();
 	}
 	
-	public String interferencias()  {
+	public String interferencias() throws IOException  {
 		interferencias = interferenciaService.interferencias();
 		setView(LIST);
+		
+//		String mimeType = "image/jpg";
+//		File file = new File("C:\\import_cad\\imagens\\15564982740071536680806557.jpg");
+//		ByteArrayOutputStream out = new ByteArrayOutputStream();
+//		setFis(new FileInputStream(file));
+//		int b;
+//		
+//		while((b = getFis().read()) > -1) {
+//			out.write(b);
+//		}
+//		out.close();
+//		getFis().close();
+//		setArray(out.toByteArray());
+		
 		return eval(index());
 	}
 
-	public String gravar()  {
+	public String gravar() throws IOException  {
 		if(getCnarhs().size() == 0) {
 			this.interferencia.setCnarh_id(null);
 		}
@@ -98,14 +116,14 @@ public class InterferenciaBean extends Controller  {
 		return eval(index());
 	}
 
-	public String editar()  {
+	public String editar() throws IOException  {
 		interferenciaService.editar(interferencia);
 		interferencias();
 
 		return eval(index());
 	}
 
-	public String deletar()  {
+	public String deletar() throws IOException  {
 		interferenciaService.remover(interferencia.getInt_id());
 		interferencias();
 		return eval(index());
@@ -275,7 +293,6 @@ public class InterferenciaBean extends Controller  {
 	public void setFotoCapturaGeral(UploadedFile fotoCapturaGeral) {
 		this.fotoCapturaGeral = fotoCapturaGeral;
 	}
-
 	public UploadedFile getFotoCapturaDetalhe() {
 		return fotoCapturaDetalhe;
 	}
@@ -290,6 +307,22 @@ public class InterferenciaBean extends Controller  {
 
 	public void setFotoCroqui(UploadedFile fotoCroqui) {
 		this.fotoCroqui = fotoCroqui;
+	}
+
+	public byte[] getArray() {
+		return array;
+	}
+
+	public void setArray(byte[] array) {
+		this.array = array;
+	}
+
+	public FileInputStream getFis() {
+		return fis;
+	}
+
+	public void setFis(FileInputStream fis) {
+		this.fis = fis;
 	}
 
 }
