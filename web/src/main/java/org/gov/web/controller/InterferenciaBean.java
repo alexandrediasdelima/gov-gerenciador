@@ -1,6 +1,8 @@
 package org.gov.web.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,10 +18,10 @@ import org.gov.model.Apac;
 import org.gov.model.Cnarh;
 import org.gov.model.Empreendimento;
 import org.gov.model.Interferencia;
-import org.gov.model.Usuario;
-import org.gov.service.ApacServiceImpl;
 import org.gov.service.InterferenciaService;
 import org.gov.service.InterferenciaServiceImpl;
+import org.primefaces.model.DefaultStreamedContent;
+import org.primefaces.model.StreamedContent;
 import org.primefaces.model.UploadedFile;
 
 
@@ -40,9 +42,11 @@ public class InterferenciaBean extends Controller  {
 	private List<Cnarh> cnarhs;
 	private List<Apac> processos;
 	private List<Empreendimento> empreendimentos;
-	private UploadedFile fotoCapturaGeral;
-	private UploadedFile fotoCapturaDetalhe;
-	private UploadedFile fotoCroqui;
+	private transient UploadedFile fotoCapturaGeral;
+	private transient UploadedFile fotoCapturaDetalhe;
+	private transient UploadedFile fotoCroqui;
+	private transient StreamedContent file;
+	private String nomeFoto;
 
 	private boolean isOutroUso;
 
@@ -288,6 +292,45 @@ public class InterferenciaBean extends Controller  {
 		this.fotoCroqui = fotoCroqui;
 	}
 
+	public StreamedContent getFile() {
+
+		  InputStream stream = null;
+
+			try {
+				File f = new File("C:/import_cad/imagens/" + nomeFoto);
+				stream = new FileInputStream(f);
+				file = new DefaultStreamedContent(stream, "image/jpg", nomeFoto);
+
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+
+		return file;
+	}
+
+	public StreamedContent download(String nome) {
+
+		  InputStream stream = null;
+
+			try {
+				File f = new File("C:/import_cad/imagens/" + nome);
+				stream = new FileInputStream(f);
+				file = new DefaultStreamedContent(stream, "image/jpg", nome);
+
+			} catch (FileNotFoundException e) {
+				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Arquivo não encontrado no servidor ", ""));
+			}
+
+		return file;
+	}
+
+	public String getNomeFoto() {
+		return nomeFoto;
+	}
+
+	public void setNomeFoto(String nomeFoto) {
+		this.nomeFoto = nomeFoto;
+	}
 
 
 }
