@@ -19,8 +19,6 @@ import org.gov.model.Apac;
 import org.gov.model.Cnarh;
 import org.gov.model.Empreendimento;
 import org.gov.model.Interferencia;
-import org.gov.model.Usuario;
-import org.gov.service.ApacServiceImpl;
 import org.gov.service.InterferenciaService;
 import org.gov.service.InterferenciaServiceImpl;
 import org.primefaces.model.DefaultStreamedContent;
@@ -48,13 +46,11 @@ public class InterferenciaBean extends Controller  {
 	private transient UploadedFile fotoCapturaGeral;
 	private transient UploadedFile fotoCapturaDetalhe;
 	private transient UploadedFile fotoCroqui;
+	private transient StreamedContent file;
 	private boolean isOutroUso;
 	
-	private transient FileInputStream fis;
-	private transient byte[] array;
-	
-	
-	public InterferenciaBean() throws IOException  {
+
+	public InterferenciaBean()  {
 		setInterferencia(new Interferencia());
 		interferenciaService = new InterferenciaServiceImpl();
 		interferencias = new ArrayList<Interferencia>();
@@ -63,8 +59,8 @@ public class InterferenciaBean extends Controller  {
 		empreendimentos = new ArrayList<Empreendimento>();
 		interferencias();
 	}
-	
-	public String interferencias() throws IOException  {
+
+	public String interferencias()  {
 		interferencias = interferenciaService.interferencias();
 		setView(LIST);
 		
@@ -309,20 +305,21 @@ public class InterferenciaBean extends Controller  {
 		this.fotoCroqui = fotoCroqui;
 	}
 
-	public byte[] getArray() {
-		return array;
-	}
 
-	public void setArray(byte[] array) {
-		this.array = array;
-	}
+	public StreamedContent download(String nome) {
 
-	public FileInputStream getFis() {
-		return fis;
-	}
+		  InputStream stream = null;
 
-	public void setFis(FileInputStream fis) {
-		this.fis = fis;
+			try {
+				File f = new File("C:/import_cad/imagens/" + nome);
+				stream = new FileInputStream(f);
+				file = new DefaultStreamedContent(stream, "image/jpg", nome);
+
+			} catch (FileNotFoundException e) {
+				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Arquivo não encontrado no servidor ", ""));
+			}
+
+		return file;
 	}
 
 }
