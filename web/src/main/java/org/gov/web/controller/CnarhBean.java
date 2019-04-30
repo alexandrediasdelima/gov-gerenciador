@@ -8,6 +8,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 import org.gov.model.Cnarh;
+import org.gov.model.Usuario;
 import org.gov.service.CnarhService;
 import org.gov.service.CnarhServiceImpl;
 import org.primefaces.event.SelectEvent;
@@ -37,9 +38,28 @@ public class CnarhBean extends Controller  {
 		cnarhs();
 	}
 
+	public String redirecionarTelaCadastro(String id) {
 
+		cnarh = new Cnarh();
+		this.cnarh.setCnarh_id(id);
+
+		Cnarh usr = cnarhService.pesquisar(id);
+		setView(ADD);
+
+		if(usr != null) {
+			this.cnarh = usr;
+			setView(EDIT);
+		}
+
+		return eval(index());
+	}
+
+	public void resetView() {
+		//setView(LIST);
+	}
+	
 	public String gravar() {
-
+		setView(LIST);
 		cnarhService.gravar(cnarh);
 		cnarhs();
 
@@ -47,11 +67,9 @@ public class CnarhBean extends Controller  {
 	}
 
 	public String cnarhs() {
-
-		cnarhs = cnarhService.cnarhs();
+		this.cnarhs = cnarhService.cnarhs();
 		setView(LIST);
 		return eval(index());
-
 	}
 
 	public String adicionarBtnNovoCnarh() {
@@ -68,15 +86,14 @@ public class CnarhBean extends Controller  {
 	}
 
 	public String editar() {
-
+		setView(LIST);
 		cnarhService.editar(cnarh);
 		cnarhs();
-
 		return eval(index());
 	}
 
 	public String deletar() {
-
+		setView(LIST);
 		cnarhService.remover(cnarh.getCnarh_id());
 		cnarhs();
 		return eval(index());
@@ -97,6 +114,7 @@ public class CnarhBean extends Controller  {
 	    }
 
 	public String voltar() {
+		setView(LIST);
 		return "/cnarh/index";
 	}
 

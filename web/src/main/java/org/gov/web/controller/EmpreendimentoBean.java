@@ -3,6 +3,7 @@ package org.gov.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.gov.model.Cnarh;
 import org.gov.model.Empreendimento;
 import org.gov.model.Regiao;
 import org.gov.model.Usuario;
@@ -37,6 +38,26 @@ public class EmpreendimentoBean extends Controller  {
 		usuarios = new ArrayList<Usuario>();
 		empreendimentos();
 	}
+	
+	public String redirecionarTelaCadastro(int id) {
+
+		empreendimento = new Empreendimento();
+		this.empreendimento.setId(id);
+
+		Empreendimento usr = empreendimentoService.pesquisar(id);
+		setView(ADD);
+
+		if(usr != null) {
+			this.empreendimento = usr;
+			setView(EDIT);
+		}
+
+		return eval(index());
+	}
+
+	public void resetView() {
+		//setView(LIST);
+	}
 
 	public String adicionarNovo() {
 		setView(ADD);
@@ -54,7 +75,7 @@ public class EmpreendimentoBean extends Controller  {
 	}
 
 	public String gravar() {
-
+		setView(LIST);
 		empreendimento.setUnidadeAreaTotalPropriedade("Hectare");
 		empreendimentoService.gravar(empreendimento);
 		empreendimentos();
@@ -63,7 +84,7 @@ public class EmpreendimentoBean extends Controller  {
 	}
 
 	public String editar() {
-
+		setView(LIST);
 		empreendimentoService.editar(empreendimento);
 		empreendimentos();
 
@@ -71,7 +92,7 @@ public class EmpreendimentoBean extends Controller  {
 	}
 
 	public String deletar() {
-
+		setView(LIST);
 		empreendimentoService.remover(empreendimento.getId());
 		empreendimentos();
 		return eval(index());
@@ -82,6 +103,7 @@ public class EmpreendimentoBean extends Controller  {
 	}
 
 	public String voltar() {
+		setView(LIST);
 		return "/empreendimento/index";
 	}
 
@@ -92,7 +114,7 @@ public class EmpreendimentoBean extends Controller  {
 		this.empreendimento.setEnderecoEmpreendimento(null);
 		this.empreendimento.setIbgeMunicipioLocalizadaInterferencia(null);
 		this.empreendimento.setId(null);
-		//this.empreendimento.setIdUsuario(null);
+		this.empreendimento.setIdUsuario(null);
 		this.empreendimento.setLocalEmpreendimento(null);
 		this.empreendimento.setNomeAcessoPrincipalEmpreendimento(null);
 		this.empreendimento.setNomeEmpreendimento(null);
@@ -112,15 +134,6 @@ public class EmpreendimentoBean extends Controller  {
 		setView(LIST);
 		return eval(index());
 	}
-
-	public List<String> completeText(String query) {
-        List<String> results = new ArrayList<String>();
-        for(int i = 0; i < 10; i++) {
-            results.add(query + i);
-        }
-
-        return results;
-    }
 
 	public void atualizarMunicipios() {
 		setRegioes(empreendimentoService.buscarMunicipios("PE"));

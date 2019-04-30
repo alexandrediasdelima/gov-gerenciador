@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import org.gov.model.Cnarh;
+import org.gov.model.Usuario;
 import org.gov.util.JPAUtil;
 
 public class CnarhDaoImpl implements CnarhDao {
@@ -68,4 +69,16 @@ public class CnarhDaoImpl implements CnarhDao {
 
 	}
 
+	public Cnarh pesquisar(String id) {
+
+		entityManager = new JPAUtil().getEntityManager();
+
+		entityManager.getTransaction().begin();
+		Cnarh cnarh = entityManager.find(Cnarh.class, id);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+
+		return cnarh;
+	}
+	
 }

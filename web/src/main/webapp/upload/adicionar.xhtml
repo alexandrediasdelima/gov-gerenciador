@@ -7,25 +7,28 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
+	
+	<style type="text/css">
+		.ui-state-hover {
+			background: none !important;
+			background-image: none !important;
+		}
+	</style>
 
-	<div style="padding-top: 50px; position: absolute;">
-
-		<h:form enctype="multipart/form-data">
-			<fieldset>
-				<h:panelGrid columns="2">
+	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
+		<h:form id="addUpload" enctype="multipart/form-data" style="width:99%;" >
+		<br/><br/><br/>
+		<p:fieldset legend="Upload">
+			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
+				<h:panelGrid columns="2" style="border: 0px solid;">
 					<p:growl id="messages" showDetail="true" />
-
-					<p:fileUpload value="#{fileUploadBean.file}" mode="simple" skinSimple="true" />
-
-					<br />
-					<br />
-
-					<p:commandButton value="Submit" ajax="false"
-						action="#{fileUploadBean.upload}" />
+					<p:row>
+						<p:column><p:fileUpload value="#{fileUploadBean.file}"  mode="simple" skinSimple="true" /></p:column>
+						<p:column><p:commandButton value="Upload do Arquivo" ajax="false" action="#{fileUploadBean.upload}" /></p:column>
+					</p:row>
 				</h:panelGrid>
-			</fieldset>
+			</p:scrollPanel>
+		</p:fieldset>
 		</h:form>
-
-
 	</div>
 </ui:composition>

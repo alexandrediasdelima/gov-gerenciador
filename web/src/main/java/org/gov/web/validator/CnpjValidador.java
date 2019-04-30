@@ -31,30 +31,34 @@ public class CnpjValidador implements Validator {
 
 	public void validate(FacesContext facescontext, UIComponent uicomponent,
 			Object obj) {
-		String cnpj = (String) obj;
-
-		// TODO verificar a validaÃ§Ã£o com 8 digitos aguarando resposta Serasa
-		cnpj = cnpj.replaceAll(Pattern.quote("."), "").replaceAll("/", "")
-				.replace("_", "").replace("-", "");
-
-		if (cnpj.length() == NUMBER_QUATORZE) {
-
-			try {
-				if (!CNPJUtil.isValid(cnpj)) {
-					throw new ValidatorException(
-							new FacesMessage(FacesMessage.SEVERITY_ERROR,
-									"CNPJ Incorreto", null));
+		
+		if (obj != null) {
+		
+			String cnpj = (String) obj;
+	
+			// TODO verificar a validaÃ§Ã£o com 8 digitos aguarando resposta Serasa
+			cnpj = cnpj.replaceAll(Pattern.quote("."), "").replaceAll("/", "")
+					.replace("_", "").replace("-", "");
+	
+			if (cnpj.length() == NUMBER_QUATORZE) {
+	
+				try {
+					if (!CNPJUtil.isValid(cnpj)) {
+						throw new ValidatorException(
+								new FacesMessage(FacesMessage.SEVERITY_ERROR,
+										"CNPJ Incorreto", null));
+					}
+	
+				} catch (IllegalArgumentException e) {
+					throw new ValidatorException(new FacesMessage(
+							FacesMessage.SEVERITY_ERROR, "Erro na aplicação", null));
 				}
-
-			} catch (IllegalArgumentException e) {
+	
+			} else {
 				throw new ValidatorException(new FacesMessage(
-						FacesMessage.SEVERITY_ERROR, "Erro na aplicação", null));
+						FacesMessage.SEVERITY_ERROR, "CNPJ Incorreto", null));
 			}
-
-		} else {
-			throw new ValidatorException(new FacesMessage(
-					FacesMessage.SEVERITY_ERROR, "CNPJ Incorreto", null));
-		}
+		} 
 	}
 
 	public static String removeZerosEsquerda(String valor) {

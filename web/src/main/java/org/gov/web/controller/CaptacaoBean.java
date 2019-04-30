@@ -113,18 +113,8 @@ public class CaptacaoBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-//		this.captacao.setAltitudeBocaTubulacao(null);
-//		this.captacao.setAltitudeTerreno(null);
-//		this.captacao.setCodigoIdentificador(null);
-//		this.captacao.setCondicaoAquifero(null);
-//		this.captacao.setDataInstalacaoPoco(null);
-//		this.captacao.setDiametroFiltro(null);
-//		this.captacao.setDiametroPerfuracao(null);
-//		this.captacao.setIdentificadorAquiferoPonto(null);
-//		this.captacao.setProfundidadeBaseMedidaApartirSuperficie(null);
-//		this.captacao.setProfundidadeTopoMedidaApartirSuperficie(null);
-//		this.captacao.setTipoPenetracaoAquifero(null);
+		this.captacao.setCam_info_adici_consumo(null);
+		this.captacao.setInt_tsu_cd(null);
 
 	}
 

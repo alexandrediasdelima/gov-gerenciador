@@ -85,7 +85,7 @@
 				</h:panelGrid>
 				<br/><br/>
 				
-				<p:commandButton value="Voltar" action="#{outrainfoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Voltar" action="#{outrainfoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{outrainfoBean.gravar}"   ajax="false" rendered="#{outrainfoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{outrainfoBean.alterar}" ajax="false" rendered="#{outrainfoBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{outrainfoBean.deletar}"  ajax="false" icon="ui-icon-close" />

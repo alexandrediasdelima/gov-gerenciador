@@ -14,6 +14,7 @@
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addUsuario" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+		
 		<br/><br/><br/>
 		<p:fieldset legend="Usuário">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
@@ -131,7 +132,7 @@
 					<p:inputMask id="emp_nu_caixapostal" value="#{usuarioBean.usuario.emp_nu_caixapostal}" />
 
 					<p:outputLabel value="Referência do Endereço:" for="emp_ds_logradouro" id="referencia" />
-					<p:inputText id="emp_ds_logradouro" value="#{usuarioBean.usuario.emp_ds_logradouro}" />
+					<p:inputText id="emp_ds_logradouro" maxlength="150" value="#{usuarioBean.usuario.emp_ds_logradouro}" />
 
 					<p:outputLabel value="Relação com a Propriedade:" for="emp_ds_relacaopropriedade" id="relacao" />
 					<p:selectOneMenu id="emp_ds_relacaopropriedade" value="#{usuarioBean.usuario.emp_ds_relacaopropriedade}" style="width:230px" required="true" requiredMessage="Relação com a Propriedade é obrigatório">

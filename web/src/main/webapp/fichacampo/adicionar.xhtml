@@ -13,7 +13,7 @@
 		.central { width: 100% !important; margin: 0 auto; }
 	</style>
 	
-	<h:form id="fichaCampo" prependId="false" style="width:99%;" acceptcharset="ISO-8859-1">
+	<h:form id="fichaCampo" prependId="false" style="width:99%;" >
 	<f:event type="preRenderView" listener="#{fichaCampoBean.resetView}"/>
 	<br/><br/><br/>
 		<p:graphicImage library="images" name="minilogo_grey.jpg" width="134" height="42"/>
@@ -194,15 +194,15 @@
 		<p:panelGrid styleClass="central">
 	        <p:row>
 	        	<p:column style="width:25%"><p:outputLabel value="Foto geral do ponto de interferência:" for="fot_cap_lanc_geral" /></p:column>
-	        	<p:column style="width:75%"><p:graphicImage id="fot_cap_lanc_geral" library="images" name="/interferencia_geral/#{fichaCampoBean.fichaCampo.fot_cap_lanc_geral}" width="500px" /></p:column>
+	        	<p:column style="width:75%"><p:outputLabel id="fot_cap_lanc_geral" value="#{fichaCampoBean.fichaCampo.fot_cap_lanc_geral}" /></p:column>
 	        </p:row>
 	        <p:row>
 		        <p:column><p:outputLabel value="Foto de detalhe do ponto de interferência:" for="fot_cap_lanc_detalhe" /></p:column>
-		        <p:column><p:graphicImage id="fot_cap_lanc_detalhe" library="images" name="/interferencia_detalhe/#{fichaCampoBean.fichaCampo.fot_cap_lanc_detalhe}" width="500px" /></p:column>
+		        <p:column><p:outputLabel id="fot_cap_lanc_detalhe" value="#{fichaCampoBean.fichaCampo.fot_cap_lanc_detalhe}" /></p:column>
 		    </p:row>
 			<p:row>
 		        <p:column><p:outputLabel value="Foto do Croqui:" for="fot_croqui_localizacao" /></p:column>
-				<p:column><p:graphicImage id="fot_croqui_localizacao" library="images" name="/interferencia_croqui/#{fichaCampoBean.fichaCampo.fot_croqui_localizacao}" width="500px" /></p:column>
+				<p:column><p:outputLabel id="fot_croqui_localizacao" value="#{fichaCampoBean.fichaCampo.fot_croqui_localizacao}" /></p:column>
 	        </p:row>
 	   	</p:panelGrid>
 		<br/><br/>
@@ -298,50 +298,7 @@
 			</p:row>
 		</p:panelGrid>
 		<br/><br/>
-		<p:panelGrid styleClass="central">
-	        <f:facet name="header">
-		        <p:row>
-		            <p:column colspan="4">Indústria</p:column>
-		        </p:row>
-		    </f:facet>
-		    <p:row>
-				<p:column style="width:35%"><p:outputLabel value="Tipo de indústria:" for="cam_indus_tp" /></p:column>
-				<p:column style="width:15%"><p:outputLabel style="font-weight: bold" id="cam_indus_tp" value="#{fichaCampoBean.fichaCampo.cam_indus_tp}" /></p:column>
-				<p:column style="width:35%"><p:outputLabel value="Número de empregados da indústria:" for="cam_indus_nu_empregados" /></p:column>
-				<p:column style="width:15%"><p:outputLabel style="font-weight: bold" id="cam_indus_nu_empregados" value="#{fichaCampoBean.fichaCampo.cam_indus_nu_empregados}" /></p:column>
-			</p:row>
-			<p:row>
-				<p:column><p:outputLabel value="Matéria-prima principal da indústria:" for="cam_indus_materia_prima" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="cam_indus_materia_prima" value="#{fichaCampoBean.fichaCampo.cam_indus_materia_prima}" /></p:column>
-				<p:column><p:outputLabel value="Quantidade de produtos produzidos anualmente:" for="cam_qt_pdt_an" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="cam_qt_pdt_an" value="#{fichaCampoBean.fichaCampo.cam_qt_pdt_an}" /></p:column>
-			</p:row>
-			<p:row>
-				<p:column><p:outputLabel value="Unidade de medida referente a produção anual:" for="cam_qt_pdt_an_uni" /></p:column>
-				<p:column colspan="3"><p:outputLabel style="font-weight: bold" id="cam_qt_pdt_an_uni" value="#{fichaCampoBean.fichaCampo.cam_qt_pdt_an_uni}" /></p:column>
-			</p:row>
-		</p:panelGrid>
-		
-		<p:panelGrid styleClass="central">
-	        <f:facet name="header">
-		        <p:row>
-		            <p:column colspan="4">Fonte das informações - Indústria</p:column>
-		        </p:row>
-		    </f:facet>
-		    <p:row>
-				<p:column style="width:30%"><p:outputLabel value="Nome do responsável pelas informações:" for="forn_info_nm" /></p:column>
-				<p:column style="width:30%"><p:outputLabel style="font-weight: bold" id="forn_info_nm" value="#{fichaCampoBean.fichaCampo.forn_info_nm}" /></p:column>
-				<p:column style="width:10%"><p:outputLabel value="Cargo:" for="forn_info_cargo" /></p:column>
-				<p:column style="width:30%"><p:outputLabel style="font-weight: bold" id="forn_info_cargo" value="#{fichaCampoBean.fichaCampo.forn_info_cargo}" /></p:column>
-			</p:row>
-			<p:row>
-				<p:column><p:outputLabel value="Departamento:" for="forn_info_departamento" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="forn_info_departamento" value="#{fichaCampoBean.fichaCampo.forn_info_departamento}" /></p:column>
-				<p:column><p:outputLabel value="Contato:" for="forn_info_contato_inst" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="forn_info_contato_inst" value="#{fichaCampoBean.fichaCampo.forn_info_contato_inst}" /></p:column>
-			</p:row>
-		</p:panelGrid>
-		<br/><br/>
+		<!-- AQUI ERA INDUSTRIA -->
 		<!-- CRIAR UM SUB GRUPO POR CULTURA -->
 		<p:panelGrid styleClass="central">
 	        <f:facet name="header">

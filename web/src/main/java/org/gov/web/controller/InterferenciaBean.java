@@ -1,5 +1,6 @@
 package org.gov.web.controller;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -33,7 +34,7 @@ public class InterferenciaBean extends Controller  {
 	/**
 	 *
 	 */
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 
 	private Interferencia interferencia;
 	private List<Interferencia> interferencias;
@@ -47,10 +48,9 @@ public class InterferenciaBean extends Controller  {
 	private transient UploadedFile fotoCroqui;
 	private transient StreamedContent file;
 	private String nomeFoto;
-
 	private boolean isOutroUso;
 
-	public InterferenciaBean() {
+	public InterferenciaBean()  {
 		setInterferencia(new Interferencia());
 		interferenciaService = new InterferenciaServiceImpl();
 		interferencias = new ArrayList<Interferencia>();
@@ -60,13 +60,13 @@ public class InterferenciaBean extends Controller  {
 		interferencias();
 	}
 
-	public String interferencias() {
+	public String interferencias()  {
 		interferencias = interferenciaService.interferencias();
 		setView(LIST);
 		return eval(index());
 	}
 
-	public String gravar() {
+	public String gravar()  {
 		if(getCnarhs().size() == 0) {
 			this.interferencia.setCnarh_id(null);
 		}
@@ -98,14 +98,14 @@ public class InterferenciaBean extends Controller  {
 		return eval(index());
 	}
 
-	public String editar() {
+	public String editar()  {
 		interferenciaService.editar(interferencia);
 		interferencias();
 
 		return eval(index());
 	}
 
-	public String deletar() {
+	public String deletar()  {
 		interferenciaService.remover(interferencia.getInt_id());
 		interferencias();
 		return eval(index());
@@ -292,21 +292,6 @@ public class InterferenciaBean extends Controller  {
 		this.fotoCroqui = fotoCroqui;
 	}
 
-	public StreamedContent getFile() {
-
-		  InputStream stream = null;
-
-			try {
-				File f = new File("C:/import_cad/imagens/" + nomeFoto);
-				stream = new FileInputStream(f);
-				file = new DefaultStreamedContent(stream, "image/jpg", nomeFoto);
-
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
-
-		return file;
-	}
 
 	public StreamedContent download(String nome) {
 
@@ -331,6 +316,5 @@ public class InterferenciaBean extends Controller  {
 	public void setNomeFoto(String nomeFoto) {
 		this.nomeFoto = nomeFoto;
 	}
-
 
 }

@@ -113,18 +113,26 @@ public class AsbamaBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-//		this.asbama.setAltitudeBocaTubulacao(null);
-//		this.asbama.setAltitudeTerreno(null);
-//		this.asbama.setCodigoIdentificador(null);
-//		this.asbama.setCondicaoAquifero(null);
-//		this.asbama.setDataInstalacaoPoco(null);
-//		this.asbama.setDiametroFiltro(null);
-//		this.asbama.setDiametroPerfuracao(null);
-//		this.asbama.setIdentificadorAquiferoPonto(null);
-//		this.asbama.setProfundidadeBaseMedidaApartirSuperficie(null);
-//		this.asbama.setProfundidadeTopoMedidaApartirSuperficie(null);
-//		this.asbama.setTipoPenetracaoAquifero(null);
-
+		this.asbama.setAma_qt_calcio(null);
+		this.asbama.setAma_qt_cloreto(null);
+		this.asbama.setAma_qt_carbonato(null);
+		this.asbama.setAma_qt_durezatotal(null);
+		this.asbama.setAma_qt_fluoretos(null);
+		this.asbama.setAma_qt_ferrototal(null);
+		this.asbama.setAma_qt_bicarbonato(null);
+		this.asbama.setAma_qt_potassio(null);
+		this.asbama.setAma_qt_magnesio(null);
+		this.asbama.setAma_qt_sodio(null);
+		this.asbama.setAma_qt_nitritos(null);
+		this.asbama.setAma_qt_nitratos(null);
+		this.asbama.setAma_qt_sulfato(null);
+		this.asbama.setAma_nu_condutividadeeletrica(null);
+		this.asbama.setAma_dt_analise(null);
+		this.asbama.setAma_dt_coleta(null);
+		this.asbama.setAma_qt_coliformesfecais(null);
+		this.asbama.setAma_qt_coliformestotais(null);
+		this.asbama.setAma_qt_ph(null);
+		this.asbama.setAma_qt_std(null);
+		this.asbama.setAma_qt_temperatura(null);
 	}
 }

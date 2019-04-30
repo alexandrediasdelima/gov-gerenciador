@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.gov.dao.CnarhDao;
 import org.gov.dao.CnarhDaoImpl;
+import org.gov.dao.UsuarioDaoImpl;
 import org.gov.model.Cnarh;
+import org.gov.model.Usuario;
 
 
 public class CnarhServiceImpl implements CnarhService{
@@ -42,4 +44,8 @@ public class CnarhServiceImpl implements CnarhService{
 		return cnarhDao.editar(cnarh);
 	}
 
+	public Cnarh pesquisar(String id) {
+		cnarhDao = new CnarhDaoImpl();
+		return cnarhDao.pesquisar(id);
+	}
 }

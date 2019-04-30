@@ -113,19 +113,44 @@ public class VazaoBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-//		this.vazao.setAltitudeBocaTubulacao(null);
-//		this.vazao.setAltitudeTerreno(null);
-//		this.vazao.setCodigoIdentificador(null);
-//		this.vazao.setCondicaoAquifero(null);
-//		this.vazao.setDataInstalacaoPoco(null);
-//		this.vazao.setDiametroFiltro(null);
-//		this.vazao.setDiametroPerfuracao(null);
-//		this.vazao.setIdentificadorAquiferoPonto(null);
-//		this.vazao.setProfundidadeBaseMedidaApartirSuperficie(null);
-//		this.vazao.setProfundidadeTopoMedidaApartirSuperficie(null);
-//		this.vazao.setTipoPenetracaoAquifero(null);
-
+		this.vazao.setInt_vz_maxima(null);
+		this.vazao.setCam_vz_afe(null);
+		this.vazao.setOpe_qt_horasjan(null);
+		this.vazao.setOpe_qt_horasfev(null);
+		this.vazao.setOpe_qt_horasmar(null);
+		this.vazao.setOpe_qt_horasabr(null);
+		this.vazao.setOpe_qt_horasmai(null);
+		this.vazao.setOpe_qt_horasjun(null);
+		this.vazao.setOpe_qt_horasjul(null);
+		this.vazao.setOpe_qt_horasago(null);
+		this.vazao.setOpe_qt_horasset(null);
+		this.vazao.setOpe_qt_horasout(null);
+		this.vazao.setOpe_qt_horasnov(null);
+		this.vazao.setOpe_qt_horasdez(null);
+		this.vazao.setOpe_qt_diajan(null);
+		this.vazao.setOpe_qt_diafev(null);
+		this.vazao.setOpe_qt_diamar(null);
+		this.vazao.setOpe_qt_diaabr(null);
+		this.vazao.setOpe_qt_diamai(null);
+		this.vazao.setOpe_qt_diajun(null);
+		this.vazao.setOpe_qt_diajul(null);
+		this.vazao.setOpe_qt_diaago(null);
+		this.vazao.setOpe_qt_diaset(null);
+		this.vazao.setOpe_qt_diaout(null);
+		this.vazao.setOpe_qt_dianov(null);
+		this.vazao.setOpe_qt_diadez(null);
+		this.vazao.setOpe_vz_mesjan(null);
+		this.vazao.setOpe_vz_mesfev(null);
+		this.vazao.setOpe_vz_mesmar(null);
+		this.vazao.setOpe_vz_mesabr(null);
+		this.vazao.setOpe_vz_mesmai(null);
+		this.vazao.setOpe_vz_mesjul(null);
+		this.vazao.setOpe_vz_mesjun(null);
+		this.vazao.setOpe_vz_mesago(null);
+		this.vazao.setOpe_vz_mesout(null);
+		this.vazao.setOpe_vz_messet(null);
+		this.vazao.setOpe_vz_mesnov(null);
+		this.vazao.setOpe_vz_mesdez(null);
 	}
 
 }

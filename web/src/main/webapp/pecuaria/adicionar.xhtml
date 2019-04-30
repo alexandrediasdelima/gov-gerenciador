@@ -61,7 +61,7 @@
 				</h:panelGrid>
 				<br/><br/>
 
-				<p:commandButton value="Voltar" action="#{pecuariaBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
+				<p:commandButton value="Voltar" action="#{pecuariaBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{pecuariaBean.gravar}"   ajax="false" rendered="#{pecuariaBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{pecuariaBean.alterar}" ajax="false" rendered="#{pecuariaBean.view == 'edit'}" icon="ui-icon-pencil" />
 				<p:commandButton value="Apagar" action="#{pecuariaBean.deletar}"  ajax="false" icon="ui-icon-close" />

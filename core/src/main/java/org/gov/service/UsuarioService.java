@@ -14,5 +14,6 @@ public interface UsuarioService extends Serializable {
 	public String editar(Usuario usuario);
 	public List<Regiao> buscarMunicipios(String emp_ds_uf);
 	public Integer buscarIbge(String apa_muni_correspondencia);
+	public Usuario pesquisar(int id);
 
 }

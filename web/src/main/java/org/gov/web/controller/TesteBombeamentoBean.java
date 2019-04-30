@@ -113,19 +113,17 @@ public class TesteBombeamentoBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-//		this.testebombeamento.setAltitudeBocaTubulacao(null);
-//		this.testebombeamento.setAltitudeTerreno(null);
-//		this.testebombeamento.setCodigoIdentificador(null);
-//		this.testebombeamento.setCondicaoAquifero(null);
-//		this.testebombeamento.setDataInstalacaoPoco(null);
-//		this.testebombeamento.setDiametroFiltro(null);
-//		this.testebombeamento.setDiametroPerfuracao(null);
-//		this.testebombeamento.setIdentificadorAquiferoPonto(null);
-//		this.testebombeamento.setProfundidadeBaseMedidaApartirSuperficie(null);
-//		this.testebombeamento.setProfundidadeTopoMedidaApartirSuperficie(null);
-//		this.testebombeamento.setTipoPenetracaoAquifero(null);
-
+		this.testebombeamento.setTst_nu_coeficientearmazenamento(null); 
+		this.testebombeamento.setTst_nu_condutividadehidraulica(null); 
+		this.testebombeamento.setTst_dt(null); 
+		this.testebombeamento.setTst_ds_tempoduracao(null); 
+		this.testebombeamento.setTst_nu_nd(null); 
+		this.testebombeamento.setTst_nu_ne(null); 
+		this.testebombeamento.setTst_nu_permeabilidade(null); 
+		this.testebombeamento.setTst_nu_transmissividade(null); 
+		this.testebombeamento.setTst_vz_estabilizacao(null); 
+		this.testebombeamento.setTst_ttb_cd(null); 
+		this.testebombeamento.setTst_tmi_cd(null);
 	}
 
 }

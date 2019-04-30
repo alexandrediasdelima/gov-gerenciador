@@ -28,7 +28,7 @@
 						</c:when>
 						<c:otherwise>
 							<p:selectOneMenu id="idCnarh" value="#{interferenciaBean.interferencia.cnarh_id}" style="width:230px">
-								<f:selectItems value="#{interferenciaBean.cnarhs}" var="cnarh" itemValue="#{cnarh[0]}" itemLabel="#{cnarh[1]}" />
+								<f:selectItems value="#{interferenciaBean.cnarhs}" var="cnarh" itemValue="#{cnarh}" itemLabel="#{cnarh}" />
 							</p:selectOneMenu>
 						</c:otherwise>
 					</c:choose>
@@ -63,14 +63,14 @@
 						<f:selectItem itemLabel="NÃO" itemValue="NÃO" />
 					</p:selectOneMenu>
 
-					<p:outputLabel value="Link para a Foto do Ponto de Captura/Lançamento em Visão Geral:" for="fotoVisaoGeral" id="fotoGeral"/>
-					<p:fileUpload value="#{interferenciaBean.fotoCapturaGeral}" required="true" mode="simple" skinSimple="true" id="fotoVisaoGeral"/>
+					<p:outputLabel value="Link para a Foto do Ponto de Captura/Lançamento em Visão Geral:" id="fotoGeral"/>
+					<p:fileUpload value="#{interferenciaBean.fotoCapturaGeral}" required="true" mode="simple" skinSimple="true" label="Selecione" />
 
-					<p:outputLabel value="Link para a Foto do Ponto de Captura/Lançamento em Visão Detalhada:" for="fotoVisaoDetalhada" id="fotoDetalhada" />
-					<p:fileUpload value="#{interferenciaBean.fotoCapturaDetalhe}" mode="simple" skinSimple="true" required="true" id="fotoVisaoDetalhada" />
+					<p:outputLabel value="Link para a Foto do Ponto de Captura/Lançamento em Visão Detalhada:" id="fotoDetalhada" />
+					<p:fileUpload value="#{interferenciaBean.fotoCapturaDetalhe}" mode="simple" skinSimple="true" required="true" label="Selecione" />
 
-					<p:outputLabel value="Link para a Imagem do Croqui de Localização do Ponto da Captação/Lançamento:" for="linkCroqui" id="lnkCroqui" />
-					<p:fileUpload  value="#{interferenciaBean.fotoCroqui}" mode="simple" skinSimple="true" id="linkCroqui" required="true"/>
+					<p:outputLabel value="Link para a Imagem do Croqui de Localização do Ponto da Captação/Lançamento:" id="lnkCroqui" />
+					<p:fileUpload  value="#{interferenciaBean.fotoCroqui}" mode="simple" skinSimple="true" id="linkCroqui" required="true" label="Selecione" />
 
 
 					<p:outputLabel value="Latitude do Ponto de Interferência:" for="latitude" id="latitudeInterferencia" />
@@ -1137,8 +1137,8 @@
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
 	<script>
 		$(function() {
-			$("#latitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
-    		$("#longitude").inputmask({mask: "[-]99.9[9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
+			$("#latitude").inputmask({mask: "[-]99[.][9][9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
+    		$("#longitude").inputmask({mask: "[-]99[.][9][9][9][9][9][9][9][9][9][9]", clearMaskOnLostFocus: true})
 			$("#capacidade").inputmask({mask: "9[9][9][9][9][9][9][9][9].9[9][9][9][9]", greedy: true})
 		})
 	</script>

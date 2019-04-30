@@ -115,19 +115,14 @@ public class PecuariaBean extends Controller {
 	}
 
 	private void limpaForm() {
-
-//		this.pecuaria.setAltitudeBocaTubulacao(null);
-//		this.pecuaria.setAltitudeTerreno(null);
-//		this.pecuaria.setCodigoIdentificador(null);
-//		this.pecuaria.setCondicaoAquifero(null);
-//		this.pecuaria.setDataInstalacaoPoco(null);
-//		this.pecuaria.setDiametroFiltro(null);
-//		this.pecuaria.setDiametroPerfuracao(null);
-//		this.pecuaria.setIdentificadorAquiferoPonto(null);
-//		this.pecuaria.setProfundidadeBaseMedidaApartirSuperficie(null);
-//		this.pecuaria.setProfundidadeTopoMedidaApartirSuperficie(null);
-//		this.pecuaria.setTipoPenetracaoAquifero(null);
-
+		this.pecuaria.setCam_qt_equideo(null);
+		this.pecuaria.setCam_qt_bovino(null);
+		this.pecuaria.setCam_qt_ovino(null);
+		this.pecuaria.setCam_qt_caprino(null);
+		this.pecuaria.setCam_qt_suino(null);
+		this.pecuaria.setCam_qt_ave(null);
+		this.pecuaria.setCam_pec_outro(null);
+		this.pecuaria.setCam_qt_outro(null);
 	}
 
 }
