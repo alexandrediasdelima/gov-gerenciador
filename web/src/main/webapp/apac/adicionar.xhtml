@@ -24,54 +24,88 @@
 					<p:outputLabel value="Número do Processo:" for="numeroProcesso" id="numeProcesso" />
 					<p:inputText id="numeroProcesso" value="#{apacBean.apac.numeroProcesso}" required="true" requiredMessage="Número do Processo Obrigatório" />
 					
+					<p:outputLabel value="Data de Entrada do Processo na APAC:" for="dataEntradaProcessoApac" id="dataEntrada" />
+					<p:calendar id="dataEntradaProcessoApac" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.dataEntradaProcessoApac}"  />
+					
+					<p:outputLabel value="Data de Entrada do Processo na CPRH:" for="dataEntradaProcessoCprh" id="dataEntradaProcesso" />
+					<p:calendar id="dataEntradaProcessoCprh" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.dataEntradaProcessoCprh}"  />
+										
 					<p:outputLabel value="Analista Responsável:" for="analista" id="analistaResponsavel" />
 					<p:inputText id="analista" value="#{apacBean.apac.analistaResponsavel}" />
 
-					<p:outputLabel value="Ato Administrativo:" for="preco" id="atoAdministrativo" />
+					<p:outputLabel value="Tipo do Ato Administrativo:" for="out_tpo_cd" id="cdTipoAdministrativo"/>
+					<p:selectOneMenu id="out_tpo_cd" value="#{apacBean.apac.out_tpo_cd}" style="width:200px">
+						<f:selectItem itemValue=""   itemLabel="Selecione" />
+						<f:selectItem itemValue="6"  itemLabel="ANUÊNCIA PRÉVIA" />
+						<f:selectItem itemValue="7"  itemLabel="CADASTRO" />
+						<f:selectItem itemValue="4"  itemLabel="CERTOH" />
+						<f:selectItem itemValue="1"  itemLabel="DIREITO DE USO" />
+						<f:selectItem itemValue="3"  itemLabel="DRDH" />
+						<f:selectItem itemValue="5"  itemLabel="LICENÇA OU AUTORIZAÇÃO PARA PERFURAÇÃO DE POÇOS" />
+						<f:selectItem itemValue="99" itemLabel="OUTRA" />
+						<f:selectItem itemValue="2"  itemLabel="PREVENTIVA" />
+					</p:selectOneMenu>
+
+					<p:outputLabel value="Ato Administrativo/Instrumento de Regularização:" for="preco" id="atoAdministrativo" />
 					<p:inputText id="preco" value="#{apacBean.apac.atoAdministrativoPublicacaoInstrumento}" />
 
-					<p:outputLabel value="Data de Vistoria da APAC:" for="dataVistoria" id="dataVistoriaApac" />
-					<p:calendar id="dataVistoria" showOn="button" value="#{apacBean.apac.dataVistoria}" />
-
-					<p:outputLabel value="Data de Vencimento do Contrato:" for="dataVencimentoContrato" id="dataVencimento" />
-					<p:calendar id="dataVencimentoContrato" showOn="button" value="#{apacBean.apac.dataVencimentoContrato}" />
-
-					<p:outputLabel value="Data de Entrada do Processo na APAC:" for="dataEntradaProcessoApac" id="dataEntrada" />
-					<p:calendar id="dataEntradaProcessoApac" showOn="button" value="#{apacBean.apac.dataEntradaProcessoApac}"  />
-
-					<p:outputLabel value="Data de Entrada do Processo na CPRH:" for="dataEntradaProcessoCprh" id="dataEntradaProcesso" />
-					<p:calendar id="dataEntradaProcessoCprh" showOn="button" value="#{apacBean.apac.dataEntradaProcessoCprh}"  />
-
 					<p:outputLabel value="Data de Início do Prazo de Outorga:" for="dataInicioPrazoOutorga" id="dataInicio" />
-					<p:calendar id="dataInicioPrazoOutorga" showOn="button" value="#{apacBean.apac.dataInicioPrazoOutorga}"  />
+					<p:calendar id="dataInicioPrazoOutorga" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.dataInicioPrazoOutorga}"  />
 
 					<p:outputLabel value="Data de Término do Prazo de Outorga:" for="dataTerminoPrazoOutorga" id="dataTerminoOutorga" />
-					<p:calendar id="dataTerminoPrazoOutorga" showOn="button" value="#{apacBean.apac.dataTerminoPrazoOutorga}"  />
+					<p:calendar id="dataTerminoPrazoOutorga" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.dataTerminoPrazoOutorga}"  />
 
-					<p:outputLabel value="Garantia:" for="garantia" id="garan" />
-					<p:inputText id="garantia" value="#{apacBean.apac.garantia}" />
+					<p:outputLabel value="Situação do Ato Administrativo:" for="out_tsp_cd" id="cdIdentificadorSituacao" />
+					<p:selectOneMenu id="out_tsp_cd" value="#{apacBean.apac.out_tsp_cd}" style="width:200px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemLabel="8" itemValue="AUTORIZADO (ÁGUA SUBTERRÂNEA)" />
+						<f:selectItem itemLabel="3" itemValue="EM ANÁLISE" />
+						<f:selectItem itemLabel="5" itemValue="INDEFERIDO" />
+						<f:selectItem itemLabel="6" itemValue="INVÁLIDO" />
+						<f:selectItem itemLabel="2" itemValue="NÃO OUTORGÁVEL" />
+						<f:selectItem itemLabel="1" itemValue="OUTORGADO" />
+						<f:selectItem itemLabel="99" itemValue="OUTRA" />
+						<f:selectItem itemLabel="4" itemValue="USO INSIGNIFICANTE" />
+					</p:selectOneMenu>
 
-					<p:outputLabel value="Nome da Obra:" for="nomeObra" id="obra" />
-					<p:inputText id="nomeObra" value="#{apacBean.apac.nomeObra}"/>
+					<p:outputLabel value="Vazão Outorgada(l/s):" for="numeroVazaoOutorgadaLs" id="numVazaoLS" />
+					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoOutorgadaLs" value="#{apacBean.apac.vazaoOutorgada}" />
 
-					<p:outputLabel value="Número do Ato:" for="numeroAto" id="numAto" />
-					<p:inputText id="numeroAto" value="#{apacBean.apac.numeroAto}" />
-
-					<p:outputLabel value="Número da Notificação de Irregularidades:" for="numeroNotificacaoIrregularidade" id="numNotificacao" />
-					<p:inputText id="numeroNotificacaoIrregularidade" value="#{apacBean.apac.numeroNotificacaoIrregularidadeApac}"/>
-
-					<p:outputLabel value="Número da Notificação de Isenção:" for="numeroNotificacaoIsencao" id="numeroIsencao" />
-					<p:inputText id="numeroNotificacaoIsencao" value="#{apacBean.apac.numeroNotificacaoIsencaoApac}" />
+					<p:outputLabel value="Vazão Outorgada Média:" for="numeroVazaoOutorgadaMedia" id="numVazaoMedia"/>
+					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoOutorgadaMedia" value="#{apacBean.apac.vazaoOutorgadaMedia}"/>
 
 					<p:outputLabel value="Número de Horas para a Captação por Dia:" for="horasrequeridaPorDia" id="horasRequerida" />
 					<p:inputMask mask="?9999999999" id="horasrequeridaPorDia" value="#{apacBean.apac.horasRequeridaParaCaptacaoPorDia}" />
 
-					<p:outputLabel value="Número do Termo:" for="numeroTermo" id="numeroTer" />
-					<p:inputText id="numeroTermo" value="#{apacBean.apac.numeroTermo}" />
+					<p:outputLabel value="Vazão Requerida(l/s):" for="numeroVazaoRequeridals" id="numVazaoRequeLS"/>
+					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoRequeridals" value="#{apacBean.apac.vazaoRequiridaLs}"/>
+
+					<p:outputLabel value="Vazão Requerida Média Diária (m³/dia):" for="numeroVazaoRequeridaMedia" id="numVazaoRequeMedia" />
+					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoRequeridaMedia" value="#{apacBean.apac.vazaoRequiridaMediaDia}"/>
+
+					<p:outputLabel value="Garantia:" for="garantia" id="garan" />
+					<p:inputText id="garantia" value="#{apacBean.apac.garantia}" />
+
+					<p:outputLabel value="Data de Vistoria da APAC:" for="dataVistoria" id="dataVistoriaApac" />
+					<p:calendar id="dataVistoria" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.dataVistoria}" />
+
+					<p:outputLabel value="Data de Vencimento do Contrato:" for="dataVencimentoContrato" id="dataVencimento" />
+					<p:calendar id="dataVencimentoContrato" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.dataVencimentoContrato}" />
+
+					<p:outputLabel value="Número da Notificação de Irregularidades:" for="numeroNotificacaoIrregularidade" id="numNotificacao" />
+					<p:inputText id="numeroNotificacaoIrregularidade" value="#{apacBean.apac.numeroNotificacaoIrregularidadeApac}"/>
+					
+					<p:outputLabel value="Encerramento do Prazo da Notificação:" for="prazoNotificacao" id="pzNotificacao" />
+					<p:calendar id="prazoNotificacao" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.prazoNotificacao}" locale="pt_BR" />
+
+					<p:outputLabel value="Tipo de Obra:" for="tipoObra" id="tpObra" />
+					<p:inputText id="tipoObra" value="#{apacBean.apac.tipoObra}" />
+
+					<p:outputLabel value="Nome da Obra:" for="nomeObra" id="obra" />
+					<p:inputText id="nomeObra" value="#{apacBean.apac.nomeObra}"/>
 
 					<p:outputLabel value="Meses de Retirada Durante o Ano:" id="mes"/>
 					<p:spacer height="1" />
-
 					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaJaneiro}" id="jan" label="Basic" itemLabel="Jan" />
 					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaFevereiro}" id="fev" label="Basic" itemLabel="Fev" />
 					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaMarco}" id="mar" label="Basic" itemLabel="Mar" />
@@ -85,52 +119,6 @@
 					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaNovembro}"  id="nov" label="Basic" itemLabel="Nov" />
 					<p:selectBooleanCheckbox value="#{apacBean.apac.outorgaValidaDezembro}"  id="dez" label="Basic" itemLabel="Dez"/>
 
-					<p:outputLabel value="Encerramento do Prazo da Notificação:" for="prazoNotificacao" id="pzNotificacao" />
-					<p:calendar id="prazoNotificacao" showOn="button" value="#{apacBean.apac.prazoNotificacao}" locale="pt_BR" />
-
-					<p:outputLabel value="Número do Processo na CPRH:" for="numeroProcessoCprh" id="numProcesso" />
-					<p:inputText id="numeroProcessoCprh" value="#{apacBean.apac.numeroProcessoNaCprh}" />
-
-					<p:outputLabel value="Tipo de Obra:" for="tipoObra" id="tpObra" />
-					<p:inputText id="tipoObra" value="#{apacBean.apac.tipoObra}" />
-
-					<p:outputLabel value="Vazão Outorgada(l/s):" for="numeroVazaoOutorgadaLs" id="numVazaoLS" />
-					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoOutorgadaLs" value="#{apacBean.apac.vazaoOutorgada}" />
-
-					<p:outputLabel value="Vazão Outorgada em Média:" for="numeroVazaoOutorgadaMedia" id="numVazaoMedia"/>
-					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoOutorgadaMedia" value="#{apacBean.apac.vazaoOutorgadaMedia}"/>
-
-					<p:outputLabel value="Vazão Requerida(l/s):" for="numeroVazaoRequeridals" id="numVazaoRequeLS"/>
-					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoRequeridals" value="#{apacBean.apac.vazaoRequiridaLs}"/>
-
-					<p:outputLabel value="Vazão Requerida Média por Dia:" for="numeroVazaoRequeridaMedia" id="numVazaoRequeMedia" />
-					<p:inputMask mask="?9999999999999999999999999" id="numeroVazaoRequeridaMedia" value="#{apacBean.apac.vazaoRequiridaMediaDia}"/>
-
-
-					<p:outputLabel value="Código Identificador do Tipo de Ato Administrativo:" for="out_tpo_cd" id="cdTipoAdministrativo"/>
-					<p:selectOneMenu id="out_tpo_cd" value="#{apacBean.apac.out_tpo_cd}" style="width:200px">
-						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemLabel="ANUÊNCIA PRÉVIA" itemValue="ANUÊNCIA PRÉVIA" />
-						<f:selectItem itemLabel="CADASTRO" itemValue="CADASTRO" />
-						<f:selectItem itemLabel="CERTOH" itemValue="CERTOH" />
-						<f:selectItem itemLabel="DIREITO DE USO" itemValue="DIREITO DE USO" />
-						<f:selectItem itemLabel="DRDH" itemValue="DRDH" />
-						<f:selectItem itemLabel="LICENÇA OU AUTORIZAÇÃO PARA PERFURAÇÃO DE POÇOS" itemValue="LICENÇA OU AUTORIZAÇÃO PARA PERFURAÇÃO DE POÇOS" />
-						<f:selectItem itemLabel="OUTRA" itemValue="OUTRA" />
-						<f:selectItem itemLabel="PREVENTIVA" itemValue="PREVENTIVA" />
-					</p:selectOneMenu>
-
-					<p:outputLabel value="Código Identificador do Tipo de Situação do Ato Administrativo:" for="out_tsp_cd" id="cdIdentificadorSituacao" />
-					<p:selectOneMenu id="out_tsp_cd" value="#{apacBean.apac.out_tsp_cd}" style="width:200px">
-						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemLabel="AUTORIZADO (ÁGUA SUBTERRÂNEA)" itemValue="AUTORIZADO (ÁGUA SUBTERRÂNEA)" />
-						<f:selectItem itemLabel="EM ANÁLISE" itemValue="EM ANÁLISE" />
-						<f:selectItem itemLabel="INDEFERIDO" itemValue="INDEFERIDO" />
-						<f:selectItem itemLabel="INVÁLIDO" itemValue="INVÁLIDO" />
-						<f:selectItem itemLabel="OUTORGADO" itemValue="OUTORGADO" />
-						<f:selectItem itemLabel="OUTRA" itemValue="OUTRA" />
-						<f:selectItem itemLabel="USO INSIGNIFICANTE" itemValue="USO INSIGNIFICANTE" />
-					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>
 				<p:commandButton value="Voltar" action="#{apacBean.voltar}" ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
@@ -143,21 +131,16 @@
 		<p:tooltip for="atoAdministrativo" value="Campo descritivo que representa o ato administrativo de publicação do instrumento de regularização." position="top"/>
 		<p:tooltip for="dataVistoriaApac" value="Campo que representa a data  da vistoria da apac." position="top"/>
 		<p:tooltip for="dataVencimento" value="Campo que representa a data de vencimento do contrato de concessão." position="top"/>
-		<p:tooltip for="dataVencimento" value="Campo que representa a data de vencimento do contrato de concessão." position="top"/>
 		<p:tooltip for="dataEntrada" value="Campo que representa a data de entrada do processo na apac." position="top"/>
 		<p:tooltip for="dataEntradaProcesso" value="Campo que representa a data de entrada do processo na cprh." position="top"/>
 		<p:tooltip for="dataInicio" value="Campo que representa a data de início do prazo de outorga." position="top"/>
 		<p:tooltip for="dataTerminoOutorga" value="Campo que representa a data de término do prazo de outorga." position="top"/>
 		<p:tooltip for="garan" value="Campo descritivo que representa a garantia" position="top"/>
 		<p:tooltip for="obra" value="Campo descritivo que representa o nome da obra." position="top"/>
-		<p:tooltip for="numAto" value="Campo numérico que representa o número do ato." position="top"/>
 		<p:tooltip for="numNotificacao" value="Campo numérico que representa o número da notificação de irregularidades da apac." position="top"/>
-		<p:tooltip for="numeroIsencao" value="Campo numérico que representa o número da notificação de isenção da apac." position="top"/>
 		<p:tooltip for="horasRequerida" value="Campo numérico que representa o numero de horas requerida para a captação por dia." position="top"/>
-		<p:tooltip for="numeroTer" value="Campo descritivo que representa o número do termo." position="top"/>
 		<p:tooltip for="mes" value="Campo que representa se a outorga é válida para o mêses abaixo:" position="top"/>
 		<p:tooltip for="pzNotificacao" value="Campo que representa o prazo da notificação." position="top"/>
-		<p:tooltip for="numProcesso" value="Campo numérico que representa o numero do processo na cprh." position="top"/>
 		<p:tooltip for="tpObra" value="Campo descritivo que representa o tipo de obra." position="top"/>
 		<p:tooltip for="numVazaoLS" value="Campo numérico que representa a vazão outorgada em l/s." position="top"/>
 		<p:tooltip for="numVazaoMedia" value="Campo numérico que representa a vazão outorgada em média." position="top"/>

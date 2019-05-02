@@ -15,7 +15,7 @@
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addTesteBombeamento" prependId="false" style="width:99%;" >
 		<br/><br/><br/>
-		<p:fieldset legend="Teste de Bombeamento">
+		<p:fieldset legend="Águas Subterrâneas - Teste de Bombeamento">
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
 				<h:panelGrid columns="4" style="border: 0px solid;">
 					<p:outputLabel value="ID: " for="tstbomb_int_pfk" />
@@ -51,45 +51,45 @@
 					<p:outputLabel value="Tipo de Teste de Bombeamento: " for="tst_ttb_cd" id="tipo" />
 					<p:selectOneMenu id="tst_ttb_cd" value="#{testebombeamentoBean.testebombeamento.tst_ttb_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Rebaixamento" itemLabel="Rebaixamento" />
-						<f:selectItem itemValue="Recarga" itemLabel="Recarga" />
-						<f:selectItem itemValue="Escalonado" itemLabel="Escalonado" />
-						<f:selectItem itemValue="Recuperação residual" itemLabel="Recuperação residual" />
-						<f:selectItem itemValue="Recuperação" itemLabel="Recuperação" />
-						<f:selectItem itemValue="Continuo" itemLabel="Continuo " />
+						<f:selectItem itemValue="1" itemLabel="Rebaixamento" />
+						<f:selectItem itemValue="2" itemLabel="Recarga" />
+						<f:selectItem itemValue="3" itemLabel="Escalonado" />
+						<f:selectItem itemValue="4" itemLabel="Recuperação residual" />
+						<f:selectItem itemValue="5" itemLabel="Recuperação" />
+						<f:selectItem itemValue="6" itemLabel="Continuo " />
 					</p:selectOneMenu>
 
 					<p:outputLabel value="Método de Interpretação: " for="tst_tmi_cd" id="interpretacao" />
 					<p:selectOneMenu id="tst_tmi_cd" value="#{testebombeamentoBean.testebombeamento.tst_tmi_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="Aron-scott" itemLabel="Aron-scott" />
-						<f:selectItem itemValue="Boulton" itemLabel="Boulton" />
-						<f:selectItem itemValue="Bruggeman" itemLabel="Bruggeman" />
-						<f:selectItem itemValue="Chow" itemLabel="Chow" />
-						<f:selectItem itemValue="Cooper-jacob" itemLabel="Cooper-jacob" />
-						<f:selectItem itemValue="De glee" itemLabel="De glee" />
-						<f:selectItem itemValue="Dietz" itemLabel="Dietz" />
-						<f:selectItem itemValue="Ernst-thiem walton" itemLabel="Ernst-thiem walton" />
-						<f:selectItem itemValue="Gosselin" itemLabel="Gosselin" />
-						<f:selectItem itemValue="Hantush" itemLabel="Hantush" />
-						<f:selectItem itemValue="Hantush-jacob" itemLabel="Hantush-jacob" />
-						<f:selectItem itemValue="Hantush-theis" itemLabel="Hantush-theis" />
-						<f:selectItem itemValue="Hantush-thomas" itemLabel="Hantush-thomas" />
-						<f:selectItem itemValue="Huisman" itemLabel="Huisman" />
-						<f:selectItem itemValue="Huisman-kemperman" itemLabel="Huisman-kemperman" />
-						<f:selectItem itemValue="Hurr" itemLabel="Hurr" />
-						<f:selectItem itemValue="Jacob" itemLabel="Jacob" />
-						<f:selectItem itemValue="Jacob-lohman" itemLabel="Jacob-lohman" />
-						<f:selectItem itemValue="Logan" itemLabel="Logan" />
-						<f:selectItem itemValue="Papadopulos-cooper" itemLabel="Papadopulos-cooper" />
-						<f:selectItem itemValue="Ponto de culminacao" itemLabel="Ponto de culminacao" />
-						<f:selectItem itemValue="Recuperacao de theis" itemLabel="Recuperacao de theis" />
-						<f:selectItem itemValue="Stallman" itemLabel="Stallman" />
-						<f:selectItem itemValue="Stenberg" itemLabel="Stenberg" />
-						<f:selectItem itemValue="Theis" itemLabel="Theis" />
-						<f:selectItem itemValue="Thiem-dupuit" itemLabel="Thiem-dupuit" />
-						<f:selectItem itemValue="Thien" itemLabel="Thien" />
-						<f:selectItem itemValue="Zangar" itemLabel="Zangar" />
+						<f:selectItem itemValue="1" itemLabel="Aron-scott" />
+						<f:selectItem itemValue="2" itemLabel="Boulton" />
+						<f:selectItem itemValue="3" itemLabel="Bruggeman" />
+						<f:selectItem itemValue="4" itemLabel="Chow" />
+						<f:selectItem itemValue="5" itemLabel="Cooper-jacob" />
+						<f:selectItem itemValue="6" itemLabel="De glee" />
+						<f:selectItem itemValue="7" itemLabel="Dietz" />
+						<f:selectItem itemValue="8" itemLabel="Ernst-thiem walton" />
+						<f:selectItem itemValue="9" itemLabel="Gosselin" />
+						<f:selectItem itemValue="10" itemLabel="Hantush" />
+						<f:selectItem itemValue="11" itemLabel="Hantush-jacob" />
+						<f:selectItem itemValue="12" itemLabel="Hantush-theis" />
+						<f:selectItem itemValue="13" itemLabel="Hantush-thomas" />
+						<f:selectItem itemValue="14" itemLabel="Huisman" />
+						<f:selectItem itemValue="15" itemLabel="Huisman-kemperman" />
+						<f:selectItem itemValue="16" itemLabel="Hurr" />
+						<f:selectItem itemValue="17" itemLabel="Jacob" />
+						<f:selectItem itemValue="18" itemLabel="Jacob-lohman" />
+						<f:selectItem itemValue="19" itemLabel="Logan" />
+						<f:selectItem itemValue="20" itemLabel="Papadopulos-cooper" />
+						<f:selectItem itemValue="21" itemLabel="Ponto de culminacao" />
+						<f:selectItem itemValue="22" itemLabel="Recuperacao de theis" />
+						<f:selectItem itemValue="23" itemLabel="Stallman" />
+						<f:selectItem itemValue="24" itemLabel="Stenberg" />
+						<f:selectItem itemValue="25" itemLabel="Theis" />
+						<f:selectItem itemValue="26" itemLabel="Thiem-dupuit" />
+						<f:selectItem itemValue="27" itemLabel="Thien" />
+						<f:selectItem itemValue="28" itemLabel="Zangar" />
 					</p:selectOneMenu>
 				</h:panelGrid>
 				<br/><br/>

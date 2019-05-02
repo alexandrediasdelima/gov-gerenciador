@@ -64,9 +64,6 @@ public class Usuario implements Serializable {
 	@Column(name="emp_ds_nm_logradouro")
 	private String emp_ds_nm_logradouro;
 
-	@Column(name="emp_ds_logradouro")
-	private String emp_ds_logradouro;
-
 	@Column(name="emp_nu_logradouro", columnDefinition="numeric")
 	private BigDecimal emp_nu_logradouro;
 
@@ -177,14 +174,6 @@ public class Usuario implements Serializable {
 
 	public void setEmp_ds_nm_logradouro(String emp_ds_nm_logradouro) {
 		this.emp_ds_nm_logradouro = emp_ds_nm_logradouro;
-	}
-
-	public String getEmp_ds_logradouro() {
-		return emp_ds_logradouro;
-	}
-
-	public void setEmp_ds_logradouro(String emp_ds_logradouro) {
-		this.emp_ds_logradouro = emp_ds_logradouro;
 	}
 
 	public BigDecimal getEmp_nu_logradouro() {

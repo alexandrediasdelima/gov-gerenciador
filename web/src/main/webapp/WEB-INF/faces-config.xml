@@ -139,10 +139,14 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 
-
 	<validator>
 		<validator-id>cnpjValidator</validator-id>
 		<validator-class>org.gov.web.validator.CnpjValidador</validator-class>
+	</validator>
+	
+	<validator>
+		<validator-id>cpfValidator</validator-id>
+		<validator-class>org.gov.web.validator.CPFValidador</validator-class>
 	</validator>
 
 	<validator>
@@ -178,11 +182,6 @@
 	<validator>
 		<validator-id>emailValidator</validator-id>
 		<validator-class>org.gov.web.validator.EmailValidator</validator-class>
-	</validator>
-
-	<validator>
-		<validator-id>cpfValidator</validator-id>
-		<validator-class>org.gov.web.validator.CPFValidador</validator-class>
 	</validator>
 
 	<converter>

@@ -12,6 +12,18 @@
 		.ui-datatable table {
  		   table-layout: auto;
 		}
+		
+		.myDownloadButton {
+			background:none!important; 
+			color:inherit; 
+			border:none !important; 
+			padding:0!important; 
+			font: inherit; 
+			cursor: pointer; 
+			text-decoration-line: underline !important; 
+			display:inline-block !important;
+		}
+		
 	</style>
 
 	<div style="padding-top: 50px;">
@@ -37,7 +49,7 @@
 			            <p:menuitem value="Consumo Humano" action="#{consumohumanoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 			            <p:menuitem value="Irrigação" action="#{irrigacaoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 			            <p:menuitem value="Lançamento" action="#{lancamentoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
-			            <p:menuitem value="Pecuária" action="#{pecuariaBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
+			            <p:menuitem value="Consumo Animal" action="#{pecuariaBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 			            <p:menuitem value="Vazão" action="#{vazaoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 				    </p:tieredMenu>
 				</p:column>
@@ -52,17 +64,17 @@
 					<h:panelGroup rendered="#{!interferencia.apa_est_hidrologico}"><h:outputText value="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Captura Lançamento Geral" filterBy="#{interferencia.fot_cap_lanc_geral}" filterMatchMode="contains" sortBy="#{interferencia.fot_cap_lanc_geral}" >
-					<p:commandButton immediate="true" value="#{interferencia.fot_cap_lanc_geral}"  ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="ui-icon-arrowthick-1-s">
-	                       <p:fileDownload value="#{interferenciaBean.download(interferencia.fot_cap_lanc_geral)}" />
-	                </p:commandButton>
+				<p:commandButton immediate="true" value="#{interferencia.fot_cap_lanc_geral}" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton" >
+					<p:fileDownload value="#{interferenciaBean.download(interferencia.fot_cap_lanc_geral)}" />
+				</p:commandButton>
 				</p:column>
 				<p:column headerText="Captura Lançamento Detalhe" filterBy="#{interferencia.fot_cap_lanc_detalhe}" filterMatchMode="contains" sortBy="#{interferencia.fot_cap_lanc_detalhe}" >
-					<p:commandButton immediate="true" value="#{interferencia.fot_cap_lanc_detalhe}"  ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="ui-icon-arrowthick-1-s">
+					<p:commandButton immediate="true" value="#{interferencia.fot_cap_lanc_detalhe}"  ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton">
 	                       <p:fileDownload value="#{interferenciaBean.download(interferencia.fot_cap_lanc_detalhe)}" />
 	                </p:commandButton>
 				</p:column>
 				<p:column headerText="Croqui Localização" filterBy="#{interferencia.fot_croqui_localizacao}" filterMatchMode="contains" sortBy="#{interferencia.fot_croqui_localizacao}" >
-					<p:commandButton immediate="true" value="#{interferencia.fot_croqui_localizacao}"  ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="ui-icon-arrowthick-1-s">
+					<p:commandButton immediate="true" value="#{interferencia.fot_croqui_localizacao}"  ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton">
 	                       <p:fileDownload value="#{interferenciaBean.download(interferencia.fot_croqui_localizacao)}" />
 	                </p:commandButton>
 				</p:column>

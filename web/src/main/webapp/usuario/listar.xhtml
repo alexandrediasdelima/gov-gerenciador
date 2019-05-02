@@ -40,16 +40,19 @@
 				<p:column headerText="CPF/CNPJ" filterBy="#{usuario.emp_nu_cpfcnpj}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_cpfcnpj}">
 					<h:outputText value="#{usuario.emp_nu_cpfcnpj}" />
 				</p:column>
+				<p:column headerText="E-mail" filterBy="#{usuario.emp_ds_emailresponsavel}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_emailresponsavel}">
+					<h:outputText value="#{usuario.emp_ds_emailresponsavel}" />
+				</p:column>
 				<p:column headerText="DDD" filterBy="#{usuario.emp_nu_ddd}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_ddd}">
 					<h:outputText value="#{usuario.emp_nu_ddd}" />
 				</p:column>
 				<p:column headerText="Telefone" filterBy="#{usuario.emp_nu_telefone}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_telefone}">
 					<h:outputText value="#{usuario.emp_nu_telefone}" />
 				</p:column>
-				<p:column headerText="E-mail" filterBy="#{usuario.emp_ds_emailresponsavel}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_emailresponsavel}">
-					<h:outputText value="#{usuario.emp_ds_emailresponsavel}" />
+				<p:column headerText="Relação com a Propriedade" filterBy="#{usuario.emp_ds_relacaopropriedade}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_relacaopropriedade}">
+					<h:outputText value="#{usuario.emp_ds_relacaopropriedade}" />
 				</p:column>
-				<p:column headerText="Tipo Logradouro" filterBy="#{usuario.emp_ds_tp_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_tp_logradouro}">
+				<p:column headerText="Tipo do Logradouro" filterBy="#{usuario.emp_ds_tp_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_tp_logradouro}">
 					<h:outputText value="#{usuario.emp_ds_tp_logradouro}" />
 				</p:column>
 				<p:column headerText="Endereço" filterBy="#{usuario.emp_ds_nm_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_nm_logradouro}">
@@ -64,6 +67,12 @@
 				<p:column headerText="Bairro" filterBy="#{usuario.emp_ds_bairrodistrito}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_bairrodistrito}">
 					<h:outputText value="#{usuario.emp_ds_bairrodistrito}" />
 				</p:column>
+				<p:column headerText="Caixa Postal" filterBy="#{usuario.emp_nu_caixapostal}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_caixapostal}">
+					<h:outputText value="#{usuario.emp_nu_caixapostal}" />
+				</p:column>
+				<p:column headerText="CEP" filterBy="#{usuario.emp_nu_cependereco}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_cependereco}">
+					<h:outputText value="#{usuario.emp_nu_cependereco}" />
+				</p:column>
 				<p:column headerText="Município" filterBy="#{usuario.apa_muni_correspondencia}" filterMatchMode="contains" sortBy="#{usuario.apa_muni_correspondencia}">
 					<h:outputText value="#{usuario.apa_muni_correspondencia}" />
 				</p:column>
@@ -73,18 +82,7 @@
 				<p:column headerText="UF" filterBy="#{usuario.emp_ds_uf}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_uf}">
 					<h:outputText value="#{usuario.emp_ds_uf}" />
 				</p:column>
-				<p:column headerText="CEP" filterBy="#{usuario.emp_nu_cependereco}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_cependereco}">
-					<h:outputText value="#{usuario.emp_nu_cependereco}" />
-				</p:column>
-				<p:column headerText="Caixa Postal" filterBy="#{usuario.emp_nu_caixapostal}" filterMatchMode="contains" sortBy="#{usuario.emp_nu_caixapostal}">
-					<h:outputText value="#{usuario.emp_nu_caixapostal}" />
-				</p:column>
-				<p:column headerText="Referência do Endereço" filterBy="#{usuario.emp_ds_logradouro}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_logradouro}">
-					<h:outputText value="#{usuario.emp_ds_logradouro}" />
-				</p:column>
-				<p:column headerText="Relação com a Propriedade" filterBy="#{usuario.emp_ds_relacaopropriedade}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_relacaopropriedade}">
-					<h:outputText value="#{usuario.emp_ds_relacaopropriedade}" />
-				</p:column>
+				<p:inputText value="#{usuario.emp_nu_tipodocumento}" type="hidden"  />
 				<p:column headerText="Ações">
 					<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document"/>
 					

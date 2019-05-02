@@ -13,7 +13,7 @@
 	</style>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
-		<h:form id="addUsuario" prependId="false"  style="width:99%;" acceptcharset="ISO-8859-1">
+		<h:form id="addUsuario" prependId="false"  style="width:99%;" >
 		
 		<br/><br/><br/>
 		<p:fieldset legend="Usuário">
@@ -25,26 +25,47 @@
 					<p:outputLabel value="Apelido:" for="emp_nm_apelido" id="apelido"/>
 					<p:inputText id="emp_nm_apelido" value="#{usuarioBean.usuario.emp_nm_apelido}" />
 
-					<p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" id="email" />
-					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" validator="emailValidator" />
-
-					<p:selectOneRadio id="tipoDocumento" value="#{usuarioBean.tipoDocumento}">
+					<p:selectOneRadio id="tipoDocumento" value="#{usuarioBean.usuario.emp_nu_tipodocumento}" >
 						<f:selectItem itemLabel="CPF" itemValue="cpf" />
-						<f:selectItem itemLabel="CNPJ:" itemValue="cnpj" />
-						<f:ajax render="@this documento" />
+						<f:selectItem itemLabel="CNPJ: *" itemValue="cnpj"  />
+						<p:ajax process="@this" update="documento" /> 
+						
 					</p:selectOneRadio>
 
 					<h:panelGroup id="documento">
-						<components:cpf rendered="#{usuarioBean.tipoDocumento eq 'cpf'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" />
-						<components:cnpj rendered="#{usuarioBean.tipoDocumento eq 'cnpj'}" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}"/>
+						<c:set var="tipodocumento" scope="request" value="#{usuarioBean.usuario.emp_nu_tipodocumento}" />
+						<c:choose>
+							<c:when test="#{tipodocumento eq 'cpf'}">
+								<p:inputMask id="emp_nu_tipodocumento" mask="999.999.999-99" autoClear="false" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" required="true" requiredMessage="CPF é obrigatório" validator="cpfValidator" />
+							</c:when>
+							<c:otherwise>
+								<p:inputMask id="emp_nu_tipodocumento" mask="99.999.999/9999-99" value="#{usuarioBean.usuario.emp_nu_cpfcnpj}" required="true" requiredMessage="CNPJ é obrigatório" validator="cnpjValidator" />
+							</c:otherwise>
+						</c:choose>
 					</h:panelGroup>
 
+					<p:outputLabel value="E-mail:" for="emp_ds_emailresponsavel" id="email" />
+					<p:inputText id="emp_ds_emailresponsavel" value="#{usuarioBean.usuario.emp_ds_emailresponsavel}" validator="emailValidator" />
 
 					<p:outputLabel value="DDD:" for="emp_nu_ddd" id="ddd" />
 					<p:inputText id="emp_nu_ddd" maxlength="2" value="#{usuarioBean.usuario.emp_nu_ddd}" />
 
 					<p:outputLabel value="Telefone:" for="emp_nu_telefone" id="telefone" />
 					<p:inputText id="emp_nu_telefone" value="#{usuarioBean.usuario.emp_nu_telefone}" />
+					
+					<p:outputLabel value="Relação com a Propriedade:" for="emp_ds_relacaopropriedade" id="relacao" />
+					<p:selectOneMenu id="emp_ds_relacaopropriedade" value="#{usuarioBean.usuario.emp_ds_relacaopropriedade}" style="width:230px" required="true" requiredMessage="Relação com a Propriedade é obrigatório">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemLabel="ALUGADA/ARRENDADA" itemValue="ALUGADA/ARRENDADA" />
+						<f:selectItem itemLabel="CEDIDA" itemValue="CEDIDA" />
+						<f:selectItem itemLabel="COMPRADA" itemValue="COMPRADA" />
+						<f:selectItem itemLabel="OCUPADA/INVADIDA" itemValue="OCUPADA/INVADIDA" />
+						<f:selectItem itemLabel="POSSE (COM TÍTULO)" itemValue="POSSE (COM TÍTULO)" />
+						<f:selectItem itemLabel="POSSE (SEM TÍTULO)" itemValue="POSSE (SEM TÍTULO)" />
+						<f:selectItem itemLabel="USUCAPIÃO" itemValue="USUCAPIÃO" />
+						<f:selectItem itemLabel="HERANÇA" itemValue="HERANÇA" />
+						<f:selectItem itemLabel="OUTRA" itemValue="OUTRA" />
+					</p:selectOneMenu>
 
 					<p:outputLabel value="Tipo Logradouro:" for="emp_ds_tp_logradouro" id="tipoLogradouro"/>
 					<p:selectOneMenu id="emp_ds_tp_logradouro" value="#{usuarioBean.usuario.emp_ds_tp_logradouro}" style="width:230px" required="true" requiredMessage="Tipo Logradouro é obrigatório">
@@ -78,6 +99,12 @@
 
 					<p:outputLabel value="Bairro:" for="emp_ds_bairrodistrito" id="bairro" />
 					<p:inputText id="emp_ds_bairrodistrito" value="#{usuarioBean.usuario.emp_ds_bairrodistrito}" required="true" requiredMessage="Bairro é obrigatório"/>
+			        
+					<p:outputLabel value="Caixa Postal:" for="emp_nu_caixapostal" id="caixaPostal" />
+					<p:inputMask id="emp_nu_caixapostal" value="#{usuarioBean.usuario.emp_nu_caixapostal}" />
+					
+					<p:outputLabel value="CEP:" for="emp_nu_cependereco" id="cep" />
+					<p:inputText id="emp_nu_cependereco" value="#{usuarioBean.usuario.emp_nu_cependereco}" validator="cepValidator" />								        
 
 					<p:outputLabel value="UF:" for="emp_ds_uf" id="uf" />
 					<p:selectOneMenu id="emp_ds_uf" value="#{usuarioBean.usuario.emp_ds_uf}" style="width:230px" required="true" requiredMessage="UF é obrigatório">
@@ -121,32 +148,9 @@
 	                                   itemValue="#{regiao.municipio}" />
                         <p:ajax listener="#{usuarioBean.atualizarIbge}" event="change" update="emp_cd_codigoibgecorrespondencia" />
                      </p:selectOneMenu>
-
-                     <p:outputLabel value="Código IBGE:" for="emp_cd_codigoibgecorrespondencia" id="codIBGE" />
-                     <p:inputText id="emp_cd_codigoibgecorrespondencia" disabled="true" value="#{usuarioBean.usuario.emp_cd_codigoibgecorrespondencia}" />
-
-					<p:outputLabel value="CEP:" for="emp_nu_cependereco" id="cep" />
-					<p:inputText id="emp_nu_cependereco" value="#{usuarioBean.usuario.emp_nu_cependereco}" validator="cepValidator" />
-
-					<p:outputLabel value="Caixa Postal:" for="emp_nu_caixapostal" id="caixaPostal" />
-					<p:inputMask id="emp_nu_caixapostal" value="#{usuarioBean.usuario.emp_nu_caixapostal}" />
-
-					<p:outputLabel value="Referência do Endereço:" for="emp_ds_logradouro" id="referencia" />
-					<p:inputText id="emp_ds_logradouro" maxlength="150" value="#{usuarioBean.usuario.emp_ds_logradouro}" />
-
-					<p:outputLabel value="Relação com a Propriedade:" for="emp_ds_relacaopropriedade" id="relacao" />
-					<p:selectOneMenu id="emp_ds_relacaopropriedade" value="#{usuarioBean.usuario.emp_ds_relacaopropriedade}" style="width:230px" required="true" requiredMessage="Relação com a Propriedade é obrigatório">
-						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemLabel="ALUGADA/ARRENDADA" itemValue="ALUGADA/ARRENDADA" />
-						<f:selectItem itemLabel="CEDIDA" itemValue="CEDIDA" />
-						<f:selectItem itemLabel="COMPRADA" itemValue="COMPRADA" />
-						<f:selectItem itemLabel="OCUPADA/INVADIDA" itemValue="OCUPADA/INVADIDA" />
-						<f:selectItem itemLabel="POSSE (COM TÍTULO)" itemValue="POSSE (COM TÍTULO)" />
-						<f:selectItem itemLabel="POSSE (SEM TÍTULO)" itemValue="POSSE (SEM TÍTULO)" />
-						<f:selectItem itemLabel="USUCAPIÃO" itemValue="USUCAPIÃO" />
-						<f:selectItem itemLabel="HERANÇA" itemValue="HERANÇA" />
-						<f:selectItem itemLabel="OUTRA" itemValue="OUTRA" />
-					</p:selectOneMenu>
+			        
+					<p:outputLabel value="Código IBGE:" for="emp_cd_codigoibgecorrespondencia" id="codIBGE" />
+					<p:inputText id="emp_cd_codigoibgecorrespondencia" disabled="true" value="#{usuarioBean.usuario.emp_cd_codigoibgecorrespondencia}" />			        
 				</h:panelGrid>
 				<br/><br/>
 				<p:commandButton value="Voltar" action="#{usuarioBean.voltar}" ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
@@ -170,12 +174,21 @@
 		<p:tooltip  for="codIBGE" value="Campo numérico que representa o código ibge do município do endereço de correspondência." position="top"/>
 		<p:tooltip  for="cep" value="Campo numérico que representa o número do CEP do endereço de correspondência." position="top"/>
 		<p:tooltip  for="caixaPostal" value="Campo numérico que representa o número da caixa postal do responsável pelo empreendimento." position="top"/>
-		<p:tooltip  for="referencia" value="Campo que representa referência do endereço" position="top"/>
 		<p:tooltip  for="relacao" value="Campo que representa a relação com a propriedade." position="top"/>
 
 		</h:form>
 	</div>
 	
-
+	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
+	<script>
+		$(function() {
+			$("#emp_ds_emailresponsavel").inputmask({alias: "email"});
+			$("#emp_nu_ddd").inputmask({alias: "numeric", mask: "99", greedy: true, })
+			$("#emp_nu_telefone").inputmask({mask: ["9999-9999", "99999-9999"], greedy: true, removeMaskOnSubmit: true})
+			$("#emp_nu_logradouro").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
+			$("#emp_nu_cependereco").inputmask({mask: "99999-999", greedy: true, removeMaskOnSubmit: true})
+			$("#emp_nu_caixapostal").inputmask({alias: "numeric", mask: "[9][9][9][9][9][9]", greedy: true, })
+			})
+	</script>
 
 </ui:composition>

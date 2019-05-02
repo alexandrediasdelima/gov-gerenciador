@@ -27,13 +27,57 @@
 				<p:column headerText="Número do Processo" filterBy="#{apac.numeroProcesso}" filterMatchMode="contains" sortBy="#{apac.numeroProcesso}">
 					<h:outputText value="#{apac.numeroProcesso}" />
 				</p:column>
+				<p:column headerText="Data de Entrada do Processo na APAC" filterBy="#{apac.dataEntradaProcessoApac}" filterMatchMode="contains" sortBy="#{apac.dataEntradaProcessoApac}">
+					<h:outputText value="#{apac.dataEntradaProcessoApac}">
+						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Data de Entrada do Processo na CPRH" filterBy="#{apac.dataEntradaProcessoCprh}" filterMatchMode="contains" sortBy="#{apac.dataEntradaProcessoCprh}">
+					<h:outputText value="#{apac.dataEntradaProcessoCprh}">
+						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
 				<p:column headerText="Analista Responsável" filterBy="#{apac.analistaResponsavel}" filterMatchMode="contains" sortBy="#{apac.analistaResponsavel}">
 					<h:outputText value="#{apac.analistaResponsavel}" />
 				</p:column>
-				<p:column headerText="Ato Administrativo" filterBy="#{apac.atoAdministrativoPublicacaoInstrumento}" filterMatchMode="contains" sortBy="#{apac.atoAdministrativoPublicacaoInstrumento}">
+				<p:column headerText="Tipo do Ato Administrativo" filterBy="#{apac.out_tpo_cd}" filterMatchMode="contains" sortBy="#{apac.out_tpo_cd}">
+					<h:outputText value="#{apac.out_tpo_cd}" />
+				</p:column>
+				<p:column headerText="Ato Administrativo/Instrumento de Regularização" filterBy="#{apac.atoAdministrativoPublicacaoInstrumento}" filterMatchMode="contains" sortBy="#{apac.atoAdministrativoPublicacaoInstrumento}">
 					<h:outputText value="#{apac.atoAdministrativoPublicacaoInstrumento}" />
 				</p:column>
-				<p:column headerText="Data da Vistoria Apac" filterBy="#{apac.dataVistoria}" filterMatchMode="contains" sortBy="#{apac.dataVistoria}">
+				<p:column headerText="Data de Início do Prazo de Outorga" filterBy="#{apac.dataInicioPrazoOutorga}" filterMatchMode="contains" sortBy="#{apac.dataInicioPrazoOutorga}">
+					<h:outputText value="#{apac.dataInicioPrazoOutorga}">
+						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Data de Término do Prazo de Outorga" filterBy="#{apac.dataTerminoPrazoOutorga}" filterMatchMode="contains" sortBy="#{apac.dataTerminoPrazoOutorga}">
+					<h:outputText value="#{apac.dataTerminoPrazoOutorga}">
+						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>				
+				<p:column headerText="Situação Ato Administrativo" filterBy="#{apac.out_tsp_cd}" filterMatchMode="contains" sortBy="#{apac.out_tsp_cd}">
+					<h:outputText value="#{apac.out_tsp_cd}" />
+				</p:column>
+				<p:column headerText="Vazão Outorgada em l/s" filterBy="#{apac.vazaoOutorgada}" filterMatchMode="contains" sortBy="#{apac.vazaoOutorgada}">
+					<h:outputText value="#{apac.vazaoOutorgada}" />
+				</p:column>
+				<p:column headerText="Vazão Outorgada em Média" filterBy="#{apac.vazaoOutorgadaMedia}" filterMatchMode="contains" sortBy="#{apac.vazaoOutorgadaMedia}">
+					<h:outputText value="#{apac.vazaoOutorgadaMedia}" />
+				</p:column>			
+				<p:column headerText="Número de Horas para a Captação por Dia" filterBy="#{apac.horasRequeridaParaCaptacaoPorDia}" filterMatchMode="contains" sortBy="#{apac.horasRequeridaParaCaptacaoPorDia}">
+					<h:outputText value="#{apac.horasRequeridaParaCaptacaoPorDia}" />
+				</p:column>
+				<p:column headerText="Vazão Requerida l/s" filterBy="#{apac.vazaoRequiridaLs}" filterMatchMode="contains" sortBy="#{apac.vazaoRequiridaLs}">
+					<h:outputText value="#{apac.vazaoRequiridaLs}" />
+				</p:column>					
+				<p:column headerText="Vazão Requerida Média Diária (m³/dia)" filterBy="#{apac.vazaoRequiridaMediaDia}" filterMatchMode="contains" sortBy="#{apac.vazaoRequiridaMediaDia}">
+					<h:outputText value="#{apac.vazaoRequiridaMediaDia}" />
+				</p:column>				
+					<p:column headerText="Garantia" filterBy="#{apac.garantia}" filterMatchMode="contains" sortBy="#{apac.garantia}">
+					<h:outputText value="#{apac.garantia}" />
+				</p:column>			
+				<p:column headerText="Data de Vistoria da APAC" filterBy="#{apac.dataVistoria}" filterMatchMode="contains" sortBy="#{apac.dataVistoria}">
 					<h:outputText value="#{apac.dataVistoria}">
 						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
 					</h:outputText>
@@ -43,46 +87,19 @@
 						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
 					</h:outputText>
 				</p:column>
-				<p:column headerText="Data de Entrada do Processo na Apac" filterBy="#{apac.dataEntradaProcessoApac}" filterMatchMode="contains" sortBy="#{apac.dataEntradaProcessoApac}">
-					<h:outputText value="#{apac.dataEntradaProcessoApac}">
-						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
-					</h:outputText>
-				</p:column>
-				<p:column headerText="Data de Entrada do Processo na Cprh" filterBy="#{apac.dataEntradaProcessoCprh}" filterMatchMode="contains" sortBy="#{apac.dataEntradaProcessoCprh}">
-					<h:outputText value="#{apac.dataEntradaProcessoCprh}">
-						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
-					</h:outputText>
-				</p:column>
-				<p:column headerText="Data de inicio do Prazo de Outorga" filterBy="#{apac.dataInicioPrazoOutorga}" filterMatchMode="contains" sortBy="#{apac.dataInicioPrazoOutorga}">
-					<h:outputText value="#{apac.dataInicioPrazoOutorga}">
-						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
-					</h:outputText>
-				</p:column>
-				<p:column headerText="Data de Término do Prazo de Outorga" filterBy="#{apac.dataTerminoPrazoOutorga}" filterMatchMode="contains" sortBy="#{apac.dataTerminoPrazoOutorga}">
-					<h:outputText value="#{apac.dataTerminoPrazoOutorga}">
-						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
-					</h:outputText>
-				</p:column>
-				<p:column headerText="Garantia" filterBy="#{apac.garantia}" filterMatchMode="contains" sortBy="#{apac.garantia}">
-					<h:outputText value="#{apac.garantia}" />
-				</p:column>
-				<p:column headerText="Nome da Obra" filterBy="#{apac.nomeObra}" filterMatchMode="contains" sortBy="#{apac.nomeObra}">
-					<h:outputText value="#{apac.nomeObra}" />
-				</p:column>
-				<p:column headerText="Número do Ato" filterBy="#{apac.numeroAto}" filterMatchMode="contains" sortBy="#{apac.numeroAto}">
-					<h:outputText value="#{apac.numeroAto}" />
-				</p:column>
 				<p:column headerText="Número da Notificação de Irregularidades" filterBy="#{apac.numeroNotificacaoIrregularidadeApac}" filterMatchMode="contains" sortBy="#{apac.numeroNotificacaoIrregularidadeApac}">
 					<h:outputText value="#{apac.numeroNotificacaoIrregularidadeApac}" />
 				</p:column>
-				<p:column headerText="Número da Notificação de Isenção" filterBy="#{apac.numeroNotificacaoIsencaoApac}" filterMatchMode="contains" sortBy="#{apac.numeroNotificacaoIsencaoApac}">
-					<h:outputText value="#{apac.numeroNotificacaoIsencaoApac}" />
+				<p:column headerText="Encerramento do Prazo da Notificação" filterBy="#{apac.prazoNotificacao}" filterMatchMode="contains" sortBy="#{apac.prazoNotificacao}">
+					<h:outputText value="#{apac.prazoNotificacao}">
+						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
+					</h:outputText>
+				</p:column>		
+				<p:column headerText="Tipo de Obra" filterBy="#{apac.tipoObra}" filterMatchMode="contains" sortBy="#{apac.tipoObra}">
+					<h:outputText value="#{apac.tipoObra}" />
 				</p:column>
-				<p:column headerText="Número de Horas para a Captação por Dia" filterBy="#{apac.horasRequeridaParaCaptacaoPorDia}" filterMatchMode="contains" sortBy="#{apac.horasRequeridaParaCaptacaoPorDia}">
-					<h:outputText value="#{apac.horasRequeridaParaCaptacaoPorDia}" />
-				</p:column>
-				<p:column headerText="Número do Termo" filterBy="#{apac.numeroTermo}" filterMatchMode="contains" sortBy="#{apac.numeroTermo}">
-					<h:outputText value="#{apac.numeroTermo}" />
+				<p:column headerText="Nome da Obra" filterBy="#{apac.nomeObra}" filterMatchMode="contains" sortBy="#{apac.nomeObra}">
+					<h:outputText value="#{apac.nomeObra}" />
 				</p:column>
 				<p:column headerText="Outorga Válida Janeiro" filterBy="#{apac.outorgaValidaJaneiro}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaJaneiro}">
 					<h:outputText value="#{apac.outorgaValidaJaneiro}" />
@@ -119,35 +136,6 @@
 				</p:column>
 				<p:column headerText="Outorga Válida Dezembro" filterBy="#{apac.outorgaValidaDezembro}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaDezembro}">
 					<h:outputText value="#{apac.outorgaValidaDezembro}" />
-				</p:column>
-				<p:column headerText="Prazo da Notificação" filterBy="#{apac.prazoNotificacao}" filterMatchMode="contains" sortBy="#{apac.prazoNotificacao}">
-					<h:outputText value="#{apac.prazoNotificacao}">
-						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
-					</h:outputText>
-				</p:column>
-				<p:column headerText="Número do Processo na Cprh" filterBy="#{apac.numeroProcessoNaCprh}" filterMatchMode="contains" sortBy="#{apac.numeroProcessoNaCprh}">
-					<h:outputText value="#{apac.numeroProcessoNaCprh}" />
-				</p:column>
-				<p:column headerText="Tipo de Obra" filterBy="#{apac.tipoObra}" filterMatchMode="contains" sortBy="#{apac.tipoObra}">
-					<h:outputText value="#{apac.tipoObra}" />
-				</p:column>
-				<p:column headerText="Número Vazão Outorgada em l/s" filterBy="#{apac.vazaoOutorgada}" filterMatchMode="contains" sortBy="#{apac.vazaoOutorgada}">
-					<h:outputText value="#{apac.vazaoOutorgada}" />
-				</p:column>
-				<p:column headerText="Número Vazão Outorgada em Média" filterBy="#{apac.vazaoOutorgadaMedia}" filterMatchMode="contains" sortBy="#{apac.vazaoOutorgadaMedia}">
-					<h:outputText value="#{apac.vazaoOutorgadaMedia}" />
-				</p:column>
-				<p:column headerText="Número Vazão Requerida l/s" filterBy="#{apac.vazaoRequiridaLs}" filterMatchMode="contains" sortBy="#{apac.vazaoRequiridaLs}">
-					<h:outputText value="#{apac.vazaoRequiridaLs}" />
-				</p:column>
-				<p:column headerText="Número Vazão Requerida Média por Dia" filterBy="#{apac.vazaoRequiridaMediaDia}" filterMatchMode="contains" sortBy="#{apac.vazaoRequiridaMediaDia}">
-					<h:outputText value="#{apac.vazaoRequiridaMediaDia}" />
-				</p:column>
-				<p:column headerText="Ato Administrativo ou Instrumento de Regularização" filterBy="#{apac.out_tpo_cd}" filterMatchMode="contains" sortBy="#{apac.out_tpo_cd}">
-					<h:outputText value="#{apac.out_tpo_cd}" />
-				</p:column>
-				<p:column headerText="Situação Ato Administrativo ou Instrumento de Regularização" filterBy="#{apac.out_tsp_cd}" filterMatchMode="contains" sortBy="#{apac.out_tsp_cd}">
-					<h:outputText value="#{apac.out_tsp_cd}" />
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{apacBean.telaEditar(apac)}" value="Editar" ajax="false" icon="ui-icon-document" />

@@ -33,36 +33,6 @@
 						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
 					</p:selectOneMenu>
 					
-					<p:outputLabel value="Possui Captação de Água Subterrânea: " for="cam_captacao_agua_subt" />
-					<p:selectOneMenu id="cam_captacao_agua_subt" value="#{outrainfoBean.outrainfo.cam_captacao_agua_subt}" style="width:230px">
-						<f:selectItem itemLabel="NÃO" itemValue="false" />
-						<f:selectItem itemLabel="SIM" itemValue="true" />
-					</p:selectOneMenu>
-					
-					<p:outputLabel value="Tipo do Poço: " for="cam_tp_poco" />
-					<p:selectOneMenu id="cam_tp_poco" value="#{outrainfoBean.outrainfo.cam_tp_poco}" style="width:230px">
-						<f:selectItem itemLabel="CACIMBA" itemValue="CACIMBA" />
-						<f:selectItem itemLabel="TUBULAR" itemValue="TUBULAR" />
-					</p:selectOneMenu>
-					
-					<p:outputLabel value="Profundidade do Poço: " for="cam_profundidade_poco" />
-					<p:selectOneMenu id="cam_profundidade_poco" value="#{outrainfoBean.outrainfo.cam_profundidade_poco}" style="width:230px">
-						<f:selectItem itemLabel="MENOR QUE 5 METROS" itemValue="MENOR QUE 5 METROS" />
-						<f:selectItem itemLabel="DE 5 A 10 MESTROS" itemValue="DE 5 A 10 MESTROS" />
-						<f:selectItem itemLabel="DE 10 A 20 METROS" itemValue="DE 10 A 20 METROS" />
-						<f:selectItem itemLabel="DE 20 A 50 METROS" itemValue="DE 20 A 50 METROS" />
-						<f:selectItem itemLabel="MAIOR QUE 50 METROS" itemValue="MAIOR QUE 50 METROS" />
-					</p:selectOneMenu>
-					
-					<p:outputLabel value="Profundidade Total: " for="asb_nu_profundidadefinal" />
-					<p:inputText id="asb_nu_profundidadefinal" value="#{outrainfoBean.outrainfo.asb_nu_profundidadefinal}" />
-					
-					<p:outputLabel value="Utilização do Poço: " for="cam_utilizacao_poco" />
-					<p:selectOneMenu id="cam_utilizacao_poco" value="#{outrainfoBean.outrainfo.cam_utilizacao_poco}" style="width:230px">
-						<f:selectItem itemLabel="POÇO ATIVO" itemValue="POÇO ATIVO" />
-						<f:selectItem itemLabel="POÇO SECO" itemValue="POÇO SECO" />
-					</p:selectOneMenu>
-					
 					<p:outputLabel value="CAR Realizado: " for="cam_realizacao_car" />
 					<p:selectOneMenu id="cam_realizacao_car" value="#{outrainfoBean.outrainfo.cam_realizacao_car}" style="width:230px">
 						<f:selectItem itemLabel="NÃO SE APLICA" itemValue="NÃO SE APLICA" />
@@ -78,10 +48,7 @@
 						<f:selectItem itemLabel="POÇO" itemValue="POÇO" />
 						<f:selectItem itemLabel="REDE PÚBLICA" itemValue="REDE PÚBLICA" />
 						<f:selectItem itemLabel="OUTRO" itemValue="OUTRO" />
-					</p:selectOneMenu>
-					
-					<p:outputLabel value="Planos Futuros para Captação/Lançamento: " for="cam_capta_lanca_futuro" />
-					<p:inputText id="cam_capta_lanca_futuro" value="#{outrainfoBean.outrainfo.cam_capta_lanca_futuro}" />
+					</p:selectOneMenu>					
 				</h:panelGrid>
 				<br/><br/>
 				

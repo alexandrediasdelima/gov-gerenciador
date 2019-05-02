@@ -7,20 +7,10 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
 
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
-
-	<script>
-		$(function() {
-			$("#ama_nu_condutividadeeletrica").inputmask({mask: "9[9][9][9][9][9][9][9][9][9].[9][9]", greedy: true})
-    		$("#ama_qt_ph").inputmask({mask: "9[9].[9][9]", greedy: true})
-			$("#ama_qt_std").inputmask({mask: "9[9][9][9][9][9][9][9][9][9].[9][9]", greedy: true})
-			$("#ama_qt_temperatura").inputmask({mask: "9[9][9].[9]", greedy: true})
-		})
-	</script>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addAsbama" prependId="false" style="width:99%;" >
@@ -31,68 +21,68 @@
 					<p:outputLabel value="ID: " for="ama_int_pfk" />
 					<p:inputMask mask="?9999999999" id="ama_int_pfk" value="#{asbamaBean.asbama.ama_int_pfk}" disabled="true" />
 
-					<p:outputLabel value="Amostra para Calcio(mG/L): " for="ama_qt_calcio" id="amostraCalcio" />
-					<p:inputMask mask="?9999999999" id="ama_qt_calcio" value="#{asbamaBean.asbama.ama_qt_calcio}" />
-
-					<p:outputLabel value="Amostra para Cloreto(mG/L): " for="ama_qt_cloreto" id="amostraCloreto"/>
-					<p:inputMask mask="?9999999999" id="ama_qt_cloreto" value="#{asbamaBean.asbama.ama_qt_cloreto}" />
-
-					<p:outputLabel value="Amostra para Carbonato(mG/L): " for="ama_qt_carbonato" id="carbonato" />
-					<p:inputMask mask="?9999999999" id="ama_qt_carbonato" value="#{asbamaBean.asbama.ama_qt_carbonato}" />
-
-					<p:outputLabel value="Amostra para Dureza Total(mG/L): " for="ama_qt_durezatotal" id="durezaTotal" />
-					<p:inputMask mask="?9999999999" id="ama_qt_durezatotal" value="#{asbamaBean.asbama.ama_qt_durezatotal}" />
-
-					<p:outputLabel value="Amostra para Fluoreto(mG/L): " for="ama_qt_fluoretos" id="fluoreto" />
-					<p:inputMask mask="?9999999999" id="ama_qt_fluoretos" value="#{asbamaBean.asbama.ama_qt_fluoretos}" />
-
-					<p:outputLabel value="Amostra para Ferro Total(mG/L): " for="ama_qt_ferrototal" id="ferro" />
-					<p:inputMask mask="?9999999999" id="ama_qt_ferrototal" value="#{asbamaBean.asbama.ama_qt_ferrototal}" />
-
-					<p:outputLabel value="Amostra para Bicarbonato(mG/L): " for="ama_qt_bicarbonato" id="bicarbonato" />
-					<p:inputMask mask="?9999999999" id="ama_qt_bicarbonato" value="#{asbamaBean.asbama.ama_qt_bicarbonato}" />
-
-					<p:outputLabel value="Amostra para Potassio(mG/L): " for="ama_qt_potassio" id="potassio"/>
-					<p:inputMask mask="?9999999999" id="ama_qt_potassio" value="#{asbamaBean.asbama.ama_qt_potassio}" />
-
-					<p:outputLabel value="Amostra para Magnesio(mG/L): " for="ama_qt_magnesio" id="magnesio" />
-					<p:inputMask mask="?9999999999" id="ama_qt_magnesio" value="#{asbamaBean.asbama.ama_qt_magnesio}" />
-
-					<p:outputLabel value="Amostra para Sodio(mG/L): " for="ama_qt_sodio" id="sodio" />
-					<p:inputMask mask="?9999999999" id="ama_qt_sodio" value="#{asbamaBean.asbama.ama_qt_sodio}" />
-
-					<p:outputLabel value="Amostra para Nitrito(mG/L): " for="ama_qt_nitritos" id="nitrito" />
-					<p:inputMask mask="?9999999999" id="ama_qt_nitritos" value="#{asbamaBean.asbama.ama_qt_nitritos}" />
-
-					<p:outputLabel value="Amostra para Nitrato(mG/L): " for="ama_qt_nitratos" id="nitrato" />
-					<p:inputMask mask="?9999999999" id="ama_qt_nitratos" value="#{asbamaBean.asbama.ama_qt_nitratos}" />
-
-					<p:outputLabel value="Amostra para Sulfato(mG/L): " for="ama_qt_sulfato" id="sulfato" />
-					<p:inputMask mask="?9999999999" id="ama_qt_sulfato" value="#{asbamaBean.asbama.ama_qt_sulfato}" />
-
-					<p:outputLabel value="Condutividade Eletrica(µS/cm): " for="ama_nu_condutividadeeletrica" id="eletrica" />
-					<p:inputText maxlength="13" id="ama_nu_condutividadeeletrica" value="#{asbamaBean.asbama.ama_nu_condutividadeeletrica}" />
-
-					<p:outputLabel value="Data da Analise: " for="ama_dt_analise" id="dataAnalise" />
-					<p:calendar showOn="button" id="ama_dt_analise" value="#{asbamaBean.asbama.ama_dt_analise}" />
+					<p:outputLabel value="Data da Análise: " for="ama_dt_analise" id="dataAnalise" />
+					<p:calendar showOn="button" id="ama_dt_analise" pattern="dd/MM/yyyy" readonlyInput="true" size="15" value="#{asbamaBean.asbama.ama_dt_analise}" />
 
 					<p:outputLabel value="Data da Coleta: " for="ama_dt_coleta" id="dataColeta" />
-					<p:calendar showOn="button" id="ama_dt_coleta" value="#{asbamaBean.asbama.ama_dt_coleta}" />
+					<p:calendar showOn="button" id="ama_dt_coleta" pattern="dd/MM/yyyy" readonlyInput="true" size="15" value="#{asbamaBean.asbama.ama_dt_coleta}" />					
+					
+					<p:outputLabel value="Condutividade Elétrica(µS/cm): " for="ama_nu_condutividadeeletrica" id="eletrica" />
+					<p:inputText maxlength="13" id="ama_nu_condutividadeeletrica" value="#{asbamaBean.asbama.ama_nu_condutividadeeletrica}" />
+					
+					<p:outputLabel value="Temperatura(°C): " for="ama_qt_temperatura" id="temperatura" />
+					<p:inputText maxlength="5" id="ama_qt_temperatura" value="#{asbamaBean.asbama.ama_qt_temperatura}" />
+					
+					<p:outputLabel value="PH:" for="ama_qt_ph" id="hidrogeniotico" />
+					<p:inputText maxlength="5" id="ama_qt_ph" value="#{asbamaBean.asbama.ama_qt_ph}" />										
+					
+					<p:outputLabel value="Sólidos Totais Dissolvidos(mg/l): " for="ama_qt_std" id="dissolvidos" />
+					<p:inputText maxlength="13" id="ama_qt_std" value="#{asbamaBean.asbama.ama_qt_std}" />					
+					
+					<p:outputLabel value="Quantidade de Cálcio (Ca)(mg/l): " for="ama_qt_calcio" id="amostraCalcio" />
+					<p:inputMask mask="?9999999999" id="ama_qt_calcio" value="#{asbamaBean.asbama.ama_qt_calcio}" />
 
-					<p:outputLabel value="Concentração de Coliformes Fecais(nº/100ml): " for="ama_qt_coliformesfecais" id="fecais" />
+					<p:outputLabel value="Quantidade de Cloreto (Cl)(mg/l): " for="ama_qt_cloreto" id="amostraCloreto"/>
+					<p:inputMask mask="?9999999999" id="ama_qt_cloreto" value="#{asbamaBean.asbama.ama_qt_cloreto}" />
+
+					<p:outputLabel value="Quantidade de Carbonato (CO3)(mg/l): " for="ama_qt_carbonato" id="carbonato" />
+					<p:inputMask mask="?9999999999" id="ama_qt_carbonato" value="#{asbamaBean.asbama.ama_qt_carbonato}" />
+
+					<p:outputLabel value="Quantidade de Dureza Total(mg/l): " for="ama_qt_durezatotal" id="durezaTotal" />
+					<p:inputMask mask="?9999999999" id="ama_qt_durezatotal" value="#{asbamaBean.asbama.ama_qt_durezatotal}" />
+
+					<p:outputLabel value="Quantidade de Fluoreto (F)(mg/l): " for="ama_qt_fluoretos" id="fluoreto" />
+					<p:inputMask mask="?9999999999" id="ama_qt_fluoretos" value="#{asbamaBean.asbama.ama_qt_fluoretos}" />
+
+					<p:outputLabel value="Quantidade de Ferro Total (Fe)(mg/l): " for="ama_qt_ferrototal" id="ferro" />
+					<p:inputMask mask="?9999999999" id="ama_qt_ferrototal" value="#{asbamaBean.asbama.ama_qt_ferrototal}" />
+
+					<p:outputLabel value="Quantidade de Bicarbonato (HCO3)(mg/l): " for="ama_qt_bicarbonato" id="bicarbonato" />
+					<p:inputMask mask="?9999999999" id="ama_qt_bicarbonato" value="#{asbamaBean.asbama.ama_qt_bicarbonato}" />
+
+					<p:outputLabel value="Quantidade de Potássio (K)(mg/l): " for="ama_qt_potassio" id="potassio"/>
+					<p:inputMask mask="?9999999999" id="ama_qt_potassio" value="#{asbamaBean.asbama.ama_qt_potassio}" />
+
+					<p:outputLabel value="Quantidade de Magnésio (Mg)(mg/l): " for="ama_qt_magnesio" id="magnesio" />
+					<p:inputMask mask="?9999999999" id="ama_qt_magnesio" value="#{asbamaBean.asbama.ama_qt_magnesio}" />
+
+					<p:outputLabel value="Amostra para Sódio (Na)(mg/l): " for="ama_qt_sodio" id="sodio" />
+					<p:inputMask mask="?9999999999" id="ama_qt_sodio" value="#{asbamaBean.asbama.ama_qt_sodio}" />
+
+					<p:outputLabel value="Amostra para Nitrito (NO2)(mg/l): " for="ama_qt_nitritos" id="nitrito" />
+					<p:inputMask mask="?9999999999" id="ama_qt_nitritos" value="#{asbamaBean.asbama.ama_qt_nitritos}" />
+
+					<p:outputLabel value="Amostra para Nitrato (NO3)(mg/l): " for="ama_qt_nitratos" id="nitrato" />
+					<p:inputMask mask="?9999999999" id="ama_qt_nitratos" value="#{asbamaBean.asbama.ama_qt_nitratos}" />
+
+					<p:outputLabel value="Amostra para Sulfato (SO4)(mg/l): " for="ama_qt_sulfato" id="sulfato" />
+					<p:inputMask mask="?9999999999" id="ama_qt_sulfato" value="#{asbamaBean.asbama.ama_qt_sulfato}" />
+
+					<p:outputLabel value="Quantidade de Coliformes Fecais(nº/100ml): " for="ama_qt_coliformesfecais" id="fecais" />
 					<p:inputMask mask="?9999999999" id="ama_qt_coliformesfecais" value="#{asbamaBean.asbama.ama_qt_coliformesfecais}" />
 
 					<p:outputLabel value="Concentração de Coliformes Totais(nº/100ml): " for="ama_qt_coliformestotais" id="totais" />
 					<p:inputMask mask="?9999999999" id="ama_qt_coliformestotais" value="#{asbamaBean.asbama.ama_qt_coliformestotais}" />
-
-					<p:outputLabel value="Potencial Hidrogeniônico(PH):" for="ama_qt_ph" id="hidrogeniotico" />
-					<p:inputText maxlength="5" id="ama_qt_ph" value="#{asbamaBean.asbama.ama_qt_ph}" />
-
-					<p:outputLabel value="Solidos Totais Dissolvidos(mG/L): " for="ama_qt_std" id="dissolvidos" />
-					<p:inputText maxlength="13" id="ama_qt_std" value="#{asbamaBean.asbama.ama_qt_std}" />
-
-					<p:outputLabel value="Temperatura(°C): " for="ama_qt_temperatura" id="temperatura" />
-					<p:inputText maxlength="5" id="ama_qt_temperatura" value="#{asbamaBean.asbama.ama_qt_temperatura}" />
 				</h:panelGrid>
 				<br/><br/>
 
@@ -127,4 +117,14 @@
 
 		</h:form>
 	</div>
+	
+	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />	
+	<script>
+		$(function() {
+			$("#ama_nu_condutividadeeletrica").inputmask({mask: "9[9][9][9][9][9][9][9][9][9][.][9][9]", greedy: true})
+    		$("#ama_qt_ph").inputmask({mask: "9[9][.][9][9]", greedy: true})
+			$("#ama_qt_std").inputmask({mask: "9[9][9][9][9][9][9][9][9][9][.][9][9]", greedy: true})
+			$("#ama_qt_temperatura").inputmask({mask: "9[9][9][.][9]", greedy: true})
+		})
+	</script>
 </ui:composition>

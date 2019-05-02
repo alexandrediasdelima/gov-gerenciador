@@ -80,7 +80,7 @@ public class InterferenciaBean extends Controller  {
 		return eval(index());
 	}
 
-	public String gravar() throws IOException  {
+	public String gravar()  {
 		if(getCnarhs().size() == 0) {
 			this.interferencia.setCnarh_id(null);
 		}
@@ -112,14 +112,14 @@ public class InterferenciaBean extends Controller  {
 		return eval(index());
 	}
 
-	public String editar() throws IOException  {
+	public String editar()  {
 		interferenciaService.editar(interferencia);
 		interferencias();
 
 		return eval(index());
 	}
 
-	public String deletar() throws IOException  {
+	public String deletar()  {
 		interferenciaService.remover(interferencia.getInt_id());
 		interferencias();
 		return eval(index());
@@ -315,7 +315,7 @@ public class InterferenciaBean extends Controller  {
 				stream = new FileInputStream(f);
 				file = new DefaultStreamedContent(stream, "image/jpg", nome);
 
-			} catch (FileNotFoundException e) {
+			} catch (Exception e) {
 				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Arquivo não encontrado no servidor ", ""));
 			}
 

@@ -7,20 +7,10 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
 
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 	</style>
-
-	<script>
-		$(function() {
-			$("#altitudeTerreno").inputmask({mask: "9[9][9][9][9][9][9].[9][9]", greedy: true})
-    		$("#alturaBocaTubulacao").inputmask({mask: "9[9][9][9][9][9][9].[9][9]", greedy: true})
-			$("#pbac").inputmask({mask: "9[9][9][9].[9][9]", greedy: true})
-			$("#pbacTopo").inputmask({mask: "9[9][9][9].[9][9]", greedy: true})
-		})
-	</script>
 
 	<div style="margin-top: 0px; position: absolute; border: 0px solid; width: 99%;">
 		<h:form id="addAsbcarac" prependId="false" style="width:99%;" >
@@ -31,62 +21,306 @@
 				<h:panelGrid columns="2" style="border: 0px solid;">
 					<p:outputLabel value="ID: " for="id" />
 					<p:inputText id="id" value="#{asbcaracBean.asbcarac.id}" disabled="true" />
-
+					
+					<p:outputLabel value="Natureza do Ponto" for="Asb_tnp_enum" id="natureza" />
+					<p:selectOneMenu id="Asb_tnp_enum" value="#{asbcaracBean.asbcarac.codigoIdentificador}" style="width:230px">
+						<f:selectItem itemValue=""   itemLabel="Selecione" />
+						<f:selectItem itemValue="2"  itemLabel="FONTE NATURAL" />
+						<f:selectItem itemValue="3"  itemLabel="LAGO" />
+						<f:selectItem itemValue="4"  itemLabel="LAGOA" />
+						<f:selectItem itemValue="5"  itemLabel="NASCENTE" />
+						<f:selectItem itemValue="6"  itemLabel="PIEZÔMETRO" />
+						<f:selectItem itemValue="7"  itemLabel="POÇO AMAZONAS" />
+						<f:selectItem itemValue="8"  itemLabel="POÇO COLETOR" />
+						<f:selectItem itemValue="11" itemLabel="POÇO DE MONITORAMENTO" />
+						<f:selectItem itemValue="1"  itemLabel="POÇO ESCAVADO(CACIMBA/CISTERNA)" />
+						<f:selectItem itemValue="9"  itemLabel="POÇO PONTEIRA" />
+						<f:selectItem itemValue="10" itemLabel="POÇO TUBULAR" />
+					</p:selectOneMenu>					
+					
+					<p:outputLabel value="Data de Instalação do Poço: " for="dataInstalacao" id="data" />
+					<p:calendar id="dataInstalacao" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{asbcaracBean.asbcarac.dataInstalacaoPoco}" />					
+					
+					<p:outputLabel value="Código Identificador do Aquífero: " for="cdIdentificadorAquiferoPonto" id="codigoIdentificador" />
+					<p:selectOneMenu id="cdIdentificadorAquiferoPonto" value="#{asbcaracBean.asbcarac.identificadorAquiferoPonto}" style="width:230px">
+						<f:selectItem itemValue=""  itemLabel="Descrição : Tipo : Extensão" />
+						<f:selectItem itemValue="1" itemLabel="Açu : Poroso : Não definida" />
+						<f:selectItem itemValue="2" itemLabel="Açu : Poroso : Regional" />
+						<f:selectItem itemValue="3" itemLabel="Acungui : Fissural : Não definida" />
+						<f:selectItem itemValue="4" itemLabel="Algodoes : Poroso : Não definida" />
+						<f:selectItem itemValue="5" itemLabel="Aliança : Poroso : Não definida" />
+						<f:selectItem itemValue="6" itemLabel="Alter do chão : Poroso : Local" />
+						<f:selectItem itemValue="7" itemLabel="Aluvionar : Poroso : Não definida" />
+						<f:selectItem itemValue="8" itemLabel="Aluvionar : Poroso : Local" />
+						<f:selectItem itemValue="9" itemLabel="Aluvionar : Poroso : Regional" />
+						<f:selectItem itemValue="10" itemLabel="Aluvionar : Poroso : Regional limitada" />
+						<f:selectItem itemValue="11" itemLabel="Andrelandia : Fissural : Não definida" />
+						<f:selectItem itemValue="12" itemLabel="Aquidauana : Poroso : Não definida" />
+						<f:selectItem itemValue="13" itemLabel="Aquidauana : Poroso : Local" />
+						<f:selectItem itemValue="14" itemLabel="Aquidauana : Poroso : Regional limitada" />
+						<f:selectItem itemValue="15" itemLabel="Araxá : Fissural : Não definida" />
+						<f:selectItem itemValue="16" itemLabel="Araxá : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="17" itemLabel="Bambuí : Cárstico : Não definida" />
+						<f:selectItem itemValue="18" itemLabel="Bambuí : Fissural : Não definida" />
+						<f:selectItem itemValue="19" itemLabel="Bambuí : Poroso : Regional" />
+						<f:selectItem itemValue="20" itemLabel="Barbacena : Fissural : Não definida" />
+						<f:selectItem itemValue="21" itemLabel="Barbacena : Poroso : Não definida" />
+						<f:selectItem itemValue="22" itemLabel="Barreiras : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="23" itemLabel="Barreiras : Poroso : Não definida" />
+						<f:selectItem itemValue="24" itemLabel="Barreiras : Poroso : Restrito a zona fraturada" />
+						<f:selectItem itemValue="25" itemLabel="Bauru : Poroso : Não definida" />
+						<f:selectItem itemValue="26" itemLabel="Bauru : Poroso : Local" />
+						<f:selectItem itemValue="27" itemLabel="Bauru : Poroso : Regional" />
+						<f:selectItem itemValue="28" itemLabel="Bauru : Poroso : Regional limitada" />
+						<f:selectItem itemValue="29" itemLabel="Bebedouro : Fissural : Não definida" />
+						<f:selectItem itemValue="30" itemLabel="Beberibe : Poroso : Não definida" />
+						<f:selectItem itemValue="31" itemLabel="Beberibe : Poroso : Regional" />
+						<f:selectItem itemValue="32" itemLabel="Beneficiente : Poroso : Regional" />
+						<f:selectItem itemValue="33" itemLabel="Boa vista : Poroso : Regional" />
+						<f:selectItem itemValue="34" itemLabel="Botucatu : Fissural : Não definida" />
+						<f:selectItem itemValue="35" itemLabel="Botucatu : Poroso : Não definida" />
+						<f:selectItem itemValue="36" itemLabel="Botucatu : Poroso : Local" />
+						<f:selectItem itemValue="37" itemLabel="Botucatu : Poroso : Regional" />
+						<f:selectItem itemValue="38" itemLabel="Botucatu : Poroso : Regional limitada" />
+						<f:selectItem itemValue="39" itemLabel="Botucatu : Poroso : Restrito a zona fraturada" />
+						<f:selectItem itemValue="40" itemLabel="Brejo santo : Poroso : Não definida" />
+						<f:selectItem itemValue="41" itemLabel="Brotas : Poroso : Não definida" />
+						<f:selectItem itemValue="42" itemLabel="Caatinga : Cárstico : Não definida" />
+						<f:selectItem itemValue="43" itemLabel="Caboclo : Fissural : Não definida" />
+						<f:selectItem itemValue="44" itemLabel="Caçapava : Poroso : Não definida" />
+						<f:selectItem itemValue="45" itemLabel="Caçapava : Poroso : Regional" />
+						<f:selectItem itemValue="46" itemLabel="Caiua : Poroso : Regional" />
+						<f:selectItem itemValue="47" itemLabel="Caiua : Poroso : Regional limitada" />
+						<f:selectItem itemValue="48" itemLabel="Cambai : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="49" itemLabel="Cananeia : Poroso : Regional" />
+						<f:selectItem itemValue="50" itemLabel="Candeias : Poroso : Não definida" />
+						<f:selectItem itemValue="51" itemLabel="Canudos : Fissural : Não definida" />
+						<f:selectItem itemValue="52" itemLabel="Capelinha : Fissural : Não definida" />
+						<f:selectItem itemValue="53" itemLabel="Capim grosso : Poroso : Não definida" />
+						<f:selectItem itemValue="54" itemLabel="Caraça : Fissural : Não definida" />
+						<f:selectItem itemValue="55" itemLabel="Caraiba : Fissural : Não definida" />
+						<f:selectItem itemValue="56" itemLabel="Cariri : Poroso : Não definida" />
+						<f:selectItem itemValue="57" itemLabel="Cauaburi : Poroso : Regional" />
+						<f:selectItem itemValue="58" itemLabel="Caue : Fissural : Não definida" />
+						<f:selectItem itemValue="59" itemLabel="Chapada diamantina : Fissural : Não definida" />
+						<f:selectItem itemValue="60" itemLabel="Chapada diamantina : Poroso : Não definida" />
+						<f:selectItem itemValue="61" itemLabel="Cobertura cenozoica : Poroso : Não definida" />
+						<f:selectItem itemValue="62" itemLabel="Cobertura cenozoica : Poroso : Local" />
+						<f:selectItem itemValue="63" itemLabel="Cobertura cenozoica : Poroso : Regional" />
+						<f:selectItem itemValue="64" itemLabel="Cobertura cenozoica : Poroso : Regional limitada" />
+						<f:selectItem itemValue="65" itemLabel="Codo : Poroso : Regional" />
+						<f:selectItem itemValue="66" itemLabel="Colomi : Fissural : Não definida" />
+						<f:selectItem itemValue="67" itemLabel="Coluvionar : Poroso : Não definida" />
+						<f:selectItem itemValue="68" itemLabel="Coluvionar : Poroso : Local" />
+						<f:selectItem itemValue="69" itemLabel="Coluvionar : Poroso : Regional" />
+						<f:selectItem itemValue="70" itemLabel="Couto Magalhães : Poroso : Regional" />
+						<f:selectItem itemValue="71" itemLabel="Cuiabá : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="72" itemLabel="Curua : Fissural : Regional" />
+						<f:selectItem itemValue="73" itemLabel="Diamantino : Poroso : Local" />
+						<f:selectItem itemValue="74" itemLabel="Eluvionar : Poroso : Não definida" />
+						<f:selectItem itemValue="75" itemLabel="Eluvionar : Poroso : Local" />
+						<f:selectItem itemValue="76" itemLabel="Espinhaço : Fissural : Não definida" />
+						<f:selectItem itemValue="77" itemLabel="Espinhaço : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="78" itemLabel="Estrada nova : Poroso : Regional" />
+						<f:selectItem itemValue="79" itemLabel="Estrondo : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="80" itemLabel="Exu : Poroso : Não definida" />
+						<f:selectItem itemValue="81" itemLabel="Faceira : Poroso : Não definida" />
+						<f:selectItem itemValue="82" itemLabel="Furnas : Poroso : Regional" />
+						<f:selectItem itemValue="83" itemLabel="Furnas : Poroso : Regional limitada" />
+						<f:selectItem itemValue="84" itemLabel="Grão-Pará : Fissural : Regional" />
+						<f:selectItem itemValue="85" itemLabel="Guata : Poroso : Regional" />
+						<f:selectItem itemValue="86" itemLabel="Guianense : Fissural : Regional" />
+						<f:selectItem itemValue="87" itemLabel="Ilhas : Poroso : Não definida" />
+						<f:selectItem itemValue="88" itemLabel="Inaja : Poroso : Não definida" />
+						<f:selectItem itemValue="89" itemLabel="Irajai : Fissural : Não definida" />
+						<f:selectItem itemValue="90" itemLabel="Irati : Poroso : Regional" />
+						<f:selectItem itemValue="91" itemLabel="Itabira : Fissural : Não definida" />
+						<f:selectItem itemValue="92" itemLabel="Itaituba : Poroso : Local" />
+						<f:selectItem itemValue="93" itemLabel="Itaparica : Poroso : Não definida" />
+						<f:selectItem itemValue="94" itemLabel="Itapecuru : Poroso : Local" />
+						<f:selectItem itemValue="95" itemLabel="Itapecuru : Poroso : Regional" />
+						<f:selectItem itemValue="96" itemLabel="Itararé : Poroso : Não definida" />
+						<f:selectItem itemValue="97" itemLabel="Itararé : Poroso : Local" />
+						<f:selectItem itemValue="98" itemLabel="Itararé : Poroso : Regional" />
+						<f:selectItem itemValue="99" itemLabel="Jaciparana : Poroso : Regional limitada" />
+						<f:selectItem itemValue="100" itemLabel="Jaciparana : Poroso : Restrito a zona fraturada" />
+						<f:selectItem itemValue="101" itemLabel="Jacobina : Fissural : Não definida" />
+						<f:selectItem itemValue="102" itemLabel="Jaibaras : Fissural : Não definida" />
+						<f:selectItem itemValue="103" itemLabel="Jandaira : Cárstico : Não definida" />
+						<f:selectItem itemValue="104" itemLabel="Jandaira : Cárstico : Regional" />
+						<f:selectItem itemValue="105" itemLabel="Jua : Fissural : Não definida" />
+						<f:selectItem itemValue="106" itemLabel="Juiz de fora : Fissural : Não definida" />
+						<f:selectItem itemValue="107" itemLabel="Macaubas : Fissural : Não definida" />
+						<f:selectItem itemValue="108" itemLabel="Macaubas : Poroso : Não definida" />
+						<f:selectItem itemValue="109" itemLabel="Macurure : Fissural : Não definida" />
+						<f:selectItem itemValue="110" itemLabel="Maecuru : Poroso : Regional" />
+						<f:selectItem itemValue="111" itemLabel="Mantiqueira : Fissural : Não definida" />
+						<f:selectItem itemValue="112" itemLabel="Marizal : Poroso : Não definida" />
+						<f:selectItem itemValue="113" itemLabel="Massacara : Poroso : Não definida" />
+						<f:selectItem itemValue="114" itemLabel="Mata da corda : Fissural : Não definida" />
+						<f:selectItem itemValue="115" itemLabel="Mata da corda : Poroso : Não definida" />
+						<f:selectItem itemValue="116" itemLabel="Mauriti : Poroso : Não definida" />
+						<f:selectItem itemValue="117" itemLabel="Miaba : Cárstico : Não definida" />
+						<f:selectItem itemValue="118" itemLabel="Minas : Fissural : Não definida" />
+						<f:selectItem itemValue="119" itemLabel="Missão velha : Poroso : Não definida" />
+						<f:selectItem itemValue="120" itemLabel="Monte alegre : Poroso : Local" />
+						<f:selectItem itemValue="121" itemLabel="Morro do chapéu : Fissural : Não definida" />
+						<f:selectItem itemValue="122" itemLabel="Nova lima : Fissural : Não definida" />
+						<f:selectItem itemValue="123" itemLabel="Olhos d'agua : Cárstico : Não definida" />
+						<f:selectItem itemValue="124" itemLabel="Ouricuri do ouro : Fissural : Não definida" />
+						<f:selectItem itemValue="125" itemLabel="Palermo : Poroso : Regional" />
+						<f:selectItem itemValue="126" itemLabel="Paraguaçu : Fissural : Não definida" />
+						<f:selectItem itemValue="127" itemLabel="Paraíba do sul : Fissural : Não definida" />
+						<f:selectItem itemValue="128" itemLabel="Paranoá : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="129" itemLabel="Paraopeba : Fissural : Não definida" />
+						<f:selectItem itemValue="130" itemLabel="Paraopeba : Cárstico : Não definida" />
+						<f:selectItem itemValue="131" itemLabel="Parecis : Poroso : Regional" />
+						<f:selectItem itemValue="132" itemLabel="Parecis : Poroso : Regional limitada" />
+						<f:selectItem itemValue="133" itemLabel="Passa dois : Poroso : Não definida" />
+						<f:selectItem itemValue="134" itemLabel="Passa dois : Poroso : Local" />
+						<f:selectItem itemValue="135" itemLabel="Passa dois : Poroso : Regional" />
+						<f:selectItem itemValue="136" itemLabel="Passa dois : Poroso : Regional limitada" />
+						<f:selectItem itemValue="137" itemLabel="Piauí : Fissural : Regional" />
+						<f:selectItem itemValue="138" itemLabel="Pimenta Bueno : Fissural : Não definida" />
+						<f:selectItem itemValue="139" itemLabel="Pimenta Bueno : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="140" itemLabel="Pirabas : Poroso : Local" />
+						<f:selectItem itemValue="141" itemLabel="Piracicaba : Fissural : Não definida" />
+						<f:selectItem itemValue="142" itemLabel="Ponta grossa : Poroso : Local" />
+						<f:selectItem itemValue="143" itemLabel="Ponta grossa : Poroso : Regional limitada" />
+						<f:selectItem itemValue="144" itemLabel="Porongos : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="145" itemLabel="Rio bonito : Poroso : Não definida" />
+						<f:selectItem itemValue="146" itemLabel="Rio bonito : Poroso : Regional" />
+						<f:selectItem itemValue="147" itemLabel="Rio da batateira : Poroso : Não definida" />
+						<f:selectItem itemValue="148" itemLabel="Rio das velhas : Fissural : Não definida" />
+						<f:selectItem itemValue="149" itemLabel="Rio do rastro : Poroso : Regional" />
+						<f:selectItem itemValue="150" itemLabel="Rio do sul : Poroso : Regional" />
+						<f:selectItem itemValue="151" itemLabel="Rio dos remédios : Fissural : Não definida" />
+						<f:selectItem itemValue="152" itemLabel="Rio Guamá : Poroso : Local" />
+						<f:selectItem itemValue="153" itemLabel="Rio pardo : Cárstico : Não definida" />
+						<f:selectItem itemValue="154" itemLabel="Rio preto : Fissural : Não definida" />
+						<f:selectItem itemValue="155" itemLabel="Rocha cristalina : Cárstico : Não definida" />
+						<f:selectItem itemValue="156" itemLabel="Rocha cristalina : Fissural : Não definida" />
+						<f:selectItem itemValue="157" itemLabel="Rocha cristalina : Fissural : Local" />
+						<f:selectItem itemValue="158" itemLabel="Rocha cristalina : Fissural : Regional" />
+						<f:selectItem itemValue="159" itemLabel="Rocha cristalina : Fissural : Regional limitada" />
+						<f:selectItem itemValue="160" itemLabel="Rocha cristalina : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="161" itemLabel="Rocha sedimentar : Cárstico : Não definida" />
+						<f:selectItem itemValue="162" itemLabel="Rocha sedimentar : Fissural : Não definida" />
+						<f:selectItem itemValue="163" itemLabel="Rocha sedimentar : Poroso : Não definida" />
+						<f:selectItem itemValue="164" itemLabel="Rocha sedimentar : Poroso : Local" />
+						<f:selectItem itemValue="165" itemLabel="Rocha sedimentar : Poroso : Regional" />
+						<f:selectItem itemValue="166" itemLabel="Rocha sedimentar : Poroso : Regional limitada" />
+						<f:selectItem itemValue="167" itemLabel="Rocha sedimentar : Poroso : Restrito a zona fraturada" />
+						<f:selectItem itemValue="168" itemLabel="Rosário do sul : Poroso : Regional limitada" />
+						<f:selectItem itemValue="169" itemLabel="Salitre : Cárstico : Não definida" />
+						<f:selectItem itemValue="170" itemLabel="Salvador : Poroso : Não definida" />
+						<f:selectItem itemValue="171" itemLabel="Santa cruz : Fissural : Não definida" />
+						<f:selectItem itemValue="172" itemLabel="Santa helena : Fissural : Não definida" />
+						<f:selectItem itemValue="173" itemLabel="Santana : Fissural : Não definida" />
+						<f:selectItem itemValue="174" itemLabel="Santo Onofre : Fissural : Não definida" />
+						<f:selectItem itemValue="175" itemLabel="São Paulo : Poroso : Local" />
+						<f:selectItem itemValue="176" itemLabel="São Paulo : Poroso : Regional" />
+						<f:selectItem itemValue="177" itemLabel="São Paulo : Poroso : Regional limitada" />
+						<f:selectItem itemValue="178" itemLabel="São Sebastião : Poroso : Não definida" />
+						<f:selectItem itemValue="179" itemLabel="São Sebastião : Poroso : Regional limitada" />
+						<f:selectItem itemValue="180" itemLabel="Sedimento costeiro : Poroso : Regional" />
+						<f:selectItem itemValue="181" itemLabel="Sedimento costeiro : Poroso : Regional limitada" />
+						<f:selectItem itemValue="182" itemLabel="Sedimento inconsolidado : Poroso : Não definida" />
+						<f:selectItem itemValue="183" itemLabel="Sergi : Poroso : Não definida" />
+						<f:selectItem itemValue="184" itemLabel="Seridó : Fissural : Não definida" />
+						<f:selectItem itemValue="185" itemLabel="Serra da boa esperança : Fissural : Não definida" />
+						<f:selectItem itemValue="186" itemLabel="Serra do paraíso : Cárstico : Não definida" />
+						<f:selectItem itemValue="187" itemLabel="Serra geral : Fissural : Não definida" />
+						<f:selectItem itemValue="188" itemLabel="Serra geral : Fissural : Local" />
+						<f:selectItem itemValue="189" itemLabel="Serra geral : Fissural : Regional" />
+						<f:selectItem itemValue="190" itemLabel="Serra geral : Fissural : Regional limitada" />
+						<f:selectItem itemValue="191" itemLabel="Serra geral : Fissural : Restrito a zona fraturada" />
+						<f:selectItem itemValue="192" itemLabel="Serra geral : Poroso : Restrito a zona fraturada" />
+						<f:selectItem itemValue="193" itemLabel="Serra grande : Poroso : Não definida" />
+						<f:selectItem itemValue="194" itemLabel="Serra grande : Poroso : Restrito a zona fraturada" />
+						<f:selectItem itemValue="195" itemLabel="Sertania : Fissural : Não definida" />
+						<f:selectItem itemValue="196" itemLabel="Sete lagoas : Cárstico : Não definida" />
+						<f:selectItem itemValue="197" itemLabel="Sete lagoas : Cárstico : Regional limitada" />
+						<f:selectItem itemValue="198" itemLabel="Solimoes : Poroso : Regional" />
+						<f:selectItem itemValue="199" itemLabel="Solimoes : Poroso : Regional limitada" />
+						<f:selectItem itemValue="200" itemLabel="Souza : Poroso : Não definida" />
+						<f:selectItem itemValue="201" itemLabel="Tacaratu : Poroso : Não definida" />
+						<f:selectItem itemValue="202" itemLabel="Tacaratu : Poroso : Regional" />
+						<f:selectItem itemValue="203" itemLabel="Taubate : Poroso : Não definida" />
+						<f:selectItem itemValue="204" itemLabel="Taubate : Poroso : Regional" />
+						<f:selectItem itemValue="205" itemLabel="Taubate : Poroso : Regional limitada" />
+						<f:selectItem itemValue="206" itemLabel="Tombador : Fissural : Não definida" />
+						<f:selectItem itemValue="207" itemLabel="Tremembe : Poroso : Não definida" />
+						<f:selectItem itemValue="208" itemLabel="Tres marias : Fissural : Não definida" />
+						<f:selectItem itemValue="209" itemLabel="Tres marias : Poroso : Não definida" />
+						<f:selectItem itemValue="210" itemLabel="Tubarao : Poroso : Não definida" />
+						<f:selectItem itemValue="211" itemLabel="Tubarao : Poroso : Local" />
+						<f:selectItem itemValue="212" itemLabel="Tubarao : Poroso : Regional" />
+						<f:selectItem itemValue="213" itemLabel="Tubarao : Poroso : Regional limitada" />
+						<f:selectItem itemValue="214" itemLabel="Tupancireta : Poroso : Regional limitada" />
+						<f:selectItem itemValue="215" itemLabel="Ubajara : Poroso : Não definida" />
+						<f:selectItem itemValue="216" itemLabel="Urucuia : Poroso : Não definida" />
+						<f:selectItem itemValue="217" itemLabel="Urucuia : Poroso : Regional" />
+						<f:selectItem itemValue="218" itemLabel="Varginha-guaxupe : Fissural : Não definida" />
+						<f:selectItem itemValue="219" itemLabel="Xingu : Fissural : Regional limitada" />
+						<f:selectItem itemValue="220" itemLabel="Xingu : Poroso : Regional" />
+						<f:selectItem itemValue="221" itemLabel="Xingu : Poroso : Regional limitada" />
+						<f:selectItem itemValue="222" itemLabel="Cabeças : Poroso : Não definida" />
+						<f:selectItem itemValue="223" itemLabel="Casa nova : Poroso : Não definida" />
+						<f:selectItem itemValue="224" itemLabel="Corda : Poroso : Não definida" />
+						<f:selectItem itemValue="225" itemLabel="Feira nova : Poroso : Não definida" />
+						<f:selectItem itemValue="226" itemLabel="Grajau : Poroso : Não definida" />
+						<f:selectItem itemValue="227" itemLabel="Longa : Poroso : Não definida" />
+						<f:selectItem itemValue="228" itemLabel="Mosquito : Poroso : Não definida" />
+						<f:selectItem itemValue="229" itemLabel="Motuca : Poroso : Não definida" />
+						<f:selectItem itemValue="230" itemLabel="Não definido : Poroso : Não definida" />
+						<f:selectItem itemValue="231" itemLabel="Pastos bons : Poroso : Não definida" />
+						<f:selectItem itemValue="232" itemLabel="Pedra de fogo : Poroso : Não definida" />
+						<f:selectItem itemValue="233" itemLabel="Pimenteiras : Poroso : Não definida" />
+						<f:selectItem itemValue="234" itemLabel="Sambaiba : Poroso : Não definida" />
+						<f:selectItem itemValue="235" itemLabel="Santo amaro : Poroso : Não definida" />
+						<f:selectItem itemValue="236" itemLabel="Sao juliao : Fissural : Não definida" />
+						<f:selectItem itemValue="237" itemLabel="Saraiva : Poroso : Não definida" />
+						<f:selectItem itemValue="238" itemLabel="Sardinha : Fissural : Não definida" />
+						<f:selectItem itemValue="239" itemLabel="Não definido : Cárstico : Não definida" />
+						<f:selectItem itemValue="240" itemLabel="Não definido : Fissural : Não definida" />
+						<f:selectItem itemValue="241" itemLabel="Não definido : Não definido : Não definida" />
+						<f:selectItem itemValue="242" itemLabel="Boa Viagem : Poroso : Local" />
+					</p:selectOneMenu>					
+					
+					<p:outputLabel value="Condição do Aquífero:" for="asb_tca_enum" id="condicao" />
+					<p:selectOneMenu id="asb_tca_enum" value="#{asbcaracBean.asbcarac.condicaoAquifero}" style="width:230px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemValue="1" itemLabel="LIVRE" />
+						<f:selectItem itemValue="2" itemLabel="CONFINADO" />
+						<f:selectItem itemValue="3" itemLabel="SEMI-LIVRE" />
+						<f:selectItem itemValue="4" itemLabel="SEMI-CONFINADO" />
+					</p:selectOneMenu>					
+					
+					<p:outputLabel value="Tipo de Penetração do Aquífero:" for="asb_tpn_enum" id="tpPenetracao" />
+					<p:selectOneMenu id="asb_tpn_enum" value="#{asbcaracBean.asbcarac.tipoPenetracaoAquifero}" style="width:230px">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItem itemValue="1" itemLabel="PARCIAL" />
+						<f:selectItem itemValue="2" itemLabel="TOTAL" />
+					</p:selectOneMenu>					
+					
 					<p:outputLabel value="Altitude do Terreno(m): " for="altitudeTerreno" id="altTerreno" />
 					<p:inputText id="altitudeTerreno" maxlength="10" value="#{asbcaracBean.asbcarac.altitudeTerreno}" />
 
-					<p:outputLabel value="Boca da tubulação(m): " for="alturaBocaTubulacao" id="bocaTubulacao" />
+					<p:outputLabel value="Altura da Boca da Tubulação(m): " for="alturaBocaTubulacao" id="bocaTubulacao" />
 					<p:inputText id="alturaBocaTubulacao" maxlength="10" value="#{asbcaracBean.asbcarac.altitudeBocaTubulacao}" />
 
-					<p:outputLabel value="Código identificador do aquifero ponto: " for="cdIdentificadorAquiferoPonto" id="codigoIdentificador" />
-					<p:inputMask mask="?9999999999999999999" id="cdIdentificadorAquiferoPonto" value="#{asbcaracBean.asbcarac.identificadorAquiferoPonto}" />
-
-					<p:outputLabel value="Data de instalação do poço: " for="dataInstalacao" id="data" />
-					<p:calendar id="dataInstalacao" showOn="button" value="#{asbcaracBean.asbcarac.dataInstalacaoPoco}" />
-
-					<p:outputLabel value="Diâmetro da perfuração(pol): " for="diametroPerfuracao" id="diamePerfuracao" />
+					<p:outputLabel value="Diâmetro da Perfuração(pol): " for="diametroPerfuracao" id="diamePerfuracao" />
 					<p:inputMask mask="?9999999999999999999" id="diametroPerfuracao" value="#{asbcaracBean.asbcarac.diametroPerfuracao}" />
 
-					<p:outputLabel value="Diâmetro do filtro(pol): " for="diametroFiltro" id="diameFiltro" />
+					<p:outputLabel value="Diâmetro do Filtro(pol): " for="diametroFiltro" id="diameFiltro" />
 					<p:inputMask mask="?9999999999999999999" id="diametroFiltro" value="#{asbcaracBean.asbcarac.diametroFiltro}" />
 
-					<p:outputLabel value="Profundidade da base do aquífero(m): " for="pbac" id="profundidadeSuperficie" />
-					<p:inputText maxlength="6" id="pbac" value="#{asbcaracBean.asbcarac.profundidadeBaseMedidaApartirSuperficie}" />
-
-					<p:outputLabel value="Profundidade do topo do aquífero(m): " for="pbacTopo" id="profundidadeTopo" />
+					<p:outputLabel value="Profundidade do Topo do Aquífero(m): " for="pbacTopo" id="profundidadeTopo" />
 					<p:inputText maxlength="6" id="pbacTopo" value="#{asbcaracBean.asbcarac.profundidadeTopoMedidaApartirSuperficie}" />
-
-					<p:outputLabel value="Natureza do Ponto" for="Asb_tnp_enum" id="natureza" />
-					<p:selectOneMenu id="Asb_tnp_enum" value="#{asbcaracBean.asbcarac.codigoIdentificador}" style="width:230px">
-						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemLabel="FONTE NATURAL" itemValue="FONTE NATURAL" />
-						<f:selectItem itemLabel="LAGO" itemValue="LAGO" />
-						<f:selectItem itemLabel="LAGOA" itemValue="LAGOA" />
-						<f:selectItem itemLabel="NASCENTE" itemValue="NASCENTE" />
-						<f:selectItem itemLabel="PIEZÔMETRO" itemValue="PIEZÔMETRO" />
-						<f:selectItem itemLabel="POÇO AMAZONAS" itemValue="POÇO AMAZONAS" />
-						<f:selectItem itemLabel="POÇO COLETOR" itemValue="POÇO COLETOR" />
-						<f:selectItem itemLabel="POÇO DE MONITORAMENTO" itemValue="POÇO DE MONITORAMENTO" />
-						<f:selectItem itemLabel="POÇO ESCAVADO(CACIMBA/CISTERNA)" itemValue="POÇO ESCAVADO(CACIMBA/CISTERNA)" />
-						<f:selectItem itemLabel="POÇO PONTEIRA" itemValue="POÇO PONTEIRA" />
-						<f:selectItem itemLabel="POÇO TUBULAR" itemValue="POÇO TUBULAR" />
-					</p:selectOneMenu>
-
-					<p:outputLabel value="Tipo Penetração Aquifero:" for="asb_tpn_enum" id="tpPenetracao" />
-					<p:selectOneMenu id="asb_tpn_enum" value="#{asbcaracBean.asbcarac.tipoPenetracaoAquifero}" style="width:230px">
-						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="PARCIAL" itemLabel="PARCIAL" />
-						<f:selectItem itemValue="TOTAL" itemLabel="TOTAL" />
-					</p:selectOneMenu>
-
-					<p:outputLabel value="Condição Aquifero:" for="asb_tca_enum" id="condicao" />
-					<p:selectOneMenu id="asb_tca_enum" value="#{asbcaracBean.asbcarac.condicaoAquifero}" style="width:230px">
-						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItem itemValue="CONFINADO" itemLabel="CONFINADO" />
-						<f:selectItem itemValue="LIVRE" itemLabel="LIVRE" />
-						<f:selectItem itemValue="SEMI-CONFINADO" itemLabel="SEMI-CONFINADO" />
-						<f:selectItem itemValue="SEMI-LIVRE" itemLabel="SEMI-LIVRE" />
-					</p:selectOneMenu>
+					
+					<p:outputLabel value="Profundidade da Base do Aquífero(m): " for="pbac" id="profundidadeSuperficie" />
+					<p:inputText maxlength="6" id="pbac" value="#{asbcaracBean.asbcarac.profundidadeBaseMedidaApartirSuperficie}" />
 				</h:panelGrid>
 				<br/><br/>
 
@@ -111,4 +345,13 @@
 		
 		</h:form>
 	</div>
+	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />	
+	<script>
+		$(function() {
+			$("#altitudeTerreno").inputmask({mask: "9[9][9][9][9][9][9][.][9][9]", greedy: true})
+    		$("#alturaBocaTubulacao").inputmask({mask: "9[9][9][9][9][9][9][.][9][9]", greedy: true})
+			$("#pbac").inputmask({mask: "9[9][9][9][.][9][9]", greedy: true})
+			$("#pbacTopo").inputmask({mask: "9[9][9][9][.][9][9]", greedy: true})
+		})
+	</script>	
 </ui:composition>
