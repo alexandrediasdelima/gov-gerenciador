@@ -143,7 +143,7 @@
 		<validator-id>cnpjValidator</validator-id>
 		<validator-class>org.gov.web.validator.CnpjValidador</validator-class>
 	</validator>
-	
+
 	<validator>
 		<validator-id>cpfValidator</validator-id>
 		<validator-class>org.gov.web.validator.CPFValidador</validator-class>
@@ -185,8 +185,8 @@
 	</validator>
 
 	<converter>
-		<converter-id>cnpjConvert</converter-id>
-		<converter-class>org.gov.web.converter.CnpjConverter</converter-class>
+		<converter-id>cpfCnpjConvert</converter-id>
+		<converter-class>org.gov.web.converter.CpfCnpjConverter</converter-class>
 	</converter>
 
 	<!-- Configurações -->

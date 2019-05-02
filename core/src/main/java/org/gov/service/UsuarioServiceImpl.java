@@ -31,7 +31,17 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 	public List<Usuario> usuarios() {
 		usuarioDao = new UsuarioDaoImpl();
-		return usuarioDao.usuarios();
+
+		List<Usuario> usuarios = usuarioDao.usuarios();
+
+		for (Usuario usuario : usuarios) {
+
+			if(usuario.getEmp_nu_cpfcnpj() != null && usuario.getEmp_nu_cpfcnpj().length() > 11) {
+
+			}
+		}
+
+		return usuarios;
 	}
 
 	public String remover(Integer id) {
@@ -57,7 +67,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 		usuarioDao = new UsuarioDaoImpl();
 		return usuarioDao.buscarIbge(apa_muni_correspondencia);
 	}
-	
+
 	public Usuario pesquisar(int id) {
 
 		usuarioDao = new UsuarioDaoImpl();
