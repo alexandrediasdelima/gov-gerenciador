@@ -57,7 +57,7 @@ public class CnarhBean extends Controller  {
 	public void resetView() {
 		//setView(LIST);
 	}
-	
+
 	public String gravar() {
 		setView(LIST);
 		cnarhService.gravar(cnarh);

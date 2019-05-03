@@ -48,7 +48,7 @@ public class InterferenciaBean extends Controller  {
 	private transient UploadedFile fotoCroqui;
 	private transient StreamedContent file;
 	private boolean isOutroUso;
-	
+
 
 	public InterferenciaBean()  {
 		setInterferencia(new Interferencia());
@@ -63,20 +63,20 @@ public class InterferenciaBean extends Controller  {
 	public String interferencias()  {
 		interferencias = interferenciaService.interferencias();
 		setView(LIST);
-		
+
 //		String mimeType = "image/jpg";
 //		File file = new File("C:\\import_cad\\imagens\\15564982740071536680806557.jpg");
 //		ByteArrayOutputStream out = new ByteArrayOutputStream();
 //		setFis(new FileInputStream(file));
 //		int b;
-//		
+//
 //		while((b = getFis().read()) > -1) {
 //			out.write(b);
 //		}
 //		out.close();
 //		getFis().close();
 //		setArray(out.toByteArray());
-		
+
 		return eval(index());
 	}
 
