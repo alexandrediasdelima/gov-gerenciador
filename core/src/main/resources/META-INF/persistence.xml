@@ -46,6 +46,7 @@
 		<class>org.gov.model.Vazao</class>
 		<class>org.gov.model.Regiao</class>
 		<class>org.gov.model.FichaCampo</class>
+		<class>org.gov.model.ExportCnarh</class>
 
 		<properties>
 			<!-- Propriedades JDBC -->

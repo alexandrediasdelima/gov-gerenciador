@@ -21,34 +21,22 @@
 					<p:outputLabel value="ID: " for="tstbomb_int_pfk" />
 					<p:inputText  id="tstbomb_int_pfk" value="#{testebombeamentoBean.testebombeamento.tstbomb_int_pfk}" disabled="true" />
 
-					<p:outputLabel value="Coeficiente de Armazenamento: " for="tst_nu_coeficientearmazenamento" id="coeficiente" />
-					<p:inputText  id="tst_nu_coeficientearmazenamento" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_coeficientearmazenamento}" />
-
-					<p:outputLabel value="Condutividade Hidráulica: " for="tst_nu_condutividadehidraulica" id="condutiva" />
-					<p:inputText id="tst_nu_condutividadehidraulica" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_condutividadehidraulica}" />
-
-					<p:outputLabel value="Data do Teste do Bombeamento: " for="tst_dt" id="data"/>
+					<p:outputLabel value="Data do Teste: " for="tst_dt" id="data"/>
 					<p:calendar showOn="button" id="tst_dt" value="#{testebombeamentoBean.testebombeamento.tst_dt}" readonlyInput="true" pattern="dd/mm/yyyy" />
 
-					<p:outputLabel value="Tempo de Duração do Teste(Horas): " for="tst_ds_tempoduracao" id="duracao"/>
+					<p:outputLabel value="Tempo de Duração do Teste (h): " for="tst_ds_tempoduracao" id="duracao"/>
 					<p:inputText  id="tst_ds_tempoduracao" value="#{testebombeamentoBean.testebombeamento.tst_ds_tempoduracao}" />
 
-					<p:outputLabel value="Nível Dinâmico: " for="tst_nu_nd" id="dinamico" />
+					<p:outputLabel value="Nível Dinâmico (m): " for="tst_nu_nd" id="dinamico" />
 					<p:inputText  id="tst_nu_nd" maxlength="10" value="#{testebombeamentoBean.testebombeamento.tst_nu_nd}" />
 
-					<p:outputLabel value="Nível Estático: " for="tst_nu_ne" id="estatico" />
+					<p:outputLabel value="Nível Estático (m): " for="tst_nu_ne" id="estatico" />
 					<p:inputText  id="tst_nu_ne" maxlength="10" value="#{testebombeamentoBean.testebombeamento.tst_nu_ne}" />
 
-					<p:outputLabel value="Permeabilidade: " for="tst_nu_permeabilidade" id="permeabilidade"/>
-					<p:inputText  id="tst_nu_permeabilidade" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_permeabilidade}" />
-
-					<p:outputLabel value="Transmissividade: " for="tst_nu_transmissividade" id="transmissividade"/>
-					<p:inputText  id="tst_nu_transmissividade" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_transmissividade}" />
-
-					<p:outputLabel value="Vazão de Estabilização: " for="tst_vz_estabilizacao" id="estabilizacao" />
+					<p:outputLabel value="Vazão de Estabilização (m³/h): " for="tst_vz_estabilizacao" id="estabilizacao" />
 					<p:inputText  id="tst_vz_estabilizacao" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_vz_estabilizacao}" />
 
-					<p:outputLabel value="Tipo de Teste de Bombeamento: " for="tst_ttb_cd" id="tipo" />
+					<p:outputLabel value="Tipo do Teste de Bombeamento: " for="tst_ttb_cd" id="tipo" />
 					<p:selectOneMenu id="tst_ttb_cd" value="#{testebombeamentoBean.testebombeamento.tst_ttb_cd}" style="width:230px">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
 						<f:selectItem itemValue="1" itemLabel="Rebaixamento" />
@@ -91,6 +79,19 @@
 						<f:selectItem itemValue="27" itemLabel="Thien" />
 						<f:selectItem itemValue="28" itemLabel="Zangar" />
 					</p:selectOneMenu>
+
+					<p:outputLabel value="Transmissividade (m³/h): " for="tst_nu_transmissividade" id="transmissividade"/>
+					<p:inputText  id="tst_nu_transmissividade" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_transmissividade}" />
+
+					<p:outputLabel value="Coeficiente de Armazenamento: " for="tst_nu_coeficientearmazenamento" id="coeficiente" />
+					<p:inputText  id="tst_nu_coeficientearmazenamento" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_coeficientearmazenamento}" />
+
+					<p:outputLabel value="Permeabilidade (m/s): " for="tst_nu_permeabilidade" id="permeabilidade"/>
+					<p:inputText  id="tst_nu_permeabilidade" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_permeabilidade}" />
+
+					<p:outputLabel value="Condutividade Hidráulica (m/s): " for="tst_nu_condutividadehidraulica" id="condutiva" />
+					<p:inputText id="tst_nu_condutividadehidraulica" maxlength="7" value="#{testebombeamentoBean.testebombeamento.tst_nu_condutividadehidraulica}" />
+
 				</h:panelGrid>
 				<br/><br/>
 
@@ -118,6 +119,7 @@
 	<h:outputScript library="js" name="jquery.inputmask.bundle.js" />
 	<script>
 		$(function() {
+			$("#tst_ds_tempoduracao").inputmask({mask: "[9][9][9][9][9]", greedy: true})
 			$("#tst_nu_coeficientearmazenamento").inputmask({mask: "[9][9][9][9][9][9][9]", greedy: true})
 			$("#tst_nu_condutividadehidraulica").inputmask({mask: "[9][9][9][9][9][9][9]", greedy: true})
 			$("#tst_nu_nd").inputmask({mask: "9[9][9][9][9][9][9][9][9].[9][9]", greedy: true})

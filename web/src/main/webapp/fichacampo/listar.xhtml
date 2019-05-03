@@ -31,6 +31,15 @@
 					<p:column headerText="Usuário" width="80%" filterBy="#{fichaCampo.emp_nm_usuario}" filterMatchMode="contains" sortBy="#{fichaCampo.emp_nm_usuario}">
 						<h:outputText value="#{fichaCampo.emp_nm_usuario}" id="emp_nm_usuario" />
 					</p:column>
+					<p:column headerText="Empreendimento" width="80%" filterBy="#{fichaCampo.emp_nm_empreendimento}" filterMatchMode="contains" sortBy="#{fichaCampo.emp_nm_empreendimento}">
+						<h:outputText value="#{fichaCampo.emp_nm_empreendimento}" id="emp_nm_empreendimento" />
+					</p:column>
+					<p:column headerText="Nome do Manancial" width="80%" filterBy="#{fichaCampo.apa_manancial}" filterMatchMode="contains" sortBy="#{fichaCampo.apa_manancial}">
+						<h:outputText value="#{fichaCampo.apa_manancial}" id="apa_manancial" />
+					</p:column>
+					<p:column headerText="Local da Interferência" width="80%" filterBy="#{fichaCampo.apa_curso_barragem}" filterMatchMode="contains" sortBy="#{fichaCampo.apa_curso_barragem}">
+						<h:outputText value="#{fichaCampo.apa_curso_barragem}" id="apa_curso_barragem" />
+					</p:column>
 				</p:dataTable>
 				<p:blockUI block="tabelaFichaCampo" trigger="tabelaFichaCampo">
 					<p:graphicImage name="images/loadingbar.gif"/>

@@ -124,9 +124,6 @@ public class FichaCampo implements Serializable {
 	@Column (name="asb_tca_cd")
 	private String asb_tca_cd;
 
-	@Column (name="tst_int_pfk")
-	private String tst_int_pfk;
-
 	@Column (name="tst_ds_tempoduracao")
 	private String tst_ds_tempoduracao;
 
@@ -731,12 +728,6 @@ public class FichaCampo implements Serializable {
 	@Column (name="out_tpo_cd")
 	private String out_tpo_cd;
 
-	@Column (name="apa_vz_outorga_media")
-	private String apa_vz_outorga_media;
-
-	@Column (name="apa_vz_requerida_media")
-	private String apa_vz_requerida_media;
-
 	@Column (name="apa_vz_outorga_m3dia")
 	private String apa_vz_outorga_m3dia;
 
@@ -1017,14 +1008,6 @@ public class FichaCampo implements Serializable {
 
 	public void setAsb_tca_cd(String asb_tca_cd) {
 		this.asb_tca_cd = asb_tca_cd;
-	}
-
-	public String getTst_int_pfk() {
-		return tst_int_pfk;
-	}
-
-	public void setTst_int_pfk(String tst_int_pfk) {
-		this.tst_int_pfk = tst_int_pfk;
 	}
 
 	public String getTst_ds_tempoduracao() {
@@ -2593,22 +2576,6 @@ public class FichaCampo implements Serializable {
 
 	public void setOut_tpo_cd(String out_tpo_cd) {
 		this.out_tpo_cd = out_tpo_cd;
-	}
-
-	public String getApa_vz_outorga_media() {
-		return apa_vz_outorga_media;
-	}
-
-	public void setApa_vz_outorga_media(String apa_vz_outorga_media) {
-		this.apa_vz_outorga_media = apa_vz_outorga_media;
-	}
-
-	public String getApa_vz_requerida_media() {
-		return apa_vz_requerida_media;
-	}
-
-	public void setApa_vz_requerida_media(String apa_vz_requerida_media) {
-		this.apa_vz_requerida_media = apa_vz_requerida_media;
 	}
 
 	public String getApa_vz_outorga_m3dia() {
