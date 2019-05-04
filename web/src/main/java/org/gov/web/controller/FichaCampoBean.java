@@ -11,13 +11,10 @@ import org.gov.service.FichaCampoServiceImpl;
 
 
 public class FichaCampoBean extends Controller  {
-
-
 	/**
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-
 
 	private FichaCampo fichaCampo;
 	private FichaCampoService fichaCampoService;
@@ -25,7 +22,7 @@ public class FichaCampoBean extends Controller  {
 	private List<FichaCampo> filteredFichaCampo;
 
 	public FichaCampoBean() {
-
+		
 		setFichaCampo(new FichaCampo());
 		fichaCampoService = new FichaCampoServiceImpl();
 		setFichasCampo(new ArrayList<FichaCampo>());
@@ -33,28 +30,30 @@ public class FichaCampoBean extends Controller  {
 		
 	}
 
-	public String index() {
-		return "/fichacampo/index";
-	}
-	
-	public String voltar() {
-		return "/fichacampo/index";
-	}
-	
-	public void resetView() {
-		setView(LIST);
-	}
-
-	public String fichasCampo() {
+	public void fichasCampo() {
 		setFichasCampo(fichaCampoService.fichasCampo());
-		setView(LIST);
-		return eval(index());
+//		setView(LIST);
+//		return eval(index());
 	}
 	
 	public String telaFicha(FichaCampo fichaCampo) {
-		this.fichaCampo = fichaCampo;
 		setView(EDIT);
+		this.fichaCampo = fichaCampo;
+		
 		return eval(index());
+	}
+
+	public String voltar() {
+		setView(LIST);
+		return "/fichacampo/index";
+	}
+	
+	public String index() {
+		return "/fichacampo/index";
+	}
+		
+	public void resetView() {
+		setView(LIST);
 	}
 
 	public FichaCampo getFichaCampo() {

@@ -17,7 +17,7 @@
 	<div style="padding-top: 50px;">
 		<h:form id="listarCnarhs" prependId="false" >
 			<br/>
-            <p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{cnarhBean.adicionarBtnNovoCnarh}" ajax="false" />
+            <p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{cnarhBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
 			<p:dataTable id="tabelaCnarhs" value="#{cnarhBean.cnarhs}" widgetVar="tabelaCnarhs" 
 			emptyMessage="Não foram encontrados registros." filteredValue="#{cnarhBean.filteredCnarhs}" 

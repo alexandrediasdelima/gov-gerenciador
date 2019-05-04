@@ -23,6 +23,8 @@
 		<class>org.gov.model.ConsumoHumano</class>
 		<class>org.gov.model.Empreendimento</class>
 		<class>org.gov.model.Emp_ds_uf</class>
+		<class>org.gov.model.ExportCnarh</class>
+		<class>org.gov.model.FichaCampo</class>
 		<class>org.gov.model.Fin_tfn_cd</class>
 		<class>org.gov.model.Fornecedor</class>
 		<class>org.gov.model.Fou_tou_cd</class>
@@ -37,6 +39,7 @@
 		<class>org.gov.model.Out_tpo_cd</class>
 		<class>org.gov.model.Out_tsp_cd</class>
 		<class>org.gov.model.Pecuaria</class>
+		<class>org.gov.model.Regiao</class>
 		<class>org.gov.model.Sir_tct_cd</class>
 		<class>org.gov.model.Sir_tsi_cd</class>
 		<class>org.gov.model.TesteBombeamento</class>
@@ -44,9 +47,6 @@
 		<class>org.gov.model.Tst_ttb_cd</class>
 		<class>org.gov.model.Usuario</class>
 		<class>org.gov.model.Vazao</class>
-		<class>org.gov.model.Regiao</class>
-		<class>org.gov.model.FichaCampo</class>
-		<class>org.gov.model.ExportCnarh</class>
 
 		<properties>
 			<!-- Propriedades JDBC -->

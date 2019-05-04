@@ -2,17 +2,12 @@ package org.gov.web.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.gov.model.OutraInfo;
 import org.gov.model.Regiao;
 import org.gov.model.Usuario;
 import org.gov.service.UsuarioService;
 import org.gov.service.UsuarioServiceImpl;
 
 public class UsuarioBean extends Controller  {
-
-
-
 	/**
 	 *
 	 */
@@ -31,38 +26,18 @@ public class UsuarioBean extends Controller  {
 		usuarioService = new UsuarioServiceImpl();
 		usuarios = new ArrayList<Usuario>();
 		usuarios();
+		
 	}
 
-	public String redirecionarTelaCadastro(int id) {
-		usuario = new Usuario();
-		this.usuario.setUsuario_id(id);
-
-		Usuario usr = usuarioService.pesquisar(id);
-		setView(ADD);
-
-		if(usr != null) {
-			this.usuario = usr;
-			setView(EDIT);
-		}
-
-		return eval(index());
-	}
-
-	public void resetView() {
-		//setView(LIST);
-	}
+	public void usuarios() {
+		this.usuarios = usuarioService.usuarios();
+	}	
 	
 	public String gravar() {
 		setView(LIST);
 		usuarioService.gravar(usuario);
 		usuarios();
 		
-		return eval(index());
-	}
-
-	public String usuarios() {
-		this.usuarios = usuarioService.usuarios();
-		setView(LIST);
 		return eval(index());
 	}
 
@@ -86,13 +61,15 @@ public class UsuarioBean extends Controller  {
 		setView(ADD);
 		limparForm();
 		this.setRegioes(usuarioService.buscarMunicipios(usuario.getEmp_ds_uf()));
+		
 		return eval(index());
 	}
 
 	public String telaEditar(Usuario usuario) {
-		setView(EDIT);
+		setView(EDIT);		
 		this.usuario = usuario;
 		this.setRegioes(usuarioService.buscarMunicipios(usuario.getEmp_ds_uf()));
+		
 		return eval(index());
 	}
 
@@ -100,6 +77,7 @@ public class UsuarioBean extends Controller  {
 		setView(LIST);
 		usuarioService.editar(usuario);
 		usuarios();
+		
 		return eval(index());
 	}
 
@@ -107,52 +85,61 @@ public class UsuarioBean extends Controller  {
 		setView(LIST);
 		usuarioService.remover(usuario.getUsuario_id());
 		usuarios();
+		
 		return eval(index());
 	}
 
-	 private void limparForm() {
-		 this.usuario.setUsuario_id(null);
-		 this.usuario.setEmp_nm_usuario(null);
-		 this.usuario.setEmp_nm_apelido(null);
-		 this.usuario.setEmp_nu_cpfcnpj(null);
-		 this.usuario.setEmp_nu_tipodocumento("cpf");
-		 this.usuario.setEmp_nu_ddd(null);
-		 this.usuario.setEmp_nu_telefone(null);
-		 this.usuario.setEmp_ds_emailresponsavel(null);
-		 this.usuario.setEmp_ds_tp_logradouro(null);
-		 this.usuario.setEmp_ds_nm_logradouro(null);
-		 this.usuario.setEmp_nu_logradouro(null);
-		 this.usuario.setEmp_ds_complementoendereco(null);
-		 this.usuario.setEmp_ds_bairrodistrito(null);
-		 this.usuario.setEmp_nu_caixapostal(null);
-		 this.usuario.setEmp_nu_cependereco(null);
-		 this.usuario.setApa_muni_correspondencia(null);
-		 this.usuario.setEmp_cd_codigoibgecorrespondencia(null);
-		 this.usuario.setEmp_ds_uf(null);
-		 this.usuario.setEmp_ds_relacaopropriedade(null);
+	public String redirecionarTelaCadastro(int id) {
+		usuario = new Usuario();
+		this.usuario.setUsuario_id(id);
+
+		Usuario usr = usuarioService.pesquisar(id);
+
+		if(usr == null) {
+			setView(ADD);
+		} else {
+			this.usuario = usr;
+			setView(EDIT);
+		}
+		
+		return eval(index());
+	}	
+	
+	private void limparForm() {
+		this.usuario = null;
+		setUsuario(new Usuario());
+		this.usuario.setEmp_nu_tipodocumento("cpf");
 	}
-
-//	public void onDateSelect(SelectEvent event) {
-//	        FacesContext facesContext = FacesContext.getCurrentInstance();
-//	        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-//	        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
-//	    }
-
 
 	public String voltar() {
 		setView(LIST);
-		limparForm();
+		//String x = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath().toString();
+		return eval(index());
+	}
+	
+	private String index() {
 		return "/usuario/index";
 	}
-		
-	public String index() {
-		return "/usuario/index";
+	
+	public void resetView() {
+		setView(LIST);
 	}
+	
+//	public void onDateSelect(SelectEvent event) {
+//    FacesContext facesContext = FacesContext.getCurrentInstance();
+//    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+//    facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
+//}
 
+	
+	
+
+	
+	
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}
-
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
