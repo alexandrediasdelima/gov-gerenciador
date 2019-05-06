@@ -1,20 +1,24 @@
 package org.gov.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;
 
 @Entity
+@Immutable
 @Table(name="vw_export_cnarh")
 @Subselect("select * from vw_export_cnarh")
-public class ExportCnarh {
+public class ExportCnarh implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Column (name="int_tin_cd")
 	@Id
+	@Column (name="int_tin_cd")
 	private String int_tin_cd;
 
 	@Column (name="int_tsu_cd")
@@ -374,6 +378,8 @@ public class ExportCnarh {
 	@Column (name="ama_qt_magnesio")
 	private String ama_qt_magnesio;
 
+	
+	
 	public String getInt_tin_cd() {
 		return int_tin_cd;
 	}
@@ -1325,132 +1331,7 @@ public class ExportCnarh {
 	public void setAma_qt_sulfato(String ama_qt_sulfato) {
 		this.ama_qt_sulfato = ama_qt_sulfato;
 	}
-
-	@Override
-	public String toString() {
-		return int_tin_cd + ";" +
-				int_tsu_cd + ";" +
-				int_tsi_cd + ";" +
-				int_cr_latitude + ";" +
-				int_cr_longitude + ";" +
-				ing_nu_ibgemunicipio + ";" +
-				emp_nm_empreendimento + ";" +
-				emp_nu_cpfcnpj + ";" +
-				emp_nm_usuario + ";" +
-				emp_ds_emailresponsavel + ";" +
-				emp_nu_cependereco + ";" +
-				emp_ds_logradouro + ";" +
-				emp_ds_complementoendereco + ";" +
-				emp_nu_logradouro + ";" +
-				emp_nu_caixapostal + ";" +
-				emp_cd_codigoibgecorrespondencia + ";" +
-				emp_nu_ddd + ";" +
-				emp_nu_telefone + ";" +
-				out_tpo_cd + ";" +
-				out_tsp_cd + ";" +
-				out_dt_inicial + ";" +
-				out_dt_final + ";" +
-				out_nu_processo + ";" +
-				out_ds_ato + ";" +
-				out_nu_ato + ";" +
-				int_nu_siagas + ";" +
-				ope_vz_mesjan + ";" +
-				ope_vz_mesfev + ";" +
-				ope_vz_mesmar + ";" +
-				ope_vz_mesabr + ";" +
-				ope_vz_mesmai + ";" +
-				ope_vz_mesjun + ";" +
-				ope_vz_mesjul + ";" +
-				ope_vz_mesago + ";" +
-				ope_vz_messet + ";" +
-				ope_vz_mesout + ";" +
-				ope_vz_mesnov + ";" +
-				ope_vz_mesdez + ";" +
-				ope_qt_horasjan + ";" +
-				ope_qt_horasfev + ";" +
-				ope_qt_horasmar + ";" +
-				ope_qt_horasabr + ";" +
-				ope_qt_horasmai + ";" +
-				ope_qt_horasjun + ";" +
-				ope_qt_horasjul + ";" +
-				ope_qt_horasago + ";" +
-				ope_qt_horasset + ";" +
-				ope_qt_horasout + ";" +
-				ope_qt_horasnov + ";" +
-				ope_qt_horasdez + ";" +
-				ope_qt_diajan + ";" +
-				ope_qt_diafev + ";" +
-				ope_qt_diamar + ";" +
-				ope_qt_diaabr + ";" +
-				ope_qt_diamai + ";" +
-				ope_qt_diajun + ";" +
-				ope_qt_diajul + ";" +
-				ope_qt_diaago + ";" +
-				ope_qt_diaset + ";" +
-				ope_qt_diaout + ";" +
-				ope_qt_dianov + ";" +
-				ope_qt_diadez + ";" +
-				int_vz_maxima + ";" +
-				fou_tou_cd + ";" +
-				sir_tsi_cd + ";" +
-				sir_tct_cd + ";" +
-				sir_ar_irrigada + ";" +
-				ius_nu_alturares + ";" +
-				ius_ar_resmax + ";" +
-				ius_vo_resmax + ";" +
-				efl_qt_dbobruto + ";" +
-				efl_qt_dbotratado + ";" +
-				efl_qt_fosforobruto + ";" +
-				efl_qt_fosforotratado + ";" +
-				efl_qt_nitrogeniobruto + ";" +
-				efl_qt_nitrogeniotratado + ";" +
-				asb_dt_instalacao + ";" +
-				asb_tpn_cd + ";" +
-				asb_nu_diametroperfuracao + ";" +
-				asb_nu_diametrofiltro + ";" +
-				asb_aqp_cd + ";" +
-				asb_nu_topo + ";" +
-				asb_nu_base + ";" +
-				asb_tnp_cd + ";" +
-				asb_tca_cd + ";" +
-				asb_nu_profundidadefinal + ";" +
-				asb_nu_alturabocatubo + ";" +
-				asb_nu_cotaterreno + ";" +
-				tst_dt + ";" +
-				tst_ttb_cd + ";" +
-				tst_ds_tempoduracao + ";" +
-				tst_nu_nd + ";" +
-				tst_nu_ne + ";" +
-				tst_vz_estabilizacao + ";" +
-				tst_tmi_cd + ";" +
-				tst_nu_coeficientearmazenamento + ";" +
-				tst_nu_transmissividade + ";" +
-				tst_nu_condutividadehidraulica + ";" +
-				tst_nu_permeabilidade + ";" +
-				ama_dt_coleta + ";" +
-				ama_dt_analise + ";" +
-				ama_nu_condutividadeeletrica + ";" +
-				ama_qt_temperatura + ";" +
-				ama_qt_std + ";" +
-				ama_qt_ph + ";" +
-				ama_qt_coliformestotais + ";" +
-				ama_qt_coliformesfecais + ";" +
-				ama_qt_bicarbonato + ";" +
-				ama_qt_calcio + ";" +
-				ama_qt_carbonato + ";" +
-				ama_qt_cloreto + ";" +
-				ama_qt_durezatotal + ";" +
-				ama_qt_ferrototal + ";" +
-				ama_qt_fluoretos + ";" +
-				ama_qt_nitratos + ";" +
-				ama_qt_nitritos + ";" +
-				ama_qt_potassio + ";" +
-				ama_qt_sodio + ";" +
-				ama_qt_sulfato + ";" +
-				getAma_qt_magnesio() + ";";
-
-	}
-
+	
 	public String getAma_qt_magnesio() {
 		return ama_qt_magnesio;
 	}
@@ -1459,5 +1340,128 @@ public class ExportCnarh {
 		this.ama_qt_magnesio = ama_qt_magnesio;
 	}
 
+	@Override
+	public String toString() {
+		return getInt_tin_cd() + ";" +
+			getInt_tsu_cd() + ";" +
+			getInt_tsi_cd() + ";" +
+			getInt_cr_latitude() + ";" +
+			getInt_cr_longitude() + ";" +
+			getIng_nu_ibgemunicipio() + ";" +
+			getEmp_nm_empreendimento() + ";" +
+			getEmp_nu_cpfcnpj() + ";" +
+			getEmp_nm_usuario() + ";" +
+			getEmp_ds_emailresponsavel() + ";" +
+			getEmp_nu_cependereco() + ";" +
+			getEmp_ds_logradouro() + ";" +
+			getEmp_ds_complementoendereco() + ";" +
+			getEmp_nu_logradouro() + ";" +
+			getEmp_nu_caixapostal() + ";" +
+			getEmp_cd_codigoibgecorrespondencia() + ";" +
+			getEmp_nu_ddd() + ";" +
+			getEmp_nu_telefone() + ";" +
+			getOut_tpo_cd() + ";" +
+			getOut_tsp_cd() + ";" +
+			getOut_dt_inicial() + ";" +
+			getOut_dt_final() + ";" +
+			getOut_nu_processo() + ";" +
+			getOut_ds_ato() + ";" +
+			getOut_nu_ato() + ";" +
+			getInt_nu_siagas() + ";" +
+			getOpe_vz_mesjan() + ";" +
+			getOpe_vz_mesfev() + ";" +
+			getOpe_vz_mesmar() + ";" +
+			getOpe_vz_mesabr() + ";" +
+			getOpe_vz_mesmai() + ";" +
+			getOpe_vz_mesjun() + ";" +
+			getOpe_vz_mesjul() + ";" +
+			getOpe_vz_mesago() + ";" +
+			getOpe_vz_messet() + ";" +
+			getOpe_vz_mesout() + ";" +
+			getOpe_vz_mesnov() + ";" +
+			getOpe_vz_mesdez() + ";" +
+			getOpe_qt_horasjan() + ";" +
+			getOpe_qt_horasfev() + ";" +
+			getOpe_qt_horasmar() + ";" +
+			getOpe_qt_horasabr() + ";" +
+			getOpe_qt_horasmai() + ";" +
+			getOpe_qt_horasjun() + ";" +
+			getOpe_qt_horasjul() + ";" +
+			getOpe_qt_horasago() + ";" +
+			getOpe_qt_horasset() + ";" +
+			getOpe_qt_horasout() + ";" +
+			getOpe_qt_horasnov() + ";" +
+			getOpe_qt_horasdez() + ";" +
+			getOpe_qt_diajan() + ";" +
+			getOpe_qt_diafev() + ";" +
+			getOpe_qt_diamar() + ";" +
+			getOpe_qt_diaabr() + ";" +
+			getOpe_qt_diamai() + ";" +
+			getOpe_qt_diajun() + ";" +
+			getOpe_qt_diajul() + ";" +
+			getOpe_qt_diaago() + ";" +
+			getOpe_qt_diaset() + ";" +
+			getOpe_qt_diaout() + ";" +
+			getOpe_qt_dianov() + ";" +
+			getOpe_qt_diadez() + ";" +
+			getInt_vz_maxima() + ";" +
+			getFou_tou_cd() + ";" +
+			getSir_tsi_cd() + ";" +
+			getSir_tct_cd() + ";" +
+			getSir_ar_irrigada() + ";" +
+			getIus_nu_alturares() + ";" +
+			getIus_ar_resmax() + ";" +
+			getIus_vo_resmax() + ";" +
+			getEfl_qt_dbobruto() + ";" +
+			getEfl_qt_dbotratado() + ";" +
+			getEfl_qt_fosforobruto() + ";" +
+			getEfl_qt_fosforotratado() + ";" +
+			getEfl_qt_nitrogeniobruto() + ";" +
+			getEfl_qt_nitrogeniotratado() + ";" +
+			getAsb_dt_instalacao() + ";" +
+			getAsb_tpn_cd() + ";" +
+			getAsb_nu_diametroperfuracao() + ";" +
+			getAsb_nu_diametrofiltro() + ";" +
+			getAsb_aqp_cd() + ";" +
+			getAsb_nu_topo() + ";" +
+			getAsb_nu_base() + ";" +
+			getAsb_tnp_cd() + ";" +
+			getAsb_tca_cd() + ";" +
+			getAsb_nu_profundidadefinal() + ";" +
+			getAsb_nu_alturabocatubo() + ";" +
+			getAsb_nu_cotaterreno() + ";" +
+			getTst_dt() + ";" +
+			getTst_ttb_cd() + ";" +
+			getTst_ds_tempoduracao() + ";" +
+			getTst_nu_nd() + ";" +
+			getTst_nu_ne() + ";" +
+			getTst_vz_estabilizacao() + ";" +
+			getTst_tmi_cd() + ";" +
+			getTst_nu_coeficientearmazenamento() + ";" +
+			getTst_nu_transmissividade() + ";" +
+			getTst_nu_condutividadehidraulica() + ";" +
+			getTst_nu_permeabilidade() + ";" +
+			getAma_dt_coleta() + ";" +
+			getAma_dt_analise() + ";" +
+			getAma_nu_condutividadeeletrica() + ";" +
+			getAma_qt_temperatura() + ";" +
+			getAma_qt_std() + ";" +
+			getAma_qt_ph() + ";" +
+			getAma_qt_coliformestotais() + ";" +
+			getAma_qt_coliformesfecais() + ";" +
+			getAma_qt_bicarbonato() + ";" +
+			getAma_qt_calcio() + ";" +
+			getAma_qt_carbonato() + ";" +
+			getAma_qt_cloreto() + ";" +
+			getAma_qt_durezatotal() + ";" +
+			getAma_qt_ferrototal() + ";" +
+			getAma_qt_fluoretos() + ";" +
+			getAma_qt_nitratos() + ";" +
+			getAma_qt_nitritos() + ";" +
+			getAma_qt_potassio() + ";" +
+			getAma_qt_sodio() + ";" +
+			getAma_qt_sulfato() + ";" +
+			getAma_qt_magnesio() + ";";
+	}
 
 }

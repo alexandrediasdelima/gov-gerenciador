@@ -11,17 +11,12 @@ import org.gov.model.Usuario;
 
 
 public class UsuarioServiceImpl implements UsuarioService{
-
-
-
-	//private LivroDao livroDao;
-
-	private UsuarioDao usuarioDao;
-
 	/**
 	 *
 	 */
 	private static final long serialVersionUID = 7934347956668614856L;
+	
+	private UsuarioDao usuarioDao;
 
 	public String gravar(Usuario usuario) {
 

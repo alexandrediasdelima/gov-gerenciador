@@ -45,6 +45,7 @@
 				            <ui:remove><p:menuitem value="Testes" action="#{asbtstBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" /></ui:remove>
 				            <p:menuitem value="Teste Bombeamento" action="#{testebombeamentoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 			            </p:submenu>
+			            <ui:remove><p:menuitem value="Reservatório" action="#{cnarhBean.redirecionarTelaCadastro(interferencia.cnarh_id)}" icon="ui-icon-bullet" /></ui:remove>
 			            <p:menuitem value="Captação" action="#{captacaoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 			            <p:menuitem value="Consumo Humano" action="#{consumohumanoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
 			            <p:menuitem value="Irrigação" action="#{irrigacaoBean.redirecionarTelaCadastro(interferencia.int_id)}" icon="ui-icon-bullet" />
@@ -58,7 +59,7 @@
 				</p:column>
 				<p:column headerText="ID-Cnarh" filterBy="#{interferencia.cnarh_id}" filterMatchMode="contains" sortBy="#{interferencia.cnarh_id}" >
 					<p:commandLink value="#{interferencia.cnarh_id}" action="#{cnarhBean.redirecionarTelaCadastro(interferencia.cnarh_id)}" />
-				</p:column>
+				</p:column>	
 				<p:column headerText="Estudo Hidrológico" filterBy="#{interferencia.apa_est_hidrologico}" filterMatchMode="contains" sortBy="#{interferencia.apa_est_hidrologico}" >
 					<h:panelGroup rendered="#{interferencia.apa_est_hidrologico}"><h:outputText value="SIM" /></h:panelGroup>
 					<h:panelGroup rendered="#{!interferencia.apa_est_hidrologico}"><h:outputText value="NÃO" /></h:panelGroup>

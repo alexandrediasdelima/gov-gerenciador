@@ -102,40 +102,52 @@
 					<h:outputText value="#{apac.nomeObra}" />
 				</p:column>
 				<p:column headerText="Outorga Válida Janeiro" filterBy="#{apac.outorgaValidaJaneiro}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaJaneiro}">
-					<h:outputText value="#{apac.outorgaValidaJaneiro}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaJaneiro}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaJaneiro}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Fevereiro" filterBy="#{apac.outorgaValidaFevereiro}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaFevereiro}">
-					<h:outputText value="#{apac.outorgaValidaFevereiro}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaFevereiro}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaFevereiro}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Março" filterBy="#{apac.outorgaValidaMarco}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaMarco}">
-					<h:outputText value="#{apac.outorgaValidaMarco}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaMarco}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaMarco}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Abril" filterBy="#{apac.outorgaValidaAbril}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaAbril}">
-					<h:outputText value="#{apac.outorgaValidaAbril}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaAbril}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaAbril}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Maio" filterBy="#{apac.outorgaValidaMaio}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaMaio}">
-					<h:outputText value="#{apac.outorgaValidaMaio}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaMaio}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaMaio}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Junho" filterBy="#{apac.outorgaValidaJunho}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaJunho}">
-					<h:outputText value="#{apac.outorgaValidaJunho}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaJunho}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaJunho}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Julho" filterBy="#{apac.outorgaValidaJulho}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaJulho}">
-					<h:outputText value="#{apac.outorgaValidaJulho}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaJulho}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaJulho}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Agosto" filterBy="#{apac.outorgaValidaAgosto}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaAgosto}">
-					<h:outputText value="#{apac.outorgaValidaAgosto}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaAgosto}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaAgosto}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Setembro" filterBy="#{apac.outorgaValidaSetembro}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaSetembro}">
-					<h:outputText value="#{apac.outorgaValidaSetembro}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaSetembro}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaSetembro}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Outubro" filterBy="#{apac.outorgaValidaOutubro}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaOutubro}">
-					<h:outputText value="#{apac.outorgaValidaOutubro}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaOutubro}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaOutubro}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Novembro" filterBy="#{apac.outorgaValidaNovembro}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaNovembro}">
-					<h:outputText value="#{apac.outorgaValidaNovembro}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaNovembro}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaNovembro}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Outorga Válida Dezembro" filterBy="#{apac.outorgaValidaDezembro}" filterMatchMode="contains" sortBy="#{apac.outorgaValidaDezembro}">
-					<h:outputText value="#{apac.outorgaValidaDezembro}" />
+					<h:panelGroup rendered="#{apac.outorgaValidaDezembro}" ><h:panelGroup rendered="SIM" /></h:panelGroup>
+					<h:panelGroup rendered="#{!apac.outorgaValidaDezembro}" ><h:panelGroup rendered="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{apacBean.telaEditar(apac)}" value="Editar" ajax="false" icon="ui-icon-document" />

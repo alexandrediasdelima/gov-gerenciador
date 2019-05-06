@@ -11,6 +11,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -155,8 +156,10 @@ public class InterferenciaBean extends Controller  {
 		if(file != null) {
 
 		    nomeArquivo =  new Date().getTime() + file.getFileName();
-
+		    //String imagePath = "/resources/images/interferencia/";
+		    
         	String caminhoDestinoArquivo = "C:/import_cad/imagens/" + nomeArquivo;
+        	//String caminhoDestinoArquivo = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath().toString() + imagePath + nomeArquivo;    
 
         	boolean transferenciaSucesso = false;
         	try {
@@ -178,36 +181,36 @@ public class InterferenciaBean extends Controller  {
 	}
 
 
-	   private boolean copyFile(InputStream is, String outFile) {
+   private boolean copyFile(InputStream is, String outFile) {
 
-		      OutputStream os = null;
-		      byte[] buffer;
-		      boolean success = true;
-		      try {
-		         os = new FileOutputStream(outFile);
+	      OutputStream os = null;
+	      byte[] buffer;
+	      boolean success = true;
+	      try {
+	         os = new FileOutputStream(outFile);
 
-		         buffer = new byte[is.available()];
-		         is.read(buffer);
-		         os.write(buffer);
+	         buffer = new byte[is.available()];
+	         is.read(buffer);
+	         os.write(buffer);
 
 
 
-		      } catch (IOException e) {
-		         success = false;
-		      } catch (OutOfMemoryError e) {
-		         success = false;
-		      } finally {
-		         try {
-		            if (is != null) {
-		               is.close();
-		            }
-		            if (os != null) {
-		               os.close();
-		            }
-		         } catch (IOException e) {}
-		      }
-		      return success;
-		   }
+	      } catch (IOException e) {
+	         success = false;
+	      } catch (OutOfMemoryError e) {
+	         success = false;
+	      } finally {
+	         try {
+	            if (is != null) {
+	               is.close();
+	            }
+	            if (os != null) {
+	               os.close();
+	            }
+	         } catch (IOException e) {}
+	      }
+	      return success;
+	   }
 
 	public void apresentarOutroUso() {
 		if ("53".equals(interferencia.getFou_tou_cd())) {

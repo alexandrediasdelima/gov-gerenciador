@@ -88,6 +88,26 @@
 		<p:panelGrid styleClass="central">
 	        <f:facet name="header">
 		        <p:row>
+		            <p:column colspan="4">Fonte das Informações</p:column>
+		        </p:row>
+		    </f:facet>
+		    <p:row>
+				<p:column style="width:30%"><p:outputLabel value="Nome do responsável pelas informações:" for="forn_info_nm" /></p:column>
+				<p:column style="width:30%"><p:outputLabel style="font-weight: bold" id="forn_info_nm" value="#{fichaCampoBean.fichaCampo.forn_info_nm}" /></p:column>
+				<p:column style="width:10%"><p:outputLabel value="Cargo:" for="forn_info_cargo" /></p:column>
+				<p:column style="width:30%"><p:outputLabel style="font-weight: bold" id="forn_info_cargo" value="#{fichaCampoBean.fichaCampo.forn_info_cargo}" /></p:column>
+			</p:row>
+			<p:row>
+				<p:column><p:outputLabel value="Departamento:" for="forn_info_departamento" /></p:column>
+				<p:column><p:outputLabel style="font-weight: bold" id="forn_info_departamento" value="#{fichaCampoBean.fichaCampo.forn_info_departamento}" /></p:column>
+				<p:column><p:outputLabel value="Contato:" for="forn_info_contato_inst" /></p:column>
+				<p:column><p:outputLabel style="font-weight: bold" id="forn_info_contato_inst" value="#{fichaCampoBean.fichaCampo.forn_info_contato_inst}" /></p:column>
+			</p:row>
+		</p:panelGrid>
+		<br/><br/>
+		<p:panelGrid styleClass="central">
+	        <f:facet name="header">
+		        <p:row>
 		            <p:column colspan="4">Empreendimento</p:column>
 		        </p:row>
 		    </f:facet>
@@ -179,7 +199,7 @@
 				<p:column><p:outputLabel style="font-weight: bold" id="fin_tfn_cd" value="#{fichaCampoBean.fichaCampo.fin_tfn_cd}" /></p:column>
 			</p:row>
 			<p:row>
-				<p:column><p:outputLabel value="Outro tipo de finalidade:" for="fou_tou_cd" /></p:column>
+				<p:column><p:outputLabel value="Tipo de Outro Uso:" for="fou_tou_cd" /></p:column>
 				<p:column><p:outputLabel style="font-weight: bold" id="fou_tou_cd" value="#{fichaCampoBean.fichaCampo.fou_tou_cd}" /></p:column>
 				<p:column><p:outputLabel value="Outro tipo de finalidade não listado:" for="fou_tou_tp_outro" /></p:column>
 				<p:column><p:outputLabel style="font-weight: bold" id="fou_tou_tp_outro" value="#{fichaCampoBean.fichaCampo.fou_tou_tp_outro}" /></p:column>
@@ -360,7 +380,7 @@
 		<p:panelGrid styleClass="central" style="width: 100% !important">
 	        <f:facet name="header">
 		        <p:row>
-		            <p:column colspan="4">Horas diárias</p:column>
+		            <p:column colspan="4">Horas Diárias</p:column>
 		        </p:row>
 		    </f:facet>
 		    <p:row>
@@ -403,7 +423,7 @@
 		<p:panelGrid styleClass="central" style="width: 100% !important">
 	        <f:facet name="header">
 		        <p:row>
-		            <p:column colspan="4">Dias no mês</p:column>
+		            <p:column colspan="4">Dias no Mês</p:column>
 		        </p:row>
 		    </f:facet>
 		    <p:row>
@@ -446,7 +466,7 @@
 		<p:panelGrid styleClass="central" style="width: 100% !important">
 	        <f:facet name="header">
 		        <p:row>
-		            <p:column colspan="4">Vazão mensal</p:column>
+		            <p:column colspan="4">Vazão Mensal</p:column>
 		        </p:row>
 		    </f:facet>
 		    <p:row>
@@ -588,7 +608,7 @@
 		<p:panelGrid styleClass="central" style="width: 100% !important">
 	        <f:facet name="header">
 		        <p:row>
-		            <p:column colspan="4">Validade da outorga (APAC)</p:column>
+		            <p:column colspan="4">Validade da Outorga (APAC)</p:column>
 		        </p:row>
 		    </f:facet>
 		    <p:row>
@@ -632,7 +652,7 @@
 		<p:panelGrid styleClass="central">
 	        <f:facet name="header">
 		        <p:row>
-		            <p:column colspan="4">Outras informações</p:column>
+		            <p:column colspan="4">Outras Informações</p:column>
 		        </p:row>
 		    </f:facet>
 		    <p:row>    
@@ -696,7 +716,7 @@
 		<p:panelGrid styleClass="central" style="width: 100% !important">
 	        <f:facet name="header">
 		        <p:row>
-		            <p:column colspan="4">Teste de bombeamento</p:column>
+		            <p:column colspan="4">Teste de Bombeamento</p:column>
 		        </p:row>
 		    </f:facet>
 		    <p:row>

@@ -11,14 +11,10 @@ import org.gov.dao.Export_CnarhDao;
 import org.gov.model.ExportCnarh;
 
 public class ExportCnarhServiceImpl implements ExportCnarhService {
-
 	/**
 	 *
 	 */
 	private static final long serialVersionUID = -3568362415379220176L;
-	/**
-	 *
-	 */
 
 	private Export_CnarhDao exportCnarhDao;
 
