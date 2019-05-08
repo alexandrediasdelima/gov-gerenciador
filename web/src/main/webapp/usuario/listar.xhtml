@@ -85,9 +85,17 @@
 				<p:inputText value="#{usuario.emp_nu_tipodocumento}" type="hidden"  />
 				<p:column headerText="Ações">
 					<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document"/>
-					<p:commandButton value="Apagar" action="#{usuarioBean.deletar}" oncomplete="PF('tabelaUsuarios').filter()" update="@form" icon="ui-icon-cancel">
-				        <f:setPropertyActionListener value="#{usuario}" target="#{usuarioBean.usuario}" />
+				    
+				    <p:commandButton value="Apagar" action="#{usuarioBean.deletar}" oncomplete="PF('tabelaUsuarios').filter()" update="@form" icon="ui-icon-cancel">
+				        <p:confirm header="Apac" message="Confirma a Exclusão?" />
 				    </p:commandButton>
+				    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+				        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes">
+				        	<f:setPropertyActionListener value="#{usuario}" target="#{usuarioBean.usuario}" />
+				        </p:commandButton>
+				        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" />
+				    </p:confirmDialog>
+
 				</p:column>
 			</p:dataTable>
 
