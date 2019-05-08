@@ -1,23 +1,23 @@
 package org.gov.model;
 
 import java.io.Serializable;
-
+import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.Immutable;
 import org.hibernate.annotations.Subselect;
 
 @Entity
-@Immutable
 @Table(name="vw_export_cnarh")
 @Subselect("select * from vw_export_cnarh")
 public class ExportCnarh implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@Column (name="id_view")
+	private BigDecimal id_view;
+	
 	@Column (name="int_tin_cd")
 	private String int_tin_cd;
 
@@ -379,1089 +379,1100 @@ public class ExportCnarh implements Serializable {
 	private String ama_qt_magnesio;
 
 	
-	
+	public BigDecimal getId_view() {
+		return id_view;
+	}
+
+	public void setId_view(BigDecimal id_view) {
+		this.id_view = id_view;
+	}
+
 	public String getInt_tin_cd() {
-		return int_tin_cd;
+		return (int_tin_cd == null ? "" : int_tin_cd);
 	}
 
 	public void setInt_tin_cd(String int_tin_cd) {
-		this.int_tin_cd = int_tin_cd;
+		this.int_tin_cd = (int_tin_cd == null ? "" : int_tin_cd);
 	}
 
 	public String getInt_tsu_cd() {
-		return int_tsu_cd;
+		return (int_tsu_cd == null ? "" : int_tsu_cd);
 	}
 
 	public void setInt_tsu_cd(String int_tsu_cd) {
-		this.int_tsu_cd = int_tsu_cd;
+		this.int_tsu_cd = (int_tsu_cd == null ? "" : int_tsu_cd);
 	}
 
 	public String getInt_tsi_cd() {
-		return int_tsi_cd;
+		return (int_tsi_cd == null ? "" : int_tsi_cd);
 	}
 
 	public void setInt_tsi_cd(String int_tsi_cd) {
-		this.int_tsi_cd = int_tsi_cd;
+		this.int_tsi_cd = (int_tsi_cd == null ? "" : int_tsi_cd);
 	}
 
 	public String getInt_cr_latitude() {
-		return int_cr_latitude;
+		return (int_cr_latitude == null ? "" : int_cr_latitude);
 	}
 
 	public void setInt_cr_latitude(String int_cr_latitude) {
-		this.int_cr_latitude = int_cr_latitude;
+		this.int_cr_latitude = (int_cr_latitude == null ? "" : int_cr_latitude);
 	}
 
 	public String getInt_cr_longitude() {
-		return int_cr_longitude;
+		return (int_cr_longitude == null ? "" : int_cr_longitude);
 	}
 
 	public void setInt_cr_longitude(String int_cr_longitude) {
-		this.int_cr_longitude = int_cr_longitude;
+		this.int_cr_longitude = (int_cr_longitude == null ? "" : int_cr_longitude);
 	}
 
 	public String getIng_nu_ibgemunicipio() {
-		return ing_nu_ibgemunicipio;
+		return (ing_nu_ibgemunicipio == null ? "" : ing_nu_ibgemunicipio);
 	}
 
 	public void setIng_nu_ibgemunicipio(String ing_nu_ibgemunicipio) {
-		this.ing_nu_ibgemunicipio = ing_nu_ibgemunicipio;
+		this.ing_nu_ibgemunicipio = (ing_nu_ibgemunicipio == null ? "" : ing_nu_ibgemunicipio);
 	}
 
 	public String getEmp_nm_empreendimento() {
-		return emp_nm_empreendimento;
+		return (emp_nm_empreendimento == null ? "" : emp_nm_empreendimento);
 	}
 
 	public void setEmp_nm_empreendimento(String emp_nm_empreendimento) {
-		this.emp_nm_empreendimento = emp_nm_empreendimento;
+		this.emp_nm_empreendimento = (emp_nm_empreendimento == null ? "" : emp_nm_empreendimento);
 	}
 
 	public String getEmp_nu_cpfcnpj() {
-		return emp_nu_cpfcnpj;
+		return (emp_nu_cpfcnpj == null ? "" : emp_nu_cpfcnpj);
 	}
 
 	public void setEmp_nu_cpfcnpj(String emp_nu_cpfcnpj) {
-		this.emp_nu_cpfcnpj = emp_nu_cpfcnpj;
+		this.emp_nu_cpfcnpj = (emp_nu_cpfcnpj == null ? "" : emp_nu_cpfcnpj);
 	}
 
 	public String getEmp_nm_usuario() {
-		return emp_nm_usuario;
+		return (emp_nm_usuario == null ? "" : emp_nm_usuario);
 	}
 
 	public void setEmp_nm_usuario(String emp_nm_usuario) {
-		this.emp_nm_usuario = emp_nm_usuario;
+		this.emp_nm_usuario = (emp_nm_usuario == null ? "" : emp_nm_usuario);
 	}
 
 	public String getEmp_ds_emailresponsavel() {
-		return emp_ds_emailresponsavel;
+		return (emp_ds_emailresponsavel == null ? "" : emp_ds_emailresponsavel);
 	}
 
 	public void setEmp_ds_emailresponsavel(String emp_ds_emailresponsavel) {
-		this.emp_ds_emailresponsavel = emp_ds_emailresponsavel;
+		this.emp_ds_emailresponsavel = (emp_ds_emailresponsavel == null ? "" : emp_ds_emailresponsavel);
 	}
 
 	public String getEmp_nu_cependereco() {
-		return emp_nu_cependereco;
+		return (emp_nu_cependereco == null ? "" : emp_nu_cependereco);
 	}
 
 	public void setEmp_nu_cependereco(String emp_nu_cependereco) {
-		this.emp_nu_cependereco = emp_nu_cependereco;
+		this.emp_nu_cependereco = (emp_nu_cependereco == null ? "" : emp_nu_cependereco);
 	}
 
 	public String getEmp_ds_logradouro() {
-		return emp_ds_logradouro;
+		return (emp_ds_logradouro == null ? "" : emp_ds_logradouro);
 	}
 
 	public void setEmp_ds_logradouro(String emp_ds_logradouro) {
-		this.emp_ds_logradouro = emp_ds_logradouro;
+		this.emp_ds_logradouro = (emp_ds_logradouro == null ? "" : emp_ds_logradouro);
 	}
 
 	public String getEmp_ds_complementoendereco() {
-		return emp_ds_complementoendereco;
+		return (emp_ds_complementoendereco == null ? "" : emp_ds_complementoendereco);
 	}
 
 	public void setEmp_ds_complementoendereco(String emp_ds_complementoendereco) {
-		this.emp_ds_complementoendereco = emp_ds_complementoendereco;
+		this.emp_ds_complementoendereco = (emp_ds_complementoendereco == null ? "" : emp_ds_complementoendereco);
 	}
 
 	public String getEmp_nu_logradouro() {
-		return emp_nu_logradouro;
+		return (emp_nu_logradouro == null ? "" : emp_nu_logradouro);
 	}
 
 	public void setEmp_nu_logradouro(String emp_nu_logradouro) {
-		this.emp_nu_logradouro = emp_nu_logradouro;
+		this.emp_nu_logradouro = (emp_nu_logradouro == null ? "" : emp_nu_logradouro);
 	}
 
 	public String getEmp_nu_caixapostal() {
-		return emp_nu_caixapostal;
+		return (emp_nu_caixapostal == null ? "" : emp_nu_caixapostal);
 	}
 
 	public void setEmp_nu_caixapostal(String emp_nu_caixapostal) {
-		this.emp_nu_caixapostal = emp_nu_caixapostal;
+		this.emp_nu_caixapostal = (emp_nu_caixapostal == null ? "" : emp_nu_caixapostal);
 	}
 
 	public String getEmp_cd_codigoibgecorrespondencia() {
-		return emp_cd_codigoibgecorrespondencia;
+		return (emp_cd_codigoibgecorrespondencia == null ? "" : emp_cd_codigoibgecorrespondencia);
 	}
 
 	public void setEmp_cd_codigoibgecorrespondencia(String emp_cd_codigoibgecorrespondencia) {
-		this.emp_cd_codigoibgecorrespondencia = emp_cd_codigoibgecorrespondencia;
+		this.emp_cd_codigoibgecorrespondencia = (emp_cd_codigoibgecorrespondencia == null ? "" : emp_cd_codigoibgecorrespondencia);
 	}
 
 	public String getEmp_nu_ddd() {
-		return emp_nu_ddd;
+		return (emp_nu_ddd == null ? "" : emp_nu_ddd);
 	}
 
 	public void setEmp_nu_ddd(String emp_nu_ddd) {
-		this.emp_nu_ddd = emp_nu_ddd;
+		this.emp_nu_ddd = (emp_nu_ddd == null ? "" : emp_nu_ddd);
 	}
 
 	public String getEmp_nu_telefone() {
-		return emp_nu_telefone;
+		return (emp_nu_telefone == null ? "" : emp_nu_telefone);
 	}
 
 	public void setEmp_nu_telefone(String emp_nu_telefone) {
-		this.emp_nu_telefone = emp_nu_telefone;
+		this.emp_nu_telefone = (emp_nu_telefone == null ? "" : emp_nu_telefone);
 	}
 
 	public String getOut_tpo_cd() {
-		return out_tpo_cd;
+		return (out_tpo_cd == null ? "" : out_tpo_cd);
 	}
 
 	public void setOut_tpo_cd(String out_tpo_cd) {
-		this.out_tpo_cd = out_tpo_cd;
+		this.out_tpo_cd = (out_tpo_cd == null ? "" : out_tpo_cd);
 	}
 
 	public String getOut_tsp_cd() {
-		return out_tsp_cd;
+		return (out_tsp_cd == null ? "" : out_tsp_cd);
 	}
 
 	public void setOut_tsp_cd(String out_tsp_cd) {
-		this.out_tsp_cd = out_tsp_cd;
+		this.out_tsp_cd = (out_tsp_cd == null ? "" : out_tsp_cd);
 	}
 
 	public String getOut_dt_inicial() {
-		return out_dt_inicial;
+		return (out_dt_inicial == null ? "" : out_dt_inicial);
 	}
 
 	public void setOut_dt_inicial(String out_dt_inicial) {
-		this.out_dt_inicial = out_dt_inicial;
+		this.out_dt_inicial = (out_dt_inicial == null ? "" : out_dt_inicial);
 	}
 
 	public String getOut_dt_final() {
-		return out_dt_final;
+		return (out_dt_final == null ? "" : out_dt_final);
 	}
 
 	public void setOut_dt_final(String out_dt_final) {
-		this.out_dt_final = out_dt_final;
+		this.out_dt_final = (out_dt_final == null ? "" : out_dt_final);
 	}
 
 	public String getOut_nu_processo() {
-		return out_nu_processo;
+		return (out_nu_processo == null ? "" : out_nu_processo);
 	}
 
 	public void setOut_nu_processo(String out_nu_processo) {
-		this.out_nu_processo = out_nu_processo;
+		this.out_nu_processo = (out_nu_processo == null ? "" : out_nu_processo);
 	}
 
 	public String getOut_ds_ato() {
-		return out_ds_ato;
+		return (out_ds_ato == null ? "" : out_ds_ato);
 	}
 
 	public void setOut_ds_ato(String out_ds_ato) {
-		this.out_ds_ato = out_ds_ato;
+		this.out_ds_ato = (out_ds_ato == null ? "" : out_ds_ato);
 	}
 
 	public String getOut_nu_ato() {
-		return out_nu_ato;
+		return (out_nu_ato == null ? "" : out_nu_ato);
 	}
 
 	public void setOut_nu_ato(String out_nu_ato) {
-		this.out_nu_ato = out_nu_ato;
+		this.out_nu_ato = (out_nu_ato == null ? "" : out_nu_ato);
 	}
 
 	public String getInt_nu_siagas() {
-		return int_nu_siagas;
+		return (int_nu_siagas == null ? "" : int_nu_siagas);
 	}
 
 	public void setInt_nu_siagas(String int_nu_siagas) {
-		this.int_nu_siagas = int_nu_siagas;
+		this.int_nu_siagas = (int_nu_siagas == null ? "" : int_nu_siagas);
 	}
 
 	public String getOpe_vz_mesjan() {
-		return ope_vz_mesjan;
+		return (ope_vz_mesjan == null ? "" : ope_vz_mesjan);
 	}
 
 	public void setOpe_vz_mesjan(String ope_vz_mesjan) {
-		this.ope_vz_mesjan = ope_vz_mesjan;
+		this.ope_vz_mesjan = (ope_vz_mesjan == null ? "" : ope_vz_mesjan);
 	}
 
 	public String getOpe_vz_mesfev() {
-		return ope_vz_mesfev;
+		return (ope_vz_mesfev == null ? "" : ope_vz_mesfev);
 	}
 
 	public void setOpe_vz_mesfev(String ope_vz_mesfev) {
-		this.ope_vz_mesfev = ope_vz_mesfev;
+		this.ope_vz_mesfev = (ope_vz_mesfev == null ? "" : ope_vz_mesfev);
 	}
 
 	public String getOpe_vz_mesmar() {
-		return ope_vz_mesmar;
+		return (ope_vz_mesmar == null ? "" : ope_vz_mesmar);
 	}
 
 	public void setOpe_vz_mesmar(String ope_vz_mesmar) {
-		this.ope_vz_mesmar = ope_vz_mesmar;
+		this.ope_vz_mesmar = (ope_vz_mesmar == null ? "" : ope_vz_mesmar);
 	}
 
 	public String getOpe_vz_mesabr() {
-		return ope_vz_mesabr;
+		return (ope_vz_mesabr == null ? "" : ope_vz_mesabr);
 	}
 
 	public void setOpe_vz_mesabr(String ope_vz_mesabr) {
-		this.ope_vz_mesabr = ope_vz_mesabr;
+		this.ope_vz_mesabr = (ope_vz_mesabr == null ? "" : ope_vz_mesabr);
 	}
 
 	public String getOpe_vz_mesmai() {
-		return ope_vz_mesmai;
+		return (ope_vz_mesmai == null ? "" : ope_vz_mesmai);
 	}
 
 	public void setOpe_vz_mesmai(String ope_vz_mesmai) {
-		this.ope_vz_mesmai = ope_vz_mesmai;
+		this.ope_vz_mesmai = (ope_vz_mesmai == null ? "" : ope_vz_mesmai);
 	}
 
 	public String getOpe_vz_mesjun() {
-		return ope_vz_mesjun;
+		return (ope_vz_mesjun == null ? "" : ope_vz_mesjun);
 	}
 
 	public void setOpe_vz_mesjun(String ope_vz_mesjun) {
-		this.ope_vz_mesjun = ope_vz_mesjun;
+		this.ope_vz_mesjun = (ope_vz_mesjun == null ? "" : ope_vz_mesjun);
 	}
 
 	public String getOpe_vz_mesjul() {
-		return ope_vz_mesjul;
+		return (ope_vz_mesjul == null ? "" : ope_vz_mesjul);
 	}
 
 	public void setOpe_vz_mesjul(String ope_vz_mesjul) {
-		this.ope_vz_mesjul = ope_vz_mesjul;
+		this.ope_vz_mesjul = (ope_vz_mesjul == null ? "" : ope_vz_mesjul);
 	}
 
 	public String getOpe_vz_mesago() {
-		return ope_vz_mesago;
+		return (ope_vz_mesago == null ? "" : ope_vz_mesago);
 	}
 
 	public void setOpe_vz_mesago(String ope_vz_mesago) {
-		this.ope_vz_mesago = ope_vz_mesago;
+		this.ope_vz_mesago = (ope_vz_mesago == null ? "" : ope_vz_mesago);
 	}
 
 	public String getOpe_vz_messet() {
-		return ope_vz_messet;
+		return (ope_vz_messet == null ? "" : ope_vz_messet);
 	}
 
 	public void setOpe_vz_messet(String ope_vz_messet) {
-		this.ope_vz_messet = ope_vz_messet;
+		this.ope_vz_messet = (ope_vz_messet == null ? "" : ope_vz_messet);
 	}
 
 	public String getOpe_vz_mesout() {
-		return ope_vz_mesout;
+		return (ope_vz_mesout == null ? "" : ope_vz_mesout);
 	}
 
 	public void setOpe_vz_mesout(String ope_vz_mesout) {
-		this.ope_vz_mesout = ope_vz_mesout;
+		this.ope_vz_mesout = (ope_vz_mesout == null ? "" : ope_vz_mesout);
 	}
 
 	public String getOpe_vz_mesnov() {
-		return ope_vz_mesnov;
+		return (ope_vz_mesnov == null ? "" : ope_vz_mesnov);
 	}
 
 	public void setOpe_vz_mesnov(String ope_vz_mesnov) {
-		this.ope_vz_mesnov = ope_vz_mesnov;
+		this.ope_vz_mesnov = (ope_vz_mesnov == null ? "" : ope_vz_mesnov);
 	}
 
 	public String getOpe_vz_mesdez() {
-		return ope_vz_mesdez;
+		return (ope_vz_mesdez == null ? "" : ope_vz_mesdez);
 	}
 
 	public void setOpe_vz_mesdez(String ope_vz_mesdez) {
-		this.ope_vz_mesdez = ope_vz_mesdez;
+		this.ope_vz_mesdez = (ope_vz_mesdez == null ? "" : ope_vz_mesdez);
 	}
 
 	public String getOpe_qt_horasjan() {
-		return ope_qt_horasjan;
+		return (ope_qt_horasjan == null ? "" : ope_qt_horasjan);
 	}
 
 	public void setOpe_qt_horasjan(String ope_qt_horasjan) {
-		this.ope_qt_horasjan = ope_qt_horasjan;
+		this.ope_qt_horasjan = (ope_qt_horasjan == null ? "" : ope_qt_horasjan);
 	}
 
 	public String getOpe_qt_horasfev() {
-		return ope_qt_horasfev;
+		return (ope_qt_horasfev == null ? "" : ope_qt_horasfev);
 	}
 
 	public void setOpe_qt_horasfev(String ope_qt_horasfev) {
-		this.ope_qt_horasfev = ope_qt_horasfev;
+		this.ope_qt_horasfev = (ope_qt_horasfev == null ? "" : ope_qt_horasfev);
 	}
 
 	public String getOpe_qt_horasmar() {
-		return ope_qt_horasmar;
+		return (ope_qt_horasmar == null ? "" : ope_qt_horasmar);
 	}
 
 	public void setOpe_qt_horasmar(String ope_qt_horasmar) {
-		this.ope_qt_horasmar = ope_qt_horasmar;
+		this.ope_qt_horasmar = (ope_qt_horasmar == null ? "" : ope_qt_horasmar);
 	}
 
 	public String getOpe_qt_horasabr() {
-		return ope_qt_horasabr;
+		return (ope_qt_horasabr == null ? "" : ope_qt_horasabr);
 	}
 
 	public void setOpe_qt_horasabr(String ope_qt_horasabr) {
-		this.ope_qt_horasabr = ope_qt_horasabr;
+		this.ope_qt_horasabr = (ope_qt_horasabr == null ? "" : ope_qt_horasabr);
 	}
 
 	public String getOpe_qt_horasmai() {
-		return ope_qt_horasmai;
+		return (ope_qt_horasmai == null ? "" : ope_qt_horasmai);
 	}
 
 	public void setOpe_qt_horasmai(String ope_qt_horasmai) {
-		this.ope_qt_horasmai = ope_qt_horasmai;
+		this.ope_qt_horasmai = (ope_qt_horasmai == null ? "" : ope_qt_horasmai);
 	}
 
 	public String getOpe_qt_horasjun() {
-		return ope_qt_horasjun;
+		return (ope_qt_horasjun == null ? "" : ope_qt_horasjun);
 	}
 
 	public void setOpe_qt_horasjun(String ope_qt_horasjun) {
-		this.ope_qt_horasjun = ope_qt_horasjun;
+		this.ope_qt_horasjun = (ope_qt_horasjun == null ? "" : ope_qt_horasjun);
 	}
 
 	public String getOpe_qt_horasjul() {
-		return ope_qt_horasjul;
+		return (ope_qt_horasjul == null ? "" : ope_qt_horasjul);
 	}
 
 	public void setOpe_qt_horasjul(String ope_qt_horasjul) {
-		this.ope_qt_horasjul = ope_qt_horasjul;
+		this.ope_qt_horasjul = (ope_qt_horasjul == null ? "" : ope_qt_horasjul);
 	}
 
 	public String getOpe_qt_horasago() {
-		return ope_qt_horasago;
+		return (ope_qt_horasago == null ? "" : ope_qt_horasago);
 	}
 
 	public void setOpe_qt_horasago(String ope_qt_horasago) {
-		this.ope_qt_horasago = ope_qt_horasago;
+		this.ope_qt_horasago = (ope_qt_horasago == null ? "" : ope_qt_horasago);
 	}
 
 	public String getOpe_qt_horasset() {
-		return ope_qt_horasset;
+		return (ope_qt_horasset == null ? "" : ope_qt_horasset);
 	}
 
 	public void setOpe_qt_horasset(String ope_qt_horasset) {
-		this.ope_qt_horasset = ope_qt_horasset;
+		this.ope_qt_horasset = (ope_qt_horasset == null ? "" : ope_qt_horasset);
 	}
 
 	public String getOpe_qt_horasout() {
-		return ope_qt_horasout;
+		return (ope_qt_horasout == null ? "" : ope_qt_horasout);
 	}
 
 	public void setOpe_qt_horasout(String ope_qt_horasout) {
-		this.ope_qt_horasout = ope_qt_horasout;
+		this.ope_qt_horasout = (ope_qt_horasout == null ? "" : ope_qt_horasout);
 	}
 
 	public String getOpe_qt_horasnov() {
-		return ope_qt_horasnov;
+		return (ope_qt_horasnov == null ? "" : ope_qt_horasnov);
 	}
 
 	public void setOpe_qt_horasnov(String ope_qt_horasnov) {
-		this.ope_qt_horasnov = ope_qt_horasnov;
+		this.ope_qt_horasnov = (ope_qt_horasnov == null ? "" : ope_qt_horasnov);
 	}
 
 	public String getOpe_qt_horasdez() {
-		return ope_qt_horasdez;
+		return (ope_qt_horasdez == null ? "" : ope_qt_horasdez);
 	}
 
 	public void setOpe_qt_horasdez(String ope_qt_horasdez) {
-		this.ope_qt_horasdez = ope_qt_horasdez;
+		this.ope_qt_horasdez = (ope_qt_horasdez == null ? "" : ope_qt_horasdez);
 	}
 
 	public String getOpe_qt_diajan() {
-		return ope_qt_diajan;
+		return (ope_qt_diajan == null ? "" : ope_qt_diajan);
 	}
 
 	public void setOpe_qt_diajan(String ope_qt_diajan) {
-		this.ope_qt_diajan = ope_qt_diajan;
+		this.ope_qt_diajan = (ope_qt_diajan == null ? "" : ope_qt_diajan);
 	}
 
 	public String getOpe_qt_diafev() {
-		return ope_qt_diafev;
+		return (ope_qt_diafev == null ? "" : ope_qt_diafev);
 	}
 
 	public void setOpe_qt_diafev(String ope_qt_diafev) {
-		this.ope_qt_diafev = ope_qt_diafev;
+		this.ope_qt_diafev = (ope_qt_diafev == null ? "" : ope_qt_diafev);
 	}
 
 	public String getOpe_qt_diamar() {
-		return ope_qt_diamar;
+		return (ope_qt_diamar == null ? "" : ope_qt_diamar);
 	}
 
 	public void setOpe_qt_diamar(String ope_qt_diamar) {
-		this.ope_qt_diamar = ope_qt_diamar;
+		this.ope_qt_diamar = (ope_qt_diamar == null ? "" : ope_qt_diamar);
 	}
 
 	public String getOpe_qt_diaabr() {
-		return ope_qt_diaabr;
+		return (ope_qt_diaabr == null ? "" : ope_qt_diaabr);
 	}
 
 	public void setOpe_qt_diaabr(String ope_qt_diaabr) {
-		this.ope_qt_diaabr = ope_qt_diaabr;
+		this.ope_qt_diaabr = (ope_qt_diaabr == null ? "" : ope_qt_diaabr);
 	}
 
 	public String getOpe_qt_diamai() {
-		return ope_qt_diamai;
+		return (ope_qt_diamai == null ? "" : ope_qt_diamai);
 	}
 
 	public void setOpe_qt_diamai(String ope_qt_diamai) {
-		this.ope_qt_diamai = ope_qt_diamai;
+		this.ope_qt_diamai = (ope_qt_diamai == null ? "" : ope_qt_diamai);
 	}
 
 	public String getOpe_qt_diajun() {
-		return ope_qt_diajun;
+		return (ope_qt_diajun == null ? "" : ope_qt_diajun);
 	}
 
 	public void setOpe_qt_diajun(String ope_qt_diajun) {
-		this.ope_qt_diajun = ope_qt_diajun;
+		this.ope_qt_diajun = (ope_qt_diajun == null ? "" : ope_qt_diajun);
 	}
 
 	public String getOpe_qt_diajul() {
-		return ope_qt_diajul;
+		return (ope_qt_diajul == null ? "" : ope_qt_diajul);
 	}
 
 	public void setOpe_qt_diajul(String ope_qt_diajul) {
-		this.ope_qt_diajul = ope_qt_diajul;
+		this.ope_qt_diajul = (ope_qt_diajul == null ? "" : ope_qt_diajul);
 	}
 
 	public String getOpe_qt_diaago() {
-		return ope_qt_diaago;
+		return (ope_qt_diaago == null ? "" : ope_qt_diaago);
 	}
 
 	public void setOpe_qt_diaago(String ope_qt_diaago) {
-		this.ope_qt_diaago = ope_qt_diaago;
+		this.ope_qt_diaago = (ope_qt_diaago == null ? "" : ope_qt_diaago);
 	}
 
 	public String getOpe_qt_diaset() {
-		return ope_qt_diaset;
+		return (ope_qt_diaset == null ? "" : ope_qt_diaset);
 	}
 
 	public void setOpe_qt_diaset(String ope_qt_diaset) {
-		this.ope_qt_diaset = ope_qt_diaset;
+		this.ope_qt_diaset = (ope_qt_diaset == null ? "" : ope_qt_diaset);
 	}
 
 	public String getOpe_qt_diaout() {
-		return ope_qt_diaout;
+		return (ope_qt_diaout == null ? "" : ope_qt_diaout);
 	}
 
 	public void setOpe_qt_diaout(String ope_qt_diaout) {
-		this.ope_qt_diaout = ope_qt_diaout;
+		this.ope_qt_diaout = (ope_qt_diaout == null ? "" : ope_qt_diaout);
 	}
 
 	public String getOpe_qt_dianov() {
-		return ope_qt_dianov;
+		return (ope_qt_dianov == null ? "" : ope_qt_dianov);
 	}
 
 	public void setOpe_qt_dianov(String ope_qt_dianov) {
-		this.ope_qt_dianov = ope_qt_dianov;
+		this.ope_qt_dianov = (ope_qt_dianov == null ? "" : ope_qt_dianov);
 	}
 
 	public String getOpe_qt_diadez() {
-		return ope_qt_diadez;
+		return (ope_qt_diadez == null ? "" : ope_qt_diadez);
 	}
 
 	public void setOpe_qt_diadez(String ope_qt_diadez) {
-		this.ope_qt_diadez = ope_qt_diadez;
+		this.ope_qt_diadez = (ope_qt_diadez == null ? "" : ope_qt_diadez);
 	}
 
 	public String getInt_vz_maxima() {
-		return int_vz_maxima;
+		return (int_vz_maxima == null ? "" : int_vz_maxima);
 	}
 
 	public void setInt_vz_maxima(String int_vz_maxima) {
-		this.int_vz_maxima = int_vz_maxima;
+		this.int_vz_maxima = (int_vz_maxima == null ? "" : int_vz_maxima);
 	}
 
 	public String getFou_tou_cd() {
-		return fou_tou_cd;
+		return (fou_tou_cd == null ? "" : fou_tou_cd);
 	}
 
 	public void setFou_tou_cd(String fou_tou_cd) {
-		this.fou_tou_cd = fou_tou_cd;
+		this.fou_tou_cd = (fou_tou_cd == null ? "" : fou_tou_cd);
 	}
 
 	public String getSir_tsi_cd() {
-		return sir_tsi_cd;
+		return (sir_tsi_cd == null ? "" : sir_tsi_cd);
 	}
 
 	public void setSir_tsi_cd(String sir_tsi_cd) {
-		this.sir_tsi_cd = sir_tsi_cd;
+		this.sir_tsi_cd = (sir_tsi_cd == null ? "" : sir_tsi_cd);
 	}
 
 	public String getSir_tct_cd() {
-		return sir_tct_cd;
+		return (sir_tct_cd == null ? "" : sir_tct_cd);
 	}
 
 	public void setSir_tct_cd(String sir_tct_cd) {
-		this.sir_tct_cd = sir_tct_cd;
+		this.sir_tct_cd = (sir_tct_cd == null ? "" : sir_tct_cd);
 	}
 
 	public String getSir_ar_irrigada() {
-		return sir_ar_irrigada;
+		return (sir_ar_irrigada == null ? "" : sir_ar_irrigada);
 	}
 
 	public void setSir_ar_irrigada(String sir_ar_irrigada) {
-		this.sir_ar_irrigada = sir_ar_irrigada;
+		this.sir_ar_irrigada = (sir_ar_irrigada == null ? "" : sir_ar_irrigada);
 	}
 
 	public String getIus_nu_alturares() {
-		return ius_nu_alturares;
+		return (ius_nu_alturares == null ? "" : ius_nu_alturares);
 	}
 
 	public void setIus_nu_alturares(String ius_nu_alturares) {
-		this.ius_nu_alturares = ius_nu_alturares;
+		this.ius_nu_alturares = (ius_nu_alturares == null ? "" : ius_nu_alturares);
 	}
 
 	public String getIus_ar_resmax() {
-		return ius_ar_resmax;
+		return (ius_ar_resmax == null ? "" : ius_ar_resmax);
 	}
 
 	public void setIus_ar_resmax(String ius_ar_resmax) {
-		this.ius_ar_resmax = ius_ar_resmax;
+		this.ius_ar_resmax = (ius_ar_resmax == null ? "" : ius_ar_resmax);
 	}
 
 	public String getIus_vo_resmax() {
-		return ius_vo_resmax;
+		return (ius_vo_resmax == null ? "" : ius_vo_resmax);
 	}
 
 	public void setIus_vo_resmax(String ius_vo_resmax) {
-		this.ius_vo_resmax = ius_vo_resmax;
+		this.ius_vo_resmax = (ius_vo_resmax == null ? "" : ius_vo_resmax);
 	}
 
 	public String getEfl_qt_dbobruto() {
-		return efl_qt_dbobruto;
+		return (efl_qt_dbobruto == null ? "" : efl_qt_dbobruto);
 	}
 
 	public void setEfl_qt_dbobruto(String efl_qt_dbobruto) {
-		this.efl_qt_dbobruto = efl_qt_dbobruto;
+		this.efl_qt_dbobruto = (efl_qt_dbobruto == null ? "" : efl_qt_dbobruto);
 	}
 
 	public String getEfl_qt_dbotratado() {
-		return efl_qt_dbotratado;
+		return (efl_qt_dbotratado == null ? "" : efl_qt_dbotratado);
 	}
 
 	public void setEfl_qt_dbotratado(String efl_qt_dbotratado) {
-		this.efl_qt_dbotratado = efl_qt_dbotratado;
+		this.efl_qt_dbotratado = (efl_qt_dbotratado == null ? "" : efl_qt_dbotratado);
 	}
 
 	public String getEfl_qt_fosforobruto() {
-		return efl_qt_fosforobruto;
+		return (efl_qt_fosforobruto == null ? "" : efl_qt_fosforobruto);
 	}
 
 	public void setEfl_qt_fosforobruto(String efl_qt_fosforobruto) {
-		this.efl_qt_fosforobruto = efl_qt_fosforobruto;
+		this.efl_qt_fosforobruto = (efl_qt_fosforobruto == null ? "" : efl_qt_fosforobruto);
 	}
 
 	public String getEfl_qt_fosforotratado() {
-		return efl_qt_fosforotratado;
+		return (efl_qt_fosforotratado == null ? "" : efl_qt_fosforotratado);
 	}
 
 	public void setEfl_qt_fosforotratado(String efl_qt_fosforotratado) {
-		this.efl_qt_fosforotratado = efl_qt_fosforotratado;
+		this.efl_qt_fosforotratado = (efl_qt_fosforotratado == null ? "" : efl_qt_fosforotratado);
 	}
 
 	public String getEfl_qt_nitrogeniobruto() {
-		return efl_qt_nitrogeniobruto;
+		return (efl_qt_nitrogeniobruto == null ? "" : efl_qt_nitrogeniobruto);
 	}
 
 	public void setEfl_qt_nitrogeniobruto(String efl_qt_nitrogeniobruto) {
-		this.efl_qt_nitrogeniobruto = efl_qt_nitrogeniobruto;
+		this.efl_qt_nitrogeniobruto = (efl_qt_nitrogeniobruto == null ? "" : efl_qt_nitrogeniobruto);
 	}
 
 	public String getEfl_qt_nitrogeniotratado() {
-		return efl_qt_nitrogeniotratado;
+		return (efl_qt_nitrogeniotratado == null ? "" : efl_qt_nitrogeniotratado);
 	}
 
 	public void setEfl_qt_nitrogeniotratado(String efl_qt_nitrogeniotratado) {
-		this.efl_qt_nitrogeniotratado = efl_qt_nitrogeniotratado;
+		this.efl_qt_nitrogeniotratado = (efl_qt_nitrogeniotratado == null ? "" : efl_qt_nitrogeniotratado);
 	}
 
 	public String getAsb_dt_instalacao() {
-		return asb_dt_instalacao;
+		return (asb_dt_instalacao == null ? "" : asb_dt_instalacao);
 	}
 
 	public void setAsb_dt_instalacao(String asb_dt_instalacao) {
-		this.asb_dt_instalacao = asb_dt_instalacao;
+		this.asb_dt_instalacao = (asb_dt_instalacao == null ? "" : asb_dt_instalacao);
 	}
 
 	public String getAsb_tpn_cd() {
-		return asb_tpn_cd;
+		return (asb_tpn_cd == null ? "" : asb_tpn_cd);
 	}
 
 	public void setAsb_tpn_cd(String asb_tpn_cd) {
-		this.asb_tpn_cd = asb_tpn_cd;
+		this.asb_tpn_cd = (asb_tpn_cd == null ? "" : asb_tpn_cd);
 	}
 
 	public String getAsb_nu_diametroperfuracao() {
-		return asb_nu_diametroperfuracao;
+		return (asb_nu_diametroperfuracao == null ? "" : asb_nu_diametroperfuracao);
 	}
 
 	public void setAsb_nu_diametroperfuracao(String asb_nu_diametroperfuracao) {
-		this.asb_nu_diametroperfuracao = asb_nu_diametroperfuracao;
+		this.asb_nu_diametroperfuracao = (asb_nu_diametroperfuracao == null ? "" : asb_nu_diametroperfuracao);
 	}
 
 	public String getAsb_nu_diametrofiltro() {
-		return asb_nu_diametrofiltro;
+		return (asb_nu_diametrofiltro == null ? "" : asb_nu_diametrofiltro);
 	}
 
 	public void setAsb_nu_diametrofiltro(String asb_nu_diametrofiltro) {
-		this.asb_nu_diametrofiltro = asb_nu_diametrofiltro;
+		this.asb_nu_diametrofiltro = (asb_nu_diametrofiltro == null ? "" : asb_nu_diametrofiltro);
 	}
 
 	public String getAsb_aqp_cd() {
-		return asb_aqp_cd;
+		return (asb_aqp_cd == null ? "" : asb_aqp_cd);
 	}
 
 	public void setAsb_aqp_cd(String asb_aqp_cd) {
-		this.asb_aqp_cd = asb_aqp_cd;
+		this.asb_aqp_cd = (asb_aqp_cd == null ? "" : asb_aqp_cd);
 	}
 
 	public String getAsb_nu_topo() {
-		return asb_nu_topo;
+		return (asb_nu_topo == null ? "" : asb_nu_topo);
 	}
 
 	public void setAsb_nu_topo(String asb_nu_topo) {
-		this.asb_nu_topo = asb_nu_topo;
+		this.asb_nu_topo = (asb_nu_topo == null ? "" : asb_nu_topo);
 	}
 
 	public String getAsb_nu_base() {
-		return asb_nu_base;
+		return (asb_nu_base == null ? "" : asb_nu_base);
 	}
 
 	public void setAsb_nu_base(String asb_nu_base) {
-		this.asb_nu_base = asb_nu_base;
+		this.asb_nu_base = (asb_nu_base == null ? "" : asb_nu_base);
 	}
 
 	public String getAsb_tnp_cd() {
-		return asb_tnp_cd;
+		return (asb_tnp_cd == null ? "" : asb_tnp_cd);
 	}
 
 	public void setAsb_tnp_cd(String asb_tnp_cd) {
-		this.asb_tnp_cd = asb_tnp_cd;
+		this.asb_tnp_cd = (asb_tnp_cd == null ? "" : asb_tnp_cd);
 	}
 
 	public String getAsb_tca_cd() {
-		return asb_tca_cd;
+		return (asb_tca_cd == null ? "" : asb_tca_cd);
 	}
 
 	public void setAsb_tca_cd(String asb_tca_cd) {
-		this.asb_tca_cd = asb_tca_cd;
+		this.asb_tca_cd = (asb_tca_cd == null ? "" : asb_tca_cd);
 	}
 
 	public String getAsb_nu_profundidadefinal() {
-		return asb_nu_profundidadefinal;
+		return (asb_nu_profundidadefinal == null ? "" : asb_nu_profundidadefinal);
 	}
 
 	public void setAsb_nu_profundidadefinal(String asb_nu_profundidadefinal) {
-		this.asb_nu_profundidadefinal = asb_nu_profundidadefinal;
+		this.asb_nu_profundidadefinal = (asb_nu_profundidadefinal == null ? "" : asb_nu_profundidadefinal);
 	}
 
 	public String getAsb_nu_alturabocatubo() {
-		return asb_nu_alturabocatubo;
+		return (asb_nu_alturabocatubo == null ? "" : asb_nu_alturabocatubo);
 	}
 
 	public void setAsb_nu_alturabocatubo(String asb_nu_alturabocatubo) {
-		this.asb_nu_alturabocatubo = asb_nu_alturabocatubo;
+		this.asb_nu_alturabocatubo = (asb_nu_alturabocatubo == null ? "" : asb_nu_alturabocatubo);
 	}
 
 	public String getAsb_nu_cotaterreno() {
-		return asb_nu_cotaterreno;
+		return (asb_nu_cotaterreno == null ? "" : asb_nu_cotaterreno);
 	}
 
 	public void setAsb_nu_cotaterreno(String asb_nu_cotaterreno) {
-		this.asb_nu_cotaterreno = asb_nu_cotaterreno;
+		this.asb_nu_cotaterreno = (asb_nu_cotaterreno == null ? "" : asb_nu_cotaterreno);
 	}
 
 	public String getTst_dt() {
-		return tst_dt;
+		return (tst_dt == null ? "" : tst_dt);
 	}
 
 	public void setTst_dt(String tst_dt) {
-		this.tst_dt = tst_dt;
+		this.tst_dt = (tst_dt == null ? "" : tst_dt);
 	}
 
 	public String getTst_ttb_cd() {
-		return tst_ttb_cd;
+		return (tst_ttb_cd == null ? "" : tst_ttb_cd);
 	}
 
 	public void setTst_ttb_cd(String tst_ttb_cd) {
-		this.tst_ttb_cd = tst_ttb_cd;
+		this.tst_ttb_cd = (tst_ttb_cd == null ? "" : tst_ttb_cd);
 	}
 
 	public String getTst_ds_tempoduracao() {
-		return tst_ds_tempoduracao;
+		return (tst_ds_tempoduracao == null ? "" : tst_ds_tempoduracao);
 	}
 
 	public void setTst_ds_tempoduracao(String tst_ds_tempoduracao) {
-		this.tst_ds_tempoduracao = tst_ds_tempoduracao;
+		this.tst_ds_tempoduracao = (tst_ds_tempoduracao == null ? "" : tst_ds_tempoduracao);
 	}
 
 	public String getTst_nu_nd() {
-		return tst_nu_nd;
+		return (tst_nu_nd == null ? "" : tst_nu_nd);
 	}
 
 	public void setTst_nu_nd(String tst_nu_nd) {
-		this.tst_nu_nd = tst_nu_nd;
+		this.tst_nu_nd = (tst_nu_nd == null ? "" : tst_nu_nd);
 	}
 
 	public String getTst_nu_ne() {
-		return tst_nu_ne;
+		return (tst_nu_ne == null ? "" : tst_nu_ne);
 	}
 
 	public void setTst_nu_ne(String tst_nu_ne) {
-		this.tst_nu_ne = tst_nu_ne;
+		this.tst_nu_ne = (tst_nu_ne == null ? "" : tst_nu_ne);
 	}
 
 	public String getTst_vz_estabilizacao() {
-		return tst_vz_estabilizacao;
+		return (tst_vz_estabilizacao == null ? "" : tst_vz_estabilizacao);
 	}
 
 	public void setTst_vz_estabilizacao(String tst_vz_estabilizacao) {
-		this.tst_vz_estabilizacao = tst_vz_estabilizacao;
+		this.tst_vz_estabilizacao = (tst_vz_estabilizacao == null ? "" : tst_vz_estabilizacao);
 	}
 
 	public String getTst_tmi_cd() {
-		return tst_tmi_cd;
+		return (tst_tmi_cd == null ? "" : tst_tmi_cd);
 	}
 
 	public void setTst_tmi_cd(String tst_tmi_cd) {
-		this.tst_tmi_cd = tst_tmi_cd;
+		this.tst_tmi_cd = (tst_tmi_cd == null ? "" : tst_tmi_cd);
 	}
 
 	public String getTst_nu_coeficientearmazenamento() {
-		return tst_nu_coeficientearmazenamento;
+		return (tst_nu_coeficientearmazenamento == null ? "" : tst_nu_coeficientearmazenamento);
 	}
 
 	public void setTst_nu_coeficientearmazenamento(String tst_nu_coeficientearmazenamento) {
-		this.tst_nu_coeficientearmazenamento = tst_nu_coeficientearmazenamento;
+		this.tst_nu_coeficientearmazenamento = (tst_nu_coeficientearmazenamento == null ? "" : tst_nu_coeficientearmazenamento);
 	}
 
 	public String getTst_nu_transmissividade() {
-		return tst_nu_transmissividade;
+		return (tst_nu_transmissividade == null ? "" : tst_nu_transmissividade);
 	}
 
 	public void setTst_nu_transmissividade(String tst_nu_transmissividade) {
-		this.tst_nu_transmissividade = tst_nu_transmissividade;
+		this.tst_nu_transmissividade = (tst_nu_transmissividade == null ? "" : tst_nu_transmissividade);
 	}
 
 	public String getTst_nu_condutividadehidraulica() {
-		return tst_nu_condutividadehidraulica;
+		return (tst_nu_condutividadehidraulica == null ? "" : tst_nu_condutividadehidraulica);
 	}
 
 	public void setTst_nu_condutividadehidraulica(String tst_nu_condutividadehidraulica) {
-		this.tst_nu_condutividadehidraulica = tst_nu_condutividadehidraulica;
+		this.tst_nu_condutividadehidraulica = (tst_nu_condutividadehidraulica == null ? "" : tst_nu_condutividadehidraulica);
 	}
 
 	public String getTst_nu_permeabilidade() {
-		return tst_nu_permeabilidade;
+		return (tst_nu_permeabilidade == null ? "" : tst_nu_permeabilidade);
 	}
 
 	public void setTst_nu_permeabilidade(String tst_nu_permeabilidade) {
-		this.tst_nu_permeabilidade = tst_nu_permeabilidade;
+		this.tst_nu_permeabilidade = (tst_nu_permeabilidade == null ? "" : tst_nu_permeabilidade);
 	}
 
 	public String getAma_dt_coleta() {
-		return ama_dt_coleta;
+		return (ama_dt_coleta == null ? "" : ama_dt_coleta);
 	}
 
 	public void setAma_dt_coleta(String ama_dt_coleta) {
-		this.ama_dt_coleta = ama_dt_coleta;
+		this.ama_dt_coleta = (ama_dt_coleta == null ? "" : ama_dt_coleta);
 	}
 
 	public String getAma_dt_analise() {
-		return ama_dt_analise;
+		return (ama_dt_analise == null ? "" : ama_dt_analise);
 	}
 
 	public void setAma_dt_analise(String ama_dt_analise) {
-		this.ama_dt_analise = ama_dt_analise;
+		this.ama_dt_analise = (ama_dt_analise == null ? "" : ama_dt_analise);
 	}
 
 	public String getAma_nu_condutividadeeletrica() {
-		return ama_nu_condutividadeeletrica;
+		return (ama_nu_condutividadeeletrica == null ? "" : ama_nu_condutividadeeletrica);
 	}
 
 	public void setAma_nu_condutividadeeletrica(String ama_nu_condutividadeeletrica) {
-		this.ama_nu_condutividadeeletrica = ama_nu_condutividadeeletrica;
+		this.ama_nu_condutividadeeletrica = (ama_nu_condutividadeeletrica == null ? "" : ama_nu_condutividadeeletrica);
 	}
 
 	public String getAma_qt_temperatura() {
-		return ama_qt_temperatura;
+		return (ama_qt_temperatura == null ? "" : ama_qt_temperatura);
 	}
 
 	public void setAma_qt_temperatura(String ama_qt_temperatura) {
-		this.ama_qt_temperatura = ama_qt_temperatura;
+		this.ama_qt_temperatura = (ama_qt_temperatura == null ? "" : ama_qt_temperatura);
 	}
 
 	public String getAma_qt_std() {
-		return ama_qt_std;
+		return (ama_qt_std == null ? "" : ama_qt_std);
 	}
 
 	public void setAma_qt_std(String ama_qt_std) {
-		this.ama_qt_std = ama_qt_std;
+		this.ama_qt_std = (ama_qt_std == null ? "" : ama_qt_std);
 	}
 
 	public String getAma_qt_ph() {
-		return ama_qt_ph;
+		return (ama_qt_ph == null ? "" : ama_qt_ph);
 	}
 
 	public void setAma_qt_ph(String ama_qt_ph) {
-		this.ama_qt_ph = ama_qt_ph;
+		this.ama_qt_ph = (ama_qt_ph == null ? "" : ama_qt_ph);
 	}
 
 	public String getAma_qt_coliformestotais() {
-		return ama_qt_coliformestotais;
+		return (ama_qt_coliformestotais == null ? "" : ama_qt_coliformestotais);
 	}
 
 	public void setAma_qt_coliformestotais(String ama_qt_coliformestotais) {
-		this.ama_qt_coliformestotais = ama_qt_coliformestotais;
+		this.ama_qt_coliformestotais = (ama_qt_coliformestotais == null ? "" : ama_qt_coliformestotais);
 	}
 
 	public String getAma_qt_coliformesfecais() {
-		return ama_qt_coliformesfecais;
+		return (ama_qt_coliformesfecais == null ? "" : ama_qt_coliformesfecais);
 	}
 
 	public void setAma_qt_coliformesfecais(String ama_qt_coliformesfecais) {
-		this.ama_qt_coliformesfecais = ama_qt_coliformesfecais;
+		this.ama_qt_coliformesfecais = (ama_qt_coliformesfecais == null ? "" : ama_qt_coliformesfecais);
 	}
 
 	public String getAma_qt_bicarbonato() {
-		return ama_qt_bicarbonato;
+		return (ama_qt_bicarbonato == null ? "" : ama_qt_bicarbonato);
 	}
 
 	public void setAma_qt_bicarbonato(String ama_qt_bicarbonato) {
-		this.ama_qt_bicarbonato = ama_qt_bicarbonato;
+		this.ama_qt_bicarbonato = (ama_qt_bicarbonato == null ? "" : ama_qt_bicarbonato);
 	}
 
 	public String getAma_qt_calcio() {
-		return ama_qt_calcio;
+		return (ama_qt_calcio == null ? "" : ama_qt_calcio);
 	}
 
 	public void setAma_qt_calcio(String ama_qt_calcio) {
-		this.ama_qt_calcio = ama_qt_calcio;
+		this.ama_qt_calcio = (ama_qt_calcio == null ? "" : ama_qt_calcio);
 	}
 
 	public String getAma_qt_carbonato() {
-		return ama_qt_carbonato;
+		return (ama_qt_carbonato == null ? "" : ama_qt_carbonato);
 	}
 
 	public void setAma_qt_carbonato(String ama_qt_carbonato) {
-		this.ama_qt_carbonato = ama_qt_carbonato;
+		this.ama_qt_carbonato = (ama_qt_carbonato == null ? "" : ama_qt_carbonato);
 	}
 
 	public String getAma_qt_cloreto() {
-		return ama_qt_cloreto;
+		return (ama_qt_cloreto == null ? "" : ama_qt_cloreto);
 	}
 
 	public void setAma_qt_cloreto(String ama_qt_cloreto) {
-		this.ama_qt_cloreto = ama_qt_cloreto;
+		this.ama_qt_cloreto = (ama_qt_cloreto == null ? "" : ama_qt_cloreto);
 	}
 
 	public String getAma_qt_durezatotal() {
-		return ama_qt_durezatotal;
+		return (ama_qt_durezatotal == null ? "" : ama_qt_durezatotal);
 	}
 
 	public void setAma_qt_durezatotal(String ama_qt_durezatotal) {
-		this.ama_qt_durezatotal = ama_qt_durezatotal;
+		this.ama_qt_durezatotal = (ama_qt_durezatotal == null ? "" : ama_qt_durezatotal);
 	}
 
 	public String getAma_qt_ferrototal() {
-		return ama_qt_ferrototal;
+		return (ama_qt_ferrototal == null ? "" : ama_qt_ferrototal);
 	}
 
 	public void setAma_qt_ferrototal(String ama_qt_ferrototal) {
-		this.ama_qt_ferrototal = ama_qt_ferrototal;
+		this.ama_qt_ferrototal = (ama_qt_ferrototal == null ? "" : ama_qt_ferrototal);
 	}
 
 	public String getAma_qt_fluoretos() {
-		return ama_qt_fluoretos;
+		return (ama_qt_fluoretos == null ? "" : ama_qt_fluoretos);
 	}
 
 	public void setAma_qt_fluoretos(String ama_qt_fluoretos) {
-		this.ama_qt_fluoretos = ama_qt_fluoretos;
+		this.ama_qt_fluoretos = (ama_qt_fluoretos == null ? "" : ama_qt_fluoretos);
 	}
 
 	public String getAma_qt_nitratos() {
-		return ama_qt_nitratos;
+		return (ama_qt_nitratos == null ? "" : ama_qt_nitratos);
 	}
 
 	public void setAma_qt_nitratos(String ama_qt_nitratos) {
-		this.ama_qt_nitratos = ama_qt_nitratos;
+		this.ama_qt_nitratos = (ama_qt_nitratos == null ? "" : ama_qt_nitratos);
 	}
 
 	public String getAma_qt_nitritos() {
-		return ama_qt_nitritos;
+		return (ama_qt_nitritos == null ? "" : ama_qt_nitritos);
 	}
 
 	public void setAma_qt_nitritos(String ama_qt_nitritos) {
-		this.ama_qt_nitritos = ama_qt_nitritos;
+		this.ama_qt_nitritos = (ama_qt_nitritos == null ? "" : ama_qt_nitritos);
 	}
 
 	public String getAma_qt_potassio() {
-		return ama_qt_potassio;
+		return (ama_qt_potassio == null ? "" : ama_qt_potassio);
 	}
 
 	public void setAma_qt_potassio(String ama_qt_potassio) {
-		this.ama_qt_potassio = ama_qt_potassio;
+		this.ama_qt_potassio = (ama_qt_potassio == null ? "" : ama_qt_potassio);
 	}
 
 	public String getAma_qt_sodio() {
-		return ama_qt_sodio;
+		return (ama_qt_sodio == null ? "" : ama_qt_sodio);
 	}
 
 	public void setAma_qt_sodio(String ama_qt_sodio) {
-		this.ama_qt_sodio = ama_qt_sodio;
+		this.ama_qt_sodio = (ama_qt_sodio == null ? "" : ama_qt_sodio);
 	}
 
 	public String getAma_qt_sulfato() {
-		return ama_qt_sulfato;
+		return (ama_qt_sulfato == null ? "" : ama_qt_sulfato);
 	}
 
 	public void setAma_qt_sulfato(String ama_qt_sulfato) {
-		this.ama_qt_sulfato = ama_qt_sulfato;
+		this.ama_qt_sulfato = (ama_qt_sulfato == null ? "" : ama_qt_sulfato);
 	}
-	
+
 	public String getAma_qt_magnesio() {
-		return ama_qt_magnesio;
+		return (ama_qt_magnesio == null ? "" : ama_qt_magnesio);
 	}
 
 	public void setAma_qt_magnesio(String ama_qt_magnesio) {
-		this.ama_qt_magnesio = ama_qt_magnesio;
+		this.ama_qt_magnesio = (ama_qt_magnesio == null ? "" : ama_qt_magnesio);
 	}
-
+	
+	
 	@Override
 	public String toString() {
-		return getInt_tin_cd() + ";" +
-			getInt_tsu_cd() + ";" +
-			getInt_tsi_cd() + ";" +
-			getInt_cr_latitude() + ";" +
-			getInt_cr_longitude() + ";" +
-			getIng_nu_ibgemunicipio() + ";" +
-			getEmp_nm_empreendimento() + ";" +
-			getEmp_nu_cpfcnpj() + ";" +
-			getEmp_nm_usuario() + ";" +
-			getEmp_ds_emailresponsavel() + ";" +
-			getEmp_nu_cependereco() + ";" +
-			getEmp_ds_logradouro() + ";" +
-			getEmp_ds_complementoendereco() + ";" +
-			getEmp_nu_logradouro() + ";" +
-			getEmp_nu_caixapostal() + ";" +
-			getEmp_cd_codigoibgecorrespondencia() + ";" +
-			getEmp_nu_ddd() + ";" +
-			getEmp_nu_telefone() + ";" +
-			getOut_tpo_cd() + ";" +
-			getOut_tsp_cd() + ";" +
-			getOut_dt_inicial() + ";" +
-			getOut_dt_final() + ";" +
-			getOut_nu_processo() + ";" +
-			getOut_ds_ato() + ";" +
-			getOut_nu_ato() + ";" +
-			getInt_nu_siagas() + ";" +
-			getOpe_vz_mesjan() + ";" +
-			getOpe_vz_mesfev() + ";" +
-			getOpe_vz_mesmar() + ";" +
-			getOpe_vz_mesabr() + ";" +
-			getOpe_vz_mesmai() + ";" +
-			getOpe_vz_mesjun() + ";" +
-			getOpe_vz_mesjul() + ";" +
-			getOpe_vz_mesago() + ";" +
-			getOpe_vz_messet() + ";" +
-			getOpe_vz_mesout() + ";" +
-			getOpe_vz_mesnov() + ";" +
-			getOpe_vz_mesdez() + ";" +
-			getOpe_qt_horasjan() + ";" +
-			getOpe_qt_horasfev() + ";" +
-			getOpe_qt_horasmar() + ";" +
-			getOpe_qt_horasabr() + ";" +
-			getOpe_qt_horasmai() + ";" +
-			getOpe_qt_horasjun() + ";" +
-			getOpe_qt_horasjul() + ";" +
-			getOpe_qt_horasago() + ";" +
-			getOpe_qt_horasset() + ";" +
-			getOpe_qt_horasout() + ";" +
-			getOpe_qt_horasnov() + ";" +
-			getOpe_qt_horasdez() + ";" +
-			getOpe_qt_diajan() + ";" +
-			getOpe_qt_diafev() + ";" +
-			getOpe_qt_diamar() + ";" +
-			getOpe_qt_diaabr() + ";" +
-			getOpe_qt_diamai() + ";" +
-			getOpe_qt_diajun() + ";" +
-			getOpe_qt_diajul() + ";" +
-			getOpe_qt_diaago() + ";" +
-			getOpe_qt_diaset() + ";" +
-			getOpe_qt_diaout() + ";" +
-			getOpe_qt_dianov() + ";" +
-			getOpe_qt_diadez() + ";" +
-			getInt_vz_maxima() + ";" +
-			getFou_tou_cd() + ";" +
-			getSir_tsi_cd() + ";" +
-			getSir_tct_cd() + ";" +
-			getSir_ar_irrigada() + ";" +
-			getIus_nu_alturares() + ";" +
-			getIus_ar_resmax() + ";" +
-			getIus_vo_resmax() + ";" +
-			getEfl_qt_dbobruto() + ";" +
-			getEfl_qt_dbotratado() + ";" +
-			getEfl_qt_fosforobruto() + ";" +
-			getEfl_qt_fosforotratado() + ";" +
-			getEfl_qt_nitrogeniobruto() + ";" +
-			getEfl_qt_nitrogeniotratado() + ";" +
-			getAsb_dt_instalacao() + ";" +
-			getAsb_tpn_cd() + ";" +
-			getAsb_nu_diametroperfuracao() + ";" +
-			getAsb_nu_diametrofiltro() + ";" +
-			getAsb_aqp_cd() + ";" +
-			getAsb_nu_topo() + ";" +
-			getAsb_nu_base() + ";" +
-			getAsb_tnp_cd() + ";" +
-			getAsb_tca_cd() + ";" +
-			getAsb_nu_profundidadefinal() + ";" +
-			getAsb_nu_alturabocatubo() + ";" +
-			getAsb_nu_cotaterreno() + ";" +
-			getTst_dt() + ";" +
-			getTst_ttb_cd() + ";" +
-			getTst_ds_tempoduracao() + ";" +
-			getTst_nu_nd() + ";" +
-			getTst_nu_ne() + ";" +
-			getTst_vz_estabilizacao() + ";" +
-			getTst_tmi_cd() + ";" +
-			getTst_nu_coeficientearmazenamento() + ";" +
-			getTst_nu_transmissividade() + ";" +
-			getTst_nu_condutividadehidraulica() + ";" +
-			getTst_nu_permeabilidade() + ";" +
-			getAma_dt_coleta() + ";" +
-			getAma_dt_analise() + ";" +
-			getAma_nu_condutividadeeletrica() + ";" +
-			getAma_qt_temperatura() + ";" +
-			getAma_qt_std() + ";" +
-			getAma_qt_ph() + ";" +
-			getAma_qt_coliformestotais() + ";" +
-			getAma_qt_coliformesfecais() + ";" +
-			getAma_qt_bicarbonato() + ";" +
-			getAma_qt_calcio() + ";" +
-			getAma_qt_carbonato() + ";" +
-			getAma_qt_cloreto() + ";" +
-			getAma_qt_durezatotal() + ";" +
-			getAma_qt_ferrototal() + ";" +
-			getAma_qt_fluoretos() + ";" +
-			getAma_qt_nitratos() + ";" +
-			getAma_qt_nitritos() + ";" +
-			getAma_qt_potassio() + ";" +
-			getAma_qt_sodio() + ";" +
-			getAma_qt_sulfato() + ";" +
-			getAma_qt_magnesio() + ";";
+		return  getInt_tin_cd() + ";" +
+				getInt_tsu_cd() + ";" +
+				getInt_tsi_cd() + ";" +
+				getInt_cr_latitude() + ";" +
+				getInt_cr_longitude() + ";" +
+				getIng_nu_ibgemunicipio() + ";" +
+				getEmp_nm_empreendimento() + ";" +
+				getEmp_nu_cpfcnpj() + ";" +
+				getEmp_nm_usuario() + ";" +
+				getEmp_ds_emailresponsavel() + ";" +
+				getEmp_nu_cependereco() + ";" +
+				getEmp_ds_logradouro() + ";" +
+				getEmp_ds_complementoendereco() + ";" +
+				getEmp_nu_logradouro() + ";" +
+				getEmp_nu_caixapostal() + ";" +
+				getEmp_cd_codigoibgecorrespondencia() + ";" +
+				getEmp_nu_ddd() + ";" +
+				getEmp_nu_telefone() + ";" +
+				getOut_tpo_cd() + ";" +
+				getOut_tsp_cd() + ";" +
+				getOut_dt_inicial() + ";" +
+				getOut_dt_final() + ";" +
+				getOut_nu_processo() + ";" +
+				getOut_ds_ato() + ";" +
+				getOut_nu_ato() + ";" +
+				getInt_nu_siagas() + ";" +
+				getOpe_vz_mesjan() + ";" +
+				getOpe_vz_mesfev() + ";" +
+				getOpe_vz_mesmar() + ";" +
+				getOpe_vz_mesabr() + ";" +
+				getOpe_vz_mesmai() + ";" +
+				getOpe_vz_mesjun() + ";" +
+				getOpe_vz_mesjul() + ";" +
+				getOpe_vz_mesago() + ";" +
+				getOpe_vz_messet() + ";" +
+				getOpe_vz_mesout() + ";" +
+				getOpe_vz_mesnov() + ";" +
+				getOpe_vz_mesdez() + ";" +
+				getOpe_qt_horasjan() + ";" +
+				getOpe_qt_horasfev() + ";" +
+				getOpe_qt_horasmar() + ";" +
+				getOpe_qt_horasabr() + ";" +
+				getOpe_qt_horasmai() + ";" +
+				getOpe_qt_horasjun() + ";" +
+				getOpe_qt_horasjul() + ";" +
+				getOpe_qt_horasago() + ";" +
+				getOpe_qt_horasset() + ";" +
+				getOpe_qt_horasout() + ";" +
+				getOpe_qt_horasnov() + ";" +
+				getOpe_qt_horasdez() + ";" +
+				getOpe_qt_diajan() + ";" +
+				getOpe_qt_diafev() + ";" +
+				getOpe_qt_diamar() + ";" +
+				getOpe_qt_diaabr() + ";" +
+				getOpe_qt_diamai() + ";" +
+				getOpe_qt_diajun() + ";" +
+				getOpe_qt_diajul() + ";" +
+				getOpe_qt_diaago() + ";" +
+				getOpe_qt_diaset() + ";" +
+				getOpe_qt_diaout() + ";" +
+				getOpe_qt_dianov() + ";" +
+				getOpe_qt_diadez() + ";" +
+				getInt_vz_maxima() + ";" +
+				getFou_tou_cd() + ";" +
+				getSir_tsi_cd() + ";" +
+				getSir_tct_cd() + ";" +
+				getSir_ar_irrigada() + ";" +
+				getIus_nu_alturares() + ";" +
+				getIus_ar_resmax() + ";" +
+				getIus_vo_resmax() + ";" +
+				getEfl_qt_dbobruto() + ";" +
+				getEfl_qt_dbotratado() + ";" +
+				getEfl_qt_fosforobruto() + ";" +
+				getEfl_qt_fosforotratado() + ";" +
+				getEfl_qt_nitrogeniobruto() + ";" +
+				getEfl_qt_nitrogeniotratado() + ";" +
+				getAsb_dt_instalacao() + ";" +
+				getAsb_tpn_cd() + ";" +
+				getAsb_nu_diametroperfuracao() + ";" +
+				getAsb_nu_diametrofiltro() + ";" +
+				getAsb_aqp_cd() + ";" +
+				getAsb_nu_topo() + ";" +
+				getAsb_nu_base() + ";" +
+				getAsb_tnp_cd() + ";" +
+				getAsb_tca_cd() + ";" +
+				getAsb_nu_profundidadefinal() + ";" +
+				getAsb_nu_alturabocatubo() + ";" +
+				getAsb_nu_cotaterreno() + ";" +
+				getTst_dt() + ";" +
+				getTst_ttb_cd() + ";" +
+				getTst_ds_tempoduracao() + ";" +
+				getTst_nu_nd() + ";" +
+				getTst_nu_ne() + ";" +
+				getTst_vz_estabilizacao() + ";" +
+				getTst_tmi_cd() + ";" +
+				getTst_nu_coeficientearmazenamento() + ";" +
+				getTst_nu_transmissividade() + ";" +
+				getTst_nu_condutividadehidraulica() + ";" +
+				getTst_nu_permeabilidade() + ";" +
+				getAma_dt_coleta() + ";" +
+				getAma_dt_analise() + ";" +
+				getAma_nu_condutividadeeletrica() + ";" +
+				getAma_qt_temperatura() + ";" +
+				getAma_qt_std() + ";" +
+				getAma_qt_ph() + ";" +
+				getAma_qt_coliformestotais() + ";" +
+				getAma_qt_coliformesfecais() + ";" +
+				getAma_qt_bicarbonato() + ";" +
+				getAma_qt_calcio() + ";" +
+				getAma_qt_carbonato() + ";" +
+				getAma_qt_cloreto() + ";" +
+				getAma_qt_durezatotal() + ";" +
+				getAma_qt_ferrototal() + ";" +
+				getAma_qt_fluoretos() + ";" +
+				getAma_qt_nitratos() + ";" +
+				getAma_qt_nitritos() + ";" +
+				getAma_qt_potassio() + ";" +
+				getAma_qt_sodio() + ";" +
+				getAma_qt_sulfato() + ";" +
+				getAma_qt_magnesio() + ";";
 	}
 
+
+	
+	
 }

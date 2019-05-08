@@ -18,10 +18,9 @@ public class ExportCnarhDaoImpl implements Export_CnarhDao {
 
 		entityManager.getTransaction().begin();
 		
-		//Query query = entityManager.createQuery("FROM ExportCnarh");
-		Query query = entityManager.createNativeQuery("select * from vw_export_cnarh");
+		Query query = entityManager.createQuery("FROM ExportCnarh");
 
-		List<ExportCnarh> exportCnarhs = query.getResultList();
+		 List<ExportCnarh> exportCnarhs = query.getResultList();
 
 		entityManager.getTransaction().commit();
 		entityManager.close();

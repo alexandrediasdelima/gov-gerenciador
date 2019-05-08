@@ -47,9 +47,11 @@
 				    </f:facet>
 				    <p:row>
 				    	<p:column>
-					    	<p:commandButton value="DOWNLOAD VIEW CNARH" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton" >
+				    		<br/>
+					    	<p:commandButton value="Download" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton" >
 								<p:fileDownload value="#{exportCnarhBean.download}" />
 							</p:commandButton>
+							<br/><br/>
 				    	</p:column>
 				    </p:row>
 				</p:panelGrid>

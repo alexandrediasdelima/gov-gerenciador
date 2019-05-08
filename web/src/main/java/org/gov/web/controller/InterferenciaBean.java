@@ -15,6 +15,7 @@ import java.util.Set;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
 
 import org.gov.model.Apac;
 import org.gov.model.Cnarh;
@@ -157,8 +158,11 @@ public class InterferenciaBean extends Controller  {
 
 		    nomeArquivo =  new Date().getTime() + file.getFileName();
 		    //String imagePath = "/resources/images/interferencia/";
+		    ServletContext scontext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
 		    
-        	String caminhoDestinoArquivo = "C:/import_cad/imagens/" + nomeArquivo;
+		    String caminhoDestinoArquivo = scontext.getRealPath("/resources/images/interferencia/" + nomeArquivo);
+		    
+        	//String caminhoDestinoArquivo = "C:/import_cad/imagens/" + nomeArquivo;
         	//String caminhoDestinoArquivo = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath().toString() + imagePath + nomeArquivo;    
 
         	boolean transferenciaSucesso = false;

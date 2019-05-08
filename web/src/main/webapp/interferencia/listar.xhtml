@@ -65,9 +65,11 @@
 					<h:panelGroup rendered="#{!interferencia.apa_est_hidrologico}"><h:outputText value="NÃO" /></h:panelGroup>
 				</p:column>
 				<p:column headerText="Captura Lançamento Geral" filterBy="#{interferencia.fot_cap_lanc_geral}" filterMatchMode="contains" sortBy="#{interferencia.fot_cap_lanc_geral}" >
-				<p:commandButton immediate="true" value="#{interferencia.fot_cap_lanc_geral}" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton" >
-					<p:fileDownload value="#{interferenciaBean.download(interferencia.fot_cap_lanc_geral)}" />
-				</p:commandButton>
+					<p:commandButton immediate="true" value="#{interferencia.fot_cap_lanc_geral}" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton" >
+						<p:fileDownload value="#{interferenciaBean.download(interferencia.fot_cap_lanc_geral)}" />
+					</p:commandButton>
+					
+					<ui:remove><p:graphicImage library="images" name="/interferencia/#{interferencia.fot_cap_lanc_detalhe}" width="400"/></ui:remove>
 				</p:column>
 				<p:column headerText="Captura Lançamento Detalhe" filterBy="#{interferencia.fot_cap_lanc_detalhe}" filterMatchMode="contains" sortBy="#{interferencia.fot_cap_lanc_detalhe}" >
 					<p:commandButton immediate="true" value="#{interferencia.fot_cap_lanc_detalhe}"  ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton">

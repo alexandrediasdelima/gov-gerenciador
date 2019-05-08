@@ -3,10 +3,11 @@ package org.gov.web.controller;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-
+import java.util.ArrayList;
+import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-
+import org.gov.model.ExportCnarh;
 import org.gov.service.ExportCnarhService;
 import org.gov.service.ExportCnarhServiceImpl;
 import org.primefaces.model.DefaultStreamedContent;
@@ -23,9 +24,9 @@ public class ExportCnarhBean extends Controller {
 	private ExportCnarhService exportCnarhService;
 
 	public ExportCnarhBean () {
-
+		
 	}
-
+	
 	public StreamedContent getDownload() {
 
 		exportCnarhService = new ExportCnarhServiceImpl();
@@ -53,6 +54,5 @@ public class ExportCnarhBean extends Controller {
 	public void setFile(StreamedContent file) {
 		this.file = file;
 	}
-
 
 }
