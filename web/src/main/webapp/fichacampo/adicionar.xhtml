@@ -7,12 +7,12 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
 	xmlns:components="http://java.sun.com/jsf/composite/components">
-	
+
 	<style type="text/css">
 		.ui-state-hover { background: none !important; background-image: none !important; }
 		.central { width: 100% !important; margin: 0 auto; }
 	</style>
-	
+
 	<h:form id="fichaCampo" prependId="false" style="width:99%;" >
 	<f:event type="preRenderView" listener="#{fichaCampoBean.resetView}"/>
 	<br/><br/><br/>
@@ -213,16 +213,16 @@
 		</p:panelGrid>
 		<p:panelGrid styleClass="central">
 	        <p:row>
-	        	<p:column style="width:25%"><p:outputLabel value="Foto geral do ponto de interferência:" for="fot_cap_lanc_geral" /></p:column>
-	        	<p:column style="width:75%"><p:outputLabel id="fot_cap_lanc_geral" value="#{fichaCampoBean.fichaCampo.fot_cap_lanc_geral}" /></p:column>
+	        	<p:column style="width:25%"><p:outputLabel value="Foto geral do ponto de interferência:" /></p:column>
+	        	<p:column style="width:15%"><img height="50%" id="fot_cap_lanc_geral" src="data:image/jpg;base64, #{fichaCampoBean.fichaCampo.fot_cap_lanc_geral}" /></p:column>
 	        </p:row>
 	        <p:row>
-		        <p:column><p:outputLabel value="Foto de detalhe do ponto de interferência:" for="fot_cap_lanc_detalhe" /></p:column>
-		        <p:column><p:outputLabel id="fot_cap_lanc_detalhe" value="#{fichaCampoBean.fichaCampo.fot_cap_lanc_detalhe}" /></p:column>
+		        <p:column><p:outputLabel value="Foto de detalhe do ponto de interferência:" /></p:column>
+		        <p:column><img id="fot_cap_lanc_geral" height="50%" src="data:image/jpg;base64, #{fichaCampoBean.fichaCampo.fot_cap_lanc_detalhe}" /></p:column>
 		    </p:row>
 			<p:row>
-		        <p:column><p:outputLabel value="Foto do Croqui:" for="fot_croqui_localizacao" /></p:column>
-				<p:column><p:outputLabel id="fot_croqui_localizacao" value="#{fichaCampoBean.fichaCampo.fot_croqui_localizacao}" /></p:column>
+		        <p:column><p:outputLabel value="Foto do Croqui:" /></p:column>
+				<p:column><img id="fot_cap_lanc_geral" height="50%" src="data:image/jpg;base64, #{fichaCampoBean.fichaCampo.fot_croqui_localizacao}" /></p:column>
 	        </p:row>
 	   	</p:panelGrid>
 		<br/><br/>
@@ -436,7 +436,7 @@
 				<p:column><p:outputLabel value="Março:" for="ope_qt_diamar" /></p:column>
 				<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diamar" value="#{fichaCampoBean.fichaCampo.ope_qt_diamar}" /></p:column>
 				<p:column><p:outputLabel value="Abril:" for="ope_qt_diaabr" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diaabr" value="#{fichaCampoBean.fichaCampo.ope_qt_diaabr}" /></p:column>	
+				<p:column><p:outputLabel style="font-weight: bold" id="ope_qt_diaabr" value="#{fichaCampoBean.fichaCampo.ope_qt_diaabr}" /></p:column>
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Maio:" for="ope_qt_diamai" /></p:column>
@@ -525,7 +525,7 @@
 				<p:column><p:outputLabel value="Volume máximo do reservatório (hm³):" for="ius_vo_resmax" /></p:column>
 				<p:column><p:outputLabel style="font-weight: bold" id="ius_vo_resmax" value="#{fichaCampoBean.fichaCampo.ius_vo_resmax}" /></p:column>
 			</p:row>
-		</p:panelGrid>			
+		</p:panelGrid>
 		<br/><br/>
 		<p:panelGrid styleClass="central">
 	        <f:facet name="header">
@@ -573,13 +573,13 @@
 				<p:column><p:outputLabel value="Vazão outorgada (m³/dia):" for="apa_vz_outorga_m3dia" /></p:column>
 				<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_outorga_m3dia" value="#{fichaCampoBean.fichaCampo.apa_vz_outorga_m3dia}" /></p:column>
 				<p:column><p:outputLabel value="Horas requeridas para captação por dia:" for="apa_vz_requerida_horas_dia" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_requerida_horas_dia" value="#{fichaCampoBean.fichaCampo.apa_vz_requerida_horas_dia}" /></p:column>	
+				<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_requerida_horas_dia" value="#{fichaCampoBean.fichaCampo.apa_vz_requerida_horas_dia}" /></p:column>
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Vazão requerida (l/s):" for="apa_vz_requerida_ls" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_requerida_ls" value="#{fichaCampoBean.fichaCampo.apa_vz_requerida_ls}" /></p:column>									
+				<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_requerida_ls" value="#{fichaCampoBean.fichaCampo.apa_vz_requerida_ls}" /></p:column>
 				<p:column><p:outputLabel value="Vazão requerida média diária (m³/dia):" for="apa_vz_requerida_m3dia" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_requerida_m3dia" value="#{fichaCampoBean.fichaCampo.apa_vz_requerida_m3dia}" /></p:column>					
+				<p:column><p:outputLabel style="font-weight: bold" id="apa_vz_requerida_m3dia" value="#{fichaCampoBean.fichaCampo.apa_vz_requerida_m3dia}" /></p:column>
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Garantia:" for="apa_garantia" /></p:column>
@@ -627,7 +627,7 @@
 				<p:column><p:outputLabel value="Maio:" for="apa_outorga_mai" /></p:column>
 				<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_mai" value="#{fichaCampoBean.fichaCampo.apa_outorga_mai}" /></p:column>
 				<p:column><p:outputLabel value="Julho:" for="apa_outorga_jun" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_jun" value="#{fichaCampoBean.fichaCampo.apa_outorga_jun}" /></p:column>																
+				<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_jun" value="#{fichaCampoBean.fichaCampo.apa_outorga_jun}" /></p:column>
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Junho:" for="apa_outorga_jul" /></p:column>
@@ -637,9 +637,9 @@
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Outubro:" for="apa_outorga_set" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_set" value="#{fichaCampoBean.fichaCampo.apa_outorga_set}" /></p:column>						
+				<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_set" value="#{fichaCampoBean.fichaCampo.apa_outorga_set}" /></p:column>
 				<p:column><p:outputLabel value="Setembro:" for="apa_outorga_out" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_out" value="#{fichaCampoBean.fichaCampo.apa_outorga_out}" /></p:column>				
+				<p:column><p:outputLabel style="font-weight: bold" id="apa_outorga_out" value="#{fichaCampoBean.fichaCampo.apa_outorga_out}" /></p:column>
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Novembro:" for="apa_outorga_nov" /></p:column>
@@ -655,7 +655,7 @@
 		            <p:column colspan="4">Outras Informações</p:column>
 		        </p:row>
 		    </f:facet>
-		    <p:row>    
+		    <p:row>
 				<p:column style="width:25%"><p:outputLabel value="Destino das águas servidas:" for="cam_agua_servida_destino" /></p:column>
 				<p:column style="width:25%"><p:outputLabel style="font-weight: bold" id="cam_agua_servida_destino" value="#{fichaCampoBean.fichaCampo.cam_agua_servida_destino}" /></p:column>
 				<p:column style="width:25%"><p:outputLabel value="Foi realizado o CAR?" for="cam_realizacao_car" /></p:column>
@@ -676,7 +676,7 @@
 		            <p:column colspan="4">Caracterização</p:column>
 		        </p:row>
 		    </f:facet>
-		    <p:row> 
+		    <p:row>
 				<p:column style="width:45%"><p:outputLabel value="Bacia Hidrogeológica:" for="apa_bacia_hidrogeo" rendered="false" /></p:column>
 				<p:column style="width:5%"><p:outputLabel style="font-weight: bold" id="apa_bacia_hidrogeo" value="#{fichaCampoBean.fichaCampo.fichaCampoBean.fichaCampo.apa_bacia_hidrogeo}" rendered="false" /></p:column>
 				<p:column style="width:45%"><p:outputLabel value="Natureza do ponto:" for="asb_tnp_cd" /></p:column>
@@ -686,19 +686,19 @@
 				<p:column><p:outputLabel value="Data de instalação do poço:" for="asb_dt_instalacao" /></p:column>
 				<p:column><p:outputLabel style="font-weight: bold" id="asb_dt_instalacao" value="#{fichaCampoBean.fichaCampo.asb_dt_instalacao}" /></p:column>
 				<p:column><p:outputLabel value="Código identificador do aquífero:" for="asb_aqp_cd" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="asb_aqp_cd" value="#{fichaCampoBean.fichaCampo.asb_aqp_cd}" /></p:column>	
+				<p:column><p:outputLabel style="font-weight: bold" id="asb_aqp_cd" value="#{fichaCampoBean.fichaCampo.asb_aqp_cd}" /></p:column>
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Condição do aquífero" for="asb_tca_cd" /></p:column>
 				<p:column><p:outputLabel style="font-weight: bold" id="asb_tca_cd" value="#{fichaCampoBean.fichaCampo.asb_tca_cd}" /></p:column>
 				<p:column><p:outputLabel value="Tipo de penetração do aquífero:" for="asb_tpn_cd" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="asb_tpn_cd" value="#{fichaCampoBean.fichaCampo.asb_tpn_cd}" /></p:column>														
+				<p:column><p:outputLabel style="font-weight: bold" id="asb_tpn_cd" value="#{fichaCampoBean.fichaCampo.asb_tpn_cd}" /></p:column>
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Altitude do terreno (m):" for="asb_nu_cotaterreno" /></p:column>
 				<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_cotaterreno" value="#{fichaCampoBean.fichaCampo.asb_nu_cotaterreno}" /></p:column>
 				<p:column><p:outputLabel value="Altura da boca da tubulação (m):" for="asb_nu_alturabocatubo" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_alturabocatubo" value="#{fichaCampoBean.fichaCampo.asb_nu_alturabocatubo}" /></p:column>								
+				<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_alturabocatubo" value="#{fichaCampoBean.fichaCampo.asb_nu_alturabocatubo}" /></p:column>
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Diâmetro de perfuração do poço (pol):" for="asb_nu_diametroperfuracao" /></p:column>
@@ -710,7 +710,7 @@
 				<p:column><p:outputLabel value="Profundidade topo do aquifero (a partir da superfície) (m):" for="asb_nu_topo" /></p:column>
 				<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_topo" value="#{fichaCampoBean.fichaCampo.asb_nu_topo}" /></p:column>
 				<p:column><p:outputLabel value="Profundidade base do aquifero (a partir da superfície) (m):" for="asb_nu_base" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_base" value="#{fichaCampoBean.fichaCampo.asb_nu_base}" /></p:column>	
+				<p:column><p:outputLabel style="font-weight: bold" id="asb_nu_base" value="#{fichaCampoBean.fichaCampo.asb_nu_base}" /></p:column>
 			</p:row>
 		</p:panelGrid>
 		<p:panelGrid styleClass="central" style="width: 100% !important">
@@ -739,9 +739,9 @@
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Método de interpretação:" for="tst_tmi_cd" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="tst_tmi_cd" value="#{fichaCampoBean.fichaCampo.tst_tmi_cd}" /></p:column>	
+				<p:column><p:outputLabel style="font-weight: bold" id="tst_tmi_cd" value="#{fichaCampoBean.fichaCampo.tst_tmi_cd}" /></p:column>
 				<p:column><p:outputLabel value="Transmissividade (m³/s):" for="tst_nu_transmissividade" /></p:column>
-				<p:column><p:outputLabel style="font-weight: bold" id="tst_nu_transmissividade" value="#{fichaCampoBean.fichaCampo.tst_nu_transmissividade}"/></p:column>																		
+				<p:column><p:outputLabel style="font-weight: bold" id="tst_nu_transmissividade" value="#{fichaCampoBean.fichaCampo.tst_nu_transmissividade}"/></p:column>
 			</p:row>
 			<p:row>
 				<p:column><p:outputLabel value="Coeficiente de armazenamento:" for="tst_nu_coeficientearmazenamento" /></p:column>

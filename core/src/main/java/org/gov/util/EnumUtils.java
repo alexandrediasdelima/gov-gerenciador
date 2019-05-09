@@ -20,11 +20,11 @@ import org.gov.model.IdentificadorAquiferoPonto;
 public final class EnumUtils {
 
 	private EnumUtils() {
-		
+
 	}
-	
+
 	//ANEXO I – INT_TIN_CD – CÓDIGO IDENTIFICADOR DO TIPO DE INTERFERENCIA
-	public static String obterValorTipoInterferencia(int chave) {
+	public static String obterValorTipoInterferencia(Integer chave) {
     	switch (chave) {
 	    	case 1: return TipoInterferencia.CAPTACAO.getValor();
 	    	case 2: return TipoInterferencia.LANCAMENTO.getValor();
@@ -34,9 +34,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 2 – INT_TSU_CD – CÓDIGO IDENTIFICADOR DO SUBTIPO DA CAPTAÇÃO
-	public static String obterValorSubTipoCaptacao(int chave) {
+	public static String obterValorSubTipoCaptacao(Integer chave) {
     	switch (chave) {
 	    	case 1: return SubTipoCaptacao.SUPERFICIAL.getValor();
 	    	case 2: return SubTipoCaptacao.SUBTERRANEA.getValor();
@@ -44,9 +44,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 3 – INT_TSI_CD – CÓDIGO IDENTIFICADOR DA SITUAÇÃO DA INTERFERÊNCIA
-	public static String obterValorSituacaoInterferencia(int chave) {
+	public static String obterValorSituacaoInterferencia(Integer chave) {
     	switch (chave) {
 	    	case 1: return SituacaoInterferencia.PROJETO.getValor();
 	    	case 2: return SituacaoInterferencia.CONSTRUCAO.getValor();
@@ -58,7 +58,7 @@ public final class EnumUtils {
 	}
 
 	//ANEXO 4 – OUT_TPO_CD – CÓDIGO IDENTIFICADOR DO TIPO DE ATO ADMINISTRATIVO OU INSTRUMENTO DE REGULARIZAÇÃO
-	public static String obterValorTipoOutorga(int chave) {
+	public static String obterValorTipoOutorga(Integer chave) {
     	switch (chave) {
 	    	case 1: return TipoOutorga.DIREITO_DE_USO.getValor();
 	    	case 2: return TipoOutorga.PREVENTIVA.getValor();
@@ -72,9 +72,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 5 – OUT_TSP_CD – CÓDIGO IDENTIFICADOR DO TIPO DE SITUAÇÃO DE ATO ADMINISTRATIVO OU INSTRUMENTO DE REGULARIZAÇÃO
-	public static String obterValorSituacaoOutorga(int chave) {
+	public static String obterValorSituacaoOutorga(Integer chave) {
     	switch (chave) {
 	    	case 1: return SituacaoOutorga.OUTORGADO.getValor();
 	    	case 2: return SituacaoOutorga.NAO_OUTORGAVEL.getValor();
@@ -88,9 +88,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 6 – FIN_TFN_CD- CÓDIGO IDENTIFICADOR DO TIPO DA FINALIDADE
-	public static String obterValorTipoFinalidade(int chave) {
+	public static String obterValorTipoFinalidade(Integer chave) {
     	switch (chave) {
 	    	case 0:  return TipoFinalidade.SEM_FINALIDADE.getValor();
 	    	case 1:  return TipoFinalidade.ABASTECIMENTO_PUBLICO.getValor();
@@ -104,7 +104,7 @@ public final class EnumUtils {
 	    	case 9:  return TipoFinalidade.TRANSPOSICAO.getValor();
 	    	case 10: return TipoFinalidade.APROVEITAMENTO_HIDROELETRICO.getValor();
 	    	case 11: return TipoFinalidade.RESERVATORIO.getValor();
-	    	case 12: return TipoFinalidade.CONSUMO_HUMANO.getValor();		
+	    	case 12: return TipoFinalidade.CONSUMO_HUMANO.getValor();
 	    	case 13: return TipoFinalidade.MINERACAO_OUTROS.getValor();
 	    	case 15: return TipoFinalidade.OBRAS_HIDRAULICAS.getValor();
 	    	case 16: return TipoFinalidade.SERVICOS.getValor();
@@ -113,10 +113,10 @@ public final class EnumUtils {
 	    	default:
 	    		return null;
     	}
-	}	
+	}
 
 	//ANEXO 7 – FOU_TOU_CD- CÓDIGO IDENTIFICADOR DO TIPO DE OUTRO USO
-	public static String obterValorTipoOutroUso(int chave) {
+	public static String obterValorTipoOutroUso(Integer chave) {
     	switch (chave) {
 	    	case 1:  return TipoOutroUso.ECLUSA.getValor();
 	    	case 2:  return TipoOutroUso.RECREACAO.getValor();
@@ -147,9 +147,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 8 - TNP_CD - CÓDIGO IDENTIFICADOR QUE REPRESENTA O SISTEMA DE IRRIGAÇÃO UTILIZADO PELA INTERFERÊNCIA
-	public static String obterValorTipoIrrigacao(int chave) {
+	public static String obterValorTipoIrrigacao(Integer chave) {
     	switch (chave) {
 	    	case 1: return TipoIrrigacao.SULCOS_ABERTOS_EM_DESNIVEL.getValor();
 	    	case 2: return TipoIrrigacao.INUNDACAO_PERMANENTE_DIQUES_EM_NIVEL.getValor();
@@ -174,9 +174,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 9 - TNP_CD - CÓDIGO IDENTIFICADOR DO TIPO DE CULTURA
-	public static String obterValorTipoCultura(int chave) {
+	public static String obterValorTipoCultura(Integer chave) {
     	switch (chave) {
     	case 1: return TipoCultura.BROCOLIS.getValor();
     	case 2: return TipoCultura.COUVE_DE_BRUXELAS.getValor();
@@ -377,9 +377,9 @@ public final class EnumUtils {
     		return null;
     	}
 	}
-	
+
 	//ANEXO 10 - TNP_CD- CÓDIGO IDENTIFICADOR DA NATUREZA DO PONTO
-	public static String obterValorNaturezaPonto(int chave) {
+	public static String obterValorNaturezaPonto(Integer chave) {
     	switch (chave) {
 	    	case 1: return NaturezaPonto.POCO_ESCAVADO_CACIMBA_CISTERNA.getValor();
 	    	case 2: return NaturezaPonto.FONTE_NATURAL.getValor();
@@ -396,9 +396,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 11 - ASB_TPN_CD - CÓDIGO IDENTIFICADOR DO TIPO DE PENETRAÇÃO NO AQUÍFERO
-	public static String obterValorTipoPenetracaoAquifero(int chave) {
+	public static String obterValorTipoPenetracaoAquifero(Integer chave) {
     	switch (chave) {
     		case 1: return TipoPenetracaoAquifero.PARCIAL.getValor();
     		case 2: return TipoPenetracaoAquifero.TOTAL.getValor();
@@ -406,9 +406,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 12 - ASB_TCA_CD - CÓDIGO IDENTIFICADOR DO TIPO DE CONDIÇÃO DO AQUÍFERO
-	public static String obterValorTipoCondicaoAquifero(int chave) {
+	public static String obterValorTipoCondicaoAquifero(Integer chave) {
     	switch (chave) {
 	    	case 1: return TipoCondicaoAquifero.LIVRE.getValor();
 	    	case 2: return TipoCondicaoAquifero.CONFINADO.getValor();
@@ -418,9 +418,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 13 – TST_TTB_CD - CÓDIGO IDENTIFICADOR DO TIPO DE TESTE DE BOMBEAMENTO
-	public static String obterValorTipoTesteBombeamento(int chave) {
+	public static String obterValorTipoTesteBombeamento(Integer chave) {
     	switch (chave) {
     		case 1: return TipoTesteBombeamento.REBAIXAMENTO.getValor();
     		case 2: return TipoTesteBombeamento.RECARGA.getValor();
@@ -432,9 +432,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 14 - TST_TMI_CD - CÓDIGO IDENTIFICADOR DO TIPO DE MÉTODO DE INTERPRETAÇÃO
-	public static String obterValorTipoMetodoInterpretacao(int chave) {
+	public static String obterValorTipoMetodoInterpretacao(Integer chave) {
     	switch (chave) {
 	    	case 1: return TipoMetodoInterpretacao.ARON_SCOTT.getValor();
 	    	case 2: return TipoMetodoInterpretacao.BOULTON.getValor();
@@ -468,9 +468,9 @@ public final class EnumUtils {
 	    		return null;
     	}
 	}
-	
+
 	//ANEXO 15 - AQP_CD - CÓDIGO IDENTIFICADOR DO AQUÍFERO PONTO
-	public static String obterValorIdentificadorAquiferoPonto(int chave) {
+	public static String obterValorIdentificadorAquiferoPonto(Integer chave) {
     	switch (chave) {
 	    	case 1: return IdentificadorAquiferoPonto.ACU_POROSO_NAO_DEFINIDA.getValor();
 	    	case 2: return IdentificadorAquiferoPonto.ACU_POROSO_REGIONAL.getValor();
@@ -717,6 +717,6 @@ public final class EnumUtils {
 	   		default:
 	    		return null;
     	}
-	}	
-	
+	}
+
 }

@@ -4,10 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Subselect;
@@ -22,12 +19,12 @@ public class FichaCampo implements Serializable {
 	/**
 	 *
 	 */
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Column (name="ama_qt_calcio")
 	private String ama_qt_calcio;
-	
+
 	@Column (name="ama_qt_cloreto")
 	private String ama_qt_cloreto;
 
@@ -222,19 +219,19 @@ public class FichaCampo implements Serializable {
 
 	@Column (name="out_nu_processo_ana")
 	private String out_nu_processo_ana;
-	
+
 	@Column (name="forn_id")
 	private String forn_id;
-	
+
 	@Column (name="forn_info_nm")
 	private String forn_info_nm;
-	
+
 	@Column (name="forn_info_cargo")
 	private String forn_info_cargo;
-	
+
 	@Column (name="forn_info_departamento")
 	private String forn_info_departamento;
-	
+
 	@Column (name="forn_info_contato_inst")
 	private String forn_info_contato_inst;
 
@@ -2666,15 +2663,15 @@ public class FichaCampo implements Serializable {
 		this.forn_info_contato_inst = forn_info_contato_inst;
 	}
 
-	
-	
-	
+
+
+
 	// ---- //
 
 //	@Column(name="int_tin_cd", nullable=false)
 //	@Id
 //	private String int_tin_cd;
-//	 
+//
 //	@Column (name="emp_nm_usuario", nullable=false)
 //	private String emp_nm_usuario;
 //
@@ -2804,5 +2801,5 @@ public class FichaCampo implements Serializable {
 //	@Column (name="ama_qt_sulfato", nullable=false) private String ama_qt_sulfato;
 //	@Column (name="ama_qt_magnesio", nullable=false) private String ama_qt_magnesio;
 
-	
+
 }
