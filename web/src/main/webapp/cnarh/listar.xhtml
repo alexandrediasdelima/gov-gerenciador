@@ -42,9 +42,15 @@
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{cnarhBean.telaEditar(cnarh)}" value="Editar" ajax="false" icon="ui-icon-document" />
-					<p:commandButton value="Apagar" action="#{cnarhBean.deletar}" oncomplete="PF('tabelaCnarhs').filter()" update="@form" icon="ui-icon-cancel">
-				        <f:setPropertyActionListener value="#{cnarh}" target="#{cnarhBean.cnarh}" />
-				    </p:commandButton>
+				    <p:commandButton value="Apagar" type="button" onclick="PF('confirmDelete').show();" icon="ui-icon ui-icon-trash" />
+				    <p:dialog header="Apac" widgetVar="confirmDelete" modal="true" showEffect="fade" hideEffect="fade" height="100" resizable="false">
+    					<h:outputText value="Confirma a Exclusão?" /><br/><br/><br/>
+    					<p:commandButton value="Sim" action="#{cnarhBean.deletar}" oncomplete="PF('tabelaCnarhs').filter(); PF('confirmDelete').hide();" update="@form" icon="ui-icon ui-icon-check">
+				    		<f:setPropertyActionListener value="#{cnarh}" target="#{cnarhBean.cnarh}" />
+				    	</p:commandButton>
+				    	<p:spacer height="5" width="10" />
+				    	<p:commandButton value="Não" oncomplete="PF('confirmDelete').hide();" icon="ui-icon ui-icon-close" />    					
+					</p:dialog>
 				</p:column>
 			</p:dataTable>
 			<p:blockUI block="tabelaCnarhs" trigger="tabelaCnarhs">

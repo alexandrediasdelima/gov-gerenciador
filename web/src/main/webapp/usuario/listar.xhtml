@@ -82,23 +82,22 @@
 				<p:column headerText="UF" filterBy="#{usuario.emp_ds_uf}" filterMatchMode="contains" sortBy="#{usuario.emp_ds_uf}">
 					<h:outputText value="#{usuario.emp_ds_uf}" />
 				</p:column>
-				<p:inputText value="#{usuario.emp_nu_tipodocumento}" type="hidden"  />
+				<p:inputText value="#{usuario.emp_nu_tipodocumento}" type="hidden" />
 				<p:column headerText="Ações">
 					<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document"/>
-				    
-				    <p:commandButton value="Apagar" action="#{usuarioBean.deletar}" oncomplete="PF('tabelaUsuarios').filter()" update="@form" icon="ui-icon-cancel">
-				        <p:confirm header="Apac" message="Confirma a Exclusão?" />
-				    </p:commandButton>
-				    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
-				        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes">
-				        	<f:setPropertyActionListener value="#{usuario}" target="#{usuarioBean.usuario}" />
-				        </p:commandButton>
-				        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" />
-				    </p:confirmDialog>
-
+				    <p:commandButton value="Apagar" type="button" onclick="PF('confirmDelete').show();" icon="ui-icon ui-icon-trash">
+				    #{usuario.usuario_id}
+				    <p:dialog header="Apac" widgetVar="confirmDelete" modal="true" showEffect="fade" hideEffect="fade" height="100" resizable="false">
+    					<h:outputText value="Confirma a Exclusão?#{usuario.usuario_id}" /><br/><br/><br/>
+    					<p:commandButton value="Sim" action="#{usuarioBean.deletar}" oncomplete="PF('tabelaUsuarios').filter(); PF('confirmDelete').hide();" update="@form" icon="ui-icon ui-icon-check">
+				    		<f:setPropertyActionListener value="#{usuario}" target="#{usuarioBean.usuario}" />
+				    	</p:commandButton>
+				    	<p:spacer height="5" width="10" />
+				    	<p:commandButton value="Não" oncomplete="PF('confirmDelete').hide();" icon="ui-icon ui-icon-close" />    					
+					</p:dialog>
+					</p:commandButton>
 				</p:column>
 			</p:dataTable>
-
 			<p:blockUI block="tabelaUsuarios" trigger="tabelaUsuarios">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>
