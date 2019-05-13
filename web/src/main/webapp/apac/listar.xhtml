@@ -151,15 +151,9 @@
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{apacBean.telaEditar(apac)}" value="Editar" ajax="false" icon="ui-icon-document" />
-				    <p:commandButton value="Apagar" type="button" onclick="PF('confirmDelete').show();" icon="ui-icon ui-icon-trash" />
-				    <p:dialog header="Apac" widgetVar="confirmDelete" modal="true" showEffect="fade" hideEffect="fade" height="100" resizable="false">
-    					<h:outputText value="Confirma a Exclusão?" /><br/><br/><br/>
-    					<p:commandButton value="Sim" action="#{apacBean.deletar}" oncomplete="PF('tabelaApacs').filter(); PF('confirmDelete').hide();" update="@form" icon="ui-icon ui-icon-check">
-				    		<f:setPropertyActionListener value="#{apac}" target="#{apacBean.apac}" />
-				    	</p:commandButton>
-				    	<p:spacer height="5" width="10" />
-				    	<p:commandButton value="Não" oncomplete="PF('confirmDelete').hide();" icon="ui-icon ui-icon-close" />    					
-					</p:dialog>
+					<p:commandButton action="#{apacBean.deletar}" value="Apagar" oncomplete="PF('tabelaApacs').filter();" update="@form" icon="ui-icon ui-icon-trash" >
+						<f:setPropertyActionListener value="#{apac}" target="#{apacBean.apac}" />
+					</p:commandButton>
 				</p:column>
 			</p:dataTable>
 			<p:blockUI block="tabelaApacs" trigger="tabelaApacs">

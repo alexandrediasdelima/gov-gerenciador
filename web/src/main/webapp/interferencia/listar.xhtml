@@ -122,15 +122,9 @@
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{interferenciaBean.telaEditar(interferencia)}" value="Editar" ajax="false" icon="ui-icon-document" />
-				    <p:commandButton value="Apagar" type="button" onclick="PF('confirmDelete').show();" icon="ui-icon ui-icon-trash" />
-				    <p:dialog header="Apac" widgetVar="confirmDelete" modal="true" showEffect="fade" hideEffect="fade" height="100" resizable="false">
-    					<h:outputText value="Confirma a Exclusão?" /><br/><br/><br/>
-    					<p:commandButton value="Sim" action="#{interferenciaBean.deletar}" oncomplete="PF('tabelaInterferencias').filter(); PF('confirmDelete').hide();" update="@form" icon="ui-icon ui-icon-check">
-				    		<f:setPropertyActionListener value="#{interferencia}" target="#{interferenciaBean.interferencia}" />
-				    	</p:commandButton>
-				    	<p:spacer height="5" width="10" />
-				    	<p:commandButton value="Não" oncomplete="PF('confirmDelete').hide();" icon="ui-icon ui-icon-close" />    					
-					</p:dialog>
+					<p:commandButton action="#{interferenciaBean.deletar}" value="Apagar" oncomplete="PF('tabelaInterferencias').filter();" update="@form" icon="ui-icon ui-icon-trash" >
+						<f:setPropertyActionListener value="#{interferencia}" target="#{interferenciaBean.interferencia}" />
+					</p:commandButton>
 				</p:column>
 			</p:dataTable>
 			<p:blockUI block="tabelaInterferencias" trigger="tabelaInterferencias">
