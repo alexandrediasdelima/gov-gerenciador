@@ -54,6 +54,15 @@ public class Interferencia implements Serializable {
 	@Column(name="fot_croqui_localizacao", columnDefinition="text", nullable=false)
 	private String fot_croqui_localizacao;
 
+	@Transient
+	private String baseImagemGeral;
+
+	@Transient
+	private String baseImagemDetalhe;
+
+	@Transient
+	private String baseImagemCroqui;
+
 	@Column(name="apa_curso_barragem", columnDefinition="character varying(150)", nullable=false)
 	private String apa_curso_barragem;
 
@@ -93,8 +102,8 @@ public class Interferencia implements Serializable {
 	@Column(name="int_tsi_cd", columnDefinition="character varying(255)")
 	private String int_tsi_cd;
 
-	
-	
+
+
 	public Integer getInt_id() {
 		return int_id;
 	}
@@ -255,6 +264,30 @@ public class Interferencia implements Serializable {
 		this.int_tsi_cd = int_tsi_cd;
 	}
 
-	
+	public String getBaseImagemGeral() {
+		return baseImagemGeral;
+	}
+
+	public void setBaseImagemGeral(String baseImagemGeral) {
+		this.baseImagemGeral = baseImagemGeral;
+	}
+
+	public String getBaseImagemDetalhe() {
+		return baseImagemDetalhe;
+	}
+
+	public void setBaseImagemDetalhe(String baseImagemDetalhe) {
+		this.baseImagemDetalhe = baseImagemDetalhe;
+	}
+
+	public String getBaseImagemCroqui() {
+		return baseImagemCroqui;
+	}
+
+	public void setBaseImagemCroqui(String baseImagemCroqui) {
+		this.baseImagemCroqui = baseImagemCroqui;
+	}
+
+
 
 }

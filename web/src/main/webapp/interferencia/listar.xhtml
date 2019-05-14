@@ -12,18 +12,18 @@
 		.ui-datatable table {
  		   table-layout: auto;
 		}
-		
+
 		.myDownloadButton {
-			background:none!important; 
-			color:inherit; 
-			border:none !important; 
-			padding:0!important; 
-			font: inherit; 
-			cursor: pointer; 
-			text-decoration-line: underline !important; 
+			background:none!important;
+			color:inherit;
+			border:none !important;
+			padding:0!important;
+			font: inherit;
+			cursor: pointer;
+			text-decoration-line: underline !important;
 			display:inline-block !important;
 		}
-		
+
 	</style>
 
 	<div style="padding-top: 50px;">
@@ -59,26 +59,30 @@
 				</p:column>
 				<p:column headerText="ID-Cnarh" filterBy="#{interferencia.cnarh_id}" filterMatchMode="contains" sortBy="#{interferencia.cnarh_id}" >
 					<p:commandLink value="#{interferencia.cnarh_id}" action="#{cnarhBean.redirecionarTelaCadastro(interferencia.cnarh_id)}" />
-				</p:column>	
+				</p:column>
 				<p:column headerText="Estudo Hidrológico" filterBy="#{interferencia.apa_est_hidrologico}" filterMatchMode="contains" sortBy="#{interferencia.apa_est_hidrologico}" >
 					<h:panelGroup rendered="#{interferencia.apa_est_hidrologico}"><h:outputText value="SIM" /></h:panelGroup>
 					<h:panelGroup rendered="#{!interferencia.apa_est_hidrologico}"><h:outputText value="NÃO" /></h:panelGroup>
 				</p:column>
-				<p:column headerText="Captura Lançamento Geral" filterBy="#{interferencia.fot_cap_lanc_geral}" filterMatchMode="contains" sortBy="#{interferencia.fot_cap_lanc_geral}" >
-					<p:commandButton immediate="true" value="#{interferencia.fot_cap_lanc_geral}" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton" >
-						<p:fileDownload value="#{interferenciaBean.download(interferencia.fot_cap_lanc_geral)}" />
+				<p:column style="width:15%" headerText="Captura Lançamento Geral" filterBy="#{interferencia.fot_cap_lanc_geral}" filterMatchMode="contains" sortBy="#{interferencia.fot_cap_lanc_geral}" >
+					<p:commandButton id="imageBtn" type="button" value="#{interferencia.fot_cap_lanc_geral}" styleClass="myDownloadButton">
+						 <p:overlayPanel id="imagePanel" for="imageBtn" hideEffect="fade">
+       						<img id="fot_cap_lanc_geral" src="data:image/jpg;base64, #{interferencia.baseImagemGeral}" width="500" />
+   						 </p:overlayPanel>
 					</p:commandButton>
-					
-					<ui:remove><p:graphicImage library="images" name="/interferencia/#{interferencia.fot_cap_lanc_detalhe}" width="400"/></ui:remove>
 				</p:column>
 				<p:column headerText="Captura Lançamento Detalhe" filterBy="#{interferencia.fot_cap_lanc_detalhe}" filterMatchMode="contains" sortBy="#{interferencia.fot_cap_lanc_detalhe}" >
-					<p:commandButton immediate="true" value="#{interferencia.fot_cap_lanc_detalhe}"  ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton">
-	                       <p:fileDownload value="#{interferenciaBean.download(interferencia.fot_cap_lanc_detalhe)}" />
+					<p:commandButton id="imageBtnDetalhe" value="#{interferencia.fot_cap_lanc_detalhe}" styleClass="myDownloadButton">
+						<p:overlayPanel id="imageBtnDetail" for="imageBtnDetalhe" hideEffect="fade">
+	                       <img id="fot_cap_lanc_detalhe" src="data:image/jpg;base64, #{interferencia.baseImagemDetalhe}" width="500" />
+	                     </p:overlayPanel>
 	                </p:commandButton>
 				</p:column>
 				<p:column headerText="Croqui Localização" filterBy="#{interferencia.fot_croqui_localizacao}" filterMatchMode="contains" sortBy="#{interferencia.fot_croqui_localizacao}" >
-					<p:commandButton immediate="true" value="#{interferencia.fot_croqui_localizacao}"  ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" styleClass="myDownloadButton">
-	                       <p:fileDownload value="#{interferenciaBean.download(interferencia.fot_croqui_localizacao)}" />
+					<p:commandButton id="imageBtnCroqui" value="#{interferencia.fot_croqui_localizacao}" styleClass="myDownloadButton">
+						<p:overlayPanel for="imageBtnCroqui" hideEffect="fade">
+	                       <img id="fot_cap_lanc_croqui" src="data:image/jpg;base64, #{interferencia.baseImagemCroqui}" width="500" />
+	                     </p:overlayPanel>
 	                </p:commandButton>
 				</p:column>
 				<p:column headerText="Latitude" filterBy="#{interferencia.int_cr_latitude}" filterMatchMode="contains" sortBy="#{interferencia.int_cr_latitude}" >
