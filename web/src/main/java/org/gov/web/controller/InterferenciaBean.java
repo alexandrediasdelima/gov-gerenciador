@@ -158,11 +158,11 @@ public class InterferenciaBean extends Controller  {
 
 		    nomeArquivo =  new Date().getTime() + file.getFileName();
 		    //String imagePath = "/resources/images/interferencia/";
-		    ServletContext scontext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+		    //ServletContext scontext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
 		    
-		    String caminhoDestinoArquivo = scontext.getRealPath("/resources/images/interferencia/" + nomeArquivo);
+		    //String caminhoDestinoArquivo = scontext.getRealPath("/resources/images/interferencia/" + nomeArquivo);
 		    
-        	//String caminhoDestinoArquivo = "C:/import_cad/imagens/" + nomeArquivo;
+        	String caminhoDestinoArquivo = "C:/apac/imagens/interferencia/" + nomeArquivo;
         	//String caminhoDestinoArquivo = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath().toString() + imagePath + nomeArquivo;    
 
         	boolean transferenciaSucesso = false;
@@ -318,7 +318,7 @@ public class InterferenciaBean extends Controller  {
 		  InputStream stream = null;
 
 			try {
-				File f = new File("C:/import_cad/imagens/" + nome);
+				File f = new File("C:/apac/imagens/interferencia/" + nome);
 				stream = new FileInputStream(f);
 				file = new DefaultStreamedContent(stream, "image/jpg", nome);
 

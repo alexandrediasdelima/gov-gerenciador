@@ -49,7 +49,7 @@ public class FichaCampoServiceImpl implements FichaCampoService {
 		byte[] array = null;
 		String retorno = null;
 
-		File arq = new File("C:/import_cad/imagens/" + foto);
+		File arq = new File("C:/apac/imagens/interferencia/" + foto);
 
 		if(arq != null) {
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
