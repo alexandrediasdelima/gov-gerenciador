@@ -19,10 +19,10 @@
 			<br/>
 			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{apacBean.adicionarBtnNovoApac}" ajax="false" />
 			<br/><br/>
-			<p:dataTable id="tabelaApacs" value="#{apacBean.apacs}" widgetVar="tabelaApacs" 
-			emptyMessage="Não foram encontrados registros." filteredValue="#{apacBean.filteredApacs}" 
-			paginator="true" rows="10" var="apac" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100" 
-			resizableColumns="true" style="width: 99%; border: 0px solid #c0c0c0;">
+			<p:dataTable id="tabelaApacs" value="#{apacBean.apacs}" widgetVar="tabelaApacs"
+			emptyMessage="Não foram encontrados registros." filteredValue="#{apacBean.filteredApacs}"
+			paginator="true" rows="10" var="apac" paginatorPosition="top" rowsPerPageTemplate="5,10,15,20,25,50,75,100"
+			resizableColumns="true" style="width:  99%; border: 0px solid #c0c0c0;">
 				<f:facet name="header">APAC</f:facet>
 				<p:column headerText="Número do Processo" filterBy="#{apac.numeroProcesso}" filterMatchMode="contains" sortBy="#{apac.numeroProcesso}">
 					<h:outputText value="#{apac.numeroProcesso}" />
@@ -55,7 +55,7 @@
 					<h:outputText value="#{apac.dataTerminoPrazoOutorga}">
 						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
 					</h:outputText>
-				</p:column>				
+				</p:column>
 				<p:column headerText="Situação Ato Administrativo" filterBy="#{apac.out_tsp_cd}" filterMatchMode="contains" sortBy="#{apac.out_tsp_cd}">
 					<h:outputText value="#{apac.out_tsp_cd}" />
 				</p:column>
@@ -64,19 +64,19 @@
 				</p:column>
 				<p:column headerText="Vazão Outorgada em Média" filterBy="#{apac.vazaoOutorgadaMedia}" filterMatchMode="contains" sortBy="#{apac.vazaoOutorgadaMedia}">
 					<h:outputText value="#{apac.vazaoOutorgadaMedia}" />
-				</p:column>			
+				</p:column>
 				<p:column headerText="Número de Horas para a Captação por Dia" filterBy="#{apac.horasRequeridaParaCaptacaoPorDia}" filterMatchMode="contains" sortBy="#{apac.horasRequeridaParaCaptacaoPorDia}">
 					<h:outputText value="#{apac.horasRequeridaParaCaptacaoPorDia}" />
 				</p:column>
 				<p:column headerText="Vazão Requerida l/s" filterBy="#{apac.vazaoRequiridaLs}" filterMatchMode="contains" sortBy="#{apac.vazaoRequiridaLs}">
 					<h:outputText value="#{apac.vazaoRequiridaLs}" />
-				</p:column>					
+				</p:column>
 				<p:column headerText="Vazão Requerida Média Diária (m³/dia)" filterBy="#{apac.vazaoRequiridaMediaDia}" filterMatchMode="contains" sortBy="#{apac.vazaoRequiridaMediaDia}">
 					<h:outputText value="#{apac.vazaoRequiridaMediaDia}" />
-				</p:column>				
+				</p:column>
 					<p:column headerText="Garantia" filterBy="#{apac.garantia}" filterMatchMode="contains" sortBy="#{apac.garantia}">
 					<h:outputText value="#{apac.garantia}" />
-				</p:column>			
+				</p:column>
 				<p:column headerText="Data de Vistoria da APAC" filterBy="#{apac.dataVistoria}" filterMatchMode="contains" sortBy="#{apac.dataVistoria}">
 					<h:outputText value="#{apac.dataVistoria}">
 						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
@@ -94,7 +94,7 @@
 					<h:outputText value="#{apac.prazoNotificacao}">
 						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo" />
 					</h:outputText>
-				</p:column>		
+				</p:column>
 				<p:column headerText="Tipo de Obra" filterBy="#{apac.tipoObra}" filterMatchMode="contains" sortBy="#{apac.tipoObra}">
 					<h:outputText value="#{apac.tipoObra}" />
 				</p:column>
@@ -151,11 +151,21 @@
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{apacBean.telaEditar(apac)}" value="Editar" ajax="false" icon="ui-icon-document" />
-					<p:commandButton action="#{apacBean.deletar}" value="Apagar" oncomplete="PF('tabelaApacs').filter();" update="@form" icon="ui-icon ui-icon-trash" >
-						<f:setPropertyActionListener value="#{apac}" target="#{apacBean.apac}" />
+					<p:commandButton id="confirm" value="Apagar" oncomplete="PF('confirmation').show();">
+						<f:setPropertyActionListener
+	                                target="#{apacBean.objSelecionado}" value="#{apac}" />
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>
+
+			<p:confirmDialog id="excluirApac" message="Deseja deletar?"  width="350"
+                                         header="teste" severity="alert"
+                                         widgetVar="confirmation" modal="true">
+				<p:commandButton action="#{apacBean.deletar}" value="Apagar" update="@all" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-trash" />
+				<p:commandButton value="Não" image="ui-icon-cancel"
+	                                          onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+			</p:confirmDialog>
+
 			<p:blockUI block="tabelaApacs" trigger="tabelaApacs">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>

@@ -23,13 +23,13 @@
 				<h:panelGrid columns="2" style="border: 0px solid;">
 					<p:outputLabel value="Número do Processo:" for="numeroProcesso" id="numeProcesso" />
 					<p:inputText id="numeroProcesso" value="#{apacBean.apac.numeroProcesso}" required="true" requiredMessage="Número do Processo Obrigatório" />
-					
+
 					<p:outputLabel value="Data de Entrada do Processo na APAC:" for="dataEntradaProcessoApac" id="dataEntrada" />
 					<p:calendar id="dataEntradaProcessoApac" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.dataEntradaProcessoApac}"  />
-					
+
 					<p:outputLabel value="Data de Entrada do Processo na CPRH:" for="dataEntradaProcessoCprh" id="dataEntradaProcesso" />
 					<p:calendar id="dataEntradaProcessoCprh" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.dataEntradaProcessoCprh}"  />
-										
+
 					<p:outputLabel value="Analista Responsável:" for="analista" id="analistaResponsavel" />
 					<p:inputText id="analista" value="#{apacBean.apac.analistaResponsavel}" />
 
@@ -94,7 +94,7 @@
 
 					<p:outputLabel value="Número da Notificação de Irregularidades:" for="numeroNotificacaoIrregularidade" id="numNotificacao" />
 					<p:inputText id="numeroNotificacaoIrregularidade" value="#{apacBean.apac.numeroNotificacaoIrregularidadeApac}"/>
-					
+
 					<p:outputLabel value="Encerramento do Prazo da Notificação:" for="prazoNotificacao" id="pzNotificacao" />
 					<p:calendar id="prazoNotificacao" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.prazoNotificacao}" locale="pt_BR" />
 
@@ -122,8 +122,8 @@
 				</h:panelGrid>
 				<br/><br/>
 				<p:commandButton value="Voltar" action="#{apacBean.voltar}" ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
-				<p:commandButton value="Salvar" action="#{apacBean.gravar}" ajax="false" rendered="#{apacBean.view == 'add'}" icon=" ui-icon-disk" />
-				<p:commandButton value="Salvar" action="#{apacBean.editar}" ajax="false" rendered="#{apacBean.view == 'edit'}" icon=" ui-icon-pencil" />
+				<p:commandButton value="Salvar" action="#{apacBean.gravar}"  rendered="#{apacBean.view == 'add'}" update="@all" icon=" ui-icon-disk" />
+				<p:commandButton value="Salvar" action="#{apacBean.editar}"  rendered="#{apacBean.view == 'edit'}" update="@all" icon=" ui-icon-pencil" />
 			</p:scrollPanel>
 		</p:fieldset>
 

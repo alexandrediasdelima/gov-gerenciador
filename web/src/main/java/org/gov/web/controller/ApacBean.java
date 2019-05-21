@@ -27,6 +27,7 @@ public class ApacBean extends Controller  {
 	private ApacService apacService;
 	private List<Apac> apacs;
 	private List<Apac> filteredApacs;
+	private Apac objSelecionado;
 
 
 	public ApacBean() {
@@ -77,7 +78,7 @@ public class ApacBean extends Controller  {
 
 	public String deletar() {
 
-		apacService.remover(apac.getNumeroProcesso());
+		apacService.remover(objSelecionado.getNumeroProcesso());
 		apacs();
 		return eval(index());
 	}
@@ -165,7 +166,17 @@ public class ApacBean extends Controller  {
 	public void setFilteredApacs(List<Apac> filteredApacs) {
 		this.filteredApacs = filteredApacs;
 	}
-	
-	
+
+
+	public Apac getObjSelecionado() {
+		return objSelecionado;
+	}
+
+
+	public void setObjSelecionado(Apac objSelecionado) {
+		this.objSelecionado = objSelecionado;
+	}
+
+
 
 }
