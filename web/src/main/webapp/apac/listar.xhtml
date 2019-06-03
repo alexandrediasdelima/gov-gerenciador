@@ -15,7 +15,7 @@
 	</style>
 
 	<div style="padding-top: 50px;">
-		<h:form id="listarApacs" prependId="false">
+
 			<br/>
 			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{apacBean.adicionarBtnNovoApac}" ajax="false" />
 			<br/><br/>
@@ -161,7 +161,7 @@
 			<p:confirmDialog id="excluirApac" message="Deseja deletar?"  width="350"
                                          header="teste" severity="alert"
                                          widgetVar="confirmation" modal="true">
-				<p:commandButton action="#{apacBean.deletar}" value="Apagar" update="@all" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-trash" />
+				<p:commandButton action="#{apacBean.deletar}" value="Apagar" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-trash" />
 				<p:commandButton value="Não" image="ui-icon-cancel"
 	                                          onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
 			</p:confirmDialog>
@@ -169,6 +169,5 @@
 			<p:blockUI block="tabelaApacs" trigger="tabelaApacs">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>
-		</h:form>
 	</div>
 </ui:composition>

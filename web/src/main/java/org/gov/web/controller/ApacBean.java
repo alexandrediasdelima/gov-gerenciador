@@ -43,6 +43,7 @@ public class ApacBean extends Controller  {
 
 		apacService.gravar(apac);
 		apacs();
+		setView(LIST);
 
 		return eval(index());
 	}
@@ -72,7 +73,7 @@ public class ApacBean extends Controller  {
 
 		apacService.editar(apac);
 		apacs();
-
+		setView(LIST);
 		return eval(index());
 	}
 
