@@ -6,16 +6,16 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 	<ui:define name="body">
-
-
+		<h:form id="addEmpreendimento" prependId="false" style="width:99%;" >
 			<c:choose>
-			<c:when
-				test="#{empreendimentoBean.view == 'edit' or empreendimentoBean.view == 'add'}">
-				<ui:include src="/empreendimento/adicionar.xhtml" />
-			</c:when>
-			<c:otherwise>
-				<ui:include src="/empreendimento/listar.xhtml" />
-			</c:otherwise>
-		</c:choose>
+				<c:when
+					test="#{empreendimentoBean.view == 'edit' or empreendimentoBean.view == 'add'}">
+					<ui:include src="/empreendimento/adicionar.xhtml" />
+				</c:when>
+				<c:otherwise>
+					<ui:include src="/empreendimento/listar.xhtml" />
+				</c:otherwise>
+			</c:choose>
+		</h:form>
 	</ui:define>
 </ui:composition>

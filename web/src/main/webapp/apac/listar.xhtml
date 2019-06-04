@@ -25,7 +25,7 @@
 			resizableColumns="true" style="width:  99%; border: 0px solid #c0c0c0;">
 				<f:facet name="header">APAC</f:facet>
 				<p:column headerText="Número do Processo" filterBy="#{apac.numeroProcesso}" filterMatchMode="contains" sortBy="#{apac.numeroProcesso}">
-					<h:outputText value="#{apac.numeroProcesso}" />
+					<h:outputText value="#{apac.numeroProcesso}" id="numeroProcesso" />
 				</p:column>
 				<p:column headerText="Data de Entrada do Processo na APAC" filterBy="#{apac.dataEntradaProcessoApac}" filterMatchMode="contains" sortBy="#{apac.dataEntradaProcessoApac}">
 					<h:outputText value="#{apac.dataEntradaProcessoApac}">
@@ -151,19 +151,15 @@
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{apacBean.telaEditar(apac)}" value="Editar" ajax="false" icon="ui-icon-document" />
-					<p:commandButton id="confirm" value="Apagar" oncomplete="PF('confirmation').show();">
-						<f:setPropertyActionListener
-	                                target="#{apacBean.objSelecionado}" value="#{apac}" />
+					<p:commandButton id="confirm" value="Apagar" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash">
+						<f:setPropertyActionListener target="#{apacBean.objSelecionado}" value="#{apac}" />
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>
 
-			<p:confirmDialog id="excluirApac" message="Deseja deletar?"  width="350"
-                                         header="teste" severity="alert"
-                                         widgetVar="confirmation" modal="true">
-				<p:commandButton action="#{apacBean.deletar}" value="Apagar" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-trash" />
-				<p:commandButton value="Não" image="ui-icon-cancel"
-	                                          onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+			<p:confirmDialog id="excluirApac" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+				<p:commandButton action="#{apacBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+				<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
 			</p:confirmDialog>
 
 			<p:blockUI block="tabelaApacs" trigger="tabelaApacs">

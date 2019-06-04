@@ -15,7 +15,7 @@
 	</style>
 	
 	<div style="padding-top: 50px;">
-		<h:form id="listarCnarhs" prependId="false" >
+		
 			<br/>
             <p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{cnarhBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
@@ -42,14 +42,19 @@
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{cnarhBean.telaEditar(cnarh)}" value="Editar" ajax="false" icon="ui-icon-document" />
-					<p:commandButton action="#{cnarhBean.deletar}" value="Apagar" oncomplete="PF('tabelaCnarhs').filter();" update="@form" icon="ui-icon ui-icon-trash" >
-						<f:setPropertyActionListener value="#{cnarh}" target="#{cnarhBean.cnarh}" />
+					<p:commandButton id="confirm" value="Apagar" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash">
+						<f:setPropertyActionListener target="#{cnarhBean.objSelecionado}" value="#{cnarh}" />
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>
+			
+			<p:confirmDialog id="excluirCnarh" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+				<p:commandButton action="#{cnarhBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+				<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+			</p:confirmDialog>
+			
 			<p:blockUI block="tabelaCnarhs" trigger="tabelaCnarhs">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>
-		</h:form>
 	</div>
 </ui:composition>

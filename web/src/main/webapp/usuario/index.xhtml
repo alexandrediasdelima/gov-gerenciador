@@ -6,14 +6,16 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:h="http://java.sun.com/jsf/html">
 
-	<ui:define name="body">	
-		<c:choose>
-			<c:when test="#{usuarioBean.view == 'edit' or usuarioBean.view == 'add'}">
-				<ui:include src="/usuario/adicionar.xhtml" />
-			</c:when>
-			<c:otherwise>
-				<ui:include src="/usuario/listar.xhtml" />
-			</c:otherwise>
-		</c:choose>
+	<ui:define name="body">
+		<h:form id="addUsuario" prependId="false"  style="width:99%;" >
+			<c:choose>
+				<c:when test="#{usuarioBean.view == 'edit' or usuarioBean.view == 'add'}">
+					<ui:include src="/usuario/adicionar.xhtml" />
+				</c:when>
+				<c:otherwise>
+					<ui:include src="/usuario/listar.xhtml" />
+				</c:otherwise>
+			</c:choose>
+		</h:form>
 	</ui:define>
 </ui:composition>

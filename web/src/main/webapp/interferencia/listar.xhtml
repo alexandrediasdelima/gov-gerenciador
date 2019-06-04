@@ -27,7 +27,6 @@
 	</style>
 
 	<div style="padding-top: 50px;">
-		<h:form id="listarInterferencias" enctype="multipart/form-data" prependId="false">
 			<br/>
 			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{interferenciaBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
@@ -126,14 +125,19 @@
 				</p:column>
 				<p:column headerText="Ações">
 					<p:commandButton action="#{interferenciaBean.telaEditar(interferencia)}" value="Editar" ajax="false" icon="ui-icon-document" />
-					<p:commandButton action="#{interferenciaBean.deletar}" value="Apagar" oncomplete="PF('tabelaInterferencias').filter();" update="@form" icon="ui-icon ui-icon-trash" >
-						<f:setPropertyActionListener value="#{interferencia}" target="#{interferenciaBean.interferencia}" />
+					<p:commandButton id="confirm" value="Apagar" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash">
+						<f:setPropertyActionListener target="#{interferenciaBean.objSelecionado}" value="#{interferencia}" />
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>
+			
+			<p:confirmDialog id="excluirInterferencia" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+				<p:commandButton action="#{interferenciaBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+				<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+			</p:confirmDialog>
+			
 			<p:blockUI block="tabelaInterferencias" trigger="tabelaInterferencias">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>
-		</h:form>
 	</div>
 </ui:composition>

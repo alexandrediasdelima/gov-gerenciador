@@ -1,20 +1,22 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	template="/template/template.xhtml">
+	template="/template/template.xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
 
 
 	<ui:define name="body">
-
-		<c:choose>
-			<c:when
-				test="#{cnarhBean.view == 'edit' or cnarhBean.view == 'add'}">
-				<ui:include src="/cnarh/adicionar.xhtml" />
-			</c:when>
-			<c:otherwise>
-				<ui:include src="/cnarh/listar.xhtml" />
-			</c:otherwise>
-		</c:choose>
+		<h:form id="addCnarh" prependId="false" style="width:99%;" >
+			<c:choose>
+				<c:when
+					test="#{cnarhBean.view == 'edit' or cnarhBean.view == 'add'}">
+					<ui:include src="/cnarh/adicionar.xhtml" />
+				</c:when>
+				<c:otherwise>
+					<ui:include src="/cnarh/listar.xhtml" />
+				</c:otherwise>
+			</c:choose>
+		</h:form>
 	</ui:define>
 
 

@@ -19,6 +19,7 @@ public class UsuarioBean extends Controller  {
 	private List<Regiao> regioes;
 	private String tipoDocumento = "cpf";
 	private List<Usuario> filteredUsuarios;
+	private Usuario objSelecionado;
 
 	public UsuarioBean() {
 
@@ -29,8 +30,12 @@ public class UsuarioBean extends Controller  {
 		
 	}
 
-	public void usuarios() {
-		this.usuarios = usuarioService.usuarios();
+	public String usuarios() {
+		
+		usuarios = usuarioService.usuarios();
+		setView(LIST);
+		return eval(index());
+
 	}	
 	
 	public String gravar() {
@@ -82,10 +87,8 @@ public class UsuarioBean extends Controller  {
 	}
 
 	public String deletar() {
-		setView(LIST);
-		usuarioService.remover(usuario.getUsuario_id());
+		usuarioService.remover(objSelecionado.getUsuario_id());
 		usuarios();
-		
 		return eval(index());
 	}
 
@@ -183,6 +186,14 @@ public class UsuarioBean extends Controller  {
 
 	public void setFilteredUsuarios(List<Usuario> filteredUsuarios) {
 		this.filteredUsuarios = filteredUsuarios;
+	}
+
+	public Usuario getObjSelecionado() {
+		return objSelecionado;
+	}
+
+	public void setObjSelecionado(Usuario objSelecionado) {
+		this.objSelecionado = objSelecionado;
 	}
 
 

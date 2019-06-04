@@ -725,9 +725,14 @@
 				<p:commandButton value="Voltar" action="#{irrigacaoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{irrigacaoBean.gravar}"   ajax="false" rendered="#{irrigacaoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{irrigacaoBean.alterar}" ajax="false" rendered="#{irrigacaoBean.view == 'edit'}" icon="ui-icon-pencil" />
-				<p:commandButton value="Apagar" action="#{irrigacaoBean.deletar}"  ajax="false" icon="ui-icon-close" />
+				<p:commandButton value="Apagar" id="confirm" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash"/>
 			</p:scrollPanel>
 		</p:fieldset>
+		
+		<p:confirmDialog id="excluirIrrigacao" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+			<p:commandButton action="#{irrigacaoBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+			<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+		</p:confirmDialog>		
 		
 		<p:tooltip for="areaTotal" value="Campo numérico que representa a área total irrigada pelo ponto de captação." position="top"/>
 		<p:tooltip for="possuiCulturaIrrigada" value="Campo que representa se possui outra cultura irrigada." position="top"/>

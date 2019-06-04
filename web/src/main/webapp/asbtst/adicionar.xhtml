@@ -104,9 +104,15 @@
 				<p:commandButton value="Voltar" action="#{asbtstBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" />
 				<p:commandButton value="Salvar" action="#{asbtstBean.gravar}"   ajax="false" rendered="#{asbtstBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{asbtstBean.alterar}" ajax="false" rendered="#{asbtstBean.view == 'edit'}" icon="ui-icon-pencil" />
-				<p:commandButton value="Apagar" action="#{asbtstBean.deletar}"  ajax="false" icon="ui-icon-close" />
+				<p:commandButton value="Apagar" id="confirm" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash"/>
 			</p:scrollPanel>
 		</p:fieldset>
+		
+		<p:confirmDialog id="excluirAsbtst" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+			<p:commandButton action="#{asbtstBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+			<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+		</p:confirmDialog>			
+		
 		</h:form>
 	</div>
 </ui:composition>

@@ -7,6 +7,7 @@ import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
+import org.gov.model.Apac;
 import org.gov.model.Cnarh;
 import org.gov.model.Usuario;
 import org.gov.service.CnarhService;
@@ -23,6 +24,7 @@ public class CnarhBean extends Controller  {
 	private CnarhService cnarhService;
 	private List<Cnarh> cnarhs;
 	private List<Cnarh> filteredCnarhs;
+	private Cnarh objSelecionado;
 
 	public CnarhBean() {
 
@@ -32,8 +34,10 @@ public class CnarhBean extends Controller  {
 		cnarhs();
 	}
 
-	public void cnarhs() {
-		this.cnarhs = cnarhService.cnarhs();
+	public String cnarhs() {
+		cnarhs = cnarhService.cnarhs();
+		setView(LIST);
+		return eval(index());		
 	}	
 	
 	public String gravar() {
@@ -66,8 +70,7 @@ public class CnarhBean extends Controller  {
 	}	
 	
 	public String deletar() {
-		setView(LIST);
-		cnarhService.remover(cnarh.getCnarh_id());
+		cnarhService.remover(objSelecionado.getCnarh_id());
 		cnarhs();
 		
 		return eval(index());
@@ -136,6 +139,14 @@ public class CnarhBean extends Controller  {
 
 	public void setFilteredCnarhs(List<Cnarh> filteredCnarhs) {
 		this.filteredCnarhs = filteredCnarhs;
+	}
+
+	public Cnarh getObjSelecionado() {
+		return objSelecionado;
+	}
+
+	public void setObjSelecionado(Cnarh objSelecionado) {
+		this.objSelecionado = objSelecionado;
 	}
 
 

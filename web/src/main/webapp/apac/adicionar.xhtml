@@ -22,7 +22,7 @@
 			<p:scrollPanel mode="native" style="width:100%; height:80%; border: 0px solid; ">
 				<h:panelGrid columns="2" style="border: 0px solid;">
 					<p:outputLabel value="Número do Processo:" for="numeroProcesso" id="numeProcesso" />
-					<p:inputText id="numeroProcesso" value="#{apacBean.apac.numeroProcesso}" required="true" requiredMessage="Número do Processo Obrigatório" />
+					<p:inputText id="numeroProcesso" disabled="#{apacBean.view == 'edit'}" value="#{apacBean.apac.numeroProcesso}" required="true" requiredMessage="Número do Processo Obrigatório" />
 
 					<p:outputLabel value="Data de Entrada do Processo na APAC:" for="dataEntradaProcessoApac" id="dataEntrada" />
 					<p:calendar id="dataEntradaProcessoApac" showOn="button" pattern="dd/MM/yyyy" readonlyInput="true" value="#{apacBean.apac.dataEntradaProcessoApac}"  />

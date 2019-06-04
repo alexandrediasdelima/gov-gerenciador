@@ -140,9 +140,14 @@
 				<p:commandButton value="Voltar" action="#{vazaoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{vazaoBean.gravar}"   ajax="false" rendered="#{vazaoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{vazaoBean.alterar}" ajax="false" rendered="#{vazaoBean.view == 'edit'}" icon="ui-icon-pencil" />
-				<p:commandButton value="Apagar" action="#{vazaoBean.deletar}"  ajax="false" icon="ui-icon-close" />
+				<p:commandButton value="Apagar" id="confirm" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash"/>
 			</p:scrollPanel>
 		</p:fieldset>
+		
+		<p:confirmDialog id="excluirVazao" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+			<p:commandButton action="#{vazaoBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+			<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+		</p:confirmDialog>
 
 		<p:tooltip for="vazaoMaxima" value="Campo numérico que representa a quantidade de vazão máxima." position="top"/>
 		<p:tooltip for="vazaoAferida" value="Vazão aferida em campo" position="top"/>

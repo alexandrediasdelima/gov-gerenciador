@@ -327,9 +327,14 @@
 				<p:commandButton value="Voltar" action="#{asbcaracBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{asbcaracBean.gravar}"   ajax="false" rendered="#{asbcaracBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{asbcaracBean.alterar}" ajax="false" rendered="#{asbcaracBean.view == 'edit'}" icon="ui-icon-pencil" />
-				<p:commandButton value="Apagar" action="#{asbcaracBean.deletar}"  ajax="false" icon="ui-icon-close" />
+				<p:commandButton value="Apagar" id="confirm" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash"/>
 			</p:scrollPanel>
 		</p:fieldset>
+		
+		<p:confirmDialog id="excluirAsbcarac" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+			<p:commandButton action="#{asbcaracBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+			<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+		</p:confirmDialog>		
 		
 		<p:tooltip for="altTerreno" value="Campo numérico que representa a altitude do terreno." position="top"/>
 		<p:tooltip for="bocaTubulacao" value="Campo numérico que representa a altura da boca da tubulação." position="top"/>

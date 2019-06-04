@@ -2,6 +2,8 @@ package org.gov.web.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.gov.model.Apac;
 import org.gov.model.Empreendimento;
 import org.gov.model.Regiao;
 import org.gov.model.Usuario;
@@ -20,6 +22,7 @@ public class EmpreendimentoBean extends Controller  {
 	private List<Usuario> usuarios;
 	private List<Regiao> regioes;
 	private List<Empreendimento> filteredEmpreendimentos;
+	private Empreendimento objSelecionado;
 
 	public EmpreendimentoBean() {
 
@@ -30,8 +33,13 @@ public class EmpreendimentoBean extends Controller  {
 		empreendimentos();
 	}
 	
-	public void empreendimentos() {
-		setEmpreendimentos(empreendimentoService.empreendimentos());
+	public String empreendimentos() {
+		//setEmpreendimentos(empreendimentoService.empreendimentos());
+		
+		empreendimentos = empreendimentoService.empreendimentos();
+		setView(LIST);
+		return eval(index());
+		
 	}	
 
 	public String gravar() {
@@ -76,10 +84,8 @@ public class EmpreendimentoBean extends Controller  {
 	}
 	
 	public String deletar() {
-		setView(LIST);
-		empreendimentoService.remover(empreendimento.getId());
+		empreendimentoService.remover(objSelecionado.getId());
 		empreendimentos();
-		
 		return eval(index());
 	}	
 	
@@ -151,6 +157,14 @@ public class EmpreendimentoBean extends Controller  {
 
 	public void setFilteredEmpreendimentos(List<Empreendimento> filteredEmpreendimentos) {
 		this.filteredEmpreendimentos = filteredEmpreendimentos;
+	}
+
+	public Empreendimento getObjSelecionado() {
+		return objSelecionado;
+	}
+
+	public void setObjSelecionado(Empreendimento objSelecionado) {
+		this.objSelecionado = objSelecionado;
 	}
 
 

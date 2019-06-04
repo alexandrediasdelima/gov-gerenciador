@@ -98,9 +98,14 @@
 				<p:commandButton value="Voltar" action="#{testebombeamentoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true" />
 				<p:commandButton value="Salvar" action="#{testebombeamentoBean.gravar}"   ajax="false" rendered="#{testebombeamentoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{testebombeamentoBean.alterar}" ajax="false" rendered="#{testebombeamentoBean.view == 'edit'}" icon="ui-icon-pencil" />
-				<p:commandButton value="Apagar" action="#{testebombeamentoBean.deletar}"  ajax="false" icon="ui-icon-close" />
+				<p:commandButton value="Apagar" id="confirm" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash"/>
 			</p:scrollPanel>
 		</p:fieldset>
+
+		<p:confirmDialog id="excluirTesteBombeamento" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+			<p:commandButton action="#{testebombeamentoBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+			<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+		</p:confirmDialog>	
 
 		<p:tooltip for="coeficiente" value="Campo numérico que representa o coeficiente de armazenamento." position="top"/>
 		<p:tooltip for="condutiva" value="Campo numérico que representa a condutividade hidráulica." position="top"/>

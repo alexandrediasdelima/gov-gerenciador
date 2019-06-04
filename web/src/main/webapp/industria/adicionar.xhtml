@@ -48,9 +48,14 @@
 				<p:commandButton value="Voltar" action="#{industriaBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true"/>
 				<p:commandButton value="Salvar" action="#{industriaBean.gravar}"   ajax="false" rendered="#{industriaBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{industriaBean.alterar}" ajax="false" rendered="#{industriaBean.view == 'edit'}" icon="ui-icon-pencil" />
-				<p:commandButton value="Apagar" action="#{industriaBean.deletar}"  ajax="false" icon="ui-icon-close" />
+				<p:commandButton value="Apagar" id="confirm" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash"/>
 			</p:scrollPanel>
 		</p:fieldset>
+		
+		<p:confirmDialog id="excluirIndustria" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+			<p:commandButton action="#{industriaBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+			<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+		</p:confirmDialog>	
 		
 		<p:tooltip for="tpIndustria" value="Campo descritivo que representa o tipo de indústria" position="top"/>
 		<p:tooltip for="numEmpregados" value="Campo numérico que representa o número de empregados da indústria." position="top"/>

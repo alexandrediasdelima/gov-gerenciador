@@ -15,8 +15,6 @@
 	</style>
 	
 		<div style="padding-top: 50px;">
-		<h:form id="listarUsuarios" prependId="false">
-
 			<br/>
 			<p:commandButton icon="ui-icon-plusthick" value="Cadastrar" action="#{usuarioBean.adicionarNovo}" ajax="false" />
 			<br/><br/>
@@ -84,15 +82,20 @@
 				</p:column>
 				<p:inputText value="#{usuario.emp_nu_tipodocumento}" type="hidden" />
 				<p:column headerText="Ações">
-					<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document"/>
-					<p:commandButton action="#{usuarioBean.deletar}" value="Apagar" oncomplete="PF('tabelaUsuarios').filter();" update="@form" icon="ui-icon ui-icon-trash" >
-						<f:setPropertyActionListener value="#{usuario}" target="#{usuarioBean.usuario}" />
+					<p:commandButton action="#{usuarioBean.telaEditar(usuario)}" value="Editar" ajax="false" icon="ui-icon-document" />
+					<p:commandButton id="confirm" value="Apagar" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash">
+						<f:setPropertyActionListener target="#{usuarioBean.objSelecionado}" value="#{usuario}" />
 					</p:commandButton>
 				</p:column>
 			</p:dataTable>
+			
+			<p:confirmDialog id="excluirUsuario" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+				<p:commandButton action="#{usuarioBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+				<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+			</p:confirmDialog>			
+			
 			<p:blockUI block="tabelaUsuarios" trigger="tabelaUsuarios">
 				<p:graphicImage name="images/loadingbar.gif"/>
 			</p:blockUI>
-		</h:form>
 		</div>
 </ui:composition>

@@ -38,12 +38,18 @@
 				</h:panelGrid>
 				<br/><br/>
 				
-				<p:commandButton value="Voltar" action="#{captacaoBean.voltar}"   ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true"/>
-				<p:commandButton value="Salvar" action="#{captacaoBean.gravar}"   ajax="false" rendered="#{captacaoBean.view == 'add'}" icon="ui-icon-disk" />
+				<p:commandButton value="Voltar" action="#{captacaoBean.voltar}"  ajax="false" icon="ui-icon-arrowreturnthick-1-w" immediate="true"/>
+				<p:commandButton value="Salvar" action="#{captacaoBean.gravar}"  ajax="false" rendered="#{captacaoBean.view == 'add'}" icon="ui-icon-disk" />
 				<p:commandButton value="Salvar" action="#{captacaoBean.alterar}" ajax="false" rendered="#{captacaoBean.view == 'edit'}" icon="ui-icon-pencil" />
-				<p:commandButton value="Apagar" action="#{captacaoBean.deletar}"  ajax="false" icon="ui-icon-close" />
+				<p:commandButton value="Apagar" id="confirm" oncomplete="PF('confirmation').show();" icon="ui-icon ui-icon-trash"/>
 			</p:scrollPanel>
 		</p:fieldset>
+		
+		<p:confirmDialog id="excluirCaptacao" message="Confirma a exclusão?"  width="350" header="APAC" widgetVar="confirmation" modal="true">
+			<p:commandButton action="#{captacaoBean.deletar}" value="Sim" update="@form" oncomplete="PF('confirmation').hide();" icon="ui-icon ui-icon-check" />
+			<p:commandButton value="Não" image="ui-icon-close" onclick="PF('confirmation').hide();" type="button" style="left: 35%;"/>
+		</p:confirmDialog>		
+		
 		</h:form>
 	</div>
 </ui:composition>

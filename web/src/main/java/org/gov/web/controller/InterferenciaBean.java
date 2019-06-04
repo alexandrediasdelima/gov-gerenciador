@@ -50,6 +50,7 @@ public class InterferenciaBean extends Controller  {
 	private transient UploadedFile fotoCroqui;
 	private transient StreamedContent file;
 	private boolean isOutroUso;
+	private Interferencia objSelecionado;
 
 
 	public InterferenciaBean()  {
@@ -122,7 +123,7 @@ public class InterferenciaBean extends Controller  {
 	}
 
 	public String deletar()  {
-		interferenciaService.remover(interferencia.getInt_id());
+		interferenciaService.remover(objSelecionado.getInt_id());
 		interferencias();
 		return eval(index());
 	}
@@ -327,6 +328,14 @@ public class InterferenciaBean extends Controller  {
 			}
 
 		return file;
+	}
+
+	public Interferencia getObjSelecionado() {
+		return objSelecionado;
+	}
+
+	public void setObjSelecionado(Interferencia objSelecionado) {
+		this.objSelecionado = objSelecionado;
 	}
 
 }
